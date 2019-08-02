@@ -1,0 +1,175 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+  
+<title>Introduction to Metadata Elements: Library of Congress</title>
+<base href="http://www.loc.gov/standards/metadata.html">
+<meta name="description" content="List of metadata elements being used by the Library of Congress for its digital object repository, especially the structural and admnistrative metadata">
+<meta name="keywords" content="repository metadata structural admonistrative">
+<meta name="author" content="Library of Congress Network Development and MARC Standards Office">
+</head>
+<body link="#009966" vlink="#669999" bgcolor="#FFFFFF" text="#000000">
+<center>
+<table width=620 cellpadding=0 cellspacing=0 border=0><tr><td>
+<center>
+<img src="images/dlmeta.gif" alt="Library of Congress Digital Repository Development - Core Metadata Elements" height=75 width=600></center>
+<HR noshade size=1>
+<p><strong>NOTE: This is an historical document from a 1998 pilot project and
+    not a current Library of Congress metadata standard.</strong></p>
+<center>
+<table bgcolor="#ffffcc" cellpadding=5 cellspacing=0 border=0>
+<tr><td><font face="Arial, Helvetica" size="-1">
+<a href="#background">Background</a> |
+<a href="#types">Types of Metadata</a> | 
+<a href="#levels">Metadata Levels</a> |
+<a href="#table">Table of Elements</a> | 
+<a href="#example">Example Records</a></font>
+</td></tr></table></center>
+<p>
+<center><b>INTRODUCTION TO THE TABLE</b></center>
+        <p> <b>Purpose:</b> Identification of a core set of metadata elements to be used 
+          in the development, testing, and implementation of multiple repositories. 
+        <p><a NAME="background"><b>Background: </b></a>With a charter from the
+           Digital Futures Group at the Library of Congress, representatives
+          from 
+          Library Services, ITS and the National Digital Library Program drafted
+           this list of elements drawing on previous work contained in <a href="http://memory.loc.gov/ammem/techdocs/repository/structmeta.html">Structural
+            Metadata Dictionary for LC Digitized Material</a>, version 1.03,
+            and 
+        
+		 Metadata Table for the Coolidge-Consumerism Experiment,
+		 
+		
+		 and on experience with the Thomson Editorial Asset Management System
+		 (TEAMS) repository proof-of-concept project, December 1998-April 1999.
+		 After broader discussion
+          and comment during summer 1999, some nomenclature was modified, elements
+		 for audio-visual objects were added to the list and a distinction was
+          made between information necessary for digital preservation and for
+		 digital reformatting. An application of the core metadata elements for 
+          <a href="http://www.loc.gov/rr/mopic/avprot/avlcdocs.html#md">audio
+           visual materials</a> is currently in development as part of the Audio
+            Visual Preservation Digital Prototyping Project. 
+        <p><a NAME="types"><b>Types of Metadata:</b></a> Metadata elements listed 
+          in the table are categorized according to three types: descriptive, 
+          administrative, and structural. Administrative metadata is used for 
+          managing and preserving objects in the repository; structural metadata 
+          is used primarily for storage of objects in a repository and for presentation; 
+          descriptive metadata is used for discovery of objects. The elements 
+          defined in this table are to support structural and administrative functions. 
+          Functions served are access management, administration, discovery, persistent 
+          identifier, presentation, digital preservation and preservation reformatting. 
+        <p>The Library intends to maintain the fullest descriptive metadata in 
+          its main catalog. Experiences with the Coolidge-Consumerism experiment 
+          and the TEAMS prototype, however, indicate that some descriptive information 
+          is helpful for administration of metadata and presentation of content. 
+          Consquently, five descriptive elements are included in the Table of 
+          Core Metadata Elements. 
+        <p><a NAME="levels"> <b>Metadata Levels:</b></a> A hierarchy of information 
+          is proposed to accommodate the diversity of digital objects and to propagate 
+          data with some efficiency. Metadata elements may be supplied at multiple 
+          and various levels. Nesting of objects is expected and will be further 
+          clarified during the pilot phase of metadata capture and deposit. Information 
+          may be inherited from parent levels or may be specific to single objects 
+          at a lower level. For example, a collection may have general access 
+          rights but some of its items may be restricted. The access_rights attribute 
+          value on the collection (set or aggregate level) may be "public," but 
+          a single title(primary object level) in the collection may be "restricted." 
+        <p>The levels of metadata are
+        <ul>
+          <li><b>Set - </b>Set-level metadata applies to what is currently known 
+            as a digital collection, e.g<i>. Alexander Graham Bell Family Papers</i>. 
+            Digital collections are formed from aggregates that group digital 
+            items by original content type, such as non-motion visual, text, motion 
+            visual, or audio; and by custodial responsibility as well as by collection. 
+            A collection may be determined from an archival series or from a topical 
+            bibliography. Some digital collections are contained within a single 
+            aggregate. Others are formed by numerous aggregates. Set-level metadata 
+            applies to all aggregates within the set regardless of content or 
+            responsibility.</li>
+          <li> <b>Aggregate</b> - An aggregate organizes digital objects by digital 
+            type and by digital custodial responsibility. A single aggregate may 
+            be a digital collection. Aggregate-level metadata applies to all primary 
+            objects within an aggregate.</li>
+          <li> <b>Primary Object - </b>The specific item identified by the online 
+            collection access aid as a coherent whole is known as the primary 
+            object. Primary objects are usually the digital equivalents of physical 
+            library items, such as a book, a sound recording, a movie, a single 
+            title of sheet music, a folder of letters, a photograph, or a map. 
+            This level metadata applies to all the intermediate and terminal objects 
+            of a particular primary object.</li>
+          <li> <b>Intermediate</b> <b>Object - </b>The intermediate object is 
+            a view or component of the primary object. A book that can be presented 
+            as page images or as searchable text has two intermediate objects. 
+            One points to all the page images of the book, the other to an encoded 
+            text file. Complex primary objects such as sound recordings offer 
+            many intermediate object possibilities. Multiple sides or tracks for 
+            a recording, each with sound and label components, may be captured 
+            in several formats. A single78 rpm record with two sides will have 
+            several audio files in both streaming and higher resolution formats, 
+            as well as the image and text of the label for each side and the jacket 
+            or album cover.&nbsp; Metadata for an intermediate object allows the 
+            gathering of digital files and metadata for the creation of presentations.</li>
+          <li> <b>Terminal Object - </b>The terminal object is the digital content 
+            file or files that form the object. There is at least one terminal 
+            for each object. Terminal object-level metadata is primarily structural 
+            supplying the digital attributes of each file such as size, extension, 
+            bit-depth, etc.</li>
+        </ul>
+        <a NAME="table"><b>Table of Elements: </b></a>The <a href="metable.html">Table 
+        of Core Metadata Elements</a> for Library of Congress Digital Repository 
+        Development is arranged in alphabetical order and includes the following 
+        fields: 
+        <ul>
+          <li> <b><i>Name</i></b> is the label for the metadata element. Names 
+            are intended to be easily comprehended and unambiguous.</li>
+          <li> <b><i>Definition</i></b> is a brief description of the information 
+            contained in the element.</li>
+          <li> <b><i>Function</i></b> is an indicator of how the element is used. 
+            Functions served by metadata elements are access management, administration, 
+            discovery, persistent identifier, presentation, digital preservation 
+            and preservation reformatting. Preservation (D) signifies digital 
+            preservation and preservation (R) indicates preservation reformatting.</li>
+          <li> <b><i>Type</i></b> is an indicator of the functions the metadata 
+            is intended to support.</li>
+          <li> <b><i>Use</i></b> is an indicator of frequency and requirement 
+            of the element.</li>
+          <li> <b><i>Level </i></b>is an indicator of position within the repository 
+            hierarchy that the element is meaningful.</li>
+        </ul>
+        <a NAME="example"><b>Example Records: </b></a>An <a href="http://memory.loc.gov/ammem/techdocs/teams/samp_data.html">example</a> 
+        of data gathered for a letter from the <a href="http://memory.loc.gov/ammem/bellhtml/bellhome.html">Alexander 
+        Graham Bell Family Papers</a> online collection shows metadata that is 
+        readily available for objects currently created, stored and delivered 
+        through the <a href="http://memory.loc.gov/">American Memory</a> interface 
+        at the Library of Congress. Values entered into the table are examples 
+        of the type of information that could appear in the field. Actual data 
+        types and value tables will be defined and refined as part of several 
+        pilot projects initiated in autumn 1999. <BR>
+        <BR>
+        <center>
+          <font face="Arial,Helvetica"><font size=-1> <a href="metable.html">Table 
+          of Core Metadata Elements</a> | <a href="http://memory.loc.gov/ammem/techdocs/teams/samp_data.html">Example</a></font></font>
+        </center>
+        <BR>
+        <HR>
+        <br>
+        <b>Go to</b>: <A HREF="http://www.loc.gov/standards/">Library of Congress 
+        Standards</A> | <A HREF="http://www.loc.gov/">Library of Congress Home 
+        Page</A> <BR>
+        <br>
+        <HR>
+        <IMG SRC="http://www.loc.gov/homepage/lc2.gif" ALT="Library of Congress"> <STRONG>Library 
+        of Congress</STRONG><BR>
+        <ADDRESS> 
+        <!--help desk email start -->
+        <a href="http://www.loc.gov/help/help-desk.html">Library of Congress Help 
+        Desk</a> 
+        <!--help desk email end -->
+        ( 
+        <!-- #BeginDate format:Am1 -->September 8, 2005<!-- #EndDate -->
+        )
+        </ADDRESS>
+</td></tr></table></center>
+</body>
+</html>
