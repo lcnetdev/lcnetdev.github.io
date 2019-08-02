@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+
+                        "http://www.w3.org/TR/html40/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/mods.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Changes for MODS Version 3.5 : Metadata Object Description Schema: MODS (Library of Congress)</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<meta name="keywords" content="mods  metadata object description schema changes version 3.5 library congress xml">
+<meta name="description" content="Changes for MODS Version 3.5 (Metadata Object Description Schema: MODS)">
+<style type="text/css">
+<!--
+.style1 {font-size: x-small}
+-->
+</style>
+<!-- InstanceEndEditable -->
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="mods-print.css" type="text/css" media="print">
+<style type="text/css">
+@import url(mods.css);
+</style>
+</head>
+<body link="#000099" vlink="#0066CC" bgcolor="#FFFFFF">
+<table class="layout2">
+  <tr>
+    <td class="top-breadcrumbs"><a id="skip" href="#skip_menu">&nbsp;</a><a href="http://www.loc.gov/">The Library of Congress</a> &raquo; <a href="http://www.loc.gov/standards/">Standards</a> &raquo; <a href="http://www.loc.gov/mods/">MODS Official Web Site</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://www.loc.gov/standards/mods/"><img src="images/mods-bar-760.gif" alt="Metadata Object Description Schema: Official Web Site" width="760" height="41" border="0"></a></td>
+  </tr>
+  <tr>
+    <td><a href="http://www.loc.gov/standards/mods/">HOME</a> &gt;&gt; <!-- InstanceBeginEditable name="topbreadcrumb" -->MODS 3.5 Changes <!-- InstanceEndEditable --><a name="skip_menu"></a><!-- InstanceBeginEditable name="content" -->
+      <h1>Changes for MODS 3.5 </h1>
+	
+	     <p> <strong>February  2013</strong></p>
+	  
+         <p>The following changes for MODS Version 3.5 have been approved by the <a href="http://www.loc.gov/standards/mods/editorial-committee.html">MODS Editorial Committee</a>. Version 3.5 will be backwards compatible to 3.4 and therefore only includes changes that do not result in invalidating existing MODS records. In the future the Committee may consider major changes that may not be backwards compatible and will document those approved on this website. Changes listed below include the change, its purpose, examples, and the date approved by the MODS Editorial Committee." The <a href="http://www.loc.gov/standards/mods/v3/mods-3-5-DRAFT.xsd">MODS Draft 3.5 Schema</a> is available for public review through June 7th, 2013.
+
+</p>
+  
+
+<ol>
+<li>Add attribute @unit to &lt;physicalDescription&gt;&lt;extent&gt; (Approved 2012-03-12)<br>
+<br>
+This change makes the extent element more granular by separating units from extent. <br>
+<br>
+Example:<br>
+<br>
+<span class="style1">&lt;physicalDescription&gt;<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;extent unit=&rdquo;pages&rdquo;&gt;12&lt;/extent&gt;<br>
+&lt;/physicalDescription&gt;</span><br/>
+<br>
+</li>
+<li>Add rfc5646 as value for &lt;language&gt;&lt;languageTerm&gt; (Approved 2012-03-12)<br>
+<br>
+Enumerated values reflect earlier standards; RFC5646 has superceded RFC4646<br>
+<br>
+</li>
+<li>Add @altFormat and @contentType attributes to &lt;titleInfo&gt;,  &lt;abstract&gt;, &lt;tableOfContents&gt; and &lt;accessCondition&gt; (Approved 2012-09-17)<br>
+<br>
+This change allows for embedding HTML in MODS, linking with @altRepGrp, and indicating the format of the alternative encoding. It applies to those elements that are most likely to have values that need HTML or  other formatting that cannot be expressed inside a MODS XML record. Use the altFormat attribute to link out of the record to the<strong> same content</strong>, formatted or marked up in a different way. Optionally, include the contentType attribute with a media-type as its value (e.g. text/html) to indicate the content type of the target. Where there are multiple alternatives, use the already defined altRepGroup attribute to bind the related instances of each element.<br>
+<br>
+Examples:<br>   
+<br>
+<span class="style1">&lt;abstract altRepGroup="A" altFormat="http://foo.edu/alternate-markup.html" contentType="application/xhtml+xml"/&gt;
+<br>
+<br>
+&lt;abstract altRepGroup="A"&gt;l'histoire d'un cheval et un garçon qui aimait&lt;/abstract&gt; </span><br>
+<br>
+</li>
+  
+<li>Add @eventType to &lt;originInfo&gt; to indicate production, publication, distribution, manufacture (Approved 2012-04-23, Revised 2013-01-23<br>
+<br>
+<p>This attribute allows for indicating what type of event the statement of originInfo relates to, e.g.  production, publication, distribution, manufacture, or some other event.</li>
+
+Example:<br>
+<br>
+<span class="style1">&lt;originInfo eventType=&quot;publication&quot;&gt;<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;place&gt;<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;placeTerm&gt;Menlo Park, CA&lt;/placeTerm&gt;<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/place&gt;<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;publisher&gt;Center for Computer Assisted Research in the Humanities&lt;/publisher&gt;<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;dateIssued encoding="marc" point="start"<strong>&gt;</strong>1985&lt;/dateIssued&gt;<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;dateIssued encoding="marc" point="end"<strong>&gt;</strong>1988&lt;/dateIssued&gt;<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;issuance&gt;continuing&lt;/issuance&gt;<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;frequency authority=&quot;marcfrequency&quot;&gt;Annual&lt;/frequency&gt;<br>&lt;/originInfo&gt;</span><br>
+</li>
+<br>
+
+<li>Add @typeURI to &lt;identifier&gt;, &lt;note&gt;, and &lt;physicalDescripton&gt;/&lt;note&gt; (Approved 2012-09-17)<br>
+<br>
+This change allows for indicating that a type is in the form of a URI.<br>
+<br>
+Example: <br>
+<br>
+<span class="style1">&lt;identifier typeURI=&quot;<a href="http://id.loc.gov/vocabulary/identifiers/isbn">http://id.loc.gov/vocabulary/identifiers/isbn</a>&quot;&gt;9780385333511&lt;/identifier&gt;</span><br>
+<br>
+</li>
+<li>Add @generator to &lt;classification&gt; (Approved 2013-01-09)<br>
+<br>
+The value of this attribute indicates that the classification number was automatically generated and, if appropriate, how.<br>
+<br>
+Example:<br>
+<br>
+<span class="style1">&lt;classification authority="ddc" edition="22" generator="<a href="http://www.lcc2ddc.org/version/1.2/%22">http://www.lcc2ddc.org/version/1.2/"</a> &gt;813.54&lt;/classification&gt;</span><br>
+</li>
+<br>
+<li>Add &lt;etal&gt; element, a subelement of  &lt;name&gt; (Approved 2013-01-23)<br>
+<br>
+The &lt;etal&gt;  subelement is added to the list of &lt;name&gt; subelements to indicate that there  are one or more names that, for whatever reason, cannot be explicitily included in another name element.<br>
+<br>
+Example:
+<br>
+<p class="style1">&lt;name&gt; <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;namePart type=&quot;family&quot;&gt;Fox&lt;/namePart&gt; <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;namePart type=&quot;given&quot;&gt;Nellie&lt;/namePart&gt; <br>
+  &lt;/name&gt; <br>
+  &lt;name&gt; <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;namePart type=&quot;family&quot;&gt;Phillips&lt;/namePart&gt; <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;namePart type=&quot;given&quot;&gt;Bubba&lt;/namePart&gt; <br>
+  &lt;/name&gt; <br>
+  &lt;name&gt; <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;etal/&gt; <br>
+  &lt;/name&gt; </p>
+<p>Would mean &quot;Nellie Fox,  Bubba Phillips, and others&quot;</p>
+<br>
+<li>Add @otherType to &lt;titleInfo&gt; element (Approved 2013-02-20)<br>
+<br>
+Example:
+<br>
+<p class="style1">&lt;titleInfo lang=&quot;chi&quot; script=&quot;Hant&quot;&gt; <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;title&gt;會計學&lt;/title&gt; <br>
+
+  &lt;/titleInfo&gt; <br>
+  &lt;titleInfo otherType=&quot;transliterated&quot; transliteration=&quot;chinese/ala-lc&quot;&gt; <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;title&gt;Kuaijixue&lt;/title&gt; <br>
+ 
+  &lt;/titleInfo&gt; <br>
+  &lt;titleInfo type=&quot;translated&quot; lang=&quot;eng&quot;&gt; <br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;title&gt;Accounting&lt;/title&gt; <br>
+  &lt;/titleInfo&gt; </p>
+<br><br>
+</li>
+</ol>
+<ul>
+
+
+
+      <!-- InstanceEndEditable -->
+<HR noshade size="1">
+</td>
+</tr>
+<tr>
+<td><a href="http://www.loc.gov/standards/mods/">HOME</a> &gt;&gt; <!-- InstanceBeginEditable name="bottombreadcrumb" -->Changes for MODS Version 3.5 <!-- InstanceEndEditable -->
+  <p><strong>Questions and comments:<br>
+  </strong>
+              <a href="mailto:ndmso@loc.gov">Contact Us</a> (
+              <!-- #BeginDate format:Am1 -->December 13, 2013<!-- #EndDate -->
+      )
+      <br>
+      <a href="http://www.loc.gov/homepage/legal.html">Legal</a> | <a href="http://www.loc.gov/global/disclaim.html">External Link Disclaimer</a></p></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

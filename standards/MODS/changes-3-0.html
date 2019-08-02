@@ -1,0 +1,268 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<title>MODS Draft Version 3.0 available for review</title>
+<base href="http://www.loc.gov/standards/mods/changes-3-0.html">
+<meta name="keywords" content="mods changes metadata object description schema version 3.0">
+<meta name="description" content="This document lists changes being considered for version 3.0 of MODS (Metadata Object Description Schema)">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="mods.css" type="text/css">
+</head>
+<body link="#000099" vlink="#0066CC" bgcolor="#FFFFFF">
+<table width=600 cellpadding=4 cellspacing=0 border=0 align=center>
+  <tr> 
+    <td><img src="images/mods-bar.gif" width="600" height="40" alt="Metadata Object Description Schema: Official Web Site"></td>
+  </tr>
+  
+
+  <tr> 
+    <td> 
+      <h1>MODS Draft Version 3.0 available for review      </h1>
+      <p>The Library of Congress would like to invite those using MODS to review
+        the new version of the schema and send any comments they may have to
+        the MODS Team at LC. Please send comments by Sept. 5, 2003, after which
+        we will evaluate them and make the new version available as soon as possible
+        thereafter. The new version of MODS makes the following changes (MARC
+      equivalents given where applicable): </p>
+      <ol>
+        <li>Adds a version attribute to indicate the current major and minor
+          version of the document (in this case 3.0). In addition uses the namespace
+          and filename to indicate the schema version and in the filename (e.g.namespace:
+          http://www.loc.gov/standards/mods/3 with filename: mods3.xsd          <br>
+        </li>
+        <li>Declares all first-level MODS elements (those immediately subordinate
+          to &lt;MODS&gt;) as global, so they can be root elements of instance
+          documents, or imported into other schemas.          <br>
+        </li>
+        <li>Takes out mandatory requirement for title; instead, requires at least
+          one element (but not necessarily title). <br>
+        <li>Adds type &#8220;termsOfAddress&#8221; to &lt;namePart&gt; (for titles,
+          Jr., etc.) under &lt;name&gt;. (MARC X00 $b and$c)          <br>
+        </li>
+        <li>Adds the following enumerated values under &lt;typeOfResource&gt;<ul><li>sound recording-musical (MARC Ldr/06 value “j”)
+		</li><li>sound recording-nonmusical (MARC Ldr/06 value “i”)</li></ul>(“Sound recording” by itself will be retained to be used when a mixture of musical and nonmusical or if the user does not need to make the distinction.)
+        <br>
+        </li>
+        <li>          Under originInfo allows for multiple &lt;place&gt; elements
+        in any order. (This is a correction to an error in the schema.)<br>
+        </li>
+        <li>Adds under originInfo:<ul><li>dateValid (MARC 046$m and $n)</li><li>dateModified (MARC 046$j)
+		<li>copyrightDate </li>
+		</ul>For all dates adds attribute &#8220;qualifier&#8221; with
+		  values: approximate, inferred, questionable<br>
+        </li>
+        <li>In &lt;place&gt;, &lt;role&gt;, and &lt;language&gt; changes to a
+          consistent treatment of code or text as follows:
+          <table width="75%">
+            <tr>
+              <td colspan="2">&lt;place&gt; (MARC 008/15-17; 044, 260$a)</td>
+              <td width="26%">&nbsp;</td>
+            </tr>
+            <tr>
+              <td width="12%">&nbsp;</td>
+              <td width="62%">&lt;placeTerm&gt;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>Attributes: authority, type (code or text)</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td colspan="2">&lt;role&gt; (MARC 1XX, 7XX $e and $4)</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&lt;roleTerm&gt;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>Attributes: authority, type (code or text)</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&lt;/role&gt;</td>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td colspan="2">&lt;language&gt; (MARC 008/35-37, 041)</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&lt;languageTerm&gt;</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>Attributes: authority, type (code or text)</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td colspan="2">&lt;/language&gt;</td>
+              <td>&nbsp;</td>
+            </tr>
+          </table>
+        </li>
+        <li>Adds subelement &lt;geographicCode&gt; under &lt;subject&gt; (MARC
+        043)        </li>
+        <br>
+        <li>Adds subelement &lt;occupation&gt; under &lt;subject&gt; (MARC 656)
+        <li>Adds displayLabel attribute to &lt;relatedItem&gt;. (MARC 76X-78X
+          $3 and $i)
+        <li>         Adds &lt;part&gt; to relatedItem (with type=&#8221;host&#8221;)
+          to enable detailed coding for generating citations:
+          <table width="75%">
+            <tr>
+              <td width="11%">&lt;part&gt; </td>
+              <td colspan="2">&nbsp;</td>
+              <td width="28%">&nbsp;</td></tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td width="11%"> &lt;detail&gt;</td>
+              <td width="50%">&nbsp;</td>
+              <td>&nbsp;</td></tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td colspan="2"><blockquote>
+               Attributes: <em>type, order</em>
+              </blockquote>
+              </td>
+              <td>&nbsp;</td></tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td colspan="2"> <blockquote>
+              <em>type</em>: Suggested values include part, volume, issue,
+                  chapter, section, paragraph, track
+              </blockquote>
+              </td>
+              <td>&nbsp;</td></tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td colspan="2"> <blockquote>
+               <em>order</em>: contains a number
+              </blockquote>
+              </td>
+              <td>&nbsp;</td></tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td colspan="2"> Subelements:</td>
+              <td>&nbsp;</td></tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td> &lt;number&gt; </td>
+              <td>&nbsp;</td></tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&lt;caption&gt; </td>
+              <td>&nbsp;</td></tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td> &lt;title&gt;</td>
+              <td>&nbsp;</td></tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td colspan="2">&lt;extent&gt; </td>
+              <td>&nbsp;</td></tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td colspan="2"><blockquote>
+               Attribute:<em> unit</em>
+              </blockquote>
+              </td>
+              <td>&nbsp;</td></tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td colspan="2"><blockquote>
+               <em>unit: </em>Suggested values: page, minute
+              </blockquote>
+              </td>
+              <td>&nbsp;</td></tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td colspan="2">Subelements:</td>
+              <td>&nbsp;</td></tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&lt;start&gt;</td>
+              <td>&nbsp;</td></tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td> &lt;end&gt;</td>
+              <td>&nbsp;</td></tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>&lt;total&gt;</td>
+              <td>&nbsp;</td></tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td> &lt;list&gt;</td>
+              <td>&nbsp;</td></tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td colspan="2">&lt;date&gt; (uses dateType)</td>
+              <td>&nbsp;</td></tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td colspan="2"><blockquote>
+             Attributes: <em>encoding, point</em>
+              </blockquote>
+              </td>
+              <td>&nbsp;</td></tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td colspan="2"> &lt;text&gt;</td>
+              <td>&nbsp;</td></tr>
+          </table>
+          <br>
+        <li>Under &lt;relatedItem&gt; deletes type value &#8220;related&#8221; (which
+        is the same as not giving a type attribute). <br>       
+        <li>Adds hdl to suggested value list in documentation under &lt;identifier&gt;.
+          (Since hdl is not yet officially a URI scheme, it needs to be treated
+          differently (MODS also uses &#8220;doi&#8221; this way). If these become
+        URI schemes or URN namespace, the method of representing them may change.) <br>       
+        <li>Adds &lt;physicalLocation&gt; (MARC 852 $a$b$j$e) under &lt;location&gt;  with
+          the following attribute: displayLabel (MARC 852 $3). <em>[Previously under
+          &lt;location&gt; with no subelements.]</em><br>       
+        <li>Adds &lt;url&gt; under &lt;location&gt; (MARC 856 $u) with the following
+          attributes: displayLabel (MARC 856  $3); dateLastAccessed.<br>        
+        <li>Adds authority to recordContentSource.(MARC 040$a).<br>        
+        <li>        Adds &lt;recordOrigin&gt; under &lt;recordInfo&gt;.
+          <br>
+        <li>              Adds type attribute value
+                    isReferencedBy under &lt;relatedItem&gt;.
+      </ol>  
+      <p>This list does not include corrections under “Documentation” or other
+        annotations, comments, etc. that are not part of the schema itself. It
+        also does not include a few changes in whether the elements are ordered.</p>
+      <p>Comments may either be publicly posted to MODS mailing list at <a href="mailto:mods@loc.gov">mods@loc.gov</a>        or sent privately to Ray Denenberg, MODS schema editor, <a href="mailto:rden@loc.gov">rden@loc.gov</a>. </p>
+      <p>
+        <em>
+        <!-- #BeginDate format:Am1 -->April 22, 2004<!-- #EndDate -->
+        </em>      </p>
+      <HR noshade size="1">
+      <img src="images/mods-icon.gif" width="140" height="48" align="right" alt=""> 
+      <STRONG>Questions and comments:</STRONG> 
+      <ADDRESS> 
+      <!--help desk email start -->
+      <a href="mailto:ndmso@loc.gov">Contact Us</a> 
+      <!--help desk email end -->
+      ( 
+      <!-- #BeginDate format:Am3 -->04/22/2004<!-- #EndDate -->
+      )</ADDRESS>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

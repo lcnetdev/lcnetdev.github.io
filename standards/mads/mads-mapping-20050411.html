@@ -1,0 +1,805 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>MARC Authorities to MADS Mapping</title>
+	<base href="http://www.loc.gov/standards/mads/mads-mapping.html">
+	<meta name="keywords" content="mads metadata authority description schema web site library congress xml official site library congress">
+<meta name="description" content="As an XML schema, the &quot;Metadata Authority Description Schema&quot; 
+(MADS) is intended to be able to carry selected data from existing MARC 21 authority records as well as to 
+enable the creation of original records for agents and terms.">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="mads.css" type="text/css">
+
+</head>
+
+<body>
+<p>&nbsp;&gt;&gt; <a href="http://www.loc.gov/">Library of Congress</a> &gt;&gt; <a href="http://www.loc.gov/standards/">Standards</a> &gt;&gt; <a href="http://www.loc.gov/standards/mads/">MADS
+    Home</a> </p>
+<img src="images/mads.gif" alt="MADS - Metadata Authority Description Schema - Official Web Site" width="600" height="75">
+<h1 align="center"></h1>
+<h1 align="center">MARC 21 Authority Format Mapping to MADS <br>
+Schema version
+1.0</h1>
+<h2 align="center"> April 2005</h2>
+	  	  <hr>
+      <h2 align="left">Table of Contents</h2>
+      <ol>
+        <li><a href="#intro">Introduction</a>
+        <li><a href="#elements">Contents of Elements</a>
+        <li><a href="#mapping">Mapping</a>
+</ol>
+      <hr>
+      <h3><a name="intro">1. Introduction</a></h3>
+	  <p>This mapping gives equivalencies between the MARC 21 Authority Format and
+	    MADS, but is not intended to be a crosswalk that allows for bi-directional
+	    conversions without some loss of data.
+Where there is no equivalent MARC 21 element, this mapping says &quot;no MARC 21 equivalent&quot;.
+<hr>
+
+<h3><a name="elements">2. Contents of Elements</a></h3>
+<table width="65%">
+  <tr>
+    <td valign="top"><a href="#authority">authority</a></td>
+  </tr>
+  <tr>
+    <td valign="top"><blockquote>
+        <p><a href="#name">name</a></p>
+      </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top"><blockquote>
+        <p><a href="#titleInfo">titleInfo</a></p>
+      </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top"><blockquote>
+        <p><a href="#topic">topic</a></p>
+      </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top"><blockquote><a href="#temporal">temporal</a></blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top"><blockquote><a href="#genre">genre</a></blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top"><blockquote><a href="#geographic">geographic</a></blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top"><blockquote><a href="#hierarchicalGeographic">hierarchicalGeographic</a></blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top"><blockquote><a href="#occupation">occupation</a></blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top"><a href="#refs">related</a></td>
+  </tr>
+  <tr>
+    <td valign="top"><blockquote>
+      <p><a href="#refname">name</a></p>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top"><blockquote>
+      <p><a href="#reftitle">titleInfo</a></p>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top"><blockquote>
+        <p><a href="#reftopic">topic</a></p>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top"><blockquote>
+      <p><a href="#reftemporal">temporal</a></p>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top"><blockquote>
+      <p><a href="#refgenre">genre</a></p>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top"><blockquote>
+      <p><a href="#refgeographic">geographic</a></p>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top"><blockquote>
+      <p><a href="#refhierarchicalgeographic">hierarchicalGeographic</a></p>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top"><blockquote>
+      <p><a href="#refoccupation">occupation</a></p>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top">variant</td>
+  </tr>
+  <tr>
+    <td valign="top"><blockquote><a href="#refname">name</a></blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top"><blockquote><a href="#reftitle">titleInfo</a></blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top"><blockquote><a href="#reftopic">topic</a></blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top"><blockquote><a href="#reftemporal">temporal</a></blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top"><blockquote><a href="#refgenre">genre</a></blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top"><blockquote>
+      <p><a href="#refgeographic">geographic</a></p>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top"><blockquote><a href="#refhierarchicalgeographic">hierarchicalGeographic</a></blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top"><blockquote><a href="#refoccupation">occupation</a></blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top"><p><a href="#note">note</a></p>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top"><p><a href="#contactInfo">affiliation</a></p>
+    </td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+  </tr>
+  <tr valign="top">
+    <td><p><a href="#url">url</a></p>
+    </td>
+  </tr>
+  <tr valign="top">
+    <td><p><a href="#identifier">identifier</a></p>
+    </td>
+  </tr>
+  <tr valign="top">
+    <td><p><a href="#position">position</a></p>
+    </td>
+  </tr>
+  <tr valign="top">
+    <td><p><a href="#fieldOfActivity">fieldOfActivity</a></p>
+    </td>
+  </tr>
+  <tr valign="top">
+    <td><p><a href="#extension">extension</a></p>
+    </td>
+  </tr>
+  <tr valign="top">
+    <td><p><a href="#recordInfo">recordInfo</a></p>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<hr>
+      <h3><a name="mapping">3. Mapping</a></h3>
+      <p><strong>&lt;authority&gt;</strong></p>
+      <table width="100%" border="0">
+        <tr valign="top">
+          <td  width="35%"> <a name="name"><strong> Name</strong></a></td>
+
+          <td > &lt;name&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td width="35%"> 100 </td>
+          <td colspan="2"> &lt;name&gt; <em>with</em> type=&quot;personal&quot;
+          </td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 100 $a$q </td>
+          <td >&lt;namePart&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 100 $d </td>
+          <td > &lt;namePart&gt; <em>with</em> type=&quot;date&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%">100 $b$c</td>
+          <td >&lt;namePart&gt; <em>with</em> type=&quot;termsOfAddress&quot;</td>
+        </tr>
+
+        <tr valign="top">
+          <td  width="35%"> &nbsp;100 $e  </td>
+          <td > &nbsp; &lt;role&gt; &lt;roleTerm&gt; <em>with</em> type=&quot;text&quot;  </td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 110 </td>
+          <td > &lt;name&gt; <em>with</em> type=&quot;corporate&quot;
+          </td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 110 $a </td>
+          <td > &lt;namePart&gt;</td>
+
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 110 $b </td>
+          <td >&lt;namePart&gt; </td>
+
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 110 $c$d$n </td>
+          <td >&lt;namePart&gt;</td>
+
+        </tr>
+        <tr valign="top">
+           <td colspan="3"> &nbsp;   </td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 111 </td>
+          <td > &lt;name&gt; <em>with</em> type=&quot;event&quot;
+          </td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 111 $a$c$d$e$n$q </td>
+          <td > &lt;namePart&gt; </td>
+        </tr>
+               <tr valign="top">
+          <td colspan="3">&nbsp;</td>
+        </tr>
+      </table>
+     <table width="100%">
+     <tr>
+          <td width="35%"> <a name="title"><strong>Title </strong></a></td>
+
+    <td colspan="2"> &lt;titleInfo&gt; </td>
+       </tr>
+     <tr valign="top">
+          <td  width="35%"> 130 $a$d$f$h$k$l$m$o$r ,<br></td>
+          <td colspan="2" >&lt;title&gt;</td>
+       </tr>
+        <tr valign="top">
+          <td  width="35%"> 130 $n (<em>and</em> other subfields following as above) </td>
+          <td colspan="2" >&lt;partNumber&gt;</td>
+
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 130 $p (<em>and</em> other subfields following as above) </td>
+          <td colspan="2" >&lt;partName&gt;</td>
+
+        </tr>
+        <tr valign="top">
+          <td>100$t$f$k$l$m$o$r$s$v ($g after $t)</td>
+          <td colspan="2"><em>Add after &lt;name&gt;:</em> &lt;titleInfo&gt;&lt;title&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td>100$n   </td>
+          <td width="4%">&nbsp;</td>
+          <td width="61%">&lt;partNumber&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td>100$p</td>
+          <td>&nbsp;</td>
+          <td>&lt;partName&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="3"><p>&nbsp;</p></td></tr></table>
+  <table width="100%" border="0">
+        <tr valign="top">
+          <td  width="35%"> <a name="topic" id="topic"><strong>Topic</strong></a></td>
+
+          <td width="6%" >&nbsp;</td>
+        </tr>
+
+		        <tr valign="top">
+		          <td>150$a$b, 180$x</td>
+                  <td colspan="2">&lt;topic&gt;</td>
+    </tr>
+		        <tr valign="top">
+		          <td>100,110,111,130,148,150,151,<br>
+	              155,181,185$x<br></td>
+                  <td colspan="2"><em>Add </em>&lt;topic&gt;</td>
+    </tr>
+		        <tr valign="top">
+		          <td colspan="3">&nbsp;</td>
+    </tr>
+		        <tr valign="top">
+		          <td colspan="3"><a name="temporal"></a> <strong>Temporal</strong></td>
+    </tr>
+		        <tr valign="top">
+		          <td>148$a, 182$y</td>
+                  <td colspan="2">&lt;temporal&gt;</td>
+    </tr>
+		        <tr valign="top">
+		          <td>100,110,111,130,148,150, 151<br>	              
+		           155, 180,  181, 185$y<br></td>
+                  <td colspan="2"><em>Add</em> &lt;temporal&gt;</td>
+    </tr>
+		        <tr valign="top">
+		          <td colspan="3">&nbsp;</td>
+    </tr>
+		        <tr valign="top">
+		          <td colspan="3"><a name="genre"></a> <strong>Genre</strong></td>
+    </tr>
+		        <tr valign="top">
+		          <td>155$a, 185$v</td>
+                  <td colspan="2">&lt;genre&gt;</td>
+    </tr>
+		        <tr valign="top">
+		          <td>100,110,111,130,148,150, 151<br>
+155, 180, 181,182$v</td>
+                  <td colspan="2"><em>Add</em> &lt;genre&gt;</td>
+    </tr>
+		        <tr valign="top">
+		          <td colspan="3">&nbsp;</td>
+    </tr>
+		        <tr valign="top">
+		          <td colspan="3"><a name="geographic"></a> <strong>Geographic</strong></td>
+    </tr>
+		        <tr valign="top">
+		          <td>151$a, 181$z</td>
+                  <td colspan="2">&lt;geographic&gt;</td>
+    </tr>
+		        <tr valign="top">
+		          <td>100,110,111,130,148,150, 151<br>
+155, 180, 182, 185$v</td>
+                  <td colspan="2"><em>Add</em> &lt;geographic&gt;</td>
+    </tr>
+		        <tr valign="top">
+		          <td colspan="3">&nbsp;</td>
+    </tr>
+		        <tr valign="top">
+		          <td colspan="3"><a name="hierarchicalGeographic"></a> <strong>Hierarchical
+		              Geographic</strong></td>
+    </tr>
+		        <tr valign="top">
+		          <td><em>No MARC 21 authorities equivalent</em></td>
+                  <td colspan="2">&lt;hierarchicalGeographic&gt;</td>
+    </tr>
+		        <tr valign="top">
+		          <td colspan="3">&nbsp;</td>
+    </tr>
+		        <tr valign="top">
+		          <td colspan="3"><a name="occupation"></a> <strong>Occupation</strong></td>
+    </tr>
+		        <tr valign="top">
+		          <td><em>No MARC 21 authorities equivalent</em></td>
+                  <td colspan="2">&lt;occupation&gt;</td>
+    </tr>
+		        <tr valign="top">
+		          <td colspan="3">START HERE</td>
+    </tr>
+		        <tr valign="top">
+		          <td colspan="3"><strong>&lt;refs&gt;</strong></td>
+    </tr>
+		        <tr valign="top">
+          <td colspan="2">&nbsp;</td>
+          <td width="59%">&nbsp;</td>
+        </tr>
+</table>
+
+<table width="100%" border="0">
+  <tr valign="top">
+        <td  width="35%"> <a name="refname" id="refname"><strong>Name reference</strong></a> </td>
+   		<td > &lt;ref&gt;&lt;name&gt;</td>
+  </tr>
+        <tr valign="top">
+          <td  width="35%"> 400 <em>without $t</em></td>
+          <td > &lt;ref&gt;&lt;name&gt; <em>with</em> type=&quot;personal&quot;,
+            refType=&quot;variant&quot;
+          </td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 400 $a$q </td>
+          <td ><blockquote>
+            <p>&lt;namePart&gt;</p>
+          </blockquote>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 400 $d </td>
+          <td > <blockquote>
+            <p>&lt;namePart&gt; <em>with</em> type=&quot;date&quot;</p>
+          </blockquote>
+          </td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%">400 $b$c</td>
+          <td ><blockquote>
+            <p>&lt;namePart&gt; <em>with</em> type=&quot;termsOfAddress&quot;</p>
+          </blockquote>
+          </td>
+        </tr>
+
+        <tr valign="top">
+          <td  width="35%"> &nbsp;   </td>
+          <td > &nbsp;   </td>
+        </tr>
+        <tr valign="top">
+		          <td  width="35%"> 400 <em>with $t</em></td>
+		          
+    <td > &lt;ref&gt;&lt;name&gt; <em>with</em> type=&quot;personal&quot; <em>and </em>refType=&quot;variant&quot;</td>
+  </tr>
+		        <tr valign="top">
+		          <td  width="35%"> 400 $a$q </td>
+		          <td ><blockquote>
+		            <p>&lt;namePart&gt;</p>
+		            </blockquote>
+		          </td>
+		        </tr>
+		        <tr valign="top">
+		          <td  width="35%"> 400 $d </td>
+		          <td > <blockquote>
+		            <p>&lt;namePart&gt; <em>with</em> type=&quot;date&quot;</p>
+		            </blockquote>
+		          </td>
+		        </tr>
+		        <tr valign="top">
+		          <td  width="35%">400 $b$c</td>
+		          <td ><blockquote>
+		            <p>&lt;namePart&gt; <em>with</em> type=&quot;termsOfAddress&quot;</p>
+		            </blockquote>
+		          </td>
+		        </tr>
+		        <tr valign="top">
+		        
+    <td  width="35%">400 $t$f$h$k$l$m$n$o$p$r$s</td>
+		        <td><blockquote>
+                  <p>&lt;titleInfo&gt;&lt;title&gt;</p>
+		        </blockquote>
+		        </td>
+		        <tr valign="top">
+		          <td > &nbsp;   </td>
+		          <td > &nbsp;   </td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 410 </td>
+          <td > &lt;refName&gt; <em>with</em> type=&quot;corporate&quot;, refType=&quot;variant&quot;
+          </td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 410 $a </td>
+          <td > &lt;namePart&gt;</td>
+
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 410 $b </td>
+          <td >&lt;namePart&gt; </td>
+
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 410 $c$d$n </td>
+          <td >&lt;namePart&gt;</td>
+
+        </tr>
+        <tr valign="top">
+           <td colspan="3"> &nbsp;   </td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 411 </td>
+          <td > &lt;refName&gt; <em>with</em> type=&quot;event&quot;, refType=&quot;variant&quot;
+          </td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 411 $a$c$d$e$n$q </td>
+          <td > &lt;namePart&gt; </td>
+        </tr>
+ 		<tr valign="top">
+          <td > &nbsp;   </td>
+          <td > &nbsp;   </td>
+        </tr>
+		       <tr valign="top">
+          <td  width="35%"> 451</td>
+          <td > &lt;refName&gt;<em>with</em> type=&quot;geographic&quot;, refType=&quot;variant&quot;  </td>
+        </tr>
+		<tr valign="top">
+          <td  width="35%"> 451 $a </td>
+          <td > &lt;namePart&gt; </td>
+        </tr>
+               <tr valign="top">
+          <td colspan="3">&nbsp;</td>
+        </tr>
+		<tr valign="top">
+          <td  width="35%"> 500 <em>without $t</em></td>
+          <td > &lt;refName&gt; <em>with</em> type=&quot;personal&quot;, refType=&quot;related&quot;
+          </td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 500 $a$q </td>
+          <td >&lt;namePart&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 500 $d </td>
+          <td > &lt;namePart&gt; <em>with</em> type=&quot;date&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%">500 $b$c</td>
+          <td >&lt;namePart&gt; <em>with</em> type=&quot;termsOfAddress&quot;</td>
+        </tr>
+
+        <tr valign="top">
+          <td  width="35%"> &nbsp;   </td>
+          <td > &nbsp;   </td>
+        </tr>
+        <tr valign="top">
+		          <td  width="35%"> 500 <em>with $t</em></td>
+		          
+    <td > &lt;refName&gt; <em>with</em> type=&quot;personal&quot; , refType=&quot;related&quot;</td>
+  </tr>
+		        <tr valign="top">
+		          <td  width="35%"> 500 $a$q </td>
+		          <td >&lt;namePart&gt;</td>
+		        </tr>
+		        <tr valign="top">
+		          <td  width="35%"> 500 $d </td>
+		          <td > &lt;namePart&gt; <em>with</em> type=&quot;date&quot;</td>
+		        </tr>
+		        <tr valign="top">
+		          <td  width="35%">500 $b$c</td>
+		          <td >&lt;namePart&gt; <em>with</em> type=&quot;termsOfAddress&quot;</td>
+		        </tr>
+		        <tr valign="top">
+		        
+    <td  width="35%">500 $t$f$h$k$l$m$n$o$p$r$s</td>
+		        <td>&lt;titlePart&gt;</td>
+		        <tr valign="top">
+		          <td > &nbsp;   </td>
+		          <td > &nbsp;   </td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 510 </td>
+          <td > &lt;refName&gt; <em>with</em> type=&quot;corporate&quot;, refType=&quot;related&quot;
+          </td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 510 $a </td>
+          <td > &lt;namePart&gt;</td>
+
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 510 $b </td>
+          <td >&lt;namePart&gt; </td>
+
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 510 $c$d$n </td>
+          <td >&lt;namePart&gt;</td>
+
+        </tr>
+        <tr valign="top">
+           <td colspan="3"> &nbsp;   </td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 511 </td>
+          <td > &lt;refName&gt; <em>with</em> type=&quot;event&quot;, refType=&quot;related&quot;
+          </td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 511 $a$c$d$e$n$q </td>
+          <td > &lt;namePart&gt; </td>
+        </tr>
+ 		<tr valign="top">
+          <td > &nbsp;   </td>
+          <td > &nbsp;   </td>
+        </tr>
+		       <tr valign="top">
+          <td  width="35%"> 551</td>
+          <td > &lt;refName&gt;<em>with</em> type=&quot;geographic&quot;, refType=&quot;related&quot;  </td>
+        </tr>
+		<tr valign="top">
+          <td  width="35%"> 551 $a </td>
+          <td > &lt;namePart&gt; </td>
+        </tr>
+               <tr valign="top">
+          <td colspan="3">&nbsp;</td>
+        </tr>
+</table>
+	  <table width="100%">
+         <tr valign="top">
+          <td width="35%"> <a name="titleRef"><strong>Title References</strong></a> </td>
+
+    <td colspan="2"> &lt;refTitleInfo&gt; </td>
+        </tr>
+     <tr valign="top">
+          <td  width="35%"> 430 $a$d$f$h$k$l$m$o$r </td>
+          <td >&lt;title&gt; <em>and</em>  refType=&quot;variant&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 430 $n (<em>and</em> other subfields following as above) </td>
+          <td >&lt;partNumber&gt;</td>
+
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 430 $p (<em>and</em> other subfields following as above) </td>
+          <td >&lt;partName&gt;</td>
+
+        </tr>
+        <tr valign="top">
+          <td colspan="3">&nbsp;</td>
+        </tr>
+		
+     <tr valign="top">
+          <td  width="35%"> 530 $a$d$f$h$k$l$m$o$r </td>
+          <td >&lt;title&gt;, refType=&quot;related&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 530 $n (<em>and</em> other subfields following as above) </td>
+          <td >&lt;partNumber&gt;</td>
+
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 530 $p (<em>and</em> other subfields following as above) </td>
+          <td >&lt;partName&gt;</td>
+
+        </tr>
+        <tr valign="top">
+          <td colspan="3">&nbsp;</td>
+        </tr>
+		
+</table>
+  <table width="100%" border="0">
+        <tr valign="top">
+          
+    <td  width="35%"> <a name="subjRef"><strong>Subject Reference</strong></a> 
+    </td>
+
+    <td >&lt;refSubject&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%">448, 450</td>
+
+    <td >&lt;refSubject&gt; <em>with</em> refType=&quot;variant&quot;</td>
+        </tr>
+               <tr valign="top">
+          
+    <td  width="35%">448 $a</td>
+          <td >&lt;temporal&gt;</td>
+        </tr>
+		<tr valign="top">
+          
+    <td  width="35%">450 $a$b</td>
+          <td >&lt;topic&gt;</td>
+        </tr>
+
+		        <tr valign="top">
+          <td colspan="3">&nbsp;</td>
+        </tr>
+		        <tr valign="top">
+          <td  width="35%">548, 550</td>
+
+    <td >&lt;refSubject&gt; <em>with</em>, refType=&quot;related&quot;</td>
+        </tr>
+               <tr valign="top">
+          
+    <td  width="35%">548 $a</td>
+          <td >&lt;temporal&gt;</td>
+        </tr>
+		<tr valign="top">
+          
+    <td  width="35%">550 $a$b</td>
+          <td >&lt;topic&gt;</td>
+        </tr>
+		        </tr>
+
+		        <tr valign="top">
+          <td colspan="3">&nbsp;</td>
+        </tr>
+</table>
+  <table width="100%" border="0">
+        <tr valign="top">
+          <td  width="35%"> <a name="relationship"><strong>Reference relationship types</strong></a> </td>
+
+    <td >attribute for refName, refTitleInfo, and refSubject</td>
+        </tr>
+		<tr valign="top">
+          <td  width="35%">400, 410, 411, 451, 500, 510, 511, 551 </td>
+          <td ></td>
+        </tr>
+		<tr valign="top">
+          <td  width="35%">$w/0=&quot;a&quot;</td>
+          <td >&quot;relationship=earlier&quot;</td>
+        </tr>
+		<tr valign="top">
+          <td  width="35%">$w/0=&quot;b&quot;</td>
+          <td >&quot;relationship=later&quot;</td>
+        </tr>
+				<tr valign="top">
+          <td  width="35%">$w/0=&quot;t&quot;</td>
+          <td >&quot;relationship=parentOrg&quot;</td>
+        </tr>
+		<tr valign="top">
+          <td  width="35%">448, 450, 548, 550 </td>
+          <td ></td>
+        </tr>
+		<tr valign="top">
+          <td  width="35%">$w/0=&quot;g&quot;</td>
+          <td >&quot;relationship=broader&quot;</td>
+        </tr>
+		<tr valign="top">
+          <td  width="35%">$w/0=&quot;h&quot;</td>
+          <td >&quot;relationship=narrower&quot;</td>
+        </tr>
+		        </tr>
+
+		        <tr valign="top">
+          <td colspan="3">&nbsp;</td>
+        </tr>
+</table>
+  <table width="100%" border="0">
+        <tr valign="top">
+          <td  width="35%"> <a name="note"><strong>Notes</strong></a> </td>
+
+    <td >&lt;note&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%">670, 675, 678, 680</td>
+
+    <td >&lt;note&gt;</td>
+        </tr>
+		 <tr valign="top">
+          <td  width="35%">680 $a$i</td>
+          <td >&lt;note&gt; with no type attribute</td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%">670 $a$b</td>
+          <td >&lt;note&gt; <em>with</em> type=&quot;source&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%">675 $a</td>
+          <td >&lt;note&gt; <em>with</em> type=&quot;notFound&quot;</td>
+        </tr>
+		 <tr valign="top">
+          <td  width="35%">678 $a$b</td>
+          <td >&lt;note&gt; <em>with</em> type=&quot;history&quot;</td>
+        </tr>
+</table>
+  <table align="center" class="footer" cellpadding="0" cellspacing="0" border="0">
+    <tr valign="top">
+      <td width="357"><div class="sitenav"><a href="http://www.loc.gov/">The
+        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo; <a href="http://www.loc.gov/standards/mads/">MADS</a></div>
+        <br>
+        <span class="sitenav">
+          <!-- #BeginDate format:Am1 -->October 18, 2010<!-- #EndDate -->
+        </span></td>
+      <td width="336" align="center" class="sitenav"><a href="http://www.loc.gov/homepage/legal.html">Legal</a> | <a href="http://www.loc.gov/global/disclaim.html">External Link Disclaimer</a></td>
+      <td width="72" align="right"><div class="contactus"><a href="mailto:ndmso@loc.gov">Contact Us</a></div></td>
+    </tr>
+  </table>
+</body>
+</html>

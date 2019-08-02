@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<title>MODS: Tentative Changes for Next Version</title>
+<base href="http://www.loc.gov/standards/mods/mods-overview.html">
+<meta name="keywords" content="mods changes metadata object description schema web site library congress xml">
+<meta name="description" content="This document lists changes being considered for the next version of MODS (Metadata Object Description Schema)">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="mods.css" type="text/css">
+</head>
+<body link="#000099" vlink="#0066CC" bgcolor="#FFFFFF">
+<table width=600 cellpadding=4 cellspacing=0 border=0 align=center>
+  <tr> 
+    <td><img src="images/mods-bar.gif" width="600" height="40" alt="Metadata Object Description Schema: Official Web Site"></td>
+  </tr>
+  
+
+  <tr> 
+    <td> 
+      <h1>MODS: Changes for Next Version</h1>
+      <p><i>The following are changes to be incorporated into MODS in version 
+        2.0, to be released in mid to late December. The previous version of MODS, 
+        1.2, has undergone a period of trial use from June- Dec. 2002. These are 
+        based on comments, defect reports, and suggestions for enhancements as 
+        a result of experimentation. Where appropriate the MARC mapping is provided.</i></p>
+      <ol>
+        <li><b>title.</b> Add a subelement &lt;subtitle&gt; (245$b)<br>
+          <br>
+        </li>
+        <li><b>name.</b> 
+          <ul>
+            <li>Add additional values for type attribute under &lt;namePart&gt; 
+              to parse names:</li>
+            <ul>
+              <li> family<br>
+              <li>given 
+            </ul>
+            If no type exists, assume name is unparsed.<br>
+          </ul>
+          <ul>
+            <li>Add subelements under &lt;role&gt; to allow for use of either 
+              code or text: 
+              <ul>
+                <li>&lt;code&gt; (1XX, 7XX $4)<br>
+                <li>&lt;text&gt; (1XX, 7XX $e) 
+              </ul>
+          </ul>
+          <br>
+        <li><b>genre</b></li>
+        <ul>
+          <li>In the genreType definition, the list of values (effectively a comment, 
+            with a &lt;documentation&gt; element) will be removed. It will be 
+            maintained outside the schema.</li>
+          <li>Add &quot;book&quot; as a value on the <a href="http://www.loc.gov/marc/sourcecode/genre/genrelist.html">genre 
+            list</a>.<br>
+            <br>
+          </li>
+        </ul>
+        <li><b>publicationInfo.</b></li>
+        <ul>
+          <li> Change name to: originInfo (to clarify that these elements do not 
+            only apply to published resources)<br>
+          <li>Add &lt;otherDate&gt; for a generic date element that does not fall 
+            into another category <br>
+          <li>Add attribute keyDate so that a particular date may be distinguished 
+            among several dates. Thus for example when sorting MODS records by 
+            date, a date with keyDate=&quot;yes&quot; would be the date to sort 
+            on. It should only occur for one date at most in a given record. 
+        </ul>
+        <br>
+        <li><b>physicalDescription</b></li>
+        <ul>
+          <li>Add additional value &quot;print&quot; to &lt;physicalDescription&gt;&lt;form&gt; 
+            (008/23 value blank)</li>
+          <li>Add &lt;reformattingQuality&gt; with values &quot;access&quot;, 
+            &quot;preservation&quot;, and &quot;replacement&quot; (007/13CF)<br>
+            <br>
+          </li>
+        </ul>
+        <li><b>cartographics/subject.</b> Change &lt;cartographics&gt; from a 
+          top-level element to a subelement under subject.<br>
+          <br>
+        </li>
+        <li><b>relatedItem</b></li>
+        <ul>
+          <li>Define mods under relatedItem to allow for recursion, i.e. any mods 
+            element may be used under this element. 
+          <li>Add additional type attributes: otherVersion (field 775); otherFormat 
+            (field 776) 
+        </ul>
+        <br>
+        <li><b>identifier</b></li>
+        <ul>
+          <li> Add attribute displayLabel (856$3)<br>
+          <li>Add &quot;stock number&quot; as a value for type attribute (037$a$b) 
+          <li>Add attribute &quot;invalid=yes&quot; ($z in 0XX fields)<br>
+        </ul>
+        <br>
+        <li><b>location. </b>Add attribute displayLabel (852$3)<br>
+          <br>
+        <li><b>recordInfo. </b>Add &lt;languageOfCataloging&gt; (040$b)<br>
+          <br>
+        <li>Add attributes to be used for any element:</li>
+        <ul>
+          <li>lang (to include RFC3066 code or 3-character ISO 639-2B code) 
+          <li>langauthority (to indicate source of code (rfc3066 or iso639-2b)) 
+          <li>script (to include ISO 15924 script code) 
+          <li>translit (will need to provide a list of transliteration schemes) 
+            <br>
+        </ul>
+      </ol>
+      <P> 
+      <P> 
+      <P> 
+      <HR noshade size="1">
+      <img src="images/mods-icon.gif" width="140" height="48" align="right" alt=""> 
+      <STRONG>Questions and comments:</STRONG> 
+      <ADDRESS> 
+      <!--help desk email start -->
+      <a href="mailto:ndmso@loc.gov">Contact Us</a> 
+      <!--help desk email end -->
+      ( 
+      <!-- #BeginDate format:Am1 -->December 16, 2002<!-- #EndDate -->
+      )</ADDRESS>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

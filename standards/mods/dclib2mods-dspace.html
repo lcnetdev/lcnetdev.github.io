@@ -1,0 +1,526 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<title>MODS Draft Version 3.0 available for review</title>
+<base href="http://www.loc.gov/standards/mods/changes-3-0.html">
+<meta name="keywords" content="mods changes metadata object description schema version 3.0">
+<meta name="description" content="This document lists changes being considered for version 3.0 of MODS (Metadata Object Description Schema)">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="mods.css" type="text/css">
+</head>
+<body link="#000099" vlink="#0066CC" bgcolor="#FFFFFF">
+<table width=600 cellpadding=4 cellspacing=0 border=0 align=center>
+  <tr> 
+    <td><img src="images/mods-bar.gif" width="600" height="40" alt="Metadata Object Description Schema: Official Web Site"></td>
+ 
+
+  <tr> 
+    <td><h1>DCLib (DSpace) to MODS mapping</h1>
+      <H2>Dublin Core with Qualifiers--DSpace application</H2>
+      <TABLE cellSpacing=0 cellPadding=3 width="100%" bgColor=#ffffff 
+            border=2>
+        <TBODY>
+          <TR bgColor=#cccccc>
+            <TD vAlign=top width="15%"><B><FONT 
+                  color=#000000>Element</FONT></B></TD>
+            <TD vAlign=top width="20%"><B><FONT color=#000000>Qualifier </FONT></B></TD>
+            <TD vAlign=top width="35%"><B><FONT color=#000000>Scope Note</FONT></B></TD>
+            <TD vAlign=top width="30%"><strong>MODS mapping</strong></TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%" height=83>contributor</TD>
+            <TD vAlign=top width="20%" height=83>&nbsp;</TD>
+            <TD vAlign=top width="35%" height=83>A person, organization, or service
+              responsible for the content of the resource. Catch-all for unspecified
+              contributors. </TD>
+            <TD vAlign=top width="30%"><p>&lt;name&gt;&lt;namePart&gt;</p>
+            <p><em>If you  designate type of name (personal, corporate) add type=&quot;personal&quot;
+            etc. under &lt;name&gt;</em></p></TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%" height=46>contributor </TD>
+            <TD vAlign=top width="20%" height=46>advisor</TD>
+            <TD vAlign=top width="35%" height=46>Use primarily for thesis advisor.</TD>
+            <TD vAlign=top width="30%">&lt;name&gt;&lt;role&gt;&lt;roleTerm type=&quot;text&quot;&gt;advisor</TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">contributor</TD>
+            <TD vAlign=top width="20%">author</TD>
+            <TD vAlign=top width="35%">&nbsp;</TD>
+            <TD vAlign=top width="30%">&lt;name&gt;&lt;role&gt;&lt;roleTerm type=&quot;text&quot;&gt;author</TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">contributor</TD>
+            <TD vAlign=top width="20%">editor</TD>
+            <TD vAlign=top width="35%">&nbsp;</TD>
+            <TD vAlign=top width="30%">&lt;name&gt;&lt;role&gt;&lt;roleTerm type=&quot;text&quot;&gt;editor</TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">contributor</TD>
+            <TD vAlign=top width="20%">illustrator</TD>
+            <TD vAlign=top width="35%">&nbsp;</TD>
+            <TD vAlign=top width="30%">&lt;name&gt;&lt;role&gt;&lt;roleTerm type=&quot;text&quot;&gt;illustrator</TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">contributor</TD>
+            <TD vAlign=top width="20%">other</TD>
+            <TD vAlign=top width="35%">&nbsp;</TD>
+            <TD vAlign=top width="30%"><p>&lt;name&gt;&lt;role&gt;&lt;roleTerm type=&quot;text&quot;&gt;other</p>
+            <p><em>Alternatively, could leave out role.</em></p></TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">coverage</TD>
+            <TD vAlign=top width="20%">spatial</TD>
+            <TD vAlign=top width="35%">Spatial characteristics of content.</TD>
+            <TD vAlign=top width="30%">&lt;subject&gt;&lt;geographic&gt;</TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">coverage </TD>
+            <TD vAlign=top width="20%">temporal</TD>
+            <TD vAlign=top width="35%">Temporal characteristics of content.</TD>
+            <TD vAlign=top width="30%">&lt;subject&gt;&lt;temporal&gt;</TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">creator</TD>
+            <TD vAlign=top width="20%">&nbsp;</TD>
+            <TD vAlign=top width="35%">Do not use; only for harvested metadata.</TD>
+            <TD vAlign=top width="30%">&nbsp;</TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">date</TD>
+            <TD vAlign=top width="20%">&nbsp;</TD>
+            <TD vAlign=top width="35%">Use qualified form if possible.</TD>
+            <TD vAlign=top width="30%"><p>&lt;originInfo&gt;&lt;dateOther&gt;</p>
+            <p><em>If using structured form, give encoding=&quot;iso8601&quot; (YYYYMMDD) or &quot;w3cdtf&quot; (YYYY-MM-DD)</em></p></TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">date </TD>
+            <TD vAlign=top width="20%">accessioned</TD>
+            <TD vAlign=top width="35%">Date DSpace takes possession of item.</TD>
+            <TD vAlign=top width="30%"><em>Not in MODS; we can add or you can
+            use extension element (see below)</em></TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">date</TD>
+            <TD vAlign=top width="20%">available</TD>
+            <TD vAlign=top width="35%">Date or date range item became available
+              to the public.</TD>
+            <TD vAlign=top width="30%"><em>Not in MODS; we can add or you can
+            use extension element (see below)</em></TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">date </TD>
+            <TD vAlign=top width="20%">copyright</TD>
+            <TD vAlign=top width="35%">Date of copyright.</TD>
+            <TD vAlign=top width="30%">&lt;originInfo&gt;&lt;copyrightDate&gt;</TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">date</TD>
+            <TD vAlign=top width="20%">created</TD>
+            <TD vAlign=top width="35%">Date of creation or manufacture of intellectual
+              content if different from date.issued.</TD>
+            <TD vAlign=top width="30%">&lt;originInfo&gt;&lt;dateCreated&gt;</TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">date</TD>
+            <TD vAlign=top width="20%">issued</TD>
+            <TD vAlign=top width="35%">Date of publication or distribution.</TD>
+            <TD vAlign=top width="30%">&lt;originInfo&gt;&lt;dateIssued&gt;</TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">date</TD>
+            <TD vAlign=top width="20%">submitted</TD>
+            <TD vAlign=top width="35%">Recommend for theses/dissertations.</TD>
+            <TD vAlign=top width="30%"><em>Not in MODS; we can add or you can
+            use extension element (see below)</em></TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%" height=117>identifier</TD>
+            <TD vAlign=top width="20%" height=117>&nbsp;</TD>
+            <TD vAlign=top width="35%" height=117>Catch-all for unambiguous identifiers
+              not defined by qualified form; use identifier.other for a known
+              identifier common to a local collection instead of unqualified
+              form.</TD>
+            <TD vAlign=top width="30%">&lt;identifier&gt;</TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">identifier</TD>
+            <TD vAlign=top width="20%">citation</TD>
+            <TD vAlign=top width="35%">Bibliographic citation for works that
+              have been published as a part of a larger work, e.g. journal articles,
+              book chapters.</TD>
+            <TD vAlign=top width="30%"><p>&lt;relatedItem type=&#8221;host&#8221;&gt;&lt;part&gt;&lt;text&gt;</p>
+            <p><em>If elements of citation are parsed, can use additional MODS
+                elements under &lt;part&gt;</em></p></TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">identifier</TD>
+            <TD vAlign=top width="20%">govdoc</TD>
+            <TD vAlign=top width="35%">Government document number</TD>
+            <TD vAlign=top width="30%">&lt;identifier type=&quot;govdoc&quot;&gt;</TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">identifier</TD>
+            <TD vAlign=top width="20%">isbn</TD>
+            <TD vAlign=top width="35%">International Standard Book Number</TD>
+            <TD vAlign=top width="30%">&lt;identifier type=&quot;isbn&quot;&gt;</TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">identifier</TD>
+            <TD vAlign=top width="20%">issn</TD>
+            <TD vAlign=top width="35%">International Standard Serial Number</TD>
+            <TD vAlign=top width="30%">&lt;identifier type=&quot;issn&quot;&gt;</TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">identifier</TD>
+            <TD vAlign=top width="20%">sici</TD>
+            <TD vAlign=top width="35%">Serial Item and Contribution Identifier</TD>
+            <TD vAlign=top width="30%">&lt;identifier type=&quot;sici&quot;&gt;</TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">identifier</TD>
+            <TD vAlign=top width="20%">ismn</TD>
+            <TD vAlign=top width="35%">International Standard Music Number</TD>
+            <TD vAlign=top width="30%">&lt;identifier type=&quot;ismn&quot;&gt;</TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">identifier</TD>
+            <TD vAlign=top width="20%">other</TD>
+            <TD vAlign=top width="35%">A known identifier type common to a local
+              collection.</TD>
+            <TD vAlign=top width="30%">&lt;identifier type=&quot;local&quot;&gt;</TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">identifier</TD>
+            <TD vAlign=top width="20%">uri</TD>
+            <TD vAlign=top width="35%">Uniform Resource Identifier</TD>
+            <TD vAlign=top width="30%">&lt;identifier type=&#8221;uri&#8221;&gt; (if
+            persistent)<br>&lt;            location&gt;&lt;url&gt; (if http:)<br>
+            repeat if both<br>
+            <br>
+            <em>Probably can assume it is a location url</em></TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">description</TD>
+            <TD vAlign=top width="20%">&nbsp;</TD>
+            <TD vAlign=top width="35%">Catch-all for any description not defined
+              by qualifiers.</TD>
+            <TD vAlign=top width="30%">&lt;abstract&gt;<br>
+            <br>
+            <em>Could use &lt;note&gt; if more appropriate</em></TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">description</TD>
+            <TD vAlign=top width="20%">abstract</TD>
+            <TD vAlign=top width="35%">Abstract or summary.</TD>
+            <TD vAlign=top width="30%">&lt;abstract&gt;</TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">description</TD>
+            <TD vAlign=top width="20%">provenance</TD>
+            <TD vAlign=top width="35%">The history of custody of the item since
+              its creation, including any changes successive custodians made
+              to it.</TD>
+            <TD vAlign=top width="30%"><p>&lt;note type=&quot;provenance&quot;&gt;<br>
+                <br>
+                <em>Note types are uncontrolled; we can add your note types to list
+            at:</em></p> 
+            http://www.loc.gov/standards/mods/mods-notes.html</TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">description</TD>
+            <TD vAlign=top width="20%">sponsorship</TD>
+            <TD vAlign=top width="35%">Information about sponsoring agencies,
+              individuals, or contractual arrangements for the item.</TD>
+            <TD vAlign=top width="30%">&lt;note type=&quot;sponsorship&quot;&gt;</TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">description</TD>
+            <TD vAlign=top width="20%">statementofresponsibility</TD>
+            <TD vAlign=top width="35%">To preserve statement of responsibility
+              from MARC records.</TD>
+            <TD vAlign=top width="30%">&lt;note type=&quot;statement of responsibility&gt;<br>
+            <br>
+            <em>Note: this is in the MARC/MODS mapping this way!</em></TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">description</TD>
+            <TD vAlign=top width="20%">tableofcontents</TD>
+            <TD vAlign=top width="35%">A table of contents for this item.</TD>
+            <TD vAlign=top width="30%">&lt;tableOfContents&gt;</TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%" height=2>description</TD>
+            <TD vAlign=top width="20%" height=2>uri</TD>
+            <TD vAlign=top width="35%" height=2>Uniform Resource Identifier pointing
+              to description of this item.</TD>
+            <TD vAlign=top width="30%">&lt;note xlink:simpleLink=&quot;content&quot;&gt;<br>
+            <br>
+            <em>Place URI as value of attribute and close tag</em></TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">format</TD>
+            <TD vAlign=top width="20%">&nbsp;</TD>
+            <TD vAlign=top width="35%">Catch-all for any format information not
+              defined by qualifiers.</TD>
+            <TD vAlign=top width="30%">&lt;physicalDescription&gt;&lt;form&gt;</TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">format</TD>
+            <TD vAlign=top width="20%">extent</TD>
+            <TD vAlign=top width="35%">Size or duration.</TD>
+            <TD vAlign=top width="30%">&lt;physicalDescription&gt;&lt;extent&gt;</TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">format</TD>
+            <TD vAlign=top width="20%">medium</TD>
+            <TD vAlign=top width="35%">Physical medium.</TD>
+            <TD vAlign=top width="30%">&lt;physicalDescription&gt;&lt;form&gt;<br>
+            <br>
+            <em>If value is from a controlled list, can use authority=&quot;&quot;</em></TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">format</TD>
+            <TD vAlign=top width="20%">mimetype</TD>
+            <TD vAlign=top width="35%">Registered MIME type identifiers.</TD>
+            <TD vAlign=top width="30%">&lt;physicalDescription&gt;&lt;internetMediaType&gt;</TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">language</TD>
+            <TD vAlign=top width="20%">&nbsp;</TD>
+            <TD vAlign=top width="35%">Catch-all for non-ISO forms of the language
+              of the item, accommodating harvested values.</TD>
+            <TD vAlign=top width="30%">&lt;language&gt;&lt;languageTerm&gt;</TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">language</TD>
+            <TD vAlign=top width="20%">iso</TD>
+            <TD vAlign=top width="35%">Current ISO standard for language of intellectual
+              content, including country codes (e.g. "en_US").</TD>
+            <TD vAlign=top width="30%">&lt;language&gt;&lt;languageTerm authority=&quot;rfc3066&quot;<br>              <em>If using 2-character language codes (there are 2 ISO standards,
+              ISO 639-1 and 639-2; rfc3066 is a profile of ISO 639-1 which allows
+              for additional 3-character codes from 639-2 where a 2-character
+            code does not exist.</em></TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">publisher</TD>
+            <TD vAlign=top width="20%">&nbsp;</TD>
+            <TD vAlign=top width="35%">Entity responsible for publication, distribution,
+              or imprint.</TD>
+            <TD vAlign=top width="30%">&lt;originInfo&gt;&lt;publisher&gt;</TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">relation</TD>
+            <TD vAlign=top width="20%">&nbsp;</TD>
+            <TD vAlign=top width="35%">Catch-all for references to other related
+              items.</TD>
+            <TD vAlign=top width="30%">&lt;relatedItem&gt;<br>
+            <br>
+            <em>Need to include an additional tag. If data with no qualifiers
+            tends to be text, use &lt;relatedItem&gt;&lt;note&gt;. If tends to be title,
+            use &lt;title&gt;. </em></TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">relation</TD>
+            <TD vAlign=top width="20%">isformatof</TD>
+            <TD vAlign=top width="35%">References additional phsical form.</TD>
+            <TD vAlign=top width="30%">&lt;relatedItem type=&#8221;otherFormat&#8221;&gt;</TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">relation </TD>
+            <TD vAlign=top width="20%">ispartof</TD>
+            <TD vAlign=top width="35%">References physically or logically containing
+              item.</TD>
+            <TD vAlign=top width="30%">&lt;relatedItem type=&#8221;host&#8221;&gt;</TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">relation</TD>
+            <TD vAlign=top width="20%">ispartofseries</TD>
+            <TD vAlign=top width="35%">Series name and number within that series,
+              if available.</TD>
+            <TD vAlign=top width="30%">&lt;relatedItem type=&#8221;series&#8221;&gt;</TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">relation </TD>
+            <TD vAlign=top width="20%">haspart</TD>
+            <TD vAlign=top width="35%">References physically or logically contained
+              item.</TD>
+            <TD vAlign=top width="30%">&lt;relatedItem type=&#8221;constituent&#8221;&gt;</TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">relation</TD>
+            <TD vAlign=top width="20%">isversionof</TD>
+            <TD vAlign=top width="35%">References earlier version.</TD>
+            <TD vAlign=top width="30%"><p>&lt;relatedItem type=&#8221;preceding&#8221;&gt;<br>
+                <br>
+                <em>Not clear what the difference is between this and replaces/isReplacedBy.
+                MODS uses preceding and succeeding to show earlier version and
+                otherVersion to show a related work differing in intellectual
+                content (without regard to a point in time).</em>
+            </p>
+              <p>&nbsp;</p></TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">relation</TD>
+            <TD vAlign=top width="20%">hasversion</TD>
+            <TD vAlign=top width="35%">References later version.</TD>
+            <TD vAlign=top width="30%">&lt;relatedItem type=&#8221;succeeding&#8221;&gt;<br>
+              <br>
+              <em>Note that hasVersion is not in DC-Lib</em><br>
+            <br></TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">relation</TD>
+            <TD vAlign=top width="20%">isbasedon</TD>
+            <TD vAlign=top width="35%">References source.</TD>
+            <TD vAlign=top width="30%">&lt;relatedItem type=&#8221;original&#8221;&gt;</TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">relation</TD>
+            <TD vAlign=top width="20%">isreferencedby</TD>
+            <TD vAlign=top width="35%">Pointed to by referenced resource.</TD>
+            <TD vAlign=top width="30%">&lt;relatedItem type=&#8221;isReferencedBy&#8221;&gt;</TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">relation</TD>
+            <TD vAlign=top width="20%">requires</TD>
+            <TD vAlign=top width="35%">Reference resource is required to support
+              function, delivery, or coherence of item.</TD>
+            <TD vAlign=top width="30%">&lt;note type=&#8221;requires&#8221;&gt;</TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">relation </TD>
+            <TD vAlign=top width="20%">replaces</TD>
+            <TD vAlign=top width="35%">References preceeding item.</TD>
+            <TD vAlign=top width="30%">&lt;relatedItem type=&#8221;preceding&#8221;&gt;</TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">relation</TD>
+            <TD vAlign=top width="20%">isreplacedby</TD>
+            <TD vAlign=top width="35%">References succeeding item.</TD>
+            <TD vAlign=top width="30%">&lt;relatedItem type=&#8221;succeeding&#8221;&gt;</TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">relation</TD>
+            <TD vAlign=top width="20%">uri</TD>
+            <TD vAlign=top width="35%">References Uniform Resource Identifier
+              for related item.</TD>
+            <TD vAlign=top width="30%">&lt;relatedItem&gt;&lt;location&gt;&lt;url&gt;</TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">rights</TD>
+            <TD vAlign=top width="20%">&nbsp;</TD>
+            <TD vAlign=top width="35%">Terms governing use and reproduction.</TD>
+            <TD vAlign=top width="30%">&lt;accessCondition type=&quot;useAndReproduction&quot;&gt;</TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">rights</TD>
+            <TD vAlign=top width="20%">uri</TD>
+            <TD vAlign=top width="35%">References terms governing use and reproduction.</TD>
+            <TD vAlign=top width="30%">&lt;accessCondition xlink:simpleLink=&quot;content&quot;&gt;<br>
+            <br>
+            <em>Place URI as value of attribute and close tag</em></TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">source</TD>
+            <TD vAlign=top width="20%">&nbsp;</TD>
+            <TD vAlign=top width="35%">Do not use; only for harvested metadata.</TD>
+            <TD vAlign=top width="30%"><em>Note: this would be &lt;relatedItem type=&quot;original&quot;&gt;</em></TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">source</TD>
+            <TD vAlign=top width="20%">uri</TD>
+            <TD vAlign=top width="35%">Do not use; only for harvested metadata.</TD>
+            <TD vAlign=top width="30%"><em>Note: this would be &lt;relatedItem
+            type=&quot;original&quot; xlink:simpleLink=&quot;content&quot;&gt;</em></TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">subject</TD>
+            <TD vAlign=top width="20%">&nbsp;</TD>
+            <TD vAlign=top width="35%">Uncontrolled index term.</TD>
+            <TD vAlign=top width="30%">&lt;subject&gt;&lt;topic&gt;</TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">subject</TD>
+            <TD vAlign=top width="20%">classification</TD>
+            <TD vAlign=top width="35%">Catch-all for value from local classification
+              system; global classification systems will receive specific qualifier.</TD>
+            <TD vAlign=top width="30%">&lt;classification&gt;</TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">subject</TD>
+            <TD vAlign=top width="20%">ddc</TD>
+            <TD vAlign=top width="35%">Dewey Decimal Classification Number</TD>
+            <TD vAlign=top width="30%">&lt;classification authority=&quot;ddc&quot;&gt;</TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">subject</TD>
+            <TD vAlign=top width="20%">lcc</TD>
+            <TD vAlign=top width="35%">Library of Congress Classification Number</TD>
+            <TD vAlign=top width="30%">&lt;classification authority=&quot;lcc&quot;&gt;</TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">subject</TD>
+            <TD vAlign=top width="20%">lcsh</TD>
+            <TD vAlign=top width="35%">Library of Congress Subject Heading</TD>
+            <TD vAlign=top width="30%">&lt;subject authority=&quot;lcsh&quot;&gt;<br>
+            <br>
+            <em>If the mapping from MARC to MODS can be followed, use subtags
+            as specified. If not parsing parts of LCSH, use &lt;subject&gt;&lt;topic&gt;
+            with LCSH string</em></TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">subject</TD>
+            <TD vAlign=top width="20%">mesh</TD>
+            <TD vAlign=top width="35%">Medical Subject Headings</TD>
+            <TD vAlign=top width="30%">&lt;subject authority-&quot;mesh&quot;&gt;</TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">subject</TD>
+            <TD vAlign=top width="20%">other</TD>
+            <TD vAlign=top width="35%">Local controlled vocabulary.</TD>
+            <TD vAlign=top width="30%">&lt;subject authority-&quot;local&quot;&gt;</TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">title</TD>
+            <TD vAlign=top width="20%">&nbsp;</TD>
+            <TD vAlign=top width="35%">Title statement/title proper.</TD>
+            <TD vAlign=top width="30%">&lt;titleInfo&gt;&lt;title&gt;</TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">title</TD>
+            <TD vAlign=top width="20%">alternative</TD>
+            <TD vAlign=top width="35%">Varying (or substitute) form of title
+              proper appearing in item, e.g. abbreviation or translation.</TD>
+            <TD vAlign=top width="30%">&lt;titleInfo type=&#8221;alternative&#8221;&gt;&lt;title&gt;</TD>
+          </TR>
+          <TR>
+            <TD vAlign=top width="15%">type</TD>
+            <TD vAlign=top width="20%">&nbsp;</TD>
+            <TD vAlign=top width="35%">Nature or genre of content.</TD>
+            <TD vAlign=top width="30%">&lt;typeOfResource&gt; (if using high level
+              types from controlled MODS list.)<br>
+              &lt;genre&gt; if a specific genre type</TD>
+          </TR>
+        </TBODY>
+      </TABLE>
+      <P><em>
+      January 29, 2004      </em> </P>      
+      <HR noshade size="1">
+      <img src="images/mods-icon.gif" width="140" height="48" align="right" alt=""> <STRONG>Questions
+      and comments:</STRONG>
+      <ADDRESS>
+      <!--help desk email start -->
+      <a href="mailto:ndmso@loc.gov">Contact Us</a>
+      <!--help desk email end -->
+(
+<!-- #BeginDate format:Am3 -->01/29/2004<!-- #EndDate -->
+)
+      </ADDRESS>
+      <p>&nbsp;     </p>      <p>&nbsp;</p>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

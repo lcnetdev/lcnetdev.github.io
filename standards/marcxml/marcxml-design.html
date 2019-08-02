@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<title>MARC XML Design Considerations</title>
+<meta name="keywords" content="mods overview metadata object description schema web site library congress xml">
+<meta name="description" content="This document gives an overview of (Metadata Object Description Schema: MODS">
+<META http-equiv="Content-Style-Type" content="text/css">
+<link rel="stylesheet" href="marcxml.css" type="text/css">
+</head>
+<body link="#000099" vlink="#0066CC" bgcolor="#FFFFFF">
+<table width=600 cellpadding=4 cellspacing=0 border=0 align=center>
+<tr>
+    <td><a href="http://www.loc.gov/">The Library of Congress</a> &gt;&gt; <a href="http://www.loc.gov/standards/">Standards</a> &gt;&gt; <a href="http://www.loc.gov/marc/">MARC</a> &gt;&gt;
+      <a href="http://www.loc.gov/standards/marcxml/">MARCXML</a></td>
+  </tr>
+  <tr>
+    <td><img src="images/marcxml-bar.gif" width="600" height="40" alt="Metadata Object Description Schema: Office Web Site"></td>
+  </tr>
+
+
+  <tr>
+    <td>
+      <h1>MARC XML Design Considerations</h1>
+      The Library of Congress' Network Development and MARC Standards Office is
+      developing a <A href="marcxml-architecture.html">framework</A> for working with MARC data in a XML environment.
+      This framework is intended to be flexible and extensible to allow users
+      to work with MARC data in ways specific to their needs. The framework will
+      contain many components such as schemas, stylesheets, and software tools
+      developed and maintained by the Library of Congress.
+      <p><b>1. Simple and Flexible MARC XML Schema</b></p>
+      <p>The core of the MARC XML framework is a simple XML schema which contains
+        MARC data. This base schema output can be used where full MARC records
+        are needed or act as a "bus" to enable MARC data records to go through
+        further transformations such as toDublin Core and/or processes such as
+        validation. The MARC XML schema will not need to be edited to reflect
+        minor changes to MARC21. The schema retains the semantics of MARC.</p>
+      <p>All control fields, including the leader are treated as a data string.
+        Fields are treated as elements with the tag as an attribute and indicators
+        treated as attributes. Subfields are treated as subelements with the subfield
+        code as an attribute.</p>
+      <p><b>2. Lossless Conversion of MARC to XML</b></p>
+      <p>All of the essential data in a MARC record is converted and expressed
+        in XML. MARC structrual elements, such as the length of field and starting
+        position of field data in directory entries are not needed in the XML
+        record. Leader data positions not needed in the XML environment are
+        retained as place holders or carried as blanks.</p>
+      <p><b>3. Roundtripability from XML back to MARC</b></p>
+      <p>As a consequence of the lossless conversion from MARC (2709), information
+        in a MARC XML record enables recreation of a MARC (2709) record without
+        loss of data. A MARC (2709) record can also be created without data loss
+        from MARC XML records.</p>
+      <p><b>4. Data Presentation</b></p>
+      <p>Once MARC data has been converted to XML, data presentation is possible
+        by writing a XML stylesheet to select the MARC elements to be displayed
+        and to apply the appropriate markup.</p>
+      <P>
+      <p><b>5. MARC Editing</b></p>
+      <p>Some single or batch updates such as adding, updating, or deleting a
+        field to a MARC record can be accomplished with simple XML transformations</p>
+      <P>
+      <p><b>6. Data Conversion</b></p>
+      <p>Most data conversions can be written as XML transformations. For more
+        complex transformations of the data, software tools which read MARC XML
+        can be written. </p>
+      <P>
+      <p><b>7. Validation of MARC data</b></p>
+      <p>Validation with this schema is accomplished via a software tool. This
+        software, external to the schema, will provide three possible levels of
+        validation:</p>
+      <ul>
+        <li>Basic XML validation according to the MARC XML Schema</li>
+        <li>Validation of MARC21 tagging (field and subfield)</li>
+        <li>Validation of MARC record content, e.g., coded values, dates, and
+          times.</li>
+      </ul>
+      <p><b>8. Extensiblity</b>
+      <p>By using XML as the structure for MARC records, users of the MARC in
+        the XML framework can more easily write their own tools to consume, manipulate,
+        and convert MARC data.</p>
+      <P>
+      <HR noshade size="1">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr valign="top">
+          <td width="78%">&nbsp;&nbsp;<a href="http://www.loc.gov/">The Library
+              of Congress</a> &gt;&gt; <a href="http://www.loc.gov/standards/">Standards</a> &gt;&gt; <a href="http://www.loc.gov/marc/">MARC</a><a href="http://www.loc.gov/marc/"></a> &gt;&gt; <a href="http://www.loc.gov/standards/marcxml/">MARCXML</a><br>
+&nbsp;&nbsp;
+      <!-- #BeginDate format:Am1 -->December 30, 2004<!-- #EndDate -->
+          </td>
+          <td width="22%" align="right"><a href="http://www.loc.gov/help/contact-general.html">Contact
+              Us</a></td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+</body>
+</html>

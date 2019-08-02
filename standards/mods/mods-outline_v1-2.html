@@ -1,0 +1,958 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                        "http://www.w3.org/TR/html40/loose.dtd">
+
+<html>
+<head>
+<title>Outline of Elements and Attributes in MODS</title>
+<base href="http://www.loc.gov/standards/mods/mods-outline.html">
+<meta name="description" content="Outline of Elements and Attributes in MODS">
+<meta name="keywords" content= "mods, metadata object description schema, library, congress">
+<meta name="author" content="Library of Congress Network Development and MARC Standards Office">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="mods.css" type="text/css">
+</head>
+<body link="#000099" vlink="#0066CC" bgcolor="#FFFFFF">
+<table width=600 cellpadding=4 cellspacing=0 border=0 align=center>
+<tr> 
+<td><img src="images/mods-bar.gif" width="600" height="40" alt="Metadata Object Description Schema: Official Web Site"></td>
+</tr>
+</table> 
+
+      <h1>Outline of Elements and Attributes in MODS</h1>
+
+<p>This document contains a listing of elements and their related attributes in 
+  MODS with values or value sources where applicable. It is an &quot;outline&quot; 
+  of the schema. </p>
+
+<p>All elements (except titleInfo with subelement title) and attributes are optional. 
+  Attributes are not in a mandated sequence and not repeatable (per XML rules). 
+  &quot;Set&quot; below means the subelements may occur in any order; &quot;ordered&quot; 
+  below means the subelements must occur in the order given; &quot;choice&quot; 
+  means only one subelement from the list may be selected (if another is needed, 
+  the primary element is repeated). All elements and subelements are repeatable 
+  except where noted.</p>
+  
+<table width="87%">
+  <tr> 
+    <td colspan="3"><strong>1. titleInfo</strong> [mandatory]</td>
+  </tr>
+  <tr> 
+    <td width="4%" height="16">&nbsp;</td>
+    <td colspan="2" height="16">Subelements [set]:</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="92%">title [mandatory] </td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="92%">partNumber</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="92%">partName</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="92%">nonSort </td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td colspan="2">Attributes:</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%" rowspan="5">&nbsp;</td>
+    <td width="92%">ID</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="92%">type (abbreviated, translated, alternative, uniform)</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="92%">authority (see <a href="http://www.loc.gov/marc/sourcecode/authorityfile">											www.loc.gov/marc/sourcecode/authorityfile</a>)</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="92%">displayLabel</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="92%">xlink [to uniform title authority record] </td>
+  </tr>
+</table>
+
+<br>
+
+<table width="87%">
+  <tr> 
+    <td colspan="4"><strong>2. name</strong></td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td colspan="3">Subelements [ordered]:</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td colspan="2">namePart</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="3%">&nbsp;</td>
+    <td width="89%"><em>Attribute:</em> type (date)</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td colspan="2">displayForm</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td colspan="2">affiliation</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td colspan="2">role</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="3%">&nbsp;</td>
+    <td width="89%"><em>Attribute:</em> authority [no controlled list]</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td colspan="2">description</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td colspan="3">Attributes:</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td colspan="2">ID</td>
+  </tr>
+  <tr> 
+    <td width="4%" height="17">&nbsp;</td>
+    <td width="4%" height="17">&nbsp;</td>
+    <td colspan="2" height="17">type (personal, corporate, conference)</td>
+  </tr>
+  <tr> 
+    <td width="4%" height="18">&nbsp;</td>
+    <td width="4%" height="18">&nbsp;</td>
+    <td colspan="2" height="18">authority (see <a href="http://www.loc.gov/marc/sourcecode/authorityfile">www.loc.gov/marc/sourcecode/authorityfile</a>)<br>
+    </td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td colspan="2">xlink [to name authority record]</td>
+  </tr>
+</table>
+
+<br>
+
+<table width="88%">
+  <tr> 
+    <td colspan="3"><strong>3. typeOfResource</strong> [list in schema]</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td colspan="2">Subelements:</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="92%">[none]</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td colspan="2">Attributes:</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="92%">collection (yes)</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="92%">manuscript (yes)</td>
+  </tr>
+</table>
+
+<br>
+
+<table width="81%">
+  <tr> 
+    <td colspan="3"><strong>4. genre</strong></td>
+  </tr>
+  <tr> 
+    <td width="5%">&nbsp;</td>
+    <td colspan="2">Subelements:</td>
+  </tr>
+  <tr> 
+    <td width="5%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="91%">[none] </td>
+  </tr>
+  <tr> 
+    <td width="5%">&nbsp;</td>
+    <td colspan="2">Attributes:</td>
+  </tr>
+  <tr> 
+    <td width="5%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="91%">authority (see <a href="http://www.loc.gov/marc/sourcecode/genre">www.loc.gov/marc/sourcecode/genre</a>) 
+      [MARC list commented in schema] </td>
+  </tr>
+</table>
+
+<br>
+
+<table width="75%">
+  <tr> 
+    <td colspan="4"><strong>5. publicationInfo</strong></td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td colspan="3">Subelement [ordered]</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td colspan="2">placeCode</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td width="2%">&nbsp;</td>
+    <td width="89%"><em>Attribute:</em> authority (marc, iso3166)</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td colspan="2">place</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td colspan="2">publisher</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td colspan="2">dateIssued</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td width="2%">&nbsp;</td>
+    <td width="89%"><em>Attributes:</em> encoding (w3cdtf, iso8601, marc); point start, end)</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td colspan="2">dateCreated</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td width="2%">&nbsp;</td>
+    <td width="89%"><em>Attributes:</em> encoding (w3cdtf, iso8601, marc); point (start, end)</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td colspan="2">dateCaptured</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td width="2%">&nbsp;</td>
+    <td width="89%"><em>Attributes:</em> encoding (w3cdtf, iso8601, marc); point (start, end)</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td colspan="2">edition</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td colspan="2">issuance (continuing, monographic)</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td colspan="2">frequency</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td colspan="3">Attributes</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td colspan="2">[none]</td>
+  </tr>
+</table>
+
+<br>
+
+<table width="91%">
+  <tr> 
+    <td colspan="3"><strong>6. language</strong></td>
+  </tr>
+  <tr> 
+    <td width="4%" height="22">&nbsp;</td>
+    <td colspan="2" height="22">Subelements:</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="92%">[none]</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td colspan="2">Attributes:</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="92%">authority (rfc3066, iso639-2b)</td>
+  </tr>
+</table>
+
+<br>
+
+<table width="91%">
+  <tr> 
+    <td colspan="3"><strong>7. physicalDescription</strong></td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td colspan="2">Subelements [set]:</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="92%">form (braille, electronic, microfiche, microfilm)</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="92%">internetMediaType</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="92%">extent</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="92%">digitalOrigin (born digital, reformatted digital)</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="92%">note</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td colspan="2">Attributes:</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="92%">[none]</td>
+  </tr>
+</table>
+
+<br>
+
+<table width="75%">
+  <tr> 
+    <td colspan="3"><strong>8. abstract</strong></td>
+  </tr>
+  <tr> 
+    <td width="5%">&nbsp;</td>
+    <td colspan="2">Subelements:</td>
+  </tr>
+  <tr> 
+    <td width="5%">&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td width="90%">[none]</td>
+  </tr>
+  <tr> 
+    <td width="5%">&nbsp;</td>
+    <td colspan="2">Attributes</td>
+  </tr>
+  <tr> 
+    <td width="5%">&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td width="90%">xlink</td>
+  </tr>
+  <tr> 
+    <td width="5%">&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td width="90%">xml:lang</td>
+  </tr>
+  <tr> 
+    <td width="5%">&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td width="90%">type</td>
+  </tr>
+</table>
+
+<br>
+
+<table width="91%">
+  <tr> 
+    <td colspan="3"><strong>9. tableOfContents</strong></td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td colspan="2">Subelements</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="92%">[none]</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td colspan="2">Attributes:</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="92%">xlink</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="92%">xml:lang</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="92%">type</td>
+  </tr>
+</table>
+
+<br>
+
+<table width="91%">
+  <tr> 
+    <td colspan="4"><strong>10. targetAudience</strong></td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td colspan="3">Subelements [choice]:</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td colspan="2">listValue authority (see www.loc.gov/marc/sourcecode/target) [MARC list commented in schema]</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="35%">otherValue [no controlled list]</td>
+    <td width="57%">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td colspan="3">Attributes:</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="35%">[none]</td>
+    <td width="57%">&nbsp;</td>
+  </tr>
+</table>
+
+<br>
+
+<table width="75%">
+  <tr> 
+    <td colspan="3"><strong>11. note</strong></td>
+  </tr>
+  <tr> 
+    <td width="5%">&nbsp;</td>
+    <td colspan="2">Subelements:</td>
+  </tr>
+  <tr> 
+    <td width="5%">&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td width="90%">[none]</td>
+  </tr>
+  <tr> 
+    <td width="5%">&nbsp;</td>
+    <td colspan="2">Attributes:</td>
+  </tr>
+  <tr> 
+    <td width="5%">&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td width="90%">xlink</td>
+  </tr>
+  <tr> 
+    <td width="5%">&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td width="90%">xml:lang</td>
+  </tr>
+  <tr> 
+    <td width="5%">&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td width="90%">type</td>
+  </tr>
+</table>
+
+<br>
+
+<table width="90%">
+  <tr> 
+    <td colspan="3"><strong>12. cartographics</strong></td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td colspan="2">Subelements [ordered]:</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="92%">coordinates</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="92%">scale [not repeatable]</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="92%">projection [not repeatable]</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td colspan="2">Attributes:</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="92%">[none]</td>
+  </tr>
+</table>
+
+<br>
+
+<table width="85%">
+  <tr> 
+    <td colspan="4"><strong>13. subject</strong></td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td colspan="3">Subelements [set]:</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td colspan="2">topic</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td colspan="2">geographic</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td colspan="2">temporal</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="3%">&nbsp;</td>
+    <td width="89%"><em>Attributes:</em> encoding (w3cdtf,iso8601, marc); point (start,end)</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td colspan="2">titleInfo [see titleInfo]</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td colspan="2">name [see name]</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td colspan="2">hierarchicalGeographic [set]</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="3%">&nbsp;</td>
+    <td width="89%">continent</td>
+  </tr>
+  <tr> 
+    <td width="4%" height="20">&nbsp;</td>
+    <td width="4%" height="20">&nbsp;</td>
+    <td width="3%" height="20">&nbsp;</td>
+    <td width="89%" height="20">country</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="3%">&nbsp;</td>
+    <td width="89%">province</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="3%">&nbsp;</td>
+    <td width="89%">region</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="3%">&nbsp;</td>
+    <td width="89%">state</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="3%">&nbsp;</td>
+    <td width="89%">territory</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="3%">&nbsp;</td>
+    <td width="89%">county</td>
+  </tr>
+  <tr> 
+    <td width="4%" height="20">&nbsp;</td>
+    <td width="4%" height="20">&nbsp;</td>
+    <td width="3%" height="20">&nbsp;</td>
+    <td width="89%" height="20">city</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="3%">&nbsp;</td>
+    <td width="89%">island</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="3%">&nbsp;</td>
+    <td width="89%">area</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td colspan="3">Attributes:</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td colspan="2">ID</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td colspan="2">authority (see <a href="http://www.loc.gov/marc/sourcecode/subject">
+	www.loc.gov/marc/sourcecode/subject</a>)</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td colspan="2">xlink</td>
+  </tr>
+</table>
+
+<br>
+
+<table width="89%">
+  <tr> 
+    <td colspan="3"><strong>14. classification</strong></td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td colspan="2">Subelements:</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="92%">[none] </td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td colspan="2">Attributes:</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="92%">authority (see <a href="http://www.loc.gov/marc/sourcecode/classification">www.loc.gov/marc/sourcecode/classification</a>)</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="92%">edition [no controlled list]</td>
+  </tr>
+</table>
+
+<br>
+
+<table width="92%">
+  <tr> 
+    <td colspan="3"><strong>15. relatedItem</strong></td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td colspan="2">Subelements [ordered]:</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="92%">titleInfo [see titleInfo]</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="92%">name [see name]</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="92%">physicalDescription [see physicalDescription]</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="92%">identifier [see identifier]</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="92%">note [see note]</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td colspan="2">Attributes:</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="92%">ID</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="92%">type (preceding, succeeding, reproduction, original, host, constituent, series, related)</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="92%">xlink [to record for related item]</td>
+  </tr>
+</table>
+
+<br>
+
+<table width="93%">
+  <tr> 
+    <td colspan="3"><strong>16. identifier</strong></td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td colspan="2">Subelements:</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="92%">[none]</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td colspan="2">Attributes:</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="92%">type [commented list in schema: doi, isbn, isrc, ismn, issn, 
+      issue number, istc, lccn, local, matrix number, music publisher, music plate, 
+      sici, uri, upc, videorecording identifier]</td>
+  </tr>
+</table>
+
+<br>
+
+<table width="91%">
+  <tr> 
+    <td colspan="3"><strong>17. location</strong></td>
+  </tr>
+  <tr> 
+    <td width="7%">&nbsp;</td>
+    <td colspan="2">Subelements:</td>
+  </tr>
+  <tr> 
+    <td width="7%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="89%">[none]</td>
+  </tr>
+  <tr> 
+    <td width="7%">&nbsp;</td>
+    <td colspan="2">Attributes:</td>
+  </tr>
+  <tr> 
+    <td width="7%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="89%">authority (see <a href="http://www.loc.gov/marc/sourcecode/organizations">www.loc.gov/marc/sourcecode/organizations</a>)</td>
+  </tr>
+</table>
+
+<br>
+
+<table width="91%">
+  <tr> 
+    <td colspan="3"><strong>18. accessConditions</strong></td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td colspan="2">Subelements:</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="92%">[none] </td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td colspan="2">Attributes:</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="92%">xml:lang</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="92%">xlink</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="92%">type</td>
+  </tr>
+</table>
+
+<br>
+
+<table width="90%">
+  <tr> 
+    <td colspan="3"><strong>19. extension</strong></td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td colspan="2">Subelements:</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="92%">[none]</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td colspan="2">Attributes:</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="92%">[none]</td>
+  </tr>
+</table>
+
+<br>
+
+<table width="92%">
+  <tr> 
+    <td colspan="4"><strong>20. recordInfo</strong> [not repeatable]</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td colspan="3">Subelements [ordered]:</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td colspan="2">recordContentSource </td>
+  </tr>
+  <tr> 
+    <td width="4%" height="27">&nbsp;</td>
+    <td width="4%" height="27">&nbsp;</td>
+    <td colspan="2" height="27">recordCreationDate</td>
+  </tr>
+  <tr> 
+    <td colspan="3">&nbsp;</td>
+    <td width="88%"><em>Attributes:</em> encoding (w3cdtf, iso8601, marc); point 
+      (start, end)</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td colspan="2">recordChangeDate </td>
+  </tr>
+  <tr> 
+    <td colspan="3">&nbsp;</td>
+    <td width="88%"><em>Attributes:</em> encoding (w3cdtf, iso8601, marc); point 
+      (start, end) </td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td colspan="2">recordIdentifier</td>
+  </tr>
+  <tr> 
+    <td colspan="3">&nbsp;</td>
+    <td width="88%"><em>Attribute:</em> source [no controlled list]</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td colspan="3">Attributes:</td>
+  </tr>
+  <tr> 
+    <td width="4%">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="4%">[none]</td>
+    <td width="88%">&nbsp;</td>
+  </tr>
+</table>
+
+<hr noshade size="1">
+      <img src="images/mods-icon.gif" width="140" height="48" align="right" alt="Library of Congress"><strong>Questions 
+      and comments:</strong> 
+      
+<!-- LC/MODS footer -->
+      
+
+<address><a href="mailto:ndmso@loc.gov">Contact Us</a><br> 
+<!-- #BeginDate format:Am1 -->June 14, 2002<!-- #EndDate --></address>
+</body>
+</html>

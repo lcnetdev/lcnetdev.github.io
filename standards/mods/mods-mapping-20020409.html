@@ -1,0 +1,1737 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                        "http://www.w3.org/TR/html40/loose.dtd">
+<html>
+
+<head>
+<title>MARC Mapping to MODS (Library of Congress) </title>
+<base href="http://www.loc.gov/standards/mods/mods-mapping.html">
+<meta name="description" content="This mapping gives equivalencies between 
+MARC and MODS, but is not intended to be a crosswalk that allows for 
+bi-directional conversions without some loss of data. Where multiple MARC 
+elements are indicated for a single MODS element, if converted to MODS and 
+then converted back to MARC, some specificity would be lost, since some elements can not be converted back to the same element from which they originated.  This document is intended for use in converting MARC to MODS. ">
+<meta name="keywords" content="MARC MODS Mapping">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="mods.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<table width=600 cellpadding=4 cellspacing=0 border=0 align=center>
+  <tr> 
+    <td><img src="images/mods-bar.gif" width="600" height="40" alt="Metadata Object Description Schema: Office Web Site"></td>
+  </tr>
+  
+
+  <tr> 
+    <td> 
+      <P> 
+      <h1>MARC Mapping to MODS</h1>
+      <h2 align="center">Draft, April 9, 2002 </h2>
+      <p>This mapping gives equivalencies between MARC and MODS, but is not intended 
+        to be a crosswalk that allows for bi-directional conversions without some 
+        loss of data. Where multiple MARC elements are indicated for a single 
+        MODS element, if converted to MODS and then converted back to MARC, some 
+        specificity would be lost, since some elements can not be converted back 
+        to the same element from which they originated. This document is intended 
+        for use in converting MARC to MODS. 
+      <p>Where multiple subfields are specified or implied, data will be concatenated 
+        with a space substituted for the subfield delimiter and subfield code. 
+        Where multiple fields are indicated, each will be a separate instance 
+        of the element (with subfields concatenated).</p>
+      <p> 
+      <hr>
+      <h3>Contents of Elements</h3>
+      <table width="100%" border="0">
+        <tr> 
+          <td width="44%"><a href="#title">Title </a></td>
+          <td width="56%"><a href="#note">Note</a></td>
+        </tr>
+        <tr> 
+          <td width="44%"><a href="#name">Name</a></td>
+          <td width="56%"><a href="#cartographics">Cartographics</a></td>
+        </tr>
+        <tr> 
+          <td width="44%"><a href="#typeofresource">TypeOfResource</a></td>
+          <td width="56%"><a href="#subject">Subject</a></td>
+        </tr>
+        <tr> 
+          <td width="44%"><a href="#genre">Genre</a> </td>
+          <td width="56%"><a href="#relateditem">Related Item</a></td>
+        </tr>
+        <tr> 
+          <td width="44%"><a href="#publication">Publication</a> </td>
+          <td width="56%"><a href="#identifier">Identifier</a></td>
+        </tr>
+        <tr> 
+          <td width="44%"><a href="#date">Date</a> </td>
+          <td width="56%"><a href="#location">Location</a></td>
+        </tr>
+        <tr> 
+          <td width="44%"><a href="#language">Language</a></td>
+          <td width="56%"><a href="#accesscondition">AccessCondition</a></td>
+        </tr>
+        <tr> 
+          <td width="44%"><a href="#formandphysicaldescription">FormAndPhysicalDescription</a></td>
+          <td width="56%"><a href="#extension">Extension</a></td>
+        </tr>
+        <tr> 
+          <td width="44%"><a href="#abstract">Abstract</a></td>
+          <td width="56%"><a href="#recordinformation">RecordInformation</a></td>
+        </tr>
+        <tr> 
+          <td width="44%"><a href="#targetaudience">TargetAudience</a></td>
+          <td width="56%">&nbsp;</td>
+        </tr>
+      </table>
+      <p> 
+      <hr>
+      <p> 
+      <table width="100%" border="0">
+        <tr valign="top"> 
+          <td colspan="2"><a name="title"><b>Title</b></a></td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">245 $a$b$f$g$h$k$n$p</td>
+          <td colspan="2">&lt;title&gt; <i>with no type attribute and no subelements</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td width="5%">&nbsp;</td>
+          <td width="40%"><i>or</i></td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">245 $a$b$f$g$h$k</td>
+          <td colspan="2">&lt;title&gt; <i>with no type attribute and</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td width="5%">&nbsp;</td>
+          <td width="40%">245$n</td>
+          <td width="7%">&nbsp;</td>
+          <td width="48%">&lt;numberOfPart&gt;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="5%">&nbsp;</td>
+          <td width="40%">245$p</td>
+          <td width="7%">&nbsp;</td>
+          <td width="48%">&lt;nameOfPart&gt;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">&nbsp;</td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">210 $a$b</td>
+          <td colspan="2">&lt;title&gt; <i>with</i> type=&quot;abbreviated&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">&nbsp;</td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">242 $a$b$h$n$p</td>
+          <td colspan="2">&lt;title&gt; <i>with</i> type=&quot;translated&quot; 
+            <i>and no subelements</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td width="5%">&nbsp;</td>
+          <td width="40%"><i>or</i></td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">242 $a$b$h$n$p</td>
+          <td colspan="2">&lt;title&gt; <i>with</i> type=&quot;translated&quot; 
+            <i>and</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td width="5%">&nbsp;</td>
+          <td width="40%">242$n</td>
+          <td width="7%">&nbsp;</td>
+          <td width="48%">&lt;numberOfPart&gt;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="5%">&nbsp;</td>
+          <td width="40%">242$p</td>
+          <td width="7%">&nbsp;</td>
+          <td width="48%">&lt;nameOfPart&gt;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">&nbsp;</td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">246 $a$b$f$h$n$p</td>
+          <td colspan="2">&lt;title&gt; <i>with</i> type=&quot;alternative&quot; 
+            <i>and no subelements</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td width="5%">&nbsp;</td>
+          <td width="40%"><i>or</i></td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">246 $a$b$f$h</td>
+          <td colspan="2">&lt;title&gt; <i>with</i> type=&quot;alternative&quot; 
+            <i>and</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td width="5%">&nbsp;</td>
+          <td width="40%">246$n</td>
+          <td width="7%">&nbsp;</td>
+          <td width="48%">&lt;numberOfPart&gt;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="5%">&nbsp;</td>
+          <td width="40%">246$p</td>
+          <td width="7%">&nbsp;</td>
+          <td width="48%">&lt;nameOfPart&gt;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">&nbsp;</td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">130, 240, 730 $a$b$d$f$h$k$l$m$n$o$p$r</td>
+          <td colspan="2">&lt;title&gt; <i>with</i> type=&quot;uniform&quot; <i>and 
+            no subelements</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td width="5%">&nbsp;</td>
+          <td width="40%"><i>or</i></td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">130, 240, 730 $a$b$d$f$h$k$l$m$o$r</td>
+          <td colspan="2">&lt;title&gt; <i>with</i> type=&quot;uniform&quot; <i>and</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td width="5%">&nbsp;</td>
+          <td width="40%">130, 240, 730 $n</td>
+          <td width="7%">&nbsp;</td>
+          <td width="48%">&lt;numberOfPart&gt;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="5%">&nbsp;</td>
+          <td width="40%">130, 240, 730 $p</td>
+          <td width="7%">&nbsp;</td>
+          <td width="48%">&lt;nameOfPart&gt;</td>
+        </tr>
+      </table>
+      <p> 
+      <table width="100%" border="0">
+        <tr valign="top"> 
+          <td colspan="2"><a name="name"><b>Name</b></a></td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">100, 700 $a$b$c$d$q </td>
+          <td colspan="2">&lt;name&gt; <i>with</i> type=&quot;personal&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">110, 710 $a$b$c$d$n</td>
+          <td colspan="2">&lt;name&gt; <i>with</i> type=&quot;corporate&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="8%">&nbsp;</td>
+          <td width="37%"><i>or</i></td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">110, 710 $a$b$c$d$n </td>
+          <td colspan="2">&lt;name&gt; <i>with</i> type=&quot;corporate&quot; 
+            <i>and</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td width="8%">&nbsp;</td>
+          <td width="37%">110, 710 $a </td>
+          <td width="3%">&nbsp;</td>
+          <td width="52%">&lt;component&gt;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="8%">&nbsp;</td>
+          <td width="37%">110, 710 $b</td>
+          <td width="3%">&nbsp;</td>
+          <td width="52%">&lt;component&gt;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="8%">&nbsp;</td>
+          <td width="37%">110, 710$c$d$n</td>
+          <td width="3%">&nbsp;</td>
+          <td width="52%">&lt;component&gt;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">&nbsp;</td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">111, 711 $a$c$d$e$q </td>
+          <td colspan="2">&lt;name&gt; with type=&quot;conference&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">720$a</td>
+          <td colspan="2">&lt;name&gt; with type=&quot;uncontrolled&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="4">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2"><i>Any name field</i> $e<i> or</i> $4</td>
+          <td colspan="2"><i>add attribute</i> role=&quot;content of subfield&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="4"><i>[If both subfields exist, use content of $e]</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">100, 110, 111</td>
+          <td colspan="2"><i>add attribute</i> role=&quot;creator&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="8%">&nbsp;</td>
+          <td colspan="3"><i>[if desired, to maintain indication of &quot;main 
+            entry&quot;] </i></td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">245 $c</td>
+          <td colspan="2"><i>add</i> &lt;displayForm&gt; <i>under</i> &lt;name&gt;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="4"><i>[note that some extraneous data may appear with the 
+            display form of name found in 245 $c]</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="4">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="3">100, 700 $u</td>
+          <td width="52%"><i>add </i>&lt;affiliation&gt;<i> under</i> &lt;name&gt;</td>
+        </tr>
+      </table>
+      <p> 
+      <table width="100%" border="0">
+        <tr valign="top"> 
+          <td colspan="2"><a name="typeofresource"><b>TypeOfResource</b></a></td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">Leader/06</td>
+          <td colspan="2">&lt;TypeOfResource&gt; <i>with</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td width="6%">&nbsp;</td>
+          <td width="39%"><i>if</i> Leader/07 (codes c)</td>
+          <td width="6%">&nbsp;</td>
+          <td width="49%"><i>attribute</i> collection=&quot;yes&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="6%">&nbsp;</td>
+          <td width="39%"><i>if</i> Leader/06 (codes d,f,p,t)</td>
+          <td width="6%">&nbsp;</td>
+          <td width="49%"><i>attribute</i> manuscript=&quot;yes&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="6%">&nbsp;</td>
+          <td width="39%">&nbsp;</td>
+          <td width="6%">&nbsp;</td>
+          <td width="49%"><i>and value:</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td width="6%">&nbsp;</td>
+          <td width="39%">a, t </td>
+          <td width="6%">&nbsp;</td>
+          <td width="49%">text</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="6%">&nbsp;</td>
+          <td width="39%">e, f</td>
+          <td width="6%">&nbsp;</td>
+          <td width="49%">cartographic</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="6%">&nbsp;</td>
+          <td width="39%">c, d</td>
+          <td width="6%">&nbsp;</td>
+          <td width="49%">notated music</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="6%">&nbsp;</td>
+          <td width="39%">i, j</td>
+          <td width="6%">&nbsp;</td>
+          <td width="49%">sound recording</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="6%">&nbsp;</td>
+          <td width="39%">k</td>
+          <td width="6%">&nbsp;</td>
+          <td width="49%">still image</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="4"><i>not exact mapping; some still images included in 
+            code g</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td width="6%">&nbsp;</td>
+          <td width="39%">g</td>
+          <td width="6%">&nbsp;</td>
+          <td width="49%">moving image</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="6%">&nbsp;</td>
+          <td width="39%">r</td>
+          <td width="6%">&nbsp;</td>
+          <td width="49%">three dimensional object</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="6%">&nbsp;</td>
+          <td width="39%">m</td>
+          <td width="6%">&nbsp;</td>
+          <td width="49%">software, multimedia</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="6%">&nbsp;</td>
+          <td width="39%">p</td>
+          <td width="6%">&nbsp;</td>
+          <td width="49%">mixed material</td>
+        </tr>
+      </table>
+      <p> 
+      <table width="100%" border="0">
+        <tr valign="top"> 
+          <td colspan="2"><a name="genre"><b>Genre</b></a></td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2"><i>various positions</i></td>
+          <td colspan="2">&lt;genre&gt; <i>[repeat tag for each new value]</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">&nbsp;</td>
+          <td colspan="2"><i>and value:</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/24+BK,SE (code a) </td>
+          <td colspan="2">abstract or summary </td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/33VM (code a)</td>
+          <td colspan="2">art original</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/33VM (code c)</td>
+          <td colspan="2">art reproduction</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/25MP (code e)</td>
+          <td colspan="2">atlas</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="5%">&nbsp;</td>
+          <td width="40%"><i>or</i> 007/01MP (code d)</td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/24+BK,SE (code b)</td>
+          <td colspan="2">bibliography</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/34 BK (codes a,b,c,d)</td>
+          <td colspan="2">biography</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/24+BK,SE (code c)</td>
+          <td colspan="2">catalog</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/33VM (code n)</td>
+          <td colspan="2">chart</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/29BK,SE (code 1)</td>
+          <td colspan="2">conference publication</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/21SE (code d)</td>
+          <td colspan="2">database</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="5%">&nbsp;</td>
+          <td width="40%"><i>or </i>008/26CF (code e)</td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/24+BK,SE (code d)</td>
+          <td colspan="2">dictionary</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/33VM (code d)</td>
+          <td colspan="2">diorama</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/24+BK,SE (code r)</td>
+          <td colspan="2">directory</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/24+BK,SE (code k)</td>
+          <td colspan="2">discography</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/24+BK,SE (code e)</td>
+          <td colspan="2">encyclopedia</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/30BK (code 1)</td>
+          <td colspan="2">festschrift</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/24+BK,SE (code q)</td>
+          <td colspan="2">filmography</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/33VM (code f)</td>
+          <td colspan="2">filmstrip</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/33VM (code o)</td>
+          <td colspan="2">flash card</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/26CF (code f)</td>
+          <td colspan="2">font</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/26CF (code g)</td>
+          <td colspan="2">game</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/33VM (code k)</td>
+          <td colspan="2">graphic</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/25 (code d)</td>
+          <td colspan="2">globe</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/24+BK,SE (code f)</td>
+          <td colspan="2">handbook</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/24+BK,SE (code i)</td>
+          <td colspan="2">index</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/33VM (code b)</td>
+          <td colspan="2">kit</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/24+BK,SE (code w)</td>
+          <td colspan="2">law report or digest</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/24+BK,SE (code g)</td>
+          <td colspan="2">legal article</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/24+BK,SE (code v)</td>
+          <td colspan="2">legal case and case notes</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/24+BK,SE (code l)</td>
+          <td colspan="2">legislation</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/21SE (code l)</td>
+          <td colspan="2">loose-leaf</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/25MP (code a,b,c)</td>
+          <td colspan="2">map</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="5%">&nbsp;</td>
+          <td width="40%"><i>or</i> 007/01MP (code j)</td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/33VM (code p)</td>
+          <td colspan="2">microscope slide</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/33VM (code q)</td>
+          <td colspan="2">model</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="5%">&nbsp;</td>
+          <td width="40%"><i>or</i> 007/01MP (code q)</td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/33VM (code m)</td>
+          <td colspan="2">motion picture</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/21SE (code n)</td>
+          <td colspan="2">newspaper</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/26CF (code a)</td>
+          <td colspan="2">numeric data</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/24+BK (code j)</td>
+          <td colspan="2">patent</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/21SE (code p)</td>
+          <td colspan="2">periodical</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/33VM (code i)</td>
+          <td colspan="2">picture</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/24+BK,SE (code p)</td>
+          <td colspan="2">programmed text</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/33VM (code r)</td>
+          <td colspan="2">realia</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">007/01MP (code r)</td>
+          <td colspan="2">remote sensing image</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/24+BK,SE (code o)</td>
+          <td colspan="2">review</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/21SE (code m)</td>
+          <td colspan="2">series</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/33VM (code s)</td>
+          <td colspan="2">slide</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/24+BK,SE (code s)</td>
+          <td colspan="2">statistics</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/24+BK,SE (code n)</td>
+          <td colspan="2">survey of literature</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/33VM (code l)</td>
+          <td colspan="2">technical drawing</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/24+BK,SE (code t)</td>
+          <td colspan="2">technical report</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/24+BK,SE (code m)</td>
+          <td colspan="2">theses</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/33VM (code w)</td>
+          <td colspan="2">toy</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/33VM (code t)</td>
+          <td colspan="2">transparency</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2" height="20">008/24+BK,SE (code z)</td>
+          <td height="20" colspan="2">treaty</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/33VM (code v)</td>
+          <td colspan="2">videorecording</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/21SE (code w)</td>
+          <td colspan="2">web site</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">&nbsp;</td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">655 $a$b$v$x$y$z</td>
+          <td colspan="2">&lt;genre&gt; <i>with</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td width="5%">&nbsp;</td>
+          <td width="40%">655 $2</td>
+          <td width="6%">&nbsp;</td>
+          <td width="49%"><i>attribute</i> authority=&quot;content of $2&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="4"><i>[Generate &quot;-&quot; between each subfield from 
+            MARC on output in MODS.]</i></td>
+        </tr>
+      </table>
+      <p> 
+      <table width="100%" border="0">
+        <tr valign="top"> 
+          <td colspan="2"><a name="publication"><b>Publication</b></a></td>
+          <td colspan="3">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/15-17</td>
+          <td colspan="3">&lt;publication&gt;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">044$c</td>
+          <td width="4%">&nbsp;</td>
+          <td colspan="2">&lt;PlaceOfPublicationCode&gt; with authority=&quot;MARC&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">&nbsp;</td>
+          <td width="4%">&nbsp;</td>
+          <td colspan="2">&lt;PlaceOfPublicationCode&gt; with authority= &quot;ISO3166&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">&nbsp;</td>
+          <td colspan="3">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">260$a</td>
+          <td width="4%">&nbsp;</td>
+          <td colspan="2">&lt;PlaceOfPublication&gt;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">260$b</td>
+          <td width="4%">&nbsp;</td>
+          <td colspan="2">&lt;Publisher&gt;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">250$a</td>
+          <td width="4%">&nbsp;</td>
+          <td colspan="2">&lt;Edition&gt;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">Leader/07</td>
+          <td width="4%">&nbsp;</td>
+          <td colspan="2">&lt;Issuance&gt;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td width="41%"><i>if</i> Leader/07 (code b,i,s)</td>
+          <td width="4%">&nbsp;</td>
+          <td width="5%">&nbsp;</td>
+          <td width="46%"><i>then value:</i> continuing</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td width="41%"><i>if</i> Leader/07 (code a,c,d,m)</td>
+          <td width="4%">&nbsp;</td>
+          <td width="5%">&nbsp;</td>
+          <td width="46%"><i>then value:</i> monographic</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">310$a$b</td>
+          <td width="4%">&nbsp;</td>
+          <td colspan="2">&lt;Frequency&gt;</td>
+        </tr>
+      </table>
+      <p> 
+      <table width="100%" border="0">
+        <tr valign="top"> 
+          <td width="45%"><a name="date"><b>Date</b></a></td>
+          <td width="55%">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td height="20" width="45%">260$c</td>
+          <td width="55%" height="20">&lt;date&gt; <i>with</i> type=&quot;issued&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="45%">260$g</td>
+          <td width="55%">&lt;date&gt; <i>with</i> type=&quot;created&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2"><i>[Created date not directly specified in MARC; could 
+            be in various fields.]</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td height="18" width="45%">033 ind1=blank, 0, ind2=0, 1 $a</td>
+          <td width="55%" height="18">&lt;date&gt; <i>with</i> type=&quot;captured&quot; 
+            <i>and</i> encoding=&quot;iso8601&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="45%">033 ind1=2 ind2=0,1 first $a</td>
+          <td width="55%">&lt;date&gt; <i>with</i> type=&quot;captured&quot; <i>and</i> 
+            point=&quot;start&quot; <i>and</i> encoding=&quot;iso8601&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="45%">033 ind1=2 ind2=0, 1 second $a</td>
+          <td width="55%">&lt;date&gt; <i>with</i> type=&quot;captured&quot; <i>and</i> 
+            point=&quot;end&quot; <i>and</i> encoding=&quot;iso8601&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="45%">008/07-10 if 008/06=e,p,r,t,s</td>
+          <td width="55%">&lt;date&gt; <i>with</i> type=&quot;published&quot; 
+            <i>with</i> encoding=&quot;marc&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="45%">008/07-10 if 008/06=c,d,i,k,m,q,u</td>
+          <td width="55%">&lt;date&gt; <i>with</i> type=&quot;published&quot; 
+            <i>and </i>point=&quot;start&quot; <i>with</i> encoding=&quot;marc&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="45%">008/11-14 if 008/06=c,d,i,k,m,q,u</td>
+          <td width="55%">&lt;date&gt; <i>with</i> type=&quot;published&quot; 
+            <i>and</i> point=&quot;end&quot; <i>with</i> encoding=&quot;marc&quot;</td>
+        </tr>
+      </table>
+      <p> 
+      <table width="100%" border="0">
+        <tr valign="top"> 
+          <td width="45%"><a name="language"><b>Language</b></a></td>
+          <td width="55%">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="45%">008/35-37</td>
+          <td width="55%">&lt;language&gt; <i>with</i> authority=&quot;iso639-2b&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="45%">041 $a and no $2</td>
+          <td width="55%">&lt;language&gt; <i>with</i> authority=&quot;iso639-2b&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="45%">041 $a and $2=rfc3066</td>
+          <td width="55%">&lt;language&gt; <i>with</i> authority=&quot;rfc3066&quot;</td>
+        </tr>
+      </table>
+      <p> 
+      <table width="100%" border="0">
+        <tr valign="top"> 
+          <td width="45%"><a name="formandphysicaldescription"><b>FormAndPhysicalDescription</b></a></td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="45%">&nbsp;</td>
+          <td colspan="2">&lt;formAndPhysicalDescription&gt; <i>with</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td width="45%">007/11CF (code a,b)</td>
+          <td width="6%">&nbsp;</td>
+          <td width="49%"><i>attribute</i> digitalOrigin=&quot;reformatted digital&quot; 
+            <i>and </i></td>
+        </tr>
+        <tr valign="top"> 
+          <td width="45%">008/23 or 008/29 (code f)</td>
+          <td width="6%">&nbsp;</td>
+          <td width="49%">&lt;form&gt;braille</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="45%">008/23 or 008/29 (code s)</td>
+          <td width="6%">&nbsp;</td>
+          <td width="49%">&lt;form&gt;electronic</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="45%">008/23 or 008/29 (code b)</td>
+          <td width="6%">&nbsp;</td>
+          <td width="49%">&lt;form&gt;microfiche</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="45%">008/23 or 008/29 (code a)</td>
+          <td width="6%">&nbsp;</td>
+          <td width="49%">&lt;form&gt;microfilm</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="45%">256 $a, 300 $a,$b,$c</td>
+          <td width="6%">&nbsp;</td>
+          <td width="49%">&lt;extent&gt;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="45%">856 $q</td>
+          <td width="6%">&nbsp;</td>
+          <td width="49%">&lt;internetMediaType&gt;</td>
+        </tr>
+      </table>
+      <p> 
+      <table width="100%" border="0">
+        <tr valign="top"> 
+          <td colspan="2"><a name="abstract"><b>Abstract</b></a></td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">520$a</td>
+          <td colspan="2">&lt;abstract&gt; <i>with</i> </td>
+        </tr>
+        <tr valign="top"> 
+          <td width="6%">&nbsp;</td>
+          <td width="39%"><i>if</i> $u</td>
+          <td width="6%">&nbsp;</td>
+          <td width="49%"><i>attribute</i> uri=&quot;content of $u&quot;</td>
+        </tr>
+      </table>
+      <p> 
+      <table width="100%" border="0">
+        <tr valign="top"> 
+          <td colspan="2"><a name="targetaudience"><b>TargetAudience</b></a></td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">521$a</td>
+          <td colspan="2">&lt;targetAudience&gt; </td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">&nbsp;</td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2"><i>various positions</i></td>
+          <td colspan="2">&lt;targetAudience&gt; <i>[repeat tag for each new value]</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">&nbsp;</td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">008/22 BK,CF,MU,VM</td>
+          <td width="6%">&nbsp;</td>
+          <td width="49%"><i>and value:</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td width="6%">&nbsp;</td>
+          <td width="39%">(code d)</td>
+          <td width="6%">&nbsp;</td>
+          <td width="49%">adolescent</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="6%">&nbsp;</td>
+          <td width="39%">(code e)</td>
+          <td width="6%">&nbsp;</td>
+          <td width="49%">adult</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="6%">&nbsp;</td>
+          <td width="39%">(code g)</td>
+          <td width="6%">&nbsp;</td>
+          <td width="49%">general</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="6%">&nbsp;</td>
+          <td width="39%">(code b,c,j)</td>
+          <td width="6%">&nbsp;</td>
+          <td width="49%">juvenile</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="6%">&nbsp;</td>
+          <td width="39%">(code a)</td>
+          <td width="6%">&nbsp;</td>
+          <td width="49%">preschool</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="6%">&nbsp;</td>
+          <td width="39%">(code f)</td>
+          <td width="6%">&nbsp;</td>
+          <td width="49%">specialized</td>
+        </tr>
+      </table>
+      <p> 
+      <table width="100%" border="0">
+        <tr valign="top"> 
+          <td colspan="2"><a name="note"><b>Note</b></a></td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">500 $a, 505 $a, 511$a, 518 $a</td>
+          <td colspan="2">&lt;note&gt; <i>with no type or uri attribute</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">505 $a </td>
+          <td colspan="2">&lt;note&gt; <i>with</i> type=&quot;table of contents&quot; 
+            <i>and</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td width="0%">&nbsp;</td>
+          <td width="42%"><i>if</i> $u</td>
+          <td width="7%">&nbsp;</td>
+          <td width="51%"><i>attribute</i> uri=&quot;content of $u&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">511 $a</td>
+          <td colspan="2">&lt;note&gt; <i>with</i> type=&quot;performers&quot; 
+          </td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">518$a</td>
+          <td colspan="2">&lt;note&gt;<i> with</i> type=&quot;venue&quot; </td>
+        </tr>
+      </table>
+      <p> 
+      <table width="100%" border="0">
+        <tr valign="top"> 
+          <td colspan="2"><a name="cartographics"><b>Cartographics</b></a></td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="2">255</td>
+          <td colspan="2">&lt;cartographics&gt;<i> and</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td width="5%">&nbsp;</td>
+          <td width="40%">034 $d$e$f$g</td>
+          <td colspan="2">&lt;coordinates&gt;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="5%">&nbsp;</td>
+          <td width="40%">255 $c</td>
+          <td colspan="2">&lt;coordinates&gt;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="5%">&nbsp;</td>
+          <td width="40%">255 $a</td>
+          <td width="4%">&nbsp;</td>
+          <td width="51%">&lt;scale&gt;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="5%">&nbsp;</td>
+          <td width="40%">255 $b</td>
+          <td width="4%">&nbsp;</td>
+          <td width="51%">&lt;projection&gt;</td>
+        </tr>
+      </table>
+      <p> 
+      <table width="100%" border="0">
+        <tr> 
+          <td colspan="2"><a name="subject"><b>Subject</b></a></td>
+          <td colspan="2">&lt;subject&gt;</td>
+        </tr>
+        <tr> 
+          <td colspan="2">650 $a$b$c$d and 600,610,611,</td>
+          <td colspan="2">&lt;topic&gt;</td>
+        </tr>
+        <tr> 
+          <td width="6%">&nbsp;</td>
+          <td width="39%">630,651 $x$v</td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td colspan="2">600 $a$b$c$d$q</td>
+          <td colspan="2">&lt;name&gt; <i>with</i> type=&quot;personal&quot;</td>
+        </tr>
+        <tr> 
+          <td colspan="2">610 $a$b$c$d$n</td>
+          <td width="7%">&nbsp;</td>
+          <td width="48%">&lt;name&gt; <i>with</i> type=&quot;corporate&quot;</td>
+        </tr>
+        <tr> 
+          <td width="6%">&nbsp;</td>
+          <td width="39%"><i>or</i></td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td colspan="2">610 $a$b$c$d$n</td>
+          <td colspan="2">&lt;name&gt;<i> with</i> type=&quot;corporate&quot;<i> 
+            and</i></td>
+        </tr>
+        <tr> 
+          <td width="6%">&nbsp;</td>
+          <td width="39%">610 $a</td>
+          <td width="7%">&nbsp;</td>
+          <td width="48%">&lt;component&gt;</td>
+        </tr>
+        <tr> 
+          <td width="6%">&nbsp;</td>
+          <td width="39%">610 $b</td>
+          <td width="7%">&nbsp;</td>
+          <td width="48%">&lt;component&gt;</td>
+        </tr>
+        <tr> 
+          <td width="6%">&nbsp;</td>
+          <td width="39%">610 $c$d$n</td>
+          <td width="7%">&nbsp;</td>
+          <td width="48%">&lt;component&gt;</td>
+        </tr>
+        <tr> 
+          <td colspan="2">&nbsp;</td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td colspan="2">611 $a$c$d$e$q</td>
+          <td colspan="2">&lt;name&gt; <i>with</i> type=&quot;conference&quot;</td>
+        </tr>
+        <tr> 
+          <td colspan="2"><i>Any name field</i> $e<i> or</i> $4</td>
+          <td width="7%">&nbsp;</td>
+          <td width="48%"><i>add name attribute</i> role=&quot;content of subfield&quot;</td>
+        </tr>
+        <tr> 
+          <td colspan="2">600 $u </td>
+          <td width="7%">&nbsp;</td>
+          <td width="48%"><i>add</i> &lt;affiliation&gt; <i>under</i> &lt;name&gt;</td>
+        </tr>
+        <tr> 
+          <td colspan="2">&nbsp;</td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td colspan="2">630 $a$d$f$h$k$l$n$o$r</td>
+          <td colspan="2">&lt;title&gt;</td>
+        </tr>
+        <tr> 
+          <td colspan="2">630 $p</td>
+          <td width="7%">&nbsp;</td>
+          <td width="48%">&lt;nameOfPart&gt;</td>
+        </tr>
+        <tr> 
+          <td colspan="2">630 $n </td>
+          <td width="7%">&nbsp;</td>
+          <td width="48%">&lt;numberOfPart&gt;</td>
+        </tr>
+        <tr> 
+          <td colspan="2">651 $a and 600,610,611,630,650 $z</td>
+          <td colspan="2">&lt;geographic&gt;</td>
+        </tr>
+        <tr> 
+          <td colspan="2">600,610,611,630,650,651$y</td>
+          <td colspan="2">&lt;temporal&gt;</td>
+        </tr>
+        <tr> 
+          <td colspan="2">&nbsp;</td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td colspan="2">752</td>
+          <td colspan="2">&lt;subject&gt;&lt;geographic&gt;</td>
+        </tr>
+        <tr> 
+          <td colspan="2">752$a</td>
+          <td width="7%">&nbsp;</td>
+          <td width="48%">&lt;country&gt;</td>
+        </tr>
+        <tr> 
+          <td colspan="2">752$b</td>
+          <td width="7%">&nbsp;</td>
+          <td width="48%">&lt;state&gt;</td>
+        </tr>
+        <tr> 
+          <td colspan="2">752$c</td>
+          <td width="7%">&nbsp;</td>
+          <td width="48%">&lt;county&gt;</td>
+        </tr>
+        <tr> 
+          <td colspan="2">752$d</td>
+          <td width="7%">&nbsp;</td>
+          <td width="48%">&lt;city&gt;</td>
+        </tr>
+        <tr> 
+          <td colspan="2">&nbsp;</td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td colspan="2"><i>All of the below</i></td>
+          <td colspan="2">&lt;subject&gt;&lt;classification&gt;<i> with</i></td>
+        </tr>
+        <tr> 
+          <td width="6%">&nbsp;</td>
+          <td width="39%">050 $a$b</td>
+          <td width="7%">&nbsp;</td>
+          <td width="48%"><i>attribute</i> authority=&quot;lcc&quot;</td>
+        </tr>
+        <tr> 
+          <td width="6%">&nbsp;</td>
+          <td width="39%">082 $a$b</td>
+          <td width="7%">&nbsp;</td>
+          <td width="48%"><i>attribute</i> authority=&quot;ddc&quot;</td>
+        </tr>
+        <tr> 
+          <td width="6%">&nbsp;</td>
+          <td width="39%">080 $a$b$x</td>
+          <td width="7%">&nbsp;</td>
+          <td width="48%"><i>attribute</i> authority=&quot;udc&quot;</td>
+        </tr>
+        <tr> 
+          <td width="6%">&nbsp;</td>
+          <td width="39%">060 $a$b</td>
+          <td width="7%">&nbsp;</td>
+          <td width="48%"><i>attribute</i> authority=&quot;nlm&quot;</td>
+        </tr>
+        <tr> 
+          <td width="6%">&nbsp;</td>
+          <td width="39%">086 ind1=0 $a</td>
+          <td width="7%">&nbsp;</td>
+          <td width="48%"><i>attribute</i> authority= &quot;sudocs&quot;</td>
+        </tr>
+        <tr> 
+          <td width="6%">&nbsp;</td>
+          <td width="39%">086 ind1=1 $a</td>
+          <td width="7%">&nbsp;</td>
+          <td width="48%"><i>attribute</i> authority= &quot;candocs&quot;</td>
+        </tr>
+        <tr> 
+          <td width="6%">&nbsp;</td>
+          <td width="39%">086 $a</td>
+          <td width="7%">&nbsp;</td>
+          <td width="48%"><i>attribute</i> authority= &quot;content of $2&quot;</td>
+        </tr>
+        <tr> 
+          <td width="6%">&nbsp;</td>
+          <td width="39%">084 $a$b</td>
+          <td width="7%">&nbsp;</td>
+          <td width="48%"><i>attribute</i> authority= &quot;content of $2&quot;</td>
+        </tr>
+      </table>
+      <p> 
+      <table width="100%" border="0">
+        <tr> 
+          <td colspan="3"><a name="relateditem"><b>RelatedItem</b></a></td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="3">760,762,765,767 $a$t </td>
+          <td colspan="2">&lt;relatedItem&gt; <i>with no type attribute and no 
+            subelements</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="3">770,772,773,775,776,777 $a$t </td>
+          <td colspan="2">&lt;relatedItem&gt; <i>with no type attribute and no 
+            subelements</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="3">780,785,786,787 $a$t</td>
+          <td colspan="2">&lt;relatedItem&gt; <i>with no type attribute and no 
+            subelements</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="3">700 $a$b$c$d$q$t$f$h$k$l$n$m$o$p$r</td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="2"><i>with</i> $t <i>and</i> ind2=blank</td>
+          <td colspan="2">&lt;relatedItem&gt;<i> with no type attribute and no 
+            subelements</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="3">710 $a$b$c$d$t$f$h$k$l$m$n$o$p$r</td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="2"><i>with</i> $t <i>and</i> ind2=blank</td>
+          <td colspan="2">&lt;relatedItem&gt; <i>with no type attribute and no 
+            subelements</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="3">711 $a$c$d$e$q$t$f$h$k$l$n$p</td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="2"><i>with</i> $t <i>and</i> ind2=blank</td>
+          <td colspan="2">&lt;relatedItem&gt; <i>with no type attribute and no 
+            subelements</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="3">730 $a$n$p$l$f$t$d$h$m$o$r</td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="2"><i>with</i> $t <i>and</i> ind2=blank</td>
+          <td colspan="2">&lt;relatedItem&gt; <i>with no type attribute and no 
+            subelements</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="3">&nbsp;</td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="3">800 $a$b$c$d$q$t$f$h$k$l$n$m$o$p$r$v</td>
+          <td colspan="2">&lt;relatedItem&gt; <i>with no type attribute and no 
+            subelements</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="3">810 $a$b$c$d$t$f$h$k$l$m$n$o$p$r,$v</td>
+          <td colspan="2">&lt;relatedItem&gt;<i> with no type attribute an no 
+            subelements</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="3">811 $a$c$d$e$q$t$f$h$k$l$n$p,$v</td>
+          <td colspan="2">&lt;relatedItem&gt;<i> with no type attribute an no 
+            subelements</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="3">830 $a$n$p$l$f$d$h$m$o$r$v</td>
+          <td colspan="2">&lt;relatedItem&gt; <i>with no type attribute an no 
+            subelements</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="3">&nbsp;</td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="5"><i>For relatedItem <u>with</u> attributes and no subelements:</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="3">780$t</td>
+          <td colspan="2">&lt;relatedItem&gt; <i>with</i> type=&quot;preceding&quot; 
+            <i>and no subelements</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="3">785$t</td>
+          <td colspan="2">&lt;relatedItem&gt;<i> with</i> type=&quot;succeeding&quot; 
+            <i>and no subelements</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="3">776$t</td>
+          <td colspan="2">&lt;relatedItem&gt; <i>with</i> type=&quot;reproduction&quot; 
+            <i>and no subelements</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="3">534 $t, 786 $t</td>
+          <td colspan="2">&lt;relatedItem&gt; <i>with</i> type=&quot;original&quot; 
+            <i>and no subelements</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="3">772 $t$g, 773 $t$g</td>
+          <td colspan="2">&lt;relatedItem&gt; <i>with </i>type=&quot;host&quot; 
+            <i>and no subelements</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="3">770 $t, 774 $t <i>and</i></td>
+          <td colspan="2">&lt;relatedItem&gt; <i>with</i> type=&quot;constituent&quot; 
+            <i>and no subelements</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="3">700 $t,710 $t, 711 $t<br>
+            <i>with </i>$t <i>and</i> ind2=2 </td>
+          <td colspan="2">&lt;relatedItem&gt; <i>with</i> type=&quot;constituent&quot; 
+            <i>and no subelements</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="3">&nbsp;</td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="3">440 $a$n$p$v,490 $a$v</td>
+          <td colspan="2">&lt;relatedItem&gt; <i>with</i> type=&quot;series&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="3">760 $t</td>
+          <td colspan="2">&lt;relatedItem&gt; <i>with</i> type=&quot;series&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="3">800 $a$b$c$d$q$t$f$h$k$l$n$m$o$p$r$v</td>
+          <td colspan="2">&lt;relatedItem&gt; <i>with</i> type=&quot;series&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="3">810 $a$b$c$d$t$f$h$k$l$m$n$o$p$r,$v</td>
+          <td colspan="2">&lt;relatedItem&gt; <i>with</i> type=&quot;series&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="3">811 $a$c$d$e$q$t$f$h$k$l$n$p,$v</td>
+          <td colspan="2">&lt;relatedItem&gt; <i>with</i> type=&quot;series&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="3">830 $a$n$p$l$f$d$h$m$o$r$v</td>
+          <td colspan="2">&lt;relatedItem&gt; <i>with</i> type=&quot;series&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="3">&nbsp;</td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="3"><i>For relatedItem with subelements:</i></td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td colspan="3"><i>Title elements:</i></td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="2">$t in fields 760-770, 774-786, 534 above</td>
+          <td colspan="2">&lt;title&gt;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="2">$a$v in fields 440, 490</td>
+          <td colspan="2">&lt;title&gt;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="2">$t$v in fields 800, 810, 811</td>
+          <td colspan="2">&lt;title&gt;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="2">$t$g in fields 772, 773</td>
+          <td colspan="2">&lt;title&gt;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="2">&nbsp;</td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="2">440 $a$v, 490 $a$n$p$v</td>
+          <td colspan="2">&lt;title&gt; <i>no subelements</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="2">800-811 $t$n$p$v</td>
+          <td colspan="2">&lt;title&gt;<i> no subelements</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="2">830 $a$n$p$v</td>
+          <td colspan="2">&lt;title&gt; <i>no subelements</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="2"><i>or</i></td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="2">440, 490 $a$v </td>
+          <td colspan="2">&lt;title&gt; <i>and</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td width="4%">&nbsp;</td>
+          <td width="36%">440, 490, $n</td>
+          <td width="14%">&nbsp;</td>
+          <td width="42%">&lt;numberOfPart&gt;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td width="4%">&nbsp;</td>
+          <td width="36%">440, 490, $p</td>
+          <td width="14%">&nbsp;</td>
+          <td width="42%">&lt;nameOfPart&gt;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="2">800-811 $t$v</td>
+          <td colspan="2">&lt;title&gt; <i>and</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="2">&nbsp;</td>
+          <td width="14%">&nbsp;</td>
+          <td width="42%">&lt;numberOfPart&gt;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="2">&nbsp;</td>
+          <td width="14%">&nbsp;</td>
+          <td width="42%">&lt;nameOfPart&gt;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="2">830 $a$v</td>
+          <td colspan="2">&lt;title&gt; <i>and</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="2">&nbsp;</td>
+          <td width="14%">&nbsp;</td>
+          <td width="42%">&lt;numberOfPart&gt;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="2">&nbsp;</td>
+          <td width="14%">&nbsp;</td>
+          <td width="42%">&lt;nameOfPart&gt;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="2"><i>Name elements:</i></td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="2">700 $a$b$c$d$q</td>
+          <td colspan="2">&lt;name&gt; <i>with no attributes</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="2">710 $a$b$c$d$n</td>
+          <td colspan="2">&lt;name&gt; <i>with no attributes</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="2">711 $a$c$d$q$q</td>
+          <td colspan="2">&lt;name&gt; <i>with no attributes</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="2">76X-78X $a</td>
+          <td colspan="2">&lt;name&gt; <i>with no attributes</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="2">800 $a$b$c$d$q</td>
+          <td colspan="2">&lt;name&gt; <i>with no attributes</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="2">810 $a$b$c$d$n</td>
+          <td colspan="2">&lt;name&gt; <i>with no attributes</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="2">811 $a$c$d$q$q</td>
+          <td colspan="2">&lt;name&gt; <i>with no attributes</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="2">76X-78X $7/00=p $a</td>
+          <td colspan="2">&lt;name&gt;<i> with</i> type=&quot;personal&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="2">76X-78X $7/00=m$a</td>
+          <td colspan="2">&lt;name&gt; <i>with</i> type=&quot;corporate&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td width="4%">&nbsp;</td>
+          <td width="36%"><i>or</i></td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="2">76X-78X $7/00=c $a</td>
+          <td colspan="2">&lt;name&gt; <i>with</i> type=&quot;corporate&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="2">76X-78X $7/00=m $a</td>
+          <td colspan="2">&lt;name&gt;<i> with </i>type=&quot;conference&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="2">700,710,711,800,810,811$e</td>
+          <td width="14%">&nbsp;</td>
+          <td width="42%"><i>add attribute</i> role=&quot;content of subfield&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="2">100, 700 $u</td>
+          <td width="14%">&nbsp;</td>
+          <td width="42%"><i>add</i> &lt;affiliation&gt; <i>under</i> &lt;name&gt;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td width="4%">&nbsp;</td>
+          <td width="36%">&nbsp;</td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="4"><i>Form and physical description elements:</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="2">&nbsp;</td>
+          <td colspan="2">&lt;formAndPhysicalDescription&gt; <i>and</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="2">800,810,811,830 $h</td>
+          <td width="14%">&nbsp;</td>
+          <td width="42%">&lt;form&gt;content of position</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="2">&nbsp;</td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="2">76X-78X$h, 534 $e</td>
+          <td width="14%">&nbsp;</td>
+          <td width="42%">&lt;extent&gt;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="2">856 $q with ind2=2</td>
+          <td width="14%">&nbsp;</td>
+          <td width="42%">&lt;internetMediaType&gt;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="2">&nbsp;</td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="2"><i>Identifier elements:</i></td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="2">76X-78X $o</td>
+          <td colspan="2">&lt; identifier&gt;<i> with no type</i></td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%" height="20">&nbsp;</td>
+          <td colspan="2" height="20">700,710,711,730,76X-78X $x</td>
+          <td colspan="2" height="20">&lt;identifier&gt; <i>with</i> type=&quot;issn&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="2">534 $x</td>
+          <td colspan="2">&lt; identifier&gt; <i>with</i> type=&quot;issn&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="2">534 $z</td>
+          <td colspan="2">&lt; identifier&gt; <i>with</i> type=&quot;isbn&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="4%">&nbsp;</td>
+          <td colspan="2">76X-78X$w</td>
+          <td colspan="2">&lt; identifier&gt;<i> with</i> type=&quot;local&quot; 
+            (if local control no.)</td>
+        </tr>
+      </table>
+      <p> 
+      <table width="100%" border="0">
+        <tr valign="top"> 
+          <td width="45%"><a name="identifier"><b>Identifier</b></a></td>
+          <td width="55%">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="45%">856$u <i>with &quot;urn:doi&quot; or &quot;doi:&quot;</i></td>
+          <td width="55%">&lt;identifier&gt; <i>with</i> type=&quot;doi&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="45%">020 $a</td>
+          <td width="55%">&lt;identifier&gt;<i> with </i>type=&quot;isbn&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="45%">024 ind1=0 $a</td>
+          <td width="55%">&lt;identifier&gt; <i>with</i> type=&quot;isrc&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="45%">024 ind1=2 $a</td>
+          <td width="55%">&lt;identifier&gt; <i>with</i> type=&quot;ismn&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="45%">022 $a</td>
+          <td width="55%">&lt;identifier&gt; <i>with</i> type=&quot;issn&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="45%">028 ind1=0 $a</td>
+          <td width="55%">&lt;identifier&gt; <i>with </i>type=&quot;issue number&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="45%">010 $a</td>
+          <td width="55%">&lt;identifier&gt; <i>with </i>type=&quot;lccn&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="45%">028 ind1=1 $a</td>
+          <td width="55%">&lt;identifier&gt; <i>with</i> type=&quot;matrix number&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="45%">028 ind1=3 $a</td>
+          <td width="55%">&lt;identifier&gt;<i> with</i> type=&quot;music publisher&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="45%">028 ind1=2 $a</td>
+          <td width="55%">&lt;identifier&gt; <i>with</i> type=&quot;music plate&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="45%">024 ind1=4 $a</td>
+          <td width="55%">&lt;identifier&gt; <i>with</i> type=&quot;sici&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="45%">856 $u</td>
+          <td width="55%">&lt;identifier&gt; <i>with</i> type=&quot;uri&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="45%">024 ind1=1 $a</td>
+          <td width="55%">&lt;identifier&gt; <i>with</i> type=&quot;upc&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="45%">028 ind1=4 $a</td>
+          <td width="55%">&lt;identifier&gt; <i>with</i> type=&quot;videorecording 
+            identifier&quot;</td>
+        </tr>
+      </table>
+      <p> 
+      <table width="100%" border="0">
+        <tr valign="top"> 
+          <td width="45%"><a name="location"><b>Location</b></a></td>
+          <td width="55%">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="45%">852$ a$b$j</td>
+          <td width="55%">&lt;location&gt;</td>
+        </tr>
+      </table>
+      <p> 
+      <table width="100%" border="0">
+        <tr valign="top"> 
+          <td width="45%"><a name="accesscondition"><b>AccessCondition</b></a></td>
+          <td width="55%">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="45%">506$a</td>
+          <td width="55%">&lt;accessCondition&gt; <i>with </i>Type=&quot;restrictionOnAccess&quot;</td>
+        </tr>
+        <tr valign="top"> 
+          <td width="45%">540$a</td>
+          <td width="55%">&lt;accessCondition&gt; <i>with</i> Type=&quot;useAndReproduction&quot;</td>
+        </tr>
+      </table>
+      <p> 
+      <table width="100%" border="0">
+        <tr valign="top"> 
+          <td width="45%" height="20"><a name="extension"><b>Extension</b></a></td>
+          <td width="55%" height="20">no mapping; this allows users to include 
+            local elements or elements from other namespaces.</td>
+        </tr>
+      </table>
+      <p> 
+      <table width="100%" border="0">
+        <tr> 
+          <td width="45%"><a name="recordinformation"><b>RecordInformation</b></a></td>
+          <td width="55%">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td width="45%">040 $a</td>
+          <td width="55%">&lt;recordContentSource&gt;</td>
+        </tr>
+        <tr> 
+          <td width="45%">008/00-05</td>
+          <td width="55%">&lt;recordCreationDate&gt;</td>
+        </tr>
+        <tr> 
+          <td width="45%">005</td>
+          <td width="55%">&lt;recordChangeDate&gt;</td>
+        </tr>
+        <tr> 
+          <td width="45%">001</td>
+          <td width="55%">&lt;recordIdentifier&gt;</td>
+        </tr>
+      </table>
+      <p> 
+      <HR noshade size="1">
+      <p><b>Changes from previous version:</b></p>
+      <ul>
+        <li>Deleted 511$u and 518$u</li>
+      </ul>
+      <hr>
+      <p><img src="images/mods-icon.gif" width="140" height="48" align="right" alt=""> 
+        <STRONG>Questions and comments:</STRONG> </p>
+      <ADDRESS> 
+      <!--help desk email start -->
+      <a href="mailto:ndmso@loc.gov">Contact Us</a> 
+      <!--help desk email end -->
+      ( 
+      <!-- #BeginDate format:Am1 -->April 9, 2002<!-- #EndDate -->
+      )</ADDRESS>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

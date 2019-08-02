@@ -1,0 +1,327 @@
+<table class="Dynamic639-5OutputTables" cellpadding="4" cellspacing="0" border="1">
+    <tr valign="top">
+        <th scope="col">Identifier<br/>Indicatif</th>
+        <th scope="col">English name<br/>Nom anglais</th>
+        <th scope="col">French name<br/>Nom français</th>
+    </tr>
+    <tr>
+        <td scope="row">afa</td>
+        <td>Afro-Asiatic languages</td>
+        <td>afro-asiatiques, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">alg</td>
+        <td>Algonquian languages</td>
+        <td>algonquines, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">tut</td>
+        <td>Altaic languages</td>
+        <td>altaïques, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">apa</td>
+        <td>Apache languages</td>
+        <td>apaches, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">art</td>
+        <td>Artificial languages</td>
+        <td>artificielles, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">ath</td>
+        <td>Athapascan languages</td>
+        <td>athapascanes, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">aus</td>
+        <td>Australian languages</td>
+        <td>australiennes, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">map</td>
+        <td>Austronesian languages</td>
+        <td>austronésiennes, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">bat</td>
+        <td>Baltic languages</td>
+        <td>baltes, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">bai</td>
+        <td>Bamileke languages</td>
+        <td>bamiléké, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">bad</td>
+        <td>Banda languages</td>
+        <td>banda, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">bnt</td>
+        <td>Bantu languages</td>
+        <td>bantou, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">btk</td>
+        <td>Batak languages</td>
+        <td>batak, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">ber</td>
+        <td>Berber languages</td>
+        <td>berbères, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">cau</td>
+        <td>Caucasian languages</td>
+        <td>caucasiennes, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">cel</td>
+        <td>Celtic languages</td>
+        <td>celtiques, langues; celtes, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">cai</td>
+        <td>Central American Indian languages</td>
+        <td>amérindiennes de l'Amérique centrale, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">cmc</td>
+        <td>Chamic languages</td>
+        <td>chames, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">crp</td>
+        <td>Creoles and pidgins</td>
+        <td>créoles et pidgins</td>
+    </tr>
+    <tr>
+        <td scope="row">cpe</td>
+        <td>Creoles and pidgins, English based</td>
+        <td>créoles et pidgins basés sur l'anglais</td>
+    </tr>
+    <tr>
+        <td scope="row">cpf</td>
+        <td>Creoles and pidgins, French-based</td>
+        <td>créoles et pidgins basés sur le français</td>
+    </tr>
+    <tr>
+        <td scope="row">cpp</td>
+        <td>Creoles and pidgins, Portuguese-based</td>
+        <td>créoles et pidgins basés sur le portugais</td>
+    </tr>
+    <tr>
+        <td scope="row">cus</td>
+        <td>Cushitic languages</td>
+        <td>couchitiques, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">dra</td>
+        <td>Dravidian languages</td>
+        <td>dravidiennes, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">fiu</td>
+        <td>Finno-Ugrian languages</td>
+        <td>finno-ougriennes, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">gem</td>
+        <td>Germanic languages</td>
+        <td>germaniques, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">ijo</td>
+        <td>Ijo languages</td>
+        <td>ijo, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">inc</td>
+        <td>Indic languages</td>
+        <td>indo-aryennes, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">ine</td>
+        <td>Indo-European languages</td>
+        <td>indo-européennes, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">ira</td>
+        <td>Iranian languages</td>
+        <td>iraniennes, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">iro</td>
+        <td>Iroquoian languages</td>
+        <td>iroquoises, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">kar</td>
+        <td>Karen languages</td>
+        <td>karen, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">khi</td>
+        <td>Khoisan languages</td>
+        <td>khoïsan, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">kro</td>
+        <td>Kru languages</td>
+        <td>krou, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">day</td>
+        <td>Land Dayak languages</td>
+        <td>dayak, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">mno</td>
+        <td>Manobo languages</td>
+        <td>manobo, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">myn</td>
+        <td>Mayan languages</td>
+        <td>maya, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">mkh</td>
+        <td>Mon-Khmer languages</td>
+        <td>môn-khmer, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">mun</td>
+        <td>Munda languages</td>
+        <td>mounda, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">nah</td>
+        <td>Nahuatl languages</td>
+        <td>nahuatl, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">nic</td>
+        <td>Niger-Kordofanian languages</td>
+        <td>nigéro-kordofaniennes, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">ssa</td>
+        <td>Nilo-Saharan languages</td>
+        <td>nilo-sahariennes, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">nai</td>
+        <td>North American Indian languages</td>
+        <td>nord-amérindiennes, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">nub</td>
+        <td>Nubian languages</td>
+        <td>nubiennes, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">oto</td>
+        <td>Otomian languages</td>
+        <td>otomi, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">paa</td>
+        <td>Papuan languages</td>
+        <td>papoues, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">phi</td>
+        <td>Philippine languages</td>
+        <td>philippines, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">pra</td>
+        <td>Prakrit languages</td>
+        <td>prâkrit, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">roa</td>
+        <td>Romance languages</td>
+        <td>romanes, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">sal</td>
+        <td>Salishan languages</td>
+        <td>salishennes, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">smi</td>
+        <td>Sami languages</td>
+        <td>sames, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">sem</td>
+        <td>Semitic languages</td>
+        <td>sémitiques, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">sgn</td>
+        <td>Sign Languages</td>
+        <td>langues des signes</td>
+    </tr>
+    <tr>
+        <td scope="row">sit</td>
+        <td>Sino-Tibetan languages</td>
+        <td>sino-tibétaines, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">sio</td>
+        <td>Siouan languages</td>
+        <td>sioux, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">sla</td>
+        <td>Slavic languages</td>
+        <td>slaves, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">son</td>
+        <td>Songhai languages</td>
+        <td>songhai, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">wen</td>
+        <td>Sorbian languages</td>
+        <td>sorabes, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">sai</td>
+        <td>South American Indian languages</td>
+        <td>sud-amérindiennes, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">tai</td>
+        <td>Tai languages</td>
+        <td>tai, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">tup</td>
+        <td>Tupi languages</td>
+        <td>tupi, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">wak</td>
+        <td>Wakashan languages</td>
+        <td>wakashanes, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">ypk</td>
+        <td>Yupik languages</td>
+        <td>yupik, langues</td>
+    </tr>
+    <tr>
+        <td scope="row">znd</td>
+        <td>Zande languages</td>
+        <td>zandé, langues</td>
+    </tr>
+</table>

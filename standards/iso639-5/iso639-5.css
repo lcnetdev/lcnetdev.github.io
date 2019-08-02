@@ -1,0 +1,91 @@
+@import url("639-5Tables.css");
+
+body {
+	margin: 0px;
+	padding: 0px;
+	background-image: url(images/iso639-5-back.gif);
+	background-color: #FFFFFF;
+
+}
+
+a {
+	color:#036;
+	font-family: verdana, helvetica, sans-serif;
+	font-weight:600;
+	text-decoration: underline;
+}
+a:link, a:hover, a:visited {
+	color: #036;
+	text-decoration: underline;
+	font-weight: 100;
+
+}
+
+
+
+h1 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 18pt;
+	text-align: center;
+	color: #003366;
+}
+h2 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 15pt;
+	color: #666666;
+	text-align: center;
+}
+h3 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 13pt;
+	color: #336699;
+	text-align: center;
+}
+h4 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 12pt;
+	color: #666666;
+	text-align: center;
+}
+
+p {  font-family: Arial, Helvetica, sans-serif; font-size: 10pt; color: #333333}
+td { font-family: Arial, Helvetica, sans-serif; font-size: 10pt; color: #333333 }
+li { font-family: Arial, Helvetica, sans-serif; font-size: 10pt; color: #333333 }
+ul { font-family: Arial, Helvetica, sans-serif; font-size: 10pt; color: #333333 }
+pre {
+	font-family: "Courier New", Courier, mono;
+	font-size: 9pt;
+}
+
+
+.menu {  text-align: center}
+.item {color: #000099;}
+.itemtitle{font-weight: bold;}
+.description {
+	color: #003300;
+}
+.yellowback
+{background-color: #ffffcc;}
+.small {
+	font-size: 9pt;
+	color: #003366;
+
+}
+.iso_639_2
+{}
+.iso_639_1
+{}
+.English_name
+{}
+.French_name
+{}
+.Date
+{}
+.Category
+{}
+.Notes
+{}
+.redtext {
+	font-weight: bold;
+	color: #990000;
+}

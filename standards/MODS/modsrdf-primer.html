@@ -1,0 +1,2072 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+
+                        "http://www.w3.org/TR/html40/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/mods.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>MODS RDF Primer</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<meta name="keywords" content="mods overview metadata object description schema web site library congress xml">
+<meta name="description" content="MODS Schemas (Metadata Object Description Schema: MODS)">
+<style type="text/css">
+<!--
+.style1 {font-size: 9pt}
+-->
+</style>
+<style type="text/css">
+<!--
+.style2 {font-size: 9}
+-->
+</style>
+<style type="text/css">
+<!--
+.style3 {font-family: "Times New Roman", Times, serif}
+-->
+</style>
+<!-- InstanceEndEditable -->
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="mods-print.css" type="text/css" media="print">
+<style type="text/css">
+@import url(mods.css);
+</style>
+</head>
+<body link="#000099" vlink="#0066CC" bgcolor="#FFFFFF">
+<table class="layout2">
+  <tr>
+    <td class="top-breadcrumbs"><a id="skip" href="#skip_menu">&nbsp;</a><a href="http://www.loc.gov/">The Library of Congress</a> &raquo; <a href="http://www.loc.gov/standards/">Standards</a> &raquo; <a href="http://www.loc.gov/mods/">MODS Official Web Site</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://www.loc.gov/standards/mods/"><img src="images/mods-bar-760.gif" alt="Metadata Object Description Schema: Official Web Site" width="760" height="41" border="0"></a></td>
+  </tr>
+  <tr>
+    <td><a href="http://www.loc.gov/standards/mods/">HOME</a> &gt;&gt; <!-- InstanceBeginEditable name="topbreadcrumb" -->MODS RDF Primer <!-- InstanceEndEditable --><a name="skip_menu"></a><!-- InstanceBeginEditable name="content" -->
+
+      <h2 align="center">MODS RDF Ontology:</h2>
+          <h1 align="center"> <strong>Primer</strong></h1>
+          <hr/>
+          <p><strong>Abstract </strong><br />
+            <span class="style3">This document describes MODS RDF,  an  RDF ontology for MODS, an XML  format for bibliographic information. MODS RDF is an expression of MODS in RDF  and may be used to create born-RDF MODS, or it may be used to create an RDF  description corresponding to an existing MODS XML record.</span><br>
+            <br />
+  <strong>Audience </strong><br />
+            <span class="style1 style2 style3">This document is intended for those  designing and implementing LIS technology systems. &nbsp;It assumes the reader  is familiar with MODS/XML, and with RDF, and has some familiarity with MADS RDF.</span> </p>
+          <hr/>
+          <h2>Contents          </h2>
+          <p><a href="#introduction">Introduction</a></p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#namespaces">Namespaces</a></p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#vocabularies">Vocabularies</a></p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#goals">Primary Design Goals</a></p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#model">Model</a></p>
+          <p><a href="#summary">Summary of MODS RDF Classes and Properties</a></p>
+          <p><a href="#categories">Basic Ontology Design Categories</a></p>
+          <p><strong>Ontology Treatment of MODS Elements </strong></p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#abstract">&lt;abstract&gt; </a></p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#accessCondition">&lt;accessCondition&gt; </a></p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#classification">&lt;classification&gt;</a></p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#genre">&lt;genre&gt;</a></p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#identifier">&lt;identifier&gt;</a></p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#identifier">&lt;language&gt;</a></p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#location">&lt;location&gt;</a></p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#name">&lt;name&gt;</a></p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#note">&lt;note&gt;</a></p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#originInfo">&lt;originInfo&gt;</a></p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#part">&lt;part&gt;</a></p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#physicalDescription">&lt;physicalDescription&gt;</a></p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#recordInfo">&lt;recordInfo&gt;</a></p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#relatedItem">&lt;relatedItem&gt;</a></p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#subject">&lt;subject&gt;</a></p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#tableOfContents">&lt;tableOfContents&gt;</a></p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#targetAudience">&lt;targetAudience&gt;</a></p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#titleInfo">&lt;titleInfo&gt;</a></p>
+          <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#typeOfResource">&lt;typeOfResource&gt;</a></p>
+          <p><a href="#relationships">Summary Tables for Element/Property Relationships</a></p>
+          <p><a href="#dc">Interoperability with Dublin Core</a> </p>
+         <hr/>
+          <h2>IIntroduction<a name="introduction"></a></h2>
+      <p>This document describes MODS RDF, an OWL/RDF ontology for MODS  (<a href="http://www.loc.gov/standards/mods/">Metadata Object Description  Schema</a>).<br />
+            MODS is an XML schema for a bibliographic element set that  may be used for the description of  cultural and bibliographic resources used within the library and  information science  community, which includes museums,  archives, and other 
+ cultural institutions.&nbsp; MODS RDF is an expression  of that element set in RDF. It may be used to create born-RDF MODS, or it may be  used to create an RDF description corresponding to an existing MODS XML  record.&nbsp; The latter is discussed in <a href="modsrdf-primer-2.html">MODS RDF Primer - Part 2: MODS XML to RDF</a>.</p>
+      <h3>Namespaces<a name="namespaces"></a></h3>
+          <p>The MODS/RDF namespace is: <a href="http://www.loc.gov/mods/modsrdf/v1">http://www.loc.gov/mods/modsrdf/v1#</a> &nbsp;</p>
+          <p>Other  namespaces used by &nbsp;the ontology are: </p>
+          <table border="1" cellpadding="0">
+            <tr>
+              <td><strong>Namespace    Prefix </strong> </td>
+              <td><p><strong>Namespace    URI </strong></p></td>
+            </tr>
+            <tr>
+              <td><p>madsrdf</p></td>
+              <td><p><a href="http://www.loc.gov/mads/rdf/v1#">http://www.loc.gov/mads/rdf/v1#</a> </p></td>
+            </tr>
+            <tr>
+              <td><p>owl </p></td>
+              <td><p><a href="http://www.w3.org/2002/07/owl#">http://www.w3.org/2002/07/owl#</a> </p></td>
+            </tr>
+            <tr>
+              <td><p>rdf </p></td>
+              <td><p><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#">http://www.w3.org/1999/02/22-rdf-syntax-ns#</a> </p></td>
+            </tr>
+            <tr>
+              <td><p>rdfs </p></td>
+              <td><p><a href="http://www.w3.org/2000/01/rdf-schema#">http://www.w3.org/2000/01/rdf-schema#</a> </p></td>
+            </tr>
+            <tr>
+              <td><p>xsd</p></td>
+              <td><p><a href="http://www.w3.org/2001/XMLSchema#">http://www.w3.org/2001/XMLSchema#</a>&nbsp;&nbsp; </p></td>
+            </tr>
+            <tr>
+              <td><p>ri</p></td>
+              <td><p><a href="http://id.loc.gov/ontologies/RecordInfo">http://id.loc.gov/ontologies/RecordInfo</a></p></td>
+            </tr>
+          </table>
+          <h3>Vocabularies<a name="vocabularies"></a></h3>
+          <p>This  ontology prescribes the use of vocabularies for roles, classification schemes,  identifier types, resource types and languages.&nbsp;  Any such vocabularies may be used; the following are available:</p>
+          <table border="1" cellpadding="0">
+            <tr>
+              <td><strong>Vocabulary    Prefix  </strong></td>
+              <td><p><strong>Vocabulary    URI </strong></p></td>
+              <td ><p><strong>For    use with</strong></p></td>
+              <td><strong>Example URI </strong></td>
+            </tr>
+            <tr>
+              <td><p>relators</p></td>
+              <td><p><a href="http://id.loc.gov/vocabulary/relators">http://id.loc.gov/vocabulary/relators</a></p></td>
+              <td valign="top"><p>roles</p></td>
+              <td><p><a href="http://id.loc.gov/vocabulary/relators/cre">http://id.loc.gov/vocabulary/relators/cre</a> </p></td>
+            </tr>
+            <tr>
+              <td><p>classSchemes</p></td>
+              <td><p><a href="http://id.loc.gov/vocabulary/classSchemes">http://id.loc.gov/vocabulary/classSchemes</a> </p></td>
+              <td valign="top"><p>classification schemes</p></td>
+              <td><p><a href="http://id.loc.gov/vocabulary/classSchemes/lcc">http://id.loc.gov/vocabulary/classSchemes/lcc</a> </p></td>
+            </tr>
+            <tr>
+              <td><p>identifiers</p></td>
+              <td><p><a href="http://id.loc.gov/vocabulary/identifiers">http://id.loc.gov/vocabulary/identifiers</a></p></td>
+              <td valign="top"><p>identifer types</p></td>
+              <td><p><a href="http://id.loc.gov/vocabulary/identifiers/isbn">http://id.loc.gov/vocabulary/identifiers/isbn</a></p></td>
+            </tr>
+            <tr>
+              <td><p>resourceTypes</p></td>
+              <td><p><a href="http://id.loc.gov/vocabulary/resourceTypes">http://id.loc.gov/vocabulary/resourceTypes</a></p></td>
+              <td valign="top"><p>resource types</p></td>
+              <td><p><a href="http://id.loc.gov/vocabulary/resourceTypes/Txt">http://id.loc.gov/vocabulary/resourceTypes/Txt</a></p></td>
+            </tr>
+            <tr>
+              <td>languages</td>
+              <td><a href="http://id.loc.gov/vocabulary/languages">http://id.loc.gov/vocabulary/languages</a></td>
+              <td valign="top">languages</td>
+              <td><a href="http://id.loc.gov/vocabulary/languages/fre">http://id.loc.gov/vocabulary/languages/fre</a></td>
+            </tr>
+          </table>
+          <p>&nbsp;</p>
+          <h3>Primary Design Goals <a name="goals"></a></h3>
+          <p>The design goals of this project are  to:</p>
+          <ul type="disc">
+            <li><strong>Use MODS XML<br />
+            </strong>use MODS XML and the <a href="#model">MODS model</a>&nbsp; as the basis for MODS RDF.</li>
+            <li><strong>Support legacy MODS<br />
+            </strong>Support the conversion of existing/legacy MODS records to RDF, while       providing an ontology for the creation of new MODS descriptions in RDF. </li>
+            <li><strong>Use MADS RDF where Applicable<br />
+            </strong>MODS subjects &ndash; topic, genre, name, titleInfo, occupation, temporal,       and&nbsp; geographic are expressed using       the&nbsp; MADS ontology as MADS Topic,       GenreForm, Name, Title, Occupation, Temporal, and Geographic. MODS&nbsp; originInfo place and publisher are       expressed using&nbsp; MADS Geographic and       Name. </li>
+            <li><strong><a href="#dc">Interoperate with       Dublin Core</a></strong></li>
+            <li><strong>Support the use of Vocabularies<br />
+            </strong>Vocabularies are used for roles, classificationSchemes, identifier       types, and resource types.&nbsp; Any such       vocabularies may be used; existing LC <a href="#vocabularies">vocabularies</a> at <a href="http://id.loc.gov/">http://id.loc.gov</a> &nbsp;are available for use where appropriate.</li>
+          </ul>
+          <h3>MODS Model <a name="model"></a></h3>
+          <p>The following is intended as a concise description of the  MODS model.<br />
+            Objects in the MODS model are <em>MODS resources</em> and <em>MODS  resource descriptions</em>. &nbsp;<br />
+            A MODS resource is any library-related resource -- such as a  book,&nbsp; journal article,&nbsp; photograph, or&nbsp; born-digital image -- that is described by a  MODS resource description.&nbsp; It may be a  physical or digital object, or it may be an abstract notion such as a  collection or a work.&nbsp; <br />
+            A MODS resource description includes <em>descriptive</em> <em>metadata</em> about a MODS resource, <em>relationships</em> between it and other MODS  resources, and <em>administrative metadata </em>associated with the MODS resource  description. A MODS resource by definition has at least one associated MODS  resource description; it may have multiple descriptions. <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; When a MODS  resource is a physical or digital object (as opposed to an abstract notion) the  MODS resource description generally includes information enabling access to the  resource.&nbsp; Information in a MODS resource  description may be supplied by value or by reference (included inline within  the description or via a link to an external representation of the  information).&nbsp; A MODS resource description  can be thought of functionally as similar to a library record.&nbsp; <br />
+            A MODS resource may be <em>related to</em> one or more other  MODS resources.&nbsp; For example, a MODS  resource which is a collection may have members, which are themselves MODS  resources.&nbsp; Generally these relationships  between MODS resources will be expressed as part of the MODS resource  descriptions for one or both of the respective resources. <br />
+            The <em>descriptive </em>metadata for a MODS resource  aggregates titles and names associated with the resource along with &nbsp;subjects and other data elements that further  help to <em>describe</em> the resource.&nbsp;  For systems, the MODS resource description and especially its  descriptive metadata aids the indexing, searching, and display of information  about the resource.&nbsp; For users, a MODS  resource description assists with identifying, finding, selecting, and  accessing a MODS Resource.<br />
+  <em>Administrative </em>metadata provides information about  the about the descriptivemetadata, primarily provenance information. It  includes information, such as the individual or organization responsible for  the descriptive metadata and/or the date the descriptive metadata was last  modified, as well as relationships expressed in the MODS resource description.</p>
+          <hr/>
+          <hr/>
+          <h2><a name="summary"></a>Summary of MODS RDF Classes and Properties</h2>
+          <h3>Classes</h3>
+          <p>The following table  summarizes MODS RDF Classes.</p>
+          <table border="1" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="559" colspan="2" valign="top"><br />
+                  <strong>MODS RDF Classes</strong> </td>
+            </tr>
+            <tr>
+              <td width="559" colspan="2" valign="top"><p align="center"><strong>Domain of top level MODS    Elements</strong></p></td>
+            </tr>
+            <tr>
+              <td width="197" valign="top"><p align="center"><strong>Class</strong></p></td>
+              <td width="362" valign="top"><p align="center"><strong>Usage</strong></p></td>
+            </tr>
+            <tr>
+              <td width="197" valign="top"><p>modsrdf:ModsResource&nbsp;&nbsp;&nbsp;&nbsp; </p></td>
+              <td width="362" valign="top"><p>A    member of this class is a MODS resource, described by a modsrdf    description.&nbsp; This class is the domain for    properties corresponding to MODS top level element.</p></td>
+            </tr>
+            <tr>
+              <td width="559" colspan="2" valign="top"><p align="center"><strong>Classes in the MODS RDF    namespace which are ranges for properties whose domain is ModsResource</strong></p></td>
+            </tr>
+            <tr>
+              <td width="197" valign="top"><p>modsrdf:Cartographics&nbsp;&nbsp;&nbsp;&nbsp; </p></td>
+              <td width="362" valign="top"><p>An    aggregator class which is the range for properties corresponding to MODS cartographic    elements.</p></td>
+            </tr>
+            <tr>
+              <td width="197" valign="top"><p>modsrdf:ClassificationGroup&nbsp; &nbsp; </p></td>
+              <td width="362" valign="top"><p>Aggregates    a classification number with its scheme. For use when the scheme is not in    the controlled vocabulary.</p></td>
+            </tr>
+            <tr>
+              <td width="197" valign="top"><p>modsrdf:IdentifierGroup&nbsp;&nbsp; </p></td>
+              <td width="362" valign="top"><p>Aggregates    an identifier with its type. For use when the type&nbsp; is not in the controlled vocabulary.</p></td>
+            </tr>
+            <tr>
+              <td width="197" valign="top"><p>modsrdf:Location&nbsp;&nbsp;&nbsp;&nbsp; </p></td>
+              <td width="362" valign="top"><p>An    aggregator class which is the range for properties corresponding to MODS    location elements.</p></td>
+            </tr>
+            <tr>
+              <td width="197" valign="top"><p>modsrdf: NoteGroup&nbsp; </p></td>
+              <td width="362" valign="top"><p>Aggregates    a note with its type. Used only for notes for which a type is specified. </p></td>
+            </tr>
+            <tr>
+              <td width="197" valign="top"><p>modsrdf:Part&nbsp;&nbsp;&nbsp;&nbsp; </p></td>
+              <td width="362" valign="top"><p>An    aggregator class which is the range for properties corresponding to MODS part    elements.</p></td>
+            </tr>
+            <tr>
+              <td width="197" valign="top"><p>modsrdf:RoleRelationship&nbsp;&nbsp;&nbsp;&nbsp; </p></td>
+              <td width="362" valign="top"><p>Aggregates    a name with a role.</p></td>
+            </tr>
+            <tr>
+              <td width="559" colspan="2" valign="top"><p align="center"><strong>Classes in the MODS    RDF&nbsp; Namespace namespace which are    ranges for properties whose domain is one of the classes in the category    above</strong></p></td>
+            </tr>
+            <tr>
+              <td width="197" valign="top"><p>modsrdf:LocationCopy&nbsp;&nbsp;&nbsp;&nbsp; </p></td>
+              <td width="362" valign="top"><p>An    aggregator class which is the range for properties corresponding to MODS copy    elements; copy is a subelement of locationOfResource.</p></td>
+            </tr>
+            <tr>
+              <td width="559" colspan="2" valign="top"><p align="center"><strong>Classes in the MADS RDF    namespace which are ranges of MODS Elements</strong></p></td>
+            </tr>
+            <tr>
+              <td width="197" valign="top"><p>madsrdf:ComplexSubject&nbsp;&nbsp;&nbsp;&nbsp; </p></td>
+              <td width="362" valign="top"><p>Range    for a MODS subject with&nbsp; multiple subject    categories.</p></td>
+            </tr>
+            <tr>
+              <td width="197" valign="top"><p>madsrdf:GenreForm&nbsp;&nbsp;&nbsp;&nbsp; </p></td>
+              <td width="362" valign="top"><p>Range    for both a MODS genre and MODS subjectGenre.</p></td>
+            </tr>
+            <tr>
+              <td width="197" valign="top"><p>madsrdf:Geographic&nbsp;&nbsp;&nbsp;&nbsp; </p></td>
+              <td width="362" valign="top"><p>Range    for&nbsp; MODS subjectGeographic, subjectGeographicCode,    and MODS place.</p></td>
+            </tr>
+            <tr>
+              <td width="197" valign="top"><p>madsrdf:Name&nbsp;&nbsp;&nbsp;&nbsp; </p></td>
+              <td width="362" valign="top"><p>Range    for&nbsp; MODS name, subjectName, and    publisher</p></td>
+            </tr>
+            <tr>
+              <td width="197" valign="top"><p>madsrdf:Occupation&nbsp;&nbsp;&nbsp;&nbsp; </p></td>
+              <td width="362" valign="top"><p>Range    for a MODS subjectOccupation.</p></td>
+            </tr>
+            <tr>
+              <td width="197" valign="top"><p>madsrdf:Temporal&nbsp;&nbsp;&nbsp;&nbsp; </p></td>
+              <td width="362" valign="top"><p>Range    for a MODS subjectTemporal.</p></td>
+            </tr>
+            <tr>
+              <td width="197" valign="top"><p>madsrdf:Title&nbsp;&nbsp;&nbsp;&nbsp; </p></td>
+              <td width="362" valign="top"><p>Range    for a MODS titlePrincipal, or titleUniform when there is no principal name;    and MODS subjectTitle.</p></td>
+            </tr>
+            <tr>
+              <td width="197" valign="top"><p>madsrdf:NameTitle&nbsp;&nbsp;&nbsp;&nbsp; </p></td>
+              <td width="362" valign="top"><p>Range    for a MODS titleUniform when there exists a principal name (so that a    NameTitle can be constructed).</p></td>
+            </tr>
+            <tr>
+              <td width="197" valign="top"><p>madsrdf:Topic&nbsp;&nbsp;&nbsp;&nbsp; </p></td>
+              <td width="362" valign="top"><p>Range    for a MODS subjectTopic.</p></td>
+            </tr>
+            <tr>
+              <td width="559" colspan="2" valign="top"><p align="center"><strong>Classes in the RI    namespace, for administrative metadata.</strong></p></td>
+            </tr>
+            <tr>
+              <td width="197" valign="top"><p>ri:AdminMetadata&nbsp;&nbsp;&nbsp;&nbsp; </p></td>
+              <td width="362" valign="top"><p>Corresponds    to MODS recordInfo.</p></td>
+            </tr>
+          </table>
+          <h3>Properties</h3>
+          <p>The following table  lists MODS RDF properties alphabetically, and for each property the MODS XML  element that the property corresponds to, as well as the domain and range of  the property.&nbsp; More detailed tables are &nbsp;found in <a href="#relationships">Summary  Tables for Element/Property Relationships</a>.</p>
+          <table border="1" cellspacing="0" cellpadding="0">
+            <tr>
+              <td valign="top"><p><strong>MODS RDF Property</strong></p></td>
+              <td valign="top"><p><strong>Corresponding</strong><br />
+                      <strong>&nbsp;MODS XML Element</strong></p></td>
+              <td valign="top"><p><strong>Doman</strong></p></td>
+              <td valign="top"><p><strong>Range</strong></p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>abstract</p></td>
+              <td><p>abstract</p></td>
+              <td rowspan="6" valign="top"><p>ModsResource</p></td>
+              <td valign="top"><p>xs:string</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>accessCondition</p></td>
+              <td><p>accessCondition</p></td>
+              <td valign="top"><p>xs:string</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>adminMetadata</p></td>
+              <td><p>recordInfo</p></td>
+              <td valign="top"><p>ri:AdminMetadata</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>cartographics</p></td>
+              <td><p>subject/cartographics</p></td>
+              <td valign="top"><p>Cartographics</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>class:{scheme};    e.g. class:lcc</p></td>
+              <td><p>classification </p></td>
+              <td valign="top"><p>xs:string</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>classificationGroup</p></td>
+              <td><p>classification </p></td>
+              <td valign="top"><p>ClassificationGroup</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>classificationGroupScheme </p></td>
+              <td rowspan="2"><p>ClassificationGroup</p></td>
+              <td rowspan="2" valign="top"><p>Classification<br />
+                Group</p></td>
+              <td valign="top"><p>xs:string </p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>classificationGroupValue </p></td>
+              <td valign="top"><p>xs:string </p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>date</p></td>
+              <td><p>originInfo/dateOther</p></td>
+              <td rowspan="16" valign="top"><p>ModsResource </p></td>
+              <td rowspan="16" valign="top"><p>(annotation property)</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>dateCaptured</p></td>
+              <td rowspan="3"><p>originInfo/dateCaptured</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>dateCapturedEnd</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>dateCapturedStart</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>dateCreated</p></td>
+              <td rowspan="3"><p>originInfo/dateCreated</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>dateCreatedEnd</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>dateCreatedStart</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>dateEnd</p></td>
+              <td><p>originInfo/dateOther</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>dateIssued</p></td>
+              <td rowspan="3"><p>originInfo/dateIssued</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>dateIssuedEnd</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>dateIssuedStart</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>dateModified</p></td>
+              <td rowspan="3"><p>originInfo/dateModified</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>dateModifiedEnd</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>dateModifiedStart</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>dateOfCopyright</p></td>
+              <td rowspan="3"><p>originInfo/copyrightDate</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>dateOfCopyrightEnd</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>dateOfCopyrightStart</p></td>
+              <td rowspan="13" valign="top"><p>ModsResource </p></td>
+              <td rowspan="5" valign="top"><p>(annotation property)</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>dateStart</p></td>
+              <td><p>originInfo/dateOther</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>dateValid</p></td>
+              <td rowspan="3"><p>originInfo/dateValid</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>dateValidEnd</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>dateValidStart</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>digitalOrigin</p></td>
+              <td valign="top"><p>physicalDescription/<br />
+                digitalOrigin</p></td>
+              <td rowspan="5" valign="top"><p>xs:string</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>edition</p></td>
+              <td valign="top"><p>originInfo/edition</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>extent</p></td>
+              <td valign="top"><p>physicalDescription/extent</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>form</p></td>
+              <td valign="top"><p>physicalDescription/form</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>frequency</p></td>
+              <td valign="top"><p>originInfo/frequency</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>genre</p></td>
+              <td><p>genre</p></td>
+              <td valign="top"><p>madsrdf:GenreForm</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>identifier:{type};    e.g. identifier:isbn&nbsp;&nbsp;&nbsp; </p></td>
+              <td rowspan="4"><p>identifier</p></td>
+              <td valign="top"><p>xs:string</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>identifierGroup</p></td>
+              <td valign="top"><p>IdentifierGroup</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>identifierGroupType </p></td>
+              <td rowspan="2" valign="top"><p>IdentifierGroup</p></td>
+              <td rowspan="3" valign="top"><p>xs:string</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>identifierGroupValue </p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>issuance</p></td>
+              <td valign="top"><p>originInfo/issuance</p></td>
+              <td rowspan="2" valign="top"><p>ModsResource</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>languageOfResource</p></td>
+              <td><p>language</p></td>
+              <td valign="top"><p>(annotation property) </p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>LocationCopy </p></td>
+              <td valign="top"><p>location/holdingSimple/Copy </p></td>
+              <td valign="top"><p align="center">Location</p></td>
+              <td valign="top"><p align="center">LocationCopy</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>locationCopyElectronicLocator</p></td>
+              <td valign="top"><p>location/    holdingSimple/copy/ electronicLocator </p></td>
+              <td rowspan="5" valign="top"><p align="center">LocationCopy</p></td>
+              <td rowspan="11" valign="top"><p>xs:string</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>locationCopyForm</p></td>
+              <td valign="top"><p>location/holdingSimple/copy/form</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>locationCopyNote</p></td>
+              <td valign="top"><p>location/    holdingSimple/copy/note</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>locationCopyShelfLocator</p></td>
+              <td valign="top"><p>location/    holdingSimple/copy/shelfLocator</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>locationCopySublocation</p></td>
+              <td valign="top"><p>location/    holdingSimple/copy/sublocation</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>locationOfResource</p></td>
+              <td><p>location</p></td>
+              <td rowspan="5" valign="top"><p>Location</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>locationPhysical</p></td>
+              <td valign="top"><p>location/physical</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>locationShelfLocator</p></td>
+              <td valign="top"><p>location/shelfLocator</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>locationSublocation</p></td>
+              <td valign="top"><p>location/sublocation</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>locationUrl</p></td>
+              <td valign="top"><p>location/url</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>mediaType</p></td>
+              <td valign="top"><p>physicalDescription/<br />
+                internetMediaType</p></td>
+              <td rowspan="4" valign="top"><p>ModsResource</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>name</p></td>
+              <td rowspan="2"><p>name </p></td>
+              <td valign="top"><p>madsrdf:Name</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>namePrincipal</p></td>
+              <td valign="top"><p>madsrdf:Name</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>noteGroup</p></td>
+              <td rowspan="4"><p>note</p></td>
+              <td valign="top"><p>NoteGroup</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>noteGroupType</p></td>
+              <td rowspan="2" valign="top"><p>NoteGroup</p></td>
+              <td rowspan="2" valign="top"><p>xs:string </p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>noteGroupValue</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>noteUntyped</p></td>
+              <td rowspan="2" valign="top"><p>ModsResource </p></td>
+              <td valign="top"><p>xs:string </p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>part</p></td>
+              <td><p>part</p></td>
+              <td valign="top"><p>Part</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>partCaption</p></td>
+              <td valign="top"><p>part/detail/caption</p></td>
+              <td rowspan="15"><p align="center">Part</p></td>
+              <td valign="top"><p>xs:string </p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>partDate</p></td>
+              <td valign="top"><p>part/date</p></td>
+              <td valign="top"><p>(annotation property)</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>partDetailType</p></td>
+              <td valign="top"><p>part/detail@type</p></td>
+              <td valign="top"><p>xs:string </p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>partEnd</p></td>
+              <td valign="top"><p>part/extent/end</p></td>
+              <td valign="top"><p>xs:string </p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>partLevel</p></td>
+              <td valign="top"><p>part/detail/level</p></td>
+              <td valign="top"><p>xs:positiveInteger </p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>partList</p></td>
+              <td valign="top"><p>part/extent/list</p></td>
+              <td valign="top"><p>xs:string </p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>partTotal</p></td>
+              <td valign="top"><p>part/extent/total</p></td>
+              <td valign="top"><p>xs:positiveInteger </p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>partNumber</p></td>
+              <td valign="top"><p>part/detail/number</p></td>
+              <td valign="top"><p>xs:string </p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>partOrder</p></td>
+              <td valign="top"><p>part@order</p></td>
+              <td valign="top"><p>xs:integer</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>partStart</p></td>
+              <td valign="top"><p>part/extent/start</p></td>
+              <td rowspan="8" valign="top"><p>xs:string </p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>partText</p></td>
+              <td valign="top"><p>part/text</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>partTitle</p></td>
+              <td valign="top"><p>part/detail/title</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>partTotal</p></td>
+              <td valign="top"><p>part/extent/list</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>partType</p></td>
+              <td valign="top"><p>part@type</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>partUnit</p></td>
+              <td valign="top"><p>part/extent@unit</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>physicalDescriptionNote</p></td>
+              <td valign="top"><p>physicalDescription/note</p></td>
+              <td rowspan="19" valign="top"><p>ModsResource</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>reformattingQuality</p></td>
+              <td valign="top"><p>physicalDescription/<br />
+                reformattingQuality</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>relatedConstituent</p></td>
+              <td rowspan="12"><p>relatedItem</p></td>
+              <td rowspan="12" valign="top"><p>ModsResource </p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>relatedFormat</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>relatedHost</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>relatedItem</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>relatedOriginal</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>relatedPreceding</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>relatedReference</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>relatedReferencedBy</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>relatedReview</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>relatedSeries</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>relatedSucceeding</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>relatedVersion</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>statementOfResponsibility</p></td>
+              <td><p>note</p></td>
+              <td valign="top"><p>xs:string</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>subjectComplex</p></td>
+              <td rowspan="10"><p>subject</p></td>
+              <td valign="top"><p>madsrdf:ComplexSubject</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>subjectGenre</p></td>
+              <td valign="top"><p>madsrdf:GenreForm</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>subjectGeographic</p></td>
+              <td valign="top"><p>madsrdf:Geographic</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>subjectGeographicCode</p></td>
+              <td valign="top"><p>madsrdf:GeographicCode</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>subjectHierarchicalGeographic </p></td>
+              <td rowspan="10" valign="top"><p>ModsResource</p></td>
+              <td valign="top"><p>madsrdf: ComplexSubject</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>subjectName</p></td>
+              <td valign="top"><p>madsrdf:Name</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>subjectOccupation</p></td>
+              <td valign="top"><p>madsrdf:Occupation</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>subjectTemporal</p></td>
+              <td valign="top"><p>madsrdf:Temporal</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>subjectTitle</p></td>
+              <td valign="top"><p>madsrdf:Title</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>subjectTopic</p></td>
+              <td valign="top"><p>madsrdf:Topic</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>tableOfContents</p></td>
+              <td valign="top"><p>tableOfContents</p></td>
+              <td rowspan="2" valign="top"><p>xs:string</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>targetAudience</p></td>
+              <td valign="top"><p>targetAudience</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>titlePrincipal </p></td>
+              <td rowspan="2"><p>titleInfo</p></td>
+              <td rowspan="2" valign="top"><p>madsrdf:Title</p></td>
+            </tr>
+            <tr>
+              <td valign="top"><p>titleUniform </p></td>
+            </tr>
+          </table>
+          <hr/>
+          <hr/>
+          <h2>Basic Ontology Design Categories<a name="categories"></a></h2>
+          <p>The various top-level  MODS XML elements each&nbsp; corresond to one  or more RDF properties, and are treated in a variety of ways, as described in this  section.</p>
+          <h3>Properties  with Range in External<a name="external"></a> Namespaces</span></h3>
+          <p>MODS XML elements  &lt;name&gt;, &lt;titleInfo&gt;, &lt;genre&gt;&nbsp; and &lt;subject&gt;, as well as &lt;originInfo&gt;&lt;place&gt; and  &lt;originInfo&gt;&lt;publisher&gt; are represented by properties whose ranges  are&nbsp; MADS classes, using the MADS  ontology.&nbsp; MODS &lt;recordInfo&gt;  is represented by a property whose range is the class AdminMetadata in the  RecordInfo ontology.<br />
+            For example  consider a MODS subject-topic:</p>
+          <p>&nbsp;</p>
+          <table width="200" border="1" align="center" bgcolor="#CCCCCC">
+            <tr>
+              <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;subject&gt;<br />
+                &nbsp;&nbsp;&nbsp;&lt;topic&gt;history&lt;/topic&gt;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/subject&gt;</td>
+            </tr>
+          </table>
+          <p><br />
+            This would correspond to triple like the following:</p>
+          <table width="377" border="1" align="center" bgcolor="#CCCCCC">
+            <tr>
+              <td width="367"><p>ModsResource12356  subjectTopic&nbsp; #BlankNode1<br />
+                #BlankNode1&nbsp; rdf:type&nbsp;  madsrdf:Topic<br />
+                #BlankNode1&nbsp; rdfs:label&nbsp;&nbsp;   &ldquo;history&rdquo;<br />
+                #BlankNode1  madsrdf:elementList&nbsp; #BlankNode2<br />
+                #BlankNode2&nbsp; rdfs:first&nbsp;  #BlankNode3</br>
+                #BlankNode3&nbsp;&nbsp;  madsrdf:elementValue &ldquo;history&rdquo;<br />
+                .......</p></td>
+            </tr>
+          </table>
+          <p>The term &ldquo;blank node&rdquo; is used to mean the object of a triple  (as for example #BlankNode1 above) which serves as an <a href="#aggregator">aggregator</a> and becomes the subject of subsequent triples. </p>
+          <h3>Aggregators<a name="aggregator"></a></h3>
+          <p>MODS XML elements &lt;location&gt;  and &lt;part&gt; &nbsp;are structured elements - they have  subelements. Therefore in RDF these are represented by properties &nbsp;(locationOfResource &nbsp;and part) whose ranges (classes Location and Part)  are what we refer to as &nbsp;&ldquo;aggregator  classes&rdquo;: their members - the objects of these properties - becomes the subject  for triples corresponding to the subelements. <br />
+            As an example, MODS &lt;location&gt; might include  subelements <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;physicalLocation&gt;Prints and  Photographs Division Washington, D.C. 20540 USA &lt;/physicalLocation&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; and <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;shelfLocator&gt; DAG no. 1410&lt;/shelfLocator&gt;</p>
+          <p>This would correspond to the  following triples:</p>
+          <table width="615" border="1" align="center" bgcolor="#CCCCCC">
+            <tr>
+              <td width="605"><p>ModsResource12356&nbsp;&nbsp; locationOfResource  &nbsp;&nbsp;#BlankNode4<br />
+                #BlankNode4  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; locationPhysicalLocation<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &ldquo;Prints and Photographs Division  Washington, D.C. 20540 USA&rdquo;<br />
+                #BlankNode4  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; locationShelfLocator&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &ldquo;DAG no. 1410&rdquo;<br />
+              </p></td>
+            </tr>
+          </table>
+          <h3>RDF Property may be a Vocabulary Term <a name="propertyTerm"></a></h3>
+          <p>For certain MODS elements there is a &lsquo;type&rsquo; (or  similar) attribute, where the value of the attribute belongs to a known  vocabulary. In these cases, terms from that vocabulary are defined to be  properties. An example&nbsp; is MODS element  &lt;identifier&gt;. If the identifier  type is known to be &ldquo;isbn&rdquo; then the property used is, for example, &nbsp;&lsquo;identifier:isbn&rsquo;&nbsp; where &ldquo;identifier:&rdquo; is the prefix for a  vocabulary of identifier types. This category applies also to &lt;classification&gt;, where the property  used corresponds to the classification scheme, if known.</p>
+          <h3>RDF Object may be a Vocabulary Term <a name="objectTerm"></a></h3>
+          <p>Similar to the previous category, in some cases the  value of the MODS element may be identified to be a term from a controlled vocabulary  term.&nbsp; For example, for MODS &lt;language&gt;, if the language term is know to be  a code from Iso639-2b, the RDF object may be a URI for the term.</p>
+          <h3>Typed Elements </h3>
+          <p>Several MODS elements&nbsp; have a &lsquo;type&rsquo; attribute. They are treated in  three different ways.</p>
+          <h4>A property for each Enumerated Type <a name="typeEnumerated"></a></h4>
+          <p>MODS &lt;titleInfo&gt; and &nbsp;&lt;relatedItem&gt;  &nbsp;both have an enumerated list of types,  and a property is defined for each type. For example, &lt;titleInfo  type=&rdquo;uniform&rdquo;&gt; corresponds to rdf property titleUniform.&nbsp; &lt;relatedItem type=&rdquo;host&rdquo;&gt; corresponds  to RDF property relatedHost.</p>
+          <h4>Type and Value Bound Together <a name="typeAndValue"></a></h4>
+          <p>For MODS &lt;note&gt;  the type is optional. When the type is specified, an aggregator is used to bind  together the note with its type. For example,</p>
+          <table width="615" border="1" align="center" bgcolor="#CCCCCC">
+            <tr>
+              <td width="605"><p>&lt;note type=&quot;bibliography&quot;&gt;Includes  bibliographies.&lt;/note&gt;<br />
+              </p></td>
+            </tr>
+          </table>
+          <p> would correspond to triples like these:</p>
+          <table width="498" border="1" align="center" bgcolor="#CCCCCC">
+            <tr>
+              <td width="488"><p>ModsResource12356&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;noteGroup&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#BlankNode5&nbsp;<br />
+                &nbsp; #BlankNode5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rdf:type &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&ldquo;NoteGroup&rdquo;<br />
+                &nbsp; #BlankNode5&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;noteGroupNote &nbsp;&ldquo;Includes bibliographies.&rdquo;<br />
+                &nbsp;&nbsp;#BlankNode5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; noteGroupType &nbsp;&ldquo;bibliography&rdquo;<br />
+              </p></td>
+            </tr>
+          </table>
+          <h4>Type Ignored <a name="typeIgnored"></a></h4>
+          <p>&nbsp;For some  MODS typed elements , this ontology chooses to ignore the type. These are MODS &lt;abstract&gt; and &lt;accessCondition&gt;.&nbsp; They are both treated as <a href="#simple">simple MODS elements</a>.</p>
+          <h4>Simple MODS Elements <a name="simple"></a></h4>
+          <p>The following:</p>
+          <ul type="disc">
+            <li>&lt;abstract&gt;,&nbsp; &lt;accessCondition&gt;, &lt;tableOfContents&gt;,       and &lt;targetAudience&gt;;</li>
+            <li>all       subelements of &lt;physical description&gt;; </li>
+            <li>all       subelements of &lt;originInfo&gt;, with the exception of &lt;place&gt; and       &lt;publisher&gt;;</li>
+            <li>&lt;note&gt;,       when there is no type supplied;</li>
+            <li>&lt;language&gt;       when the vocabulary of the language code is not known;</li>
+          </ul>
+          <p>are all represented in RDF as simple triples where  the property corresponds directly to the element and the object is the literal  value of the element. </p>
+          <p>For example:</p>
+          <table width="498" border="1" align="center" bgcolor="#CCCCCC">
+            <tr>
+              <td width="488"><p>&lt;abstract&gt; based on a novel by a&nbsp; <em>man named Lear</em> &lt;/abstract&gt;<br />
+              </p></td>
+            </tr>
+          </table>
+          <p>would correspond to the triple:</p>
+          <table width="498" border="1" align="center" bgcolor="#CCCCCC">
+            <tr>
+              <td width="488"><p> ModsResource12356&nbsp;  abstract&nbsp; &nbsp;&ldquo;based on a novel by a&nbsp; <em>man named Lear&rdquo;</em><br />
+              </p></td>
+            </tr>
+          </table>
+          <h3>Extra Level of Structure Eliminated <a name="structureEliminated"></a></h3>
+          <p>MODS elements physicalDescription and originInfo are each  wrappers for several subelements. For this ontology it is assumed that these  subelements do not need to be bound together and each may be treated as a top  level element.&nbsp; Thus the extra level of  structure is eliminated and rather than create classes for these two, for each  subelement a property is defined whose domain is ModsResource. </p>
+          <hr/>
+          <hr/>
+          <h2>Ontology Treatment of MODS Elements <a name=""></a></h2>
+          <p>A MODS RDF description includes a triple of the  form:</p>
+          <h6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {MODS  resource}&nbsp; &nbsp;&nbsp;is-a&nbsp;&nbsp;&nbsp;  #ModsResource</h6>
+          <p>here {MODS resource} is the resource  described.&nbsp; #ModsResource is a blank node  and becomes the subject for subsequent triples corresponding to top-level MODS  elements. &nbsp;</p>
+          <p>This section lists the MODS elements  alphabetically, describing how the ontology treats the element, and which <a href="#categories">category</a> the element belongs to.&nbsp;</p>
+          <hr/>
+          <h3>MODS &lt;abstract<a name="abstract"></a>&gt;</h3>
+          <p>MODS abstract is treated as described in <a href="#typeIgnored">Type Ignored</a> and also <a href="#simple">Simple</a>.<br />
+          A MODS abstract&nbsp;  is described by a MODS RDF triple of the following form:</p>
+          <h4><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {MODS resource}&nbsp; abstract&nbsp;&nbsp;  {text of abstract} </h4>
+          <p>Where {text  of abstract} is a literal, the actual abstract..<br />
+            Example:</p>
+          <table width="525" border="1" align="center" bgcolor="#CCCCCC">
+            <tr>
+              <td width="515"><p> ModsResource12356&nbsp;  abstract&nbsp;&nbsp; &ldquo;The story of a horse, and a boy who loved him<em>&rdquo;</em></p></td>
+            </tr>
+          </table>
+          <hr/>
+          <h3>MODS &lt;accessCondition<a name="accessCondition"></a>&gt;</h3>
+          <p>MODS accessCondition  is treated in the same manner as MODS abstract. It is  described by&nbsp; a MODS RDF triple of the  following form:</p>
+          <h4><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {MODS resource}&nbsp; accessCondition&nbsp;&nbsp; { text of access condition } </h4>
+          Where {text  of access condition} is a literal, the actual access condition.<br />
+Example:<br />
+<table width="369" border="1" align="center" bgcolor="#CCCCCC">
+  <tr>
+    <td width="398"><p>ModsResource12356&nbsp;  accessCondition&nbsp;&nbsp; &ldquo;No  Restriction<em>&rdquo;</em> </p></td>
+  </tr>
+</table>
+<hr/>
+<h3>MODS &lt;classification<a name="classification"></a>&gt; </h3>
+<p>For a MODS classification, RDF  representation depends on whether or not the classification scheme is a term in  a known vocabulary.</p>
+<h4>Classification scheme from a Known Vocabulary </h4>
+<p>If the classification scheme  belongs to a known vocabulary, classification is treated as described by <a href="#propertyTerm">RDF  Property a Vocabulary Term</a>: </p>
+<h4><br />
+  {MODS resource}&nbsp;  class:{scheme}&nbsp; {classification}</h4>
+Where &lsquo;class:&rsquo; is the prefix for the class scheme  vocabular.<br />
+Example:
+<table width="313" border="1" align="center" bgcolor="#CCCCCC">
+  <tr>
+    <td width="303"><p>ModsResource12356&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; class:lcc&nbsp;&nbsp;&nbsp;&nbsp; &lsquo;HE380.8&rsquo;</p></td>
+  </tr>
+</table>
+<p> Where &lsquo;class:&rsquo;, in this example, is the prefix for the URI <a href="http://id.loc.gov/vocabulary/classSchemes">http://id.loc.gov/vocabulary/classSchemes</a> </p>
+<h4>Classification scheme not from a Known Vocabulary </h4>
+<p>A classification where the scheme is not part of  a known vocabulary is treated  as described in <a href="#typeAndValue">Type and Value Bound  Together</a>. &nbsp;It is desribed by a triple of the  following form:</p>
+<h4> {MODS resource}&nbsp; classificationGroup&nbsp;&nbsp; {ClassificationGroup}</h4>
+<p> where {ClassificationGroup} groups together a  classification and its scheme.<br />
+  Example:</p>
+<table width="589" border="1" align="center" bgcolor="#CCCCCC">
+  <tr>
+    <td width="579"><p>ModsResource12356&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; classificationGroup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#BlankNodex<br />
+      #BlankNodex&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rdf:type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ClassificationGroup<br />
+      #BlankNodex&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; classificationGroupScheme&nbsp;&nbsp;&nbsp; &lsquo;xyz&rsquo;<br />
+      #BlankNodex&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; classificationGroupValue&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lsquo;HE380.8&rsquo; </p></td>
+  </tr>
+</table>
+<h3>
+  <hr/>
+  MODS &lt;genre<a name="genre"></a>&gt; </h3>
+<p>MODS genre is treated as described in <a href="#external">Properties with Range in External Namespaces</a>.<br />
+  A MODS genre is  described by the triple:</p>
+<h4> {MODS resource}&nbsp; genre&nbsp; &nbsp;madsrdf:GenreForm</h4>
+<p> Where madsrdf:GenreForm is an RDF description in the MADS  RDF namespace. <br />
+  Example:</p>
+<table width="589" border="1" align="center" bgcolor="#CCCCCC">
+  <tr>
+    <td width="579"><p>ModsResource12356 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; genre&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#BlankNode6<br />
+      #BlankNode6&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rdf:type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;madsrdf:GenreForm<br />
+      #BlankNode6&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rdfs:label&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &ldquo;fiction&rdquo;<br />
+      #BlankNode6&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; madsrds:elementList &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #BlankNode7<br />
+      #BlankNode7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rdfs:first&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#BlankNode8<br />
+      #BlankNode8&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; madsrdf:elementValue&nbsp;&nbsp;&nbsp;&nbsp; &ldquo;fiction&rdquo;</p></td>
+  </tr>
+</table>
+<hr/>
+<h3>MODS &lt;identifier<a name="identifier"></a>&gt; </h3>
+<p>A MODS identifier is described by a triple  of the following form:</p>
+<h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {MODS resource}&nbsp; {identifierProperty} {identifier}</h4>
+<p> The  identifier property depends on whether the identifier type belongs to a &nbsp;known vocabulary.</p>
+<h4>Identifier Type from a Known Vocabulary </h4>
+<p>If the identifier type belongs to a known  vocabulary, it is treated as described in&nbsp; <a href="#propertyTerm">RDF Property a  Vocabulary Term</a>.. <br />
+  Example:</p>
+<table width="420" border="1" align="center" bgcolor="#CCCCCC">
+  <tr>
+    <td width="410"><p>ModsResource12356&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; identifier:isbn&nbsp;&nbsp;&nbsp; &lsquo;0-937383-18-X&rsquo; </p></td>
+  </tr>
+</table>
+<p>&nbsp;&lsquo;identifier:&rsquo; in this example is the  prefix for &nbsp;a vocabulary of identifier types, e.g. <a href="http://id.loc.gov/vocabulary/identifiers">http://id.loc.gov/vocabulary/identifiers</a></p>
+<h4> Identifier Type not from a Known Vocabulary </h4>
+<p>If the vocabulary for the&nbsp;  identifier type is not known, it is treated in a manner similar to <a href="#_Classification_Scheme_not">classification</a>,&nbsp; as described in <a href="#typeAndValue">Type  and Value Bound Together</a>. &nbsp;</p>
+<hr/>
+<h3>MODS &lt;language<a name="language"></a>&gt;</h3>
+<p>A MODS  language term may be either a language code (e.g. &ldquo;fre&rdquo;) or text (e.g.  &ldquo;french&rdquo;). </p>
+<h4>Language Term Controlled </h4>
+<p>When the  language term is a code, and the authority is IS0-639-2b, It is is treated as  described in&nbsp; <a href="#objectTerm">RDF  Object&nbsp; a Vocabulary Term</a>, by a triple  of the following form:</p>
+<h4> {MODS resource} languageOfResource &nbsp;{language code  URI}</h4>
+<p> Example:</p>
+<table width="659" border="1" align="center" bgcolor="#CCCCCC">
+  <tr>
+    <td width="649"><p>ModsResource12356&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; languageOfResource&nbsp;&nbsp;&nbsp; http://id.loc.gov/vocabulary/languages/fre</p></td>
+  </tr>
+</table>
+<h4>Language Term Not Controlled</h4>
+<p>Otherwise, the &nbsp;languageTerm is treated as a <a href="#simple">simple</a> element, described by a triple of the following form: </p>
+<h4> {MODS resource}&nbsp; languageOfResource&nbsp;&nbsp; {value of languageTerm}</h4>
+<p>Example:</p>
+<table width="420" border="1" align="center" bgcolor="#CCCCCC">
+  <tr>
+    <td width="410"><p>ModsResource12356&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; languageOfResource&nbsp;&nbsp;&nbsp; &lsquo;french&rsquo; </p></td>
+  </tr>
+</table>
+<hr/>
+<h3>MODS &lt;location<a name="location"></a>&gt;</h3>
+<p>MODS  location is treated as described in <a href="#aggregator">aggregators</a>. It  is structured into physical ocation, shelfLocator, url, and copy information. So  there are multiple levels of description. First the triple:</p>
+<h4>{MODS  resource}&nbsp; locationOfResource&nbsp;&nbsp; #Location</h4>
+<p>Where  #Location is an aggregator which becomes the subject for triples corresponding  to the subelements of location, for example:</p>
+<h4>&nbsp;#Location&nbsp;&nbsp; locationPhysical&nbsp; {physical location}<br />
+  #Location &nbsp;&nbsp;&nbsp;locationShelfLocator&nbsp;&nbsp; {shelf locator}<br />
+</h4>
+<p>Example</p>
+<table width="671" border="1" align="center" bgcolor="#CCCCCC">
+  <tr>
+    <td width="661"><p>ModsResource12356&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; locationOfResource  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#BlankNode9<br />
+      #BlankNode9  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; locationPhysicalLocation  &nbsp;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &ldquo;Prints and Photographs Division  Washington, D.C. 20540 USA&rdquo;<br />
+      #BlankNode9  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; locationShelfLocator&nbsp;&nbsp;&nbsp; &ldquo;DAG no. 1410&rdquo;</p></td>
+  </tr>
+</table>
+<p> MODS  location may also include holdings information, via subelement holdingSimple,  which has only one subelement, copy (which is itself structured into several subelements),  so there is an extraneous level of structure in the XML, which is eliminated in  the RDF.&nbsp; So each instance of copy results  in a triple of the following form:</p>
+<h4> #Location&nbsp;&nbsp; locationCopy&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #LocationCopy</h4>
+<p> Example:</p>
+<table width="671" border="1" align="center" bgcolor="#CCCCCC">
+  <tr>
+    <td width="661"><p>#BlankNode9  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; locationCopy  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #BlankNode10<br />
+      #BlankNode10  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; locationCopyShelfLocator&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &ldquo;QH511.A1J68&rdquo;<br />
+      #BlankNode10  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; locationCopyEnumerationAndChronologyBasic &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &ldquo;v.1-v.8 1970-1976&quot;</p></td>
+  </tr>
+</table>
+<hr/>
+<h3>MODS &lt;name<a name="name"></a>&gt; and role </h3>
+<p>A MODS  name may have an associated role. For example, if the MODS resource has the  name &ldquo;Matilda Plews&rdquo;, which &nbsp;has the role  &ldquo;creator&rdquo;, this means &ldquo;Matilda Plew is a creator of the resource&rdquo;.</p>
+<h4>&lt;name&gt;<span dir="ltr">&nbsp;</span></h4>
+<p>A MODS name is  treated as described in <a href="#external">Properties with Range  in External Namespaces</a>. It is  described by a triple of the form:</p>
+<h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {MODS  resource}&nbsp; {name property}&nbsp; madsrdf:Name</h4>
+<p>where  {name property} is one of the  following properties:</p>
+<ul type="disc">
+  <li>namePrincipal</li>
+  <li>name</li>
+</ul>
+<p>A MODS name may be  determined to be the principal name as follows.</p>
+<ul>
+  <li><span dir="ltr"><strong>If a name has been designated as  &quot;primary&quot; it is determined to be the principal name</strong>. </span><span dir="ltr">In this case, the property for  this name is &lsquo;namePrincipal&rsquo;, and for all other names the property is &lsquo;name&rsquo;.</span><br />
+      <br />
+  </li>
+  <li><strong><span dir="ltr">If no name has been designated as  &rdquo;primary&rdquo;&rsquo;, then if there is exactly one name whose role is &quot;creator&quot;,  than that name is the principal name. </span></strong><span dir="ltr">In this case, the property for  this name is &lsquo;namePrincipal&rsquo;, and for all other names the property is &lsquo;name&rsquo;.</span><br />
+      <br />
+  </li>
+  <li><span dir="ltr"><strong>If no name has been designated as  &quot;primary&quot;, and if&nbsp; there is no name whose &nbsp;role is &quot;creator&quot;, or more than one,  then there is no principal name</strong>. </span><span dir="ltr">In this case, the property (for  all names) is &lsquo;name&rsquo;.</span></li>
+</ul>
+<p>The purpose of distinguishing a principal name is to  determine if a (MADS) NameTitle should be generated.&nbsp; <br />
+  Example:</p>
+<table width="509" border="1" align="center" bgcolor="#CCCCCC">
+  <tr>
+    <td width="499"><p> ModsResource12356 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #BlankNode11<br />
+      #BlankNode11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    rdf:type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; madsrdf:Name<br />
+      #BlankNode11  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rdfs:label&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&quot;Epstein,  Daniel Mark.&quot;<br />
+      #BlankNode11  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; madsrdf:elementList  &nbsp;&nbsp; #BlankNode12<br />
+      #BlankNode12  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rdfs:first  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #BlankNode13<br />
+      #BlankNode13  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rdf:type  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; madsrdf:FullNameElement<br />
+      #BlankNode13  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; madsrdf:elementValue  &nbsp; &quot;Epstein, Daniel  Mark.&quot;<br />
+      #BlankNode12 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; madsrdfs:rest&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   rdfs:nil </p></td>
+  </tr>
+</table>
+<h4>Role</h4>
+<p>A MODS  name may have an associated role.&nbsp; However,  a MADS name does not include a role. Since MODS relies on the MADS ontology to  express a name, &nbsp;it needs to additionally  associate the name with its role. <br />
+  For each MODS name and associated role, the means buy  which RDF associates the role with the name &nbsp;depends on whether or not the role is a term  in a known vocabulary. </p>
+<p><strong>Role is a vocabulary Term </strong></p>
+<p>When the role is a vocabulary term it is treated as  described in <a href="#propertyTerm">Property&nbsp;  a Vocabulary Term</a>. &nbsp;as  in the following triple:</p>
+<h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {MODS  resource}&nbsp; {roleProperty} madsrdf:Name</h4>
+<p>Example:</p>
+<table width="366" border="1" align="center" bgcolor="#CCCCCC">
+  <tr>
+    <td width="472"><p>ModsResource12356&nbsp;&nbsp;  relator:cre&nbsp; madsrdf:Name</p></td>
+  </tr>
+</table>
+<p> In this example, &lsquo;relator:&rsquo; is the prefix for a role  vocabulary, and &lsquo;cre&rsquo; is a term in that vocabulary.<br />
+  However,  since the same name is otherwise described by a separate triple:</p>
+<h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {MODS  resource}&nbsp; {name property}&nbsp; madsrdf:Name </h4>
+<p>duplication  of the name can be avoided by assigning an internal identifier to the name for  reference, as in the following example:<br />
+</p>
+<table width="507" border="1" align="center" bgcolor="#CCCCCC">
+  <tr>
+    <td width="497"><p>ModsResource12356 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#idname103263352<br />
+      ModsResource12356&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; relator:spk &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#idname103263352</p></td>
+  </tr>
+</table>
+<p> In this example, the first line assigns a name to the  resource (see &lt;<a href="#name">name</a>&gt;) and in the process coins an  identifier for reference in the second line, which associates the role with the  name. </p>
+<p><strong>Role Not from a Known Vocabulary </strong></p>
+<p>When the role is not term in a known  vocabulary the above technique cannot be used, and instead, an explicit &ldquo;role  relationship&rdquo; is described. &nbsp;&nbsp;<br />
+  Example:</p>
+<table width="640" border="1" align="center" bgcolor="#CCCCCC">
+  <tr>
+    <td width="630"><p>ModsResource12356 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;name&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#idname142958136<br />
+      ModsResource12356 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;#roleRelationship &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; #BlankNode14<br />
+      #BlankNode14 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; roleRelationship  Role&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &ldquo;secondary  creator&rdquo;<br />
+      #BlankNode14 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; roleRelationshipName&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#idname142958136</p></td>
+  </tr>
+</table>
+<hr/>
+<h3>MODS &lt;note<a name="note"></a>&gt; </h3>
+<h4>Untyped Note </h4>
+<p>A note  with no type specified is treated as described in &nbsp;<a href="#simple">Simple</a>. It  is described by a triple of the form:</p>
+<h4> {MODS resource}&nbsp; note&nbsp;&nbsp; {text of note}</h4>
+<p>Example:</p>
+<table width="541" border="1" align="center" bgcolor="#CCCCCC">
+  <tr>
+    <td width="531"><p> ModsResource12356&nbsp;  note&nbsp;&nbsp; &ldquo;Dominus  vo-bisque'em et come spear a tu-tu, oh.<em>&rdquo;</em></p></td>
+  </tr>
+</table>
+<h4>Statement of Responsibility </h4>
+<p>A note  with&nbsp; type=&rdquo;statement of responsibility&rdquo;  is&nbsp; treated as described in <a href="typeEnumerated"> A property for each Enumerated Type</a> and also <a href="#typeDetermines">Simple</a>. It is described by a triple of the  form:</p>
+<h4> {MODS resource}&nbsp;  statementOfResponsibility&nbsp;&nbsp; {text  of note}</h4>
+<p>This is the only note type that is singled out as  such.&nbsp; <br />
+  Example: </p>
+<table width="649" border="1" align="center" bgcolor="#CCCCCC">
+  <tr>
+    <td width="639"><p>ModsResource12356&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;statementOfResponsibility&nbsp; <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      &ldquo;created  and maintained by the Asian Division, Area Studies Directorate.<em>&rdquo;</em></p></td>
+  </tr>
+</table>
+<h4>Typed Note </h4>
+<p>A note  with&nbsp; type other than &rdquo;statement of  responsibility&rdquo; Results in the triple:</p>
+<h4> {MODS resource}&nbsp; noteGroup&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #NoteGroup</h4>
+<p>Where  #Note is an aggregator&nbsp; that becomes the  subject for triples corresponding to the type of note and the note itself, as  described in <a href="#typeAndValue">Type and Value Bound Together.</a><br />
+  Example:</p>
+<table width="649" border="1" align="center" bgcolor="#CCCCCC">
+  <tr>
+    <td width="639"><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ModsResource12356&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; noteGroup&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #BlankNode5<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #BlankNode5&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rdf:type  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &ldquo;NoteGroup&rdquo;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #BlankNode5&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; noteGroupNote  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &ldquo;Included  bibliographies.&rdquo;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #BlankNode5&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;noteGroupType  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &ldquo;bibliography&rdquo;</p></td>
+  </tr>
+</table>
+<hr/>
+<h3> MODS &lt;originInfo<a name="originInfo"></a>&gt; </h3>
+<p>MODS  originInfo is treated as described in <a href="#structureEliminated">Extra  Level of Structure Eliminated</a>.&nbsp; In MODS XML originInfo binds  together information pertaining to origination of the resource.&nbsp; The binding is considered necessary because  originInfo may repeat, for different origination events.&nbsp; However, in this ontology, different  instances of originInfo are considered to be different resource. MODS RDF  dispenses with the container and instead, each originInfo subelement tranforms  to a direct property of the resource. <br />
+  Example:</p>
+<table width="649" border="1" align="center" bgcolor="#CCCCCC">
+  <tr>
+    <td width="639"><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ModsResource12356&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; edition&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &ldquo;Morning  Edition&rdquo;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ModsResource12356&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; frequency&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &ldquo;weekly&rdquo;<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ModsResource12356&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dateIssued &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &ldquo;1970&rdquo;</p></td>
+  </tr>
+</table>
+<hr/>
+<h3>MODS &lt;part<a name="part"></a>&gt; </h3>
+<p>MODS  part&nbsp; is treated as described in <a href="#aggregator">aggregators</a>.&nbsp; Each  part is described by a triple of the following form:</p>
+<h4>{MODS  resource}&nbsp; part&nbsp;&nbsp; #Part</h4>
+<p>Where  #Part is an aggregator and becomes the subject for subsequent triples.<br />
+  Example:</p>
+<table width="649" border="1" align="center" bgcolor="#CCCCCC">
+  <tr>
+    <td width="639"><p> ModsResource12356&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; part&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #BlankNode15<br />
+      #BlankNode15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rdf:type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #Part<br />
+      #BlankNode15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; partOrder&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &ldquo;4&rdquo;<br />
+      #BlankNode15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; partLevel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;v.2, no. 3&quot;<br />
+      #BlankNode15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; partCaption&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &ldquo;no.&rdquo;<br />
+      #BlankNode15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; partNumber&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &ldquo;2&rdquo;</p></td>
+  </tr>
+</table>
+<hr/>
+<h3>MODS &lt;physicalDescription<a name="physicalDescription"></a>&gt; </h3>
+<p>MODS  &ldquo;Physical description&rdquo;&nbsp; is treated  similar to originInfo, as described in <a href="#structureEliminated">Extra  Level of Structure Eliminated</a>. In MODS XML it binds together information pertaining to physical  characteristics of the resource. MODS RDF dispenses with the container and  instead, each physical description subelement tranforms to a direct property of  the resource. <br />
+  Examples:</p>
+<table width="649" border="1" align="center" bgcolor="#CCCCCC">
+  <tr>
+    <td width="639"><p> ModsResource12356&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; form &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &ldquo;oil  painting&rdquo;<br />
+      ModsResource12356 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;reformattingQuality&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &ldquo;access&rdquo;<br />
+      ModsResource12356 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;mediaType &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &ldquo;image/jpeg&rdquo;</p></td>
+  </tr>
+</table>
+<p>Each individual physicalDescription property is treated as&nbsp; <a href="#simple">simple</a>.</p>
+<hr>
+<h3>MODS &lt;recordInfo<a name="recordInfo"></a>&gt; </h3>
+<p>MODS recordInfo is treated as described in <a href="#external">Properties with Range in External Namespaces</a>.  It is described by a triple of the  following form</p>
+<h4> {MODS  resource}&nbsp; administrativeMedatata&nbsp; recordInfo#AdministrativeMetadata</h4>
+<p>Where &ldquo;recordInfo&rsquo; is an external ontology for  administrative metadata and &ldquo;AdministrativeMetadata&rdquo; is an aggregator for  administrative metadata properties. <br />
+  Example:</p>
+<table width="557" border="1" align="center" bgcolor="#CCCCCC">
+  <tr>
+    <td width="547"><p> ModsResource12356&nbsp;  &nbsp;&nbsp; administrativeMetadata&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #BlankNode16<br />
+      #BlankNode16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rdf:Type&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ri:administrativeMetadata<br />
+      #BlankNode16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ri:recordCreationData&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;030211&quot;^^xsd:date <br />
+      #BlankNode16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ri:recordContentSource&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;  CStmoGRI&rdquo; <br />
+      #BlankNode16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ri:recordOrigin&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;  human prepared&quot; </p></td>
+  </tr>
+</table>
+<hr/>
+<h3>MODS &lt;relatedItem<a name="relatedItem"></a>&gt; </h3>
+<p>MODS relatedItem is treated as described in <a href="#typeEnumerated">A property for each Enumerated Type</a>. It is  described by a triple of the form:</p>
+<h4> {MODS resource}&nbsp; {property}&nbsp; #ModsResource</h4>
+<p>Where {property} depends on the type of related  item, as shown in the following table:</p>
+<table width="532" border="1">
+  <tr>
+    <td width="229"><h4>For&nbsp; a related item where type=</h4></td>
+    <td width="287"><h4>the RDF property is </h4></td>
+  </tr>
+  <tr>
+    <td>&quot;host&rdquo;</td>
+    <td>relatedHost</td>
+  </tr>
+  <tr>
+    <td>&quot;isReferencedBy&rdquo; </td>
+    <td>relatedReferencedBy</td>
+  </tr>
+  <tr>
+    <td>&quot;original&rdquo;</td>
+    <td>relatedOriginal</td>
+  </tr>
+  <tr>
+    <td>&quot;otherFormat&rdquo;&nbsp;</td>
+    <td>relatedFormat</td>
+  </tr>
+  <tr>
+    <td>&quot;otherVersion&rdquo;&nbsp;&nbsp;</td>
+    <td>relatedVersion</td>
+  </tr>
+  <tr>
+    <td>&quot;preceding&rdquo;&nbsp; &nbsp;&nbsp;</td>
+    <td>relatedPreceding</td>
+  </tr>
+  <tr>
+    <td>&quot;references&rdquo;&nbsp;</td>
+    <td>relatedReference</td>
+  </tr>
+  <tr>
+    <td>&quot;reviewOf&rdquo;&nbsp;</td>
+    <td>relatedReview</td>
+  </tr>
+  <tr>
+    <td>&quot;series&rdquo;&nbsp;</td>
+    <td>relatedSeries</td>
+  </tr>
+  <tr>
+    <td>&quot;succeeding&rdquo;</td>
+    <td>relatedSucceeding</td>
+  </tr>
+</table>
+<p>Example:</p>
+<table width="557" border="1" align="center" bgcolor="#CCCCCC">
+  <tr>
+    <td width="547"><p>ModsResource12356&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; relatedOriginal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ModsResource12357<br />
+      ModsResource12357&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;titlePrincipal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#BlankNode17<br />
+      etc.</p></td>
+  </tr>
+</table>
+<hr/>
+<h3>MODS &lt;subject<a name="subject"></a>&gt; </h3>
+<p>MODS subject is treated as described in <a href="#typeEnumerated">A property for each Enumerated Type</a> and also in <a href="#external">Properties  with Range in External Namespaces</a>. Every MODS subject has a category.  (More precisely, in MODS XML, every &lt;subject&gt; element has a subelement,  which we refer to here as the subject category. For example for  &lt;subject&gt;&lt;temporal&gt;, the subject category is &lsquo;temporal&rsquo;.)</p>
+<p>&nbsp;</p>
+<p>The following table describes how each subject category is  described in RDF.</p>
+<table width="678" border="1">
+  <tr>
+    <td><h3>&lt;subject&gt; ..... </h3></td>
+    <td><h3>Described by       a triple of the form: </h3></td>
+  </tr>
+  <tr>
+    <td width="196">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...&nbsp;&lt;topic&gt;</td>
+    <td width="466"><h4>{MODS resource}&nbsp;       subjectTopic madsrdf:Topic</h4></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...&lt;geographic&gt;</td>
+    <td><h4>{MODS resource}&nbsp;       subjectTopic madsrdf:Geographic</h4></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...&lt;temporal&gt;</td>
+    <td><h4>{MODS resource}&nbsp;       subjectTopic madsrdf:Temporal</h4></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...&lt;titleInfo&gt;</td>
+    <td><h4>{MODS resource}&nbsp;       subjectTopic madsrdf:Title</h4></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...&lt;name&gt;</td>
+    <td><h4>{MODS resource}&nbsp;       subjectTopic madsrdf:Name</h4></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...&lt;geographicCode&gt;</td>
+    <td><h4>{MODS resource}&nbsp;       subjectTopic madsrdf:Geographic</h4></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...&lt;hierarchicalGeographic&gt;</td>
+    <td><h4>{MODS resource}&nbsp;       subjectTopic madsrdf:HierarchicalGeographic</h4></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...&lt;cartographics&gt;</td>
+    <td><h4>{MODS resource}&nbsp;cartographics  modsrdf:Cartographics (see note) </h4></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...&lt;occupation&gt;</td>
+    <td><h4>{MODS resource}&nbsp;       subjectTopic madsrdf:Occupation</h4></td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...&lt;genre&gt;</td>
+    <td><h4>{MODS resource}&nbsp;       subjectTopic madsrdf:GenreForm</h4></td>
+  </tr>
+</table>
+<p>Note<strong>: </strong>Cartographics       is not treated as a subject in MODS RDF. A MODS Cartographics is       generated. </p>
+<p>Example:</p>
+<table width="649" border="1" align="center" bgcolor="#CCCCCC">
+  <tr>
+    <td width="639"><p> ModsResource12356  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; subjectTopic  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #BlankNode18<br />
+      #BlankNode18  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rdf:type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; madsrdf:Topic<br />
+      #BlankNode18&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rdfs:label&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &ldquo;Government and  Politics&rdquo;<br />
+      etc. </p></td>
+  </tr>
+</table>
+<hr/>
+<h3>MODS &lt;tableOfContents<a name="tableOfContents"></a>&gt; </h3>
+<p>MODS tableOfContents is treated as&nbsp; <a href="#simple">simple</a>. It is described by a triple of the  following form:</p>
+<h4> {MODS  resource}&nbsp; tableOfContents&nbsp;&nbsp; { text of table of contents }</h4>
+<p>Example:</p>
+<table width="649" border="1" align="center" bgcolor="#CCCCCC">
+  <tr>
+    <td width="639"><p>ModsResource12356&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tableOfContents&nbsp;&nbsp; &nbsp; &ldquo;1. Here.&nbsp;&nbsp; 2. There.&nbsp;  3. Everywhere&nbsp; 4. The End. <em>&rdquo;</em> . </p></td>
+  </tr>
+</table>
+<hr/>
+<h3>MODS &lt;targetAudience<a name="targetAudience"></a>&gt; </h3>
+<p>MODS targetAudience is treated as&nbsp; <a href="#simple">simple</a>. It is  described by a triple of the following form: </p>
+<h4> {MODS  resource}&nbsp; targetAudience&nbsp;&nbsp; { text of target audience }</h4>
+<p>Example:</p>
+<table width="468" border="1" align="center" bgcolor="#CCCCCC">
+  <tr>
+    <td width="458"><p>ModsResource12356&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; targetAudience&nbsp;&nbsp; &nbsp; &ldquo;adolescent<em>&rdquo;</em> . </p></td>
+  </tr>
+</table>
+<hr/>
+<h3>MODS &lt;titleInfo<a name="titleInfo"></a>&gt; </h3>
+<p>MODS title is treated as described in <a href="#typeEnumerated">A property for each Enumerated Type</a><a href="#_Type_determines_the"></a> and also in <a href="#external">Properties  with Range in External Namespaces</a>. <br />
+  There are five categories  of titles&nbsp; in MODS.</p>
+<ul type="disc">
+  <li><strong>Principal title <br />
+    </strong>If there is no &lsquo;type&rsquo;       attribute on the MODS &lt;title&gt; element, it is the principal title.       The ontology assumes&nbsp; that there is       at most one principal title. If there are any abbreviated, translated, or       alternative titles, then there must be a principal title (and if so there       may be any number of these types of titles). <br />
+    A <strong>principal</strong> title&nbsp; is described by a triple of       the following form:</li>
+</ul>
+<h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {MODS  resource}&nbsp; titlePrincipal&nbsp;&nbsp; madsrdf:Title</h4>
+<ul type="disc">
+  <li><strong>Uniform title <br />
+    </strong>If the &lsquo;type&rsquo;       attribute has value &lsquo;uniform&rsquo;, it is a uniform title. The ontology       assumes&nbsp; that there is at most one       uniform title.<br />
+    A <strong>uniform</strong> title is described by a triple of the following form:</li>
+</ul>
+<h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {MODS  resource}&nbsp; titleUniform&nbsp;&nbsp; { MADS NameTitle or Title }</h4>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Where { MADS  Title or NameTitle }  is:</p>
+<ul type="disc">
+  <ul type="circle">
+    <li>A MADS NameTitle, If there        is a principal name.</li>
+    <li>A MADS Title, If not.</li>
+  </ul>
+</ul>
+<ul type="disc">
+  <li><strong>Abbreviated title <br />
+    </strong>If the &lsquo;type&rsquo;       attribute has value &lsquo;abbreviated&rsquo;, it is an abbreviated title. There may       be any number of abbreviated titles (so long as there is a principal       title, as an abbreviated title is an abbreviation of the principal title).<br />
+    <br />
+  </li>
+  <li><strong>Translated title <br />
+    </strong>If the &lsquo;type&rsquo;       attribute has value &lsquo;translated&rsquo;, it is a translated title. There may be       any number of translated titles (so long as there is a principal title, as       a translated title is a translation of the principal title).<br />
+    <br />
+  </li>
+  <li><strong>Alternative title<br />
+  </strong>If the &lsquo;type&rsquo;       attribute has value &lsquo;alternative&rsquo;, it is an alternative title. There may       be any number of alternative titles (so long as there is a principal       title, as an alternative title is an alternative to the principal title).</li>
+</ul>
+<p>For each <strong>abbreviated, translated</strong>, or <strong>alternative</strong> title, a MADS  Variant Title is generated and included in the madsrdf:Title.<br />
+  The following Example, shows a principal title and  a variant title, and the variant title is designated to be the primary title.</p>
+<table width="690" border="1" align="center" bgcolor="#CCCCCC">
+  <tr>
+    <td width="680"><p>ModsResource12356&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;titlePrincipal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://www.loc/gov/modsrdf/id00001<br />
+      http://www.loc/gov/modsrdf/id00001&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rdf:type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;madsrdf:Title<br />
+      http://www.loc/gov/modsrdf/id00001&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rdfs:label&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot; Margaret Mitchell's  Gone with the wind&quot; <br />
+      http://www.loc/gov/modsrdf/id00001&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;madsrdf:elementList&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#BlankNode19&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
+      #BlankNode19&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rdfs:first&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;#BlankNode20<br />
+      #BlankNode20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rds:type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; madsrdf:MainTitleElement<br />
+      #BlankNode20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;madsrdf:elementValue&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;  Margaret Mitchell's Gone with the wind&quot; <br />
+      http://www.loc/gov/modsrdf/id00001 &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;madsrdf:hasAbbreviatedVariant&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;http://www.loc/gov/modsrdf/id00001 <br />
+      http://www.loc/gov/modsrdf/id00001&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rdf:type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; madsrdf:Title<br />
+      http://www.loc/gov/modsrdf/id00001&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rdfs:label &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;Gone  with the wind&quot;<br />
+      http://www.loc/gov/modsrdf/id00001&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rdfs:first&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#BlankNode22<br />
+      #BlankNode22&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rds:type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;madsrdf:MainTitleElement<br />
+      #BlankNode22&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;madsrdf:elementValue&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;Gone with the wind&quot; </p></td>
+  </tr>
+</table>
+<hr/>
+<h3>MODS &lt;typeOfResource<a name="typeOfResource"></a>&gt; </h3>
+<p>Each MODS typeOfResouce is treated as a triple of the  following form:</p>
+<h4> {MODS  resource}&nbsp; rdf:type&nbsp; { resource type }</h4>
+<p>Example:</p>
+<table width="579" border="1" align="center" bgcolor="#CCCCCC">
+  <tr>
+    <td width="569"><p>ModsResource12356&nbsp;  rdf:type&nbsp; <a href="http://id.loc.gov/vocabulary/resourceTypes#MovingImage">http://id.loc.gov/vocabulary/resourceTypes#MovingImage</a></p></td>
+  </tr>
+</table>
+<hr/>
+<hr/>
+<h2><a name="relationships"></a>Summary Tables for Element/Property Relationships</h2>
+<h3>MODS Top-level Elements and their RDF Properties </h3>
+<p>The following table  shows, for each MODS top-level element, the corresponding MODS RDF property and  its range.&nbsp; The domain for all of these  properties is modsrdf:ModsResource&nbsp;&nbsp;&nbsp;&nbsp;  . </p>
+<h2><span dir="ltr">&nbsp;</span></h2>
+<table border="1" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="126"><p align="center"><strong>MODS&nbsp;    top level element (XML)</strong></p></td>
+    <td width="145"><p align="center"><strong>condition</strong></p></td>
+    <td width="174"><p align="center"><strong>Corresponding RDF property</strong></p></td>
+    <td width="147"><p align="center"><strong>Range</strong></p></td>
+  </tr>
+  <tr>
+    <td width="126"><p align="center">abstract</p></td>
+    <td width="145"><p align="center">&nbsp;</p></td>
+    <td width="174"><p align="center">abstract</p></td>
+    <td width="147"><p align="center">xs:string</p></td>
+  </tr>
+  <tr>
+    <td width="126"><p align="center">accessCondition</p></td>
+    <td width="145"><p align="center">&nbsp;</p></td>
+    <td width="174"><p align="center">accessCondition</p></td>
+    <td width="147"><p align="center">xs:string</p></td>
+  </tr>
+  <tr>
+    <td width="126" rowspan="2"><p align="center">classification</p></td>
+    <td width="145"><p align="center"><em>uncontrolled type </em></p></td>
+    <td width="174"><p align="center">classificationGroup</p></td>
+    <td width="147"><p align="center">ClassificationGroup</p></td>
+  </tr>
+  <tr>
+    <td width="145"><p align="center"><em>controlled type </em></p></td>
+    <td width="174"><p align="center">class:{scheme};    e.g. class:lcc</p></td>
+    <td width="147"><p align="center"><em>(None</em>. <em>Defined    as an annotated property</em>.)</p></td>
+  </tr>
+  <tr>
+    <td width="126"><p align="center">genre</p></td>
+    <td width="145"><p align="center"><em>&nbsp;</em></p></td>
+    <td width="174"><p align="center">genre</p></td>
+    <td width="147"><p align="center">madsrdf:GenreForm</p></td>
+  </tr>
+  <tr>
+    <td width="126" rowspan="2"><p align="center">identifier</p></td>
+    <td width="145"><p align="center"><em>uncontrolled type </em></p></td>
+    <td width="174"><p align="center">identifierGroup</p></td>
+    <td width="147"><p align="center">IdentifierGroup</p></td>
+  </tr>
+  <tr>
+    <td width="145"><p align="center"><em>controlled type </em></p></td>
+    <td width="174"><p align="center">identifier:{type};    e.g. identifier:isbn&nbsp;&nbsp;&nbsp; </p></td>
+    <td width="147"><p align="center"><em>(None</em>. <em>Defined    as an annotated property</em>.)</p></td>
+  </tr>
+  <tr>
+    <td width="126"><p align="center">language</p></td>
+    <td width="145"><p align="center"><em>&nbsp;</em></p></td>
+    <td width="174"><p align="center">languageOfResource</p></td>
+    <td width="147"><p align="center"><em>(None</em>. <em>Defined    as an annotated property</em>.)</p></td>
+  </tr>
+  <tr>
+    <td width="126"><p align="center">location</p></td>
+    <td width="145"><p align="center"><em>&nbsp;</em></p></td>
+    <td width="174"><p align="center">locationOfResource</p></td>
+    <td width="147"><p align="center">Location</p></td>
+  </tr>
+  <tr>
+    <td width="126" rowspan="2"><p align="center">name</p></td>
+    <td width="145"><p align="center"><em>not the principal name</em></p></td>
+    <td width="174"><p align="center">name</p></td>
+    <td width="147" rowspan="2"><p align="center">madsrdf:Name</p></td>
+  </tr>
+  <tr>
+    <td width="145"><p align="center"><em>the principal name</em></p></td>
+    <td width="174"><p align="center">namePrincipal</p></td>
+  </tr>
+  <tr>
+    <td width="126" rowspan="3"><p align="center">note</p></td>
+    <td width="145"><p align="center"><em>type unspecified</em></p></td>
+    <td width="174"><p align="center">note</p></td>
+    <td width="147" rowspan="2"><p align="center">xs:string</p></td>
+  </tr>
+  <tr>
+    <td width="145"><p align="center"><em>type = &ldquo;statement of responsibility&rdquo;</em></p></td>
+    <td width="174"><p align="center">statementOfResponsibility</p></td>
+  </tr>
+  <tr>
+    <td width="145"><p align="center"><em>type specified</em></p></td>
+    <td width="174"><p align="center">noteGroup</p></td>
+    <td width="147"><p align="center">NoteGroup</p></td>
+  </tr>
+  <tr>
+    <td width="126"><p align="center">originInfo</p></td>
+    <td width="145"><p align="center"><em>&nbsp;</em></p></td>
+    <td width="174"><p align="center">(none)</p></td>
+    <td width="147"><p align="center">&nbsp;</p></td>
+  </tr>
+  <tr>
+    <td width="126"><p align="center">part</p></td>
+    <td width="145"><p align="center"><em>&nbsp;</em></p></td>
+    <td width="174"><p align="center">part</p></td>
+    <td width="147"><p align="center">Part</p></td>
+  </tr>
+  <tr>
+    <td width="126"><p align="center">physicalDescription</p></td>
+    <td width="145"><p align="center"><em>&nbsp;</em></p></td>
+    <td width="174"><p align="center">(none)</p></td>
+    <td width="147"><p align="center">&nbsp;</p></td>
+  </tr>
+  <tr>
+    <td width="126"><p align="center">recordInfo</p></td>
+    <td width="145"><p align="center"><em>&nbsp;</em></p></td>
+    <td width="174"><p align="center">adminMetadata</p></td>
+    <td width="147"><p align="center">ri:AdminMetadata</p></td>
+  </tr>
+  <tr>
+    <td width="126" rowspan="12"><p align="center">relatedItem</p></td>
+    <td width="145"><p align="center"><em>type unspecified</em></p></td>
+    <td width="174"><p align="center">relatedItem</p></td>
+    <td width="147" rowspan="12"><p align="center">modsResource</p></td>
+  </tr>
+  <tr>
+    <td width="145"><p align="center"><em>type=&rdquo;preceding&rdquo;</em></p></td>
+    <td width="174"><p align="center">relatedPreceding</p></td>
+  </tr>
+  <tr>
+    <td width="145"><p align="center"><em>type=&rdquo;succeeding&rdquo;</em></p></td>
+    <td width="174"><p align="center">relatedSucceeding</p></td>
+  </tr>
+  <tr>
+    <td width="145"><p align="center"><em>type=&rdquo;original&rdquo;</em></p></td>
+    <td width="174"><p align="center">relatedOriginal</p></td>
+  </tr>
+  <tr>
+    <td width="145"><p align="center"><em>type=&rdquo;host&rdquo;</em></p></td>
+    <td width="174"><p align="center">relatedHost</p></td>
+  </tr>
+  <tr>
+    <td width="145"><p align="center"><em>type=&rdquo;constituent&rdquo;</em></p></td>
+    <td width="174"><p align="center">relatedConsdtituent</p></td>
+  </tr>
+  <tr>
+    <td width="145"><p align="center"><em>type=&rdquo;series&rdquo;</em></p></td>
+    <td width="174"><p align="center">relatedSeries</p></td>
+  </tr>
+  <tr>
+    <td width="145"><p align="center"><em>type=&rdquo;otherVersion&rdquo;</em></p></td>
+    <td width="174"><p align="center">relatedVersion</p></td>
+  </tr>
+  <tr>
+    <td width="145"><p align="center"><em>type=&rdquo;otherFormat&rdquo;</em></p></td>
+    <td width="174"><p align="center">relatedFormat</p></td>
+  </tr>
+  <tr>
+    <td width="145"><p align="center"><em>type=&rdquo;isReferencedBy&rdquo;</em></p></td>
+    <td width="174"><p align="center">relatedReferencedBy</p></td>
+  </tr>
+  <tr>
+    <td width="145"><p align="center"><em>type=&rdquo;references&rdquo;</em></p></td>
+    <td width="174"><p align="center">relatedReference</p></td>
+  </tr>
+  <tr>
+    <td width="145"><p align="center"><em>type=&rdquo;reviewOf&rdquo;</em></p></td>
+    <td width="174"><p align="center">relatedReview</p></td>
+  </tr>
+  <tr>
+    <td width="126" rowspan="11"><p align="center">subject</p></td>
+    <td width="145"><p align="center"><em>subject category topic </em></p></td>
+    <td width="174"><p align="center">subjectTopic</p></td>
+    <td width="147"><p align="center">madsrdf:topic</p></td>
+  </tr>
+  <tr>
+    <td width="145"><p align="center"><em>subject category geographic</em></p></td>
+    <td width="174"><p align="center">subjectGeographic</p></td>
+    <td width="147"><p align="center">madsrdf:geographic</p></td>
+  </tr>
+  <tr>
+    <td width="145"><p align="center"><em>subject category temporal</em></p></td>
+    <td width="174"><p align="center">subjectTemporal</p></td>
+    <td width="147"><p align="center">madsrdf:temporal</p></td>
+  </tr>
+  <tr>
+    <td width="145"><p align="center"><em>subject category titleInfo</em></p></td>
+    <td width="174"><p align="center">subjectTitle</p></td>
+    <td width="147"><p align="center">madsrdf:title</p></td>
+  </tr>
+  <tr>
+    <td width="145"><p align="center"><em>subject category name</em></p></td>
+    <td width="174"><p align="center">subjectName</p></td>
+    <td width="147"><p align="center">madsrdf:name</p></td>
+  </tr>
+  <tr>
+    <td width="145"><p align="center"><em>subject category geographicCode</em></p></td>
+    <td width="174"><p align="center">subjectGeographicCode</p></td>
+    <td width="147"><p align="center">madsrdf:geographic</p></td>
+  </tr>
+  <tr>
+    <td width="145"><p align="center"><em>subject category hierarchicalGeographic</em></p></td>
+    <td width="174"><p align="center">subjectHierarchicalGeographic </p></td>
+    <td width="147"><p align="center">madsrdf:ComplexSubject</p></td>
+  </tr>
+  <tr>
+    <td width="145"><p align="center"><em>subject category cartographics</em></p></td>
+    <td width="174"><p align="center">cartographics</p></td>
+    <td width="147"><p align="center">Cartographics</p></td>
+  </tr>
+  <tr>
+    <td width="145"><p align="center"><em>subject category occupation</em></p></td>
+    <td width="174"><p align="center">subjectOccupation</p></td>
+    <td width="147"><p align="center">madsrdf:Occupation</p></td>
+  </tr>
+  <tr>
+    <td width="145"><p align="center"><em>subject category genre</em></p></td>
+    <td width="174"><p align="center">subjectGenre</p></td>
+    <td width="147"><p align="center">madsrdf:GenreForm</p></td>
+  </tr>
+  <tr>
+    <td width="145"><p align="center"><em>complex subject (multiple subjects)</em></p></td>
+    <td width="174"><p align="center">subjectComplex</p></td>
+    <td width="147"><p align="center">madsrdf:ComplexSubject</p></td>
+  </tr>
+  <tr>
+    <td width="126"><p align="center">tableOfContents</p></td>
+    <td width="145"><p align="center"><em>&nbsp;</em></p></td>
+    <td width="174"><p align="center">tableOfContents</p></td>
+    <td width="147"><p align="center">xs:string</p></td>
+  </tr>
+  <tr>
+    <td width="126"><p align="center">targetAudience</p></td>
+    <td width="145"><p align="center"><em>&nbsp;</em></p></td>
+    <td width="174"><p align="center">targetAudience</p></td>
+    <td width="147"><p align="center">xs:string</p></td>
+  </tr>
+  <tr>
+    <td width="126" rowspan="4"><p align="center">titleInfo</p></td>
+    <td width="145"><p align="center"><em>type=&rdquo;uniform&rdquo;; principal name exist</em></p></td>
+    <td width="174"><p align="center">titleUniform </p></td>
+    <td width="147"><p align="center">madsrdf:NameTitle</p></td>
+  </tr>
+  <tr>
+    <td width="145"><p align="center"><em>type=&rdquo;uniform&rdquo;; no principal name exist</em></p></td>
+    <td width="174"><p align="center">titleUniform</p></td>
+    <td width="147" rowspan="2"><p align="center">madsrdf:Title</p></td>
+  </tr>
+  <tr>
+    <td width="145"><p align="center"><em>type not specified </em></p></td>
+    <td width="174"><p align="center">titlePrincipal </p></td>
+  </tr>
+  <tr>
+    <td width="145"><p align="center"><em>type=&rdquo;abbreviated&rdquo;, &ldquo;traslated&rdquo;, or &ldquo;alternative&rdquo;</em></p></td>
+    <td width="174"><p align="center">(no    modsrdf property)</p></td>
+    <td width="147"><p align="center">madsrdf:variant    (embedded in Title)</p></td>
+  </tr>
+</table>
+<h3>Aggregations</h3>
+<p>MODS elements location and part each correspond to a  property whose range is an aggregation class; that is, the object of the RDF  triple is a blank node which becomes the subject of two or more triples.&nbsp; This is shown in the&nbsp; following table.&nbsp; </p>
+<table border="1" cellspacing="0" cellpadding="0">
+  <tr>
+    <td valign="top"><p><strong>MODSElement</strong></p></td>
+    <td valign="top"><p><strong>Aggregation Class</strong></p></td>
+    <td valign="top"><p><strong>MODS Subelement</strong></p></td>
+    <td valign="top"><p><strong>Property (whose domain is the aggregation class)</strong></p></td>
+    <td valign="top"><p><strong>Range</strong></p></td>
+  </tr>
+  <tr>
+    <td rowspan="4"><p align="center">location</p></td>
+    <td rowspan="4"><p align="center">Location</p></td>
+    <td valign="top"><p>(holdingSimple)<br />
+      copy</p></td>
+    <td valign="top"><p>locationCopy</p></td>
+    <td><p align="center">LocationCopy</p></td>
+  </tr>
+  <tr>
+    <td valign="top"><p>physicalLocation</p></td>
+    <td valign="top"><p>locationPhysical</p></td>
+    <td><p align="center">xs:string</p></td>
+  </tr>
+  <tr>
+    <td valign="top"><p>shelfLocator</p></td>
+    <td valign="top"><p>locationShelfLocator</p></td>
+    <td><p align="center">xs:string</p></td>
+  </tr>
+  <tr>
+    <td valign="top"><p>url</p></td>
+    <td valign="top"><p>locationUrl</p></td>
+    <td><p align="center">xs:string</p></td>
+  </tr>
+  <tr>
+    <td rowspan="14"><p align="center">part</p></td>
+    <td rowspan="14"><p align="center">Part</p></td>
+    <td valign="top"><p>@type</p></td>
+    <td valign="top"><p>partType</p></td>
+    <td><p align="center">xs:string</p></td>
+  </tr>
+  <tr>
+    <td valign="top"><p>@order</p></td>
+    <td valign="top"><p>partOrder</p></td>
+    <td><p align="center">xs:integer</p></td>
+  </tr>
+  <tr>
+    <td valign="top"><p>date</p></td>
+    <td valign="top"><p>partDate</p></td>
+    <td><p align="center">(ann. Prop.)</p></td>
+  </tr>
+  <tr>
+    <td valign="top"><p>text</p></td>
+    <td valign="top"><p>partText</p></td>
+    <td><p align="center">xs:string</p></td>
+  </tr>
+  <tr>
+    <td valign="top"><p>extent@unit</p></td>
+    <td valign="top"><p>partUnit</p></td>
+    <td><p align="center">xs:string</p></td>
+  </tr>
+  <tr>
+    <td valign="top"><p>extent/start</p></td>
+    <td valign="top"><p>partStart</p></td>
+    <td><p align="center">xs:string</p></td>
+  </tr>
+  <tr>
+    <td valign="top"><p>extent/end</p></td>
+    <td valign="top"><p>partEnd</p></td>
+    <td><p align="center">xs:string</p></td>
+  </tr>
+  <tr>
+    <td valign="top"><p>extent/total</p></td>
+    <td valign="top"><p>partList</p></td>
+    <td><p align="center">xs:positiveInteger</p></td>
+  </tr>
+  <tr>
+    <td valign="top"><p>extent/list</p></td>
+    <td valign="top"><p>partTotal</p></td>
+    <td><p align="center">xs:string</p></td>
+  </tr>
+  <tr>
+    <td valign="top"><p>detail/level</p></td>
+    <td valign="top"><p>partLevel</p></td>
+    <td><p align="center">xs:positiveInteger</p></td>
+  </tr>
+  <tr>
+    <td valign="top"><p>detail@type</p></td>
+    <td valign="top"><p>partDetailType</p></td>
+    <td><p align="center">xs:string</p></td>
+  </tr>
+  <tr>
+    <td valign="top"><p>detail/number</p></td>
+    <td valign="top"><p>partNumber</p></td>
+    <td><p align="center">xs:string</p></td>
+  </tr>
+  <tr>
+    <td valign="top"><p>detail/caption</p></td>
+    <td valign="top"><p>partCaption</p></td>
+    <td><p align="center">xs:string</p></td>
+  </tr>
+  <tr>
+    <td valign="top"><p>detail/title</p></td>
+    <td valign="top"><p>partTitle</p></td>
+    <td><p align="center">xs:string</p></td>
+  </tr>
+  <tr>
+    <td rowspan="5"><p align="center">location/<br />
+      holdingSimple/<br />
+      Copy</p></td>
+    <td rowspan="5"><p align="center">LocationCopy </p></td>
+    <td valign="top"><p>form</p></td>
+    <td valign="top"><p>locationCopyForm</p></td>
+    <td><p align="center">xs:string</p></td>
+  </tr>
+  <tr>
+    <td valign="top"><p>sublocation</p></td>
+    <td valign="top"><p>locationCopySublocation</p></td>
+    <td><p align="center">xs:string</p></td>
+  </tr>
+  <tr>
+    <td valign="top"><p>shelfLocator</p></td>
+    <td valign="top"><p>locationCopyShelfLocator</p></td>
+    <td><p align="center">xs:string</p></td>
+  </tr>
+  <tr>
+    <td valign="top"><p>electronicLocator</p></td>
+    <td valign="top"><p>locationCopyeElctronicLocator</p></td>
+    <td><p align="center">xs:string</p></td>
+  </tr>
+  <tr>
+    <td valign="top"><p>note</p></td>
+    <td valign="top"><p>locationCopyNote</p></td>
+    <td><p align="center">xs:string</p></td>
+  </tr>
+</table>
+<h3><span dir="ltr">Aggregators that bind a value with  its Type</span></h3>
+<p>For the cases shown in the table below an aggregator is  defined to bundle a value toghether with its type (or &lsquo;scheme&rsquo;, in the case of  classification).</p>
+<table border="1" cellspacing="0" cellpadding="0">
+  <tr>
+    <td valign="top"><p><strong>MODSElement/ condition</strong></p></td>
+    <td valign="top"><p><strong>Aggregation Class</strong></p></td>
+    <td valign="top"><p><strong>Property (whose domain is the aggregation class)</strong></p></td>
+    <td valign="top"><p><strong>Range</strong></p></td>
+  </tr>
+  <tr>
+    <td rowspan="2"><p align="center">classification&nbsp; / uncoltrolled type</p></td>
+    <td rowspan="2"><p align="center">ClassificationGroup</p></td>
+    <td valign="top"><p>classificationGroupScheme</p></td>
+    <td rowspan="2"><p align="center">xs:string</p></td>
+  </tr>
+  <tr>
+    <td valign="top"><p>classificationGroupValue</p></td>
+  </tr>
+  <tr>
+    <td rowspan="2"><p align="center">identifier    / uncoltrolled type</p></td>
+    <td rowspan="2"><p align="center">IdentifierGroup</p></td>
+    <td valign="top"><p>identifierGroupType</p></td>
+    <td rowspan="2"><p align="center">xs:string</p></td>
+  </tr>
+  <tr>
+    <td valign="top"><p>identifierGroupValue</p></td>
+  </tr>
+  <tr>
+    <td rowspan="2"><p align="center">note /    type specified</p></td>
+    <td rowspan="2"><p align="center">NoteGroup</p></td>
+    <td valign="top"><p>noteGroupType</p></td>
+    <td rowspan="2"><p align="center">xs:string</p></td>
+  </tr>
+  <tr>
+    <td valign="top"><p>noteGroupValue</p></td>
+  </tr>
+</table>
+<h3>Extra Level of Structure Eliminated </h3>
+<p>Finally, for MODS wrapper elements physicalDescription and  originInfo, the wrappers are eliminated and for each subelement a property is  directly defined. This is shown in the following table.</p>
+<table border="1" cellspacing="0" cellpadding="0" width="590">
+  <tr>
+    <td valign="top"><p><strong>MODSElement</strong></p></td>
+    <td valign="top"><p><strong>Subelement</strong></p></td>
+    <td width="203" valign="top"><p><strong>Property </strong></p></td>
+    <td width="167" valign="top"><p><strong>Range</strong></p></td>
+  </tr>
+  <tr>
+    <td rowspan="26"><p align="center">originInfo</p></td>
+    <td valign="top"><p>place</p></td>
+    <td width="203" valign="top"><p>placeOforigin</p></td>
+    <td width="167"><p align="center">madsrdf:Geographic</p></td>
+  </tr>
+  <tr>
+    <td valign="top"><p>publisher</p></td>
+    <td width="203" valign="top"><p>publisher</p></td>
+    <td width="167"><p align="center">xs:string</p></td>
+  </tr>
+  <tr>
+    <td rowspan="3" valign="top"><p>dateIssued</p></td>
+    <td width="203" valign="top"><p>dateIssued</p></td>
+    <td width="167" rowspan="21"><p align="center"><em>(None. Defined    as annotation properties.)</em></p></td>
+  </tr>
+  <tr>
+    <td width="203" valign="top"><p>dateIssuedStart</p></td>
+  </tr>
+  <tr>
+    <td width="203" valign="top"><p>dateIssuedEnd</p></td>
+  </tr>
+  <tr>
+    <td rowspan="3" valign="top"><p>dateCreated</p></td>
+    <td width="203" valign="top"><p>dateCreated</p></td>
+  </tr>
+  <tr>
+    <td width="203" valign="top"><p>dateCreatedStart</p></td>
+  </tr>
+  <tr>
+    <td width="203" valign="top"><p>dateCreatedEnd</p></td>
+  </tr>
+  <tr>
+    <td rowspan="3" valign="top"><p>dateCaptured</p></td>
+    <td width="203" valign="top"><p>dateCatpured</p></td>
+  </tr>
+  <tr>
+    <td width="203" valign="top"><p>dateCatpuredStart</p></td>
+  </tr>
+  <tr>
+    <td width="203" valign="top"><p>dateCatpuredEnd</p></td>
+  </tr>
+  <tr>
+    <td rowspan="3" valign="top"><p>dateValid</p></td>
+    <td width="203" valign="top"><p>dateValid</p></td>
+  </tr>
+  <tr>
+    <td width="203" valign="top"><p>dateValidStart</p></td>
+  </tr>
+  <tr>
+    <td width="203" valign="top"><p>dateValidEnd</p></td>
+  </tr>
+  <tr>
+    <td rowspan="3" valign="top"><p>dateModified</p></td>
+    <td width="203" valign="top"><p>dateModified</p></td>
+  </tr>
+  <tr>
+    <td width="203" valign="top"><p>dateModifiedStart</p></td>
+  </tr>
+  <tr>
+    <td width="203" valign="top"><p>dateModifiedEnd</p></td>
+  </tr>
+  <tr>
+    <td rowspan="3" valign="top"><p>copyrightDate</p></td>
+    <td width="203" valign="top"><p>dateOfCopyright</p></td>
+  </tr>
+  <tr>
+    <td width="203" valign="top"><p>dateOfCopyrightStart</p></td>
+  </tr>
+  <tr>
+    <td width="203" valign="top"><p>dateOfCopyrightEnd</p></td>
+  </tr>
+  <tr>
+    <td rowspan="3" valign="top"><p>dateOther</p></td>
+    <td width="203" valign="top"><p>date</p></td>
+  </tr>
+  <tr>
+    <td width="203" valign="top"><p>dateStart</p></td>
+  </tr>
+  <tr>
+    <td width="203" valign="top"><p>dateEnd</p></td>
+  </tr>
+  <tr>
+    <td valign="top"><p>edition</p></td>
+    <td width="203" valign="top"><p>edition</p></td>
+    <td width="167" rowspan="3"><p align="center">xs:string</p></td>
+  </tr>
+  <tr>
+    <td valign="top"><p>issuance</p></td>
+    <td width="203" valign="top"><p>issuance</p></td>
+  </tr>
+  <tr>
+    <td valign="top"><p>frequency</p></td>
+    <td width="203" valign="top"><p>frequency</p></td>
+  </tr>
+  <tr>
+    <td rowspan="6"><p align="center">PhysicalDescription</p></td>
+    <td valign="top"><p>form</p></td>
+    <td width="203" valign="top"><p>form</p></td>
+    <td width="167" rowspan="6"><p align="center">xs:string</p></td>
+  </tr>
+  <tr>
+    <td valign="top"><p>reformattingQuality</p></td>
+    <td width="203" valign="top"><p>reformattingQuality</p></td>
+  </tr>
+  <tr>
+    <td valign="top"><p>internetMediaType</p></td>
+    <td width="203" valign="top"><p>mediaType</p></td>
+  </tr>
+  <tr>
+    <td valign="top"><p>extent</p></td>
+    <td width="203" valign="top"><p>extent</p></td>
+  </tr>
+  <tr>
+    <td valign="top"><p>digitalOrigin</p></td>
+    <td width="203" valign="top"><p>digitalOrigin</p></td>
+  </tr>
+  <tr>
+    <td valign="top"><p>note</p></td>
+    <td width="203" valign="top"><p>physicalDescriptionNote</p></td>
+  </tr>
+</table>
+<hr/>
+<hr/>
+<h2>Interoperability with Dublin Core <a name="dc"></a></h2>
+<p>This ontology declares each MODS RDF property in the left  column of the table below to be a subproperty of the corresponding DC Terms  property shown to its right (in the middle column) prefaced by http:// purl.org/dc/terms/.&nbsp; <br />
+  For example, the first row says:&nbsp; modsrdf:abstract is a subproperty of http:// purl.org/dc/terms/abstract.</p>
+<table border="1" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="139" valign="top"><p>This modsrdf<br />
+      property:</p></td>
+    <td width="144" valign="top"><p>is a subproperty of http://<br />
+      purl.org/dc/terms/&hellip;.&nbsp;&nbsp; </p></td>
+    <td width="288" valign="top"><p>Definition    of DC Term property from <a href="http://dublincore.org/documents/dcmi-terms/">dublincore.org/documents/dcmi-terms/</a> </p></td>
+  </tr>
+  <tr>
+    <td width="139" valign="top"><p>abstract</p></td>
+    <td width="144" valign="top"><p>abstract</p></td>
+    <td width="288" valign="top"><p>A summary of the resource.</p></td>
+  </tr>
+  <tr>
+    <td width="139" valign="top"><p>accessCondition &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p></td>
+    <td width="144" valign="top"><p>accessRights</p></td>
+    <td width="288" valign="top"><p>Information about who can    access the resource or an indication of its security status.</p></td>
+  </tr>
+  <tr>
+    <td width="139" valign="top"><p>dateCreated</p></td>
+    <td width="144" valign="top"><p>created</p></td>
+    <td width="288" valign="top"><p>Date of creation of the    resource.</p></td>
+  </tr>
+  <tr>
+    <td width="139" valign="top"><p>dateIssued</p></td>
+    <td width="144" valign="top"><p>issued</p></td>
+    <td width="288" valign="top"><p>Date of formal issuance    (e.g., publication) of the resource.</p></td>
+  </tr>
+  <tr>
+    <td width="139" valign="top"><p>dateModified</p></td>
+    <td width="144" valign="top"><p>modified</p></td>
+    <td width="288" valign="top"><p>Date on which the resource    was changed.</p></td>
+  </tr>
+  <tr>
+    <td width="139" valign="top"><p>dateOfCopyright</p></td>
+    <td width="144" valign="top"><p>dateCopyrighted</p></td>
+    <td width="288" valign="top"><p>Date of copyright.</p></td>
+  </tr>
+  <tr>
+    <td width="139" valign="top"><p>dateValid</p></td>
+    <td width="144" valign="top"><p>valid</p></td>
+    <td width="288" valign="top"><p>Date (often a range) of    validity of a resource.</p></td>
+  </tr>
+  <tr>
+    <td width="139" valign="top"><p>frequence</p></td>
+    <td width="144" valign="top"><p>accrualPeriodicity</p></td>
+    <td width="288" valign="top"><p>The frequency with which items are added to a collection. </p></td>
+  </tr>
+  <tr>
+    <td width="139" valign="top"><p>genre</p></td>
+    <td width="144" valign="top"><p>type</p></td>
+    <td width="288" valign="top"><p>The nature or genre of the    resource.</p></td>
+  </tr>
+  <tr>
+    <td width="139" valign="top"><p>identifier</p></td>
+    <td width="144" valign="top"><p>identifier</p></td>
+    <td width="288" valign="top"><p>An unambiguous reference to    the resource within a given context.</p></td>
+  </tr>
+  <tr>
+    <td width="139" valign="top"><p>mediaType</p></td>
+    <td width="144" valign="top"><p>format</p></td>
+    <td width="288" valign="top"><p>The file format, physical    medium, or dimensions of the resource. Recommended best practice is to use a    controlled vocabulary such as the list of Internet Media Types [MIME].</p></td>
+  </tr>
+  <tr>
+    <td width="139" valign="top"><p>languageOfResource</p></td>
+    <td width="144" valign="top"><p>language</p></td>
+    <td width="288" valign="top"><p>A language of the resource.</p></td>
+  </tr>
+  <tr>
+    <td width="139" valign="top"><p>note</p></td>
+    <td width="144" valign="top"><p>description</p></td>
+    <td width="288" valign="top"><p>An account of the resource. </p></td>
+  </tr>
+  <tr>
+    <td width="139" valign="top"><p>publisher</p></td>
+    <td width="144" valign="top"><p>publisher</p></td>
+    <td width="288" valign="top"><p>An entity responsible for    making the resource available.</p></td>
+  </tr>
+  <tr>
+    <td width="139" valign="top"><p>relatedConstituent</p></td>
+    <td width="144" valign="top"><p>hasPart</p></td>
+    <td width="288" valign="top"><p>A related resource that is    included either physically or logically in the described resource.</p></td>
+  </tr>
+  <tr>
+    <td width="139" valign="top"><p>relatedFormat</p></td>
+    <td width="144" valign="top"><p>isFormatOf</p></td>
+    <td width="288" valign="top"><p>A related resource that is    substantially the same as the described resource, but in another format.</p></td>
+  </tr>
+  <tr>
+    <td width="139" valign="top"><p>relatedHost</p></td>
+    <td width="144" valign="top"><p>isPartOf</p></td>
+    <td width="288" valign="top"><p>A related resource in which    the described resource is physically or logically included.</p></td>
+  </tr>
+  <tr>
+    <td width="139" valign="top"><p>relatedItem</p></td>
+    <td width="144" valign="top"><p>relation</p></td>
+    <td width="288" valign="top"><p>A related resource.</p></td>
+  </tr>
+  <tr>
+    <td width="139" valign="top"><p>relatedOriginal</p></td>
+    <td width="144" valign="top"><p>source</p></td>
+    <td width="288" valign="top"><p>A related resource from    which the described resource is derived.</p></td>
+  </tr>
+  <tr>
+    <td width="139" valign="top"><p>relatedReference</p></td>
+    <td width="144" valign="top"><p>references</p></td>
+    <td width="288" valign="top"><p>A related resource that is    referenced, cited, or otherwise pointed to by the described resource.</p></td>
+  </tr>
+  <tr>
+    <td width="139" valign="top"><p>relatedReferencedBy</p></td>
+    <td width="144" valign="top"><p>isReferencedBy</p></td>
+    <td width="288" valign="top"><p>A related resource that    references, cites, or otherwise points to the described resource.</p></td>
+  </tr>
+  <tr>
+    <td width="139" valign="top"><p>relatedVersion</p></td>
+    <td width="144" valign="top"><p>isVersionOf</p></td>
+    <td width="288" valign="top"><p>A related resource of which the described resource is a    version, edition, or adaptation. </p></td>
+  </tr>
+  <tr>
+    <td width="139" valign="top"><p>subjectTemporal</p></td>
+    <td width="144" valign="top"><p>temporal</p></td>
+    <td width="288" valign="top"><p>Temporal characteristics of    the resource. (Subproperty of coverage.)</p></td>
+  </tr>
+  <tr>
+    <td width="139" valign="top"><p>tableOfContents</p></td>
+    <td width="144" valign="top"><p>tableOfContents</p></td>
+    <td width="288" valign="top"><p>A list of subunits of the    resource.</p></td>
+  </tr>
+  <tr>
+    <td width="139" valign="top"><p>targetAudience</p></td>
+    <td width="144" valign="top"><p>audience</p></td>
+    <td width="288" valign="top"><p>A class of entity for whom    the resource is intended or useful.</p></td>
+  </tr>
+  <tr>
+    <td width="139" valign="top"><p>title</p></td>
+    <td width="144" valign="top"><p>title</p></td>
+    <td width="288" valign="top"><p>A name given to the    resource.</p></td>
+  </tr>
+  <tr>
+    <td width="139" valign="top"><p>topic</p></td>
+    <td width="144" valign="top"><p>subject</p></td>
+    <td width="288" valign="top"><p>The topic of the resource.</p></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<hr/>
+<hr/>
+<h2 align="center">&nbsp;</h2>
+<!-- InstanceEndEditable -->
+<HR noshade size="1"></td>
+</tr>
+<tr>
+<td><a href="http://www.loc.gov/standards/mods/">HOME</a> &gt;&gt; <!-- InstanceBeginEditable name="bottombreadcrumb" --><span class="selected">mODS
+            RDF Primer </span><!-- InstanceEndEditable -->
+  <p><strong>Questions and comments:<br>
+  </strong>
+              <a href="mailto:ndmso@loc.gov">Contact Us</a> (
+              <!-- #BeginDate format:Am1 -->August 3, 2012<!-- #EndDate -->
+      )
+      <br>
+    <a href="http://www.loc.gov/homepage/legal.html">Legal</a> | <a href="http://www.loc.gov/global/disclaim.html">External Link Disclaimer</a></p></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

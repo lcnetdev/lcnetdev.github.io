@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<title>MODS: Tentative Changes for Next Version</title>
+<base href="http://www.loc.gov/standards/mods/mods-overview.html">
+<meta name="keywords" content="mods changes metadata object description schema web site library congress xml">
+<meta name="description" content="This document lists changes being considered for the next version of MODS (Metadata Object Description Schema)">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="mods.css" type="text/css">
+</head>
+<body link="#000099" vlink="#0066CC" bgcolor="#FFFFFF">
+<table width=600 cellpadding=4 cellspacing=0 border=0 align=center>
+  <tr> 
+    <td><img src="images/mods-bar.gif" width="600" height="40" alt="Metadata Object Description Schema: Official Web Site"></td>
+  </tr>
+  
+
+  <tr> 
+    <td> 
+      <h1>MODS: Tentative Changes for Next Version</h1>
+      <p><i>The current version of MODS, 1.2, is undergoing a period of trial 
+        use until approximately the end of 2002. Version 1.2 will remain stable 
+        during that period while we invite comments, defect reports, and suggestions 
+        for enhancements as a result of experimentation.</i></p>
+      <p><i> We are maintaining a list, below, of tentative changes to be applied 
+        to the next version of MODS.</i></p>
+      <ol>
+        <li> PublicationTypeInfo includes elements dateIssued, dateCreated, and 
+          dateCaptured. otherDate will be added, as a generic date element for 
+          dates that don't fall into one of these categories.<br>
+          <br>
+        <li>An attribute, keyDate, will be added to dateType so that a particular 
+          date may be distinguished among several dates. Thus for example when 
+          sorting MODS records by date, a date with this attribute would be the 
+          date to sort on. It would assume a value of &quot;yes&quot;, and it 
+          should only occur for one date at most in a given record. <br>
+          <br>
+        <li>In the genreType definition, the list of values (effectively a comment, 
+          with a &lt;documentation&gt; element) will be removed. It will be maintained 
+          outside the schema.<br>
+          <br>
+        <li>Add additional values to &lt;physicalDescription&gt;&lt;form&gt; (from 
+          008/23): print; large print; regular print reproduction.<br>
+          <br>
+        <li>Add &lt;publicationInfo&gt; to &lt;relatedItem&gt; as subelement.<br>
+          <br>
+        <li>In &lt;identifier&gt;:<br>
+          Add attribute displayLabel (856$3)<br>
+          Add &quot;stock number&quot; as a value for type attribute<br>
+          <br>
+        <li>Add attribute displayLabel in &lt;location&gt; (852$3)<br>
+          <br>
+        <li>Add attributes lang (perhaps lang and xml:lang) and script to be used 
+          for any element<br>
+          <br>
+        <li>Add &lt;languageOfCataloging&gt; under &lt;recordInfo&gt;<br>
+          <br>
+          <br>
+          <br>
+      </ol>
+      <P> 
+      <HR noshade size="1">
+      <img src="images/mods-icon.gif" width="140" height="48" align="right" alt=""> 
+      <STRONG>Questions and comments:</STRONG> 
+      <ADDRESS> 
+      <!--help desk email start -->
+      <a href="mailto:ndmso@loc.gov">Contact Us</a> 
+      <!--help desk email end -->
+      ( 
+      <!-- #BeginDate format:Am1 -->November 8, 2002<!-- #EndDate -->
+      )</ADDRESS>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

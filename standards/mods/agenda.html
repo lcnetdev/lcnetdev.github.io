@@ -1,0 +1,125 @@
+<html>
+<head>
+<title>Holdings Meeting at LC Sept. 2002</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<p align="center"><font size="5"><b>Holdings Meeting</b></font><b><br>
+  <font size="4">at the Library of Congress<br>
+  Thursday,September 5, 2002<br>
+  10:00 - 4:00</font></b></p>
+<p align="center"><b><font size="5">Agenda</font></b></p>
+<ol>
+  <li>Preliminaries</li>
+  <li> Background: Why we're here and what we're trying to accomplish.</li>
+  <li> Confusion and <a href="#questions">questions</a> </li>
+  <li> Technical discussion. (Aimed at clearing up the confusion and answering 
+    the questions.)</li>
+  <li> How Z39.50 holdings might apply to applications of interest: 
+    <ul>
+      <li> MODS</li>
+      <li> others</li>
+    </ul>
+  </li>
+  <li> Proposed techical solution(s)</li>
+  <li> Action Plan, possibly addressing: 
+    <ul>
+      <li>status of ARS 1.3</li>
+      <li>development of C2 schema</li>
+      <li> amendment of mother schema</li>
+      <li> revision of B2 schema </li>
+      <li>accomodation of MODS requirement
+        
+      </li>
+    </ul>
+  </li>
+</ol><hr>
+<p><a name="questions"></a><font size="4"><b>Questions</b></font><br>
+
+<ol>
+  <li> <b>Physical Form Designator </b> 
+    <p>Version 1.2 has in Table 1 (bibliographic level) an element physicalFormDesignator 
+      under BibPart, mandatory at levels B-2, B-3, B-4. These correspond to MARC 
+      field 007/00-01. In the appendix (abstract record structure), it notes &quot;ESN 
+      B-4&quot;. It says international string, although gives a list of values, 
+      presumably from the NISO Z39.71 holdings standard.<br>
+      Version 1.2 has in Table 2 (copy level) an element physicalFormDesignator 
+      under BibPart (under BibPartAndParent), mandatory at level C-4.</p>
+    <p>Version 1.3 has made changes to this element. It appears that it was removed 
+      from Table 1 under BibPart. Instead there is an element piecePhysicalFormDesignator 
+      under Piece, mandatory at level B-4 and specifying an instance of a the 
+      physicalFormCode. There is also copyPhysicalFormDesignator, optional at 
+      level C-4, specifying an instance of physicalFormCode.<br>
+      <br>
+      Version 1.3 has in Table 2 copyPhysicalFormDesignator under CopyLocation, 
+      mandatory at levels C-2, C-3, C-4, specifying an instance of the physicalFormCode 
+      as well as piecePhysicalFormDesignator under Piece (specifying the same). 
+      There is also physicalFormDesignator under BibPart in Table 2, although 
+      it is not clear whether this might be an error, since it does not appear 
+      in the Appendix. The Appendix lists copyPhysicalFormDesignator and piecePhysicalFormDesignator, 
+      although not in red as are the other elements that are added to this version. 
+      They both specify physicalFormCode, which has the controlled list of values.</p>
+    <p>I also note that in the XML schema for B-2, physicalFormDesignator is an 
+      attribute, not an element.</p>
+    <p>Questions about these elements: 
+    <ul>
+      <li> 
+        <p> Why were these changes made in version 1.3? 
+      <li> 
+        <p>Does the note &quot;B-4&quot; in the Appendix imply that it can only 
+          be used at that level? 
+      <li> 
+        <p>Is only the code allowed? Can't a textual instance be used? This certainly 
+          could occur (and is desirable for our proposed application; MARC itself 
+          has a field in the holdings format which is a textual physical form 
+          designator). 
+      <li>The list of codes I assume came from NISO Z39.71, but it is incomplete 
+        and only has some of those listed. Why?
+      <li> Is physicalFormDesignator underBibPart in Table 2 an error? 
+      <li> 
+        <p>Is there any intention of changing the XML schema for B-2 to make it 
+          an element? 
+    </ul>
+    <br>
+  <li> <b>Summary Enumeration and Chronology</b> 
+    <p>Version 1.2 has in Table 1 (bibliographic level) an element &quot;unstructured&quot;, 
+      childEnumChronSummary, under BibPart that is optional at level B-2.<br>
+      Version 1.2 has in Table 2 (copy level) &quot;unstructured&quot; under BibPart, 
+      childEnumChronSummary, specifying one instance of the SummaryEnumSeq datatype.<br>
+      Version 1.3 has in Table 1 and Table 2 childEnumChronSummary (structured 
+      and unstructured) crossed out. Instead it has added &quot;unstructured&quot; 
+      under SummaryEnum, optional at B-2 in Table 1 and optional at C-4 in Table 
+      2.</p>
+    <p>Questions about this element:<br>
+    <ul>
+      <li>Why were these changes made in version 1.3 
+      <li>Is unstructured under SummaryEnum allowable at level C-2? It doesn't 
+        make sense for it to even be allowable at level C-4, but that's what the 
+        table indicates.<br>
+        <br>
+    </ul>
+  <li><b> Remote holdings data</b><br>
+    This element is listed under Holdings Structure. It is defined in the Appendix 
+    as &quot;Z39.50 URL for alternative/additional information about holdings 
+    of this item at this location&quot;. I see that as pointing to holdings data 
+    remotely. Is there anything that gives a remote holdings location, i.e. a 
+    URL, as a location for a remotely held item. This would be used as an electronic 
+    location as opposed to a physical location that goes under holdingsSiteLocation 
+    and would correspond to MARC holdings field 856.<br>
+</ol>
+
+
+<hr>
+<p><font size="4">List of Meeting Documents</font></p>
+<ol>
+  <li> Holdings ARS version 1.2</li>
+  <li> Holdings ARS version 1.3</li>
+  <li> Holdings XML schema (mother schema)</li>
+  <li> Holdings XML schema B1</li>
+  <li> Holdings XML schema B2</li>
+  <li> MODS schema<br>
+  </li>
+</ol>
+</body>
+</html>

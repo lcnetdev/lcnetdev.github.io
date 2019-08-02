@@ -1,0 +1,1730 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+   <channel>
+      <title>Library of Congress Standards &amp; Research Data Values Registry</title>
+      <link>index.html</link>
+      <description>Current data values used in Library of Congress standards</description>
+      <pubDate>Thu, 19 Feb 2009 10:02:29 EST</pubDate>
+      <language>en-Latn</language>
+      <category>all</category>
+      <generator>XQuery + XSLT transform of Changeset RDF (talis.com) metadata</generator>
+      <managingEditor>cred@loc.gov</managingEditor>
+      <webMaster>cred@loc.gov</webMaster>
+      <item>
+         <title>iso639-5: day</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/day</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/day" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/day" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Thu, 19 Feb 2009 10:02:29 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/day</guid>
+      </item>
+      <item>
+         <title>iso639-5: car</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/car</link>
+         <description>&lt;p&gt;The following event took place: Deletion&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/car" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/car" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Wed, 18 Feb 2009 15:08:09 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/car</guid>
+      </item>
+      <item>
+         <title>iso639-5: sal</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/sal</link>
+         <description>&lt;p&gt;The following event took place: Name change, French only (from salish, langues)&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/sal" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/sal" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Tue, 17 Feb 2009 13:07:34 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/sal</guid>
+      </item>
+      <item>
+         <title>iso639-5: sai</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/sai</link>
+         <description>&lt;p&gt;The following event took place: Name change, French only (from indiennes d'Amérique du Sud and autres langues indiennes d'Amérique du Sud, langues)&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/sai" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/sai" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Tue, 17 Feb 2009 13:07:34 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/sai</guid>
+      </item>
+      <item>
+         <title>iso639-5: cpf</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/cpf</link>
+         <description>&lt;p&gt;The following event took place: Name change, French only (from créoles et pidgins français, autres and créoles et pidgins français)&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/cpf" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/cpf" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Tue, 17 Feb 2009 13:07:34 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/cpf</guid>
+      </item>
+      <item>
+         <title>iso639-5: cpe</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/cpe</link>
+         <description>&lt;p&gt;The following event took place: Name change, French only (from créoles et pidgins anglais, autres and créoles et pidgins anglais)&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/cpe" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/cpe" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Tue, 17 Feb 2009 13:07:34 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/cpe</guid>
+      </item>
+      <item>
+         <title>iso639-5: pra</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/pra</link>
+         <description>&lt;p&gt;The following event took place: Name change, French only (from prâkrits, langues)&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/pra" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/pra" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Tue, 17 Feb 2009 13:07:34 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/pra</guid>
+      </item>
+      <item>
+         <title>iso639-5: paa</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/paa</link>
+         <description>&lt;p&gt;The following event took place: Hierarchy changed to paa from ngf : paa&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/paa" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/paa" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Tue, 17 Feb 2009 13:07:34 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/paa</guid>
+      </item>
+      <item>
+         <title>iso639-5: cpp</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/cpp</link>
+         <description>&lt;p&gt;The following event took place: Name change, French only (from créoles et pidgins portugais autres and créoles et pidgins portugais)&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/cpp" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/cpp" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Tue, 17 Feb 2009 13:07:34 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/cpp</guid>
+      </item>
+      <item>
+         <title>iso639-5: ngf</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/ngf</link>
+         <description>&lt;p&gt;The following event took place: Hierarchy changes to paa : ngf from ngf : paa. Name change, English (from Trans New Guinea). Name change, French (from trans Nouvelle Guinée).&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/ngf" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/ngf" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Tue, 17 Feb 2009 13:07:34 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/ngf</guid>
+      </item>
+      <item>
+         <title>iso639-5: nai</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/nai</link>
+         <description>&lt;p&gt;The following event took place: Name change, French only (from indiennes d'Amérique du Nord and autres langues indiennes d'Amérique du Nord, langues)&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/nai" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/nai" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Tue, 17 Feb 2009 13:07:34 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/nai</guid>
+      </item>
+      <item>
+         <title>iso639-5: wak</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/wak</link>
+         <description>&lt;p&gt;The following event took place: Name change, French only (from wakashennes, langues)&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/wak" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/wak" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Tue, 17 Feb 2009 13:07:34 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/wak</guid>
+      </item>
+      <item>
+         <title>iso639-5: myn</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/myn</link>
+         <description>&lt;p&gt;The following event took place: Name change, French only (from mayas, langues)&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/myn" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/myn" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Tue, 17 Feb 2009 13:07:34 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/myn</guid>
+      </item>
+      <item>
+         <title>iso639-5: cel</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/cel</link>
+         <description>&lt;p&gt;The following event took place: Name change and name addition, French only (from celtiques, autres langues and celtiques, langues)&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/cel" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/cel" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Tue, 17 Feb 2009 12:31:42 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/cel</guid>
+      </item>
+      <item>
+         <title>iso639-5: apa</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/apa</link>
+         <description>&lt;p&gt;The following event took place: Name change, French only (from apache, langues)&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/apa" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/apa" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Tue, 17 Feb 2009 12:31:42 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/apa</guid>
+      </item>
+      <item>
+         <title>iso639-5: bnt</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/bnt</link>
+         <description>&lt;p&gt;The following event took place: Name change, French only (from bantoues, autres langues and bantoues, langues)&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/bnt" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/bnt" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Tue, 17 Feb 2009 12:31:42 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/bnt</guid>
+      </item>
+      <item>
+         <title>iso639-5: cai</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/cai</link>
+         <description>&lt;p&gt;The following event took place: Name change, French only (from indiennes d'Amérique centrale, autres lang and indiennes d'Amérique centrale, langues)&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/cai" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/cai" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Tue, 17 Feb 2009 12:31:42 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/cai</guid>
+      </item>
+      <item>
+         <title>iso639-5: bat</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/bat</link>
+         <description>&lt;p&gt;The following event took place: Name change, French only (from baltiques, autres langues and baltiques, langues)&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/bat" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/bat" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Tue, 17 Feb 2009 12:31:42 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/bat</guid>
+      </item>
+      <item>
+         <title>iso639-5: omv</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/omv</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/omv" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/omv" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/omv</guid>
+      </item>
+      <item>
+         <title>iso639-5: map</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/map</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/map" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/map" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/map</guid>
+      </item>
+      <item>
+         <title>iso639-5: mkh</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/mkh</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/mkh" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/mkh" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/mkh</guid>
+      </item>
+      <item>
+         <title>iso639-5: sai</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/sai</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/sai" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/sai" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/sai</guid>
+      </item>
+      <item>
+         <title>iso639-5: mno</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/mno</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/mno" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/mno" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/mno</guid>
+      </item>
+      <item>
+         <title>iso639-5: roa</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/roa</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/roa" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/roa" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/roa</guid>
+      </item>
+      <item>
+         <title>iso639-5: qwe</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/qwe</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/qwe" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/qwe" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/qwe</guid>
+      </item>
+      <item>
+         <title>iso639-5: ngf</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/ngf</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/ngf" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/ngf" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/ngf</guid>
+      </item>
+      <item>
+         <title>iso639-5: mun</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/mun</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/mun" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/mun" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/mun</guid>
+      </item>
+      <item>
+         <title>iso639-5: nai</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/nai</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/nai" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/nai" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/nai</guid>
+      </item>
+      <item>
+         <title>iso639-5: pra</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/pra</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/pra" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/pra" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/pra</guid>
+      </item>
+      <item>
+         <title>iso639-5: pqw</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/pqw</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/pqw" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/pqw" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/pqw</guid>
+      </item>
+      <item>
+         <title>iso639-5: pqe</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/pqe</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/pqe" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/pqe" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/pqe</guid>
+      </item>
+      <item>
+         <title>iso639-5: poz</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/poz</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/poz" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/poz" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/poz</guid>
+      </item>
+      <item>
+         <title>iso639-5: plf</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/plf</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/plf" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/plf" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/plf</guid>
+      </item>
+      <item>
+         <title>iso639-5: nic</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/nic</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/nic" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/nic" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/nic</guid>
+      </item>
+      <item>
+         <title>iso639-5: phi</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/phi</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/phi" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/phi" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/phi</guid>
+      </item>
+      <item>
+         <title>iso639-5: nub</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/nub</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/nub" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/nub" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/nub</guid>
+      </item>
+      <item>
+         <title>iso639-5: omq</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/omq</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/omq" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/omq" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/omq</guid>
+      </item>
+      <item>
+         <title>iso639-5: paa</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/paa</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/paa" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/paa" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/paa</guid>
+      </item>
+      <item>
+         <title>iso639-5: nah</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/nah</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/nah" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/nah" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/nah</guid>
+      </item>
+      <item>
+         <title>iso639-5: oto</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/oto</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/oto" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/oto" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/oto</guid>
+      </item>
+      <item>
+         <title>iso639-5: myn</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/myn</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/myn" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/myn" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/myn</guid>
+      </item>
+      <item>
+         <title>iso639-5: sal</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/sal</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/sal" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/sal" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/sal</guid>
+      </item>
+      <item>
+         <title>iso639-5: tup</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/tup</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/tup" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/tup" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/tup</guid>
+      </item>
+      <item>
+         <title>iso639-5: tut</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/tut</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/tut" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/tut" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/tut</guid>
+      </item>
+      <item>
+         <title>iso639-5: tuw</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/tuw</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/tuw" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/tuw" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/tuw</guid>
+      </item>
+      <item>
+         <title>iso639-5: urj</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/urj</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/urj" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/urj" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/urj</guid>
+      </item>
+      <item>
+         <title>iso639-5: wak</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/wak</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/wak" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/wak" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/wak</guid>
+      </item>
+      <item>
+         <title>iso639-5: wen</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/wen</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/wen" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/wen" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/wen</guid>
+      </item>
+      <item>
+         <title>iso639-5: xgn</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/xgn</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/xgn" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/xgn" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/xgn</guid>
+      </item>
+      <item>
+         <title>iso639-5: xnd</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/xnd</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/xnd" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/xnd" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/xnd</guid>
+      </item>
+      <item>
+         <title>iso639-5: ypk</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/ypk</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/ypk" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/ypk" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/ypk</guid>
+      </item>
+      <item>
+         <title>iso639-5: zhx</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/zhx</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/zhx" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/zhx" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/zhx</guid>
+      </item>
+      <item>
+         <title>iso639-5: zle</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/zle</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/zle" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/zle" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/zle</guid>
+      </item>
+      <item>
+         <title>iso639-5: zls</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/zls</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/zls" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/zls" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/zls</guid>
+      </item>
+      <item>
+         <title>iso639-5: zlw</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/zlw</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/zlw" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/zlw" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/zlw</guid>
+      </item>
+      <item>
+         <title>iso639-5: trk</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/trk</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/trk" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/trk" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/trk</guid>
+      </item>
+      <item>
+         <title>iso639-5: tbq</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/tbq</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/tbq" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/tbq" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/tbq</guid>
+      </item>
+      <item>
+         <title>iso639-5: aav</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/aav</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/aav" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/aav" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/aav</guid>
+      </item>
+      <item>
+         <title>iso639-5: sdv</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/sdv</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/sdv" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/sdv" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/sdv</guid>
+      </item>
+      <item>
+         <title>iso639-5: sem</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/sem</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/sem" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/sem" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/sem</guid>
+      </item>
+      <item>
+         <title>iso639-5: sgn</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/sgn</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/sgn" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/sgn" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/sgn</guid>
+      </item>
+      <item>
+         <title>iso639-5: sio</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/sio</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/sio" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/sio" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/sio</guid>
+      </item>
+      <item>
+         <title>iso639-5: sit</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/sit</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/sit" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/sit" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/sit</guid>
+      </item>
+      <item>
+         <title>iso639-5: sla</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/sla</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/sla" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/sla" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/sla</guid>
+      </item>
+      <item>
+         <title>iso639-5: smi</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/smi</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/smi" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/smi" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/smi</guid>
+      </item>
+      <item>
+         <title>iso639-5: son</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/son</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/son" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/son" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/son</guid>
+      </item>
+      <item>
+         <title>iso639-5: sqj</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/sqj</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/sqj" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/sqj" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/sqj</guid>
+      </item>
+      <item>
+         <title>iso639-5: ssa</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/ssa</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/ssa" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/ssa" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/ssa</guid>
+      </item>
+      <item>
+         <title>iso639-5: syd</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/syd</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/syd" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/syd" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/syd</guid>
+      </item>
+      <item>
+         <title>iso639-5: tai</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/tai</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/tai" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/tai" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/tai</guid>
+      </item>
+      <item>
+         <title>iso639-5: kro</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/kro</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/kro" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/kro" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/kro</guid>
+      </item>
+      <item>
+         <title>iso639-5: khi</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/khi</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/khi" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/khi" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/khi</guid>
+      </item>
+      <item>
+         <title>iso639-5: ber</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/ber</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/ber" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/ber" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/ber</guid>
+      </item>
+      <item>
+         <title>iso639-5: bnt</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/bnt</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/bnt" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/bnt" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/bnt</guid>
+      </item>
+      <item>
+         <title>iso639-5: btk</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/btk</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/btk" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/btk" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/btk</guid>
+      </item>
+      <item>
+         <title>iso639-5: cai</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/cai</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/cai" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/cai" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/cai</guid>
+      </item>
+      <item>
+         <title>iso639-5: car</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/car</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/car" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/car" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/car</guid>
+      </item>
+      <item>
+         <title>iso639-5: cau</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/cau</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/cau" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/cau" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/cau</guid>
+      </item>
+      <item>
+         <title>iso639-5: cba</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/cba</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/cba" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/cba" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/cba</guid>
+      </item>
+      <item>
+         <title>iso639-5: ccn</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/ccn</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/ccn" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/ccn" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/ccn</guid>
+      </item>
+      <item>
+         <title>iso639-5: ccs</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/ccs</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/ccs" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/ccs" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/ccs</guid>
+      </item>
+      <item>
+         <title>iso639-5: cdc</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/cdc</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/cdc" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/cdc" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/cdc</guid>
+      </item>
+      <item>
+         <title>iso639-5: cdd</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/cdd</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/cdd" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/cdd" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/cdd</guid>
+      </item>
+      <item>
+         <title>iso639-5: cel</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/cel</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/cel" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/cel" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/cel</guid>
+      </item>
+      <item>
+         <title>iso639-5: cmc</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/cmc</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/cmc" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/cmc" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/cmc</guid>
+      </item>
+      <item>
+         <title>iso639-5: bat</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/bat</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/bat" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/bat" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/bat</guid>
+      </item>
+      <item>
+         <title>iso639-5: bai</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/bai</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/bai" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/bai" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/bai</guid>
+      </item>
+      <item>
+         <title>iso639-5: afa</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/afa</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/afa" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/afa" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/afa</guid>
+      </item>
+      <item>
+         <title>iso639-5: alg</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/alg</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/alg" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/alg" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/alg</guid>
+      </item>
+      <item>
+         <title>iso639-5: alv</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/alv</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/alv" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/alv" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/alv</guid>
+      </item>
+      <item>
+         <title>iso639-5: apa</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/apa</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/apa" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/apa" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/apa</guid>
+      </item>
+      <item>
+         <title>iso639-5: aqa</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/aqa</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/aqa" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/aqa" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/aqa</guid>
+      </item>
+      <item>
+         <title>iso639-5: aql</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/aql</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/aql" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/aql" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/aql</guid>
+      </item>
+      <item>
+         <title>iso639-5: art</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/art</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/art" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/art" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/art</guid>
+      </item>
+      <item>
+         <title>iso639-5: ath</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/ath</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/ath" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/ath" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/ath</guid>
+      </item>
+      <item>
+         <title>iso639-5: auf</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/auf</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/auf" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/auf" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/auf</guid>
+      </item>
+      <item>
+         <title>iso639-5: aus</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/aus</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/aus" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/aus" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/aus</guid>
+      </item>
+      <item>
+         <title>iso639-5: awd</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/awd</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/awd" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/awd" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/awd</guid>
+      </item>
+      <item>
+         <title>iso639-5: azc</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/azc</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/azc" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/azc" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/azc</guid>
+      </item>
+      <item>
+         <title>iso639-5: bad</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/bad</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/bad" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/bad" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/bad</guid>
+      </item>
+      <item>
+         <title>iso639-5: cpe</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/cpe</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/cpe" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/cpe" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/cpe</guid>
+      </item>
+      <item>
+         <title>iso639-5: cpf</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/cpf</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/cpf" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/cpf" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/cpf</guid>
+      </item>
+      <item>
+         <title>iso639-5: cpp</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/cpp</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/cpp" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/cpp" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/cpp</guid>
+      </item>
+      <item>
+         <title>iso639-5: hmx</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/hmx</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/hmx" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/hmx" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/hmx</guid>
+      </item>
+      <item>
+         <title>iso639-5: hok</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/hok</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/hok" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/hok" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/hok</guid>
+      </item>
+      <item>
+         <title>iso639-5: hyx</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/hyx</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/hyx" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/hyx" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/hyx</guid>
+      </item>
+      <item>
+         <title>iso639-5: iir</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/iir</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/iir" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/iir" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/iir</guid>
+      </item>
+      <item>
+         <title>iso639-5: ijo</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/ijo</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/ijo" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/ijo" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/ijo</guid>
+      </item>
+      <item>
+         <title>iso639-5: inc</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/inc</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/inc" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/inc" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/inc</guid>
+      </item>
+      <item>
+         <title>iso639-5: ine</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/ine</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/ine" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/ine" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/ine</guid>
+      </item>
+      <item>
+         <title>iso639-5: ira</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/ira</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/ira" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/ira" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/ira</guid>
+      </item>
+      <item>
+         <title>iso639-5: iro</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/iro</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/iro" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/iro" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/iro</guid>
+      </item>
+      <item>
+         <title>iso639-5: itc</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/itc</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/itc" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/itc" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/itc</guid>
+      </item>
+      <item>
+         <title>iso639-5: jpx</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/jpx</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/jpx" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/jpx" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/jpx</guid>
+      </item>
+      <item>
+         <title>iso639-5: kar</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/kar</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/kar" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/kar" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/kar</guid>
+      </item>
+      <item>
+         <title>iso639-5: kdo</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/kdo</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/kdo" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/kdo" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/kdo</guid>
+      </item>
+      <item>
+         <title>iso639-5: grk</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/grk</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/grk" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/grk" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/grk</guid>
+      </item>
+      <item>
+         <title>iso639-5: gmw</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/gmw</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/gmw" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/gmw" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/gmw</guid>
+      </item>
+      <item>
+         <title>iso639-5: crp</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/crp</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/crp" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/crp" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/crp</guid>
+      </item>
+      <item>
+         <title>iso639-5: csu</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/csu</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/csu" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/csu" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/csu</guid>
+      </item>
+      <item>
+         <title>iso639-5: cus</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/cus</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/cus" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/cus" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/cus</guid>
+      </item>
+      <item>
+         <title>iso639-5: dmn</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/dmn</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/dmn" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/dmn" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/dmn</guid>
+      </item>
+      <item>
+         <title>iso639-5: dra</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/dra</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/dra" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/dra" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/dra</guid>
+      </item>
+      <item>
+         <title>iso639-5: egx</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/egx</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/egx" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/egx" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/egx</guid>
+      </item>
+      <item>
+         <title>iso639-5: esx</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/esx</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/esx" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/esx" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/esx</guid>
+      </item>
+      <item>
+         <title>iso639-5: euq</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/euq</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/euq" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/euq" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/euq</guid>
+      </item>
+      <item>
+         <title>iso639-5: fiu</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/fiu</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/fiu" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/fiu" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/fiu</guid>
+      </item>
+      <item>
+         <title>iso639-5: fox</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/fox</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/fox" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/fox" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/fox</guid>
+      </item>
+      <item>
+         <title>iso639-5: gem</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/gem</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/gem" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/gem" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/gem</guid>
+      </item>
+      <item>
+         <title>iso639-5: gme</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/gme</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/gme" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/gme" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/gme</guid>
+      </item>
+      <item>
+         <title>iso639-5: gmq</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/gmq</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/gmq" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/gmq" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/gmq</guid>
+      </item>
+      <item>
+         <title>iso639-5: znd</title>
+         <link>http://id.loc.gov/vocabulary/iso639-5/znd</link>
+         <description>&lt;p&gt;The following event took place: Creation&lt;/p&gt;</description>
+         <author>cred@loc.gov</author>
+         <category>iso639-5</category>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/znd" length="4096"
+                    type="application/rdf+xml"/>
+         <enclosure url="http://id.loc.gov/vocabulary/iso639-5/znd" length="4096"
+                    type="application/rdf+xml"/>
+         <pubDate>Fri, 28 Nov 2008 12:00:00 EST</pubDate>
+         <guid isPermaLink="true">http://id.loc.gov/vocabulary/iso639-5/znd</guid>
+      </item>
+   </channel>
+</rss>

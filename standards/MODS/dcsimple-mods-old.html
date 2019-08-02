@@ -1,0 +1,285 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                        "http://www.w3.org/TR/html40/loose.dtd">
+<html>
+
+<head>
+<title>DCMES mapping to MODS (Library of Congress) </title>
+<base href="http://www.loc.gov/standards/mods/dcsimple-mods.html">
+<meta name="description" content="This mapping gives equivalencies between 
+Dublin Core Metadata Element Set, version 1.1 and MODS (Metadata Object Description Schema">
+<meta name="keywords" content="Dublin Core DCMES MODS Mapping">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="mods.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<table width=600 cellpadding=4 cellspacing=0 border=0 align=center>
+  <tr> 
+    <td><img src="images/mods-bar.gif" width="600" height="40" alt="Metadata Object Description Schema: Official Web Site"></td>
+  </tr></table>
+  
+
+  
+<tr> 
+  <td>    <h1>Dublin Core Metadata Element Set Mapping <br>
+      to MODS Version 3</h1>
+    <h2 align="center">March 31, 2003</h2>
+    <p>This mapping gives equivalencies between the Dublin Core Metadata Element 
+      Set, version 1.1 (Dublin Core &quot;simple&quot;) and elements in the Metadata 
+      Object Description Schema (MODS). Order of elements are according to the 
+      <a href="http://www.dublincore.org/documents/dces/">Dublin Core Metadata 
+      Element Set, version 1.1: Reference Description</a>. The document may be 
+      used for converting a Dublin Core record to MODS or for creating a simple 
+      MODS record based on Dublin Core elements. 
+    <p>In some cases, the Dublin Core element is equivalent to more than one MODS 
+      element, and all are listed. In these cases, when converting a record from 
+      Dublin Core to MODS, a decision may need to be made as to the default MODS 
+      element. Some suggestions are given. 
+    <p>MODS elements are linked to top-level elements in the <a href="http://www.loc.gov/standards/mods/mods-outline.html">Outline of Elements and Attributes in MODS.</a> 
+    <p> 
+    <hr>
+    <p> 
+    <table width="100%" border="1">
+      <tr valign="top"> 
+        <td width="22%"> 
+          <div align="center"> 
+            <h2 align="left"><b>Dublin Core element</b></h2>
+          </div>
+        </td>
+        <td colspan="2"> 
+          <div align="center"> 
+            <h2 align="left"><b>MODS element</b></h2>
+          </div>
+        </td>
+        <td width="38%"> 
+          <div align="center"> 
+            <h2 align="left"><b>Notes</b></h2>
+          </div>
+        </td>
+      </tr>
+      <tr valign="top"> 
+        <td width="22%">Title</td>
+        <td colspan="2"><a href="http://www.loc.gov/standards/mods/mods-outline.html#titleInfo">&lt;titleInfo&gt;&lt;title&gt; 
+          </a></td>
+        <td width="38%">&nbsp;</td>
+      </tr>
+      <tr valign="top"> 
+        <td width="22%">Creator</td>
+        <td colspan="2"><a href="http://www.loc.gov/standards/mods/mods-outline.html#name">&lt;name&gt;&lt;namePart&gt;</a><br>
+          <blockquote> 
+            <p>&nbsp;</p>
+          </blockquote>
+        </td>
+        <td width="38%">1. MODS puts all names in a repeated&lt;name&gt; with 
+          type of contribution included in &lt;role&gt;. If desired to retain 
+          creator or contributor distinction, use &lt;name&gt;&lt;namePart&gt;&lt;role&gt;creator<br>
+          2. MODS assumes structured form of name; non-structured is in &lt;name&gt;&lt;displayForm&gt;<br>
+          3. MODS allows distinguishing name as personal, corporate, conference 
+          in type attribute.<br>
+          4. MODS allows &lt;name&gt; subelements to be parsed: &lt;namePart&gt;, 
+          &lt;displayForm&gt;, &lt;affiliation&gt;, &lt;role&gt;, &lt;description&gt;</td>
+      </tr>
+      <tr valign="top"> 
+        <td width="22%">Subject</td>
+        <td colspan="2"><a href="http://www.loc.gov/standards/mods/mods-outline.html#subject">&lt;subject&gt;&lt;topic&gt; 
+          </a> 
+          <blockquote> 
+            <p>&nbsp;</p>
+          </blockquote>
+        </td>
+        <td width="38%">Data in MODS may be included in a more specific subelement: 
+          &lt;topic&gt;, &lt;geographic&gt;, &lt;temporal&gt;, &lt;name&gt;, &lt;titleInfo&gt;, 
+          &lt;hierarchicalGeographic&gt;, &lt;coordinates&gt; </td>
+      </tr>
+      <tr valign="top"> 
+        <td width="22%">Description</td>
+        <td colspan="2"><a href="http://www.loc.gov/standards/mods/mods-outline.html#abstract">&lt;abstract&gt;</a><br>
+          <a href="http://www.loc.gov/standards/mods/mods-outline.html#note">&lt;note&gt;</a><br>
+        <a href="http://www.loc.gov/standards/mods/mods-outline.html#tableOfContents">&lt;tableOfContents&gt;</a></td>
+        <td width="38%">Multiple elements in MODS</td>
+      </tr>
+      <tr valign="top"> 
+        <td width="22%">Publisher</td>
+        <td colspan="2"><a href="http://www.loc.gov/standards/mods/mods-outline.html#originInfo">&lt;originInfo&gt;&lt;publisher&gt;</a></td>
+        <td width="38%">&nbsp;</td>
+      </tr>
+      <tr valign="top"> 
+        <td width="22%">Contributor</td>
+        <td colspan="2"><a href="http://www.loc.gov/standards/mods/mods-outline.html#name">&lt;name&gt;</a></td>
+        <td width="38%">See notes under Creator</td>
+      </tr>
+      <tr valign="top"> 
+        <td width="22%" rowspan="4">Date</td>
+        <td colspan="2"><a href="http://www.loc.gov/standards/mods/mods-outline.html#originInfo">&lt;originInfo&gt;&lt;dateIssued&gt;</a></td>
+        <td width="38%" rowspan="4">Multiple elements in MODS. Default to &lt;dateOther&gt; 
+          or &lt;dateIssued&gt;</td>
+      </tr>
+      <tr> 
+        <td colspan="2"><a href="http://www.loc.gov/standards/mods/mods-outline.html#originInfo">&lt;originInfo&gt;&lt;dateCreated&gt;</a></td>
+      </tr>
+      <tr> 
+        <td colspan="2"> <a href="http://www.loc.gov/standards/mods/mods-outline.html#originInfo">&lt;originInfo&gt;&lt;dateCaptured&gt;</a></td>
+      </tr>
+      <tr> 
+        <td colspan="2"> <a href="http://www.loc.gov/standards/mods/mods-outline.html#originInfo">&lt;originInfo&gt;&lt;dateOther&gt;</a></td>
+      </tr>
+      <tr valign="top"> 
+        <td width="22%">Type</td>
+        <td colspan="2"><a href="http://www.loc.gov/standards/mods/mods-outline.html#typeOfResource">&lt;typeOfResource&gt;</a><br>
+          <a href="http://www.loc.gov/standards/mods/mods-outline.html#genre">&lt;genre&gt;</a></td>
+        <td width="38%">MODS uses high level types in &lt;typeOf Resource&gt; 
+          (controlled list); more specific genre terms in &lt;genre&gt; (may be 
+          a controlled list)</td>
+      </tr>
+      <tr> 
+        <td width="22%" rowspan="3">Format</td>
+        <td colspan="2"> <a href="http://www.loc.gov/standards/mods/mods-outline.html#physicalDescription">&lt;physicalDescription&gt;&lt;internetMediaType&gt;</a></td>
+        <td width="38%" rowspan="3">Multiple elements in MODS</td>
+      </tr>
+      <tr> 
+        <td colspan="2"><a href="http://www.loc.gov/standards/mods/mods-outline.html#physicalDescription">&lt;physicalDescription&gt;&lt;extent&gt;</a></td>
+      </tr>
+      <tr> 
+        <td colspan="2"><a href="http://www.loc.gov/standards/mods/mods-outline.html#physicalDescription">&lt;physicalDescription&gt;&lt;form&gt;</a></td>
+      </tr>
+      <tr valign="top"> 
+        <td width="22%">Identifier</td>
+        <td colspan="2"><a href="http://www.loc.gov/standards/mods/mods-outline.html#identifier">&lt;identifier&gt;</a></td>
+        <td width="38%">MODS includes a type attribute to specify the identifier 
+          type, e.g. &lt;identifier type=&quot;uri&quot;&gt;</td>
+      </tr>
+      <tr valign="top"> 
+        <td width="22%">Source</td>
+        <td colspan="2"><a href="http://www.loc.gov/standards/mods/mods-outline.html#relatedItem">&lt;relatedItem 
+          type=&quot;original&quot;&gt;</a> + subelements</td>
+        <td width="38%">See notes under Relation</td>
+      </tr>
+      <tr valign="top"> 
+        <td width="22%">Language</td>
+        <td colspan="2"><a href="http://www.loc.gov/standards/mods/mods-outline.html#language">&lt;language&gt;</a></td>
+        <td width="38%">&nbsp;</td>
+      </tr>
+      <tr valign="top"> 
+        <td width="22%">Relation</td>
+        <td colspan="2"><a href="http://www.loc.gov/standards/mods/mods-outline.html#relatedItem">&lt;relatedItem&gt;</a> 
+          + subelements<br>
+        </td>
+        <td width="38%">Data parsed into subelements (any MODS element may be 
+          used). For example, if a reference to a resource: &lt;relatedItem&gt;&lt;identifier&gt;<br>
+          <i>or</i> title of a resource: &lt;relatedItem&gt;&lt;titleInfo&gt;&lt;title&gt;</td>
+      </tr>
+      <tr> 
+        <td rowspan="5" width="22%">Coverage</td>
+        <td colspan="2"> 
+          <p><a href="http://www.loc.gov/standards/mods/mods-outline.html#subject">&lt;subject&gt;&lt;temporal&gt;</a></p>
+        </td>
+        <td rowspan="5" width="38%">Multiple elements in MODS. Default spatial 
+          coverage to &lt;subject&gt;&lt;geographic&gt; </td>
+      </tr>
+      <tr> 
+        <td colspan="2"> 
+          <p><a href="http://www.loc.gov/standards/mods/mods-outline.html#subject">&lt;subject&gt;&lt;geographic&gt;</a></p>
+        </td>
+      </tr>
+      <tr> 
+        <td colspan="2"> 
+          <p><a href="http://www.loc.gov/standards/mods/mods-outline.html#subject">&lt;subject&gt;&lt;hierarchicalGeographic&gt;</a></p>
+        </td>
+      </tr>
+      <tr> 
+        <td colspan="2"> 
+          <p><a href="http://www.loc.gov/standards/mods/mods-outline.html#subject">&lt;subject&gt;&lt;cartographics&gt;</a></p>
+        </td>
+      </tr>
+      <tr> 
+        <td colspan="2"><a href="http://www.loc.gov/standards/mods/mods-outline.html#classification">&lt;classification&gt;</a></td>
+      </tr>
+      <tr> 
+        <td width="22%">Rights</td>
+        <td colspan="2"><a href="http://www.loc.gov/standards/mods/mods-outline.html#accessCondition">&lt;accessCondition&gt;</a></td>
+        <td width="38%">&nbsp;</td>
+      </tr>
+    </table>
+    <br>
+    <hr>
+    <h3>Example of record in simple Dublin Core and MODS</h3>
+    <p>The following record compares the XML markup of a record in simple Dublin 
+      Core and MODS. The Dublin Core record thus uses no qualifiers, although 
+      it could indicate encoding schemes for some elements (e.g. subject, language). 
+      For illustrative purposes, the MODS record includes authoritative forms 
+      of names, although this is not required.</p>
+    <h4>Dublin Core record:</h4>
+    <p><font color="#0000CC">&lt;dc:title&gt;</font>Florida Environments Online<font color="#000099">&lt;/dc:title&gt;</font><br>
+      <font color="#0000CC">&lt;dc:format&gt;</font>text<font color="#0000CC">&lt;/dc:format&gt;</font><br>
+      <font color="#0000CC">&lt;dc:subject&gt;</font>Environmental sciences<font color="#0000CC">&lt;/dc:subject&gt;</font><br>
+      <font color="#0000CC">&lt;dc:subject&gt;</font>Geology<font color="#0000CC">&lt;/dc:subject&gt;</font><br>
+      <font color="#0000CC">&lt;dc:subject&gt;</font>Agriculture<font color="#0000CC">&lt;/dc:subject&gt;</font><br>
+      <font color="#0000CC">&lt;dc:type&gt;</font>Collection<font color="#0000CC">&lt;/dc:type&gt;</font><br>
+      <font color="#0000CC">&lt;dc:type&gt;</font>Text<font color="#0000CC">&lt;/dc:type&gt;</font><br>
+      <font color="#0000CC">&lt;dc:description&gt;</font>Florida Environments 
+      Online contains both digital full text materials and research bibliographies 
+      about the ecology and environment of Florida. Digitized materials include 
+      more than 200 seminal texts on species and ecosystems selected by scientific 
+      experts throughout the state of Florida and digitized specifically for the 
+      Linking Florida's Natural Heritage project. They also include the publications 
+      of the Florida Geological Society, and agricultural documents created by 
+      the Agricultural Experiment Station/Extension Service (IFAS) and the Florida 
+      Department of Agriculture and Consumer Affairs, as well as engineering documents 
+      created by the UF Engineering and Industrial Experiment Station.<font color="#0000CC">&lt;/dc:description&gt;</font><br>
+      <font color="#0000CC">&lt;dc:contributor&gt;</font>Florida Geological Society<font color="#0000CC">&lt;/dc:contributor&gt;</font><br>
+      <font color="#0000CC">&lt;dc:contributor&gt;</font>Florida Department of 
+      Agriculture and Consumer Affairs<font color="#0000CC">&lt;/dc:contributor&gt;</font><br>
+      <font color="#0000CC">&lt;dc:contributor&gt;</font>Agricultural Experiment 
+      Station/Extension Service (IFAS)<font color="#0000CC">&lt;/dc:contributor&gt;</font><br>
+      <font color="#0000CC">&lt;dc:contributor&gt;</font>University of Florida 
+      Engineering and Industrial Experiment Station<font color="#0000CC">&lt;/dc:contributor&gt;</font><br>
+      <font color="#0000CC">&lt;dc:language&gt;</font>en<font color="#0000CC">&lt;/dc:language&gt;</font><br>
+      <font color="#0000CC">&lt;dc:identifier&gt;</font>http://palmm.fcla.edu/feol/<font color="#0000CC">&lt;/dc:identifier&gt;</font><br>
+      <font color="#0000CC">&lt;dc:language&gt;</font>en<font color="#0000CC">&lt;/dc:language&gt;</font></p>
+    <h4>MODS record:</h4>
+    <p><font color="#0000CC">&lt;mods:titleInfo&gt;&lt;mods:title&gt;</font>Florida 
+      Environments Online<font color="#0000CC">&lt;mods:/title&gt;&lt;/mods:titleInfo&gt;</font><br>
+      <font color="#0000CC">&lt;mods:name type=&quot;corporate&quot;&gt;&lt;mods:namePart&gt;</font>Florida 
+      Geological Society<font color="#0000CC">&lt;/mods:namePart&gt;&lt;/mods:name&gt;</font><br>
+      <font color="#0000CC">&lt;mods:name type=&quot;corporate&quot; authority=&quot;naf&quot;&gt;&lt;mods:namePart&gt;</font>Florida<font color="#0000CC">&lt;/mods:namePart&gt;&lt;mods:namePart&gt;</font>Department 
+      of Agriculture and Consumer Affairs<font color="#0000CC">&lt;/mods:namePart&gt;&lt;/mods:name&gt;</font><br>
+      <font color="#0000CC">&lt;mods:name type=&quot;corporate&quot;&gt;&lt;mods:namePart&gt;</font>Agricultural 
+      Experiment Station/Extension Service (IFAS) <font color="#0000CC">&lt;/mods:namePart&gt;&lt;/mods:name&gt;</font><br>
+      <font color="#0000CC">&lt;mods:name type=&quot;corporate&quot; authority=&quot;naf&quot;&gt;&lt;mods:namePart&gt;</font>University 
+      of Florida<font color="#0000CC">&lt;/mods:namePart&gt;&lt;mods:namePart&gt;</font>Engineering 
+      and Industrial Experiment Station<font color="#0000CC">&lt;/mods:namePart&gt;&lt;/mods:name&gt;</font><br>
+      <font color="#0000CC">&lt;mods:typeOfResource&quot;collection=&quot;yes&quot;&gt;</font>text<font color="#0000CC">&lt;/mods:typeOfResource&gt;</font><br>
+      <font color="#0000CC">&lt;mods:language authority=&quot;rfc3066&quot;&gt;</font>en<font color="#0000CC">&lt;/mods:language&gt;</font><br>
+      <font color="#0000CC">&lt;mods:physicalDescription&gt;&lt;mods:internetMediaType&gt;</font>text/html<font color="#0000CC">&lt;/mods:internetMediaType&gt;&lt;/mods:physicalDescription&gt;</font> 
+      <br>
+      <font color="#0000CC">&lt;mods:abstract&gt;</font>Florida Environments Online 
+      contains both digital full text materials and research bibliographies about 
+      the ecology and environment of Florida. Digitized materials include more 
+      than 200 seminal texts on species and ecosystems selected by scientific 
+      experts throughout the state of Florida and digitized specifically for the 
+      Linking Florida's Natural Heritage project. They also include the publications 
+      of the Florida Geological Society, and agricultural documents created by 
+      the Agricultural Experiment Station/Extension Service (IFAS) and the Florida 
+      Department of Agriculture and Consumer Affairs, as well as engineering documents 
+      created by the UF Engineering and Industrial Experiment Station<font color="#0000CC">&lt;/mods:abstract&gt;</font><br>
+      <font color="#0000CC">&lt;mods:subject authority=&quot;lcsh&quot;&gt;&lt;mods:topic&gt;</font>Environmental 
+      sciences<font color="#0000CC">&lt;/mods:topic&gt;&lt;/mods:subject&gt;</font><br>
+      <font color="#0000CC">&lt;mods:subject authority-&quot;lcsh&quot;&gt;&lt;mods:topic&gt;</font>Geology<font color="#0000CC">&lt;/mods:topic&gt;&lt;/mods:subject&gt;</font><br>
+      <font color="#0000CC">&lt;mods:subject authority-&quot;lcsh&quot;&gt;&lt;mods:topic&gt;</font>Agriculture<font color="#0000CC">&lt;/mods:topic&gt;&lt;/mods:subject&gt;</font><br>
+      <font color="#0000CC">&lt;mods:identifier type=&quot;uri&quot;&gt;</font>http://palmm.fcla.edu/feol/<font color="#0000CC">&lt;/mods:identifier&gt;</font><br>
+      <font color="#0000CC">&lt;mods:recordInfo&gt;&lt;mods:recordContentSource&gt;</font>My 
+      favorite Library<font color="#0000CC">&lt;/mods:recordContentSource&gt;</font><br>
+      <font color="#0000CC">&lt;mods:recordCreationDate encoding=&quot;iso8601&quot;&gt;</font>20030331<font color="#0000CC">&lt;/mods:recordCreationDate&gt; 
+      &lt;mods:recordIdentifier&gt;</font>12345<font color="#0000CC">&lt;/mods:recordIdentifier&gt;&lt;/mods:recordInfo&gt;</font></p>
+    <hr>
+    <p><img src="images/mods-icon.gif" width="140" height="48" align="right" alt=""> 
+      <STRONG>Questions and comments:</STRONG> </p>
+    <ADDRESS> 
+    <!--help desk email start -->
+    <a href="mailto:ndmso@loc.gov">Contact Us</a>    <!--help desk email end -->
+    ( 
+    <!-- #BeginDate format:Am1 -->January 2, 2008<!-- #EndDate -->
+    )</ADDRESS>
+  </td>
+  </tr>
+</body>
+</html>

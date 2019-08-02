@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+
+                        "http://www.w3.org/TR/html40/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/mods.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Changes for MODS Version 3.5 : Metadata Object Description Schema: MODS (Library of Congress)</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<meta name="keywords" content="mods  metadata object description schema changes version 3.5 library congress xml">
+<meta name="description" content="Changes for MODS Version 3.5 (Metadata Object Description Schema: MODS)">
+<style type="text/css">
+<!--
+.style1 {font-size: x-small}
+-->
+</style>
+<!-- InstanceEndEditable -->
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="mods-print.css" type="text/css" media="print">
+<style type="text/css">
+@import url(mods.css);
+</style>
+</head>
+<body link="#000099" vlink="#0066CC" bgcolor="#FFFFFF">
+<table class="layout2">
+  <tr>
+    <td class="top-breadcrumbs"><a id="skip" href="#skip_menu">&nbsp;</a><a href="http://www.loc.gov/">The Library of Congress</a> &raquo; <a href="http://www.loc.gov/standards/">Standards</a> &raquo; <a href="http://www.loc.gov/mods/">MODS Official Web Site</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://www.loc.gov/standards/mods/"><img src="images/mods-bar-760.gif" alt="Metadata Object Description Schema: Official Web Site" width="760" height="41" border="0"></a></td>
+  </tr>
+  <tr>
+    <td><a href="http://www.loc.gov/standards/mods/">HOME</a> &gt;&gt; <!-- InstanceBeginEditable name="topbreadcrumb" -->MODS 3.6 Changes <!-- InstanceEndEditable --><a name="skip_menu"></a><!-- InstanceBeginEditable name="content" -->
+<h1>Approved &lt;hierarchicalGeographic&gt; Proposal in MODS 3.6</h1>
+<p> <strong>November 20, 2014</strong> --<strong> MODS HierarchicalGeographic Proposal</strong> -- Approved</p>
+<p>&nbsp;      </p>
+      <h1>Specific Proposal</h1>
+      <p> </p>
+      <h2>1.1    State and Province</h2><br>
+        &lt;province&gt; will be deprecated; &lt;state&gt; will be re-defined:<br>
+<br>        
+        &lt;state&gt; includes first order political jurisdictions under countries, such as   states, provinces, cantons, Länder, etc. regardless of what they are   called in the particular country.<br>
+<br>
+See Commentary and Examples:  1.<br>
+<br>
+</h2>
+<h2>1.2    New Attributes to Indicate Place Types</h2>
+<br>Attributes   @areaType, @regionType, and @sectionType will be defined for elements   &lt;area&gt;, &lt;region&gt;, and &lt;citySection&gt;  respectively. These would of course be optional.<br>
+<br>
+        See Commentary and Examples:  2.<br>
+<br>
+<br>
+<h2>1.3    Indication of hierarchical level</h2>
+<p>Attribute @level will be defined for all place type elements to indicate hierarchical level. It would of course be optional.<br>
+<br>
+See Commentary and Examples:  3.<br>
+<br>
+</p>
+
+<h2>1.4      Authority</h2>
+<br>
+The authority attributeGroup (authority, authorityURI, and valueURI)  will be added to all place type elements.<br>
+<br>
+<br>
+<h2>1.5    Places that no longer exist</h2>
+<p>Attribute   @period will be defined. Its presence will indicate that the described   entity once existed but no longer exists.  Its value would be a hint of   when it existed (it could simply be a date).</p>
+
+<p>See Commentary and Examples:  4<strong>.</strong></p>
+      <p> </p>
+      <h1>Commentary and Examples</h1>
+      <p> </p>
+      <ol start="1">
+        <li>The way MODS      currently handles first level   political jurisdictions -- i.e. first level      below the country -- is   not consistent. It was brought out that in the      MARC 662 there is a   subfield called "first order political      jurisdiction". In MODS,   both &lt;state&gt; and &lt;province&gt; are      used for first order   political jurisdictions depending upon what they're      called in the   particular country-- but the guidelines say the following:</li>
+      </ol>
+      <p><strong><em>&lt;state&gt;</em></strong><em> – Includes first order political divisions called states within a   country, e.g. in U.S., Argentina, Italy. Use also for France   département.</em></p>
+      <p><strong><em>&lt;province&gt;</em></strong><em> – Includes first order political divisions called provinces within a country, e.g. in Canada.</em></p>
+      <p>So first order   political divisions mostly go under &lt;state&gt; unless they're called   &lt;province&gt;. And we're silent on what they call them in other   countries.</p>
+      <p>The committee   thinks it desirable to put all first order political divisions under one   element. The term "first order political division" or "first order   political jurisdiction" is rather unwieldy. So the proposal is to   deprecate province and define &lt;state&gt; as all first order political   jurisdictions.<br>
+        <br>
+      </p>
+      <ol start="2">
+        <li>This      replaces the earlier proposal to define new   element &lt;placeOther&gt; and      attribute @otherType, to accommodate   other types of places that don't have      their own element.  Instead,  group   them together under &lt;area&gt;,      &lt;region&gt; or    &lt;citySection&gt; as appropriate (area is used for        non-jurisdictional places, region for jurisdictional,  and   &lt;citySection&gt; may be used for      either ) and indicate the place   type with the corresponding attribute, @areaType,       @regionType, or @sectionType. </li>
+      </ol>
+      <p>&lt;citySection&gt; for example is currently defined as: </p>
+      <p><em>&lt;citySection&gt;-- Name of a smaller unit within a populated place, e.g., neighborhoods, parks, or streets</em></p>
+      <p>Thus,   citySection is a broad term that can be used without the @sectionType   attribute, but if you want to designate a specific type of city section   you  could say </p>
+      <p>&lt;citySection sectionType="neighborhood" &gt; </p>
+      <p>for formally established neighborhoods, or</p>
+      <p>            &lt;citySection sectionType="street&gt;".</p>
+      <p>Note that the use of "city" here doesn't preclude  towns. </p>
+      <p>&lt;area&gt;   could take an @areaType attribute to accommodate some of those areas   that have been suggested-- national parks, rivers, Indian reservation,   etc.</p>
+      <p><strong>Example:</strong></p>
+      <p><em>    &lt;hierarchicalGeographic&gt;</em></p>
+      <p><em>            &lt;country&gt;United States&lt;/country&gt;</em></p>
+      <p><em>            &lt;state&gt;Rhode Island&lt;/state&gt;</em></p>
+      <p><em>            &lt;city&gt;Providence&lt;/city&gt;</em></p>
+      <p><em>            &lt;citySection citySectiontype="neighborhood"&gt;Blackstone&lt;/citySection&gt;</em></p>
+      <p><em>   &lt;/hierarchicalGeographic&gt;</em></p>
+      <ol start="3">
+        <li>When   the      level of elementA is less than the level of element, then   elementA is      higher in the hierarchy than element. It is recommended   that levels begin      with 1 and are consecutive, however this is not   mandated. Levels could,      for example, be 3 , 5, and 9.</li>
+      </ol>
+      <p>There is no need for @level  for simple cases like the following where the hierarchy is easily inferred:</p>
+      <p><em>            &lt;country&gt;United States&lt;/country&gt;</em></p>
+      <p><em>            &lt;state&gt;Rhode Island&lt;/state&gt;</em></p>
+      <p><em>            &lt;city&gt;Providence&lt;/city&gt;</em></p>
+      <p> But there are a few cases where @level would be useful:<br>
+        <br>
+      </p>
+      <ul>
+        <li>The actual hierarchy of the existing place types for hierarchicalGeographic isn't always clear, and in some cases depends on the context. </li>
+        <li>It will be useful to be able to indicate that two places have the same level.</li>
+        <li>In cases where the same place type is supplied more than once, their levels relative to one-another are not always clear. </li>
+      </ul>
+      <p> </p>
+      <p> </p>
+      <p> To elaborate of the latter two points: </p>
+      <p> Consider the following example, where Blackstone is a sub-neighborhood of East Side, in Providence. </p>
+      <p><em>            &lt;country&gt;United States&lt;/country&gt;</em></p>
+      <p><em>            &lt;state&gt;Rhode Island&lt;/state&gt;</em></p>
+      <p><em>            &lt;city&gt;providence&lt;/city&gt;</em></p>
+      <p><em>         &lt;citySection citySectiontype="neighborhood" level="1"&gt;East Side&lt;/ citySection &gt;</em></p>
+      <p><em>      &lt; citySection citySectiontype="neighborhood" level="2"&gt;Blackstone&lt;/ citySection &gt;</em></p>
+      <p> Another example, consider Massachusetts   Avenue which runs through Lincoln Park within Capitol Hill in   Washington DC. Say you want to identify that section of Mass Ave  within   the park: </p>
+      <p><em>           &lt;state&gt;District of Columbia&lt;/state&gt;</em></p>
+      <p><em>            &lt;city&gt;Washington&lt;/city&gt;</em></p>
+      <p><em>            &lt;citySection citySectionType ="neighborhood" level="1"&gt;Capitol Hill&lt;/ citySection&gt;</em></p>
+      <p><em>            &lt; citySection citySectionType =&rdquo;park&rdquo;  level="2"&gt;Lincoln Park&lt;/ citySection&gt;    </em></p>
+      <p><em>          &lt;citySection citySectionType =&rdquo;street&rdquo; level="2"&gt;Massachusetts Avenue&lt;/citySection</em><em>&gt;</em></p>
+      <p>Whenever   the level is the same for two places the intersection is   indicated. This example indicates the intersection of the two level 5   entities.   </p>
+      <p> </p>
+      <ol start="4">
+        <li>The      following example indicates the portion of the Oregon Trail within Idaho      that existed during the gold rush: </li>
+      </ol>
+      <p><em>           &lt;state level="2"&gt;Idaho&lt;/state&gt;</em></p>
+      <p><em>            &lt;area  level="3"type="trail" period="gold rush"&gt;Oregon Trail&lt;/area&gt;</em></p>
+      <p>Another Example:</p>
+      <p><em>            &lt;continent&gt;Europe&lt;/continent&gt;</em></p>
+      <p><em>            &lt;country period=&rdquo;1945-1990&rdquo;&gt;East Germany&lt;/country&gt;</em></p>
+      <ol>
+        <br>
+    <br>  
+      </ol>
+      <ol>
+  <br>
+</ol>
+<br>
+
+
+
+      <!-- InstanceEndEditable -->
+<HR noshade size="1">
+</td>
+</tr>
+<tr>
+<td><a href="http://www.loc.gov/standards/mods/">HOME</a> &gt;&gt; <!-- InstanceBeginEditable name="bottombreadcrumb" -->Changes for MODS Version 3.6 <!-- InstanceEndEditable -->
+  <p><strong>Questions and comments:<br>
+  </strong>
+              <a href="mailto:ndmso@loc.gov">Contact Us</a> (
+              <!-- #BeginDate format:Am1 -->January 14, 2016<!-- #EndDate -->
+      )
+      <br>
+      <a href="http://www.loc.gov/homepage/legal.html">Legal</a> | <a href="http://www.loc.gov/global/disclaim.html">External Link Disclaimer</a></p></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

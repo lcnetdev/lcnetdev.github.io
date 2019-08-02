@@ -1,0 +1,1482 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+
+                        "http://www.w3.org/TR/html40/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/mads-template.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>MARC 21 Authority Format Mapping to MADS  : Metadata Authority Description Schema (MADS) Official Web Site</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<meta name="keywords" content="mads metadata authority description schema web site library congress xml official site library congress">
+<meta name="description" content="MARC 21 Authority Format Mapping : As an XML schema, the &quot;Metadata Authority Description Schema&quot;  (MADS) is intended to be able to carry selected data from existing MARC 21 authority records as well as to enable the creation of original records for agents and terms."><!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="mads_new.css" type="text/css">
+</head>
+<body link="#000099" vlink="#0066CC" bgcolor="#FFFFFF">
+<table width="760" cellpadding="4" cellspacing="0" border="0" align="center">
+  <tr>
+    <td colspan="3"><a id="skip" href="#skip_menu">&nbsp;</a><a href="http://www.loc.gov/">The
+        Library of Congress</a> &gt;&gt; <a href="http://www.loc.gov/standards/">Standards</a> &gt;&gt; <a href="http://www.loc.gov/mads/">MADS</a></td>
+  </tr>
+  <tr>
+    <td colspan="3"><a href="http://www.loc.gov/standards/mads/"><img src="images/mads-bar.gif" alt="Metadata Authority Description Schema: Official Web Site" width="697" height="75" border="0"></a></td>
+  </tr>
+  <tr>
+    <td colspan="3"><p><a href="http://www.loc.gov/standards/mads/">HOME</a> &gt;&gt; <!-- InstanceBeginEditable name="topbreadcrumb" --><span class="selected">MARC 21 Authority Format Mapping</span><!-- InstanceEndEditable --></p>
+      <a name="skip_menu"></a><!-- InstanceBeginEditable name="content" -->
+      <h1 align="center"></h1>
+      <h1 align="center">MARC 21 Authority Format Mapping to MADS <br>
+        Schema version
+        2.0</h1>
+      <h2 align="center">Revised June 2011</h2>
+      <p align="left">This mapping is for use with <strong>MADS
+      Schema version 2.0 </strong>. The previous version of this mapping for use with the <strong>MADS Schema version 1.0 </strong>is located online at: <a href="http://www.loc.gov/standards/mads/mads-mapping-1-0.html">www.loc.gov/standards/mads/mads-mapping-1-0.html</a>.</p>
+      <hr>
+      <h2 align="left">Table of Contents</h2>
+      <ol>
+        <li><a href="#intro">Introduction</a>
+        <li><a href="#elements">Contents of Elements</a>
+        <li><a href="#mapping">Mapping</a>
+      </ol>
+      <hr>
+      <h3><a name="intro"></a>1. Introduction</h3>
+      <p>This mapping gives equivalencies between the MARC 21 Authority Format and
+        MADS, but is not intended to be a crosswalk that allows for bi-directional
+        conversions without some loss of data.
+        Where there is no equivalent MARC 21 element, this mapping says &quot;no MARC 21 equivalent&quot;.
+      <hr>
+      <h3><a name="elements"></a>2. Contents of Elements</h3>
+      <table width="65%">
+        <tr>
+          <td colspan="2" valign="top"><a href="#authority">authority</a></td>
+        </tr>
+        <tr>
+          <td colspan="2" valign="top"><a href="#geographicSubdivision"><em>Attribute: </em>geographicSubdivision</a></td>
+        </tr>
+        <tr>
+          <td width="4%" valign="top">
+           <a href="#name"></a>         </td>
+          <td width="96%" valign="top"><a href="#name">name</a></td>
+        </tr>
+        <tr>
+          <td valign="top">
+           <a href="#titleInfo"></a>          </td>
+          <td valign="top"><a href="#titleInfo">titleInfo</a></td>
+        </tr>
+        <tr>
+          <td valign="top">
+            <a href="#topic"></a>          </td>
+          <td valign="top"><a href="#topic">topic</a></td>
+        </tr>
+        <tr>
+          <td valign="top"><a href="#temporal"></a></td>
+          <td valign="top"><a href="#temporal">temporal</a></td>
+        </tr>
+        <tr>
+          <td valign="top"><a href="#genre"></a></td>
+          <td valign="top"><a href="#genre">genre</a></td>
+        </tr>
+        <tr>
+          <td valign="top"><a href="#geographic"></a></td>
+          <td valign="top"><a href="#geographic">geographic</a></td>
+        </tr>
+        <tr>
+          <td valign="top"><a href="#hierarchicalGeographic"></a></td>
+          <td valign="top"><a href="#hierarchicalGeographic">hierarchicalGeographic</a></td>
+        </tr>
+        <tr>
+          <td valign="top"><a href="#occupation"></a></td>
+          <td valign="top"><a href="#occupation">occupation</a></td>
+        </tr>
+        
+        <tr>
+          <td colspan="2" valign="top"><a href="#related">related</a></td>
+        </tr>
+        <tr>
+          <td valign="top">
+            <a href="#relatedname"></a>          </td>
+          <td valign="top"><a href="#relatedname">name</a></td>
+        </tr>
+        <tr>
+          <td valign="top">
+            <a href="#relatedtitle"></a>          </td>
+          <td valign="top"><a href="#relatedtitle">titleInfo</a></td>
+        </tr>
+        <tr>
+          <td valign="top"><a href="#relatedtopic"></a></td>
+          <td valign="top"><a href="#relatedtopic">topic</a></td>
+        </tr>
+        <tr>
+          <td valign="top">
+            <a href="#relatedtemporal"></a>          </td>
+          <td valign="top"><a href="#relatedtemporal">temporal</a></td>
+        </tr>
+        <tr>
+          <td valign="top">
+            <a href="#relatedgenre"></a>        </td>
+          <td valign="top"><a href="#relatedgenre">genre</a></td>
+        </tr>
+        <tr>
+          <td valign="top">
+           <a href="#relatedgeographic"></a>          </td>
+          <td valign="top"><a href="#relatedgeographic">geographic</a></td>
+        </tr>
+        <tr>
+          <td valign="top">
+           <a href="#relatedhierarchicalgeographic"></a>          </td>
+          <td valign="top"><a href="#relatedhierarchicalgeographic">hierarchicalGeographic</a></td>
+        </tr>
+        <tr>
+          <td valign="top">
+           <a href="#relatedoccupation"></a>          </td>
+          <td valign="top"><a href="#relatedoccupation">occupation</a></td>
+        </tr>
+        <tr>
+          <td colspan="2" valign="top"><a href="#variant">variant</a></td>
+        </tr>
+        <tr>
+          <td valign="top"><a href="#variantname"></a></td>
+          <td valign="top"><a href="#variantname">name</a></td>
+        </tr>
+        <tr>
+          <td valign="top"><a href="#varianttitle"></a></td>
+          <td valign="top"><a href="#varianttitle">titleInfo</a></td>
+        </tr>
+        <tr>
+          <td valign="top"><a href="#varianttopic"></a></td>
+          <td valign="top"><a href="#varianttopic">topic</a></td>
+        </tr>
+        <tr>
+          <td valign="top"><a href="#varianttemporal"></a></td>
+          <td valign="top"><a href="#varianttemporal">temporal</a></td>
+        </tr>
+        <tr>
+          <td valign="top"><a href="#variantgenre"></a></td>
+          <td valign="top"><a href="#variantgenre">genre</a></td>
+        </tr>
+        <tr>
+          <td valign="top">
+          <a href="#variantgeographic"></a>          </td>
+          <td valign="top"><a href="#variantgeographic">geographic</a></td>
+        </tr>
+        <tr>
+          <td valign="top"><a href="#varianthierarchicalgeographic"></a></td>
+          <td valign="top"><a href="#varianthierarchicalgeographic">hierarchicalGeographic</a></td>
+        </tr>
+        <tr>
+          <td valign="top"><a href="#variantoccupation"></a></td>
+          <td valign="top"><a href="#variantoccupation">occupation</a></td>
+        </tr>
+
+        <tr>
+          <td colspan="2" valign="top"><a href="#affiliation">affiliation</a></td></tr>
+		          <tr>
+          <td colspan="2" valign="top"><a href="#classification">classification</a></td></tr>
+		         <tr>
+          <td colspan="2" valign="top"><a href="#fieldOfActivity">fieldOfActivity</a></td></tr>
+
+        <tr >
+          <td colspan="2" valign="top"><a href="#identifier">identifier</a></td></tr>
+        <tr>
+          <td colspan="2" valign="top"><a href="#language">language</a></td></tr>
+
+		          <tr>
+          <td colspan="2" valign="top"><a href="#note">note</a></td></tr>
+		          <tr>
+          <td colspan="2" valign="top"><a href="#url">url</a></td></tr>
+        <tr>
+          <td colspan="2" valign="top"><a href="#extension">extension</a></td></tr>
+        <tr>
+          <td colspan="2" valign="top"><a href="#recordinfo">recordInfo</a></td></tr>
+        <tr>
+          <td colspan="2" valign="top">&nbsp;</td>
+        </tr>
+        <tr>
+          <td colspan="2" valign="top"><a href="#authorityatt">authority attribute</a></td></tr>
+      </table>
+      <p>&nbsp;</p>
+      <hr>
+      <h3><a name="mapping"></a>3. Mapping</h3>
+      <p><strong>&lt;<a name="authority"></a>authority&gt;</strong></p>
+      <table width="100%" border="0">
+        <tr valign="top">
+          <td><a name="geographicSubdivision" id="geographicSubdivision"></a> <strong>geographicSubdivision attribute </strong></td>
+          <td >&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td>008/06=d</td>
+          <td ><em>add </em><em>attribute</em> geographicSubdivision=&quot;direct&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td>008/06=i</td>
+          <td ><em>add </em><em>attribute</em> geographicSubdivision=&quot;indirect&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td>008/06=n</td>
+          <td ><em>add </em><em>attribute</em> geographicSubdivision=&quot;not applicable &quot; </td>
+        </tr>
+        <tr valign="top">
+          <td>&nbsp;</td>
+          <td >&nbsp;</td>
+        </tr>
+        <tr valign="top">
+		 <td width="35%"><a name="name" id="name"></a><strong>Name</strong></td>
+            <td >&lt;name&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td width="35%"> 100 </td>
+          <td colspan="2">&lt;name&gt; <em>with</em> type=&quot;personal&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 100 $a$q </td>
+          <td >&lt;namePart&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 100 $d </td>
+          <td >&lt;namePart&gt; <em>with</em> type=&quot;date&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%">100 $b$c</td>
+          <td >&lt;namePart&gt; <em>with</em> type=&quot;termsOfAddress&quot;</td>
+        </tr>
+        
+        <tr valign="top">
+          <td>&nbsp;</td>
+          <td >&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 110 </td>
+          <td >&lt;name&gt; <em>with</em> type=&quot;corporate&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 110 $a </td>
+          <td >&lt;namePart&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 110 $b </td>
+          <td >&lt;namePart&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 110 $c$d$n </td>
+          <td >&lt;namePart&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="3">&nbsp; &nbsp; </td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 111 </td>
+          <td >&lt;name&gt; <em>with</em> type=&quot;conference&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 111 $a$c$d$e$n$q </td>
+          <td >&lt;namePart&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="3">&nbsp;</td>
+        </tr>
+      </table>
+      <table width="100%">
+        <tr>
+          <td width="35%"><a name="titleInfo" id="titleInfo"></a><strong>Title </strong></td>
+          <td colspan="2">&lt;titleInfo&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 130 $a$d$f$g$h$k$l$m$o$r,$s<br></td>
+          <td colspan="2" >&lt;title&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 130 $n (<em>and</em> other subfields following as above) </td>
+          <td colspan="2" >&lt;partNumber&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 130 $p (<em>and</em> other subfields following as above) </td>
+          <td colspan="2" >&lt;partName&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td>100$t$f$h$k$l$m$o$r$s ($g after $t)</td>
+          <td colspan="2"><em>Add after &lt;name&gt;:</em> &lt;titleInfo&gt;&lt;title&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td>100$n  (<em>and</em> other subfields following as above) </td>
+          <td width="4%">&nbsp;</td>
+          <td width="61%">&lt;partNumber&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td>100$p (<em>and</em> other subfields following as above) </td>
+          <td>&nbsp;</td>
+          <td>&lt;partName&gt;</td>
+        </tr>
+		 <tr valign="top">
+          <td colspan="2">&nbsp;</td>
+        </tr>
+      </table>
+      <table width="100%" border="0">
+        <tr valign="top">
+          <td  width="35%"><a name="topic" id="topic"></a><strong>Topic</strong>          </td>
+          <td width="65%" >&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td>150$a$b, 180$x</td>
+          <td>&lt;topic&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td>100,110,111,130,148,150,151,<br>
+            155,181,185$x<br></td>
+          <td><em>Add </em>&lt;topic&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><a name="temporal" id="temporal"></a><strong>Temporal</strong></td>
+        </tr>
+        <tr valign="top">
+          <td>148$a, 182$y</td>
+          <td>&lt;temporal&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td>100,110,111,130,148,150, 151<br>
+            155, 180,  181, 185$y<br></td>
+          <td><em>Add</em> &lt;temporal&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><a name="genre" id="genre"></a><strong>Genre</strong></td>
+        </tr>
+        <tr valign="top">
+          <td>155$a, 185$v</td>
+          <td>&lt;genre&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td>100,110,111,130,148,150, 151<br>
+            155, 180, 181,182$v</td>
+          <td><em>Add</em> &lt;genre&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><a name="geographic"></a> <strong>Geographic</strong></td>
+        </tr>
+        <tr valign="top">
+          <td>151$a, 181$z</td>
+          <td>&lt;geographic&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td>100,110,111,130,148,150, 151<br>
+            155, 180, 182, 185$z</td>
+          <td><em>Add</em> &lt;geographic&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><a name="hierarchicalGeographic" id="hierarchicalGeographic"></a><strong> Hierarchical
+            Geographic</strong></td>
+        </tr>
+        <tr valign="top">
+          <td><em>No MARC 21 authority equivalent</em></td>
+          <td>&lt;hierarchicalGeographic&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><a name="occupation" id="occupation"></a> <strong>Occupation</strong></td>
+        </tr>
+        <tr valign="top">
+          <td><em>No MARC 21 authority equivalent</em></td>
+          <td>&lt;occupation&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        
+        
+        <tr valign="top">
+          <td colspan="2"><strong>See <a href="#authorityatt">below</a> for setting authority attribute</strong></td>
+        </tr>
+	  </table>
+		    <p><strong>&lt;<a name="related"></a>related&gt;</strong></p>
+		<table width="100%" border="0">        
+        <tr valign="top">
+          <td  width="35%"><a name="relatedname" id="relatedname"></a><strong> Name</strong></td>
+          <td >&lt;related&gt; <em>with </em>type= [see below under related types]</td>
+        </tr>
+        <tr valign="top">
+          <td width="35%"> 500, 700</td>
+          <td>&lt;name&gt; <em>with</em> type=&quot;personal&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 500, 700 $a$q </td>
+          <td >&lt;namePart&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 500, 700 $d </td>
+          <td >&lt;namePart&gt; <em>with</em> type=&quot;date&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%">500, 700 $b$c</td>
+          <td >&lt;namePart&gt; <em>with</em> type=&quot;termsOfAddress&quot;</td>
+        </tr>
+        
+        <!--<tr valign="top">
+              <td>500, 700 $0</td>
+              <td >Add attribute xlink:href=&quot;content of subfield&quot;<br>
+                <em>Note: content must be formulated as a URI, e.g. info:lccn
+                URI</em></td>
+            </tr> -->
+        <tr valign="top">
+          <td  width="35%"> 510, 710</td>
+          <td >
+              &lt;name&gt; <em>with</em> type=&quot;corporate&quot;          </td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 510, 710 $a </td>
+          <td >
+              &lt;namePart&gt;
+         </td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 510, 710 $b </td>
+          <td >&lt;namePart&gt; 
+          </td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 510, 710 $c$d$n </td>
+          <td>
+          &lt;namePart&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td>510, 710 $e</td>
+          <td>
+             &nbsp;&lt;role&gt; &lt;roleTerm&gt; <em>with</em> type=&quot;text&quot;&nbsp;
+          </td>
+        </tr>
+        <!--  <tr valign="top">
+            <td>510, 710 $0</td>
+              <td>Add attribute xlink:href=&quot;content of subfield&quot;<br>
+                <em>Note: content must be formulated as a URI, e.g. info:lccn
+              URI</em></td>
+            </tr> -->
+        <tr valign="top">
+          <td colspan="2">&nbsp; &nbsp; </td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 511, 711</td>
+          <td >
+            &lt;name&gt; <em>with</em> type=&quot;conference&quot; 
+          </td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 511, 711 $a$c$d$e$n$q </td>
+          <td >
+              &lt;namePart&gt;
+         </td>
+        </tr>
+        <!-- <tr valign="top">
+       <td>511, 711 $0</td>
+              <td>Add attribute xlink:href=&quot;content of subfield&quot;<br>
+                <em>Note: content must be formulated as a URI, e.g. info:lccn
+              URI</em></td>
+            </tr> -->
+        <tr valign="top">
+          <td colspan="2">&nbsp;</td>
+        </tr>
+      </table>
+      <table width="100%">
+        <tr>
+          <td width="35%"><a name="relatedtitle" id="relatedtitle"></a><strong>Title </strong></td>
+          <td colspan="2">&lt;related&gt; <em>with</em> type= [see below
+            under related types] </td>
+        </tr>
+        <tr valign="top">
+          <td>530, 730</td>
+          <td colspan="2" >
+            &lt;titleInfo&gt;
+          </td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 530, 730 $a$d$f$g$h$k$l$m$o$r,$s<br></td>
+          <td colspan="2" >
+              &lt;title&gt;
+      </td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 530, 730 $n (<em>and</em> other subfields following
+            as above) </td>
+          <td colspan="2" >
+            &lt;partNumber&gt;
+       </td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 530, 730 $p (<em>and</em> other subfields following
+            as above) </td>
+          <td colspan="2" >
+             &lt;partName&gt;
+          </td>
+        </tr>
+        <tr valign="top">
+          <td>500, 700 $t$f$h$k$l$m$o$r$s$g<br></td>
+          <td colspan="2"><em>Add after &lt;name&gt;:</em> &lt;titleInfo&gt;&lt;title&gt;</td>
+        </tr>
+        <!-- <tr valign="top">
+                <td>500, 700 $0</td>
+                <td colspan="2">Add attribute xlink:href=&quot;content of subfield&quot;<br>
+                  <em>Note: content must be formulated as a URI, e.g. info:lccn
+                URI</em></td>
+              </tr> -->
+        <tr valign="top">
+          <td>500, 700 $n &nbsp; (<em>and</em> other subfields following as
+            above) </td>
+          <td width="4%">&nbsp;</td>
+          <td width="61%">
+            &lt;partNumber&gt;
+          </td>
+        </tr>
+        <tr valign="top">
+          <td>500, 700 $p  (<em>and</em> other subfields following as above) </td>
+          <td>&nbsp;</td>
+          <td>
+           &lt;partName&gt;
+          </td>
+        </tr>
+      </table>
+      <table width="100%" border="0">
+        <tr valign="top">
+          <td  width="35%">&nbsp;</td>
+          <td width="65%" >&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td><a name="relatedtopic" id="relatedtopic"></a><strong>Topic</strong></td>
+          <td colspan="2">&lt;related&gt; <em>with</em> type= [see below
+            under related types] </td>
+        </tr>
+        <tr valign="top">
+          <td>550, 750 $a$b, 180, 780$x</td>
+          <td colspan="2">
+          &lt;topic&gt;          </td>
+        </tr>
+        <!-- <tr valign="top">
+                <td>550, 750 $0</td>
+                <td colspan="2">Add attribute xlink:href=&quot;content of subfield&quot;<br>
+                  <em>Note: content must be formulated as a URI, e.g. info:lccn
+                URI</em></td>
+              </tr> -->
+        <tr valign="top">
+          <td>500,510,511,530,548,550,551,<br>
+            555,581,585$x<br>
+            700,710,711,730,748,750,751,<br>
+            755,781,785$x <br></td>
+          <td colspan="2">
+           <em>Add </em>&lt;topic&gt;       </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="3">&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td><a name="relatedtemporal" id="relatedtemporal"></a> <strong>Temporal</strong></td>
+          <td colspan="2">&lt;related&gt; <em>with</em> type= [see below
+            under related types] </td>
+        </tr>
+        <tr valign="top">
+          <td>548, 748$a, 582, 782$y</td>
+          <td colspan="2">
+            &lt;temporal&gt;          </td>
+        </tr>
+        <!--  <tr valign="top">
+                <td>548, 748 $0</td>
+                <td colspan="2">Add attribute xlink:href=&quot;content of subfield&quot;<br>
+                  <em>Note: content must be formulated as a URI, e.g. info:lccn
+                URI</em></td>
+              </tr> -->
+        <tr valign="top">
+          <td>500,510,511,530,548,550,551<br>
+            555, 580, 581, 585$y<br>
+            700,710,711,730,748,750,751,<br>
+            755,781,785$y<br></td>
+          <td colspan="2"><em>Add</em> &lt;temporal&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="3">&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td><a name="relatedgenre" id="relatedgenre"></a> <strong>Genre</strong></td>
+          <td colspan="2">&lt;related&gt; <em>with</em> type= [see below
+            under related types] </td>
+        </tr>
+        <tr valign="top">
+          <td>555$a, 585$v</td>
+          <td colspan="2">
+            &lt;genre&gt;        </td>
+        </tr>
+        <!-- <tr valign="top">
+                <td>555 $0</td>
+                <td colspan="2">Add attribute xlink:href=&quot;content of subfield&quot;<br>
+                  <em>Note: content must be formulated as a URI, e.g. info:lccn
+                URI</em></td>
+              </tr> -->
+        <tr valign="top">
+          <td>500,510,511,530,548,550,551<br>
+            555, 580, 581,582$v<br>
+            700,710,711,730,748,750,751,<br>
+            755,781,785$v<br></td>
+          <td colspan="2"><em>Add</em> &lt;genre&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="3">&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td><a name="relatedgeographic" id="relatedgeographic"></a> <strong>Geographic</strong></td>
+          <td colspan="2">&lt;related&gt; <em>with</em> type= [see below
+            under related types] </td>
+        </tr>
+        <tr valign="top">
+          <td>551$a, 581$z</td>
+          <td colspan="2">
+            &lt;geographic&gt;          </td>
+        </tr>
+        <!--  <tr valign="top">
+                <td>551 $0</td>
+                <td colspan="2">Add attribute xlink:href=&quot;content of subfield&quot;<br>
+                  <em>Note: content must be formulated as a URI, e.g. info:lccn
+                URI</em></td>
+              </tr> -->
+        <tr valign="top">
+          <td>500,510,511,530,548,550, 551<br>
+            555, 580, 582, 585$z<br>
+            700,710,711,730,748,750,751,<br>
+            755,781,785$z<br></td>
+          <td colspan="2"><em>Add</em> &lt;geographic&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="3">&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="3"><a name="relatedhierarchicalGeographic" id="relatedhierarchicalGeographic"></a> <strong>Hierarchical
+            Geographic</strong></td>
+        </tr>
+        <tr valign="top">
+          <td><em>No MARC 21 authority equivalent</em></td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="3">&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="3"><a name="relatedoccupation" id="relatedoccupation"></a> <strong>Occupation</strong></td>
+        </tr>
+        <tr valign="top">
+          <td><em>No MARC 21 authority equivalent</em></td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td>&nbsp;</td>
+          <td >&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"><a name="relationship"></a><strong> Related types</strong></td>
+          <td >&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%">500, 510, 511, 551 </td>
+          <td >&lt;related&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%">$w/0=&quot;a&quot;</td>
+          <td >type=&quot;earlier&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%">$w/0=&quot;b&quot;</td>
+          <td >type=&quot;later&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%">$w/0=&quot;t&quot;</td>
+          <td >type=&quot;parentOrg&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%">548, 550 </td>
+          <td ></td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%">$w/0=&quot;g&quot;</td>
+          <td >type=&quot;broader&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%">$w/0=&quot;h&quot;</td>
+          <td >type=&quot;narrower&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td><p>500,510,511,530,550,551,555,580,581,<br>
+582,585 
+$w/0=&quot;f&quot; or &quot;i&quot; or &quot;n&quot; </p></td>
+          <td >type=&quot;other&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td>530, 730 </td>
+          <td >type=&quot;other&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td>$w/0=&quot;r&quot; <em>and</em>500,510,511,530,550,551,555,580,581,<br>
+            582,585 $i<br></td>
+          <td >type=&quot;other and otherType=&quot;content of subfield $i&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td>700,710,711,730,748,750,751,755,<br>
+            780,781,785 <br></td>
+          <td >type=&quot;equivalent&quot;</td>
+        </tr>
+	  </table>
+		    <p><strong>&lt;<a name="variant"></a>variant&gt;</strong></p>
+		<table width="100%" border="0">
+        <tr valign="top">
+          <td  width="35%"><a name="variantname" id="variantname"></a><strong> Name</strong></td>
+          <td >&lt;variant&gt; <em>with </em>type= [see below under variant
+            types]</td>
+        </tr>
+        <tr valign="top">
+          <td width="35%"> 400 </td>
+          <td colspan="2">
+            &lt;name&gt; <em>with</em> type=&quot;personal&quot;
+        </td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 400 $a$q </td>
+          <td >
+              &lt;namePart&gt;
+          </td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 400 $d </td>
+          <td >
+             &lt;namePart&gt; <em>with</em> type=&quot;date&quot;
+          </td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%">400 $b$c</td>
+          <td >
+              &lt;namePart&gt; <em>with</em> type=&quot;termsOfAddress&quot;
+          </td>
+        </tr>
+        
+        <tr valign="top">
+          <td>&nbsp;</td>
+          <td >&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 410 </td>
+          <td >
+             &lt;name&gt; <em>with</em> type=&quot;corporate&quot;
+          </td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 410 $a </td>
+          <td>
+              &lt;namePart&gt;
+          </td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 410 $b </td>
+          <td >
+          &lt;namePart&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 410 $c$d$n </td>
+          <td >&lt;namePart&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="3">&nbsp; &nbsp; </td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 411 </td>
+          <td >&lt;name&gt; <em>with</em> type=&quot;conference&quot; 
+          </td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 411 $a$c$d$e$n$q </td>
+          <td >&lt;namePart&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="3">&nbsp;</td>
+        </tr>
+      </table>
+      <table width="100%">
+        <tr>
+          <td width="35%"><a name="varianttitle" id="varianttitle"></a><strong>Title </strong></td>
+          <td colspan="2">&lt;variant&gt; <em>with</em> type= [see below
+            under variant types] </td>
+        </tr>
+        <tr valign="top">
+          <td>430</td>
+          <td colspan="2" >
+            &lt;titleInfo&gt;
+         </td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 430 $a$d$f$g$h$k$l$m$o$r,$s<br></td>
+          <td colspan="2" >
+             &lt;title&gt;
+          </td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 430 $n (<em>and</em> other subfields following
+            as above) </td>
+          <td colspan="2" >
+          &lt;partNumber&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 430 $p (<em>and</em> other subfields following
+            as above) </td>
+          <td colspan="2" >
+           &lt;partName&gt;
+          </td>
+        </tr>
+        <tr valign="top">
+          <td>400$t$f$h$k$l$m$o$r$s($g after $t)</td>
+          <td colspan="2"><em>Add after &lt;name&gt;:</em> &lt;titleInfo&gt;&lt;title&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td>400$n &nbsp; (<em>and</em> other subfields following as above) </td>
+          <td width="4%">&nbsp;</td>
+          <td width="61%">
+           &lt;partNumber&gt;
+         </td>
+        </tr>
+        <tr valign="top">
+          <td>400$p (<em>and</em> other subfields following as above) </td>
+          <td>&nbsp;</td>
+          <td>
+            &lt;partName&gt;
+        </td>
+        </tr>
+      </table>
+      <table width="100%" border="0">
+        <tr valign="top">
+          <td  width="35%">&nbsp;</td>
+          <td width="65%" >&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td><a name="varianttopic" id="varianttopic"></a><strong>Topic</strong></td>
+          <td colspan="2">&lt;variant&gt; <em>with</em> type= [see below
+            under variant types] </td>
+        </tr>
+        <tr valign="top">
+          <td>450$a$b, 180$x</td>
+          <td colspan="2">
+          &lt;topic&gt;
+         </td>
+        </tr>
+        <tr valign="top">
+          <td>400,410,411,430,448,450,451,<br>
+            455,481,485$x<br></td>
+          <td colspan="2">
+      <em>Add </em>&lt;topic&gt;
+          </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="3">&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td><a name="varianttemporal" id="varianttemporal"></a> <strong>Temporal</strong></td>
+          <td colspan="2">&lt;variant&gt; <em>with</em> type= [see below
+            under variant types] </td>
+        </tr>
+        <tr valign="top">
+          <td>448$a, 482$y</td>
+          <td colspan="2">
+           &lt;temporal&gt;
+         </td>
+        </tr>
+        <tr valign="top">
+          <td>400,410,411,430,448,450,451<br>
+            455, 480, 481, 485$y<br></td>
+          <td colspan="2"><em>Add</em> &lt;temporal&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="3">&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td><a name="variantgenre" id="variantgenre"></a> <strong>Genre</strong></td>
+          <td colspan="2">&lt;variant&gt; <em>with</em> type= [see below
+            under variant types] </td>
+        </tr>
+        <tr valign="top">
+          <td>455$a, 485$v</td>
+          <td colspan="2">
+          &lt;genre&gt;
+    </td>
+        </tr>
+        <tr valign="top">
+          <td>400,410,411,430,448,450,451<br>
+            455, 480, 481,482$v</td>
+          <td colspan="2"><em>Add</em> &lt;genre&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="3">&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td><a name="variantgeographic" id="variantgeographic"></a> <strong>Geographic</strong></td>
+          <td colspan="2">&lt;variant&gt; <em>with</em> type= [see below
+            under variant types] </td>
+        </tr>
+        <tr valign="top">
+          <td>451$a, 481$z</td>
+          <td colspan="2">
+           &lt;geographic&gt;
+       </td>
+        </tr>
+        <tr valign="top">
+          <td>400,410,411,430,448,450, 451<br>
+            455, 480, 482, 485$z</td>
+          <td colspan="2"><em>Add</em> &lt;geographic&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="3">&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="3"><a name="varianthierarchicalGeographic" id="varianthierarchicalGeographic"></a> <strong>Hierarchical
+            Geographic</strong></td>
+        </tr>
+        <tr valign="top">
+          <td><em>No MARC 21 authority equivalent</em></td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="3">&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="3"><a name="variantoccupation" id="variantoccupation"></a> <strong>Occupation</strong></td>
+        </tr>
+        <tr valign="top">
+          <td><em>No MARC 21 authority equivalent</em></td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="3">&nbsp;</td>
+        </tr>
+      </table>
+      <table width="100%" border="0">
+        <tr valign="top">
+          <td width="35%"><strong>variant types</strong></td>
+          <td >&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td>400, 410, 411, 451 </td>
+          <td >&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td>$w/0=&quot;d&quot;</td>
+          <td >type=&quot;acronym&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td>$w/0=&quot;f&quot; or &quot;i&quot; or &quot;n&quot;<br>
+            400,410,411,430,450,451,455,480,481,<br>
+482,485</td>
+          <td >type=&quot;other&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td>$w/0=&quot;r&quot; <em>and</em>400,410,411,430,450,451,455,480,481,<br>
+          482,485 $i </td>
+          <td>type=&quot;other&quot; and otherType=&quot;content of subfield $i &quot;</td>
+          <td>&nbsp;</td></tr>
+        <tr valign="top">
+          <td>430</td>
+          <td>type=&quot;other&quot;</td>
+          <td>&nbsp;</td>
+        </tr>
+      </table>
+      <table width="100%" border="0">
+	  </table>
+	  
+	  
+<p><strong>Minor elements </strong></p>
+
+
+		
+		<strong><a name="affiliation"></a>&lt;affiliation&gt;</strong>
+		<table width="100%" border="0">
+        <tr valign="top">
+          <td>373</td>
+          <td colspan="3" >&lt;affiliation&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td>373$a</td>
+          <td width="4%" >&nbsp;</td>
+          <td colspan="2" >&lt;position&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td>373$s</td>
+          <td >&nbsp;</td>
+          <td colspan="2" >&lt;dateValid encoding=&quot;iso8601&quot; point=&quot;start&quot;&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td>373$t</td>
+          <td >&nbsp;</td>
+          <td colspan="2" >&lt;dateValid encoding=&quot;iso8601&quot; point=&quot;end&quot;&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td>371</td>
+          <td colspan="3" >&lt;affiliation&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td>&nbsp;</td>
+          <td >&nbsp;</td>
+          <td colspan="2" >&lt;address&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td>371$a</td>
+          <td >&nbsp;</td>
+          <td >&nbsp;</td>
+          <td >&lt;street&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td>371$b</td>
+          <td >&nbsp;</td>
+          <td width="3%" >&nbsp;</td>
+          <td width="58%" >&lt;city&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td>371$c</td>
+          <td >&nbsp;</td>
+          <td >&nbsp;</td>
+          <td >&lt;state&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td>371$d</td>
+          <td >&nbsp;</td>
+          <td >&nbsp;</td>
+          <td >&lt;country</td>
+        </tr>
+        <tr valign="top">
+          <td>371$e</td>
+          <td >&nbsp;</td>
+          <td >&nbsp;</td>
+          <td >&lt;postcode&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td>371$m</td>
+          <td >&nbsp;</td>
+          <td colspan="2" >&lt;email&gt;</td>
+        </tr>
+       </table>
+	   
+	   
+	   
+	   	<p><strong><a name="classification" id="classification"></a>&lt;classification&gt;</strong></p>
+		  <table width="100%" border="0">
+		        <td  width="35%">
+          <tr valign="top">
+          <td>053, 055, 060, 065, 070, 080, 082, 083, 086, 087</td>
+          <td colspan="3" >&lt;classification&gt;</td>
+        </tr>
+		</table>
+	   
+	  
+	  
+	   <p><strong><a name="fieldOfActivity" id="fieldOfActivity"></a>&lt;fieldOfActivity&gt;</strong></p>
+		  <table width="100%" border="0">
+		        <td  width="35%">
+          <tr valign="top">
+          <td>372$a$s$t</td>
+          <td colspan="3" >&lt;fieldOfActivity&gt;</td>
+        </tr>
+		</table>
+	  
+	  
+	  
+      <p><strong><a name="identifier"></a>&lt;identifier&gt;</strong></p>
+        <table width="100%" border="0">
+        <tr valign="top">
+          <td>010$a</td>
+          <td colspan="3" >&lt;identifier type=&quot;lccn&quot;&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td>010$z</td>
+          <td colspan="3" >&lt;identifier type=&quot;lccn&quot; invalid=&quot;yes&quot;&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td>024$a</td>
+          <td colspan="3" >&lt;identifier&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td>024$z</td>
+          <td colspan="3" ><em>with </em> invalid=&quot;yes&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td>024$2</td>
+          <td colspan="3" ><em>with</em> type=&quot;content of subfield&quot;</td>
+        </tr>
+	  </table>
+	  
+	  
+	  <p><strong><a name="language"></a>&lt;language&gt;</strong></p>
+		 <table width="100%" border="0">
+         <tr valign="top">
+          <td>377$a and no $2 </td>
+          <td colspan="3" >&lt;languageTerm&gt; <em>with </em>type="code"&nbsp; <em>and </em>authority="iso639-2b"</td>
+        </tr>
+        <tr valign="top">
+          <td>377$a with $2 </td>
+          <td colspan="3" >&lt;languageTerm&gt; <em>with </em>type=&quot;code&quot; <em>and </em>authority=&quot;content of subfield&quot; </td>
+        </tr>
+		</table>
+		
+		<p><strong><a name="note"></a>&lt;note&gt;</strong></p>
+	    <table width="100%" border="0">
+          <tr valign="top">
+          <td  width="35%">670, 675, 678, 680, 681, 682, 688</td>
+          <td colspan="3" >&lt;note&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%">680 $a$i</td>
+          <td colspan="3" >&lt;note&gt; with no type attribute</td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%">670 $a$b</td>
+          <td colspan="3" >&lt;note&gt; <em>with</em> type=&quot;source&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%">675 $a</td>
+          <td colspan="3" >&lt;note&gt; <em>with</em> type=&quot;notFound&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%">678 $a$b</td>
+          <td colspan="3" >&lt;note&gt; <em>with</em> type=&quot;history&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td>681 $a $i</td>
+          <td colspan="3" >&lt;note&gt; <em>with </em>type=&quot;subject example&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td>682 $a $i</td>
+          <td colspan="3" >&lt;note&gt; <em>with </em>type=&quot;deleted heading information&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td>688 $a $i</td>
+          <td colspan="3" >&lt;note&gt; <em>with </em>type=&quot;application history&quot;</td>
+        </tr>
+        
+
+		</table>
+		
+	<p><strong><a name="url"></a>&lt;url&gt;</strong></p>
+	    <table width="100%" border="0">
+        <tr valign="top">
+          <td>856$u</td>
+          <td colspan="3" >&lt;url&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td>856$3$z</td>
+          <td colspan="3" ><em>with</em> displayLabel=&quot;content of subfield&quot;</td>
+        </tr>
+	  </table>
+	
+		
+		
+	  <p><strong><a name="extension"></a>&lt;extension&gt;</strong>      </p>
+		<table width="100%" border="0">
+      
+        <tr valign="top">
+          <td colspan="3" >no mapping; this allows users to include local elements or elements
+            from other namespaces </td>
+        </tr>
+		</table>
+	<p><strong>&lt;<a name="recordinfo"></a>recordInformation&gt;</strong></p>
+		<table width="100%" border="0">
+         <tr valign="top">
+          <td>040 $a </td>
+          <td colspan="3" >&lt;recordContentSource&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td>008/00-05 </td>
+          <td colspan="3" >&lt;recordCreationDate&gt; <em>with</em> encoding=&quot;marc&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td>005 </td>
+          <td colspan="3" >&lt;recordChangeDate&gt; <em>with</em> encoding=&quot;iso8601&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td>001 </td>
+          <td colspan="3" >&lt;recordIdentifier&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td>003 </td>
+          <td colspan="3" ><em>add</em> attribute source </td>
+        </tr>
+        <tr valign="top">
+          <td>040 $b </td>
+          <td colspan="3" >&lt;languageOf Cataloging&gt; <em>with</em> authority=&quot;iso639-2b&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td>040 $e</td>
+          <td colspan="3" >&lt;descriptionStandard&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td>008/10 = &quot;a&quot; </td>
+          <td colspan="3" >&lt;descriptionStandard&gt;earlier rules </td>
+        </tr>
+        <tr valign="top">
+          <td>008/10 = &quot;b&quot; </td>
+          <td colspan="3" >&lt;descriptionStandard&gt;aacr1</td>
+        </tr>
+        <tr valign="top">
+          <td>008/10 = &quot;c&quot; </td>
+          <td colspan="3" >&lt;descriptionStandard&gt;aacr2</td>
+        </tr>
+        <tr valign="top">
+          <td>008/10 = &quot;d&quot; </td>
+          <td colspan="3" >&lt;descriptionStandard&gt;aacr2 compatible </td>
+        </tr>
+        <tr valign="top">
+          <td>008/10 = &quot;z&quot; </td>
+          <td colspan="3" >&lt;descriptionStandard&gt;other rules </td>
+        </tr>
+      </table>
+      <p><a name="authorityatt"></a><strong>Setting authority attribute</strong></p>
+      <p>The authority attribute is available for all descriptors (i.e. subelements) under &lt;authority&gt;,
+        &lt;variant&gt;, and &lt;related&gt;. In converting MARC 21 records to MADS,
+        this mapping provides for setting values under &lt;authority&gt; and        &lt;related&gt; only when type=&quot;equivalent&quot;. This is because  MARC 21 authority
+        records do not generally mix headings from different thesauri/authority files in the 5XX reference fields, but only when linking to an equivalent form in another thesaurus/authority file 
+        in the 7XX fields (Established
+        Heading Linking Entry). If other practices/policies are used in systems wishing
+        to convert records from MARC 21 authorities to MADS, the authority attribute
+        may be included in &lt;related&gt; and &lt;variant&gt; as appropriate, but it is not reflected in this mapping.</p>
+      <p>When there is more than one descriptor under &lt;authority&gt; the authority
+        attribute should be used only with the  first (primary) entry element to
+        eliminate
+        needless redundancy. In the above mappings, the primary entry element is
+        indicated first and if there are additional descriptors the instruction is to &quot;<em>Add </em>&lt;tag&gt;&quot;.</p>
+      <table width="100%" border="0">
+        <tr valign="top">
+          <td colspan="2"><strong>Addition of authority attribute<br>
+          </strong>Use mapping above and add authority attribute as follows:</td>
+        </tr>
+        <tr valign="top">
+          <td width="35%"> 100 ind1=0 or 1 <em>and</em> 008/11=a <em>and</em> 008/14=a</td>
+          <td colspan="2"> authority=&quot;naf&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td>100 ind1=0 or 1 <em>and</em> 008/11=a <em>and </em>008/14=b</td>
+          <td >authority=&quot;lcsh&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 100 ind1=3 <em>and</em> 008/11=a <em>and </em>008/14=b</td>
+          <td >authority=&quot;lcsh&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 110 <em>and</em> 008/11=a <em></em><em>and </em> 008/14=a</td>
+          <td >authority=&quot;naf&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%">110<em> and</em> 008/11=a <em></em> <em>and</em> 008/14=b</td>
+          <td >authority=&quot;lcsh&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%"> 111,130 <em>and</em> 008/11=a <em>and</em> 008/14=a</td>
+          <td > authority=&quot;naf&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td>111,130 <em>and </em>008/11=a <em>and</em> 008/14=b</td>
+          <td >authority=&quot;lcsh&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td>150,148,155 <em>and</em> 008/11=a </td>
+          <td >authority=&quot;lcsh&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td>151 <em>and</em> 008/11=a <em></em><em>and</em> 008/14=a</td>
+          <td >authority=&quot;naf&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%">151 <em>and</em> 008/11=a <em></em> <em>and</em> 008/14=b </td>
+          <td > authority=&quot;lcsh&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td>180,181,182,185 <em>and</em> 008/11=a</td>
+          <td >authority=&quot;lcsh&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%">700 ind1=0 and 1<em> </em> <em>and </em>ind2=0</td>
+          <td >authority=&quot;naf&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td>700 ind1=3 <em>and </em>ind2=0</td>
+          <td >authority=&quot;lcsh&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td>710,711,730,751 <em>and</em> ind2=0</td>
+          <td >authority=&quot;naf&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td>750,748,755 <em>and</em> ind2=0</td>
+          <td >authority=&quot;lcsh&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%">100,110,111,130,148,150,151,155 <em>and</em> 008/11=b </td>
+          <td >authority=lcshcl&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td>700,710,711,730,748,750,751,755 <em>and</em> ind2=1</td>
+          <td>authority=lcshcl&quot;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td>100,110,111,130,151 <em>and</em> 008/11=c</td>
+          <td>authority=&quot;nlmnaf&quot;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td> 150,148,155&nbsp;<em>and </em>008/11=c</td>
+          <td>authority=&quot;mesh&quot;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%">700,710,711,730,751 <em>and</em> ind2=2</td>
+          <td >authority=&quot;nlmnaf&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td>750,748,755 <em>and</em> ind2=2 </td>
+          <td >authority=&quot;mesh&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td>100,110,111,130,151 <em>and</em> 008/11=d</td>
+          <td >authority=&quot;nalnaf&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td>150,148,155 &nbsp;<em>and </em>008/11=d</td>
+          <td >authority=&quot;nal&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td>700,710,711,730,751 <em>and</em> ind2=3</td>
+          <td >authority=&quot;nalnaf&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td  width="35%">750,748,755 <em>and</em> ind2=3</td>
+          <td >authority=&quot;nal&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td> 100 ind1=0 or 1 <em>and</em> 008/11=k</td>
+          <td colspan="2"> authority=&quot;lacnaf&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td> 100 ind1=3 <em>and</em> 008/11=k <em>and </em>008/14=b</td>
+          <td >authority=&quot;cash&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td> 110 <em>and</em> 008/11=k <em></em><em>and </em> 008/14=a</td>
+          <td >authority=&quot;lacnaf&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td>110<em> and</em> 008/11=k<em></em> <em>and</em> 008/14=b</td>
+          <td >authority=&quot;cash&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td> 111,130 <em>and</em> 008/11=k</td>
+          <td > authority=&quot;lacnaf&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td>150,148,155 <em>and</em> 008/11=k</td>
+          <td >authority=&quot;cash&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td>151 <em>and</em> 008/11=k<em></em><em>and</em> 008/14=a</td>
+          <td >authority=&quot;lacnaf&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td>151 <em>and</em> 008/11=k<em></em> <em>and</em> 008/14=b </td>
+          <td > authority=&quot;cash&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td>700 ind1=0 and 1<em> </em> <em>and </em>ind2=5</td>
+          <td >authority=&quot;lacnaf&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td>700 ind1=3 <em>and </em>ind2=5</td>
+          <td >authority=&quot;cash&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td>710,711,730,751 <em>and</em> ind2=5</td>
+          <td >authority=&quot;lacnaf&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td>750,748,755 <em>and</em> ind2=5</td>
+          <td >authority=&quot;cash&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td>100,110,111,130,148,150,151,155 <em>and</em> <br>
+            008/11=r</td>
+          <td>authority=&quot;aat&quot;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td>100,110,111,130,148,150,151,155 <em>and</em> <br>
+            008/11=s</td>
+          <td>authority=&quot;sears&quot;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td>100,110,111,130,148,150,151,155 <em>and</em> <br>
+            008/11=v</td>
+          <td>authority=&quot;rvm&quot;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td>700,710,711,730,748,750,751,755 <em>and</em> ind2=6</td>
+          <td>authority=&quot;rvm&quot;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td>100,110,111,130,148,150,151,155 <em>and</em> <br>
+            008/11=z</td>
+          <td>authority=&quot;[content of 040$f]&quot;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td>700,710,711,730,748,750,751,755 <em>and</em> ind2=7</td>
+          <td>authority=&quot;[content of $2]&quot;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="3">&nbsp;</td>
+        </tr>
+      </table>
+      <h3>3. Change list </h3>
+      <h4>For MADS Version 2.0 (March 2011)</h4>
+      <p><strong>&lt;authority&gt;<br>
+      </strong>Added attribute geographicSubdivision with values: direct, indirect, not applicable</p>
+      <p><strong>&lt;related&gt;<br>
+      </strong>Added otherType=&quot;content of subfield $i&quot; when $w/0=r<br>
+      Changed mapping for 5XX when $w/0=i to type=&quot;other&quot;
+      (not content of subfield $i)</p>
+      <p><strong>&lt;variant&gt;<br>
+      </strong>Added otherType=&quot;content of subfield $i&quot; when $w/0=r<br>
+Changed mapping for 4XX when $w/0=i to type=&quot;other&quot;
+      (not content of subfield $i) </p>
+      <p><strong>&lt;affiliation&gt;<br>
+      </strong>Added field 373 (Affiliation) and 371 (Address) </p>
+	        <p><strong>&lt;classification&gt;<br>
+      </strong>xxx </p>
+	        <p><strong>&lt;language&gt;<br>
+      </strong>xxx </p>
+      <p><strong>&lt;recordInfo&gt;</strong><br>
+      Added mappings for descriptionStandard (008/10 values and 040$e)</p>
+      <!-- InstanceEndEditable -->
+    <HR noshade size="1">    </td>
+  </tr>
+  <tr>
+    <td width="392"><p><a href="http://www.loc.gov/standards/mads/">HOME</a> &gt;&gt; <!-- InstanceBeginEditable name="bottombreadcrumb" --><span class="selected">MARC 21 Authority Format Mapping</span><!-- InstanceEndEditable --></p>
+      <strong>Questions
+      and comments:</strong>
+      <address>
+      <a href="mailto:ndmso@loc.gov">Contact Us</a> (
+      <!-- #BeginDate format:Am1 -->June 16, 2011<!-- #EndDate -->
+      )
+      </address></td>
+    <td width="219" valign="bottom"><a href="http://www.loc.gov/homepage/legal.html">Legal</a> | <a href="http://www.loc.gov/global/disclaim.html">External Link Disclaimer</a></td>
+    <td width="125" align="right" valign="bottom"><a href="http://www.loc.gov/standards/mads/"><img src="images/mads-icon.gif" alt="MADS icon" width="125" height="54" border="0" align="right"></a></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

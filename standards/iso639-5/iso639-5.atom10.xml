@@ -1,0 +1,2389 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://id.loc.gov/feed.atom</id>
+    <title type="text">Library of Congress Standards &amp; Research Data Values Registry</title>
+    <subtitle type="text">Current data values used in Library of Congress standards</subtitle>
+    <link type="application/xhtml+xml" rel="alternate" href="index.html"/>
+    <link type="application/atom+xml" rel="self" href="feed.atom"/>
+    <updated>2009-02-19T10:02:29.771-05:00</updated>
+    <author>
+        <name>Clay Redding</name>
+        <email>cred@loc.gov</email>
+    </author>
+    <generator>XQuery + XSLT transform of Changeset RDF (talis.com) metadata</generator>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/day</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/day"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/day"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/day"/>
+        <title type="text">iso639-5: day</title>
+        <published>2009-02-19T10:02:29.771-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/car</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/car"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/car"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/car"/>
+        <title type="text">iso639-5: car</title>
+        <published>2009-02-18T15:08:09.753-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Deletion">
+                <p>The following event took place: Deletion</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/sal</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/sal"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/sal"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/sal"/>
+        <title type="text">iso639-5: sal</title>
+        <published>2009-02-17T13:07:34.8-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Name change, French only (from salish, langues)">
+                <p>The following event took place: Name change, French only (from salish, langues)</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/sai</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/sai"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/sai"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/sai"/>
+        <title type="text">iso639-5: sai</title>
+        <published>2009-02-17T13:07:34.8-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Name change, French only (from indiennes d'Amérique du Sud and autres langues indiennes d'Amérique du Sud, langues)">
+                <p>The following event took place: Name change, French only (from indiennes d'Amérique du Sud and autres langues indiennes d'Amérique du Sud, langues)</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/cpf</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/cpf"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/cpf"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/cpf"/>
+        <title type="text">iso639-5: cpf</title>
+        <published>2009-02-17T13:07:34.8-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Name change, French only (from créoles et pidgins français, autres and créoles et pidgins français)">
+                <p>The following event took place: Name change, French only (from créoles et pidgins français, autres and créoles et pidgins français)</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/cpe</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/cpe"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/cpe"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/cpe"/>
+        <title type="text">iso639-5: cpe</title>
+        <published>2009-02-17T13:07:34.8-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Name change, French only (from créoles et pidgins anglais, autres and créoles et pidgins anglais)">
+                <p>The following event took place: Name change, French only (from créoles et pidgins anglais, autres and créoles et pidgins anglais)</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/pra</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/pra"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/pra"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/pra"/>
+        <title type="text">iso639-5: pra</title>
+        <published>2009-02-17T13:07:34.8-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Name change, French only (from prâkrits, langues)">
+                <p>The following event took place: Name change, French only (from prâkrits, langues)</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/paa</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/paa"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/paa"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/paa"/>
+        <title type="text">iso639-5: paa</title>
+        <published>2009-02-17T13:07:34.8-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Hierarchy changed to paa from ngf : paa">
+                <p>The following event took place: Hierarchy changed to paa from ngf : paa</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/cpp</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/cpp"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/cpp"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/cpp"/>
+        <title type="text">iso639-5: cpp</title>
+        <published>2009-02-17T13:07:34.8-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Name change, French only (from créoles et pidgins portugais autres and créoles et pidgins portugais)">
+                <p>The following event took place: Name change, French only (from créoles et pidgins portugais autres and créoles et pidgins portugais)</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/ngf</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/ngf"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/ngf"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/ngf"/>
+        <title type="text">iso639-5: ngf</title>
+        <published>2009-02-17T13:07:34.8-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Hierarchy changes to paa : ngf from ngf : paa. Name change, English (from Trans New Guinea). Name change, French (from trans Nouvelle Guinée).">
+                <p>The following event took place: Hierarchy changes to paa : ngf from ngf : paa. Name change, English (from Trans New Guinea). Name change, French (from trans Nouvelle Guinée).</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/nai</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/nai"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/nai"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/nai"/>
+        <title type="text">iso639-5: nai</title>
+        <published>2009-02-17T13:07:34.8-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Name change, French only (from indiennes d'Amérique du Nord and autres langues indiennes d'Amérique du Nord, langues)">
+                <p>The following event took place: Name change, French only (from indiennes d'Amérique du Nord and autres langues indiennes d'Amérique du Nord, langues)</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/wak</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/wak"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/wak"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/wak"/>
+        <title type="text">iso639-5: wak</title>
+        <published>2009-02-17T13:07:34.8-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Name change, French only (from wakashennes, langues)">
+                <p>The following event took place: Name change, French only (from wakashennes, langues)</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/myn</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/myn"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/myn"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/myn"/>
+        <title type="text">iso639-5: myn</title>
+        <published>2009-02-17T13:07:34.8-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Name change, French only (from mayas, langues)">
+                <p>The following event took place: Name change, French only (from mayas, langues)</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/cel</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/cel"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/cel"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/cel"/>
+        <title type="text">iso639-5: cel</title>
+        <published>2009-02-17T12:31:42.321-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Name change and name addition, French only (from celtiques, autres langues and celtiques, langues)">
+                <p>The following event took place: Name change and name addition, French only (from celtiques, autres langues and celtiques, langues)</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/apa</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/apa"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/apa"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/apa"/>
+        <title type="text">iso639-5: apa</title>
+        <published>2009-02-17T12:31:42.321-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Name change, French only (from apache, langues)">
+                <p>The following event took place: Name change, French only (from apache, langues)</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/bnt</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/bnt"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/bnt"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/bnt"/>
+        <title type="text">iso639-5: bnt</title>
+        <published>2009-02-17T12:31:42.321-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Name change, French only (from bantoues, autres langues and bantoues, langues)">
+                <p>The following event took place: Name change, French only (from bantoues, autres langues and bantoues, langues)</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/cai</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/cai"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/cai"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/cai"/>
+        <title type="text">iso639-5: cai</title>
+        <published>2009-02-17T12:31:42.321-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Name change, French only (from indiennes d'Amérique centrale, autres lang and indiennes d'Amérique centrale, langues)">
+                <p>The following event took place: Name change, French only (from indiennes d'Amérique centrale, autres lang and indiennes d'Amérique centrale, langues)</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/bat</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/bat"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/bat"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/bat"/>
+        <title type="text">iso639-5: bat</title>
+        <published>2009-02-17T12:31:42.321-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Name change, French only (from baltiques, autres langues and baltiques, langues)">
+                <p>The following event took place: Name change, French only (from baltiques, autres langues and baltiques, langues)</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/omv</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/omv"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/omv"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/omv"/>
+        <title type="text">iso639-5: omv</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/map</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/map"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/map"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/map"/>
+        <title type="text">iso639-5: map</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/mkh</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/mkh"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/mkh"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/mkh"/>
+        <title type="text">iso639-5: mkh</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/sai</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/sai"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/sai"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/sai"/>
+        <title type="text">iso639-5: sai</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/mno</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/mno"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/mno"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/mno"/>
+        <title type="text">iso639-5: mno</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/roa</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/roa"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/roa"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/roa"/>
+        <title type="text">iso639-5: roa</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/qwe</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/qwe"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/qwe"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/qwe"/>
+        <title type="text">iso639-5: qwe</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/ngf</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/ngf"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/ngf"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/ngf"/>
+        <title type="text">iso639-5: ngf</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/mun</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/mun"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/mun"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/mun"/>
+        <title type="text">iso639-5: mun</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/nai</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/nai"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/nai"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/nai"/>
+        <title type="text">iso639-5: nai</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/pra</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/pra"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/pra"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/pra"/>
+        <title type="text">iso639-5: pra</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/pqw</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/pqw"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/pqw"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/pqw"/>
+        <title type="text">iso639-5: pqw</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/pqe</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/pqe"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/pqe"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/pqe"/>
+        <title type="text">iso639-5: pqe</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/poz</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/poz"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/poz"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/poz"/>
+        <title type="text">iso639-5: poz</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/plf</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/plf"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/plf"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/plf"/>
+        <title type="text">iso639-5: plf</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/nic</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/nic"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/nic"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/nic"/>
+        <title type="text">iso639-5: nic</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/phi</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/phi"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/phi"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/phi"/>
+        <title type="text">iso639-5: phi</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/nub</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/nub"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/nub"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/nub"/>
+        <title type="text">iso639-5: nub</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/omq</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/omq"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/omq"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/omq"/>
+        <title type="text">iso639-5: omq</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/paa</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/paa"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/paa"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/paa"/>
+        <title type="text">iso639-5: paa</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/nah</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/nah"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/nah"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/nah"/>
+        <title type="text">iso639-5: nah</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/oto</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/oto"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/oto"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/oto"/>
+        <title type="text">iso639-5: oto</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/myn</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/myn"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/myn"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/myn"/>
+        <title type="text">iso639-5: myn</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/sal</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/sal"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/sal"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/sal"/>
+        <title type="text">iso639-5: sal</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/tup</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/tup"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/tup"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/tup"/>
+        <title type="text">iso639-5: tup</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/tut</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/tut"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/tut"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/tut"/>
+        <title type="text">iso639-5: tut</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/tuw</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/tuw"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/tuw"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/tuw"/>
+        <title type="text">iso639-5: tuw</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/urj</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/urj"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/urj"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/urj"/>
+        <title type="text">iso639-5: urj</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/wak</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/wak"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/wak"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/wak"/>
+        <title type="text">iso639-5: wak</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/wen</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/wen"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/wen"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/wen"/>
+        <title type="text">iso639-5: wen</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/xgn</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/xgn"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/xgn"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/xgn"/>
+        <title type="text">iso639-5: xgn</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/xnd</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/xnd"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/xnd"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/xnd"/>
+        <title type="text">iso639-5: xnd</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/ypk</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/ypk"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/ypk"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/ypk"/>
+        <title type="text">iso639-5: ypk</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/zhx</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/zhx"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/zhx"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/zhx"/>
+        <title type="text">iso639-5: zhx</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/zle</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/zle"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/zle"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/zle"/>
+        <title type="text">iso639-5: zle</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/zls</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/zls"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/zls"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/zls"/>
+        <title type="text">iso639-5: zls</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/zlw</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/zlw"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/zlw"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/zlw"/>
+        <title type="text">iso639-5: zlw</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/trk</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/trk"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/trk"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/trk"/>
+        <title type="text">iso639-5: trk</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/tbq</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/tbq"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/tbq"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/tbq"/>
+        <title type="text">iso639-5: tbq</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/aav</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/aav"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/aav"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/aav"/>
+        <title type="text">iso639-5: aav</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/sdv</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/sdv"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/sdv"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/sdv"/>
+        <title type="text">iso639-5: sdv</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/sem</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/sem"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/sem"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/sem"/>
+        <title type="text">iso639-5: sem</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/sgn</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/sgn"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/sgn"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/sgn"/>
+        <title type="text">iso639-5: sgn</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/sio</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/sio"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/sio"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/sio"/>
+        <title type="text">iso639-5: sio</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/sit</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/sit"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/sit"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/sit"/>
+        <title type="text">iso639-5: sit</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/sla</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/sla"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/sla"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/sla"/>
+        <title type="text">iso639-5: sla</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/smi</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/smi"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/smi"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/smi"/>
+        <title type="text">iso639-5: smi</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/son</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/son"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/son"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/son"/>
+        <title type="text">iso639-5: son</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/sqj</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/sqj"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/sqj"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/sqj"/>
+        <title type="text">iso639-5: sqj</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/ssa</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/ssa"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/ssa"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/ssa"/>
+        <title type="text">iso639-5: ssa</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/syd</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/syd"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/syd"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/syd"/>
+        <title type="text">iso639-5: syd</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/tai</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/tai"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/tai"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/tai"/>
+        <title type="text">iso639-5: tai</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/kro</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/kro"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/kro"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/kro"/>
+        <title type="text">iso639-5: kro</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/khi</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/khi"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/khi"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/khi"/>
+        <title type="text">iso639-5: khi</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/ber</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/ber"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/ber"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/ber"/>
+        <title type="text">iso639-5: ber</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/bnt</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/bnt"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/bnt"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/bnt"/>
+        <title type="text">iso639-5: bnt</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/btk</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/btk"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/btk"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/btk"/>
+        <title type="text">iso639-5: btk</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/cai</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/cai"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/cai"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/cai"/>
+        <title type="text">iso639-5: cai</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/car</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/car"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/car"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/car"/>
+        <title type="text">iso639-5: car</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/cau</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/cau"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/cau"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/cau"/>
+        <title type="text">iso639-5: cau</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/cba</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/cba"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/cba"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/cba"/>
+        <title type="text">iso639-5: cba</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/ccn</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/ccn"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/ccn"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/ccn"/>
+        <title type="text">iso639-5: ccn</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/ccs</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/ccs"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/ccs"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/ccs"/>
+        <title type="text">iso639-5: ccs</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/cdc</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/cdc"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/cdc"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/cdc"/>
+        <title type="text">iso639-5: cdc</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/cdd</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/cdd"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/cdd"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/cdd"/>
+        <title type="text">iso639-5: cdd</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/cel</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/cel"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/cel"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/cel"/>
+        <title type="text">iso639-5: cel</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/cmc</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/cmc"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/cmc"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/cmc"/>
+        <title type="text">iso639-5: cmc</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/bat</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/bat"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/bat"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/bat"/>
+        <title type="text">iso639-5: bat</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/bai</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/bai"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/bai"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/bai"/>
+        <title type="text">iso639-5: bai</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/afa</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/afa"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/afa"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/afa"/>
+        <title type="text">iso639-5: afa</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/alg</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/alg"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/alg"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/alg"/>
+        <title type="text">iso639-5: alg</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/alv</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/alv"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/alv"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/alv"/>
+        <title type="text">iso639-5: alv</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/apa</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/apa"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/apa"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/apa"/>
+        <title type="text">iso639-5: apa</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/aqa</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/aqa"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/aqa"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/aqa"/>
+        <title type="text">iso639-5: aqa</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/aql</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/aql"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/aql"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/aql"/>
+        <title type="text">iso639-5: aql</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/art</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/art"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/art"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/art"/>
+        <title type="text">iso639-5: art</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/ath</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/ath"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/ath"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/ath"/>
+        <title type="text">iso639-5: ath</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/auf</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/auf"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/auf"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/auf"/>
+        <title type="text">iso639-5: auf</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/aus</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/aus"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/aus"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/aus"/>
+        <title type="text">iso639-5: aus</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/awd</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/awd"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/awd"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/awd"/>
+        <title type="text">iso639-5: awd</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/azc</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/azc"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/azc"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/azc"/>
+        <title type="text">iso639-5: azc</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/bad</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/bad"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/bad"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/bad"/>
+        <title type="text">iso639-5: bad</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/cpe</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/cpe"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/cpe"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/cpe"/>
+        <title type="text">iso639-5: cpe</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/cpf</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/cpf"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/cpf"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/cpf"/>
+        <title type="text">iso639-5: cpf</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/cpp</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/cpp"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/cpp"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/cpp"/>
+        <title type="text">iso639-5: cpp</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/hmx</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/hmx"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/hmx"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/hmx"/>
+        <title type="text">iso639-5: hmx</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/hok</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/hok"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/hok"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/hok"/>
+        <title type="text">iso639-5: hok</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/hyx</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/hyx"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/hyx"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/hyx"/>
+        <title type="text">iso639-5: hyx</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/iir</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/iir"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/iir"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/iir"/>
+        <title type="text">iso639-5: iir</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/ijo</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/ijo"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/ijo"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/ijo"/>
+        <title type="text">iso639-5: ijo</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/inc</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/inc"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/inc"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/inc"/>
+        <title type="text">iso639-5: inc</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/ine</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/ine"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/ine"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/ine"/>
+        <title type="text">iso639-5: ine</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/ira</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/ira"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/ira"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/ira"/>
+        <title type="text">iso639-5: ira</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/iro</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/iro"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/iro"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/iro"/>
+        <title type="text">iso639-5: iro</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/itc</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/itc"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/itc"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/itc"/>
+        <title type="text">iso639-5: itc</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/jpx</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/jpx"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/jpx"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/jpx"/>
+        <title type="text">iso639-5: jpx</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/kar</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/kar"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/kar"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/kar"/>
+        <title type="text">iso639-5: kar</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/kdo</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/kdo"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/kdo"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/kdo"/>
+        <title type="text">iso639-5: kdo</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/grk</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/grk"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/grk"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/grk"/>
+        <title type="text">iso639-5: grk</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/gmw</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/gmw"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/gmw"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/gmw"/>
+        <title type="text">iso639-5: gmw</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/crp</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/crp"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/crp"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/crp"/>
+        <title type="text">iso639-5: crp</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/csu</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/csu"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/csu"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/csu"/>
+        <title type="text">iso639-5: csu</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/cus</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/cus"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/cus"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/cus"/>
+        <title type="text">iso639-5: cus</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/dmn</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/dmn"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/dmn"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/dmn"/>
+        <title type="text">iso639-5: dmn</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/dra</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/dra"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/dra"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/dra"/>
+        <title type="text">iso639-5: dra</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/egx</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/egx"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/egx"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/egx"/>
+        <title type="text">iso639-5: egx</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/esx</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/esx"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/esx"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/esx"/>
+        <title type="text">iso639-5: esx</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/euq</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/euq"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/euq"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/euq"/>
+        <title type="text">iso639-5: euq</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/fiu</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/fiu"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/fiu"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/fiu"/>
+        <title type="text">iso639-5: fiu</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/fox</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/fox"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/fox"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/fox"/>
+        <title type="text">iso639-5: fox</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/gem</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/gem"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/gem"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/gem"/>
+        <title type="text">iso639-5: gem</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/gme</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/gme"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/gme"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/gme"/>
+        <title type="text">iso639-5: gme</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/gmq</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/gmq"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/gmq"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/gmq"/>
+        <title type="text">iso639-5: gmq</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+    <entry>
+        <id>http://id.loc.gov/vocabulary/iso639-5/znd</id>
+        <link rel="alternate" type="application/xhtml+xml" href="http://id.loc.gov/vocabulary/iso639-5/znd"/>
+        <link rel="enclosure" length="4096" title="Details of changeset" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/znd"/>
+        <link rel="enclosure" length="4096" title="Access the updated SKOS Concept" type="application/rdf+xml" href="http://id.loc.gov/vocabulary/iso639-5/znd"/>
+        <title type="text">iso639-5: znd</title>
+        <published>2008-11-28T12:00:00-05:00</published>
+        <author>
+            <name>Library of Congress Network Development and MARC Standards Office</name>
+            <email>cred@loc.gov</email>
+        </author>
+        <category term="iso639-5"/>
+        <content xml:lang="en-Latn" type="xhtml">
+            <div xmlns="http://www.w3.org/1999/xhtml" class="Creation">
+                <p>The following event took place: Creation</p>
+            </div>
+        </content>
+    </entry>
+</feed>

@@ -1,0 +1,3230 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+
+                        "http://www.w3.org/TR/html40/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/mods.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>MARC Mapping to MODS Version 3.3: Metadata Object Description Schema: MODS (Library of Congress)</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<meta name="keywords" content="mods overview metadata object description schema web site library congress xml">
+<meta name="description" content="MARC Mapping to MODS Version 3.3 (Metadata Object Description Schema: MODS)">
+<style type="text/css">
+<!--
+.style1 {color: #FF0000}
+-->
+</style><!-- InstanceEndEditable -->
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="mods-print.css" type="text/css" media="print">
+<style type="text/css">
+@import url(mods.css);
+</style>
+</head>
+<body link="#000099" vlink="#0066CC" bgcolor="#FFFFFF">
+<table class="layout2">
+  <tr>
+    <td class="top-breadcrumbs"><a id="skip" href="#skip_menu">&nbsp;</a><a href="http://www.loc.gov/">The Library of Congress</a> &raquo; <a href="http://www.loc.gov/standards/">Standards</a> &raquo; <a href="http://www.loc.gov/mods/">MODS Official Web Site</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://www.loc.gov/standards/mods/"><img src="images/mods-bar-760.gif" alt="Metadata Object Description Schema: Official Web Site" width="760" height="41" border="0"></a></td>
+  </tr>
+  <tr>
+    <td><a href="http://www.loc.gov/standards/mods/">HOME</a> &gt;&gt; <!-- InstanceBeginEditable name="topbreadcrumb" --><a href="../mods-conversions.html">Conversions</a>        &gt;&gt; <span class="selected">MARC to MODS 3.3</span><!-- InstanceEndEditable --><a name="skip_menu"></a><!-- InstanceBeginEditable name="content" -->
+      <h1 align="center">MARC Mapping to MODS <br>
+  Version 3.3</h1>
+      <h2 align="center"> May 2008 </h2>
+      <p>This mapping is for use with <strong>MODS
+          Schema version 3.3</strong>. The previous version of this mapping for use with the <strong>MODS Schema version 3.2</strong> is located online at: <a href="mods-mapping-3-2.html">www.loc.gov/standards/mods/v3/mods-mapping-3-2.html</a>.</p>
+      <hr>
+      <h2 align="left">Table of Contents</h2>
+      <ol>
+        <li><a href="#intro">Introduction</a>
+        <li><a href="#elements">Contents of
+            Elements</a>
+        <li><a href="#mapping">Mapping</a>
+        <li><a href="#changesv3">Changes Made
+            for MODS Version 3.2</a>
+      </ol>
+      <hr>
+      <h3><a name="intro">1. Introduction</a></h3>
+      <p>This mapping gives equivalencies between MARC and MODS data
+        elements, but is not intended to be a crosswalk that allows for bi-directional
+        conversions without some loss of data. Where multiple MARC elements are
+        indicated for a single MODS element, if converted to MODS and then converted
+        back to MARC, some specificity would be lost since some elements cannot
+        be converted back to the same element from which they originated. This
+        document is intended for use in converting MARC 21 bibliographic records
+        to MODS. Some data elements from associated holdings records are also
+        included under the section about mapping MARC 21 holdings. </p>
+      <p>Where multiple subfields are specified or implied, data will
+        be concatenated with a space substituted for the subfield delimiter and
+        subfield code. Where multiple fields are indicated, each will be a separate
+        instance of the element (with subfields concatenated). <br>
+          <br>
+  Items highlighted in <font color="#FF0000">red</font> indicate
+  changes made to MODS in Version 3.3.
+      <p>
+      <hr>
+      <h3><a name="elements">2. Contents of Elements</a></h3>
+      <table width="100%" border="0">
+        <tr valign="top">
+          <td width="44%"> <a href="#title">titleInfo</a> </td>
+          <td width="56%"> <a href="#note">note</a> </td>
+        </tr>
+        <tr valign="top">
+          <td width="44%"> <a href="#name">name</a> </td>
+          <td width="56%"> <a href="#subject">subject</a> </td>
+        </tr>
+        <tr valign="top">
+          <td width="44%"> <a href="#typeofresource">typeOfResource</a> </td>
+          <td width="56%"> <a href="#classification">classification</a> </td>
+        </tr>
+        <tr valign="top">
+          <td width="44%"> <a href="#genre">genre</a> </td>
+          <td width="56%"> <a href="#relateditem">relatedItem</a> </td>
+        </tr>
+        <tr valign="top">
+          <td width="44%"> <a href="#publication">originInfo</a> </td>
+          <td width="56%"> <a href="#identifier">identifier</a> </td>
+        </tr>
+        <tr valign="top">
+          <td width="44%"> <a href="#language">language</a> </td>
+          <td width="56%"> <a href="#location">location</a> </td>
+        </tr>
+        <tr valign="top">
+          <td width="44%"> <a href="#physicalDescription">physicalDescription</a> </td>
+          <td width="56%"> <a href="#accesscondition">accessCondition</a> </td>
+        </tr>
+        <tr valign="top">
+          <td width="44%"> <a href="#abstract">abstract</a> </td>
+          <td width="56%"> <a href="#extension">extension</a> </td>
+        </tr>
+        <tr valign="top">
+          <td width="44%"> <a href="#tableOfContents">tableOfContents</a> </td>
+          <td width="56%"> <a href="#recordinformation">recordInfo</a> </td>
+        </tr>
+        <tr valign="top">
+          <td width="44%"> <a href="#targetaudience">targetAudience</a> </td>
+          <td width="56%"> </td>
+        </tr>
+      </table>
+      <p>
+      <hr>
+      <h3><a name="mapping">3. Mapping for MARC
+          21 bibliographic records </a></h3>
+      <table width="100%" border="0">
+        <tr>
+          <td> <a name="title"><strong>titleInfo</strong></a> </td>
+          <td colspan="2"> &lt;titleInfo&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td> 245 $a$f$g$k </td>
+          <td colspan="2">&lt;title&gt;<em> with</em> no &lt;titleInfo&gt; type
+            attribute <em>and</em></td>
+        </tr>
+        <tr valign="top">
+          <td valign="top"> 245 $b </td>
+          <td colspan="2">&lt;subTitle&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td> 245 $n (<em>and</em> $f$g$k
+            following $n) </td>
+          <td colspan="2">&lt;partNumber&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td> 245 $p (<em>and</em> $f$g$k
+            following $p) </td>
+          <td colspan="2">&lt;partName&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td> 245 ind2 is not 0 </td>
+          <td colspan="2">&lt;nonSort&gt; around
+            characters excluded from sort as indicated in indicator value </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="3"> <em>[If $f$g$k follow
+              $b they go with &lt;subTitle&gt;. If they follow $a they go with &lt;title&gt;.]</em> </td>
+        </tr>
+        <tr valign="top">
+          <td>&nbsp; </td>
+          <td colspan="2">&nbsp; </td>
+        </tr>
+        <tr valign="top">
+          <td height="21"> 210 $a </td>
+          <td colspan="2">&lt;title&gt;<em> </em> <em>with</em> &lt;titleInfo&gt; type=&quot;abbreviated&quot; <em>and</em></td>
+        </tr>
+        <tr valign="top">
+          <td> 210 $b </td>
+          <td colspan="2">&lt;subTitle&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td>&nbsp; </td>
+          <td colspan="2">&nbsp; </td>
+        </tr>
+        <tr valign="top">
+          <td> 242 $a</td>
+          <td colspan="2">&lt;title&gt; <em>with</em> &lt;titleInfo&gt; type=&quot;translated&quot; <em>and</em></td>
+        </tr>
+        <tr valign="top">
+          <td> 242 $b </td>
+          <td colspan="2">&lt;subTitle&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td> 242 $i </td>
+          <td colspan="2"> displayLabel=&quot;text
+            of $i&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td> 242 $n </td>
+          <td width="30%">&lt;partNumber&gt;</td>
+          <td width="30%">&nbsp; </td>
+        </tr>
+        <tr valign="top">
+          <td> 242 $p </td>
+          <td width="30%">&lt;partName&gt;</td>
+          <td width="30%">&nbsp; </td>
+        </tr>
+        <tr valign="top">
+          <td><p>242 $y</p> ††            <p>&nbsp;</p>          </td>
+          <td colspan="2"><blockquote>
+              <p><em>add</em> attribute<em> </em>lang=&quot;content
+                of subfield&quot;</p>
+            </blockquote>          </td>
+        </tr>
+        <tr valign="top">
+          <td>&nbsp; </td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td>246 $a <em>with</em> ind2=1</td>
+          <td colspan="2">&lt;title&gt; <em>with</em> &lt;titleInfo&gt; type=&quot;translated&quot; <em>and</em></td>
+        </tr>
+        <tr valign="top">
+          <td> 246 $b </td>
+        <td colspan="2">&lt;subTitle&gt;        </tr>
+        <tr valign="top">
+          <td> 246 $n </td>
+          <td colspan="2">&lt;partNumber&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td> 246 $p </td>
+          <td colspan="2">&lt;partName&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td>&nbsp;</td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td> 246 $a$f</td>
+          <td colspan="2">&lt;title&gt;<em> with</em> &lt;titleInfo&gt; type=&quot;alternative&quot; <em>and</em></td>
+        </tr>
+        <tr valign="top">
+          <td> 246 $b </td>
+          <td colspan="2">&lt;subTitle&gt;
+        <td>        </tr>
+        <tr valign="top">
+          <td> 246 $n </td>
+          <td width="30%">&lt;partNumber&gt;</td>
+          <td width="30%"> </td>
+        </tr>
+        <tr valign="top">
+          <td> 246 $p </td>
+          <td width="30%">&lt;partName&gt;</td>
+          <td width="30%">&nbsp; </td>
+        </tr>
+        <tr valign="top">
+          <td>&nbsp;</td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td> 130, 240 $a$d$f$k$l$m$o$r<br>
+      730 $a$d$f$k$l$m$o$r <em>if</em> ind2
+      is not 2 </td>
+          <td colspan="2">&lt;title&gt; <em>with</em> &lt;titleInfo&gt; type=&quot;uniform&quot; <em>and</em></td>
+        </tr>
+        <tr valign="top">
+          <td> 130, 240, 730 $n (<em>and</em> other
+            subfields following as above) </td>
+          <td width="30%">&lt;partNumber&gt;</td>
+          <td width="30%"> </td>
+        </tr>
+        <tr valign="top">
+          <td> 130, 240, 730 $p (<em>and</em> other
+            subfields following as above) </td>
+          <td width="30%">&lt;partName&gt;</td>
+          <td width="30%"> </td>
+        </tr>
+        <tr valign="top">
+          <td><span class="style1">130, 240, 730 $0</span></td>
+          <td><em><span class="style1">add</span></em><span class="style1"> xlink=&quot;contents of $0&quot; (as URI) </span></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="3">&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td>740 $a$h <em>if</em> ind2 is
+            not 2</td>
+          <td colspan="2">&lt;title&gt; <em>with</em> &lt;titleInfo&gt; type=&quot;alternative&quot; <em>and</em></td>
+        </tr>
+        <tr valign="top">
+          <td>740 $n</td>
+          <td colspan="2">&lt;partNumber&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td>740 $p</td>
+          <td colspan="2">&lt;partName&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="3" height="2"> &nbsp;   &nbsp;   &nbsp;   &nbsp;   </td>
+        </tr>
+      </table>
+      <p>
+      <table width="100%" border="0">
+        <tr valign="top">
+          <td width="35%"> <a name="name"><strong>name</strong></a> </td>
+          <td colspan="2"> <em>(use only if no
+              $t)</em> </td>
+        </tr>
+        <tr valign="top">
+          <td width="35%"> 100, 700 </td>
+          <td colspan="2"> &lt;name&gt; <em>with</em> type=&quot;personal&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td><span class="style1">100, 700 $0 </span></td>
+          <td colspan="2"><em><span class="style1">add</span></em><span class="style1"> xlink=&quot;contents of $0&quot; (as URI)</span></td>
+        </tr>
+        <tr valign="top">
+          <td width="35%"> 100, 700 $a$q </td>
+          <td colspan="2">&lt;namePart&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td width="35%"> 100, 700 $d </td>
+          <td colspan="2"> &lt;namePart&gt; <em>with</em> type=&quot;date&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td>100, 700 $b$c</td>
+          <td colspan="2">&lt;namePart&gt; <em>with</em> type=&quot;termsOfAddress&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td width="35%"> 100, 700 $e </td>
+          <td colspan="2">&lt;role&gt;&lt;roleTerm&gt; <em>with</em> type=&quot;text&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td width="35%" height="22"> 100,
+            700 $4</td>
+          <td colspan="2">&lt;role&gt;&lt;roleTerm&gt; <em>with</em> type=&quot;code&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td width="35%"> 100, 700 $u </td>
+          <td colspan="2">&lt;affiliation&gt; <em>under</em> &lt;name&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td width="35%"> &nbsp;   </td>
+          <td colspan="2"> &nbsp;   </td>
+        </tr>
+        <tr valign="top">
+          <td width="35%"> 110, 710 </td>
+          <td colspan="2"> &lt;name&gt; <em>with</em> type=&quot;corporate&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td><span class="style1">110, 710 $0</span></td>
+          <td><em><span class="style1">add</span></em><span class="style1"> xlink=&quot;contents of $0&quot; (as URI)</span></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td width="35%"> 110, 710 $a </td>
+          <td width="32%"> &lt;namePart&gt;</td>
+          <td width="33%"> &nbsp;   </td>
+        </tr>
+        <tr valign="top">
+          <td width="35%"> 110, 710 $b </td>
+          <td width="32%">&lt;namePart&gt; </td>
+          <td width="33%"> &nbsp;   </td>
+        </tr>
+        <tr valign="top">
+          <td width="35%"> 110, 710 $c$d$n </td>
+          <td width="32%">&lt;namePart&gt;</td>
+          <td width="33%"> &nbsp;   </td>
+        </tr>
+        <tr valign="top">
+          <td width="35%"> 110, 710 $e </td>
+          <td colspan="2"> &lt;role&gt;&lt;roleTerm&gt; <em>with</em> type=&quot;text&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td width="35%"> 110, 710 $4 </td>
+          <td colspan="2">&lt;role&gt;&lt;roleTerm&gt; <em>with</em> type=&quot;code&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td width="35%"> 110 </td>
+          <td colspan="2">&lt;role&gt;&lt;roleTerm&gt; <em>with</em> type=&quot;text&quot; <br>
+              <em>use text </em>&quot;creator&quot; <em>if
+              desired, to maintain indication of &quot;main entry&quot;</em></td>
+        </tr>
+        <tr valign="top">
+          <td width="35%"> &nbsp;   </td>
+          <td colspan="2"> &nbsp;   </td>
+        </tr>
+        <tr valign="top">
+          <td width="35%"> 111, 711 </td>
+          <td colspan="2"> &lt;name&gt; <em>with</em> type=&quot;conference&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td><span class="style1">111, 711 $0 </span></td>
+          <td colspan="2"><em><span class="style1">add</span></em><span class="style1"> xlink=&quot;contents of $0&quot; (as URI)</span></td>
+        </tr>
+        <tr valign="top">
+          <td width="35%"> 111 </td>
+          <td colspan="2"> &lt;role&gt;&lt;roleTerm&gt; <em>with</em> type=&quot;text&quot; <br>
+              <em>use text </em>&quot;creator&quot; <em>if
+              desired, to maintain indication of &quot;main entry&quot;</em></td>
+        </tr>
+        <tr valign="top">
+          <td width="35%"> 111, 711 $a$c$d$e$n$q </td>
+          <td colspan="2"> &lt;namePart&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td width="35%"> 111, 711 $4 </td>
+          <td colspan="2"> &lt;role&gt;&lt;roleTerm&gt; <em>with</em> type=&quot;code&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td width="35%"> &nbsp;   </td>
+          <td colspan="2"> &nbsp;   </td>
+        </tr>
+        <tr valign="top">
+          <td width="35%"> 720 ind1=blank </td>
+          <td colspan="2"> &lt;name&gt; <em>with</em> no
+            type attribute</td>
+        </tr>
+        <tr valign="top">
+          <td width="35%"> 720 ind1=1 </td>
+          <td colspan="2"> &lt;name&gt; <em>with</em> type=&quot;personal&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td width="35%"> 720 $a </td>
+          <td colspan="2">&lt;namePart&gt;</td>
+        </tr>
+      </table>
+      <p>
+      <table width="100%" border="0">
+        <tr valign="top">
+          <td colspan="2"> <a name="typeofresource"><strong>typeOfResource</strong></a> </td>
+          <td colspan="2"> &nbsp;   </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> Leader/06 </td>
+          <td colspan="2"> &lt;typeOfResource&gt; <em>with</em> </td>
+        </tr>
+        <tr valign="top">
+          <td width="6%"> &nbsp;   </td>
+          <td width="39%"> <em>if</em> Leader/07
+            (code c) </td>
+          <td width="6%"> &nbsp;   </td>
+          <td width="49%"> attribute collection=&quot;yes&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td width="6%"> &nbsp;   </td>
+          <td width="39%"> <em>if</em> Leader/06
+            (codes d,f,p,t) </td>
+          <td width="6%"> &nbsp;  </td>
+          <td width="49%"> attribute manuscript=&quot;yes&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td width="6%">&nbsp; </td>
+          <td width="39%"> &nbsp;  </td>
+          <td width="6%"> &nbsp;  </td>
+          <td width="49%"> <em>and</em> value:</td>
+        </tr>
+        <tr valign="top">
+          <td width="6%"> &nbsp;  </td>
+          <td width="39%"> a, t </td>
+          <td width="6%"> &nbsp;  </td>
+          <td width="49%"> text </td>
+        </tr>
+        <tr valign="top">
+          <td width="6%"> &nbsp;  </td>
+          <td width="39%"> e, f </td>
+          <td width="6%"> &nbsp;  </td>
+          <td width="49%"> cartographic </td>
+        </tr>
+        <tr valign="top">
+          <td width="6%"> &nbsp;  </td>
+          <td width="39%"> c, d </td>
+          <td width="6%"> &nbsp;  </td>
+          <td width="49%"> notated music </td>
+        </tr>
+        <tr valign="top">
+          <td width="6%"> &nbsp;  </td>
+          <td width="39%"> i, j </td>
+          <td width="6%"> &nbsp;  </td>
+          <td width="49%"> sound recording <em><br>
+            </em><em>[Used when a sound recording contains
+            a mixture of musical and nonmusical sound or if the user does not
+            need to make a distinction between musical and nonmusical sound recordings]</em></td>
+        </tr>
+        <tr valign="top">
+          <td>&nbsp;</td>
+          <td>i</td>
+          <td>&nbsp;</td>
+          <td>sound recording - nonmusical</td>
+        </tr>
+        <tr valign="top">
+          <td>&nbsp;</td>
+          <td>j</td>
+          <td>&nbsp;</td>
+          <td>sound recording - musical</td>
+        </tr>
+        <tr valign="top">
+          <td width="6%"> &nbsp;  </td>
+          <td width="39%"> k </td>
+          <td width="6%"> &nbsp;  </td>
+          <td width="49%"> still image <em><br>
+      [not exact mapping; some still images coded &quot;g&quot;</em>]</td>
+        </tr>
+        <tr valign="top">
+          <td width="6%"> &nbsp;  </td>
+          <td width="39%"> g </td>
+          <td width="6%"> &nbsp;  </td>
+          <td width="49%"> moving image </td>
+        </tr>
+        <tr valign="top">
+          <td width="6%"> &nbsp;  </td>
+          <td width="39%"> r </td>
+          <td width="6%"> &nbsp;  </td>
+          <td width="49%"> three dimensional object </td>
+        </tr>
+        <tr valign="top">
+          <td width="6%"> &nbsp;  </td>
+          <td width="39%"> m </td>
+          <td width="6%"> &nbsp;  </td>
+          <td width="49%"> software, multimedia </td>
+        </tr>
+        <tr valign="top">
+          <td width="6%"> &nbsp;  </td>
+          <td width="39%"> p </td>
+          <td width="6%"> &nbsp;  </td>
+          <td width="49%"> mixed material </td>
+        </tr>
+      </table>
+      <p>
+      <table width="100%" border="0">
+        <tr valign="top">
+          <td colspan="2"> <a name="genre"><strong>genre</strong></a> </td>
+          <td colspan="2"> &lt;genre&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> <em>various positions</em> </td>
+          <td colspan="2"> &lt;genre authority=&quot;marcgt&quot;&gt;<br>
+              <em>[repeat tag for each new value] </em>and<em> value
+              [where two MARC elements are indicated, only generate one &lt;genre&gt;]:</em> </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/24+ BK,CR (code a) </td>
+          <td colspan="2"> abstract or summary </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/33 VM (code a) </td>
+          <td colspan="2">art original </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/33 VM (code c) </td>
+          <td colspan="2"> art reproduction </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/25 MP (code e) </td>
+          <td colspan="2">atlas </td>
+        </tr>
+        <tr valign="top">
+          <td width="5%"> &nbsp;  </td>
+          <td width="40%"> <em>or</em> 007/01
+            MP (code d) </td>
+          <td colspan="2"> &nbsp;  </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/30-31 MU (code a) </td>
+          <td colspan="2">autobiography </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/24+ BK,CR (code b) </td>
+          <td colspan="2">bibliography </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/34 BK (codes a,b,c,d) </td>
+          <td colspan="2">biography</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/30-31 MU (code b) </td>
+          <td colspan="2"> biography</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/24+ BK,CR (code c) </td>
+          <td colspan="2">catalog</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/33 VM (code n) </td>
+          <td colspan="2"> chart </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/33 BK (code c) </td>
+          <td colspan="2"> comic strip </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/29 BK,CR (code 1) </td>
+          <td colspan="2">conference publication</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/30-31 MU (code c) </td>
+          <td colspan="2"> conference publication </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/21 CR (code d) </td>
+          <td colspan="2">database </td>
+        </tr>
+        <tr valign="top">
+          <td width="5%"> &nbsp;  </td>
+          <td width="40%"> <em>or</em> 008/26
+            CF (code e) </td>
+          <td colspan="2"> &nbsp;  </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/24+ BK,CR (code d) </td>
+          <td colspan="2">dictionary </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/33 VM (code d) </td>
+          <td colspan="2"> diorama </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/24+ BK,CR (code r) </td>
+          <td colspan="2">directory </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/24+ BK,CR (code k) </td>
+          <td colspan="2"> discography </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/33 BK (code d) </td>
+          <td colspan="2">drama </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/30-31 MU (code d) </td>
+          <td colspan="2">drama </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/24+ BK,CR (code e) </td>
+          <td colspan="2">encyclopedia</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/33 BK (code e) </td>
+          <td colspan="2"> essay </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/30-31 MU (code e) </td>
+          <td colspan="2"> essay </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/30 BK (code 1) </td>
+          <td colspan="2"> festschrift</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/33 BK (code 1) </td>
+          <td colspan="2"> fiction </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/30-31 MU (code f) </td>
+          <td colspan="2">fiction </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/24+ BK,CR (code q) </td>
+          <td colspan="2"> filmography </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/33 VM (code f) </td>
+          <td colspan="2"> filmstrip </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/33 VM (code o) </td>
+          <td colspan="2">flash card </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/30-31 MU (code o) </td>
+          <td colspan="2"> folktale </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/26 CF (code f) </td>
+          <td colspan="2"> font </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/26 CF (code g) </td>
+          <td colspan="2"> game </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/33 VM (code k) </td>
+          <td colspan="2"> graphic </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/25 MP (code d) </td>
+          <td colspan="2"> globe</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/24+ BK,CR (code f) </td>
+          <td colspan="2"> handbook </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/30-31 MU (code h) </td>
+          <td colspan="2"> history </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/33 BK (code h) </td>
+          <td colspan="2">humor, satire </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/30-31MU (code k) </td>
+          <td colspan="2"> humor, satire </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/24+ BK,CR (code i) </td>
+          <td colspan="2"> index</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/30-31 MU (code i) </td>
+          <td colspan="2">instruction </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/30-31 MU (code t) </td>
+          <td colspan="2"> interview </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/33 VM (code b) </td>
+          <td colspan="2"> kit </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/30-31 MU (code j) </td>
+          <td colspan="2">language instruction </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/24+ BK,CR (code w) </td>
+          <td colspan="2">law report or digest </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/24+ BK,CR (code g) </td>
+          <td colspan="2">legal article </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/24+ BK,CR (code v) </td>
+          <td colspan="2"> legal case and case notes </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/24+ BK,CR (code l) </td>
+          <td colspan="2"> legislation </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/33 BK (code i) </td>
+          <td colspan="2"> letter</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/21 CR (code l) </td>
+          <td colspan="2"> loose-leaf </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/25 MP (code a,b,c) </td>
+          <td colspan="2"> map </td>
+        </tr>
+        <tr valign="top">
+          <td width="5%"> &nbsp;  </td>
+          <td width="40%"> <em>or</em> 007/01
+            MP (code j) </td>
+          <td colspan="2">  &nbsp; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/30-31 MU (code m) </td>
+          <td colspan="2"> memoir </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/33 VM (code p) </td>
+          <td colspan="2"> microscope slide </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/33 VM (code q) </td>
+          <td colspan="2"> model </td>
+        </tr>
+        <tr valign="top">
+          <td width="5%">   </td>
+          <td width="40%"> <em>or</em> 007/01
+            MP (code q) </td>
+          <td colspan="2"> &nbsp;  </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/33 VM (code m) </td>
+          <td colspan="2">motion picture </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/21 CR (code n) </td>
+          <td colspan="2"> newspaper</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/33 BK (code f) </td>
+          <td colspan="2"> novel </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/26 CF (code a) </td>
+          <td colspan="2"> numeric data </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/24+ BK (code j) </td>
+          <td colspan="2"> patent </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/21 CR (code p) </td>
+          <td colspan="2"> periodical </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/33 VM (code i) </td>
+          <td colspan="2"> picture </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/33 BK (code p) </td>
+          <td colspan="2"> poetry </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/30-31 MU (code p) </td>
+          <td colspan="2"> poetry </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/24+ BK,CR (code p) </td>
+          <td colspan="2"> programmed text </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/33 VM (code r) </td>
+          <td colspan="2">realia</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/30-31 MU (code r) </td>
+          <td colspan="2"> rehearsal </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 007/01 MP (code r) </td>
+          <td colspan="2"> remote sensing image </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/30-31 MU (code g) </td>
+          <td colspan="2"> reporting </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/24+ BK,CR (code o) </td>
+          <td colspan="2"> review </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/21 CR (code m) </td>
+          <td colspan="2"> series </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/33 BK (code j) </td>
+          <td colspan="2">short story</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/33 VM (code s) </td>
+          <td colspan="2"> slide </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/26 CF (code h) </td>
+          <td colspan="2"> sound </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/30-31 MU (code s) </td>
+          <td colspan="2"> sound </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/33BK (code s) </td>
+          <td colspan="2"> speech </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/30-31 MU (code l) </td>
+          <td colspan="2"> speech </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/24+ BK,CR (code s) </td>
+          <td colspan="2">statistics </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/24+ BK,CR (code n) </td>
+          <td colspan="2"> survey of literature </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/33 VM (code l) </td>
+          <td colspan="2"> technical drawing </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/24+ BK,CR (code t) </td>
+          <td colspan="2"> technical report </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/24+ BK,CR (code m) </td>
+          <td colspan="2"> theses </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/33 VM (code w) </td>
+          <td colspan="2"> toy </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/33 VM (code t) </td>
+          <td colspan="2">transparency </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2" height="20"> 008/24+
+            BK,CR (code z) </td>
+          <td height="20" colspan="2"> treaty </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2" height="20"><span class="style1">008/24+ BK (code 2) </span></td>
+          <td height="20" colspan="2"><span class="style1">offprint</span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/33 VM (code v) </td>
+          <td colspan="2"> videorecording</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/21 CR (code w) </td>
+          <td colspan="2"> web site </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">&nbsp;</td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">047 ind2=7 </span></td>
+          <td colspan="2"><span class="style1">&lt;genre&gt; <em>with</em></span></td>
+        </tr>
+        <tr valign="top">
+          <td> &nbsp;  </td>
+          <td><span class="style1">047 $2 </span></td>
+          <td> &nbsp;  </td>
+          <td><span class="style1">attribute authority=&quot;contents
+          of $2&quot; and type=&quot;musical composition&quot; </span></td>
+        </tr>
+        <tr valign="top">
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 655 </td>
+          <td colspan="2"> &lt;genre&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 655 $a$b$v$x$y$z </td>
+          <td colspan="2">&lt;genre&gt; <em>with</em> </td>
+        </tr>
+        <tr valign="top">
+          <td width="5%"> &nbsp;  </td>
+          <td width="40%"> 655 $2 </td>
+          <td width="6%"> &nbsp;  </td>
+          <td width="49%"> attribute authority=&quot;contents
+            of $2&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="4"> <em>[Generate &quot;-&quot; between
+              each subfield from MARC on output in MODS.]</em> </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">655 $0</span></td>
+          <td colspan="2"><em><span class="style1">add</span></em><span class="style1"> xlink=&quot;contents of $0&quot; (as URI)</span></td>
+        </tr>
+      </table>
+      <p>
+      <table width="100%" border="0">
+        <tr valign="top">
+          <td colspan="2"> <a name="publication"><strong>originInfo</strong></a> </td>
+          <td colspan="2"> &lt;originInfo&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/15-17 </td>
+          <td colspan="2">&lt;place&gt;&lt;placeTerm&gt; <em>with </em>type=&quot;code&quot;<em></em><em> </em><em>and</em> authority=&quot;marccountry&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 044 $c </td>
+          <td colspan="2"> &lt;place&gt;&lt;placeTerm&gt; <em>with </em>type=&quot;code&quot; <em>and</em> authority=&quot;iso3166&quot;&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 260 $a </td>
+          <td colspan="2">&lt;place&gt;&lt;placeTerm&gt; <em>with </em>type=&quot;text&quot;&nbsp; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 260 $b </td>
+          <td colspan="2"> &lt;publisher&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 260 $c </td>
+          <td colspan="2">&lt;dateIssued&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/07-10 <em>if</em> 008/06=e,p,r,s,
+            t</td>
+          <td colspan="2">&lt;dateIssued<em>&gt; with</em> encoding=&quot;marc&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/07-10 <em>if</em> 008/06=c,d,i,k,m,u </td>
+          <td colspan="2"> &lt;dateIssued<em>&gt; with</em> point=&quot;start&quot; or
+            no point attribute <em>with</em> encoding=&quot;marc&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 008/11-14 <em>if</em> 008/06=c,d,i,k,m,u </td>
+          <td colspan="2"> &lt;dateIssued&gt; <em>with</em> point=&quot;end&quot; <em>with</em> encoding=&quot;marc&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">046 $c</td>
+          <td colspan="2">&lt;dateIssued<em>&gt; with</em> point=&quot;start&quot; or
+            no point attribute <em>and </em>encoding=&quot;marc&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">046 $e</td>
+          <td colspan="2">&lt;dateIssued&gt; <em>with</em> point=&quot;end&quot; <em>and</em> encoding=&quot;marc&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">008/07-10 <em>if</em> 008/06=q</td>
+          <td colspan="2">&lt;dateIssued&gt; <em>with</em> qualifier=&quot;questionable&quot; point=&quot;start&quot; or
+            no point attribute <em>and</em> encoding=&quot;marc&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">008/11-14 <em>if</em> 008/06=q</td>
+          <td colspan="2">&lt;dateIssued&gt; <em>with</em> qualifier=&quot;questionable&quot; point=&quot;end&quot; <em>and</em> encoding=&quot;marc&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 260 $g </td>
+          <td colspan="2"> &lt;dateCreated&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">046 $k</td>
+          <td colspan="2">&lt;dateCreated&gt; <em>with</em> point=&quot;start&quot; or
+            no point attribute</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">046 $l</td>
+          <td colspan="2">&lt;dateCreated&gt; <em>with</em> point=&quot;end&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 033 ind1=0,1 $a </td>
+          <td colspan="2"> &lt;dateCaptured&gt; <em>with</em> encoding=&quot;iso8601&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 033 ind1=2 first $a </td>
+          <td colspan="2"> &lt;dateCaptured&gt; <em>with</em> point=&quot;start&quot; or
+            not point attribute <em>and</em> encoding=&quot;iso8601&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 033 ind1=2 second $a </td>
+          <td colspan="2">&lt;dateCaptured&gt; <em>with</em> point=&quot;end&quot; <em>and</em> encoding=&quot;iso8601&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">046 $m</td>
+          <td colspan="2">&lt;dateValid&gt; <em>with</em> point=&quot;start&quot; or
+            no point attribute</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">046 $n</td>
+          <td colspan="2">&lt;dateValid&gt; <em>with</em> point=&quot;end&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">046 $j</td>
+          <td colspan="2">&lt;dateModified&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">008/11-14 <em>if</em> 008/06=t</td>
+          <td colspan="2">&lt;copyrightDate&gt; <em>with</em> encoding=&quot;marc&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">   </td>
+          <td colspan="2">   </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 250 $a </td>
+          <td colspan="2">&lt;edition&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> Leader/07 </td>
+          <td colspan="2">&lt;issuance&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td width="5%"> &nbsp;  </td>
+          <td width="40%"> <em>if</em> Leader/07
+            (code b,i,s) </td>
+          <td width="8%"> &nbsp;  </td>
+          <td width="47%"> <em>then</em> value:
+            continuing </td>
+        </tr>
+        <tr valign="top">
+          <td width="5%"> &nbsp;  </td>
+          <td width="40%"> <em>if</em> Leader/07
+            (code a,c,d,m) </td>
+          <td width="8%"> &nbsp;  </td>
+          <td width="47%"> <em>then</em> value:
+            monographic </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 310 $a$b </td>
+          <td colspan="2"> &lt;frequency&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 321 $a$b </td>
+          <td colspan="2"> &lt;frequency&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">008/18
+              CR code a </span></td>
+          <td colspan="2"><span class="style1">&lt;frequency
+              authority=&quot;marcfrequency&quot;&gt;Annual</span> </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">008/18
+              CR code b </span></td>
+          <td colspan="2"><span class="style1">&lt;frequency
+              authority=&quot;marcfrequency&quot;&gt;Bimonthly</span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">008/18
+              CR code c </span></td>
+          <td colspan="2"><span class="style1">&lt;frequency
+              authority=&quot;marcfrequency&quot;&gt;Semiweekly</span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">008/18
+              CR code d </span></td>
+          <td colspan="2"><span class="style1">&lt;frequency
+              authority=&quot;marcfrequency&quot;&gt;Daily</span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">008/18
+              CR code e </span></td>
+          <td colspan="2"><span class="style1">&lt;frequency
+              authority=&quot;marcfrequency&quot;&gt;Biweekly</span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">008/18
+              CR code f </span></td>
+          <td colspan="2"><span class="style1">&lt;frequency
+              authority=&quot;marcfrequency&quot;&gt;Semiannual</span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">008/18
+              CR code g </span></td>
+          <td colspan="2"><span class="style1">&lt;frequency
+              authority=&quot;marcfrequency&quot;&gt;Biennial</span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">008/18
+              CR code h </span></td>
+          <td colspan="2"><span class="style1">&lt;frequency
+              authority=&quot;marcfrequency&quot;&gt;Triennial</span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">008/18
+              CR code i </span></td>
+          <td colspan="2"><span class="style1">&lt;frequency
+              authority=&quot;marcfrequency&quot;&gt;Three times a week </span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">008/18
+              CR code j </span></td>
+          <td colspan="2"><span class="style1">&lt;frequency
+              authority=&quot;marcfrequency&quot;&gt;Three times a month </span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">008/18
+              CR code k </span></td>
+          <td colspan="2"><span class="style1">&lt;frequency
+              authority=&quot;marcfrequency&quot;&gt;Continuously updated </span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">008/18
+              CR code m </span></td>
+          <td colspan="2"><span class="style1">&lt;frequency
+              authority=&quot;marcfrequency&quot;&gt;Monthly</span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">008/18
+              CR code q </span></td>
+          <td colspan="2"><span class="style1">&lt;frequency
+              authority=&quot;marcfrequency&quot;&gt;Quarterly</span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">008/18
+              CR code s </span></td>
+          <td colspan="2"><span class="style1">&lt;frequency
+              authority=&quot;marcfrequency&quot;&gt;Semimonthly</span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">008/18
+              CR code t </span></td>
+          <td colspan="2"><span class="style1">&lt;frequency
+              authority=&quot;marcfrequency&quot;&gt;Three times a year </span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">008/18
+              CR code u </span></td>
+          <td colspan="2"><span class="style1">&lt;frequency
+              authority=&quot;marcfrequency&quot;&gt;Unknown</span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">008/18
+              CR code w </span></td>
+          <td colspan="2"><span class="style1">&lt;frequency
+              authority=&quot;marcfrequency&quot;&gt;Weekly</span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">008/18
+              CR code # </span></td>
+          <td colspan="2"><span class="style1">&lt;frequency
+              authority=&quot;marcfrequency&quot;&gt;Completely irregular </span></td>
+        </tr>
+      </table>
+      <p>
+      <table width="100%" border="0">
+        <tr valign="top">
+          <td width="45%"> <a name="language"><strong>language</strong></a> </td>
+          <td width="55%"> &lt;language&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td width="45%"> 008/35-37 </td>
+          <td width="55%"> &lt;languageTerm&gt; <em>with </em>type=&quot;code&quot;&nbsp; <em>and</em> authority=&quot;iso639-2b&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td width="45%"> 041 $a and no $2 </td>
+          <td width="55%"> &lt;languageTerm&gt; <em>with </em>type=&quot;code&quot;&nbsp; <em>and </em>authority=&quot;iso639-2b&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td>041 $a with $2 </td>
+          <td><span class="style1">&lt;languageTerm&gt; <em>with </em>type=&quot;code&quot; <em>and</em> authority=&quot;contents
+              of $2&quot; </span></td>
+        </tr>
+        <tr valign="top">
+          <td>041 $b </td>
+          <td><em>add </em>attribute objectPart=&quot;summary&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td width="45%"> 041 $<font color="d">d</font></td>
+          <td width="55%"> <em>add </em>attribute<em></em> objectPart=&quot;sung
+            or spoken text&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td width="45%"> 041 $e </td>
+          <td width="55%"> <em>add </em>attribute
+            objectPart=&quot;libretto&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td>041 $f </td>
+          <td><em>add </em>attribute objectPart=&quot;table
+            of contents&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td>041 $g </td>
+          <td><em>add </em>attribute objectPart=&quot;accompanying
+            material&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td>041 $h </td>
+          <td><em>add </em>attribute objectPart=&quot;translation&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td><span class="style1">041 $j </span></td>
+          <td><span class="style1"><em>add</em> attribute
+              objectPart=&quot;subtitle or caption&quot; </span></td>
+        </tr>
+      </table>
+      <p>
+      <table width="100%" border="0">
+        <tr valign="top">
+          <td colspan="2"> <a name=
+                        "physicalDescription"><strong>physicalDescription</strong></a> </td>
+          <td colspan="2"> &lt;physicalDescription&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 007/11 CF (code a) </td>
+          <td colspan="2"> <em>&lt;</em>digitalOrigin&gt;=&quot;reformatted
+            digital&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> <span class="style3">007/11
+              CF (code b)</span></td>
+          <td colspan="2"> <em>&lt;</em>digitalOrigin&gt;=&quot;digitized
+            microform&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 007/11 CF (code d)</td>
+          <td colspan="2"> <em>&lt;</em>digitalOrigin&gt;=&quot;digitized
+            other analog&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">&nbsp;</td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">007/00
+              code a </span></td>
+          <td colspan="2"><span class="style1">&lt;form
+              authority=&quot;marccategory&quot;&gt;map </span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">007/00
+              code c </span></td>
+          <td colspan="2"><span class="style1">&lt;form
+              authority=&quot;marccategory&quot;&gt;electronic resource </span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">007/00
+              code d </span></td>
+          <td colspan="2"><span class="style1">&lt;form
+              authority=&quot;marcategory&quot;&gt;globe </span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">007/00
+              code f </span></td>
+          <td colspan="2"><span class="style1">&lt;form
+              authority=&quot;marccategory&quot;&gt;tactile material </span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">007/00
+              code g </span></td>
+          <td colspan="2"><span class="style1">&lt;form
+              authority=&quot;marccategory&quot;&gt;projected graphic </span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">007/00
+              code h </span></td>
+          <td colspan="2"><span class="style1">&lt;form
+              authority=&quot;marccategory&quot;&gt;microform</span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">007/00
+              code k </span></td>
+          <td colspan="2"><span class="style1">&lt;form
+              authority=&quot;marccategory&quot;&gt;nonprojected graphic </span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">007/00
+              code m </span></td>
+          <td colspan="2"><span class="style1">&lt;form
+              authority=&quot;marccategory&quot;&gt;motion picture </span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">007/00
+              code o </span></td>
+          <td colspan="2"><span class="style1">&lt;form
+              authority=&quot;marccategory&quot;&gt;kit</span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">007/00
+              code q </span></td>
+          <td colspan="2"><span class="style1">&lt;form
+              authority=&quot;marccategory&quot;&gt;notated music </span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">007/00
+              code r </span></td>
+          <td colspan="2"><span class="style1">&lt;form
+              authority=&quot;marccategory&quot;&gt;remote sensing image </span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">007/00
+              code s </span></td>
+          <td colspan="2"><span class="style1">&lt;form
+              authority=&quot;marccategory&quot;&gt;sound recording </span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">007/00
+              code t </span></td>
+          <td colspan="2"><span class="style1">&lt;form
+              authority=&quot;marccategory&quot;&gt;text</span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">007/00
+              code v </span></td>
+          <td colspan="2"><span class="style1">&lt;form
+              authority=&quot;marccategory&quot;&gt;videorecording</span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">&nbsp;</td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 007/01</td>
+          <td colspan="2"> <em>&lt;</em>form
+            authority=&quot;<span class="style1">marc</span>smd&quot;&gt; <em>and</em> value:</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">Electronic Resource</td>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+		<tr>
+  <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+      <td width="30%">(code b)</td>
+      <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+      <td width="57%">chip cartridge</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code c)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">computer optical disc cartridge</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code j)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">magnetic disc</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code m)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">magneto-optical disc</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code o)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">optical disc</td>
+  </tr>
+   <tr valign="top">
+  <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+      <td width="30%">(code r)</td>
+      <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+      <td width="57%">remote</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code a)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">tape cartridge</td>
+  </tr>
+   <tr valign="top">
+  <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+      <td width="30%">(code f)</td>
+      <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+      <td width="57%">tape cassette</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code h)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">tape reel</td>
+  </tr>
+  <tr valign="top">
+    <td colspan="2">Globe</td>
+    <td colspan="2"></td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"></td>
+    <td width="30%">(code a)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">celestial globe</td>
+  </tr>
+   <tr valign="top">
+  <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+      <td width="30%">(code e)</td>
+      <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+      <td width="57%">earth moon globe</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code b)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">planetary or lunar globe</td>
+  </tr>
+   <tr valign="top">
+  <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+      <td width="30%">(code c)</td>
+      <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+      <td width="57%">terrestrial globe</td>
+  </tr>
+  <tr valign="top">
+    <td colspan="2">Kit</td>
+    <td colspan="2"><font color="#FF0000">&nbsp;</font> </td>
+  </tr>
+   <tr valign="top">
+  <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+      <td width="30%">(code o)</td>
+      <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+      <td width="57%">kit</td>
+  </tr>
+  <tr valign="top">
+    <td colspan="2">Map</td>
+    <td colspan="2"><font color="#FF0000">&nbsp;</font> </td>
+  </tr>
+   <tr valign="top">
+  <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+      <td width="30%">(code d)</td>
+      <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+      <td width="57%">atlas</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code g)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">diagram</td>
+  </tr>
+   <tr valign="top">
+  <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+      <td width="30%">(code j)</td>
+      <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+      <td width="57%">map</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code q)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">model</td>
+  </tr>
+   <tr valign="top">
+  <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+      <td width="30%">(code k)</td>
+      <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+      <td width="57%">profile</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code r)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">remote-sensing image</td>
+  </tr>
+   <tr valign="top">
+  <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+      <td width="30%">(code s)</td>
+      <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+      <td width="57%">section</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code y)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">view</td>
+  </tr>
+  <tr valign="top">
+    <td colspan="2">Microform</td>
+    <td colspan="2"><font color="#FF0000">&nbsp;</font> </td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code a)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">aperture card</td>
+  </tr>
+   <tr valign="top">
+  <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+      <td width="30%">(code e)</td>
+      <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+      <td width="57%">microfiche</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code f)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">microfiche cassette</td>
+  </tr>
+   <tr valign="top">
+  <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+      <td width="30%">(code b)</td>
+      <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+      <td width="57%">microfilm cartridge</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code c)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">microfilm cassette</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code d)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">microfilm reel</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code g)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">microopaque</td>
+  </tr>
+  <tr valign="top">
+    <td colspan="2">Motion Picture</td>
+    <td colspan="2"><font color="#FF0000">&nbsp;</font> </td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code c)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">film cartridge</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code f)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">film cassette</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code r)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">film reel</td>
+  </tr>
+  <tr valign="top">
+    <td colspan="2">Nonprojected Graphic</td>
+    <td colspan="2"><font color="#FF0000">&nbsp;</font> </td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code n)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">chart</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code c)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">collage</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code d)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">drawing</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code o)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">flash card</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code e)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">painting</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code f)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">photomechanical print</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code g)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">photonegative</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code h)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">photoprint</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code i)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">picture</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code j)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">print</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code l)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">technical drawing</td>
+  </tr>
+  <tr valign="top">
+    <td colspan="2">Notated Music</td>
+    <td colspan="2"><font color="#FF0000">&nbsp;</font> </td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code q)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">notated music</td>
+  </tr>
+  <tr valign="top">
+    <td colspan="2">Projected Graphic</td>
+    <td colspan="2"><font color="#FF0000">&nbsp;</font> </td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code d)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">filmslip</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code c)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">filmstrip cartridge</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code o)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">filmstrip roll</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code f)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">other filmstrip type</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code s)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">slide</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code t)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">transparency</td>
+  </tr>
+  <tr valign="top">
+    <td colspan="2">Remote-sensing Image</td>
+    <td colspan="2"><font color="#FF0000">&nbsp;</font> </td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code r)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">remote-sensing image</td>
+  </tr>
+  <tr valign="top">
+    <td colspan="2">Sound Recording</td>
+    <td colspan="2"><font color="#FF0000">&nbsp;</font> </td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code e)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">cylinder</td>
+  </tr>
+   <tr valign="top">
+  <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+      <td width="30%">(code q)</td>
+      <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+      <td width="57%">roll</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code g)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">sound cartridge</td>
+  </tr>
+   <tr valign="top">
+  <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+      <td width="30%">(code s)</td>
+      <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+      <td width="57%">sound cassette</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code d)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">sound disc</td>
+  </tr>
+   <tr valign="top">
+  <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+      <td width="30%">(code t)</td>
+      <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+      <td width="57%">sound-tape reel</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code i)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">sound-track film</td>
+  </tr>
+   <tr valign="top">
+  <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+      <td width="30%">(code w)</td>
+      <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+      <td width="57%">wire recording</td>
+  </tr>
+  <tr valign="top">
+    <td colspan="2">Tactile Material</td>
+    <td colspan="2"><font color="#FF0000">&nbsp;</font> </td>
+  </tr>
+   <tr valign="top">
+  <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+      <td width="30%">(code c)</td>
+      <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+      <td width="57%">braille</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code b)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">combination</td>
+  </tr>
+   <tr valign="top">
+  <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+      <td width="30%">(code a)</td>
+      <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+      <td width="57%">moon</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code d)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">tactile, with no writing system</td>
+  </tr>
+  <tr valign="top">
+    <td colspan="2">Text</td>
+    <td colspan="2"><font color="#FF0000">&nbsp;</font> </td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code c)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">braille</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code b)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">large print</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code a)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">regular print</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code d)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">text in looseleaf binder</td>
+  </tr>
+  <tr valign="top">
+    <td colspan="2">Videorecording</td>
+    <td colspan="2"><font color="#FF0000">&nbsp;</font> </td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code c)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">videocartridge</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code f)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">videocassette</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code d)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">videodisc</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="30%">(code r)</td>
+    <td width="7%"><font color="#FF0000">&nbsp;</font></td>
+    <td width="57%">videoreel</td>
+  </tr>
+  <tr valign="top">
+    <td colspan="2">&nbsp;</td>
+    <td colspan="2">&nbsp;</td>
+  </tr>
+  <tr valign="top">
+    <td colspan="2"> 008/23 MU,MM or 008/29 MP, VM </td>
+    <td colspan="2"> &lt;form authority=&quot;marcform&quot;&gt; <em>and</em> value: </td>
+  </tr>
+  <tr valign="top">
+    <td width="6%">&nbsp;</td>
+    <td width="30%">(code f)</td>
+    <td width="7%">&nbsp;</td>
+    <td width="57%">braille</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%">&nbsp;</td>
+    <td width="30%">(code s)</td>
+    <td width="7%">&nbsp;</td>
+    <td width="57%">electronic</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%">&nbsp;</td>
+    <td width="30%">(code b)</td>
+    <td width="7%">&nbsp;</td>
+    <td width="57%">microfiche</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%">&nbsp;</td>
+    <td width="30%">(code a)</td>
+    <td width="7%">&nbsp;</td>
+    <td width="57%">microfilm</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%">&nbsp;</td>
+    <td width="30%">(code blank, r)</td>
+    <td width="7%">&nbsp;</td>
+    <td width="57%">print</td>
+  </tr>
+  <tr valign="top">
+    <td colspan="2">008/23 BK,CR</td>
+    <td colspan="2"> &lt;form authority=&quot;marcform&quot;&gt; <em>and</em> value: </td>
+  </tr>
+  <tr valign="top">
+    <td width="6%">&nbsp;</td>
+    <td width="30%">(code blank, r)</td>
+    <td width="7%">&nbsp;</td>
+    <td width="57%">print</td>
+  </tr>
+  <tr valign="top">
+    <td colspan="2">008/23MU <i>if</i> Ldr/06=c,d</td>
+    <td colspan="2"> &lt;form authority=&quot;marcform&quot;&gt; <em>and</em> value: </td>
+  </tr>
+  <tr valign="top">
+    <td width="6%">&nbsp;</td>
+    <td width="30%">(code blank, r)</td>
+    <td width="7%">&nbsp;</td>
+    <td width="57%">print</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%">&nbsp;</td>
+    <td width="30%">&nbsp;</td>
+    <td width="7%">&nbsp;</td>
+    <td width="57%">&nbsp;</td>
+  </tr>
+  <tr valign="top">
+    <td colspan="2"> Leader/06 (code m) </td>
+    <td colspan="2"> &lt;form authority=&quot;marcform&quot;&gt;electronic</td>
+  </tr>
+  <tr valign="top">
+    <td colspan="2">130,240,242,245,246,730$h</td>
+    <td colspan="2">&lt;form authority=&quot;gmd&quot;&gt;</td>
+  </tr>
+  <tr valign="top">
+    <td colspan="2"> 256 $a </td>
+    <td colspan="2"> &lt;form&gt; <em>with</em> no
+      authority specified </td>
+  </tr>
+  <tr valign="top">
+    <td colspan="2"> 300 $a,$b,$c,$e </td>
+    <td colspan="2"> &lt;extent&gt; </td>
+  </tr>
+  <tr valign="top">
+    <td colspan="2"> 856 $q </td>
+    <td colspan="2"> &lt;internetMediaType&gt;</td>
+  </tr>
+  <tr valign="top">
+    <td colspan="2">&nbsp;</td>
+    <td colspan="2">&nbsp;</td>
+  </tr>
+  <tr valign="top">
+    <td colspan="2">007/13</td>
+    <td colspan="2">&lt;reformattingQuality&gt; <em>and</em> value:</td>
+  </tr>
+  <tr valign="top">
+    <td width="6%">&nbsp;</td>
+    <td width="30%">(code a)</td>
+    <td colspan="2"> access </td>
+  </tr>
+  <tr valign="top">
+    <td width="6%">&nbsp; </td>
+    <td width="30%">(code p)</td>
+    <td colspan="2"> preservation </td>
+  </tr>
+  <tr valign="top">
+    <td width="6%">&nbsp; </td>
+    <td width="30%">(code r)</td>
+    <td colspan="2"> replacement </td>
+  </tr>
+      </table>
+      <p>
+      <table width="100%" border="0">
+        <tr valign="top">
+          <td colspan="2"> <a name="abstract"><strong>abstract</strong></a> </td>
+          <td colspan="2"> &nbsp;  </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 520 $a$b </td>
+          <td colspan="2"> &lt;abstract&gt; <em>with</em> </td>
+        </tr>
+        <tr valign="top">
+          <td width="6%"> &nbsp;  </td>
+          <td width="39%"> <em>if</em> $u </td>
+          <td width="6%"> &nbsp;  </td>
+          <td width="49%"> xlink:simpleLink=&quot;contents
+            of $u&quot; </td>
+        </tr>
+      </table>
+      <p>
+      <table width="100%" border="0">
+        <tr valign="top">
+          <td colspan="2"> <a name="tableOfContents"><strong>tableOfContents</strong></a> </td>
+          <td colspan="2"> &nbsp;  </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 505 $a$g$r$t </td>
+          <td colspan="2"> &lt;tableOfContents&gt; <em>with</em> </td>
+        </tr>
+        <tr valign="top">
+          <td width="6%"> &nbsp;  </td>
+          <td width="39%"> <em>if</em> $u </td>
+          <td width="6%"> &nbsp;  </td>
+          <td width="49%"> xlink:simpleLink=&quot;contents
+            of $u&quot; </td>
+        </tr>
+      </table>
+      <p>
+      <table width="100%" border="0">
+        <tr valign="top">
+          <td colspan="2"> <a name="targetaudience"><strong>targetAudience</strong></a> </td>
+          <td colspan="2"> &lt;targetAudience&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 521 $a$b </td>
+          <td colspan="2">&nbsp; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> &nbsp;  </td>
+          <td colspan="2"> &nbsp;  </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> <em>various positions</em></td>
+          <td colspan="2"> &lt;targetAudience
+            authority=&quot;marctarget&quot;&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">008/22 BK,CF,MU,VM</td>
+          <td width="6%"> &nbsp;  </td>
+          <td width="49%"> <em>and</em> value:</td>
+        </tr>
+        <tr valign="top">
+          <td width="6%"> &nbsp;  </td>
+          <td width="39%"> (code d) </td>
+          <td width="6%"> &nbsp;  </td>
+          <td width="49%"> adolescent </td>
+        </tr>
+        <tr valign="top">
+          <td width="6%">&nbsp; </td>
+          <td width="39%"> (code e) </td>
+          <td width="6%"> &nbsp;  </td>
+          <td width="49%"> adult </td>
+        </tr>
+        <tr valign="top">
+          <td width="6%"> &nbsp;  </td>
+          <td width="39%"> (code g) </td>
+          <td width="6%"> &nbsp;  </td>
+          <td width="49%"> general </td>
+        </tr>
+        <tr valign="top">
+          <td width="6%"> &nbsp;  </td>
+          <td width="39%"> (code b,c,j) </td>
+          <td width="6%"> &nbsp;  </td>
+          <td width="49%"> juvenile </td>
+        </tr>
+        <tr valign="top">
+          <td width="6%"> &nbsp;  </td>
+          <td width="39%"> (code a) </td>
+          <td width="6%"> &nbsp;  </td>
+          <td width="49%"> preschool </td>
+        </tr>
+        <tr valign="top">
+          <td width="6%"> &nbsp;  </td>
+          <td width="39%"> (code f) </td>
+          <td width="6%"> &nbsp;  </td>
+          <td width="49%"> specialized </td>
+        </tr>
+      </table>
+      <p>
+      <table width="100%" border="0">
+        <tr valign="top">
+          <td colspan="2"> <a name="note"><strong>note</strong></a> </td>
+          <td colspan="2"> &nbsp;  </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 506 $a $b $c $d $e</td>
+          <td colspan="2">&lt;note&gt; <em>with</em> type=&quot;restrictions&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 510 $a $b $c</td>
+          <td colspan="2">&lt;note&gt; <em>with</em> type=&quot;citation/reference&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 511 $a </td>
+          <td colspan="2"> &lt;note&gt; <em>with</em> type=&quot;performers&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 518 $a </td>
+          <td colspan="2">&lt;note&gt; <em>with</em> type=&quot;venue&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 530 $a $b $c $d</td>
+          <td colspan="2">&lt;note&gt; <em>with</em> type=&quot;additional
+            physical form&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 533 $a $b $c $d $e $f $m
+            $n</td>
+          <td colspan="2">&lt;note&gt; <em>with</em> type=&quot;reproduction&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 534 $p $a $b $c $e $f $k
+            $l $m $n $t</td>
+          <td colspan="2">&lt;note&gt; <em>with</em> type=&quot;original
+            version&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 538 $a $i</td>
+          <td colspan="2">&lt;note&gt; <em>with</em> type=&quot;system
+            details&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 583 $a $b $c $d $e $f $h
+            $i $j $k $l $n $o $x $z</td>
+          <td colspan="2">&lt;note&gt; <em>with</em> type=&quot;action&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 5XX (<em>all
+              except $6,$8)</em> </td>
+          <td colspan="2"> &lt;note&gt; <em>with</em> type=appropriate
+            name assigned</td>
+        </tr>
+        <tr valign="top">
+          <td width="9%"> &nbsp;  </td>
+          <td width="36%"> <em>if</em> $u </td>
+          <td width="4%"> &nbsp;  </td>
+          <td width="51%"> xlink:simpleLink=&quot;contents
+            of $u&quot; </td>
+        </tr>
+      </table>
+      <p>
+      <table width="100%" border="0">
+        <tr valign="top">
+          <td colspan="2"> <a name="subject"><strong>subject</strong></a> </td>
+          <td width="56%">&lt;subject&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">600, 610, 611, 630, 650,
+            651</td>
+          <td width="56%">&lt;subject authority&gt; <em>with</em> attribute:</td>
+        </tr>
+        <tr valign="top">
+          <td width="5%">&nbsp; </td>
+          <td width="39%">ind2=0</td>
+          <td width="56%">&lt;subject authority=&quot;lcsh&quot;&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td width="5%">&nbsp; </td>
+          <td width="39%">ind2=1</td>
+          <td width="56%"> &lt;subject authority=&quot;lcshac&quot;&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td width="5%">&nbsp; </td>
+          <td width="39%">ind2=2</td>
+          <td width="56%"> &lt;subject authority=&quot;mesh&quot;&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td width="5%">&nbsp; </td>
+          <td width="39%">ind2=5</td>
+          <td width="56%">&lt;subject authority=&quot;csh&quot;&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td width="5%">&nbsp; </td>
+          <td width="39%">ind2=3</td>
+          <td width="56%"> &lt;subject authority=&quot;nal&quot;&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td width="5%">&nbsp; </td>
+          <td width="39%">ind2=6</td>
+          <td width="56%"> &lt;subject authority=&quot;rvm&quot;&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td width="5%">&nbsp; </td>
+          <td width="39%">ind2=7</td>
+          <td width="56%">&lt;subject authority=&quot;contents
+            of $2&quot;&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">600, 610, 611, 630, 650, 651, 656, 662, 752 </span></td>
+          <td><em><span class="style1">add</span></em><span class="style1"> xlink=&quot;contents of $0&quot; (as URI)</span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 650 $a$b$c$d </td>
+          <td width="56%">&lt;topic&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 600,610,611,630,650,651
+            $x </td>
+          <td width="56%">&lt;topic&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">653 $a <span class="style1">ind2=blank</span></td>
+          <td width="56%"> &lt;topic&gt; <i>with
+              no authority attribute</i> </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">653 $a ind2=0</span></td>
+          <td><span class="style1">&lt;topic&gt; <i>with
+          no authority attribute</i></span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">653 $a ind2=1</span></td>
+          <td><span class="style1">&lt;name type=&quot;personal&quot; &gt; <i>with
+          no authority attribute</i></span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">653 $a ind2=2</span></td>
+          <td><span class="style1">&lt;name type=&quot;corporate&quot; &gt; <i>with
+          no authority attribute</i></span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">653 $a ind2=3</span></td>
+          <td><span class="style1">&lt;name type=&quot;conference&quot; &gt; <i>with
+          no authority attribute</i></span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">653 $a ind2=4</span></td>
+          <td><span class="style1">&lt;temporal&gt; <i>with
+          no authority attribute</i></span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">653 $a ind2=5</span></td>
+          <td><span class="style1">&lt;geographic&gt; <i>with
+          no authority attribute</i></span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">653 $a ind2=6</span></td>
+          <td><span class="style1">&lt;form&gt; <i>with
+          no authority attribute</i></span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> &nbsp;  </td>
+          <td width="56%"> &nbsp;  </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">600,610,611,630,650,651
+            $v</td>
+          <td width="56%">&lt;genre&gt;<i> under
+              appropriate subelement</i></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> &nbsp;  </td>
+          <td width="56%"> &nbsp;  </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 600 </td>
+          <td width="56%">&lt;name&gt; <em>with</em> type=&quot;personal&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 600 $a$q </td>
+          <td width="56%"> &lt;namePart&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">600 $b$c</td>
+          <td>&lt;namePart&gt; <em>with</em> type=&quot;termsOfAddress&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 600 $d </td>
+          <td width="56%"> &lt;namePart&gt; <em>with</em> type=&quot;date&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 600 $e </td>
+          <td width="56%"> &lt;role&gt;&lt;roleTerm&gt; <em>with</em> type=&quot;text&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 600 $4 </td>
+          <td width="56%"> &lt;role&gt;&lt;roleTerm&gt; <em>with</em> type=&quot;code&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 600 $u </td>
+          <td width="56%"> &lt;affiliation&gt; <em>under</em> &lt;name&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">600 $t </span></td>
+          <td><span class="style1"><em>add</em> &lt;titleInfo&gt;&lt;title&gt; </span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> &nbsp;  </td>
+          <td width="56%"> &nbsp;  </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 610 </td>
+          <td width="56%"> &lt;name&gt; <em>with</em> type=&quot;corporate&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 610 $a </td>
+          <td width="56%"> &lt;namePart&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">610 $b</td>
+          <td width="56%"> &lt;namePart&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">610 $c$d$n$p</td>
+          <td width="56%">&lt;namePart&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 610 $e </td>
+          <td width="56%"> &lt;role&gt;&lt;roleTerm&gt; <em>with</em> type=&quot;text&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 610 $4 </td>
+          <td width="56%"> &lt;role&gt;&lt;roleTerm&gt; <em>with</em> type=&quot;code&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">610 $t </span></td>
+          <td><span class="style1"><em>add</em> &lt;titleInfo&gt;&lt;title&gt;</span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> &nbsp;  </td>
+          <td width="56%"> &nbsp;  </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 611 </td>
+          <td width="56%"> &lt;name&gt; <em>with</em> type=&quot;conference&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 611 $a$n$c$d$e$q$p </td>
+          <td width="56%"> &lt;namePart&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td valign="top" colspan="2"> 611
+            $4 </td>
+          <td width="56%"> &lt;role&gt;&lt;roleTerm&gt; <em>with</em> type=&quot;code&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">611 $t </span></td>
+          <td><span class="style1"><em>add </em>&lt;titleInfo&gt;&lt;title&gt; </span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 630 $a$d$f$h$k$l$o$r </td>
+          <td width="56%"> <span class="style1">&lt;titleInfo&gt;</span>&lt;title&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 630 $p </td>
+          <td width="56%"> &lt;partName&gt;
+        <td>        </tr>
+        <tr valign="top">
+          <td colspan="2"> 630 $n </td>
+          <td width="56%"> &lt;partNumber&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> &nbsp;  </td>
+          <td width="56%"> &nbsp;  </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 651 $a <em>and</em> 600,610,611,630,650,
+            651 $z </td>
+          <td width="56%"> &lt;geographic&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 600,610,611,630,650,651
+            $y </td>
+          <td width="56%"> &lt;temporal&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">045 ind1=0,1 $b</td>
+          <td width="56%"> &lt;temporal&gt; <i>with </i>encoding=&quot;iso8601&quot; <br>
+              <i>[Note: if ind1=1 repeat &lt;temporal&gt; for
+              each $b]</i> </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">045 ind1=2 first $b</td>
+          <td width="56%">&lt;temporal&gt; <i>with </i>encoding=&quot;iso8601&quot;<i> </i><em>and </em>point=&quot;start&quot; or
+            no point attribute</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">045 ind1=2 second $b</td>
+          <td width="56%">&lt;temporal&gt; <i>with </i>encoding=&quot;iso8601&quot;<i> </i><em>and</em> point=&quot;end&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">&nbsp; </td>
+          <td width="56%"> &nbsp;  </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">043 $a</td>
+          <td>&lt;geographicCode&gt; <em>with</em> authority=&quot;marcgac&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">043 $c</td>
+          <td>&lt;geographicCode&gt; <em>with</em> authority=&quot;iso3166&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 752, 662 </td>
+          <td width="56%"> &lt;hierarchicalGeographic&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 752, 662 $a </td>
+          <td width="56%"> &lt;country&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 752, 662 $b </td>
+          <td width="56%"> &lt;state&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 752, 662 $c </td>
+          <td width="56%"> &lt;county&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 752, 662 $d </td>
+          <td width="56%"> &lt;city&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">752,
+              662 $e </span></td>
+          <td><span class="style1">&lt;citySection&gt;</span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">752,
+              662 $g </span></td>
+          <td><span class="style1">&lt;region&gt;</span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">752,
+              662 $h</span> </td>
+          <td><span class="style1">&lt;extraterrestrialArea&gt;</span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> &nbsp;  </td>
+          <td width="56%"> &nbsp;  </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 034 </td>
+          <td width="56%"> &lt;cartographics&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 034 $d$e$f$g </td>
+          <td width="56%"> &lt;coordinates&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 255 $c </td>
+          <td width="56%"> &lt;coordinates&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 255 $a </td>
+          <td width="56%"> &lt;scale&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 255 $b </td>
+          <td width="56%"> &lt;projection&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">656 $a</td>
+          <td>&lt;occupation&gt;</td>
+        </tr>
+      </table>
+      <p>
+      <table width="100%" border="0">
+        <tr valign="top">
+          <td width="45%"> <a name="classification"><strong>classification</strong></a> </td>
+          <td width="55%"> &lt;classification&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td width="45%"> 050 $a$b </td>
+          <td width="55%"> <em>with</em> authority=&quot;lcc&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td>050 $3</td>
+          <td><em>add</em> attribute displayLabel=&quot;contents
+            of subfield&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td width="45%"> 082 $a$b</td>
+          <td width="55%"> <em>with</em> authority=&quot;ddc&quot; <em>and</em> edition=&quot;contents
+            of $2&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td width="45%"> 080 $a$b$x </td>
+          <td width="55%"> <em>with</em> authority=&quot;udc&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td width="45%"> 060 $a$b </td>
+          <td width="55%"> <em>with</em> authority=&quot;nlm&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td width="45%"> 086 ind1=0 $a </td>
+          <td width="55%"> <em>with</em> authority=&quot;sudocs&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td width="45%"> 086 ind1=1 $a </td>
+          <td width="55%"> <em>with</em> authority=&quot;candocs&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td width="45%"> 086 $a </td>
+          <td width="55%"> <em>with</em> authority=&quot;contents
+            of $2&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td width="45%"> 084 $a$b </td>
+          <td width="55%"> <em>with</em> authority=&quot;contents
+            of $2&quot; </td>
+        </tr>
+      </table>
+      <p>
+      <table width="100%" border="0">
+        <tr valign="top">
+          <td colspan="2"> <a name="relateditem"><strong>relatedItem</strong></a> </td>
+          <td> &lt;relatedItem&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> MARC related item data
+            fields:</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td width="6%">&nbsp;</td>
+          <td colspan="2">All 760-787<br>
+      All 800-830<br>
+      730, 740 <i>only if</i> ind2=2<br>
+      700, 710, 711 <em>only</em> when they
+      contain $t subfield<br>
+      534, 440, 490 <br>
+      <span class="style1">856 if ind2=1,2 </span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="3"> <em>type attributes
+              for all related item data:</em> </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 780</td>
+          <td> type=&quot;preceding&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 785</td>
+          <td> type=&quot;succeeding&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 776</td>
+          <td> type=&quot;otherFormat&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 534, 786</td>
+          <td> type=&quot;original&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 772, 773</td>
+          <td> type=&quot;host&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 700, 710, 711, 730, 740
+            ind2=2<br>
+              <em>and</em> 770, 774</td>
+          <td> type=&quot;constituent&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 775 <em>and</em> ind2</td>
+          <td> type=&quot;otherVersion&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 440, 760 <em>and</em> 762,
+            800, 810, 811, 830 <em>and</em> 490 <em>(only if</em> ind1=0)</td>
+          <td> type=&quot;series&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">800, 810, 811, 830 $0 </span></td>
+          <td><em><span class="style1">add</span></em><span class="style1"> xlink=&quot;contents of $0&quot; (as URI)</span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">510</td>
+          <td>type=&quot;isReferencedBy&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">856 ind2=1 </span></td>
+          <td><span class="style1">type=&quot;otherVersion&quot;</span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">856 ind2=2 </span></td>
+          <td><span class="style1">[no type specified]</span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td height="21" colspan="3"><em>displayLabel
+              attribute for all related item data:</em></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">760, 762, 765, 767, 770,
+            772, 773, 774, 775,776, 777, 780, 785, 786, 787 $i</td>
+          <td><em>add</em> attribute displayLabel=&quot;contents
+            of subfield $i&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">773 $3</td>
+          <td><em>add</em> attribute displayLabel=&quot;contents
+            of subfield $3&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> &nbsp;   </td>
+          <td> &nbsp;   </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> <em>title subelement:</em> </td>
+          <td> &nbsp;  </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 700, 800 $t$f$k$l$m$o$r$s$v
+            ($g after $t)<br>
+      710, 810 $t$f$k$l$m$o$r$s$v ($g after $t)<br>
+      711, 811 $t$f$k$l$s$v ($g after $t)<br>
+      730, 830 $a$d$f$g$k$l$m$o$r$s$v<br>
+      740 $a<br>
+      440 $a$v </td>
+          <td> &lt;title&gt; <em>and </em></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> $n (after $t for 710, 810,
+            711, 811) in all fields above </td>
+          <td width="54%">
+            <p>&lt;partNumber&gt; </p>          </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> $p in fields 773 and 786</td>
+          <td width="54%">
+            <p>&lt;partName&gt; </p>          </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 534, 760, 762, 765, 767,
+            770, 772, 773, <br>
+      774, 775, 776, 777, 780, 785, 786, 787 $t<br>
+      490 $a (<em>only if</em> ind1=0)</td>
+          <td> &lt;title&gt;<i> </i><i>with </i>no &lt;titleInfo&gt; type
+            attribute <em>and</em></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 760, 762, 765, 767, 770,
+            772, 774, 775,776, 777, 780, 785, 786, 787 $g<br>
+      490 $v </td>
+          <td width="54%">
+            <p>&lt;partNumber&gt; </p>          </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">773, 786 $p</td>
+          <td width="54%">&lt;title&gt; <i>with</i> &lt;titleInfo&gt; type=&quot;abbreviated&quot; <em>and</em></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 760, 762, 765, 767, 770,
+            772, 774, 775,776, 777, 780, 785, 786, 787 $g</td>
+          <td width="54%">
+            <p>&lt;partNumber&gt; </p>          </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">760, 762, 765, 767, 770,
+            772, 773, 774, 775,776, 777, 780, 785, 786, 787 $s</td>
+          <td width="54%">&lt;title&gt; <i>with</i> &lt;titleInfo&gt; type=&quot;uniform&quot; <em>and</em></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 760, 762, 765, 767, 770,
+            772, 774, 775,776, 777, 780, 785, 786, 787 $g</td>
+          <td width="54%">
+            <p>&lt;partNumber&gt; </p>          </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> <em>name subelement:</em> </td>
+          <td> &nbsp;  </td>
+        </tr>
+        <tr valign="top">
+          <td height="29" colspan="2">700,
+            800 </td>
+          <td> </td>
+        </tr>
+        <tr valign="top">
+          <td height="21" colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;$a$q
+            ($g before $t)</td>
+          <td>&lt;name&gt; <em>with</em> type=&quot;personal&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td height="22" colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;$b$c </td>
+          <td>&lt;namePart&gt; <em>with</em> type=&quot;termsOfAddress&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td height="21" colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;$d</td>
+          <td>&lt;namePart&gt; with type=&quot;date&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td height="22" colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;$e</td>
+          <td>&lt;role&gt;&lt;roleTerm&gt; <em>with</em> type=&quot;text&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;$4 </td>
+          <td>&lt;role&gt;&lt;roleTerm&gt; <em>with</em> type=&quot;code&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 710, 810<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$a<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$b<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$c ($d$g$n before $t)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$e<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$4 </td>
+          <td> &lt;name&gt; <em>with</em> type=&quot;corporate&quot;<br>
+&lt;namePart&gt;<br>
+&lt;namePart&gt;<br>
+&lt;namePart&gt;<br>
+&lt;role&gt;&lt;roleTerm&gt; <em>with</em> type=&quot;text&quot;<br>
+&lt;role&gt;&lt;roleTerm&gt; <em>with</em> type=&quot;code&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 711,811<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$a$q$d$c ($g$n before $t)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$4 </td>
+          <td> &lt;name&gt; <em>with</em> type=&quot;conference&quot;<br>
+&lt;namePart&gt;<br>
+      <em>add</em> &lt;role&gt;&lt;roleTerm&gt; <em>with</em> type=&quot;code&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 534, 760, 762, 765, 767,
+            770, 772, 773,<br>
+      774, 775, 776, 777, 780, 785, 786, 787 $a<br>          </td>
+          <td> &lt;name&gt; <em>with</em> no
+            type attribute</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> &nbsp;  </td>
+          <td> &nbsp;  </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> <em>originInfo subelement:</em> </td>
+          <td> &lt;originInfo&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">775$f</td>
+          <td>
+            <p>&lt;place&gt;&lt;placeTerm&gt; <em>with </em>type=&quot;code&quot;</p>          </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 534 $c, 760 762, 765, 767,
+            770, 772, 773, 774, 775, 776, 777, 780, 785, 786, 787 $d</td>
+          <td> &lt;publisher&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 534 $b, 760 762, 765, 767,
+            770, 772, 773, 774, 775, 776, 777, 780, 785, 786, 787 $b</td>
+          <td> &lt;edition&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><i>language subelement:</i></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">775$e</td>
+          <td>&lt;language&gt;&lt;languageTerm&gt; <em>with </em>type=&quot;code&quot;&nbsp; <em>and</em> authority=&quot;iso639-2b&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> &nbsp;  </td>
+          <td> &nbsp;  </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> <em>physical description
+              subelement:</em> </td>
+          <td>&lt;physicalDescription&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 700, 710, 711, 730, 740,
+            800,810,811,<br>
+      830 $h </td>
+          <td width="54%"> &lt;form&gt;content
+            of position </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> &nbsp;  </td>
+          <td> &nbsp;  </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 760-787 $h<br>          </td>
+          <td width="54%">&lt;extent&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 856 $q with ind2=2 </td>
+          <td width="54%"> &lt;internetMediaType&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><i>subject subelement:</i></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">786$j</td>
+          <td>&lt;temporal&gt; <i>with</i> encoding=&quot;iso8601&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> <em>note subelement:</em> </td>
+          <td> &nbsp;  </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 534, 760-787 $n </td>
+          <td> &lt;note&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> &nbsp;  </td>
+          <td> &nbsp;  </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> <em>identifier subelement:</em> </td>
+          <td> &nbsp;  </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 760, $o </td>
+          <td> &lt;identifier&gt; <em>with</em> no
+            type</td>
+        </tr>
+        <tr valign="top">
+          <td height="20" colspan="2"> 534,
+            700, 710, 711, 730, 760-787 $x </td>
+          <td height="20"> &lt;identifier&gt; <em>with</em> type=&quot;issn&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 534 $z, 760-787$z</td>
+          <td> &lt;identifier&gt; <em>with</em> type=&quot;isbn&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"> 760-787 $w </td>
+          <td> &lt;identifier&gt; <em>with</em> type=&quot;local&quot; <br>
+              <em>[If local control no.]</em> </td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1"><em>location subelement:</em></span></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">856 $u with ind2=1,2 </span></td>
+          <td><span class="style1">&lt;location&gt;&lt;url&gt; </span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">856 $u $y $3 with ind2=1,2</span></td>
+          <td><span class="style1">&lt;url&gt; <em>add</em> attribute displayLabel=&quot;contents
+          of subfield $3&quot;</span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><span class="style1">856 $z with ind2=1,2 </span></td>
+          <td><span class="style1">&lt;url&gt; <em>add</em> attribute
+          note=&quot;contents of subfield&quot;</span></td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2"><em>part subelement:</em></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">773 $g</td>
+          <td>&lt;part&gt;&lt;text&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td colspan="2">773 $q <em><br>
+      [Recently approved. Not likely to appear in MARC data.]</em></td>
+          <td>&lt;part&gt;<br>
+        &lt;
+            detail level=&quot;1&quot;&gt;&lt;number&gt; <em><br>
+      [Content before first colon]</em><br>
+          &lt; 
+                detail level=&quot;2&quot;&gt;&lt;number&gt;<em><br>
+      [Content before second colon]</em><br>
+&lt; 
+      detail level=&quot;3&quot;&gt;&lt;number&gt;<em> <br>
+      [Content before third colon]</em><br>
+              &lt;
+                    extent&gt;&lt;start&gt; <em><br>
+      [Content after the &amp;lt; or &quot;&lt;&quot;]</em></td>
+        </tr>
+      </table>
+      <p>
+      <table width="100%" border="0">
+        <tr valign="top">
+          <td width="45%"> <a name="identifier"><strong>identifier</strong></a> </td>
+          <td width="55%"> &lt;identifier&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td width="45%"> 856 $u <em>with</em> &quot;urn:doi&quot; <em>or</em> &quot;doi&quot;</td>
+          <td width="55%"> <em>with</em> type=&quot;doi&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td>856 $u with &quot;urn:hdl&quot; <em>or</em> &quot;hdl&quot; </td>
+          <td><em>with</em> type=&quot;hdl&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td width="45%"> 020 $a </td>
+          <td width="55%"> <em>with</em> type=&quot;isbn&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td width="45%"> 024 ind1=0 $a </td>
+          <td width="55%"> <em>with</em> type=&quot;isrc&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td width="45%"> 024 ind1=2 $a </td>
+          <td width="55%"> <em>with</em> type=&quot;ismn&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td width="45%"> 022 $a </td>
+          <td width="55%"> <em>with</em> type=&quot;issn&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td><span class="style1">022 $l</span></td>
+          <td><em><span class="style1">with </span></em><span class="style1">type=&quot;issn-l&quot;</span></td>
+        </tr>
+        <tr valign="top">
+          <td width="45%"> 028 ind1=0 $b$a</td>
+          <td width="55%"> <em>with</em> type=&quot;issue
+            number&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td width="45%"> 010 $a </td>
+          <td width="55%"> <em>with</em> type=&quot;lccn&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td width="45%"> 028 ind1=1 $a$b </td>
+          <td width="55%"> <em>with</em> type=&quot;matrix
+            number&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td width="45%"> 028 ind1=3 $a$b </td>
+          <td width="55%"> <em>with</em> type=&quot;music
+            publisher&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td width="45%"> 028 ind1=2 $a$b </td>
+          <td width="55%"> <em>with</em> type=&quot;music
+            plate&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td width="45%"> 024 ind1=4 $a</td>
+          <td width="55%"> <em>with</em> type=&quot;sici&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td width="45%"> 024 ind1=1 $a </td>
+          <td width="55%"> <em>with</em> type=&quot;upc&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td width="45%"> 028 ind1=4 $a </td>
+          <td width="55%"> <em>with</em> type=&quot;videorecording
+            identifier&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td width="45%"> 037 $a$b </td>
+          <td width="55%"> <em>with</em> type=&quot;stock
+            number&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td width="45%"> &nbsp;  </td>
+          <td width="55%"> &nbsp;  </td>
+        </tr>
+        <tr valign="top">
+          <td width="45%"> 010 $z </td>
+          <td width="55%"> <em>add</em> attribute
+            invalid=&quot;yes&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td width="45%"> 020 $z </td>
+          <td width="55%"> <em>add</em> attribute
+            invalid=&quot;yes&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td width="45%"> 022 $z </td>
+          <td width="55%"> <em>add</em> attribute
+            invalid=&quot;yes&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td><span class="style1">022 $m</span></td>
+          <td><span class="style1"><em>add</em> attribute
+          invalid=&quot;yes&quot; </span></td>
+        </tr>
+        <tr valign="top">
+          <td width="45%"> 024 $z </td>
+          <td width="55%"> <em>add</em> attribute
+            invalid=&quot;yes&quot; </td>
+        </tr>
+      </table>
+      <p>
+      <table width="100%" border="0">
+        <tr valign="top">
+          <td width="45%"> <a name="location"><strong>location</strong></a> </td>
+          <td width="55%"> &lt;location&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td width="45%"> 852 $a$b$j$e </td>
+          <td width="55%"> &lt;physicalLocation&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td><span class="style1">852 $h$i$j$k$l$m$t</span> </td>
+          <td><span class="style1">&lt;shelfLocator&gt;</span></td>
+        </tr>
+        <tr valign="top">
+          <td width="45%"> 852 $3 </td>
+          <td width="55%"> &lt;physicalLocation&gt; <em>add</em> attribute
+            displayLabel=&quot;contents of subfield&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td><span class="style1">852 $u</span></td>
+          <td><span class="style1">&lt;physicalLocation&gt; <em>add </em>attribute
+              xlink=&quot;contents of subfield&quot; </span></td>
+        </tr>
+        <tr valign="top">
+          <td>856 $u <span class="style1">with ind2=#,0,8</span></td>
+          <td>&lt;url&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td>856 $u $y $3 <span class="style1">with ind2=#,0,8</span></td>
+          <td>&lt;url&gt; <em>add</em> attribute
+            displayLabel=&quot;contents of subfield&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td>856 $z </td>
+          <td>&lt;url&gt; <em>add</em> attribute
+            note=&quot;contents of subfield&quot;</td>
+        </tr>
+      </table>
+      <p>
+      <table width="100%" border="0">
+        <tr valign="top">
+          <td width="45%"> <a name="accesscondition"><strong>accessCondition</strong></a> </td>
+          <td width="55%"> &lt;accessCondition&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td width="45%"> 506 $a$b$c$d$3$5<br>
+      540 $a$b$c$d$3$5 </td>
+          <td width="55%"> <em>with</em> type=&quot;restrictionOnAccess&quot;<br>
+              <em>with</em> type=&quot;useAndReproduction&quot; </td>
+        </tr>
+      </table>
+      <p>
+      <table width="100%" border="0">
+        <tr valign="top">
+          <td width="45%" height="20"> <a name="extension"><strong>extension</strong></a> </td>
+          <td width="55%" height="20"> no
+            mapping; this allows users to include local elements or elements
+            from other namespaces </td>
+        </tr>
+      </table>
+      <p>
+      <table width="100%" border="0">
+        <tr valign="top">
+          <td width="45%"> <a name=
+                        "recordinformation"><strong>recordInformation</strong></a> </td>
+          <td width="55%"> &nbsp;  </td>
+        </tr>
+        <tr valign="top">
+          <td width="45%"> 040 $a </td>
+          <td width="55%"> &lt;recordContentSource&gt;&nbsp; <em>with</em> authority=&quot;marcorg&quot;</td>
+        </tr>
+        <tr valign="top">
+          <td width="45%"> 008/00-05 </td>
+          <td width="55%"> &lt;recordCreationDate&gt; <em>with</em> encoding=&quot;marc&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td width="45%"> 005 </td>
+          <td width="55%"> &lt;recordChangeDate&gt; <em>with</em> encoding=&quot;iso8601&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td width="45%"> 001 </td>
+          <td width="55%"> &lt;recordIdentifier&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td width="45%"> 003 </td>
+          <td width="55%"> <em>add</em> attribute
+            source </td>
+        </tr>
+        <tr valign="top">
+          <td width="45%"> 040 $b </td>
+          <td width="55%"> &lt;languageOfCataloging&gt;&lt;languageTerm&gt; <em>with</em> authority=&quot;iso639-2b&quot; </td>
+        </tr>
+        <tr valign="top">
+          <td><span class="style1">040 $e</span><br>          </td>
+          <td><span class="style1">&lt;descriptionStandard&gt;</span></td>
+        </tr>
+        <tr valign="top">
+          <td><span class="style1">Leader/18
+              = &quot;a&quot; </span></td>
+          <td><span class="style1">&lt;descriptionStandard&gt;aacr</span></td>
+        </tr>
+      </table>
+      <hr>
+      <h3><span class="style1"><a name="mappinghold" id="mappinghold"> 4.
+            Mapping for MARC 21 holdings data </a></span></h3>
+      <p class="style1">The following maps data elements
+        in MARC 21 holdings fields whether embedded in bibliographic records
+        on in separate holdings records to elements in the MODS &lt;holdingSimple&gt; element. For detailed parsing of holdings information, an extension schema may
+        be used. Holdings 008 fixed field is ignored. </p>
+      <table width="100%" border="0">
+        <tr valign="top">
+          <td width="45%" class="style1"><a name="holdingSimple" id="holdingSimple"><strong>holdingSimple</strong></a> </td>
+          <td colspan="3" class="style1">&lt;holdingsSimple&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td class="style1">&nbsp;</td>
+          <td width="6%" class="style1">&nbsp;</td>
+          <td colspan="2" class="style1">&lt;copyInformation&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td class="style1">007/00 in holdings
+            record: see above under &lt;physicalDescription&gt;&lt;form&gt; </td>
+          <td class="style1">&nbsp;</td>
+          <td class="style1">&nbsp;</td>
+          <td class="style1">&lt;form authority=&quot;marccategory&quot;&gt; </td>
+        </tr>
+        <tr valign="top">
+          <td width="45%" class="style1">007/01
+            in holdings record: see above under &lt;physicalDescription&gt;&lt;form&gt;</td>
+          <td class="style1">&nbsp;</td>
+          <td width="6%" class="style1">&nbsp;</td>
+          <td width="43%" class="style1">&lt;form
+            authority=&quot;marcsmd&quot;&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td class="style1">852$b$c$e</td>
+          <td class="style1">&nbsp;</td>
+          <td class="style1">&nbsp;</td>
+          <td class="style1">&lt;sublocation&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td width="45%" class="style1">852$h$i$j$k$m$t</td>
+          <td class="style1">&nbsp;</td>
+          <td class="style1">&nbsp;</td>
+          <td class="style1">&lt;shelfLocator&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td class="style1">856$u (in holdings
+            record) </td>
+          <td class="style1">&nbsp;</td>
+          <td class="style1">&nbsp;</td>
+          <td class="style1">&lt;electronicLocator&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td class="style1">852$x</td>
+          <td class="style1">&nbsp;</td>
+          <td class="style1">&nbsp;</td>
+          <td class="style1">&lt;note <em>with </em>type=&quot;nonpublic&quot;&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td class="style1">852$z</td>
+          <td class="style1">&nbsp;</td>
+          <td class="style1">&nbsp;</td>
+          <td class="style1">&lt;note <em>with </em>type=&quot;public&quot;&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td class="style1">Other copy specific
+            notes in holdings record with appropriate type </td>
+          <td class="style1">&nbsp;</td>
+          <td class="style1">&nbsp;</td>
+          <td class="style1">&lt;note <em>with </em>type=&quot;&quot;&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td class="style1">866-868</td>
+          <td class="style1">&nbsp;</td>
+          <td class="style1">&nbsp;</td>
+          <td class="style1">&lt;enumerationAndChronology&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td class="style1">866</td>
+          <td class="style1">&nbsp;</td>
+          <td class="style1">&nbsp;</td>
+          <td class="style1">&lt;enumerationAndChronology
+            unitType=&quot;1&quot;&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td class="style1">867</td>
+          <td class="style1">&nbsp;</td>
+          <td class="style1">&nbsp;</td>
+          <td class="style1">&lt;enumerationAndChronology
+            unitType=&quot;2&quot;&gt;</td>
+        </tr>
+        <tr valign="top">
+          <td class="style1">868</td>
+          <td class="style1">&nbsp;</td>
+          <td class="style1">&nbsp;</td>
+          <td class="style1">&lt;enumerationAndChronology
+            unitType=&quot;3&quot;&gt;</td>
+        </tr>
+      </table>
+      <h3> <a name="changesv3" id="changesv3"> 5.</a> Changes
+        Made for MODS Version 3.3 (December 2007)</h3>
+      <p><strong>&lt;genre&gt;</strong><br>--Added value &quot;offprint&quot; for 008/24+ Books (MARC 21 Update #8 2007)<br>
+        --Added 047 for musical composition (MARC 21 Update #7 2006)
+      <p><strong>&lt;originInfo&gt;&lt;frequency&gt;</strong> <br>
+        --Added attribute &quot;authority&quot; for
+        008/18CR values
+      <p><strong>&lt;language&gt;<br>
+        </strong>--Simplied presentation for different enumerated
+        values for authority attribute <br>
+  --Added mapping for MARC 041$j (MARC 21 Update #8 2007)
+      <p><strong>&lt;physicalDescription&gt;&lt;form&gt;<br>
+        </strong>--Added 007/00 mappings with authority=&quot;marccategory&quot;
+      <p><strong>&lt;subject&gt;<br>
+      </strong>--Added mappings for uncontrolled headings in field 653 with new MARC 21 second indicator values (MARC 21 update #8 2007) 
+      <p><strong>&lt;subject&gt;&lt;hierarchicalGeographic&gt;<br>
+        </strong>--Added &lt;citySection&gt;, &lt;region&gt;, &lt;extraTerrestrialArea&gt; (MARC 21 Update #6 2005)
+      <p><strong>&lt;identifier&gt;</strong><br>
+  --Added mapping for MARC 022 $l and $m (MARC 21 Update #8 2007)
+      <p><strong>&lt;location&gt; </strong><br>
+        --Added attribute xlink<br>
+        --Added &lt;shelfLocator&gt;
+      <p><strong>&lt;recordInfo&gt;<br>
+        </strong>--Added &lt;descriptionStandard&gt;
+      <p><strong>Various controlled fields
+      </strong><br>
+      --Added attribute xlink for link to authority record (MARC 21 Update #8 2007)
+      
+      <p><strong>MARC 21 holdings records </strong><br>
+      --Added mappings under &lt;holdingSimple&gt;            
+      <p><strong>Additional changes<br>
+      </strong>--Added mapping for titles under &lt;subject&gt;&lt;name&gt; (May 27, 2008) 
+	  <br>
+      --Added mapping for 856 ind2=1,2 under &lt;relatedItem&gt;&lt;location&gt;&lt;url&gt; (July 2, 2008) 
+	<!-- InstanceEndEditable -->
+<HR noshade size="1">
+</td>
+</tr>
+<tr>
+<td><a href="http://www.loc.gov/standards/mods/">HOME</a> &gt;&gt; <!-- InstanceBeginEditable name="bottombreadcrumb" --><a href="../mods-conversions.html">Conversions</a> &gt;&gt; <span class="selected">MARC
+            to MODS 3.3</span><!-- InstanceEndEditable -->
+  <p><strong>Questions and comments:<br>
+  </strong>
+              <a href="mailto:ndmso@loc.gov">Contact Us</a> (
+              <!-- #BeginDate format:Am1 -->October 18, 2010<!-- #EndDate -->
+      )
+      <br>
+      <a href="http://www.loc.gov/homepage/legal.html">Legal</a> | <a href="http://www.loc.gov/global/disclaim.html">External Link Disclaimer</a></p></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,294 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>MADS Documentation</title>
+<base href="http://www.loc.gov/standards/mads/mads-doc.html">
+<meta name="keywords" content="mads metadata authority description schema web site library congress xml official site library congress">
+<meta name="description" content="As an XML schema, the &quot;Metadata Authority Description Schema&quot; 
+(MADS) is intended to be able to carry selected data from existing MARC 21 authority records as well as to 
+enable the creation of original records for agents and terms.">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link href="mads.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+<p>&nbsp;&gt;&gt; <a href="http://www.loc.gov/">Library of Congress</a> &gt;&gt; <a href="http://www.loc.gov/standards/">Standards</a> &gt;&gt; <a href="http://www.loc.gov/standards/mads/">MADS
+    Home</a> </p>
+<img src="images/mads.gif" alt="MADS - Metadata Authority Description Schema - Official Web Site" width="600" height="75">
+<h1></h1>
+<h1>MADS - XML Format for Authorities Data</h1>
+<p>MADS is a MARC21-compatible XML format for the type of data carried in records
+  in the MARC Authorities format. Each individual record is contained within &lt;mads&gt;&lt;/mads&gt;,
+  and groups of MADS records can be contained within a MADS Collection (&lt;madsCollection&gt;&lt;/madsCollection&gt;).
+  Consistency with MODS was a goal as much as possible.</p>
+<h2>The Authoritative Heading: &lt;authority&gt;</h2>
+<p>Each MADS record must have only one &lt;authority&gt; tag.
+  That tag contains at least one other element. The following are the types
+  of authoritative headings.</p> 
+<dl>
+<dt>&lt;name&gt;</dt>
+<dd>The <em>name</em> field is for personal, corporate, event, or geographic
+  names, corresponding to MARC Bibliographic and Authority fields 100, 110,
+  and 111, respectively. The
+  field is structured the same as the MODS name field.</dd>
+<dt>&lt;titleInfo&gt;</dt>
+<dd>This field is used in library cataloging for uniform titles.  The &lt;titleInfo&gt;
+  field is structured the same as the MODS titleInfo field except that it
+  does
+  not have the <em>type</em> attribute
+  because only uniform is applicable. The field includes titles equivalent to
+  MARC Authority fields 100 $t, 110 $t, 111 $t, and 130, which relate to MARC
+  Bibliographic fields 130, 240, and 245.</dd>
+<dt>&lt;topic&gt;</dt>
+<dd>This field for subject authorities can be used for a variety of thesauri.
+  It includes topical subjects, equivalent to MARC Authority field 150, which
+  relates to the  650 field in the MARC Bibliographic format. </dd>
+<dt>&lt;temporal&gt;</dt>
+<dd>This field for subject authorities can be used for a variety of thesauri.
+  It includes temporal/chronological subjects, equivalent to MARC Authority field
+  148, which relates to the 648 field in the MARC Bibliographic format.</dd>
+<dt>&lt;genre&gt;</dt>
+<dd>This field for genre headings can be used for a variety of thesauri. It includes
+  genre terms, equivalent to MARC Authority field 155, which relates to the
+  655 field in the MARC Bibliographic format.</dd>
+<dt>&lt;geographic&gt;</dt>
+<dd>This field is used for the authoritative names of geographic entities. It
+  is equivalent to MARC Authority field 151, which relates to
+  the 651 field in the MARC Bibliographic format.</dd>
+<dt>&lt;hierarchicalGeographic&gt;</dt>
+<dd>This field is used to provide an authoritative form for hierarchical geographic
+  names. It corresponds
+  to MODS &lt;hierarchicalGeographic&gt;.  It
+  does not have an equivalent in the MARC Authority format, but relates
+  to the 752 field in the MARC Bibliographic format.</dd>
+<dt>&lt;occupation&gt;</dt>
+<dd>This field is used to provide an authoritative form for names of occupations.
+  It
+  does not have an equivalent in the MARC Authority format, but relates
+  to the 656 field in the MARC Bibliographic format.</dd>
+</dl>
+<p>More than one of these tags may be combined within an &lt;authority&gt; tag to control
+  an authoritative heading that consists of multiple parts. Examples are name/title
+  headings and
+  subject
+  strings with various components (e.g. &lt;topic&gt; and &lt;geographic&gt;). </p>
+<h2>Reference Headings &lt;refs&gt;</h2>
+<p>Each record may also have fields that contain references to the authoritative
+  heading. The references are composed of the same element names and attributes
+  as the authoritative headings: name, titleInfo, topic, temporal, genre, geographic,
+  hierarchicalGeographic,
+occupation. References have two attribute types: <em>variantType</em> and <em>relatedType</em>.
+Each reference is contained within a &lt;ref&gt; tag. A higher level &lt;refs&gt; tag
+allows for groups of references, such as those which might be used for different
+thesauri
+or languages.</p>
+<p><strong>variantType Attribute</strong></p>
+<dl><dd>
+  <p>The <em>variantType </em>attribute designates the reference as  a name or
+    term that is not considered the
+    authoritative form.
+    For example,
+    if the person's authoritative name is John J. Jones, but he is sometimes
+    referred to as J.J. Jones, then J.J. Jones can be entered as a name reference
+    of the
+    variant type. In library catalogs, variant headings are only used as &quot;see&quot; references
+    and are not used on the catalog's bibliographic records;
+    only authoritative headings are used in the bibliographic metadata record,
+    and the variant headings
+    lead users to
+    the correct
+    heading.
+   The following values are valid for the  variantType attribute. </p>
+</dd>
+<dd>
+  <p><strong>acronym - </strong>an acronym which is considered a variant of the
+      name in &lt;authority&gt;. Used most frequently for corporate names.
+      Corresponds to MARC Authority 4XX $w/0, value &quot;d&quot;.<br>
+      <strong>abbreviation - </strong>abbreviation generally applies to titles,
+      when an abbreviation may be used for indexing or identification. It
+  does not have an equivalent in the MARC Authority format, but relates
+  to the field 210 in the MARC Bibliographic format.<br>
+      <strong>translation - </strong>a variant which is a translation of the
+      authoritative name or title. These are not distuinguished from other references
+      in the MARC Authority record.<br>
+      <strong>otherVariant</strong> - a variant that does not have a specified
+    variant type. </p>
+</dd>
+<dt><strong>relatedType Attribute</strong></dt>
+
+<dd>
+  <p>The <em>relatedType</em> reference includes a  name or term that has some
+    relation to the authoritative heading. It is not a variant because it is
+    a legitimate,
+    authoritative heading on its own. These are equivalent to &quot;see also&quot; references
+    in library catalogs. The relationship to the authoritative heading is specified
+    as a value of the relatedType attribute.
+    The
+    following
+    values indicate
+    the
+    related type: </p>
+</dd>
+<dd>
+  <p><strong>earlier </strong>- used for the earlier form of a name, especially
+    corporate bodies that have changed name over time.<br>
+    <strong>later - </strong>used for the later form of a name, especially corporate
+    bodies that have changed name over time.<br>
+    <strong>broader - </strong>this type of reference is for subject
+    authorities, and indicates a hierarchical relationship between two headings.<br>
+    <strong>narrower - </strong>th is related reference also indicates
+    a hierarchical relationship between subject headings. There may be many narrower
+    headings
+    in a record. <br>
+    <strong>parentOrg </strong>- this is a name heading that gives the parent
+    organization of a corporate name heading. There can be more than one parent
+    organization reference on a record, as in the case of jointly held corporations. <br>
+    <strong>otherRelated</strong> - a variant that does not have a specified
+    related type. Should be used with an unspecified type of relationship. </p>
+</dd>
+</dl>
+<h2>Other elements</h2>
+<h3>Notes &lt;note&gt;</h3>
+<p>There is one note field in MADS with with a &quot;type&quot; attribute.
+  The attribute is a text string and can have any value. However, there are specific
+  type attribute values that correspond to three specific notes fields in the
+  MARC Authorities format. </p>
+<dl>
+  <dl>
+    <dt><em>	no attribute specified - </em>If no attribute is specified the field
+    is treated as a general note, e.g., MARC Authority 680 field.</dt>
+    <dt><strong>source - </strong>Equivalent to the MARC Authority 670 field,
+      Source Data Found. This field contains a reference to the bibliographic
+      item or reference work where
+  the authoritative form of the entry was found.</dt>
+    <dt><strong>history - </strong>Equivalent to the MARC Authority 678 field, Biographical or Historical
+    Data. This field can carry any additional data on the background of the
+  person, organization or topic that is the focus of the record.</dt>
+    <dt><strong>notFound - </strong>Key sources where it was not possible to find any corroborating
+    data for the establishment of a heading are
+    listed
+    in
+    this
+    field. It is
+  equivalent to the MARC Authority 675 field, Source Data Not Found.</dt>
+  </dl>  
+</dl>
+<h3>&lt;affiliation&gt;</h3>
+<p>The element <em>affiliation</em> allows the input of a full affiliation
+      and contact information for a person or organization, including position,
+      organization name, address, phone and fax numbers, email
+      address, and a date that the contact information was valid. This can be
+  used to carry one or more affiliations related to a personal name. There is
+  not
+  an exact equivalent in the MARC 21 Authority format.</p>
+<h3>&lt;url&gt;</h3>
+<p>Includes any URL associated with the entity described in the record.
+  Examples are an organization's Web site or a personal home page. Note that
+  standard<em> identifiers </em>associated with the entity (e.g. ISTC) are included
+in &lt;identifier&gt; field.</p>
+<h3>&lt;identifier&gt;</h3>
+<p>Includes an identifier associated with the entity described in
+  the record. The type attribute specifies the identifier scheme, which is an
+  uncontrolled
+list. Example of an identifier type appropriate for a MADS record is &quot;istc&quot;.</p>
+<h3>&lt;fieldOfActivity&gt;</h3>
+<p>A field of endeavor or business, area of expertise, area
+  of competence, etc. of a person or organization.</p>
+<h3>&lt;extension&gt;</h3>
+<p><em>Extension</em> is used to provide for additional information not covered
+      by MADS. It may be used for elements that are local to the creator of the
+  data, similar to MARC 9XX fields.</p>
+<h3>Record Information &lt;recordInfo&gt;</h3>
+<p>&lt;recordInfo&gt; is a wrapper element that contains subelements relating
+to information necessary for managing metadata. The same information is given
+  in MADS as in MODS recordInfo.</p>
+<h2>Sample Partial Records</h2>
+<p>The following are partial examples of how different types of MADS records
+  would be coded. They do not include the header information for the record (specifying
+  the schema, ets.), all appropriate references, or recordInfo.</p>
+<h3>Name Authority</h3>
+<pre>&lt;/mads&gt;
+	&lt;authority&gt;<br>		&lt;name&gt;<br>		   &lt;namePart&gt;Smith, John&lt;/namePart&gt;<br>		&lt;/name&gt;<br>	&lt;/authority&gt;<br>	&lt;refs&gt;
+     	&lt;ref variantType=&quot;otherVariant&quot;&gt;<br>		   &lt;name&gt;<br>				&lt;namePart&gt;Smith, J&lt;/namePart&gt;<br>		   &lt;/name&gt;
+      	&lt;/ref&gt;<br>	   	&lt;ref variantType=&quot;otherVariant&quot;&gt;
+        	&lt;name&gt;<br>				&lt;namePart&gt;Smith, John J&lt;/namePart&gt;<br>			&lt;/name&gt;
+       &lt;/ref&gt;<br>	&lt;/refs&gt;<br>	&lt;note type=&quot;history&quot;&gt;<br>		Biographical note about John Smith.<br>	&lt;/note&gt;<br>	&lt;affiliation&gt;<br>		&lt;organization&gt;Lawrence Livermore Laboratory&lt;/organization&gt;<br>		&lt;dateValid&gt;1987&lt;/dateValid&gt;<br>	&lt;/affiliation&gt;<br>&lt;/mads&gt;</pre>
+<h3>Name/Title Authority Record</h3>
+<pre>&lt;mads&gt;<br>	&lt;authority&gt;<br>		&lt;name authority=&quot;naf&quot;&gt;<br>			&lt;namePart&gt;Bach, P D Q&lt;/namePart&gt;
+		&lt;/name&gt;<br>		&lt;titleInfo&gt;
+			&lt;title&gt;Symphony in C&lt;/title&gt;<br>			&lt;partName&gt;Adaggio&lt;/partName&gt;<br>		&lt;/titleInfo&gt;<br>	&lt;/authority&gt;<br>	&lt;refs&gt;
+		&lt;ref variantType=&quot;otherVariant&quot;&gt;
+			&lt;name&gt;<br>				&lt;namePart&gt;Bach, Pretty D Q&lt;/namePart&gt;
+			&lt;/name&gt;<br>			&lt;titleInfo&gt;<br>				&lt;title&gt;Symphony in Sea&lt;/title&gt;<br>				&lt;subTitle&gt;the drowning symphony&lt;/subTitle&gt;<br>				&lt;partName&gt;Rapidissimo&lt;/partName&gt;<br>			&lt;/titleInfo&gt;<br>		&lt;/ref&gt;<br>	&lt;/refs&gt;<br>	&lt;note&gt;This guy is nuts.&lt;/note&gt;<br>&lt;/mads&gt;</pre>
+<h3>Title Authority Record</h3>
+<pre>&lt;mads&gt;
+	&lt;authority&gt;
+		&lt;titleInfo authority=&quot;naf&quot;&gt;
+			&lt;title&gt;Beowulf&lt;/title&gt;
+		&lt;/titleInfo&gt;
+	&lt;authority&gt;
+	&lt;refs&gt;
+		&lt;ref variantType=&quot;otherVariant&quot;&gt;
+			&lt;titleInfo&gt;
+				&lt;title&gt;Bjowulf&lt;/title&gt;
+			&lt;/titleInfo&gt;
+		&lt;/ref&gt;
+	&lt;/refs&gt;
+&lt;/mads&gt;</pre>
+<h3>Corporate Name Authority Record</h3>
+<pre>&lt;mads&gt;
+	&lt;authority&gt;
+		&lt;name type="corporate" authority=&quot;naf&quot;&gt;
+			&lt;namePart&gt;Unesco&lt;/namePart&gt;
+		&lt;/name&gt;
+	&lt;/authority&gt;
+   &lt;refs&gt;
+		&lt;ref variantType="otherVariant"&gt;
+			&lt;name&gt;
+		    &lt;namePart&gt;United Nations Educational, Cultural, and Scientific Organization&lt;/namePart&gt;
+	    &lt;/name&gt;
+		&lt;/ref&gt;
+	    &lt;ref relatedType="parentOrg"&gt;
+			&lt;name&gt;&lt;namePart&gt;United Nations&lt;/namePart&gt;
+	    	&lt;/name&gt;
+		&lt;/ref&gt;
+	&lt;/refs&gt;
+&lt;/mads&gt;
+</pre>
+<h3>Subject Authority Record</h3>
+<pre>&lt;mads&gt;<br>	&lt;authority&gt;<br>		&lt;topic authority=&quot;LCSH&quot;&gt;Computer programming
+		&lt;/topic&gt;<br>	&lt;/authority&gt;<br>	&lt;refs&gt;<br>		&lt;ref relatedType=&quot;broader&quot;&gt;<br>			&lt;topic&gt;Computers&lt;/topic&gt;<br>		&lt;/ref&gt;<br>		&lt;ref relatedType=&quot;narrower&quot;&gt;<br>			&lt;topic&gt;Programming languages&lt;/topic&gt;<br>		&lt;/ref&gt;<br>		&lt;ref relatedType=&quot;otherRelated&quot;&gt;<br>			&lt;topic&gt;Systems Analysis&lt;/topic&gt;<br>		&lt;/ref&gt;<br>	&lt;/refs&gt;<br>&lt;/mads&gt;</pre>
+<h3>Genre Authority Record (with subdivisions)</h3>
+<pre>&lt;mads&gt;<br>	&lt;authority authority=&quot;LCSH&quot;&gt;
+		&lt;genre&gt;Hymnals&lt;/genre&gt;
+		&lt;geographic&gt;Massachusetts&lt;/geographic&gt;
+		&lt;temporal&gt;18th century&lt;/temporal&gt;
+	&lt;/authority&gt;
+&lt;/mads&gt;</pre>
+<h3>Geographic Authority Record</h3>
+<pre>&lt;mads&gt;<br>	&lt;authority&gt;
+		&lt;geographic authority=&quot;naf&quot;&gt;Ceylon
+		&lt;/geographic&gt;
+	&lt;/authority&gt;
+	&lt;refs&gt;
+		&lt;ref relatedType=&quot;later&quot;&gt;
+			&lt;geographic&gt;Sri Lanka&lt;/geographic&gt;
+		&lt;/ref&gt;
+	&lt;/refs&gt;
+&lt;/mads&gt;</pre>
+<hr size="1" noshade>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top">
+    <td width="357"><div class="sitenav"><a href="http://www.loc.gov/">The
+      Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo; <a href="http://www.loc.gov/standards/mads/">MADS</a></div>
+      <br>
+      <span class="sitenav">
+        <!-- #BeginDate format:Am1 -->October 18, 2010<!-- #EndDate -->
+      </span></td>
+    <td width="336" align="center" class="sitenav"><a href="http://www.loc.gov/homepage/legal.html">Legal</a> | <a href="http://www.loc.gov/global/disclaim.html">External Link Disclaimer</a></td>
+    <td width="72" align="right"><div class="contactus"><a href="mailto:ndmso@loc.gov">Contact Us</a></div></td>
+  </tr>
+</table>
+</body>
+</html>

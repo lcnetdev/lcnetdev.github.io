@@ -1,0 +1,132 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>ALTO: Technical Metadata for Optical Character Recognition (Standards, Library of Congress)</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href="/standards/alto/alto-print2.css" rel="stylesheet" type="text/css" media="print">
+            <link href="/standards/alto/alto-base2.css" rel="stylesheet" type="text/css" media="screen">               
+                <!--<link type="text/css" media="print" href="/standards/alto/alto-print.css" rel="stylesheet" />
+        <style type="text/css" media="screen">
+            @import url(/standards/alto/alto-base.css);</style>-->
+        <meta http-equiv="Content-Language" content="en-us" />
+        <link rel="shortcut icon" href="/standards/alto/favicon.ico" />
+        <link rel="alternate" href="/standards/alto/feed.atom" type="application/atom+xml" title="ALTO: Technical Metadata for Optical Character Recognition (Standards, Library of Congress)" />
+        <meta name="Keywords" content="alto xml schema techical metadata optical character  recognition ocr standards library congress" />
+        <meta name="Description" content="ALTO is a XML Schema for technical metadata used with OCR scanning output. Standards (Library of Congress)" />
+        <script type="text/javascript" src="/standards/alto/alto.js"> <!-- whitespace--> </script>
+        <script type="text/javascript" src="http://cdn.loc.gov/js/lib/jquery-1.8.2.min.js"></script>
+    </head>
+    <body>
+        <form action="http://search.loc.gov:8765/query.html" method="get" name="seek1" id="seek1" accept-charset="utf-8">
+            <input type="hidden" name="col" value="loc" />
+            <input type="hidden" name="sc" value="0" />
+            <input type="hidden" name="ws" value="0" />
+            <input type="hidden" name="la" value="en" />
+            <input type="hidden" name="qm" value="0" />
+            <input type="hidden" name="st" value="1" />
+            <input type="hidden" name="nh" value="10" />
+            <input type="hidden" name="lk" value="1" />
+            <input type="hidden" name="rf" value="0" />
+            <input type="hidden" name="oq" value="" />
+            <input type="hidden" name="si" value="0" />
+            <input type="hidden" name="rq" value="0" />
+            <input type="hidden" name="qc" value="" />
+            <table align="center" class="header" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td width="475">
+                        <a id="skip" href="#skip_menu">&nbsp;</a>
+                        <div class="sitenav">
+                            <a href="/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="/standards/alto">ALTO</a>&nbsp;&raquo;&nbsp;<span class="selected">About ALTO</span>
+                        </div>
+                    </td>
+                    <td width="116">
+                        <select name="qp" tabindex="1">
+                            <option value="url:/standards/alto" selected="selected">ALTO Web Pages</option>
+                            <option value="url:/standards url:/ead url:/marc">Standards Pages</option>
+                            <option value="">All Library Pages</option>
+                        </select>
+                    </td>
+                    <td width="117" align="right">
+                        <input type="text" name="qt" id="keyword" size="18" value="" tabindex="2" />
+                    </td>
+                    <td width="67" align="right">
+                        <input class="button" id="search_button" name="search_button" type="submit" value="SEARCH" tabindex="3" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <table align="center" class="layout" cellpadding="0" cellspacing="0">
+            <tr id="mainALTO">
+                <td>
+                    <div id="graphic">
+                        <!--    <h1 class="homepage">
+                            <img src="/standards/alto/images/alto.gif" alt="ALTO Technical Metadata for Optical Character Recognition (OCR)" width="700" height="50" />
+                        </h1>-->
+                        <h1 class="homepage"> <img src="/standards/alto/images/alto-header.jpg" alt="ALTO Technical Metadata for Layout and Text Objects" width="700" height="75" /></h1>
+                    </div>
+                    <div class="goldtop">
+                        <!-- whitespace -->
+                    </div>
+                    <div class="clear">
+                        <!-- whitespace -->
+                    </div>
+                    <div class="space">
+                        <!-- whitespace -->
+                    </div>
+                    <div id="newsBlock">
+                        <div id="newsBlockTextHere">
+                        </div>                        
+                        <script type="text/javascript"> 
+                  /* fetch HTML markup news sidebar */
+                  jQuery("#newsBlockTextHere").load("sidebar_include.php");
+       </script>
+                        
+                    <!--<?php $filename = "sidebar_include.xml"; $handle = fopen($filename, "r"); $contents = fread($handle, filesize($filename)); fclose($handle); echo $contents; ?>-->
+                    <h1>About ALTO</h1>
+                    <h2 id="history">Background</h2>
+                    <p>The Analyzed Layout and Text Object (<abbr>ALTO</abbr>) XML Schema was initially developed by the <a href="http://meta-e.aib.uni-linz.ac.at/">METAe project group</a> <img src="/standards/alto/images/newsite.gif" alt="External URL: http://meta-e.aib.uni-linz.ac.at/"/> for use with the Library of Congress' <a href="/standards/mets">Metadata Encoding and Transmission Schema (METS)</a>.  While METS excels in describing the structure of objects, a schema related to the content and layout information of each piece of the object was missing. Claus Gravenhorst, who helped create ALTO for the METAe project, states that:</p>
+
+<blockquote>"During the METAe project, we learned that there is no standard to handle word positions and physical layout information (print space, margins, etc.), an essential feature for high performance repositories that are able to highlight elements within documents. Therefore, the ALTO schema has been developed. In the METS file, there are file pointers to the ALTO files that contain the text, other elements (illustrations, etc.), and word positions. We would like ALTO or a similar schema to become a standard as we do not see an alternative right now." [<a href="#cite">1</a>]</blockquote>
+
+<p>CCS Content Conversion Specialists GmbH  maintained the ALTO standard, CCS having played a crucial role in ALTO's development dating back to its creation during the METAe project  .  Then in August 2009, the Library of Congress (LC) Network Development and MARC Standards Office became the official maintenance agency for the ALTO XML Schema.  At that time LC set up an Editorial Board to help shape and advocate for ALTO.   The Board thus oversees maintenance of the ALTO XML Schema and helps foster usage in the digital library community.</p>
+<br/><br/><br/><br/><br/>
+                    
+<ol>
+<li id="cite">"Editors' Interview with Günter Mühlberger and Claus Gravenhorst of METAe." <u>RLG DigiNews</u> October 15, 2004. Available online at: <a href="http://www.worldcat.org/arcviewer/1/OCC/2007/08/08/0000070513/viewer/file2749.html">http://www.worldcat.org/arcviewer/1/OCC/2007/08/08/0000070513/viewer/file2749.html</a>.  <img src="/standards/alto/images/newsite.gif" alt="External URL: http://www.worldcat.org/arcviewer/1/OCC/2007/08/08/0000070513/viewer/file2749.html"/></li>
+                    </ol>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="footerBlock">
+                        <div id="footerBlockTextHere">
+                        </div>
+                        <script type="text/javascript"> 
+                  /* fetch HTML markup footer row */
+                  jQuery("#footerBlockTextHere").load("tablefooter.php");
+       </script></td></tr>
+            <!--<?php $filename = "tablefooter.xml"; $handle = fopen($filename, "r"); $contents = fread($handle, filesize($filename)); fclose($handle); echo $contents; ?>-->
+        </table>
+        <table align="center" class="footer" cellpadding="0" cellspacing="0" border="0">
+            <tr valign="top">
+                <td>
+                    <div class="sitenav">
+                        <a href="/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="/standards/alto">ALTO</a>&nbsp;&raquo;&nbsp;<span class="selected">About ALTO</span>
+                    </div>
+                </td>
+                <td align="right">
+                    <div class="contactus">
+                        <a href="mailto:ndmso@loc.gov">Contact Us</a>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span id="lcDate" class="sitenav">June 8, 2016 </span></td>                
+                <td align="right">
+                    <div class="contactus"><a href="http://www.loc.gov/homepage/legal.html">Legal</a> | <a href="http://www.loc.gov/global/disclaim.html">External Link Disclaimer</a></div>
+                </td>                    
+                
+            </tr>
+        </table>
+    </body>
+</html>

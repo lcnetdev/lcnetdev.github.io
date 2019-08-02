@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+
+                        "http://www.w3.org/TR/html40/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/mods.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Changes for MODS Version 3.6 : Metadata Object Description Schema: MODS (Library of Congress)</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<meta name="keywords" content="mods  metadata object description schema changes version 3.6 library congress xml">
+<meta name="description" content="Changes for MODS Version 3.6 (Metadata Object Description Schema: MODS)">
+<style type="text/css">
+<!--
+.style1 {font-size: x-small}
+-->
+</style>
+<!-- InstanceEndEditable -->
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="mods-print.css" type="text/css" media="print">
+<style type="text/css">
+@import url(mods.css);
+</style>
+</head>
+<body link="#000099" vlink="#0066CC" bgcolor="#FFFFFF">
+<table class="layout2">
+  <tr>
+    <td class="top-breadcrumbs"><a id="skip" href="#skip_menu">&nbsp;</a><a href="http://www.loc.gov/">The Library of Congress</a> &raquo; <a href="http://www.loc.gov/standards/">Standards</a> &raquo; <a href="http://www.loc.gov/mods/">MODS Official Web Site</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://www.loc.gov/standards/mods/"><img src="images/mods-bar-760.gif" alt="Metadata Object Description Schema: Official Web Site" width="760" height="41" border="0"></a></td>
+  </tr>
+  <tr>
+    <td><a href="http://www.loc.gov/standards/mods/">HOME</a> &gt;&gt; <!-- InstanceBeginEditable name="topbreadcrumb" -->MODS 3.6 Changes <!-- InstanceEndEditable --><a name="skip_menu"></a><!-- InstanceBeginEditable name="content" -->
+
+<h1>Approved Changes for MODS 3.6</h1>
+	
+<p><strong>Last updated March 1, 2016</strong></p>
+<br/>
+<p>The following changes for MODS Version 3.6 have been approved  by the <a href="http://www.loc.gov/standards/mods/editorial-committee.html">MODS Editorial Committee</a>. </p>
+
+
+<p><strong>Approved Changes:</strong>
+<br>
+
+<ol>
+<li><a href="http://www.loc.gov/standards/mods/changes-3-6-hierarchicalGeographic.html">hierachicalGeographic</a></li><br>
+
+
+<li>Add 4 new attributes (that refer to other attributes) for &lt;relatedItem&gt;:<br/>
+  <br/>
+	     <ul>
+	           <li>otherType </li>
+	           <li>otherTypeAuth </li>
+	           <li>otherTypeAuthURI </li>
+	           <li>otherTypeURI</li>
+        </ul></li>
+<br/>
+<li>Define attribute @xml:space  (value"preserve") for  nonSort element<br>
+<br>
+This change allows for embedding HTML in MODS, linking with @altRepGrp, and indicating the format of the alternative encoding. It applies to those elements that are most likely to have values that need HTML or  other formatting that cannot be expressed inside a MODS XML record. Use the altFormat attribute to link out of the record to the<strong> same content</strong>, formatted or marked up in a different way. Optionally, include the contentType attribute with a media-type as its value (e.g. text/html) to indicate the content type of the target. Where there are multiple alternatives, use the already defined altRepGroup attribute to bind the related instances of each element.<br>
+  <br>
+<li>Add &lt;nameIdentifier&gt; under &lt;name&gt;</li>
+<br>
+<li>Make &lt;cartographics&gt; extensible</li>
+<br>
+<li>Add &lt;recordInfoNote&gt; under &lt;recordInfo&gt;</li>
+<br>
+<li>Add &lt;itemIdentifier&gt; under &lt;location&gt; with type attributes</li>
+<br>
+<br>
+</ol>
+
+
+
+<p>
+<ol>
+</li>
+
+</ol>
+
+
+
+
+
+<br>
+
+
+
+      <!-- InstanceEndEditable -->
+<HR noshade size="1">
+</td>
+</tr>
+<tr>
+<td><a href="http://www.loc.gov/standards/mods/">HOME</a> &gt;&gt; <!-- InstanceBeginEditable name="bottombreadcrumb" -->Changes for MODS Version 3.6 <!-- InstanceEndEditable -->
+  <p><strong>Questions and comments:<br>
+  </strong>
+              <a href="mailto:ndmso@loc.gov">Contact Us</a> (
+              <!-- #BeginDate format:Am1 -->February 8, 2018<!-- #EndDate -->
+      )
+      <br>
+      <a href="http://www.loc.gov/homepage/legal.html">Legal</a> | <a href="http://www.loc.gov/global/disclaim.html">External Link Disclaimer</a></p></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

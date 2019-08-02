@@ -1,0 +1,24 @@
+AddType application/rss+xml .rss20.xml
+AddType application/atom+xml .atom10.xml
+AddType application/rdf+xml .rdf
+AddType application/x-turtle .ttl
+ 
+<Files iso639-5.rss20.xml>
+ForceType application/rss+xml
+</Files>
+
+<Files iso639-5.atom10.xml>
+ForceType application/atom+xml
+</Files>
+
+<Files monarchos.rss>
+ForceType application/rss+xml
+</Files>
+
+<Files iso639-5.skos.rdf>
+ForceType application/rdf+xml
+</Files>
+
+#<Files foaf.ttl>
+#ForceType application/x-turtle
+#</Files>

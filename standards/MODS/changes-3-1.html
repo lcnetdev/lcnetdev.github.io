@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<title>MODS  Version 3.1 changes</title>
+<base href="http://www.loc.gov/standards/mods/changes-3-1.html">
+<meta name="keywords" content="mods changes metadata object description schema version 3.1">
+<meta name="description" content="This document lists changes implemented for version 3.1 of MODS (Metadata Object Description Schema)">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="mods.css" type="text/css">
+</head>
+<body link="#000099" vlink="#0066CC" bgcolor="#FFFFFF">
+<table width=600 cellpadding=4 cellspacing=0 border=0 align=center>
+  <tr> 
+    <td><img src="images/mods-bar.gif" width="600" height="40" alt="Metadata Object Description Schema: Official Web Site"></td>
+  </tr>
+  
+
+  <tr> 
+    <td><h1>MODS  Version 3.1 changes</h1>
+      <p>A  new version of the MODS XML schema (version 3.1)  now available
+        at the MODS web site at:
+        <a href="v3/mods-3-0.xsd">www.loc.gov/standards/mods/v3/mods-3-1.xsd</a>.      </p>
+      <p>This replaces version 3.0, which was finalized in January 2004. Changes
+        are minor in that there are additions and corrections that do not invalidate
+        existing MODS 3.0 instances. The primary need for revision is to incorporate        the
+        changes necessary to finalize MADS version 1.0 so
+        that MADS may reference MODS elements        instead
+        of repeating them. There are several other changes that have been        discussed
+        on the MODS list by implementors or are small additions that we would
+        like to        incorporate
+        at this time.  The new version of MODS makes
+        the following changes.</p>
+      <ol>
+        <li>Implement the reorganization for implementation of MADS, since it
+          uses MODS<br>
+          structures.          <br>
+        </li>
+        <li>Change &lt;coordinates&gt; to no longer be required under &lt;geographic&gt;.  
+          This was an oversight/error.<br>
+        </li>
+        <li>Define &lt;part&gt; under &lt;mods&gt;, not just &lt;relatedItem&gt;.
+          Take out          documentation (in MODS guidelines) restricting &lt;relatedItem&gt; to          type=&quot;host&quot;.<br>
+        <li>Addition of attribute &quot;objectPart&quot; to &lt;language&gt; to
+          indicate language          of what part of the resource described (to
+          be distinguished from the lang          and xml:lang attributes, which
+          refer to language of the value in the tag).          e.g. &lt;language
+          objectPart=&quot;summary&quot; authority=&quot;iso639-2b&quot;&gt;spa&lt;/language&gt;          indicates
+          that only the summary is in Spanish.          Rationale: there is no
+          way to indicate that the language specified is for          something
+          other than the entire text.
+(Note: MARC 21 uses separate subfields in field 041 for these distinctions.)
+<p></p>
+</li>
+        <li>Add attribute &quot;type&quot; to dateOther to specify other kinds
+          of dates. (Not          enumerated list).<br>
+          Rationale: Everyone has their favorite date type associated with specific
+          materials. MODS enumerates the most important ones as specified by
+          users,          but  because of the importance and variety of dates
+          associated with objects, it is desirable to allow for extensibility
+          for other types of dates.          <br>
+        </li>
+        <li>        Changes for the emerging content standard Cataloging Cultural
+          Objects<br>
+          <ul>
+            <li>add attribute &quot;type&quot; to &lt;genre&gt;<br>
+              Rationale: to distinguish different aspects of genre: in CCO this
+                  includes              class, work type, style.
+            </li>
+            <li>add attribute &quot;type&quot; to &lt;form&gt; under &lt;physicalDescription&gt;<br>
+              Rationale: to be able to specify whether the form concerns materials
+                or              techniques.e.g. type=&quot;material&quot;: oil paint; type=&quot;technique&quot;:
+              painting
+            <li>add attribute &quot;type&quot; to &lt;physicalLocation&gt; under &lt;location&gt;<br>
+              Rationale: to indicate different kinds of locations, e.g. current,              discovery, former, creation              
+          </ul>
+        </li>
+        <li>Allow for empty elements for xlinked elements.          Rationale:
+        xlink is an attribute, so the element with which it's          associated may be empty if only a link and no text is needed.        <br>        
+        <li>Add displayLabel attribute in &lt;classification&gt;.          Rationale:
+          corresponds to MARC 050$3 (materials specified), which is needed          for
+          instance for mapping to LC's American Memory records.<br>
+        <li>The base of urlType changed to xsd:anyURI, from xsd:string. <br>
+          Rationale: this enforces the URI syntax, instead of just using string.
+             <br>        
+        <li>extensionType, change<br>&lt;          xsd:any processContents=&quot;skip&quot; ....../&gt;<br>
+to<br>
+&lt;xsd:any processContents=&quot;lax&quot; ....../&gt;<br>
+Rationale: changing to &quot;lax&quot; allows a user to define an extension and
+have
+it validate if he supplies a schema, and also allows it to avoid
+validating by simply not defining a schema.
+</ol>  
+      <p>This list does not include corrections under “Documentation” or other
+        annotations, comments, etc. that are not part of the schema itself. </p>
+      <p><em>
+        July 25, 2005
+      </em> </p>
+      <HR noshade size="1">
+      <img src="images/mods-icon.gif" width="140" height="48" align="right" alt=""> 
+      <STRONG>Questions and comments:</STRONG> 
+      <ADDRESS> 
+      <!--help desk email start -->
+      <a href="mailto:ndmso@loc.gov">Contact Us</a> 
+      <!--help desk email end -->
+      ( 
+      <!-- #BeginDate format:Am3 -->10/21/2005<!-- #EndDate -->
+      )</ADDRESS>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

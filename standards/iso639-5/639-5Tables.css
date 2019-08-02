@@ -1,0 +1,15 @@
+table.639-5DynamicOutputTables {
+    width: 90%;
+}
+
+ol.loweralpha {
+    list-style-type: lower-alpha;
+}
+
+ol.loweralpha > li{
+    border-bottom: 1px solid #DFDFDF;
+}
+
+table.guiSmall {
+    width: 90%;
+}

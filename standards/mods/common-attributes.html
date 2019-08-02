@@ -1,0 +1,652 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<title>MODS Schema - Commom Attributes</title>
+<meta name="keywords" content="mods 3 v3 element attribute overview metadata object description schema web site library congress xml">
+<meta name="description" content="Top Level Elements and Attributes (MODS User Guidelines, Version 3, Metadata Object Description Schema (MODS), Library of Congress">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" media="print" type="text/css" href="file://///lcdataserver/LOCPROF.003/rden/Desktop/attributes_files/mods-v3-print.css">
+<style type="text/css">
+@import url(file://///lcdataserver/LOCPROF.003/rden/Desktop/css/mods-v3.css);
+</style>
+</head>
+<body>
+<!-- Begin Header Table -->
+<table class="header">
+  <tbody><tr>
+    <td class="left">&nbsp;</td>
+    <td class="right"><form action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" name="seek1" method="get">
+      <input name="qt" id="keyword" size="18" tabindex="2" type="text">
+    </form></td>
+  </tr>
+</tbody></table>
+<!-- End Header Table -->
+<table class="layout">
+  <tbody><tr>
+    <td><div class="header">
+      <h1 class="top-menu">MODS Schema - Common Attributes</h1>
+    </div>
+<p>This paper describes certain attributes defined in the MODS schema. Specifically, it described attributes used by multiple (but not necessarily all) elements. The main purpose of this document is to provide links (anchors) that can be used by the <a href="link needed">MODS Guidelines</a> when describing elements that use these attributes.</p>
+      <p>&nbsp;</p>
+      <h2><a name="languagerelated" id="languagerelated"></a>Language-Related Attributes</h2>
+      <h3><a name="lang" id="lang"></a><strong>lang</strong></h3>
+      <p>@lang indicates the language of the content of an element, using a code from <a href="https://www.loc.gov/standards/iso639-2/"> ISO&nbsp;639-2/b</a>.
+ </p>
+      <table width="500" border="1">
+        <tr>
+          <td width="490"><div class="indent1">
+            <p><strong>example</strong></p>
+            <p>&lt;name type=&quot;personal&quot;&gt; &nbsp;&nbsp;&nbsp;&nbsp;<br />
+              &nbsp;&nbsp;&nbsp;            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;namePart type=&quot;given&quot;&gt;Jack&lt;/namePart&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;namePart type=&quot;family&quot;&gt;May&lt;/namePart&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;namePart type=&quot;termsOfAddress&quot;&gt;I&lt;/namePart&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;description <strong>lang=&quot;eng&quot;</strong>&gt;District Commissioner&lt;/description&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;description <strong>lang=&quot;fre</strong>&quot;&gt;Préfet de région&lt;/description&gt;<br />
+              &lt;/name&gt;</p>
+            </p></div></td>
+        </tr>
+  </table>
+      <h3>&nbsp;</h3>
+      <h3><a name="xmllang" id="xmllang"></a><strong>xml:lang</strong> </h3>
+      <p>@xml:lang serves the same purpose as @lang, using codes from <a href="http://www.ietf.org/rfc/rfc3066.txt"> RFC&nbsp;3066</a>, two-character ISO 639-1) codes,  along with three-character ISO 639-2 
+        codes
+        for languages not listed in 639-1.      </p>
+      <table width="500" border="1">
+        <tr>
+          <td width="490"><div class="indent1">
+            <p><strong>example</strong></p>
+            <div class="indent1">&lt;titleInfo <strong>xml:lang="fr"</strong> type="translated"&gt;</div>
+            <div class="indent2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;nonSort&gt;L'&lt;/nonSort&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;homme qui voulut être roi&lt;/title&gt;</div>
+            <div class="indent1">&lt;/titleInfo&gt;</div></div></td>
+        </tr>
+    </table>
+      <h3>&nbsp;</h3>
+      <h3><a name="script" id="script"></a><strong>script</strong> </h3>
+      <p>Indicates the script used for an element, using codes from <a href="http://www.unicode.org/iso15924/"> ISO&nbsp;15924</a>  (<i>Code for the representation of names of scripts</i>). </p>
+      <table width="500" border="1">
+        <tr>
+          <td width="490"><div class="indent1">
+            <p><strong>example</strong></p>
+            <p>&lt;titleInfo lang=&quot;rus&quot; <strong>script=&quot;Latn</strong>&quot;&gt;<br />    
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;              &lt;title&gt;Geodezii︠a︡ i fotogrammetrii︠a︡&lt;/title&gt;<br />&lt;/titleInfo&gt; </p>
+          </div></td>
+        </tr>
+      </table>
+      <h3>&nbsp;</h3>
+      <h3><a name="transliteration" id="transliteration"></a><strong>transliteration</strong> </h3>
+      <p>Indicates the transliteration technique used for an element. See <a href="https://www.loc.gov/catdir/cpso/roman.html">https://www.loc.gov/catdir/cpso/roman.html</a> for suggested values.</p>
+      <table width="679" border="1">
+        <tr>
+          <td width="669"><div class="indent1">
+            <p><strong>example</strong></p>
+            <p>&lt;name type=&quot;personal&quot;&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;              &lt;namePart type=&quot;given&quot; lang=&quot;chi&quot; transliteration=&quot;chi-alalc97&quot;&gt;Han&lt;/namePart&gt; <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;              &lt;namePart type=&quot;family&quot; lang=&quot;chi&quot; transliteration=&quot;chi-alalc97&quot;&gt;Ye&lt;/namePart&gt; <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;              &lt;namePart type=&quot;given&quot; lang=&quot;chi&quot; script=&quot;Hant&quot;&gt;瀚&lt;/namePart&gt;<br />
+              &lt;/name&gt;<br />
+            </p>
+            <p>&nbsp;</p>
+          </div></td>
+        </tr>
+      </table>
+      <h3></h3>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <h2><a name="dates" id="dates"></a>Date Attributes</h2>
+      <p class="nomargin">These attributes are used with date elements: &lt;dateIssued&gt;, &lt;dateCreated), &lt;dateCaptured&gt;, etc.</p>
+      <h3 class="nomargin"><a name="encoding" id="encoding"></a><strong>encoding</strong> </h3>
+      <p class="nomargin"> @encoding indicates how the date is encoded and is one of the following values:        </p>
+      <ul>
+            <li><i>w3cdtf</i> – indicates the encoding specified by the W3C profile of ISO 8601, <a href="http://www.w3c.org/TR/NOTE-datetime"> Date and Time Formats</a>. It specifies the extended format for dates using delimiters, e;g;: 
+1985-01-20.</li>
+            <li><i>iso8601</i> – Indicates ISO 8601 encoding using"basic" 
+format - no delimiters, e.g. 19850120.</li>
+            <li><i>marc</i> – formatted according 
+              to MARC 21 rules in field 008/07-14 for dates of publication/issuance. 
+              Thus, this would only apply to &lt;dateIssued&gt;. See Legal Characters section under field 008/06 of <a href="https://www.loc.gov/marc/bibliographic/bd008a.html"> MARC Bibliographic</a>.</li>
+            <li><i>edtf</i> – For dates coded according to Extended Date/Time Format (reference pending)            which extends ISO 8601 to express special 
+              forms of dates that are not covered.</li>
+            <li><i>temper</i> – For dates coded according to <a href="http://tools.ietf.org/id/draft-kunze-temper-01.txt">Temporal Enumerated Ranges</a>.</li>
+        </ul>
+        <table width="795" border="1">
+          <tr>
+            <td width="785"><div class="indent1">
+              <p><strong>example</strong>s</p>
+              <div class="indent1">
+                <div class="indent1">
+                  <div class="indent1">
+                    <ul>
+                      <div class="indent1">&lt;dateIssued <strong>encoding=&quot;marc&quot;</strong>&gt;19uu&lt;/dateIssued&gt;</div>
+                      <div class="indent1">&lt;dateIssued <strong>encoding=&quot;w3cdtf&quot;</strong>&gt;2004-06-04T12:12:12&lt;/dateIssued&gt;</div>
+                      <div class="indent1">&lt;dateIssued <strong>encoding=&quot;iso8601&quot;</strong>&gt;20040604T121212&lt;/dateIssued&gt;</div>
+                      <div class="indent1">&lt;dateOther <strong>encoding=&quot;edtf&quot;</strong>&gt;200X&lt;/dateOther&gt;</div>
+                      <div class="indent1">&lt;dateCreated <strong>encoding=&quot;temper&quot;</strong>&gt;1860~-1872&lt;/dateCreated&gt;</div>
+                    </ul>
+                    <br />
+                    </div><div class="indent1"><div class="indent1"></div>
+                  </div>
+                </div>
+              </div>
+            </div></td>
+          </tr>
+        </table>
+        <p></p>
+        <p></p>
+        <h3><a name="point" id="point"></a>point </h3>
+        <p> When @point is included, that means that the activity (creation, etc.) occurred over a date interval rather than on a single date. @point has the following values: </p>
+        <ul>
+          <li><i>start</i> – Indicates that this value is the start date.</li>
+          <li><i>end</i> – Indicates that this value is the end date. </li>
+        </ul>
+        <p>If @point is not included, the activity assumed to have occurred on a single date. </p>
+        <table width="795" border="1">
+          <tr>
+            <td width="785"><div class="indent1">
+              <p><strong>example</strong></p>
+              <div class="indent1">
+                <div class="indent1">
+                  <div class="indent1">
+                    <ul>
+                      <div class="indent1">
+                        <div class="indent1">&lt;originInfo&gt;</div>
+                        <div class="indent2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;dateOther <strong>point=&quot;start&quot;</strong>&gt;20011008&lt;/dateOther&gt;<br />
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;dateOther <strong>point=&quot;end</strong>&quot;&gt;20011027&lt;/dateOther&gt;</div>
+                        <div class="indent1">&lt;/originInfo&gt;</div>
+                      </div>
+                    </ul>
+                    <br />
+                  </div>
+                  <div class="indent1">
+                    <div class="indent1"></div>
+                  </div>
+                </div>
+              </div>
+            </div></td>
+          </tr>
+        </table>
+        <p>If an activity of a given type (e.g. &quot;capture&quot;) occurs more than once, each should be represented within separate instances of &lt;originInfo&gt;. If an activity has a start and end, the pair is to be represented within the same instance of &lt;originInfo&gt;.
+        <table width="795" border="1">
+          <tr>
+            <td width="785"><div class="indent1">
+              <p><strong>example</strong></p>
+              <div class="indent1">
+                <div class="indent1">
+                  <div class="indent1">
+                    <ul>
+                      <div class="indent1">
+                        <div class="indent1"></div>
+                        <div class="indent2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;originInfo&gt;<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                            &lt;dateCaptured point=&quot;start&quot;&gt;20020702 &lt;/dateCaptured&gt; <br />                          
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;dateCaptured point=&quot;end&quot;&gt;20021203&lt;/dateCaptured&gt;<br />                          &lt;/originInfo&gt;
+                            <div class="indent2">
+                              <p>&lt;originInfo&gt;<br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                            &lt;dateCaptured point=&quot;start&quot;&gt;20030102 &lt;/dateCaptured&gt; <br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;dateCaptured point=&quot;end&quot;&gt;20030503&lt;/dateCaptured&gt;<br />
+                                &lt;/originInfo&gt;</p>
+                            </div>
+                            <div class="indent1"></div>
+                        </div>
+                        <div class="indent1"></div>
+                      </div>
+                    </ul>
+                    <br />
+                  </div>
+                  <div class="indent1">
+                    <div class="indent1"></div>
+                  </div>
+                </div>
+              </div>
+            </div></td>
+          </tr>
+        </table>
+        <p>
+        <p>
+        <p>                        
+        <h3><strong><a name="keydate" id="keydate"></a>keyDate</strong> </h3>
+        <p> The only value for @keyDate is &quot;<i>yes</i>&quot; to indicate that a particular 
+          date is distinguished among several dates.  The sense in which the date is a &quot;key&quot; date depends on the application.</p>
+        <p>&nbsp;</p>
+        <table width="795" border="1">
+          <tr>
+            <td width="785"><div class="indent1">
+              <p><strong>example</strong></p>
+              <div class="indent1">
+                <div class="indent1">
+                  <div class="indent1">
+                    <ul>
+                      <div class="indent1">
+                        <div class="indent1">&lt;originInfo eventType=&quot;manufacture&quot;&gt;<br /> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                          &lt;dateOther type=&quot;manufacture&quot; <strong>keyDate=&quot;yes&quot;&gt;</strong>1922&lt;/dateOther&gt;        <br />&lt;/originInfo&gt; </div>
+                      </div>
+                    </ul>
+                    <br />
+                  </div>
+                  <div class="indent1">
+                    <div class="indent1"></div>
+                  </div>
+                </div>
+              </div>
+            </div></td>
+          </tr>
+        </table>
+        <p>&nbsp;</p>
+        <p><a name="qualifier" id="qualifier"></a><strong>qualifier</strong> </p>
+        <p> The following values are defined for @qualifier: </p>
+        <ul>
+          <li><em>approximate</em> – The date is approximate (not guaranteed to be exact).</li>
+          <li><em>inferred</em> – The date has not been transcribed directly from the resource.. </li>
+          <li><em>questionable</em> – The date is questionable, e.g. &quot;1972?&quot;. </li>
+        </ul>
+        <table width="795" border="1">
+          <tr>
+            <td width="785"><div class="indent1">
+              <p><strong>example</strong></p>
+              <div class="indent1">
+                <div class="indent1">
+                  <div class="indent1">
+                    <ul>
+                      <div class="indent1">
+                        <div class="indent1">&lt;originInfo eventType=&quot;manufacture&quot;&gt; <br />
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                          &lt;publisher&gt;Kinsey Printing Company&lt;/publisher&gt; <br />
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                          &lt;dateOther type=&quot;manufacture&quot; keyDate=&quot;yes&quot; <strong>qualifier=&quot;inferred&quot;&gt;</strong>1922&lt;/dateOther&gt; <br />                          &lt;/originInfo&gt; </div>
+                      </div>
+                    </ul>
+                    <br />
+                  </div>
+                  <div class="indent1">
+                    <div class="indent1"></div>
+                  </div>
+                </div>
+              </div>
+            </div></td>
+          </tr>
+        </table>
+        <p>&nbsp;</p>
+        <p><a name="calendar" id="calendar"></a><strong>calendar</strong></p>
+        <p>@calendar may be used to supply an alternative calendar (the default is &quot;gregorian&quot;).</p>
+        <table width="795" border="1">
+          <tr>
+            <td width="785"><div class="indent1">
+              <p><strong>example</strong></p>
+              <div class="indent1">
+                <div class="indent1">
+                  <div class="indent1">
+                    <ul>
+                      <div class="indent1">
+                        <div class="indent1">&lt;dateCreated  <strong>calendar=&quot;hebrew&quot;</strong>&gt;5777-11-25&lt;/dateCreated&gt;</div>
+                      </div>
+                    </ul>
+                    <br />
+                  </div>
+                  <div class="indent1">
+                    <div class="indent1"></div>
+                  </div>
+                </div>
+              </div>
+            </div></td>
+          </tr>
+        </table>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <h2><a name="linking" id="linking"></a>Linking attributes</h2>
+        <p><strong>External Linking</strong></p>
+        <p><a name="id" id="id"></a><strong>ID</strong> </p>
+        <p>@ID which is of type xs:ID (in the xs: namespace, http://www.w3.org/2001/XMLSchema), is used to attach an identifier to an element; the identifier acts as an anchor so that the element may be linked to from outside the MODS instance. </p>
+        <table width="795" border="1">
+          <tr>
+            <td width="785"><div class="indent1">
+              <p><strong>example</strong></p>
+              <div class="indent1">
+                <div class="indent1">
+                  <div class="indent1">
+                    <ul>
+                      <div class="indent1">
+                        <div class="indent1">
+                          <p>&lt;relatedItem type=&quot;constituent&quot; <strong>ID=&quot;DMD_disc01_tr001&quot;</strong>&gt; <br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                            &lt;titleInfo type=&quot;uniform&quot; authority=&quot;naf&quot;&gt; <br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                            &lt;title&gt;Chaconne von Vitali&lt;/title&gt; <br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                            &lt;/titleInfo&gt; </p>
+                        </div>
+                      </div>
+                    </ul>
+                    <br />
+                  </div>
+                  <div class="indent1">
+                    <div class="indent1"></div>
+                  </div>
+                </div>
+              </div>
+            </div></td>
+          </tr>
+        </table>
+        <p></p>
+        <p>&nbsp;</p>
+        <h3><strong><a name="xlink" id="xlink"></a>xlink</strong>:href </h3>
+        <p> Used to link to external content. <span class="indent1">In the following example, the&lt;abstract&gt; element is empty, the content of the abstract is in an external file, and a link is provided.</span></p>
+        <table width="795" border="1">
+          <tr>
+            <td width="785"><div class="indent1">
+              <p><strong>example</strong></p>
+              <div class="indent1">
+                <div class="indent1">
+                  <div class="indent1">
+                    <ul>
+                      <div class="indent1">
+                        <div class="indent1"><strong>&lt;abstract xlink:href= &quot;</strong>http://xyz.example.org/abstractXYZ<strong>&quot;/&gt;</strong></div>
+                      </div>
+                    </ul>
+                    <br />
+                  </div>
+                  <div class="indent1">
+                    <div class="indent1"></div>
+                  </div>
+                </div>
+              </div>
+            </div></td>
+          </tr>
+        </table>
+        <p>&nbsp;</p>
+        <h3><strong>Internal Linking</strong></h3>
+        <h3><a name="altrepgroup" id="altrepgroup"></a><strong>altRepGroup</strong> </h3>
+        <p> used to link alternative representations of the same 
+          element content, for different languages, scripts, transliterations, and 
+          translations.  The same attribute value is applied to each of the 
+          element instances to be linked.</p>
+        <p>&nbsp;</p>
+        <table width="500" border="1">
+          <tr>
+            <td width="490"><div class="indent1">
+              <p><strong>example</strong></p>
+              <div class="indent1">
+                <div class="indent1">&lt;name type=&quot;personal&quot; <strong>script=&quot;Latn&quot; altRepGroup=&quot;8&quot;</strong>&gt;</div>
+                <div class="indent2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;namePart&gt;Būrī, Muhammad al-Tihāmī,&lt;/namePart&gt;</div>
+                <div class="indent2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;namePart type=&quot;date&quot;&gt;d. 1827&lt;/namePart&gt;</div>
+                <div class="indent1">&lt;/name&gt;<br />
+                  <br />
+                </div>
+                <div class="indent1">&lt;name type=&quot;personal&quot; <strong>script=&quot;Arab&quot; altRepGroup=&quot;8&quot;</strong>&gt;</div>
+                <div class="indent2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;namePart&gt;بوري، محمد التهامي،&lt;/namePart&gt;</div>
+                <div class="indent2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;namePart type=&quot;date&quot;&gt;d. 1827&lt;/namePart&gt;</div>
+                <div class="indent1">&lt;/name&gt;</div>
+              </div>
+            </div></td>
+          </tr>
+        </table>
+        <h3>&nbsp;</h3>
+        <h3><a name="nametitlepgroup" id="nametitlegroup"></a>nameTitleGroup</h3>
+        <p>@nameTitleGroup can be used with &lt;name&gt; and &lt;titleInfo&gt; to link a name and a title. (The same value is assigned for the name and the title.) It can be used to link names to uniform titles when the name-uniform title combination is an authority-controlled heading.</p>
+        <p>In the following example, there are multiple names and multiple titles, and @nameTitleGroup is used to link together one name/title pair.</p>
+        <table width="560" border="1">
+          <tr>
+            <td><p><span style="font-variant-ligatures:normal; font-variant-caps:normal; letter-spacing:normal; orphans:2; text-align:left; text-indent:0px; text-transform:none; white-space:normal; widows:2; word-spacing:0px; -webkit-text-stroke-width:0px; background-color:rgb(255, 255, 255); text-decoration-style:initial; text-decoration-color:initial; display:inline !important; float:none; font-family:Verdana, Arial, Helvetica, sans-serif; font-size:13.3333px; color:rgb(51, 51, 51); font-style:normal; font-weight:400; ">&lt;titleInfo&gt;</span><br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13.3333px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;" />
+              <span style="font-family:Verdana, Arial, Helvetica, sans-serif; font-size:13.3333px; color:rgb(51, 51, 51); font-style:normal; font-weight:400; ">     &lt;title&gt;Beethoven's Emperor concerto, lecture recital&lt;/title&gt;</span><br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13.3333px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;" />
+              <span style="font-family:Verdana, Arial, Helvetica, sans-serif; font-size:13.3333px; color:rgb(51, 51, 51); font-style:normal; font-weight:400; ">&lt;/titleInfo&gt;<br />
+              </span><br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13.3333px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;" />
+                <span style="font-family:Verdana, Arial, Helvetica, sans-serif; font-size:13.3333px; color:rgb(51, 51, 51); font-style:normal; font-weight:400; ">&lt;titleInfo type=&quot;uniform&quot; <strong>nameTitleGroup=&quot;1&quot;</strong>&gt;</span><br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13.3333px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;" />
+                <span style="font-family:Verdana, Arial, Helvetica, sans-serif; font-size:13.3333px; color:rgb(51, 51, 51); font-style:normal; font-weight:400; ">     &lt;title&gt;Concertos, piano, orchestra, no. 5, op. 73, Eÿ major&lt;/title&gt;<br />
+                </span><span style="font-family:Verdana, Arial, Helvetica, sans-serif; font-size:13.3333px; color:rgb(51, 51, 51); font-style:normal; font-weight:400; "> &lt;/titleInfo&gt;</span><br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13.3333px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;" />
+              </p>
+              <p><span style="font-family:Verdana, Arial, Helvetica, sans-serif; font-size:13.3333px; color:rgb(51, 51, 51); font-style:normal; font-weight:400; ">&lt;name type=&quot;personal&quot; <strong>nameTitleGroup=&quot;1&quot;</strong>&gt;</span><br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13.3333px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;" />
+                <span style="font-family:Verdana, Arial, Helvetica, sans-serif; font-size:13.3333px; color:rgb(51, 51, 51); font-style:normal; font-weight:400; ">     &lt;namePart&gt;Beethoven, Ludwig van&lt;/namePart&gt;</span><br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13.3333px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;" />
+                <span style="font-family:Verdana, Arial, Helvetica, sans-serif; font-size:13.3333px; color:rgb(51, 51, 51); font-style:normal; font-weight:400; ">     &lt;namePart type=&quot;date&quot;&gt;1770-1827&lt;/namePart&gt;</span><br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13.3333px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;" />
+                <span style="font-family:Verdana, Arial, Helvetica, sans-serif; font-size:13.3333px; color:rgb(51, 51, 51); font-style:normal; font-weight:400; ">&lt;/name&gt;</span><br />
+                <br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13.3333px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;" />
+                <span style="font-family:Verdana, Arial, Helvetica, sans-serif; font-size:13.3333px; color:rgb(51, 51, 51); font-style:normal; font-weight:400; ">&lt;name type=&quot;personal&quot;&gt;</span><br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13.3333px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;" />
+                <span style="font-family:Verdana, Arial, Helvetica, sans-serif; font-size:13.3333px; color:rgb(51, 51, 51); font-style:normal; font-weight:400; ">     &lt;namePart&gt;Sharpe, David&lt;/namePart&gt;</span><br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13.3333px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;" />
+                <span style="font-family:Verdana, Arial, Helvetica, sans-serif; font-size:13.3333px; color:rgb(51, 51, 51); font-style:normal; font-weight:400; ">     &lt;role&gt;</span><br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13.3333px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;" />
+                <span style="font-family:Verdana, Arial, Helvetica, sans-serif; font-size:13.3333px; color:rgb(51, 51, 51); font-style:normal; font-weight:400; ">          &lt;roleTerm type=&quot;code&quot; authority=&quot;marcrelator&quot;&gt;prf&lt;/roleTerm&gt;</span><br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13.3333px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;" />
+                <span style="font-family:Verdana, Arial, Helvetica, sans-serif; font-size:13.3333px; color:rgb(51, 51, 51); font-style:normal; font-weight:400; ">     &lt;/role&gt;</span><br style="color: rgb(51, 51, 51); font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13.3333px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;" />
+              <span style="font-family:Verdana, Arial, Helvetica, sans-serif; font-size:13.3333px; color:rgb(51, 51, 51); font-style:normal; font-weight:400; ">&lt;/name&gt;</span></p></td>
+          </tr>
+        </table>
+        <p></p>
+        <p></p>
+        <p></p>
+      <h2><strong><a name="authorityattributes" id="authorityattributes"></a>Authority Attributes</strong></h2>
+      <h3><a name="authority" id="authority"></a>authority</h3>
+      <p>The name of an authoritative list of terms for an element whose values are controlled.      </p>
+      <p>In the following example &quot;marcrelator&quot; is the name of the controlled list at <a href="https://www.loc.gov/marc/relators/relaterm.html">https://www.loc.gov/marc/relators/relaterm.html</a></p>
+      <table width="700" border="1">
+        <tr>
+          <td width="690"><p><strong>example</strong></p>
+            <p>&lt;role&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;roleTerm type=&quot;text&quot; <strong>authority=&quot;marcrelator&quot;</strong>&gt;author&lt;/roleTerm&gt; <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;roleTerm type=&quot;code&quot; <strong>authority=&quot;marcrelator&quot;</strong>&gt;aut&lt;/roleTerm&gt; <br />
+&lt;/role&gt;</p></td>
+        </tr>
+    </table>
+      <p> @authority for &lt;languageTerm&gt;, &lt;placeTerm&gt;, and &quot;geographicCode&gt; (and only for these three elements) are defined with controlled lists:</p>
+      <p> Controlled list of values for @authority for &lt;languageTerm&gt; </p>
+      <ul>
+        <li> rfc3066; iso639-2b</li>
+        <li>so639-3</li>
+        <li>rfc4646 </li>
+        <li>rfc5646</li>
+      </ul>
+      <p>Controlled list of values for @authority for &lt;placeTerm&gt; and &lt;geographicCode&gt;</p>
+      <ul>
+        <li> marcgac</li>
+        <li>marccountry </li>
+        <li> iso3166 </li>
+      </ul>
+      <h3><a name="authorityuri" id="authorityuri"></a>authorityURI</h3>
+      <p>The URI for the authoritative list.</p>
+      <p>In the following example, <a href="https://www.loc.gov/marc/relators/relaterm.html">https://www.loc.gov/marc/relators/relaterm.html</a> is the URI for the controlled list whose name is&quot;marcrelator&quot;. When @authorityURI is known, it should be supplied rather than @authority.<a href="https://www.loc.gov/marc/relators/relaterm.html"></a></p>
+      <p>&nbsp;</p>
+      <table width="778" border="1">
+        <tr>
+          <td width="768"><p><strong>example</strong></p>
+            <p>&lt;role&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;roleTerm type=&quot;text&quot; <strong>authorityURI=&quot;https://www.loc.gov/marc/relators/relaterm.html</strong>&quot;&gt;author&lt;/roleTerm&gt;\<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;roleTerm type=&quot;code&quot; <strong>authorityURI=&quot;https://www.loc.gov/marc/relators/relaterm.html</strong>&quot;&gt;aut&lt;/roleTerm&gt;<br />
+            &lt;/role&gt;</p></td>
+        </tr>
+      </table>
+      <h3>&nbsp;</h3>
+      <h3><a name="valueuri" id="valueuri"></a>valueURI</h3>
+      <p>When the authoritative list is a linked data vocabulary (not so in the above examples) @valueURI can point directly to the term, and the element value is optional (it may be omitted). </p>
+      <table width="700" border="1">
+        <tr>
+          <td width="690"><p><strong>example</strong></p>
+            <p>&lt;role&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;roleTerm <strong>valueURI=&quot;http://id.loc.gov/vocabulary/relators/aut&quot;</strong>/&gt;<br />
+&lt;/role&gt;</p>
+            <p><br />
+            </p></td>
+        </tr>
+    </table>
+      <p>&nbsp;</p>
+      <p>It is recommended that when using one of these authority attributes -- @authority, @authorityURI, and @valueURI -- at most one of these should be included. @valueURI should be included (and the other two omitted) if known. If @valueURI is not known, @authorityURI should be supplied (and @authority omitted) if known. @authority should be supplied only if neither @valueURI and @authorityURI is known. </p>
+      <p>&nbsp;</p>
+      <h2>&nbsp;</h2>
+      <h2>Miscellaneous Attributes</h2>
+      <h3><a name="displaylabel" id="displaylabel"></a><strong>displayLabel</strong></h3>
+      <p>The value of @displayLabel is text, for display purposes only.&nbsp; It should not be used to supply structured or machine processible information.</p>
+      <p>&nbsp;</p>
+      <table width="594" border="1">
+        <tr>
+          <td width="584"><div class="indent1">
+            <p><strong>example</strong></p>
+            <div class="indent1">
+              <div class="indent1"><br />
+                <div class="indent1">&lt;titleInfo type=&quot;alternative&quot; <strong>displayLabel=&quot;Spine title</strong>&quot;&gt; </div>
+                <div class="indent2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Science and public  affairs&lt;/title&gt;</div>
+                <div class="indent1">&lt;/titleInfo&gt;<br />
+                  <br />
+                </div>
+                <div class="indent1">&lt;targetAudience <strong>displayLabel=&quot;grade  level&quot;</strong>&gt;kindergarten&lt;targetAudience&gt;</div>
+                <div class="indent1"> <br />
+                  &lt;classification authority=&quot;lcc&quot; <br />
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>displayLabel=&quot;Library of Congress lassification</strong>&quot;&gt;ML410.B3&lt;/classification&gt;</div>
+              </div>
+            </div>
+          </div></td>
+        </tr>
+      </table>
+      <p>&nbsp;</p>
+      <h3><strong><a name="altformatandcontent" id="altformatandcontent"></a>altFormat</strong> and contentType</h3>
+      <p> An element might express its content in plain text, and there may be equivalent content elsewhere using a different encoding, for example HTML. @altFormat is a URI pointing to that content. It 
+        applies to elements not easily expressed inside a MODS XML 
+        record and are best expressed via HTML or some other format. Optionally, 
+        the @contentType attribute may be included with a media-type as its value (e.g. 
+        text/html) to indicate the content type of the resource. Where there are 
+        multiple alternatives, use @altRepGroup attribute to 
+        bind together the related instances. </p>
+      <table width="795" border="1">
+        <tr>
+          <td width="785"><div class="indent1">
+            <p><strong>example</strong></p>
+            <div class="indent1">
+              <div class="indent1">
+                <div class="indent1"><strong>&lt;</strong>abstract <strong>altFormat=&quot;http://xyz.example.org/alternate-markup.html&quot; contentType=&quot;application/xhtml+xml</strong>&quot;&gt;</div>
+                <div class="indent1">l'histoire d'un cheval et un garçon qui aimait&lt;/abstract&gt;<br />
+                  <div class="indent1"></div>
+                </div>
+              </div>
+            </div>
+          </div></td>
+        </tr>
+      </table>
+      <h3>&nbsp;</h3>
+      <h3><strong><a name="usage" id="usage"></a></strong>usage</h3>
+      <p> @usage values are &quot;primary&quot; and &quot;primaryDisplay&quot;  (&quot;primary' is preferred; &quot;primaryDisplay&quot; will be deprecated in the future.) It is used for a repeated element to declare that a particular instance of the element is most important. For example, when several names are included in a MODS record, @usage may be used to declare a &quot;primary&quot; name.      </p>
+      <table width="795" border="1">
+        <tr>
+          <td width="785"><div class="indent1">
+            <p><strong>example</strong></p>
+            <div class="indent1">
+              <div class="indent1">
+                <div class="indent1">&lt;location&gt; <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;url <strong>usage=&quot;primary&quot;</strong>&gt; http://digital.library.upenn.edu/women/alleman/gettysburg/gettysburg.html&lt;/url&gt;<br />
+&lt;/location&gt;<br />
+                  </div><div class="indent1"><div class="indent1"></div>
+                </div>
+              </div>
+            </div>
+          </div></td>
+        </tr>
+    </table>
+      <p>&nbsp;</p>
+      <h3><strong><a name="shareable" id="shareable"></a></strong>shareable </h3>
+      <p>@shareable indicates whether the content of the element (e.g. an abstract or table of contents) may be shared. This attribute should be included only if the content may not be shared, in which case the value should be &quot;no&quot;. If the content may be shared, the attribute should be omitted. </p>
+      <table width="795" border="1">
+        <tr>
+          <td width="785"><div class="indent1">
+            <p><strong>example</strong></p>
+            <div class="indent1">
+              <div class="indent1">
+                <div class="indent1"><strong>&lt;</strong>abstract <strong>shareable=&quot;no&quot;</strong>&gt;l'histoire d'un cheval et un garçon qui aimait&lt;abstract&gt;</div>
+                <div class="indent1"><br />
+                  <div class="indent1"></div>
+                </div>
+              </div>
+            </div>
+          </div></td>
+        </tr>
+      </table>
+      <h3></h3>
+      <p></p>
+      <h3><strong><a name="supplied" id="supplied"></a></strong>supplied</h3>
+      <p>@supplied indicates whether the content of the element (e.g. a title) has been supplied (as opposed to having been constructed by the cataloger). This attribute should be included only if the content was supplied, in which case the value should be &quot;yes&quot;. If not, the attribute should be omitted. </p>
+      <table width="795" border="1">
+        <tr>
+          <td width="785"><div class="indent1">
+            <p><strong>example</strong></p>
+            <div class="indent1">
+              <div class="indent1">
+                <div class="indent1">
+                  <div class="indent1"><strong>&lt;titleInfo supplied=&quot;yes&quot;&gt;</strong></div>
+                  <div class="indent2"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;</strong>Telescope Peak from Zabriskie Point<strong>&lt;/title&gt;</strong></div>
+                  <div class="indent1"><strong>&lt;/titleInfo&gt;</strong></div>
+                </div>
+                <div class="indent1"><br />
+                  <div class="indent1"></div>
+                </div>
+              </div>
+            </div>
+          </div></td>
+        </tr>
+      </table>
+      <h3></h3>
+      <p>&nbsp;</p>
+      <h3><strong><a name="codeortext" id="codeortext"></a>codeOrText</strong></h3>
+      <p>Values for @codeOrText are &quot;code&quot; and &quot;text&quot;. It applies to elements whose value is normally taken from a controlled vocabulary where terms are expressed as both codes and as text.      </p>
+      <table width="795" border="1">
+        <tr>
+          <td width="785"><div class="indent1">
+            <p><strong>example</strong></p>
+            <div class="indent1">
+              <div class="indent1">
+                <div class="indent1">
+                  <table width="100%" border="0">
+                    <tbody>
+                      <tr valign="top">
+                        <td width="6%"></td>
+                        <td colspan="3">&lt;name type=&quot;personal&quot;&gt;</td>
+                      </tr>
+                      <tr valign="top">
+                        <td width="6%"> </td>
+                        <td width="1%"> </td>
+                        <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;namePart&gt;Alleman, Tillie Pierce [1848-1914]&lt;/namePart&gt;</td>
+                      </tr>
+                      <tr valign="top">
+                        <td> </td>
+                        <td> </td>
+                        <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;role&gt;</td>
+                      </tr>
+                      <tr valign="top">
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;roleTerm <strong>codeOrText=&quot;code&quot;</strong> authority=&quot;marcrelator&quot;&gt;aut&lt;/roleTerm&gt;</td>
+                      </tr>
+                      <tr valign="top">
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;roleTerm <strong>codeOeText=&quot;text&quot;</strong> authority=&quot;marcrelator&quot;&gt;Author&lt;/roleTerm&gt;</td>
+                      </tr>
+                      <tr valign="top">
+                        <td> </td>
+                        <td> </td>
+                        <td colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/role&gt;</td>
+                      </tr>
+                      <tr valign="top">
+                        <td width="6%"> </td>
+                        <td colspan="3">&lt;/name&gt;</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <br />
+                  </div>
+                <div class="indent1">
+                  <div class="indent1"></div>
+                </div>
+              </div>
+            </div>
+          </div></td>
+        </tr>
+  </table>
+      <h3></h3>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p>
+      <p>&nbsp;</p></td>
+  </tr>
+    <tr>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+<!-- Begin Footer Table -->
+<table class="footer" cellspacing="0" cellpadding="0" border="0" align="center">
+  <tbody><tr valign="top">
+    <td width="439"><div class="sitenav"></div></td>
+    <td width="213"><div class="sitenav"></div></td>
+    <td width="108" align="right"><div class="contactus"></div></td>
+  </tr>
+</tbody></table>
+<!-- End Header Table -->
+<script type="text/javascript" src="file://///lcdataserver/LOCPROF.003/rden/Desktop/attributes_files/s_code.js"></script>
+
+</body></html>

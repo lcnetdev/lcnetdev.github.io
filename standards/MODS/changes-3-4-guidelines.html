@@ -1,0 +1,393 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+
+                        "http://www.w3.org/TR/html40/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/mods.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Changes for MODS Version 3.4 : Metadata Object Description Schema: MODS (Library of Congress)</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<meta name="keywords" content="mods  metadata object description schema changes version 3.4 library congress xml">
+<meta name="description" content="Changes for MODS Version 3.4 (Metadata Object Description Schema: MODS)">
+<style type="text/css">
+<!--
+.style1 {color: #000000}
+-->
+</style>
+<style type="text/css">
+<!--
+.style2 {
+	color: #FF0000;
+	font-style: italic;
+}
+-->
+</style>
+<style type="text/css">
+<!--
+.style3 {color: #FF0000}
+-->
+</style>
+<!-- InstanceEndEditable -->
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="mods-print.css" type="text/css" media="print">
+<style type="text/css">
+@import url(mods.css);
+</style>
+</head>
+<body link="#000099" vlink="#0066CC" bgcolor="#FFFFFF">
+<table class="layout2">
+  <tr>
+    <td class="top-breadcrumbs"><a id="skip" href="#skip_menu">&nbsp;</a><a href="http://www.loc.gov/">The Library of Congress</a> &raquo; <a href="http://www.loc.gov/standards/">Standards</a> &raquo; <a href="http://www.loc.gov/mods/">MODS Official Web Site</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://www.loc.gov/standards/mods/"><img src="images/mods-bar-760.gif" alt="Metadata Object Description Schema: Official Web Site" width="760" height="41" border="0"></a></td>
+  </tr>
+  <tr>
+    <td><a href="http://www.loc.gov/standards/mods/">HOME</a> &gt;&gt; <!-- InstanceBeginEditable name="topbreadcrumb" -->Changes for MODS Version 3.4 with draft user guidelines <!-- InstanceEndEditable --><a name="skip_menu"></a><!-- InstanceBeginEditable name="content" -->
+      <h1>Changes for MODS Version 3.4 with draft  user guidelines </h1>
+      <p>The following changes for MODS Version 3.4 have been approved by the <a href="http://www.loc.gov/standards/mods/editorial-committee.html">MODS Editorial Committee</a>. Draft guidelines are included after each change, to be incorporated into the <a href="http://www.loc.gov/standards/mods/userguide/">MODS User Guidelines</a> after review by the MODS community. <span class="style3">Text in red is for the MODS-EC to consider before this is released to the MODS community. </span></p>
+      <h3>Functional changes </h3>
+      <ul>
+        <li><em>@naneTitleGroup on &lt;name&gt; and &lt;titleInfo&gt;</em></li>
+        <li><em>Bind a specific name to a specific title to enable creation of an author/title Uniform title. A new attribute, "nameTitleGroup" is added to both  &lt;titleInfo&gt; and &lt;name&gt;. The data type of this attribute  is string. To link a title and a name, MODS implementers will add  the same value to @nameTitleGroup on the relevant &lt;titleInfo&gt; and  &lt;name&gt; elements.<br>
+          <br>
+        </em><strong>Draft guidelines: <br>
+        </strong><strong>nameTitleGroup</strong> - This attribute is used to link a  top level &lt;name&gt; element and a top level &lt;titleInfo&gt;  element for the purpose of encoding a name-title heading. The same  value is assigned to this attribute used for the two elements. The recommended practice is to assign a value for each  unique name within the pool of name-title headings in a record. This  practice will acommodate cases where the same name is part  of more than one name-title heading in a record.
+        <p>For example, if these two name-title headings are used in a record,<br>
+              <br>
+            Twain, Mark, 1835-1910. Adventures of Tom Sawyer.<br>
+            Twain, Mark, 1835-1910. Adventures of Huckleberry Finn.<br>
+  <br>
+            assign the nameTitleGroup value "1" for Mark Twain, and encode them this way<br>
+  <br>
+  &lt;name type="personal" nameTitleGroup="1"&gt;<br>
+            &lt;namePart&gt;Twain, Mark&lt;/namePart&gt;<br>
+            &lt;namePart type="date"&gt;1835-1910&lt;/namePart&gt;<br>
+            &lt;/name&gt;<br>
+            &lt;titleInfo type="uniform" nameTitleGroup="1"&gt;<br>
+            &lt;title&gt;Adventures of Tom Sawyer&lt;/title&gt;<br>
+            &lt;/titleInfo&gt;<br>
+            &lt;titleInfo type="uniform" nameTitleGroup="1"&gt;<br>
+            &lt;title&gt;Adventures of Huckleberry Finn&lt;/title&gt;<br>
+            &lt;/titleInfo&gt;<br>
+        </p>
+        <p>[Explanation of name-title encoding follows:]</p>
+        <p><strong>Encoding a name-title heading in MODS</strong><br>
+              <br>
+            The  MODS approach to encoding a name-title heading is to use separate top  level &lt;name&gt; and &lt;titleInfo&gt; elements and link those two  elements with the nameTitleGroup attribute (note that name-title  headings as subjects are treated differently; see below). The value of  that nameTitleGroup attribute is defined as a string. A value must be  assigned for each unique name within the pool of name-title headings in  a record. Such an assignment avoids complications that derive from the  fact that a particular name may be part of more than one name-title  heading in a record.<br>
+  <br>
+            Other features of MODS name-title heading encoding:</p>
+        <ul>
+            <li>the title portion of a name-title heading is always a uniform  title, so &lt;titleInfo&gt; always has the attribute type="uniform"<br>
+          </li>
+          </ul>
+        <ul>
+            <li>the title portion of a name-title heading is the distinctive  part (the name portion of a name-title heading, on the other hand, may  be used in more than one name-title heading in a record), so  &lt;titleInfo&gt; is where authorityURI and valueURI attributes (or any  other identifier values) for the name-title heading are placed<br>
+            </li>
+          </ul>
+        <p>Name-title headings that are used as subject headings are wrapped  with the top level &lt;subject&gt; element; the nameTitleGroup  attribute is not used in that case. For a name-title heading as  subject, the &lt;titleInfo&gt; element should always have the  type="uniform" attribute. However, an authority identifier for the  name-title header should appear on the top level &lt;subject&gt;  element, instead of its &lt;titleInfo&gt; child.</p>
+        <p><strong>Assigning usage="primary" for main/preferred entry and considerations for name-title headings<br>
+              </strong><br>
+            In MODS, the usage="primary" attribute can be used to indicate a main/preferred  entry. The nameTitleGroup  attribute is used to link a top level &lt;name&gt; and a top level  &lt;titleInfo&gt; to encode a name-title heading. Sometimes a  name-title heading is the main/preferred entry. The title portion of a  name-title heading is the more distinct part (whereas a particular name  may sometimes be associated with more than one uniform title in a  record), so the indication of main/preferred entry is assigned to the  top level &lt;titleInfo&gt; element [see example #1].<br>
+            <br>
+            The  usage="primary" attribute should only be assigned to a top level  &lt;name&gt; element if it represents a name heading that is the  main/preferred entry for the record. There may be rare cases when a  name heading is the main/preferred entry, and that same name is part of  one or more name-title headings (added/alternative) in the record. In  that rare case, both usage="primary" and nameTitleGroup attributes will  appear for the &lt;name&gt; [See example #2]. Apart from that case, if  a top level &lt;name&gt; element has the nameTitleGroup attribute, it  should not also have the usage="primary" attribute.<br>
+            <br>
+            Examples<br>
+            <br>
+            1) A name-title is main/preferred entry, and its same name component is part of another name-title heading in the record:<br>
+            <br>
+            Twain, Mark, 1835-1910. Adventures of Tom Sawyer. [main/preferred entry]<br>
+            Tom Sawyer; and, Huckleberry Finn [title of the resource]<br>
+            Twain, Mark, 1835-1910. Adventures of Huckleberry Finn. [added/alternative entry]<br>
+            <br>
+            Encoded in MODS this way:<br>
+            <br>
+&lt;titleInfo&gt;<br>
+&lt;title&gt;Tom Sawyer&lt;/title&gt;<br>
+&lt;subTitle&gt;and, Huckleberry Finn&lt;/subTitle&gt;<br>
+&lt;/titleInfo&gt;<br>
+&lt;titleInfo type="uniform" usage="primary" nameTitleGroup="1"&gt;<br>
+&lt;title&gt;Adventures of Tom Sawyer&lt;/title&gt;<br>
+&lt;/titleInfo&gt;<br>
+&lt;titleInfo type="uniform" nameTitleGroup="1"&gt;<br>
+&lt;title&gt;Adventures of Huckleberry Finn&lt;/title&gt;<br>
+&lt;/titleInfo&gt;<br>
+&lt;name type="personal" nameTitleGroup="1"&gt;<br>
+&lt;namePart&gt;Twain, Mark&lt;/namePart&gt;<br>
+&lt;namePart type="date"&gt;1835-1910&lt;/namePart&gt;<br>
+&lt;/name&gt;<strong>
+          </strong><br>
+          <br>
+2) Name is main/preferred entry, but that same name is also part of name-title headings in the record:<br>
+<br>
+    Crumb, George. [main/preferred entry]<br>
+    Chamber works of George Crumb and a public lecture by the composer [title of the resource]<br>
+    Crumb, George. Madrigals. Book I. [added/alternative entry]<br>
+    Crumb, George. Vox balaenae. [added/alternative entry]<br>
+    Crumb, George. Music: does it have a future? [added/alternative entry]<br>
+<br>
+    Encoded in MODS this way:<br>
+<br>
+      &lt;titleInfo&gt;<br>
+         &lt;title&gt;Chamber works of George Crumb and a public lecture by the composer&lt;/title&gt;<br>
+      &lt;/titleInfo&gt;<br>
+      &lt;titleInfo type="uniform" nameTitleGroup="1"&gt;<br>
+         &lt;title&gt;Madrigals. Book I&lt;/title&gt;<br>
+      &lt;/titleInfo&gt;<br>
+      &lt;titleInfo type="uniform" nameTitleGroup="1"&gt;<br>
+         &lt;title&gt;Vox balaenae&lt;/title&gt;<br>
+      &lt;/titleInfo&gt;<br>
+      &lt;titleInfo type="uniform" nameTitleGroup="1"&gt;<br>
+         &lt;title&gt;Music: does it have a future?&lt;/title&gt;<br>
+      &lt;/titleInfo&gt;<br>
+      &lt;name type="personal" usage="primary" nameTitleGroup="1"&gt;<br>
+         &lt;namePart&gt;Crumb, George&lt;/namePart&gt;<br>
+      &lt;/name&gt;</p>
+        </li>
+        <li>
+          <p><em>Add attribute &quot;usage&quot; with the value &quot;primary&quot; to the following MODS elements  to indicate which or repeated elements are most important: titleInfo, name, typeOfResource, language, subject, classification, genre<br>
+            </em><br>
+            <strong>Draft guidelines: </strong><br>
+            <strong>Usage</strong> - this attribute is used when there are repeated elements to  indicate which should be used for primary display and/or indexing  purposes<br>
+            <br>
+            Examples:<br>
+            <br>            &lt;mods:genre usage=&quot;primary&quot;&gt;Popular song&lt;/mods:genre&gt;<br>
+&lt;mods:genre&gt;Sheet music&lt;/mods:genre&gt;            <br>
+            <br>
+&lt;mods:name type=&quot;personal&quot; usage=&quot;primary&quot;&gt;<br>
+&lt;mods:namePart&gt;Manoloff, Nick&lt;/mods:namePart&gt;<br>
+&lt;mods:role&gt;<br>
+&lt;mods:roleTerm type=&quot;code&quot; authority=&quot;marcrelator&quot;&gt;arr&lt;/mods:roleTerm&gt;<br>
+&lt;mods:roleTerm type=&quot;text&quot; authority=&quot;marcrelator&quot;&gt;Arranger&lt;/mods:roleTerm&gt;<br>
+&lt;/mods:role&gt;<br>
+&lt;/mods:name&gt;<br>
+&lt;mods:name type=&quot;personal&quot;&gt;<br>
+&lt;mods:namePart&gt;Field, Carl&lt;/mods:namePart&gt;<br>
+&lt;mods:role&gt;<br>
+&lt;mods:roleTerm type=&quot;code&quot; authority=&quot;marcrelator&quot;&gt;lyr&lt;/mods:roleTerm&gt;<br>
+&lt;mods:roleTerm type=&quot;text&quot; authority=&quot;marcrelator&quot;&gt;Lyricist&lt;/mods:roleTerm&gt;<br>
+&lt;/mods:role&gt;<br>
+&lt;/mods:name&gt;            </p>
+        </li>
+        <li><em>Link translations and transliterations through a shared attribute. 
+        Each MODS top-level element will now have a new attribute, @altRepGroup</em>.<br>
+        <br>
+        <strong>Draft guidelines: </strong><br>
+        <p class="style1">Addthe following to "Attributes Used Throughout the MODS Schema&quot;: linking attributes section:</p>
+        <p><span class="style1"><strong>altRepGroup</strong></span><strong>-</strong> This attribute is used to link  alternate representations of the same element content, such as original  script, transliterations, and translations. The attribute takes a  string value, and the same value is applied to each of the element  instances to be linked.        </p>
+        <p>Example:</p>
+        <p>&lt;name type="personal" altRepGroup="8"&gt;<br>
+          &lt;namePart&gt;Būrī, Muḥammad al-Tihāmī,&lt;/namePart&gt;<br>
+          &lt;namePart type="date"&gt;d. 1827&lt;/namePart&gt;<br>
+          &lt;/name&gt;<br>
+          &lt;name type="personal" altRepGroup="8"&gt;<br>
+          &lt;namePart&gt;بوري، محمد التهامي،&lt;/namePart&gt;<br>
+          &lt;namePart type="date"&gt;d. 1827&lt;/namePart&gt;<br>
+          &lt;/name&gt;        </p>
+        <p>altRepGroup applies to MODS top-level elements with the exception of  relatedItem. It also applies to those top-level elements when used  within relatedItem.</p>
+        <p>Care should be taken when mapping from MARC to MODS to insure that  elements that are split from one field in MARC into two fields in MODS  are linked correctly (e.g., MARC 245). Three conditions may occur in  this case:  1) multiple pairs of linked elements (this is correct), 2)  linked elements with identical content, because the alternative  representation only occurs in a different portion of the MARC field,  and 3) single MODS elements with an unmatched altRepGroup, if one of  the linked MARC fields contained a subfield that the other MARC field  did not (e.g. 245 $c).</p>
+        </li>
+        <li><em>Add attribute &quot;shareable&quot; with one value &quot;no&quot; to the following elements: tableOfContents, abstract. This will mark data as proprietary that can only be used locally. </em><br>
+            <strong>Draft guidelines: </strong><br>
+            <span class="style1"><strong>shareable</strong></span> - This attribute has a single value of "no" and is used for data that  may be proprietary or is rights protected and should not be used  outside of a local system, such as providing to harvesters) 
+            <p>&lt;abstract&gt;</p>
+                <p>&lt;abstract shareable="no"&gt;Landscape features can have an  important influence on the characteristics of populations, often  resulting in heterogeneity in demographic processes. Therefore, local  measurements of population parameters may not reflect regional  characteristics. We studied populations of Harlequin Ducks breeding in  11 river canyons in northern Labrador in relation to biophysical  habitat characteristics and abundance of avian predators ... We discuss  the potential influence of local demographic differences on regional  popuation dynamics and their importance for conservation management  strategies for migratory species. (Canadian Journal of Zoology 84 (6):  855-864 June 2006 in ISI Web of Knowledge&lt;/abstract&gt; </p>
+                <p>&lt;tableOfContents&gt; </p>
+                <p>&lt;tableOfContents shareable="no"&gt;Editorial board -- Update of  autism: a review of 1300 reports puiblished in 2008 / John R. Hughes --  Effect of repeated administration of Annona diversifolia Saff. (ilama)  extracts and palmitone on rat amygdala kindling / Ma. Eva  Gonzalez-trujana -- Margiad Evans (1909-1958): A history of epilepsy in  a creative writer / A.J. Larner -- Health-related quality of life  measure for children with epilepsy (CHEQOL-25): prelimary data for the  Serbian version / Dejan Stevanovic -- Psychosocial impairments in  children ith epilepsy depend on the side of the focus / Krystyna A.  Mathiak -- A prospective study of cognitive fluency and originality in  children exposed in utero to carbamazepine, lamotrigine, or valproate  monotherapy / Kelly M. McVearry -- Factors that affect interictal  cardiovascular autonomic dysfunction in temporal lobe epilepsy: role of  hippocampal sclerosis / Emel Koseoglu&lt;/tableOfContents&gt;</p>
+        </li>
+        <li><em>Add lang, xml:lang, script and transliteration attributes to all textual MODS elements: This will introduce more flexibility for adding specific elements to a MODS record using multiple languages.</em> <br>
+          <span class="style2">Is there a need to do anything further? These are described in <a href="http://www.loc.gov/standards/mods/userguide/generalapp.html#list">Attributes used throughout the schema </a></span><br>
+        </li>
+        <li><em>Add the &quot;displayLabel&quot; attribute to all top-level MODS elements that now lack it. Rationale: makes MODS overall more consistent, and promotes easier use of MODS as a back-end format for customized cataloging and discovery systems. </em><br>
+        Add the following to <em>Attributes used throughout the schema </em> section for all elements and link to it as appropriately from each MODS element: <br>
+            <p><strong>displayLabel</strong></p>
+              <div><u>Definition</u></div>
+              <div>Additional text associated with the element value when necessary for display purposes.</div>
+              <div><u>Application</u></div>
+              <div>Use for a display label for the element content.</div>
+        </li>
+      </ul>
+      <h3>RDA-related changes </h3>
+      <ul><li><em>Add authorityURI and valueURI attributes to elements that have authority attribute </em></li>
+        <li><em>Add authorityURI and valueURI attributes to subject subelements </em><br>
+          Add the following to <em>Attributes used throughout the schema </em> section:<br>
+          <strong>Draft guidelines (for 2 above):<br>
+        </strong>
+          <ul>
+            <li><strong>authorityURI </strong>– A URI uniquely       identifying the vocabulary from which the controlled       term has been selected, as assigned by the body responsible for the       maintenance of the vocabulary. URIs identifying authorities may or may not       be dereferenceable to human- or machine-readable information on the       authority file, controlled vocabulary, or thesaurus.</li>
+            <li><strong>valueURI </strong>– A URI uniquely       identifying the term or controlled value, as assigned by the body       responsible for the maintenance of the vocabulary. URIs identifying terms       may or may not be dereferenceable to human- or machine-readable records       for the term.<br>
+              <span class="style2">Note for EC: need to address Jenn's change suggestions for subject subelements documented on wiki </span><strong><br>
+                    </strong></li>
+          </ul>
+        </li>
+        <li><em>Add value &quot;family&quot; to the attribute &quot;type&quot; under mods:name to indicate that the named entity is a family</em><br>
+            <strong>Draft guidelines</strong>:<br>
+            <strong>family </strong>- This attribute is used with the &lt;name&gt; element to express  familial authorship. This type of authorship is common with archival  materials. In addition, Resource Description and Access and Functional  Requirements for Authority Data consider families as entities that can  be creators of resources.
+            <p> Example:</p>
+          <p> &lt;name type="family"&gt;<br>
+          &lt;namePart&gt;Brooks family&lt;/namePart&gt;<br>
+           &lt;role&gt;&lt;roleTerm type="text" authority="marcrelator"&gt;creator&lt;/roleTerm&gt;&lt;/role&gt;<br>
+          &lt;/name&gt;</p>
+        </li>
+        <li><em>Add values &quot;single unit &quot;, &quot;multipart monograph&quot;, &quot;serial&quot;, &quot;integrating resource&quot; as enumerated values for mods:issuance. The more general &quot;monographic&quot; and &quot;continuing&quot; will be kept if such distinctions are not needed</em>.<br>
+          <br>
+          <strong>Draft guidelines</strong>:<br>
+          <p><strong>&lt;issuance&gt; may be used with the following values: </strong></p>
+            <ul>
+              <li><em>continuing</em> - A resource that is issued over time with  no predetermined conclusion. Continuing resources include serials and  ongoing integrating resources, i.e. those that are continuously  updated. Alternatively, more specific values distinguishing "serial" from "integrating resource" may be used (see below).</li>
+              <li><em>monographic</em> - A resource that is either complete in one  part or intended to be completed in a finite number of separate parts.  Alternatively, more specific values distinguishing "single unit" from "multipart monograph" may be used (see below).</li>
+              <li><em>single unit</em> - A resource that is issued either as a single  physical unit (e.g., as a single-volume monograph) or, in the case of  an intangible resource, as a single logical unit (e.g., as a PDF file  mounted on the Web).</li>
+              <li><em>multipart monograph -</em> A resource issued in two or more  parts (either simultaneously or successively) that is complete or  intended to be completed within a finite number of parts (e.g., a  dictionary in two volumes or three audiocassettes issued as a set).</li>
+              <li><em>serial</em> - A resource issued in successive parts, usually  bearing numbering, that has no predetermined conclusion (e.g., a  periodical, a monographic series, or a newspaper). Includes resources  that exhibit characteristics of serials, such as successive issues,  numbering, and frequency, but whose duration is limited (e.g.,  newsletters of events) and reproductions of serials</li>
+              <li><em>integrating resource</em> - A resource that is added to or  changed by means of updates that do not remain discrete and are  integrated into the whole. An integrating resource may be tangible  (e.g., a loose-leaf manual that is updated by means of replacement  pages) or intangible (e.g., a Web site that is updated either  continuously or on a cyclical basis).<br>
+                <br>
+                Collection, which designates an aggregation level, is included in the collection attribute in the &lt;<a href="http://www.loc.gov/standards/mods/userguide/typeofresource.html">typeOfResource</a>&gt; element.<br>
+                <br>
+              </li>
+            </ul>
+        </li>
+        <li><em>Define &lt;scriptTerm&gt; under &lt;language&gt; with attributes type (code, text), authority, authorityURI and valueURI. This will allow explicit and standardized indication (using iso15924) of the script used in a resource. </em><br>
+          <br>
+            <strong>Draft guidelines</strong>:<br>
+        Use &lt;scriptTerm&gt; to indicate the script in which the language is  rendered. As with &lt;languageTerm&gt;, &lt;scriptTerm&gt; may be  repeated to convey different representations of the that same script.<br>
+          <p>Examples: </p>
+        &lt;abstract&gt; ... work on ethics in 3 books ... followed by two short treatises   ... the first of which is in Arabic ... and the second is in Arabic and   Ottoman ....&lt;/abstract&gt;<br>
+        &lt;language objectPart="Primary work and first treatise"&gt;  <br>
+        &lt;languageTerm authority="iso639-2b" type="code"&gt;ara&lt;/languageTerm&gt;  <br>
+        &lt;languageTerm lang="en" type="text"&gt;Arabic&lt;/languageTerm&gt;  <br>
+        &lt;scriptTerm authority="iso15924" type="code"&gt;Arab&lt;/scriptTerm&gt;  <br>
+        &lt;/language&gt;<br>  
+        <br>
+        &lt;language objectPart="Second treatise"&gt;  <br>
+        &lt;languageTerm authority="iso639-2b" type="code"&gt;ota&lt;/languageTerm&gt;  <br>
+        &lt;languageTerm lang="en" type="text"&gt;Ottoman Turkish&lt;/languageTerm&gt;  <br>
+        &lt;scriptTerm authority="iso15924" type="code"&gt;Arab&lt;/scriptTerm&gt;  <br>
+        &lt;/language&gt;  <br>
+        <br>
+        &lt;language objectPart="Second treatise"&gt;  <br>
+        &lt;languageTerm authority="iso639-2b" type="code"&gt;ara&lt;/languageTerm&gt;  <br>
+        &lt;languageTerm lang="en" type="text"&gt;Arabic&lt;/languageTerm&gt;  <br>
+        &lt;scriptTerm authority="iso15924" type="code"&gt;Arab&lt;/scriptTerm&gt;  <br>
+        &lt;/language&gt;  <br>
+        <br>
+        &lt;abstract&gt;A Persian-Turkish literary dictionary&lt;/abstract&gt;  <br>
+        &lt;language&gt;  &lt;languageTerm authority="iso639-2b" type="code"&gt;per&lt;/languageTerm&gt;  <br>
+        &lt;languageTerm authority="rfc3066" type="code"&gt;fa&lt;/languageTerm&gt;  <br>
+        &lt;scriptTerm authority="iso15924" type="code"&gt;Arab&lt;/scriptTerm&gt;  <br>
+        &lt;scriptTerm type="text"&gt;Arabic&lt;/scriptTerm&gt;<br>  
+        &lt;/language&gt;  <br>
+        <br>
+        &lt;language&gt;<br>  
+        &lt;languageTerm authority="iso639-2b" type="code"&gt;ota&lt;/languageTerm&gt;  <br>
+        &lt;scriptTerm authority="iso15924" type="code"&gt;Arab&lt;/scriptTerm&gt;  <br>
+        &lt;scriptTerm type="text"&gt;Arabic&lt;/scriptTerm&gt;  <br>
+        &lt;/language&gt; <em><br>
+        Note to EC: consider changes to languageTerm as detailed on wiki </em></li>
+      </ul>
+      <h3>General/structural changes      </h3>
+      <ul>
+        <li class="style2">Note to EC: is there any  need to add anything to the Guidelines for any of these changes? I think these are just schema issues. </li>
+        <li><em>Enumerate the MODS version attribute to allow for specific indication of the particular MODS schema version used in the instance (currently the schema only includes the value &quot;3.4&quot; but will now also allow for &quot;3.0&quot;, &quot;3.1&quot;, &quot;3.2&quot;,   &quot;3.3&quot;.) </em></li>
+        <li><em>Add &lt;physicalDescription&gt;&lt;extent&gt; as a global element to the MODS namespace but not &lt;part&gt;&lt;extent&gt;. It is not possible in version 3.4 to harmonize the definitions, since &lt;extent&gt; in these two places is very different, and changing either of them is too big a change for a minor release version. The short term-solution for MODS 3.4 is to only put physicalDescription/extent into the MODS namespace and not part/extent. In MODS 4.0 the definitions will be harmonized or one of these elements renamed so that both can be in the MODS namespace. </em></li>
+        <li><em>Reorganize  the schema to  externalize all elements and definitions and make the schema easier to read.  </em></li>
+        <li><em>Define explicitly all elements in the MODS namespace (i.e. as &quot;global&quot; elements) so that they are addressable individually to other schemas and information systems. This requires the definitions of elements with the same name to have the same definition. </em></li>
+      </ul>
+      <h3>Consistency changes </h3>
+      <ul>
+        <li><em>Add the following attributes to location/holdingSimple/copyInformation/note: &quot;ID&quot;, &quot;lang&quot;, &quot;script&quot;, &quot;transliteration&quot;, &quot;xlink&quot;, and &quot;xml:lang&quot;. Rationale: adding these attributes will harmonize the definition of &lt;note&gt; with the other places this element appears in MODS.<br>
+          <span class="style3">Covered already in Attributes used throughout the schema </span>
+</em></li>
+        <li><em> Add the &quot;type&quot; attribute  to location/holdingSimple/copyInformation/form. Rationale: adding this attributes will harmonize the definition of &lt;form&gt; with its definition within &lt;physicalDescription&gt;.</em>  <br>
+          <br>
+            <strong>Draft guidelines</strong>:<br>
+            <strong>type</strong> - This attribute is used if desired to specify whether the form  concerns materials or techniques, e.g. type="material": oil paint;  type="technique": painting  </li>
+      </ul>
+      <h3>Miscellaneous changes </h3>
+      <ul>
+        <li><em>Add values &quot;edtf&quot; and &quot;temper&quot; to  the attribute &quot;encoding&quot; under originInfo dates. This indicates use of the <a href="http://www.loc.gov/standards/datetime/">Extended Date Time Format</a>  or the <a href="http://tools.ietf.org/id/draft-kunze-temper-01.txt">TEMPER </a>format.<br>
+          </em><br>
+          <strong>Draft guidelines</strong>:<br>
+          <ul>
+            <li><em>edtf</em> – This value is used for dates coded according to the "Extended Date Time Format" which can express special  forms of dates that are not covered by other defined encodings such as  w3cdtf and iso8601. Examples include: range, open ended: 2004/open. See <a href="http://www.loc.gov/standards/datetime/">http://www.loc.gov/standards/datetime/</a> for further details.</li>
+            <li><em>temper</em> – This value is used for dates coded according to the “Temper date format” <a href="http://www.ietf.org/internet-drafts/draft-kunze-temper-01.txt">http://www.ietf.org/internet-drafts/draft-kunze-temper-01.txt</a>.  TEMPER (TEMPoral Enumerated Ranges) is a simple date and time syntax  for representing points, lists, and ranges of timestamps. The syntax is  designed to be trivial to parse, easy for humans to read, and friendly  to basic lexical sorting algorithms. Examples include Non-Gregorian  Calendar dates. A TEMPER point may be preceded by the three letters  "BCE" for "Before Common Era" dates.  These three ASCII  letters express (with no case sensitivity) "negative" dates, namely,  dates that are chronologically less than the year 0000.  Examples include: BCE1212 Death of Rameses the Great.<br>
+              <br>
+              <p>&lt;dateOther&gt; - Example</p>
+                <table width="100%" border="0" cellpadding="0">
+                  <tbody>
+                    <tr>
+                      <td colspan="2" valign="top"><p><strong>&lt;originInfo&gt;</strong></p></td>
+                    </tr>
+                    <tr>
+                      <td valign="top" width="5%"><p> </p></td>
+                      <td valign="top" width="93%"><p><strong>&lt;dateOther encoding="edtf"&gt;</strong>unknown/2009<strong>&lt;/dateOther&gt;</strong></p></td>
+                    </tr>
+                    <tr>
+                      <td colspan="2" valign="top"><p><strong>&lt;/originInfo&gt;</strong></p></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p> &lt;subject&gt; &lt;temporal&gt; - Example</p>
+                <table width="100%" border="0" cellpadding="0">
+                  <tbody>
+                    <tr>
+                      <td colspan="2" valign="top"><p><strong>&lt;subject&gt;</strong></p></td>
+                    </tr>
+                    <tr>
+                      <td valign="top" width="3%"><p> </p></td>
+                      <td valign="top" width="97%"><p><strong>&lt;temporal encoding="edtf"&gt;</strong><em>20050705/20050706</em><strong>&lt;/temporal&gt;</strong></p></td>
+                    </tr>
+                    <tr>
+                      <td colspan="2" valign="top"><p><strong>&lt;/subject&gt;</strong></p></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <br>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p><em>Add attribute &quot;supplied&quot; with a single value "yes" to these elements: originInfo/edition,  originInfo/place, originInfo/publisher, physicalDescription/extent, and  titleInfo. This will mark data as having come from an outside source and that it is possibly questionable. (Possible changes to the &quot;qualifier&quot; attribute on dates may be forthcoming in a later version for consistency.)</em> <br>
+            <br>
+            <strong>Draft guidelines</strong>:<br>
+            <strong>Supplied </strong>- This attribute is used to indicate that the value is from an external source from the resource (such as a cataloger)<br>
+            Example:<br>
+&lt;mods:originInfo&gt;<br>
+&lt;mods:edition supplied=&quot;yes&quot;&gt;Second&lt;/mods:edition&gt;<br>
+&lt;mods:place supplied=&quot;yes&quot;&gt;<br>
+&lt;mods:placeTerm type=&quot;text&quot;&gt;Chicago&lt;/mods:placeTerm&gt;<br>
+&lt;/mods:place&gt;<br>
+&lt;mods:publisher supplied=&quot;yes&quot;&gt;Calumet Music&lt;/mods:publisher&gt;<br>
+&lt;mods:copyrightDate encoding=&quot;w3cdtf&quot; keyDate=&quot;yes&quot;&gt;1935&lt;/mods:copyrightDate&gt;<br>
+&lt;/mods:originInfo&gt;          </p>
+        </li>
+        <li>
+          <p><em>Add  values &quot;references&quot; and &quot;review of&quot; to relatedItem attribute &quot;type&quot;. Mechanisms for extending the list of relatedItem types will be considered for MODS version 4.0.</em><br>
+            <br>
+            <strong>Draft guidelines:</strong><br>
+            Add to type attribute values: <br>
+            <strong>references</strong> - Information concerning a resource cited or referred to in the resource.<br>
+            <strong>reviewOf</strong> - Information concerning a resource reviewed in the content of the resource. <br>    
+            <br>
+            Example:<br>
+            &lt;mods:relatedItem type=&quot;reviewOf&quot;&gt;<br>
+&lt;mods:titleInfo&gt;The handbook of 20th century literature&lt;/mods:titleInfo&gt;<br>
+&lt;/mods:relatedItem&gt;</p>
+        </li>
+      </ul>
+      <!-- InstanceEndEditable -->
+<HR noshade size="1">
+</td>
+</tr>
+<tr>
+<td><a href="http://www.loc.gov/standards/mods/">HOME</a> &gt;&gt; <!-- InstanceBeginEditable name="bottombreadcrumb" -->Changes for MODS Version 3.4 with draft user guidelines <!-- InstanceEndEditable -->
+  <p><strong>Questions and comments:<br>
+  </strong>
+              <a href="mailto:ndmso@loc.gov">Contact Us</a> (
+              <!-- #BeginDate format:Am1 -->October 18, 2010<!-- #EndDate -->
+      )
+      <br>
+      <a href="http://www.loc.gov/homepage/legal.html">Legal</a> | <a href="http://www.loc.gov/global/disclaim.html">External Link Disclaimer</a></p></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

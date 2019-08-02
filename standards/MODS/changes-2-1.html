@@ -1,0 +1,195 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<title>MODS: Tentative Changes for Next Version</title>
+<base href="http://www.loc.gov/standards/mods/mods-overview.html">
+<meta name="keywords" content="mods changes metadata object description schema web site library congress xml">
+<meta name="description" content="This document lists changes being considered for the next version of MODS (Metadata Object Description Schema)">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="mods.css" type="text/css">
+</head>
+<body link="#000099" vlink="#0066CC" bgcolor="#FFFFFF">
+<table width=600 cellpadding=4 cellspacing=0 border=0 align=center>
+  <tr> 
+    <td><img src="images/mods-bar.gif" width="600" height="40" alt="Metadata Object Description Schema: Official Web Site"></td>
+  </tr>
+  
+
+  <tr> 
+    <td> 
+      <h1>MODS: Changes for Version 2.1</h1>
+      <p><i>The following are major changes to be incorporated into MODS in version 
+        2.1. This is being considered a minor change and does not increment the 
+        main version number, because it does not result in invalidating any existing 
+        MODS records. These are based on comments, defect reports, and suggestions 
+        for enhancements as a result of experimentation. Where appropriate the 
+        MARC mapping is provided.</i></p>
+      <ol>
+        <li><b>Versioning. </b>Allow for a version attribute at the top of the 
+          document to indicate the current major and minor version of the document 
+          (in this case 2.1).<br>
+          Indicate the major version of the schema in the namespace and in the 
+          filename.<br>
+          e.g. http://www.loc.gov/mods/2; filename: mods2.xsd <br>
+          For minor changes (i.e. those that don't invalidate existing records, 
+          i.e. enhancements or minor corrections): change the version attribute 
+          in the schema and increment the minor version e.g. 2.1 to 2.2. Include 
+          a change history under documentation in the schema. For major changes 
+          (new version): Document the change in change history; change target 
+          namespace (i.e. http://www.loc.gov/mods/3; new filename (mods3.xsd)<br>
+          <br>
+        </li>
+        <li><b>Elements.</b> Change the MODS schema to define all of the mods 
+          elements as global elements so that they can be imported into other 
+          schemas.<br>
+          <br>
+        <li><b>name. </b>Add type &quot;termsOfAddress&quot; to namePart (for 
+          titles, Jr., etc.). (X00$c)<br>
+          <br>
+        <li><b>identifier</b>: Add hdl to suggested value list in documentation 
+          under &lt;identifier&gt;, to be treated like &quot;doi&quot;. (Note 
+          that if either become an approved URI scheme or URN namespace, the method 
+          of representating them may change.)<br>
+          <br>
+        </li>
+        <li><b>originInfo.</b></li>
+        <ul>
+          <li> Allow for multiple &lt;place&gt; element and subelements &lt;code&gt; 
+            and &lt;text&gt; to be repeatable, in any order. (This was an error 
+            in the previous schema.)<br>
+          <li>Add &lt;dateValid&gt;<br>
+          <li>Add &lt;dateModified&gt; 
+        </ul>
+        <br>
+        <li><b>recordInfo</b>. &lt;recordContentSource&gt; needs an authority 
+          attribute.<br>
+          <br>
+        </li>
+        <li><b>relatedItem</b></li>
+        <ul>
+          <li>Add displayLabel attribute 
+          <li>Add &lt;part&gt; as a subelement under relatedItem (as below) 
+        </ul>
+      </ol>
+      <p><b>partDescription:</b> Allows for full citation information about the 
+        location within a host item; use with relatedItem type=&quot;host&quot;.<br>
+        <br>
+        <b>&lt;part&gt; </b><br>
+      </p>
+      <table width="99%">
+        <tr> 
+          <td colspan="2"><i>Subelement</i></td>
+          <td width="12%"><i>Attributes</i></td>
+          <td width="71%"><i>Attribute values (if applicable)</i></td>
+        </tr>
+        <tr> 
+          <td colspan="2"><b>&lt;detail&gt;</b></td>
+          <td width="12%">&nbsp;</td>
+          <td width="71%">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td colspan="2">&nbsp;</td>
+          <td width="12%">type</td>
+          <td width="71%"><b>Suggested:</b> part, volume, issue, chapter, section, 
+            paragraph, track</td>
+        </tr>
+        <tr> 
+          <td colspan="2">&nbsp;</td>
+          <td width="12%"> order</td>
+          <td width="71%"><i>[numeric]</i></td>
+        </tr>
+        <tr> 
+          <td width="5%">&nbsp;</td>
+          <td width="12%"><b>&lt;number&gt;</b></td>
+          <td width="12%">&nbsp;</td>
+          <td width="71%">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td width="5%">&nbsp;</td>
+          <td width="12%"><b>&lt;caption&gt;</b></td>
+          <td width="12%">&nbsp;</td>
+          <td width="71%">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td width="5%">&nbsp;</td>
+          <td width="12%"><b>&lt;title&gt; </b></td>
+          <td width="12%">&nbsp;</td>
+          <td width="71%">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td colspan="2"><b>&lt;extent&gt; </b></td>
+          <td width="12%">&nbsp;</td>
+          <td width="71%">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td width="5%">&nbsp;</td>
+          <td width="12%">&nbsp;</td>
+          <td width="12%">unit</td>
+          <td width="71%"><b>Suggested: </b>page, minute</td>
+        </tr>
+        <tr> 
+          <td width="5%">&nbsp;</td>
+          <td width="12%"><b>&lt;start&gt;</b></td>
+          <td width="12%">&nbsp;</td>
+          <td width="71%">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td width="5%">&nbsp;</td>
+          <td width="12%"><b>&lt;end&gt;</b></td>
+          <td width="12%">&nbsp;</td>
+          <td width="71%">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td width="5%">&nbsp;</td>
+          <td width="12%"><b>&lt;total&gt;</b></td>
+          <td width="12%">&nbsp;</td>
+          <td width="71%">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td width="5%">&nbsp;</td>
+          <td width="12%"><b>&lt;list&gt;</b></td>
+          <td width="12%">&nbsp;</td>
+          <td width="71%">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td colspan="2"><b>&lt;date&gt;</b></td>
+          <td width="12%">&nbsp;</td>
+          <td width="71%">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td width="5%">&nbsp;</td>
+          <td width="12%">&nbsp;</td>
+          <td width="12%">encoding</td>
+          <td width="71%">w3cdtf, iso8601</td>
+        </tr>
+        <tr> 
+          <td width="5%">&nbsp;</td>
+          <td width="12%">&nbsp;</td>
+          <td width="12%">point</td>
+          <td width="71%">start, end</td>
+        </tr>
+        <tr> 
+          <td colspan="2"><b>&lt;text&gt;</b> </td>
+          <td width="12%">&nbsp;</td>
+          <td width="71%">&nbsp;</td>
+        </tr>
+      </table>
+      <p>&nbsp;</p>
+      <P> 
+      <P> 
+      <HR noshade size="1">
+      <img src="images/mods-icon.gif" width="140" height="48" align="right" alt=""> 
+      <STRONG>Questions and comments:</STRONG> 
+      <ADDRESS> 
+      <!--help desk email start -->
+      <a href="mailto:ndmso@loc.gov">Contact Us</a> 
+      <!--help desk email end -->
+      ( 
+      <!-- #BeginDate format:Am1 -->July 10, 2003<!-- #EndDate -->
+      )</ADDRESS>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

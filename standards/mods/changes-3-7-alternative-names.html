@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+
+                        "http://www.w3.org/TR/html40/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/mods.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Changes for MODS Version 3.5 : Metadata Object Description Schema: MODS (Library of Congress)</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<meta name="keywords" content="mods  metadata object description schema changes version 3.5 library congress xml">
+<meta name="description" content="Changes for MODS Version 3.5 (Metadata Object Description Schema: MODS)">
+<style type="text/css">
+<!--
+.style1 {font-size: x-small}
+-->
+</style>
+<!-- InstanceEndEditable -->
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="mods-print.css" type="text/css" media="print">
+<style type="text/css">
+@import url(mods.css);
+</style>
+</head>
+<body link="#000099" vlink="#0066CC" bgcolor="#FFFFFF">
+<table class="layout2">
+  <tr>
+    <td class="top-breadcrumbs"><a id="skip" href="#skip_menu">&nbsp;</a><a href="http://www.loc.gov/">The Library of Congress</a> &raquo; <a href="http://www.loc.gov/standards/">Standards</a> &raquo; <a href="http://www.loc.gov/mods/">MODS Official Web Site</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://www.loc.gov/standards/mods/"><img src="images/mods-bar-760.gif" alt="Metadata Object Description Schema: Official Web Site" width="760" height="41" border="0"></a></td>
+  </tr>
+  <tr>
+    <td><a href="http://www.loc.gov/standards/mods/">HOME</a> &gt;&gt; <!-- InstanceBeginEditable name="topbreadcrumb" -->MODS 3.7 Changes <!-- InstanceEndEditable --><a name="skip_menu"></a><!-- InstanceBeginEditable name="content" -->
+<h1>Proposed Changes MODS 3.7 -- Alternative Names</h1>
+<p>October 24th, 2017</p>
+<p>&nbsp;</p>
+<p><strong>ISSUE </strong></p>
+<p> A requirement has recently surfaced to represent alternative names for the same entity – not alternative forms but alternative names, for example:</p>
+<ul>
+  <li> - "Claudia Alta Johnson" and "Lady Bird Johnson" </li>
+  <li> - "IBM" and "International Business Machines"</li>
+</ul>
+<br>
+<p><strong>PROPOSED SOLUTION
+</strong>
+<p>A single MODS record may include several
+  <name>
+  elements.  Originally the idea was that different
+  <name>
+  elements are names for two different entities. Later, the requirement surfaced to be able to include multiple names for the same entity - names that might differ in format, such as different scripts, transliterations, or translations --  multiple representations of the same name.  A number of approaches were considered but in the end the following solution chosen:
+<p>alternativeName  is added as a subelement of &lt;name&gt;. &nbsp;It has its own definition based on the name definition, with  the following subelements and attributes:</p>
+<p><em><strong>Allowed Subelements:</strong></em><br>
+  -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;namePart&gt;<br>
+  -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;displayForm&gt;<br>
+  -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;affiliation&gt;<br>
+  -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;role&gt;<br>
+  -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;description&gt;<br>
+  -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;nameIdentifier&gt;</p>
+  
+  
+  <p><em><strong>Excluded Subelements:</strong></em><br>
+  -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;etal&gt;<br>
+  
+  
+
+
+<p><em><strong>Allowed Attributes:</strong></em><br>
+  -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @xlink:simpleLink<br>
+  -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; languageAttributeGroup (@lang @xml:lang @script type @transliteration)<br>
+  -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @displayLabel<br>
+  -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @altType  (which is valid for alternativeName only, not &lt;name&gt; itself). The value of @altType may be any string but the following (tentative) values are considered well-known values (whose semantics are conveyed by the value).
+<ul>
+<li>
+“formal name”
+</li>
+<li>
+“preferred name”
+</li>
+<li>"acronym”
+</li>
+<li>
+“nickname”
+</li>
+<li>"no specific type"
+                   ("no specific type" may be used for any or all names when no specific type applies.)              
+</ul>
+<p><strong><em>Excluded Attributes:</em></strong><br>
+  -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @xsID<br>
+  -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;authorityAttributeGroup  (@authority @AuthorityURI @valueURI)<br>
+  -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @nameTitleGroup<br>
+    -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @altRepGroup<br>
+      -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @usage<br>
+        -&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @type<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>
+<br>
+<strong>EXAMPLE SOLUTIONS</strong>
+<p>
+  &lt;mods:name&gt;        
+  <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;mods:namePart&gt;Claudia Alta Johnson&lt;/mods:namePart&gt;
+  <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;mods:alternativeName altType="nickname"&gt;
+  <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &lt;mods:namePart>Lady Bird Johnson&lt;/mods:namePart&gt;
+  <br>
+  
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &lt;/mods:alternativeName&gt; <br>
+  
+  &lt;/mods:name&gt;
+  
+<p>&lt;mods:name type="corporate"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;mods:namePart>International Business Machines&lt;/mods:namePart&gt;
+<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;mods:alternativeName altType="acronym"&gt;
+  <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &lt;mods:namePart&gt;IBM&lt;/mods:namePart&gt;
+  <br>
+  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/mods:alternativeName&gt; <br>
+  
+  
+  &lt;/mods:name&gt;
+<p>
+<p><br>
+  
+  
+  
+
+    <!-- InstanceEndEditable -->
+<HR noshade size="1">
+</td>
+</tr>
+<tr>
+<td><a href="http://www.loc.gov/standards/mods/">HOME</a> &gt;&gt; <!-- InstanceBeginEditable name="bottombreadcrumb" -->Changes for MODS Version 3.7 <!-- InstanceEndEditable -->
+  <p><strong>Questions and comments:<br>
+  </strong>
+              <a href="mailto:ndmso@loc.gov">Contact Us</a> (
+              <!-- #BeginDate format:Am1 -->October 24, 2017<!-- #EndDate -->
+      )
+      <br>
+      <a href="http://www.loc.gov/homepage/legal.html">Legal</a> | <a href="http://www.loc.gov/global/disclaim.html">External Link Disclaimer</a></p></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

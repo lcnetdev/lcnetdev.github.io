@@ -1,0 +1,1337 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                        "http://www.w3.org/TR/html40/loose.dtd">
+<html>
+<head>
+<title>Outline of Elements and Attributes in MADS</title>
+<base href="http://www.loc.gov/standards/mods/mads/mads-outline.html">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="Outline of Elements and Attributes in MADS">
+<meta name="keywords" content= "mads, metadata authority description schema, library, congress">
+<meta name="author" content="Library of Congress Network Development and MARC Standards Office">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="file:///C|/Documents%20and%20Settings/rgue/My%20Documents/MODS/mods.css" type="text/css">
+</head>
+<body link="#000099" vlink="#0066CC" bgcolor="#FFFFFF">
+<table width=600 cellpadding=4 cellspacing=0 border=0 align=center>
+  <tr> 
+    <td><img src="file:///C|/Documents%20and%20Settings/rgue/My%20Documents/images/mods-bar.gif" width="600" height="40" alt="Metadata Object Description Schema: Official Web Site"></td>
+  </tr>
+</table>
+<h1 align="center">Outline of Elements and Attributes<br>
+  in MADS Version 1.0</h1>
+<p><font color="#000000">This document contains a listing of elements and their
+    related attributes in the Metadata Authority Description Schema (MADS) Version
+    1.0 with values or value sources where applicable. It is an &quot;outline&quot; of
+    the schema. </font></p>
+<p><font color="#000000">In a MADS record, there must be at least one element
+    under &lt;authority&gt;.
+    There may be only one &lt;authority&gt;, but elements may be used together under
+    an &lt;authority&gt; (for instance a &lt;name&gt; and &lt;titleInfo&gt;).
+    All other elements and attributes are optional. Attributes are not in a mandated
+    sequence
+    and
+    not
+    repeatable
+    (per
+    XML rules).  </font></p>
+<p> 
+<h2><a name="top_level">Main Elements:</a></h2>
+<table width="65%">
+  <tr>
+    <td colspan="2" valign="top"><a href="#authority">authority</a></td></tr>
+  <tr>
+    <td colspan="2" valign="top"><blockquote>
+      <p><a href="#name">name</a></p></blockquote></td></tr>
+  <tr> 
+    <td colspan="2" valign="top"><blockquote>
+      <p><a href="#titleInfo">titleInfo</a></p></blockquote></td></tr>
+  <tr>
+    <td colspan="2" valign="top"><blockquote>
+      <p><a href="#topic">topic</a></p>
+    </blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top"><blockquote><a href="#temporal">temporal</a></blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top"><blockquote><a href="#genre">genre</a></blockquote>
+    </td>
+  </tr>
+  <tr> 
+    <td colspan="2" valign="top"><blockquote>
+      <p><a href="#geographic">geographic</a></p>
+    </blockquote></td></tr>
+  <tr>
+    <td colspan="2" valign="top"><blockquote><a href="#hierarchicalGeographic">hierarchicalGeographic</a></blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top"><blockquote><a href="#occupation">occupation</a></blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top"><a href="#refs">refs</a></td></tr>
+  <tr>
+    <td width="4%" valign="top">&nbsp;</td>
+    <td width="96%" valign="top">ref</td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top"><blockquote><a href="#refname">name</a></blockquote></td></tr>
+  <tr>
+    <td colspan="2" valign="top"><blockquote><a href="#reftitle">titleInfo</a></blockquote></td></tr>
+  <tr> 
+    <td colspan="2" valign="top"><blockquote>
+      <p><a href="#reftopic">topic</a></p>
+    </blockquote></td></tr>
+  <tr>
+    <td colspan="2" valign="top"><blockquote><a href="#reftemporal">temporal</a></blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top"><blockquote><a href="#refGenre">genr</a>e</blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top"><blockquote><a href="#refGeographic">geographic</a></blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top"><blockquote><a href="#refhierarchicalGeographic">hierarchicalGeographic</a></blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top"><blockquote><a href="#refoccupation">occupation</a></blockquote>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top"><a href="#other">otherElements</a></td></tr>
+  <tr> 
+    <td colspan="2" valign="top"><blockquote>
+      <p><a href="#note">note</a></p></blockquote></td></tr>
+  <tr> 
+    <td colspan="2" valign="top"><blockquote>
+      <p><a href="#affiliation">affiliation</a></p>
+    </blockquote></td></tr>
+  <tr valign="top">
+    <td colspan="2"><blockquote><a href="#url">url</a></blockquote>
+    </td>
+  </tr>
+  <tr valign="top">
+    <td colspan="2"><blockquote><a href="#identifier">identifier</a></blockquote>
+    </td>
+  </tr>
+  <tr valign="top">
+    <td colspan="2"><blockquote><a href="#fieldOfActivity">fieldOfActivity</a></blockquote>
+    </td>
+  </tr>
+  <tr valign="top"> 
+    <td colspan="2"><blockquote>
+      <p><a href="#extension">extension</a></p></blockquote></td></tr>
+  <tr valign="top"> 
+    <td colspan="2"><blockquote>
+	      <p><a href="#recordInfo">recordInfo</a></p></blockquote></td></tr>
+</table>
+
+<h2>Root Elements:</h2>
+<a href="#mods_root">mads</a><br>
+<a href="#collection_root">madsCollection</a><br>
+<br>
+<hr>
+<h3>Top Level Elements</h3>
+<p><strong>1. &lt;authority&gt;<a name="authority"></a></strong></p>
+<table width="100%">
+  <tr valign="top"> 
+    <td colspan="4"><strong><a name="name"> &lt;name&gt;</a></strong></td>
+  </tr>
+  <tr valign="top"> 
+    <td width="5%">&nbsp;</td>
+    <td colspan="3"><i>Subelements:</i></td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td colspan="2">&lt;namePart&gt;</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td><em>Attribute:</em> type (date, family, given, termsOfAddress)</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="2">&lt;role&gt;</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&lt;roleTerm&gt;</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><em>Attributes: </em>type (code, text); authority (see: www.loc.gov/marc/sourcecode/relator/relatorsource.html) 
+    </td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="2">&lt;description&gt;</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td colspan="3"><i>Attributes:</i></td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="2">ID, xlink, lang, xml:lang, script, transliteration</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="2">type (personal, corporate,event, geographic)</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="2">authority (see: <a href="http://www.loc.gov/marc/sourcecode/authorityfile/authorityfilesource.html">www.loc.gov/marc/sourcecode/authorityfile/authorityfilesource.html</a>) 
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table width="100%">
+  <tr valign="top"> 
+    <td colspan="4"><strong><a name="titleInfo"> &lt;titleInfo&gt;</a></strong></td>
+  </tr>
+  <tr valign="top"> 
+    <td width="5%">&nbsp;</td>
+    <td colspan="2"><i>Subelements:</i></td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td>&lt;title&gt;</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&lt;subTitle&gt;</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&lt;partNumber&gt;</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&lt;partName&gt;</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&lt;nonSort&gt; </td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td colspan="2"><i>Attributes</i>:</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>ID, xlink, lang, xml:lang, script, transliteration</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>displayLabel</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>authority  (see: <a href="http://www.loc.gov/marc/sourcecode/authorityfile/authorityfilesource.html">www.loc.gov/marc/sourcecode/authorityfile/authorityfilesource.html</a>) </td>
+  </tr>
+</table>
+<br>
+<br>
+<table width="100%">
+  <tr valign="top">
+    <td colspan="3"><strong><a name="topic" id="topic">  &lt;topic&gt;</a></strong></td>
+  </tr>
+  <tr valign="top">
+    <td width="5%">&nbsp;</td>
+    <td colspan="3"><i>Subelements:</i></td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td>[none]</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td colspan="2"><i>Attributes:</i></td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>ID, xlink, lang, xml:lang, script, transliteration</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>authority (see: <a href="http://www.loc.gov/marc/sourcecode/subject/subjectsource.html"> www.loc.gov/marc/sourcecode/subject/subjectsource.html</a>)</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table width="100%">
+  <tr valign="top">
+    <td colspan="3"><strong><a name="temporal" id="temporal">&lt;temporal</a>&gt;</strong></td>
+  </tr>
+  <tr valign="top">
+    <td width="5%">&nbsp;</td>
+    <td colspan="2"><i>Subelements:</i></td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td>[none] </td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td colspan="2"><i>Attributes:</i></td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>ID, xlink, lang, xml:lang, script, transliteration</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>authority (sources: <em>coming soon</em>)</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>encoding (w3cdtf, iso8601, marc)</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>point (start,end)</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>keyDate (yes)</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>qualifier (approximate, inferred, questionable)</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table width="100%">
+  <tr valign="top">
+    <td colspan="3"><strong><a name="genre"> genre</a></strong></td>
+  </tr>
+  <tr valign="top">
+    <td width="5%">&nbsp;</td>
+    <td colspan="2"><i>Subelements:</i></td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td>[none] </td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td colspan="2"><i>Attributes:</i></td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>ID, xlink, lang, xml:lang, script, transliteration</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>authority (see: <a href="http://www.loc.gov/marc/sourcecode/genre/genresource.html">www.loc.gov/marc/sourcecode/genre/genresource.html</a>)</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table width="100%">
+  <tr valign="top"> 
+    <td colspan="3"><strong><a name="geographic"></a>geographic</strong></td>
+  </tr>
+  <tr valign="top"> 
+    <td width="5%">&nbsp;</td>
+    <td colspan="2"><em>Subelements:</em></td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td>[none]</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td colspan="2"><i>Attributes:</i></td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>ID, xlink, lang, xml:lang, script, transliteration</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>authority (see: <a href="http://www.loc.gov/marc/sourcecode/authorityfile/authorityfilesource.html">www.loc.gov/marc/sourcecode/authorityfile/authorityfilesource.html</a>) 
+      <a href="http://www.loc.gov/marc/sourcecode/subject/subjectsource.html"> 
+      </a></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table width="100%">
+  <tr valign="top">
+    <td colspan="3"><strong><a name="hierarchicalGeographic" id="hierarchicalGeographic"> hierarchicalGeographic</a></strong></td>
+  </tr>
+  <tr valign="top">
+    <td width="5%">&nbsp;</td>
+    <td colspan="2"><i>Subelements:</i></td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td>&lt;continent&gt;</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&lt;country&gt;</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&lt;province&gt;</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&lt;region&gt;</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&lt;state&gt;</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&lt;territory&gt;</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&lt;county&gt;</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&lt;city&gt;</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&lt;island&gt;</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&lt;area&gt;</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td colspan="2"><i>Attributes:</i></td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>ID, xlink, lang, xml:lang, script, transliteration</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>authority (sources: <em>coming soon)</em></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table width="100%">
+  <tr valign="top">
+    <td colspan="3"><strong><a name="occupation" id="occupation"> occupation</a></strong></td>
+  </tr>
+  <tr valign="top">
+    <td width="5%">&nbsp;</td>
+    <td colspan="2"><i>Subelements:</i></td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td>[none] </td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td colspan="2"><i>Attributes:</i></td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>ID, xlink, lang, xml:lang, script, transliteration</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>authority (sources: <em>coming soon</em>)</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>  <strong>2. <a name="refs"></a> &lt;refs&gt;</strong><br>
+</p>
+<table width="100%">
+  <tr valign="top"> 
+    <td colspan="5"><b><a> &lt;ref</a>&gt;</b></td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td colspan="4"><em>Attributes:</em></td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td colspan="4">variantType (acronym, abbreviation, translation, otherVariant)</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td colspan="4">relatedType (earlier, later, parentOrg, broader, narrower,
+    otherRelated)</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td colspan="4"><i>Subelements:</i></td>
+  </tr>
+  <tr valign="top"> 
+    <td width="5%">&nbsp;</td>
+    <td colspan="4"><strong><a name="refName"></a>&lt;name&gt;</strong></td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td colspan="3"><em>Subelements:</em></td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td colspan="2">&lt;namePart&gt;</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="2"><em>Attribute:</em> type (date, family, given, <font color="#000000">termsOfAddress</font>)</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="2">&lt;role&gt;</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td width="85%">&lt;roleTerm&gt;</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><em>Attributes: </em>type (code, text); authority (see: www.loc.gov/marc/sourcecode/relator/relatorsource.html)</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="2">&lt;description&gt;</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="3"><em>Attributes:</em></td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="3">ID, xlink, lang, xml:lang, script, transliteration</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="3">type (personal, corporate, event)</td>
+  </tr>
+  <tr valign="top"> 
+    <td colspan="5">&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td colspan="4"><strong><a name="refTitle"></a>&lt;titleInfo&gt;</strong></td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="3"><em>Subelements:</em></td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="2">&lt;title&gt;</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="2">&lt;subTitle&gt;</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="2">&lt;partNumber&gt;</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="2">&lt;partName&gt;</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="2">&lt;nonSort&gt;</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="3"><em>Attributes:</em></td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="2">ID, xlink, lang, xml:lang, script, transliteration</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="2">displayLabel</td>
+  </tr>
+  <tr valign="top"> 
+    <td colspan="5">&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td colspan="4"><strong><a name="refsubject"></a> topic</strong></td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="3"><em>Subelements:</em></td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="2">{[none]</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="3"><em>Attributes:</em></td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="2">ID, xlink, lang, xml:lang, script, transliteration</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="2">authority (see: <a href="http://www.loc.gov/marc/sourcecode/subject/subjectsource.html"> 
+      www.loc.gov/marc/sourcecode/subject/subjectsource.html</a>)</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table width="100%">
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td colspan="2"><strong><a name="refTemporal" id="refTemporal"> temporal</a></strong></td>
+  </tr>
+  <tr valign="top"> 
+    <td width="5%">&nbsp;</td>
+    <td colspan="2"><i>Subelements:</i></td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td>[none]</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td colspan="2"><i>Attributes:</i></td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>ID, xlink, lang, xml:lang, script, transliteration</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>authority (sources: <em>coming soon</em>)</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>encoding (w3cdtf, iso8601, marc)</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>point (start, end)</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>keyDate (yes)</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>qualifier (approximate, inferred, questionable)</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table width="100%">
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td colspan="2"><strong><a name="refGenre" id="refGenre"> genre</a></strong></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td width="5%"></td>
+    <td colspan="3"><i>Subelements:</i></td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td width="5%" >&nbsp;</td>
+    <td>[none]</td>
+  </tr>
+  <tr valign="top"> 
+    <td height="22">&nbsp;</td>
+    <td colspan="2"><i>Attributes:</i></td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="2">ID, xlink, lang, xml:lang, script, transliteration</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="2">authority (see: <a href="http://www.loc.gov/marc/sourcecode/genre/genresource.html">www.loc.gov/marc/sourcecode/genre/genresource.html</a>)</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table width="100%">
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td colspan="2"><strong><a name="refGenre" id="refGenre"> geographic</a></strong></td>
+    <td width="1%">&nbsp;</td>
+  </tr>
+  <tr valign="top"> 
+    <td width="5%">&nbsp;</td>
+    <td colspan="2"><i>Subelements:</i></td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td width="89%">[none]</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td colspan="2"><i>Attributes:</i></td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>ID, xlink, lang, xml:lang, script, transliteration</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>authority (see: <a href="http://www.loc.gov/marc/sourcecode/authorityfile/authorityfilesource.html">www.loc.gov/marc/sourcecode/authorityfile/authorityfilesource.html</a>) 
+      <a href="http://www.loc.gov/marc/sourcecode/subject/subjectsource.html"> 
+      </a></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table width="100%">
+  <tr valign="top">
+    <td width="5%"><strong></strong></td>
+    <td colspan="2"><strong><a name="refhierarchicalGeographic" id="refhierarchicalGeographic"> &lt;hierarchicalGeographic</a>&gt;</strong></td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td colspan="2"><i>Subelements:</i></td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td>&lt;continent&gt;</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&lt;country&gt;</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&lt;province&gt;</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&lt;region&gt;</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&lt;state&gt;</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&lt;territory&gt;</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&lt;county&gt;</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&lt;city&gt;</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&lt;island&gt;</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&lt;area&gt;</td>
+  </tr>
+  <tr valign="top">
+    <td width="5%">&nbsp;</td>
+    <td colspan="2"><i>Attributes:</i></td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>ID, xlink, lang, xml:lang, script, transliteration</td>
+  </tr>
+  <tr valign="top">
+    <td width="5%">&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td>authority (sources: <em>coming soon</em>)</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table width="100%">
+  <tr valign="top">
+    <td width="5%">&nbsp;</td>
+    <td colspan="2"><strong><a name="refoccupation" id="refoccupation"> &lt;occupation&gt;</a></strong></td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td colspan="2"><i>Subelements:</i></td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td>[none] </td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td colspan="2"><i>Attributes:</i></td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>ID, xlink, lang, xml:lang, script, transliteration</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>authority (sources: <em>coming soon)</em></td>
+  </tr>
+</table>
+<br>
+<strong>3. &lt;<a name="other"></a>otherElements&gt;</strong><br>
+<br>
+<table width="100%">
+  <tr valign="top"> 
+    <td colspan="3"><strong><a name="note"> &lt;note&gt;</a></strong></td>
+  </tr>
+  <tr valign="top"> 
+    <td width="5%">&nbsp;</td>
+    <td colspan="2"><i>Subelements:</i></td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td> [none]</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td colspan="2"><i>Attributes:</i></td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td> xlink, lang, xml:lang, script, transliteration</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>displayLabel</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>type (suggested values: source, history, notFound<a href="http://www.loc.gov/standards/mods/mods-notes.html"></a>)</td>
+  </tr>
+</table>
+<br>
+<br>
+<br>
+<table width="100%">
+  <tr valign="top"> 
+    <td colspan="4"><strong><a name="affiliation" id="affiliation"> &lt;affiliation</a>&gt;</strong></td>
+  </tr>
+  <tr valign="top"> 
+    <td width="5%">&nbsp;</td>
+    <td colspan="3"><i>Subelements:</i></td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="2">&lt;position&gt;</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td colspan="2">&lt;organization&gt;</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="2">&lt;address&gt;</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td width="88%">&lt;street&gt;</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&lt;city&gt;</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&lt;state&gt;</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&lt;country&gt;</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&lt;postcode&gt;</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="2">&lt;email&gt;</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="2">&lt;phone&gt;</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="2">&lt;fax&gt;</td>
+  </tr>
+  <tr valign="top">
+    <td><font color="#FF0000">&nbsp;</font></td>
+    <td><font color="#FF0000">&nbsp;</font></td>
+    <td colspan="2">&lt;hours&gt;</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="2">&lt;dateValid&gt;</td>
+  </tr>
+  <tr valign="top">
+    <td><font color="#FF0000">&nbsp;</font></td>
+    <td><font color="#FF0000">&nbsp;</font></td>
+    <td><font color="#000000"><em>&nbsp;</em></font></td>
+    <td><font color="#000000"><em>Attributes</em>:</font></td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>xlink, lang, xml:lang, script, transliteration</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><font color="#000000">encoding (w3cdtf, iso8601)</font></td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><font color="#000000">qualifier (approximate, inferred,
+    questionable)</font></td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><font color="#000000">point (start, end)</font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table width="100%">
+  <tr>
+    <td colspan="3"><strong><a name="url">&lt;url</a>&gt;</strong></td>
+  </tr>
+  <tr>
+    <td width="5%">&nbsp;</td>
+    <td colspan="2"><em>Subelements:</em></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td width="94%">[none]</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td colspan="2"><em>Attributes:</em></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>displayLabel</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>dateLastAccessed</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table width="100%">
+  <tr>
+    <td colspan="3"><strong><a name="identifier" id="identifier">&lt;identifier</a>&gt;</strong></td>
+  </tr>
+  <tr>
+    <td width="5%">&nbsp;</td>
+    <td colspan="2"><em>Subelements:</em></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td width="94%">[none]</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td colspan="2"><em>Attributes:</em></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td> lang, xml:lang, script, transliteration</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>type (istc)</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>invalid (yes)</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table width="100%">
+  <tr valign="top">
+    <td colspan="3"><b><a name="fieldOfActivity" id="fieldOfActivity"> &lt;fieldOfActivity&gt;</a></b></td>
+  </tr>
+  <tr valign="top">
+    <td width="5%">&nbsp;</td>
+    <td colspan="2" height="4"><i>Subelements:</i></td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td> [none]</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td colspan="2"><i>Attributes:</i> </td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>xlink, lang, xml:lang, script, transliteration</td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>displayLabel</td>
+  </tr>
+</table>
+<p>&nbsp; </p>
+<table width="100%">
+  <tr valign="top"> 
+    <td colspan="3" height="20"><b><a name="extension"> &lt;extension&gt;</a></b></td>
+  </tr>
+  <tr valign="top"> 
+    <td width="5%">&nbsp;</td>
+    <td colspan="2" height="4"><i>Subelements:</i></td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td> [none]</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td colspan="2"><i>Attributes:</i> </td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td> [none]</td>
+  </tr>
+</table>
+<br>
+<br>
+<br>
+<table width="100%">
+  <tr valign="top"> 
+    <td colspan="5"><strong><a name="recordInfo">  &lt;recordInfo&gt;</a></strong></td>
+  </tr>
+  <tr valign="top"> 
+    <td width="5%">&nbsp;</td>
+    <td colspan="4"><i>Subelements:</i> </td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td colspan="3">&lt;recordContentSource&gt; </td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td colspan="2"><em><font color="#000000">Attributes:</font></font></em><font color="#000000"> authority
+        (see: <a href="http://www.loc.gov/marc/sourcecode/organization/organizationsource.html">www.loc.gov/marc/sourcecode/organization/organizationsource.html</a>);
+        lang; xml:lang; script; transliteration</font></font></td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="3">&lt;recordCreationDate&gt;</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="2"><em>Attributes:</em> encoding (w3cdtf, iso8601); point
+       (start, end);  keyDate (yes); <font color="#000000">qualifier (approximate,
+       inferred, questionable)</font></td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="3">&lt;recordChangeDate&gt; </td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="2"><em>Attributes:</em> encoding (w3cdtf, iso8601); point
+       (start, end); <font color="#000000">keyDate (yes); qualifier (approximate,
+       inferred, questionable)</font></td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="3">&lt;recordIdentifier&gt;</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="2"><em>Attribute:</em> source </td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="3"><font color="#000000">&lt;recordOrigin&gt;</font></td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="3"> 
+      &lt;languageOf Cataloging
+&gt;    </td>
+  </tr>
+  <tr valign="top">
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="2"><font color="#000000">&lt;languageTerm&gt;</font></td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td width="5%">&nbsp;</td>
+    <td><i>Attributes:</i> <font color="#000000">type (code, text)</font>; authority 
+      (iso639-2b, rfc3066)</td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td colspan="4"><i>Attributes:</i></td>
+  </tr>
+  <tr valign="top"> 
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td colspan="3"> lang, xml:lang, script, transliteration</td>
+  </tr>
+</table>
+<p>
+<hr>
+<h3>Root Elements</h3>
+<table width="100%" border="0">
+  <tr>
+    <td colspan="3"><font color="#FF0000"><a name="mods_root"><strong><font color="#000000">1.
+              &lt;mads&gt;</font></strong></a><font color="#000000"> (A single
+              MADS record)</font></font><font color="#000000">&nbsp;</font></font></td>
+  </tr>
+  <tr>
+    <td width="5%"><font color="#FF0000">&nbsp;</font></td>
+    <td colspan="2"><font color="#FF0000"><em><font color="#000000">Subelements:</font></em></font><font color="#000000">&nbsp;</font></font></td>
+  </tr>
+  <tr valign="top">
+    <td><font color="#FF0000">&nbsp;</font></td>
+    <td width="5%"><font color="#FF0000">&nbsp;</font></td>
+    <td><font color="#000000">See:</font><font color="#FF0000"> <a href="#top_level">Top 
+      Level Elements</a></font></font></td>
+  </tr>
+  <tr>
+    <td><font color="#FF0000">&nbsp;</font></td>
+    <td colspan="2"><font color="#FF0000"><em><font color="#000000">Attributes:</font></em></font><font color="#000000">&nbsp;</font></font></td>
+  </tr>
+  <tr>
+    <td><font color="#FF0000">&nbsp;</font></td>
+    <td><font color="#FF0000">&nbsp;</font></td>
+    <td><font color="#000000">ID</font></font></td>
+  </tr>
+  <tr>
+    <td><font color="#FF0000">&nbsp;</font></td>
+    <td><font color="#FF0000">&nbsp;</font></td>
+    <td><font color="#000000">version</font></font></td>
+  </tr>
+</table>
+<br>
+</font>
+<table width="100%" border="0">
+  <tr> 
+    <td colspan="3"><strong><a name="collection_root">2. 
+      &lt;madsCollection</a>&gt; </strong>(A 
+      collection of MADS records)&nbsp;</td>
+  </tr>
+  <tr> 
+    <td width="5%"><font color="#FF0000">&nbsp;</font></td>
+    <td colspan="2"><font color="#FF0000"><em><font color="#000000">Subelements:</font></em></font><font color="#000000">&nbsp;</font></font></td>
+  </tr>
+  <tr valign="top"> 
+    <td><font color="#FF0000">&nbsp;</font><font color="#FF0000">&nbsp;</font></td>
+    <td width="5%"><font color="#FF0000">&nbsp;</font> </td>
+    <td><font color="#000000">mads</font></font></td>
+  </tr>
+  <tr> 
+    <td><font color="#FF0000">&nbsp;</font></td>
+    <td colspan="2"><font color="#FF0000"><em><font color="#000000">Attributes:</font></em></font><font color="#000000">&nbsp;</font></font></td>
+  </tr>
+  <tr valign="top"> 
+    <td><font color="#FF0000">&nbsp;</font><font color="#FF0000">&nbsp;</font></td>
+    <td><font color="#FF0000">&nbsp;</font> </td>
+    <td><font color="#000000">[none]</font></font></td>
+  </tr>
+</table>
+<p>
+<hr noshade size="1">
+<a href="http://www.loc.gov/standards/mods/"><img src="file:///C|/Documents%20and%20Settings/rgue/My%20Documents/images/mods-icon.gif" width="140" height="48" align="right" alt="MODS" border="0"></a><strong>Questions 
+and comments:</strong> 
+<!-- LC/MODS footer -->
+<address><a href="http://www.loc.gov/help/help-desk.html">Library of Congress 
+Help Desk</a> ( 
+<!-- #BeginDate format:Am3 -->06/02/2004<!-- #EndDate -->
+)</address>
+</body>
+</html>

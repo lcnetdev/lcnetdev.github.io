@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+
+                        "http://www.w3.org/TR/html40/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/mods.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>MODS: Uses and Features (Metadata Object Description Schema: MODS)</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<base href="http://www.loc.gov/standards/mods/mods-overview.html">
+<meta name="keywords" content="mods overview metadata object description schema web site library congress xml">
+<meta name="description" content="This document gives an overview of (Metadata Object Description Schema: MODS">
+<!-- InstanceEndEditable -->
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="mods-print.css" type="text/css" media="print">
+<style type="text/css">
+@import url(mods.css);
+</style>
+</head>
+<body link="#000099" vlink="#0066CC" bgcolor="#FFFFFF">
+<table class="layout2">
+  <tr>
+    <td class="top-breadcrumbs"><a id="skip" href="#skip_menu">&nbsp;</a><a href="http://www.loc.gov/">The Library of Congress</a> &raquo; <a href="http://www.loc.gov/standards/">Standards</a> &raquo; <a href="http://www.loc.gov/mods/">MODS Official Web Site</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://www.loc.gov/standards/mods/"><img src="images/mods-bar-760.gif" alt="Metadata Object Description Schema: Official Web Site" width="760" height="41" border="0"></a></td>
+  </tr>
+  <tr>
+    <td><a href="http://www.loc.gov/standards/mods/">HOME</a> &gt;&gt; <!-- InstanceBeginEditable name="topbreadcrumb" --><span class="selected">MODS:
+          Uses and Features</span><!-- InstanceEndEditable --><a name="skip_menu"></a><!-- InstanceBeginEditable name="content" -->
+	<h1>MODS: Uses and Features</h1>
+	The Library of Congress' Network Development and MARC Standards Office, with
+	interested experts,  developed the Metadata Object Description Schema (MODS) in 2002 for a bibliographic element set that
+	may be used for a variety of purposes, and particularly for library applications.
+	As an XML schema it is intended to be able to carry selected data from existing
+	MARC 21 records as well as to enable the creation of original resource description
+	records. It includes a subset of MARC fields and uses language-based tags rather
+	than numeric ones, in some cases regrouping elements from the MARC 21 bibliographic
+	format. As of May 2015 this schema is in its third version (version 3.6). MODS is expressed using the <a href="http://www.w3.org/XML/Schema">XML
+	schema language</a> of the <a href="http://www.w3.org/">World Wide Web Consortium</a>.
+	The standard is maintained by the <a href="http://www.loc.gov/marc/ndmso.html"> </a><a href="http://www.loc.gov/standards/mods/editorial-committee.html">MODS Editorial Committee</a> with support from the <a href="http://www.loc.gov/marc/ndmso.html">Network
+	Development and MARC Standards Office</a> of the Library of Congress.
+        <p><b>1. Uses</b></p>
+        <p>MODS could potentially be used as follows:</p>
+        <ul>
+          <li>as an <a href="http://www.loc.gov/standards/sru/">SRU specified format</a></li>
+          <li>as an extension schema to <a href="http://www.loc.gov/mets/">METS</a> (Metadata
+            Encoding and Transmission Standard)</li>
+          <li>to represent metadata for harvesting </li>
+          <li>for original resource description in XML syntax</li>
+          <li>for representing a simplified MARC record in XML</li>
+          <li>for metadata in XML that may be packaged with an electronic resource</li>
+        </ul>
+        <p><b>2. Advantages of MODS</b></p>
+        <p>MODS is intended to complement other metadata formats. For some applications,
+          particularly those that have used MARC records, there will be advantages
+          over other metadata schemes. Some advantages are:</p>
+        <ul>
+          <li>The element set is richer than Dublin Core</li>
+          <li>The element set is more compatible with library data than ONIX</li>
+          <li>The schema is more end user oriented than the full MARCXML schema</li>
+          <li>The element set is simpler than the full MARC format</li>
+        </ul>
+        <p><b>3. Features of MODS</b></p>
+        <ul>
+          <li>The elements generally inherit the semantics of MARC</li>
+          <li>Some data has been repackaged; in some cases what is in several
+            data elements in MARC may be brought together into one in MODS</li>
+          <li>MODS does not assume the use of any specific cataloging code</li>
+          <li>Several elements have an optional ID attribute to facilitate linking
+            at the element level.</li>
+        </ul>
+        <p><b>4. Limitations of MODS</b></p>
+        <p>MODS includes a subset of data from the <i><a href="http://www.loc.gov/marc/bibliographic/">MARC
+              21 Format for Bibliographic Data</a></i>. As an element set that
+              allows for the representation of data already in MARC-based systems,
+              it is intended to allow for the conversion of core fields while
+              some specific data may be dropped. As an element set for original
+              resource description, it allows for a simple record to be created
+              in some cases using more general tags than those available in the
+              MARC record. </p>
+        <p>However, the schema does not target round-tripability with MARC 21.
+          In other words, an original MARC 21 record converted to MODS may not
+          convert back to MARC 21 in its entirety without some loss of specificity
+          in tagging or loss of data. In some cases if reconverted into MARC
+          21, the data may not be placed in exactly the same field that it started
+          in because a MARC field may have been mapped to a more general one
+          in MODS. However the data itself will not be lost, only the detailed
+          identification of the type of element it represents. In other cases
+          the element in MARC may not have an equivalent element in MODS and
+          then the specific data could be lost when converting to MODS.</p>
+        <p>MODS does not include business rules for populating the elements.
+          The fields listed under &quot;xsd:documentation&quot; are intended
+          as comments, to refer the user to where the semantics for the elements
+          listed may be found. These MARC 21 elements listed are not intended
+          to provide a crosswalk between MODS and MARC; additional instructions
+        would need to be provided for conversion details.</p>
+        <p><b>5. Order of Elements</b></p>
+        <p>Note that the order of elements in the MODS schema does not assume
+          display order. A stylesheet would be used to control display order
+          of MODS records.</p>
+      <!-- InstanceEndEditable -->
+<HR noshade size="1">
+</td>
+</tr>
+<tr>
+<td><a href="http://www.loc.gov/standards/mods/">HOME</a> &gt;&gt; <!-- InstanceBeginEditable name="bottombreadcrumb" --><span class="selected">MODS:
+            Uses and Features</span><!-- InstanceEndEditable -->
+  <p><strong>Questions and comments:<br>
+  </strong>
+              <a href="mailto:ndmso@loc.gov">Contact Us</a> (
+              <!-- #BeginDate format:Am1 -->February 1, 2016<!-- #EndDate -->
+      )
+      <br>
+      <a href="http://www.loc.gov/homepage/legal.html">Legal</a> | <a href="http://www.loc.gov/global/disclaim.html">External Link Disclaimer</a></p></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

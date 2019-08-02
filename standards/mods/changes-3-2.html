@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+
+                        "http://www.w3.org/TR/html40/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/mods.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>MODS version 3.2 changes (Metadata Object Description Schema: MODS)</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<base href="http://www.loc.gov/standards/mods/mods-overview.html">
+<meta name="keywords" content="mods overview metadata object description schema web site library congress xml">
+<meta name="description" content="Subpage_Title (Metadata Object Description Schema: MODS)">
+<meta name="keywords" content="mods changes version 3.2 metadata object description schema">
+<meta name="description" content="Details specific changes made to MODS for version 3.2.">
+<!-- InstanceEndEditable -->
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="mods-print.css" type="text/css" media="print">
+<style type="text/css">
+@import url(mods.css);
+</style>
+</head>
+<body link="#000099" vlink="#0066CC" bgcolor="#FFFFFF">
+<table class="layout2">
+  <tr>
+    <td class="top-breadcrumbs"><a id="skip" href="#skip_menu">&nbsp;</a><a href="http://www.loc.gov/">The Library of Congress</a> &raquo; <a href="http://www.loc.gov/standards/">Standards</a> &raquo; <a href="http://www.loc.gov/mods/">MODS Official Web Site</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://www.loc.gov/standards/mods/"><img src="images/mods-bar-760.gif" alt="Metadata Object Description Schema: Official Web Site" width="760" height="41" border="0"></a></td>
+  </tr>
+  <tr>
+    <td><a href="http://www.loc.gov/standards/mods/">HOME</a> &gt;&gt; <!-- InstanceBeginEditable name="topbreadcrumb" --><span class="selected">MODS
+          version 3.2 changes</span><!-- InstanceEndEditable --><a name="skip_menu"></a><!-- InstanceBeginEditable name="content" -->
+      <h1>MODS Version 3.2 changes</h1>
+      <p>A new version of the MODS XML schema (version 3.2) is now available
+        at : <a href="v3/mods-3-2.xsd"><br>
+        www.loc.gov/standards/mods/v3/mods-3-2.xsd</a>. </p>
+      <p>This replaces version 3.1, which was finalized in July 2005. Changes
+        are minor in that there are additions and corrections that do not invalidate
+        existing MODS 3.0 instances.  The new version
+        of MODS makes the following changes.</p>
+      <ol>
+        <li>Under &lt;location&gt;&lt;url&gt;:<ul>
+	    <li>Added attribute &quot;note&quot; to allow for notes associated with
+	      the	      link. (Tentative plan for 4.0 is to make it an element instead
+	      of an	      attribute, and wrap &lt;url&gt; and &lt;urlNote&gt; together,
+      but we can't do that in                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       	      this version because it would not be compatible with 3.1.) </li>
+        <li>Added attribute &quot;access&quot;, enumerated list with values:<br>
+          preview<br>
+          raw object<br>
+        object in context</li>
+	    <li>Added attribute 'usage' under &lt;url&gt; with one enumerated      value:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        &quot;primary display&quot;.</li>
+      </ul></li>
+	  <li>Under &lt;physicalDescription&gt; &lt;digitalOrigin&gt;
+Added enumerated values: 
+  <ul><li>digitized microfilm (original source was microfilm) </li>
+  <li>digitized other analog (original source was something other than the other
+enumerated values)</li></ul>
+<li>Under &lt;part&gt;</li><ul>
+<li>Added attributes ID, type, order</li>
+<li>&lt;part&gt; may now be empty (minOccurs 0 on choice)</li></ul>
+ <li>ID attribute added</li><ul><li>to relatedItem (note that this was an error that has now been
+corrected; inadvertently omitted in version 3.1)</li>
+<li>to note.</li></ul>
+<li>The following elements have been globalized:</li><ul>
+<li>&lt;dateCaptured&gt;  (under &lt;originInfo&gt;)  dateCapturedType defined</li>
+<li>&lt;edition&gt; (under &lt;originInfo&gt;) editionType defined</li>
+<li>&lt;physicalLocation&gt; (under &lt;location&gt;) physicalLocationType defined</li>
+</ul>
+<li>Elements whose type had been assumed to be "string", but had not been
+explicitly typed, are now typed. </li>
+<li>Added subelement &lt;genre&gt; under &lt;subject&gt;.</li>
+<li>The schema location reference for xlink is changed to
+http://www.loc.gov/standards/xlink.xsd. (It was previously
+http://www.loc.gov/standards/mods/xlink.xsd. The schema now resides in
+both places so that earlier versions will not be affected, but it is now
+intended that the new copy be referenced, outside of the mods directory,
+so that other projects, e.g. mets, may reference it.)</li>     </ol>
+      
+      <!-- InstanceEndEditable -->
+<HR noshade size="1">
+</td>
+</tr>
+<tr>
+<td><a href="http://www.loc.gov/standards/mods/">HOME</a> &gt;&gt; <!-- InstanceBeginEditable name="bottombreadcrumb" --><span class="selected">MODS
+            version 3.2 changes</span><!-- InstanceEndEditable -->
+  <p><strong>Questions and comments:<br>
+  </strong>
+              <a href="mailto:ndmso@loc.gov">Contact Us</a> (
+              <!-- #BeginDate format:Am1 -->October 18, 2010<!-- #EndDate -->
+      )
+      <br>
+      <a href="http://www.loc.gov/homepage/legal.html">Legal</a> | <a href="http://www.loc.gov/global/disclaim.html">External Link Disclaimer</a></p></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

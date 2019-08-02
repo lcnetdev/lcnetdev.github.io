@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+
+                        "http://www.w3.org/TR/html40/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/mads-template.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Changes for MADS Version 2.0: Metadata Authority Description Schema: MADS (Library of Congress)</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<meta name="keywords" content="mads metadata authority description schema changes 2.0 web site library congress xml official site library congress">
+<meta name="description" content="Changes for MADS Version 2.0 : Summarizes changes approved by the MODS Editorial Committee for the Metadata Authority Description Schema (MADS) version 2.0."><!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="mads_new.css" type="text/css">
+</head>
+<body link="#000099" vlink="#0066CC" bgcolor="#FFFFFF">
+<table width="760" cellpadding="4" cellspacing="0" border="0" align="center">
+  <tr>
+    <td colspan="3"><a id="skip" href="#skip_menu">&nbsp;</a><a href="http://www.loc.gov/">The
+        Library of Congress</a> &gt;&gt; <a href="http://www.loc.gov/standards/">Standards</a> &gt;&gt; <a href="http://www.loc.gov/mads/">MADS</a></td>
+  </tr>
+  <tr>
+    <td colspan="3"><a href="http://www.loc.gov/standards/mads/"><img src="images/mads-bar.gif" alt="Metadata Authority Description Schema: Official Web Site" width="697" height="75" border="0"></a></td>
+  </tr>
+  <tr>
+    <td colspan="3"><p><a href="http://www.loc.gov/standards/mads/">HOME</a> &gt;&gt; <!-- InstanceBeginEditable name="topbreadcrumb" -->Changes for MADS Version 2.1 <!-- InstanceEndEditable --></p>
+      <a name="skip_menu"></a><!-- InstanceBeginEditable name="content" -->
+      <h1>Changes for MADS Versions 2.x</h1>
+      <p>The following changes for MADS Version 2.x have been approved by the <a href="http://www.loc.gov/standards/mods/editorial-committee.html">MODS Editorial Committee</a>. Changes listed below include the date approved by the MODS Editorial Committee. See <a href="http://www.loc.gov/standards/mods/userguide/">MODS user guidelines</a> for examples of new elements in MADS that are also in MODS. These changes relate to compatibility with MODS 3.x.</p>
+      <h1>MADS 2.1 -- Approved Changes (September 2016)</h1>
+      <ul>
+      <li>Six elements added for alignment with MADS RDF</li></ul>
+<ul>
+- personInfo<br>
+- organizationInfo<br>
+- familyInfo<br>
+- fieldOfEndeavor<br>
+- locale<br>
+- workInfo
+</ul>
+<ul>
+  <li>hierarchicalGeographic definition aligned with MODS 3.6</li>
+</ul>
+<ul>
+<li>&quot;fullerForm&quot; added as a name part type</ul>
+
+<ul>
+<li>Cosmetic changes (see schema for details)</ul>
+<p><br>
+</p>
+<h1>MADS 2.0 -- Approved Changes (March 2011)</h1>
+      <ul><li> Add &rdquo;edtf&rdquo; and &ldquo;temper&rdquo; to  encoding list for @encoding for the following date elements. These were added to MODS 3.4. (Oct. 26, 2010):
+          <ul>
+              <li>&lt;temporal&gt; (within authority, related and variant)</li>
+            <li>&lt;recordCreationDate&gt;</li>
+            <li>&lt;recordChangeDate&gt;</li>
+          </ul>
+        </li>
+        <li>Add @authorityURI and @valueURI to the following MADS elements (Oct. 12, 2010):
+          &nbsp;
+              <ul>
+                <li>Elements that already have @authority defined (all these are under authority, related and variant unless otherwise noted):
+                  <ul>
+                      <li>titleInfo</li>
+                    <li>name</li>
+                    <li>genre</li>
+                    <li>topic</li>
+                    <li>geographic</li>
+                    <li>temporal</li>
+                    <li>hierarchicalGeographic</li>
+                    <li>occupation </li>
+                    <li>recordInfo/recordContentSource</li>
+                    <li>recordInfo/languageOfCataloging/languageTerm </li>
+                  </ul>
+                </li>
+                <li>Elements from MODS being added in version 2.0 (see below) that have@authority defined:
+                  <ul>
+                      <li>classification</li>
+                    <li>language/languageTerm</li>
+                    <li>language/scriptTerm</li>
+                    <li>recordInfo/languageOfCataloging/scriptTerm</li>
+                    <li>recordInfo/descriptionStandard</li>
+                  </ul>
+                </li>
+                <li>affiliation</li>
+                <li>affiliation/organization</li>
+                <li>fieldOfActivity</li>
+              </ul>
+        </li>
+        <li>Enumerate the MADS version attribute to include all earlier incremental  versions within the main version number. This won't be an issue for  2.0, as 2.0 will be the only legal value (Aug. 3, 2010).</li>
+        <li>Reorganize schema so all  element definitions are at the schema level
+          and are thus externalized; define explicitly all elements in the MODS namespace as global (Aug. 3, 2010) </li>
+        <li>Add a descriptionStandard element to recordInfo (Aug. 3, 2010)</li>
+        <li>Add @note to &lt;url&gt; (Aug. 3, 2010)</li>
+        <li>Add extraterrestrialArea  element to hierarchicalGeographic (Aug. 3, 2010)</li>
+        <li>Add citySection  element to hierarchicalGeographic (Aug. 3, 2010)</li>
+        <li>Add @type='family' to name  element (Aug. 3, 2010) </li>
+      </ul>
+      <h3>RDA-related changes </h3>
+      <ul>
+        <li> Add &lt;language&gt; (modeled after the same element in MODS) in MADS, as a new top level element with subelements &lt;languageTerm&gt; and &lt;scriptTerm&gt; defined as in MODS . Includes attributes lang; xml:lang; script;  transliteration, but not displayLabel, usage,  altRepGroup or objectPart (which are in MODS but not relevant in MADS). Language corresponds to RDA elements Language of the Person and Language of the Corporate Body  and MARC field 377 (Oct. 26, 2010)
+          <!--Add <profession> with attribute "authority" and subelements <professionTerm>, <date> and <sourceOfInformation>. Corresponds to RDA element Profession or Occupation and MARC Authorities field 374. (Oct. 26, 2010)  -->
+          &nbsp;</li>
+      </ul>
+      <h3>General/structural changes </h3>
+      <ul>
+        <li>Add @hidden to &lt;variant&gt; with single value &quot;yes&quot; to indicate a variant that should not be displayed. This allows for better mapping to SKOS and MADS/RDF. (Feb. 14, 2011) <strong><br>
+          Example:</strong>
+          <pre>&lt;authority&gt;
+   &lt;topic authority=&quot;lcsh&quot;&gt;Chuukese language&lt;/topic&gt;
+&lt;/authority&gt;<br>&lt;variant hidden=&quot;yes&quot;&gt;
+   &lt;topic&gt;Truk&lt;/topic&gt;
+&lt;/variant&gt;     </pre>
+        </li>
+        <li>Add @otherType to &lt;related&gt; and &lt;variant&gt; if a type of relationship not enumerated in the schema (Feb. 14, 2011) <br>
+        <strong>Example:</strong> <pre>&lt;authority&gt;
+   &lt;name type=&quot;corporate&quot; authority=&quot;naf&quot;&gt;
+      &lt;namePart&gt;I.M. Pei &amp; Partners&lt;/namePart&gt;
+  &lt;/name&gt;
+&lt;/authority&gt;<br>&lt;related type=&quot;other&quot; otherType=&quot;founder&quot;&gt;
+   &lt;name type=&quot;personal&quot; authority=&quot;naf&quot;&gt;
+      &lt;namePart&gt;Pei, I. M.&lt;/namePart&gt;
+      &lt;namePart type=&quot;date&quot;&gt;1917-&lt;/namePart&gt;
+&lt;/related&gt;        </pre>
+        </li>
+        <li>Add @geographicSubdivision to &lt;authority&gt; with the following values: none, direct, indirect, not applicable (Jan. 31, 2011) <br>
+          <strong>Example:</strong><br>
+        <pre>&lt;authority @geographicSubdivision=&quot;indirect&quot;&gt;
+   &lt;topic authority=&quot;lcsh&quot;&gt;Art&lt;/topic&gt;
+&lt;/authority&gt;</pre>
+        </li>
+        <li>Make &lt;authority&gt; repeatable for multiple authoritative forms in different languages and scripts. (Oct. 26, 2010)<br>
+          <strong>Example:
+          <pre>&lt;mads:authority transliteration=&quot;alalc&quot; script=&quot;Latn&quot;&gt;<br>   &lt;mads:name type=&quot;personal&quot; authority=&quot;naf&quot;&gt;<br>    &lt;mads:namePart type=&quot;family&quot;&gt;S&#803;abri&#772;&lt;/mads:namePart&gt;<br>     &lt;mads:namePart type=&quot;given&quot;&gt;Mu&#772;sa&#769;&lt;/mads:namePart&gt;<br>  &lt;/mads:name&gt;<br>&lt;/mads:authority&gt;
+&lt;mads:authorityt script=&quot;Arab&quot;&gt;<br>   &lt;mads:name type=&quot;personal&quot; authority=&quot;naf&quot;&gt;<br>      &lt;mads:namePart type=&quot;family&quot;&gt;&#1589;&#1576;&#1585;&#1610;&lt;/mads:namePart&gt;<br>     &lt;mads:namePart type=&quot;given&quot;&gt;&#1605;&#1608;&#1587;&#1609;&lt;/mads:namePart&gt;<br>   &lt;/mads:name&gt;<br>&lt;/mads:authority&gt;        </pre>
+          </strong></li>
+        <li>Add &lt;classification&gt; as a new top-level element to MADS. Use same  definition of the &lt;classification&gt; element from MODS (Sept. 28, 2010)</li>
+        <li>For all elements imported from MODS to MADS in MADS 1.0, redefine them  in MADS 2.0 in the MADS Schema itself, and in the MADS namespace (Aug. 3, 2010)</li>
+      </ul>
+      <p>&nbsp;</p>
+      <!-- InstanceEndEditable -->
+    <HR noshade size="1">    </td>
+  </tr>
+  <tr>
+    <td width="392"><p><a href="http://www.loc.gov/standards/mads/">HOME</a> &gt;&gt; <!-- InstanceBeginEditable name="bottombreadcrumb" -->Changes for MADS Version 2.1<!-- InstanceEndEditable --></p>
+      <strong>Questions
+      and comments:</strong>
+      <address>
+      <a href="mailto:ndmso@loc.gov">Contact Us</a> (
+      <!-- #BeginDate format:Am1 -->April 17, 2017<!-- #EndDate -->
+      )
+      </address></td>
+    <td width="219" valign="bottom"><a href="http://www.loc.gov/homepage/legal.html">Legal</a> | <a href="http://www.loc.gov/global/disclaim.html">External Link Disclaimer</a></td>
+    <td width="125" align="right" valign="bottom"><a href="http://www.loc.gov/standards/mads/"><img src="images/mads-icon.gif" alt="MADS icon" width="125" height="54" border="0" align="right"></a></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

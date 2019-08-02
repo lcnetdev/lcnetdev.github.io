@@ -1,0 +1,102 @@
+<table cellpadding="4" cellspacing="0" border="1" width="90%">
+   <tr valign="top">
+      <th scope="col">Date</th>
+      <th scope="col">Code</th>
+      <th scope="col">Reason</th>
+   </tr>
+   <tr>
+      <td class="changesBold">2013-02-11</td>
+      <td>bih</td>
+      <td>Update</td>
+   </tr>
+   <tr>
+      <td class="changesBold">2009-02-19</td>
+      <td>day</td>
+      <td>Creation</td>
+   </tr>
+   <tr>
+      <td class="changesBold">2009-02-18</td>
+      <td>car</td>
+      <td>Deletion</td>
+   </tr>
+   <tr>
+      <td class="changesBold">2009-02-17</td>
+      <td>sal</td>
+      <td>Name change, French only (from salish, langues)</td>
+   </tr>
+   <tr>
+      <td class="changesBold">2009-02-17</td>
+      <td>sai</td>
+      <td>Name change, French only (from indiennes d'Amérique du Sud and autres langues indiennes d'Amérique du Sud, langues)</td>
+   </tr>
+   <tr>
+      <td class="changesBold">2009-02-17</td>
+      <td>cpf</td>
+      <td>Name change, French only (from créoles et pidgins français, autres and créoles et pidgins français)</td>
+   </tr>
+   <tr>
+      <td class="changesBold">2009-02-17</td>
+      <td>cpe</td>
+      <td>Name change, French only (from créoles et pidgins anglais, autres and créoles et pidgins anglais)</td>
+   </tr>
+   <tr>
+      <td class="changesBold">2009-02-17</td>
+      <td>pra</td>
+      <td>Name change, French only (from prâkrits, langues)</td>
+   </tr>
+   <tr>
+      <td class="changesBold">2009-02-17</td>
+      <td>paa</td>
+      <td>Hierarchy changed to paa from ngf : paa</td>
+   </tr>
+   <tr>
+      <td class="changesBold">2009-02-17</td>
+      <td>cpp</td>
+      <td>Name change, French only (from créoles et pidgins portugais autres and créoles et pidgins portugais)</td>
+   </tr>
+   <tr>
+      <td class="changesBold">2009-02-17</td>
+      <td>ngf</td>
+      <td>Hierarchy changes to paa : ngf from ngf : paa. Name change, English (from Trans New Guinea). Name change, French (from trans Nouvelle Guinée).</td>
+   </tr>
+   <tr>
+      <td class="changesBold">2009-02-17</td>
+      <td>nai</td>
+      <td>Name change, French only (from indiennes d'Amérique du Nord and autres langues indiennes d'Amérique du Nord, langues)</td>
+   </tr>
+   <tr>
+      <td class="changesBold">2009-02-17</td>
+      <td>wak</td>
+      <td>Name change, French only (from wakashennes, langues)</td>
+   </tr>
+   <tr>
+      <td class="changesBold">2009-02-17</td>
+      <td>myn</td>
+      <td>Name change, French only (from mayas, langues)</td>
+   </tr>
+   <tr>
+      <td class="changesBold">2009-02-17</td>
+      <td>cel</td>
+      <td>Name change and name addition, French only (from celtiques, autres langues and celtiques, langues)</td>
+   </tr>
+   <tr>
+      <td class="changesBold">2009-02-17</td>
+      <td>apa</td>
+      <td>Name change, French only (from apache, langues)</td>
+   </tr>
+   <tr>
+      <td class="changesBold">2009-02-17</td>
+      <td>bnt</td>
+      <td>Name change, French only (from bantoues, autres langues and bantoues, langues)</td>
+   </tr>
+   <tr>
+      <td class="changesBold">2009-02-17</td>
+      <td>cai</td>
+      <td>Name change, French only (from indiennes d'Amérique centrale, autres lang and indiennes d'Amérique centrale, langues)</td>
+   </tr>
+   <tr>
+      <td class="changesBold">2009-02-17</td>
+      <td>bat</td>
+      <td>Name change, French only (from baltiques, autres langues and baltiques, langues)</td>
+   </tr>
+</table>

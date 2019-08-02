@@ -1,0 +1,257 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+
+                        "http://www.w3.org/TR/html40/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/mods.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Design Principles for MODS and MADS : Metadata Object Description
+Schema: MODS (Library of Congress)</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<meta name="keywords" content="mods design principles metadata object description schema">
+<meta name="description" content="Statements that are intended as guiding principles to be used in formulating future enhancements to the Metadata Object Description Schema (MODS) and the Metadata Authority Description Schema (MADS). (Metadata Object Description Schema: MODS)">
+<!-- InstanceEndEditable -->
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="mods-print.css" type="text/css" media="print">
+<style type="text/css">
+@import url(mods.css);
+</style>
+</head>
+<body link="#000099" vlink="#0066CC" bgcolor="#FFFFFF">
+<table class="layout2">
+  <tr>
+    <td class="top-breadcrumbs"><a id="skip" href="#skip_menu">&nbsp;</a><a href="http://www.loc.gov/">The Library of Congress</a> &raquo; <a href="http://www.loc.gov/standards/">Standards</a> &raquo; <a href="http://www.loc.gov/mods/">MODS Official Web Site</a></td>
+  </tr>
+  <tr>
+    <td><a href="http://www.loc.gov/standards/mods/"><img src="images/mods-bar-760.gif" alt="Metadata Object Description Schema: Official Web Site" width="760" height="41" border="0"></a></td>
+  </tr>
+  <tr>
+    <td><a href="http://www.loc.gov/standards/mods/">HOME</a> &gt;&gt; <!-- InstanceBeginEditable name="topbreadcrumb" --><span class="selected">MODS/MADS
+          Design Principles </span><!-- InstanceEndEditable --><a name="skip_menu"></a><!-- InstanceBeginEditable name="content" -->
+      <h1>Design Principles for Enhancements to MODS and MADS </h1>
+      <h2>(September 2009) </h2>
+      <p>These statements are intended as guiding principles to be
+        used in formulating future enhancements to the Metadata Object Description
+        Schema (MODS) and the Metadata Authority Description Schema (MADS). The <a href="http://www.loc.gov/standards/mods/editorial-committee.html">MODS Editorial Committee</a> developed these as principles to apply to any requested changes or additions.
+        Approved changes for future versions are available on the <a href="http://www.loc.gov/mods">MODS website</a>. </p>
+      <h3><strong>General statements about MODS and MADS and
+          their relationship</strong></h3>
+      <p><em>General description of MODS</em></p>
+      <p>MODS is an XML schema and guidelines for encoding a resource
+        description. It supports discovery and management of resources, and access
+        to them, as well as exchange and management of encoded descriptions.</p>
+      <p><em>General description of MADS</em></p>
+      <p>MADS is an XML schema and guidelines for encoding an authority
+        description. It supports control, normalization, and management of some
+        types of data used in a resource description, as well as exchange and
+        management of encoded descriptions.</p>
+      <p><em>Relationship of MODS and MADS</em></p>
+      <p>MODS and MADS can be used independently. To support those
+        who implement them in an integrated manner, the definitions of elements
+        and attributes in MODS and MADS are coordinated whenever appropriate,
+        and there is an ability to reference a MADS record from a MODS record.</p>
+      <h3><strong>Goals to guide the enhancement of MODS and
+          MADS</strong></h3>
+      <p><strong>Table 1. Goals that apply to both MODS and
+          MADS</strong></p>
+      <table width="99%" border="1">
+        <tr>
+          <td width="37%"><strong><em>Goal
+                (applies to both MODS and MADS)</em></strong></td>
+          <td width="63%"><strong><em>How
+                to achieve that goal</em></strong></td>
+        </tr>
+        <tr>
+          <td>1. Support localization and customization needs</td>
+          <td><p>1) Define an "extension" element
+              that can contain elements that are not part of the MODS and MADS
+              schemas</p>
+            <p>2) Provide unrestricted value options for attributes
+              (such as "displayLabel") and elements that are likely to have local or customization needs</p>
+            <p>3) Provide an option to include elements from
+              other schemas where appropriate (such as for the "accessCondition" element, which may include elements from other schemas that focus on access)</p>
+          </td>
+        </tr>
+        <tr>
+          <td>2. Accommodate widely adopted descriptive practices</td>
+          <td><p>1) Define elements and attributes for the
+              various kinds of information that are treated by widely adopted
+              standards (such as AACR2) and practices for describing a resource</p>
+            <p>2) Define options for coded or natural language
+              information</p>
+            <p>3) Define options that allow for more or less
+              granularity in a description (to support descriptive practices
+              such as minimal and full levels)</p>
+          </td>
+        </tr>
+        <tr>
+          <td>3. Maintain a relatively small number of elements
+            and attributes to reduce training, application, and implementation
+            costs</td>
+          <td><p>[97 elements defined in MODS 3.3; 33 elements
+              defined in MADS 1.0]</p>
+            <p>1) Rely on attributes such as "authority", "source" and "type" to
+              express meta-information below the element level</p>
+            <p>2) Define a new element or attribute only when
+              a need (retrieval, presentation, linking, communication ...) is
+              expressed by a significant number of  MODS and MADS users</p>
+            <p>3) Reuse an element or attribute when it is needed
+              in more than one context, but has the same semantics (such as the
+              reuse of &quot;name&quot; and &quot;title&quot; elements as children of the &quot;subject&quot; element)<br>
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td>4. Support the communication of resource and authority
+            descriptions</td>
+          <td><p>1) Adopt widely used and supported data encoding
+              formats (currently XML) </p>
+            <p>2) Maintain good documentation of MODS and MADS
+              to promote consistency in their application</p>
+          </td>
+        </tr>
+        <tr>
+          <td>5. Support validation of the encoding</td>
+          <td><p>1) Adopt widely used and supported validation
+              tools (such as XML Schema)</p>
+            <p>2) Provide a means to explicitly state which version
+              of the XML Schema was used for encoding (namely, the "version" attribute)</p>
+          </td>
+        </tr>
+        <tr>
+          <td>6. Allow use of MODS/MADS elements by other standards
+            and in application profiles</td>
+          <td>Externalize elements and definitions in the XML
+            schema</td>
+        </tr>
+        <tr>
+          <td>7. Maintain continuity of structure and content</td>
+          <td>Prefer backward compatible options when considering
+            changes</td>
+        </tr>
+        <tr>
+          <td>8. Maintain a single way to encode a piece of information</td>
+          <td>Do not define more than one element or attribute
+            for a particular piece of information</td>
+        </tr>
+        <tr>
+          <td>9. Accommodate indexing of data in the description</td>
+          <td><p>1) Define specific elements and attributes
+              for particular kinds of information that are commonly used for
+              retrieval (such as subjects, titles, names)</p>
+            <p>2) Prefer schema constructs that facilitate indexing</p>
+          </td>
+        </tr>
+        <tr>
+          <td>10. Accommodate presentation of data in the description</td>
+          <td><p>1) Define specific elements and attributes
+              for particular kinds of information that are commonly used for
+              presentation (such as subjects, titles, names, notes)</p>
+            <p>2) Define specific elements (such as "name/displayForm")
+              and attributes (such as "displayLabel") to control presentation of a description</p>
+            <p>3) Define elements and attributes that control
+              presentation of alternate language or script versions of metadata</p>
+          </td>
+        </tr>
+        <tr>
+          <td>11. Make element and attribute names as intelligible
+            as possible to a general audience</td>
+          <td>Avoid use of jargon from a specific domain</td>
+        </tr>
+        <tr>
+          <td>12. Allow for extensibility to include data from
+            richer element sets</td>
+          <td><p>Provide a means for including more granular
+              data from a richer element set (namely, the "extension" element)</p>
+          </td>
+        </tr>
+        <tr>
+          <td>13. Accommodate information about the metadata and
+            record itself</td>
+          <td><p>Provide a means for encoding information about
+              the source of the metadata, language of cataloging, cataloging
+              rules used (namely, "recordInfo" and its subelements)</p>
+          </td>
+        </tr>
+        <tr>
+          <td>14. Accommodate conversion to and from other commonly
+            used resource and authority description encodings (such as Dublin
+            Core, MARC, VRA Core)</td>
+          <td><p>1) Define sufficient elements and attributes
+              to maintain a mapping to other description encodings</p>
+            <p>2) Document and publicize mappings to other description
+              encodings</p>
+          </td>
+        </tr>
+        <tr>
+          <td>15. Accommodate controlled vocabularies that are
+            commonly used in resource and authority description</td>
+          <td>Define the "authority" attribute to
+            record which controlled vocabularly is in use</td>
+        </tr>
+      </table>
+      <p><strong>Table 2. Goals that apply only to MODS</strong></p>
+      <table width="99%" border="1">
+        <tr>
+          <td><strong><em>Goal (specific to MODS)</em></strong></td>
+          <td><strong><em>How to achieve that goal</em></strong></td>
+        </tr>
+        <tr>
+          <td>1. Allow full description of whole-to-part and similar
+            types of relationships</td>
+          <td><p>Repeat &lt;relatedItem type=”constituent”&gt; as
+              needed to describe the parts of a complex resource</p>
+          </td>
+        </tr>
+        <tr>
+          <td>2. Support encoding a description for any type of
+            resource</td>
+          <td><p>1) Make no restrictions on type of resource
+              described</p>
+            <p>2) Define new elements and attributes needed for
+              unsupported types of resources</p>
+            <p>3) Provide a means for encoding descriptive elements
+              that are not otherwise accommodated in MODS (namely, the "extension" element)</p>
+          </td>
+        </tr>
+        <tr>
+          <td>3. Support encoding the relationship of an agent
+            to a resource</td>
+          <td><p>Define an element whose value expresses that
+              relationship (namely, the "role/roleTerm" element)</p>
+          </td>
+        </tr>
+      </table>
+      <p><strong>Table 3. Goals that apply only to MADS</strong></p>
+      <table width="99%" border="1">
+        <tr>
+          <td width="37%"><strong><em>Goal
+                (specific to MADS)</em></strong></td>
+          <td width="63%"><strong><em>How
+                to achieve that goal</em></strong></td>
+        </tr>
+        <tr>
+          <td>1. Support encoding an authority description for
+            a name, title, name/title, topic, temporal entity, genre, geographic
+            entity, hierarchical geographic entity, occupation</td>
+          <td>Define elements for those entities</td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable -->
+<HR noshade size="1">
+</td>
+</tr>
+<tr>
+<td><a href="http://www.loc.gov/standards/mods/">HOME</a> &gt;&gt; <!-- InstanceBeginEditable name="bottombreadcrumb" --><span class="selected">MODS/MADS
+          Design Principles </span><!-- InstanceEndEditable -->
+  <p><strong>Questions and comments:<br>
+  </strong>
+              <a href="mailto:ndmso@loc.gov">Contact Us</a> (
+              <!-- #BeginDate format:Am1 -->October 18, 2010<!-- #EndDate -->
+      )
+      <br>
+      <a href="http://www.loc.gov/homepage/legal.html">Legal</a> | <a href="http://www.loc.gov/global/disclaim.html">External Link Disclaimer</a></p></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>
