@@ -1,0 +1,176 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/subpage.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>GCCC Context Set</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link type="text/css" media="print" href="../../css/sru-print.css" rel="stylesheet">
+<style type="text/css" media="screen">
+@import url(../../css/sru-base.css);
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="shortcut icon" href="http://www.loc.gov/standards/sru/images/favicon.ico">
+<!-- InstanceBeginEditable name="head" -->
+<meta name="keywords" content="query language search retrieval via url z39.50 standards library congress">
+<meta name="descrption" content="Contextual Query Language: SRU (Search/Retrieve via URL) is a standard search protocol for Internet search queries, utilizing CQL (Contextual Query Language), a standard query syntax for representing queries.">
+<!-- InstanceEndEditable -->
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<form action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" name="seek1" method="get">
+<input type="hidden" name="col" value="loc">
+<input type="hidden" name="sc" value="0">
+<input type="hidden" name="ws" value="0">
+<input type="hidden" name="la" value="en">
+<input type="hidden" name="qm" value="0">
+<input type="hidden" name="st" value="1">
+<input type="hidden" name="nh" value="10">
+<input type="hidden" name="lk" value="1">
+<input type="hidden" name="rf" value="0">
+<input type="hidden" name="oq" value="">
+<input type="hidden" name="si" value="0">
+<input type="hidden" name="rq" value="0">
+<input type="hidden" name="qc" value="">
+<table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
+  <div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../../index.html">SRU</a></div></td>
+<td width="116"><select name="qp" tabindex="1">
+<option value="url:/sru" selected>SRU Web Pages</option>
+<option value="url:/standards url:/ead url:/marc">Standards Pages</option>
+<option value="">All Library Pages</option>
+</select></td><td width="117" align="right"><input type="text" name="qt" id="keyword" size="18" value="" tabindex="2"></td>
+<td width="67" align="right"><input class="button" id="search_button" name="search_button" type="submit" value="SEARCH" tabindex="3"></td>
+</tr></table></form>
+<table align="center" class="layout" cellpadding="0" cellspacing="0"><tr><td>
+<div id="graphic"> 
+<h1 class="homepage"><img src="../../images/sru.gif" alt="SRU (Search/Retrieval Using URL)" width="600" height="50"></h1>
+</div>
+<div class="goldtop"></div>
+      <div id="breadcrumbs"><a href="../../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-top" --><a href="../index.html">CCG Context set</a><!-- InstanceEndEditable --></div>
+<div class="clear"><a name="skip_menu"></a></div>
+ <!-- InstanceBeginEditable name="content" --> 
+      <center>
+        <h2>CCG Context Set</h2>
+      </center>
+      <h3>Introduction</h3>
+      <p> This context set was created to address the niche need for a common way   to search records in the domain of collectable card games. Collectable   card games (CCGs) use game specific sets of cards from which decks can   be constructed and fine tuned by switching in cards that work well   together, and switching out cards that don't. Cards are typically bought   in 'starters' with the rules for the game, or 'boosters' with a lesser   number of cards and no rules for a cheaper price. Probably the most well   known CCG is 'Magic: the Gathering' created by Richard Garfield and   published by Wizards of the Coast, or the Pokemon card game among   younger players. </p>
+      <p> The recommended prefix for the Collectable Card Game context set is:  ccg <br>
+        The identifier for the CCG context set is: http://srw.cheshire3.org/contextSets/ccg/1.1/ </p>
+      <p> </p>
+      <h3>Indexes</h3>
+      <p>
+      <table width="100%">
+        <tbody>
+          <tr>
+            <th>Index&nbsp;Name</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>text</td>
+            <td>The main body of text of the card.</td>
+          </tr>
+          <tr>
+            <td>flavor</td>
+            <td>Any 'flavor text'. This is text which simply adds flavor, it does not effect the usage of the card within the game rules.</td>
+          </tr>
+          <tr>
+            <td>errata</td>
+            <td>The text of any official errata associated with the card. </td>
+          </tr>
+          <tr>
+            <td>note</td>
+            <td>The text of any note associated with the card.  This may be used for clarifications of usage, or any other additional text.</td>
+          </tr>
+          <tr>
+            <td>keyword</td>
+            <td>A keyword on the card.  For example 'cavalry' in L5R or 'shadow' in Magic the Gathering.</td>
+          </tr>
+          <tr>
+            <td>cost</td>
+            <td>A 'cost' associated with the card within the game   rules.  This index will normally map to a more specific index within the   framework of the particular game, eg 'cost_gold'.</td>
+          </tr>
+          <tr>
+            <td>stat</td>
+            <td>A 'statistic' associated with the card within the   game rules.  Like cost, this will normally map to a more specific index   within the framework of the particular game, eg 'stat_force'.</td>
+          </tr>
+          <tr>
+            <td>artist</td>
+            <td>The name of the artist for the card's artwork.</td>
+          </tr>
+          <tr>
+            <td>game</td>
+            <td>The name of the game of which the card is part</td>
+          </tr>
+          <tr>
+            <td>set</td>
+            <td>A set within the game in which the card is available. For example 'Anvil of Despair' or 'Fallen Empires' </td>
+          </tr>
+          <tr>
+            <td>legality</td>
+            <td>Game specific notes on the legality of the card within official tournaments.</td>
+          </tr>
+          <tr>
+            <td>rarity</td>
+            <td>The rarity of the card. This is game specific, but will normally be 'ultrarare', 'rare', 'uncommon', 'common' or 'fixed'.</td>
+          </tr>
+          <tr>
+            <td>location</td>
+            <td>The physical location of a copy of the card within a collection</td>
+          </tr>
+          <tr>
+            <td>number</td>
+            <td>The physical number of copies at a location within a collection</td>
+          </tr>
+          <tr>
+            <td>description</td>
+            <td>A description of one or more physical copies of the card</td>
+          </tr>
+          <tr>
+            <td>price</td>
+            <td>The price of one or more physical copies of the card.</td>
+          </tr>
+        </tbody>
+      </table>
+      </p>
+      <p> </p>
+      <h3>Subsidiary Index Sets</h3>
+      <p> The CCG context set defines the basic indexes required for searching a   fairly typicaly collectable card game.  However it cannot define all of   the statistics or costs for all possible card games.  These are left up   to subsidiary sets.  Currently known subsidiary context sets are: </p>
+      <p>
+      <table width="100%">
+        <tbody>
+          <tr>
+            <th>Name</th>
+            <th>Identifier</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>ccg_l5r</td>
+            <td>http://srw.cheshire3.org/contextSets/ccg/l5r/1.0/</td>
+            <td><a href="http://web.archive.org/web/20090106104404/http://srw.cheshire3.org/indexSets/ccg/l5r/">Context Set</a> for WotC/AEG's '<a href="http://web.archive.org/web/20090106104404/http://l5r.alderac.com/">Legend of the Five Rings</a>' card game</td>
+          </tr>
+        </tbody>
+      </table>
+      </p>
+      <h3>Historical Note</h3>
+      <p> Version 1.0 of the CCG context set defined three further indexes: name,   type and anywhere.  These are deprecated and should instead use   dc.title, dc.type and cql.anywhere respectively.  For more information,   see the <a href="http://web.archive.org/web/20090106104404/http://srw.cheshire3.org/profiles/ccg/">CCG Profile</a></p>
+      <p> </p>
+      <h3>Z39.50 Attribute Set</h3>
+      <p> This context set has the same semantics as the <a href="http://web.archive.org/web/20090106104404/http://www.o-r-g.org/%7Echeshire/l5r/CCG2.html">CCG2</a> attribute set. </p>
+      <p> </p>
+      <hr>
+      <h2 align="center">&nbsp;</h2>
+      <!-- InstanceEndEditable -->
+      <div id="breadcrumbs-bottom"><a href="../../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-bottom" --><a href="../index.html">CCG Context set</a><!-- InstanceEndEditable --></div>
+</td></tr>
+
+</table>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://www.loc.gov/">The 
+        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../../index.html">SRU</a></div>
+      <br>
+  <span class="sitenav">
+  <!-- #BeginDate format:Am1 -->December 16, 2015<!-- #EndDate -->
+  </span></td>
+<td align="right"><div class="contactus"><a href="mailto:ndmso@loc.gov">Contact Us</a></div></td>
+</tr></table>
+</body>
+<!-- InstanceEnd --></html>

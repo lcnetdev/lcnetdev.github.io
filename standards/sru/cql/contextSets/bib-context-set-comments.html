@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/subpage.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Bib Context Set comments</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link type="text/css" media="print" href="../../css/sru-print.css" rel="stylesheet">
+<style type="text/css" media="screen">
+@import url(../../css/sru-base.css);
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="shortcut icon" href="http://www.loc.gov:8081/standards/sru/images/favicon.ico">
+<!-- InstanceBeginEditable name="head" -->
+<meta name="keywords" content="marc context set sru version 1.2 specifications sru search retrieval url cql zeerex standards library congress">
+<meta name="description" content="MARC Context Set. SRU is a standard XML-focused search protocol for Internet search queries, utilizing CQL (Contextual Query Language), a standard syntax for representing queries. Standards, The Library of Congress.">
+<!-- InstanceEndEditable -->
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<form action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" name="seek1" method="get">
+<input type="hidden" name="col" value="loc">
+<input type="hidden" name="sc" value="0">
+<input type="hidden" name="ws" value="0">
+<input type="hidden" name="la" value="en">
+<input type="hidden" name="qm" value="0">
+<input type="hidden" name="st" value="1">
+<input type="hidden" name="nh" value="10">
+<input type="hidden" name="lk" value="1">
+<input type="hidden" name="rf" value="0">
+<input type="hidden" name="oq" value="">
+<input type="hidden" name="si" value="0">
+<input type="hidden" name="rq" value="0">
+<input type="hidden" name="qc" value="">
+<table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
+  <div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../../index.html">SRU</a></div></td>
+<td width="116"><select name="qp" tabindex="1">
+<option value="url:/sru" selected>SRU Web Pages</option>
+<option value="url:/standards url:/ead url:/marc">Standards Pages</option>
+<option value="">All Library Pages</option>
+</select></td><td width="117" align="right"><input type="text" name="qt" id="keyword" size="18" value="" tabindex="2"></td>
+<td width="67" align="right"><input class="button" id="search_button" name="search_button" type="submit" value="SEARCH" tabindex="3"></td>
+</tr></table></form>
+<table align="center" class="layout" cellpadding="0" cellspacing="0"><tr><td>
+<div id="graphic"> 
+<h1 class="homepage"><img src="../../images/sru.gif" alt="SRU (Search/Retrieval Using URL)" width="600" height="50"></h1>
+</div>
+<div class="goldtop"></div>
+      <div id="breadcrumbs"><a href="../../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-top" --><a href="../../resources/index.html">resources</a>&nbsp;&raquo;bib
+          context set comments <!-- InstanceEndEditable --></div>
+<div class="clear"><a name="skip_menu"></a></div>
+ <!-- InstanceBeginEditable name="content" --> 
+      <h2>The bib Context Set for CQL: Issues, Comments, Questions </h2>
+      <p>See  <a href="bib-context-set.html">bib Context Set for CQL</a></p>
+      <hr/>
+      <ol>
+        <li><strong>Can titleUniform, titleAbbreviated, titleSeries, 
+          etc. be   expressed as modifiers to dc.title?</strong><br />
+        <br />
+        &nbsp;There are two   independent dimensions to be represented, &quot;type&quot; and portion. <br />
+          <br />
+          <em>Type:
+            Abbreviated, Uniform, Translated
+            , Alternative, Series </em><br />
+              <em>Portion:
+                main, sub, partNum, partName</em><br />
+              <br />
+          Logically the first is an index   modifier and the second is a relation modifier. But unfortunately there is no such thing as an   index modifier. (See 3.)&nbsp;&nbsp; So that would mean overloading the relation   modifier with information that is logically associated more with the index than   the relation.&nbsp; We could do that, but would that really reduce complexity, versus   defining separate indexes?&nbsp;<br />
+          <br />
+          There is also  sentiment that separate indexes is more logically sound than a single index with   many modifiers.<br />
+          <br />
+          Finally, there is some resistance to mixing dc indexes with bib qualifiers. <br />
+          <br />
+          <br />
+        </li>
+        <li><strong>Same question for subject. Can bib.subjectPlace, bib.subjectTitle, bib.subjectName, bib.subjectOccupation be expressed as modifiers to dc.subject. Also, dates.</strong> <br>  
+          <br>
+        </li>
+        <li><strong>Why is there no such thing as an index   modifier (and if there isn't why not invent it)?&nbsp;&nbsp;</strong><br />
+            <br />
+          You can't say: <br />
+          <br />
+          <em>title/type=abbreviated=/portion=main   dog</em><br />
+          <br />
+          This construct is syntactically ambiguous, because   you don't know where the index modifier ends and the relation begins.&nbsp;&nbsp; So we   considered the possibility of defining index modifiers but not allowing them the   flexibility of relation assignments, thus for example:<br />
+          <br />
+          <em>title/abbreviated=/portion=main dog</em><br />
+          <br />
+          Where title/abreviated implicitly means   title/type=abbreviated.&nbsp; So the suggestion, in effect, was to designate one   single modifier type for an index which would be implicit, and then the actual   value of that type would appear as the modifier.&nbsp;&nbsp; This approach&nbsp;seemed overly complicated, as well as overly restrictive.<br />
+          <br />
+          Or another possibility, using a different character   than '=' within the index relation, for example '*'.&nbsp;&nbsp;&nbsp;&nbsp;This approach was   rejected because we&nbsp;were running out of special character, and in any case   it played havoc with the BNF.<br />
+          <br />
+          Another, completelely separate issue, was tacking   modifiers onto DC indexes.&nbsp;&nbsp; The DC set, representing the 15 DC elements as   indexes, never has raised any controversy (even though Dublin Core has never   defined such a thing) because it's just the simple 15 DC indexes, with the DC   semantics.&nbsp;&nbsp; Adding bibliographic modifiers might raise some controversy.&nbsp;&nbsp;&nbsp;   Then again maybe not, anyway this was a secondary issue.<br />
+          <br />
+          <br />
+                </li>
+        <li><strong>Could all of the 'authority'   modifiers be merged into just 
+          bib.authority?&nbsp;</em></strong><br />
+      <br />
+          For discussion. <br />
+          <br />
+        </li>
+        <li><strong>Is the purpose of bib.name to search for a name anywhere   in the record 
+          (could be dc.creator, could be dc.subject, could be   dc.contributor,
+          etc.)?&nbsp;</strong><br />
+      <br />
+          Anywhere in the record that the server thinks is supposed to be a name. However:
+          <ul>
+            <li>Note the separate index bib.subjectName. Thus bib.name would not be used to search for a name subject. </li>
+            <li>bib.name might apply to the whole record (or most of it) when unqualified. However, it may be qualified by 'role'. Thus if role=author, then it would be restricted to searching for authors. <br>
+              <br>
+            </li>
+          </ul>
+        </li>
+		<li><strong>Given the profusion of national bibliographical identifier schemes,   making bib.identifierAuthority have a limited vocabulary is not going&nbsp; to scale, and it would be useful to allow ad hoc registration of new authorities. </strong><br>
+		    <br>
+	      Done. Introduced <a href="bib-context-set.html#info">extensibility mechanism</a> for identifier types. <br>
+              <strong><br>
+              </strong>
+		<li><strong> Journals often have "New   series" for their issue numbers, indicating they've started counting&nbsp; from 1 again; the current scheme does not indicate re-numbering. <br>
+		  <br>
+		</strong>Add modifier 'renumber' whose value is an integer. If omitted, zero is assumed (no renumbering). 1 means that numbering has been restarted once, etc. e.g. <BR>
+          <BR>
+          bib.titleSeries=/bib.portion=partNum/renumber=1   nnn <br>
+          <BR>
+        <li>S<strong>ubject classes are restricted to Place, Title, Name and&nbsp; Occupation. Why not for instance Curriculum&nbsp; Objective,  or chronological terms?</strong><BR>
+          <br>
+        For discussion.
+        <br>
+      </ol>
+  
+      <br />
+ <!-- InstanceEndEditable -->
+      <div id="breadcrumbs-bottom"><a href="../../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-bottom" --><a href="../../resources/index.html">resources</a>&nbsp;&raquo; bib
+          context set comments <!-- InstanceEndEditable --></div>
+</td></tr>
+</table>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://www.loc.gov/">The 
+        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../../index.html">SRU</a></div>
+      <br>
+  <span class="sitenav">
+  <!-- #BeginDate format:Am1 -->April 29, 2009<!-- #EndDate -->
+  </span></td>
+<td align="right"><div class="contactus"><a href="mailto:ndmso@loc.gov">Contact Us</a></div></td>
+</tr></table>
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/subpage.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>OpenSearch Interface to SRU</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link type="text/css" media="print" href="../../sruBob/sru-print.css" rel="stylesheet">
+<style type="text/css" media="screen">
+@import url(../../sruBob/sru-base.css);
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="shortcut icon" href="http://www.loc.gov:8081/standards/sru/images/favicon.ico">
+<!-- InstanceBeginEditable name="head" -->
+<meta name="keywords" content="diagnostics sru version 1.2 specifications sru search retrieval url cql zeerex standards library congress">
+<meta name="description" content="Diagnostics: SRU Version 1.2 Specifications. SRU is a standard XML-focused search protocol for Internet search queries, utilizing CQL (Contextual Query Language), a standard syntax for representing queries. Standards, The Library of Congress.">
+<link rel="search" href="http://www.loc.gov/standards/sru/osru/opensearchdescription.xml" 
+      type="application/opensearchdescription+xml" 
+      title="LC SRU" />
+<!-- InstanceEndEditable -->
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<form action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" name="seek1" method="get">
+<input type="hidden" name="col" value="loc">
+<input type="hidden" name="sc" value="0">
+<input type="hidden" name="ws" value="0">
+<input type="hidden" name="la" value="en">
+<input type="hidden" name="qm" value="0">
+<input type="hidden" name="st" value="1">
+<input type="hidden" name="nh" value="10">
+<input type="hidden" name="lk" value="1">
+<input type="hidden" name="rf" value="0">
+<input type="hidden" name="oq" value="">
+<input type="hidden" name="si" value="0">
+<input type="hidden" name="rq" value="0">
+<input type="hidden" name="qc" value="">
+<table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
+  <div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../../sruBob/index.html">SRU</a></div></td>
+<td width="116"><select name="qp" tabindex="1">
+<option value="url:/sru" selected>SRU Web Pages</option>
+<option value="url:/standards url:/ead url:/marc">Standards Pages</option>
+<option value="">All Library Pages</option>
+</select></td><td width="117" align="right"><input type="text" name="qt" id="keyword" size="18" value="" tabindex="2"></td>
+<td width="67" align="right"><input class="button" id="search_button" name="search_button" type="submit" value="SEARCH" tabindex="3"></td>
+</tr></table></form>
+<table align="center" class="layout" cellpadding="0" cellspacing="0"><tr><td>
+<div id="graphic"> 
+<h1 class="homepage"><img src="../../sruBob/images/sru.gif" alt="SRU (Search/Retrieval Using URL)" width="600" height="50"></h1>
+</div>
+<div class="goldtop"></div>
+      <div id="breadcrumbs"><a href="../../sruBob/index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-top" -->osru<!-- InstanceEndEditable --></div>
+      <div class="clear"><a name="skip_menu"></a></div>
+ <!-- InstanceBeginEditable name="content" -->
+     <h1>Open Search Interface to LC SRU  &nbsp;&nbsp;&nbsp;</h1>
+     <br>
+     This is an experimental demo. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     <p>Using Firefox, look in the search box at the upper right. In the left part of the seach box is a little triangle. Click it. That will give you a list of search engines.</p>
+     <p>You should see:</p>
+     <h2>'Add &quot;LC SRU&quot; ' </h2>
+      <p>Click it. That should add &quot;LC SRU&quot; to the list. Select it as your search engine. Now you can enter CQL queries in the search box. </p>
+      <p>For example, try:</p>
+      <ul>
+        <li>bath.standardIdentifier=0385504209</li>
+        <li>bath.uniformTitle=godfather  </li>
+        <li>bath.uniformTitle=godfather and bath.genreForm=film <br>
+        </li>
+      </ul>
+      <hr/>
+      <p>Description: </p>
+      <ul>
+        <li> An OpenSearch description file has been put in this directory <a href="http://www.loc.gov/standards/sru/ray/">http://www.loc.gov/standards/sru/osru/</a>, with the following template:<br>
+          <strong>http://www.loc.gov/z39voy?version=1.1&amp;amp;operation=searchRetrieve&amp;amp;<br>
+          query={searchTerms}&amp;amp;maximumRecords=10&amp;amp;recordSchema=marcxml&amp;amp;<br>
+          stylesheet=http://www.loc.gov/z3950/owcbrief.xsl</strong><br>
+        <br>
+        </li>
+        <li>And a &lt;link&gt; element has been put in the HTML for this page:<br>
+          <strong>&lt;link rel=&quot;search&quot; href=&quot;http://www.loc.gov/standards/sru/osru/opensearchdescription.xml&quot; <br>
+          type=&quot;application/opensearchdescription+xml&quot; <br>
+        title=&quot;LC SRU&quot; /&gt;</strong></li>
+      </ul>
+      <p>The result is that when your browser (if it has openSearch support) comes to this page, the &lt;link&gt; element tells it that there is a search engine so go get the openSearch description to find out about it. </p>
+      <p>Note that the template hardcodes the maximumRecords and recordSchema values, and startRecord (omitted) will always be 1. However the SRU query parameter will take on the value of the string that you put in the search window. That means it will be treated as a CQL query.</p>
+      <p>startRecord will always be 1 and there is no way yet to page through records. Next step: improve the stylesheet to provide paging. </p>
+      <p>Note:For version 2.0, there is a new parameter that lets the client indicate that it wants an alternative response format. Once such choice can be html. When html is chosen, the results can  be formated locally according to the stylesheet and returned as html.</p>
+ <!-- InstanceEndEditable -->
+      <div id="breadcrumbs-bottom"><a href="../../sruBob/index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-bottom" -->osru<!-- InstanceEndEditable --></div>
+</td></tr>
+</table>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://www.loc.gov/">The 
+        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../../sruBob/index.html">SRU</a></div>
+      <br>
+  <span class="sitenav">
+  <!-- #BeginDate format:Am1 -->September 8, 2014<!-- #EndDate -->
+  </span></td>
+<td align="right"><div class="contactus"><a href="mailto:ndmso@loc.gov">Contact Us</a></div></td>
+</tr></table>
+</body>
+<!-- InstanceEnd --></html>

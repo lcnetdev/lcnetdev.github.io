@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/subpage.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Authentication Tokens (SRU: Search/Retrieval via URL -- SRU, CQL and ZeeRex, Standards, Library of Congress)</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link type="text/css" media="print" href="../css/sru-print.css" rel="stylesheet">
+<style type="text/css" media="screen">
+@import url(../css/sru-base.css);
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="shortcut icon" href="http://www.loc.gov:8081/standards/sru/images/favicon.ico">
+<!-- InstanceBeginEditable name="head" -->
+<meta name="keywords" content="authentication tokens sru version 1.2 specifications sru search retrieval url cql zeerex standards library congress">
+<meta name="description" content="Authentication Tokens (SRU Resources): SRU Version 1.2 Specifications. SRU is a standard XML-focused search protocol for Internet search queries, utilizing CQL (Contextual Query Language), a standard syntax for representing queries. Standards, The Library of Congress.">
+<!-- InstanceEndEditable -->
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<form action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" name="seek1" method="get">
+<input type="hidden" name="col" value="loc">
+<input type="hidden" name="sc" value="0">
+<input type="hidden" name="ws" value="0">
+<input type="hidden" name="la" value="en">
+<input type="hidden" name="qm" value="0">
+<input type="hidden" name="st" value="1">
+<input type="hidden" name="nh" value="10">
+<input type="hidden" name="lk" value="1">
+<input type="hidden" name="rf" value="0">
+<input type="hidden" name="oq" value="">
+<input type="hidden" name="si" value="0">
+<input type="hidden" name="rq" value="0">
+<input type="hidden" name="qc" value="">
+<table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
+  <div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div></td>
+<td width="116"><select name="qp" tabindex="1">
+<option value="url:/sru" selected>SRU Web Pages</option>
+<option value="url:/standards url:/ead url:/marc">Standards Pages</option>
+<option value="">All Library Pages</option>
+</select></td><td width="117" align="right"><input type="text" name="qt" id="keyword" size="18" value="" tabindex="2"></td>
+<td width="67" align="right"><input class="button" id="search_button" name="search_button" type="submit" value="SEARCH" tabindex="3"></td>
+</tr></table></form>
+<table align="center" class="layout" cellpadding="0" cellspacing="0"><tr><td>
+<div id="graphic"> 
+<h1 class="homepage"><img src="../images/sru.gif" alt="SRU (Search/Retrieval Using URL)" width="600" height="50"></h1>
+</div>
+<div class="goldtop"></div>
+      <div id="breadcrumbs"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-top" --><a href="../resources/index.html">resources</a>&nbsp;&raquo; 
+        authentication tokens<!-- InstanceEndEditable --></div>
+<div class="clear"><a name="skip_menu"></a></div>
+ <!-- InstanceBeginEditable name="content" -->
+      <h1>Authentication Tokens</h1>
+
+        <p> SRU does not define any method to distinguish among concurrent users,
+          but some business models may impose requirements, for example, to ensure
+          that one user does not modify another's resultsets, to allow a server
+          to restrict a user to a pre-determined number of searches before charges
+          are imposed, or to limit the number of concurrent searches for a user
+          or number within a certain time frame. Or, on the other hand, if it
+          can be demonstrated that a search has led directly to a sale, then
+          the user may receive a commission. Another example is to enable the
+          service to track how different users use the system, possibly to enforce
+          acceptable usage policies.</p>
+        <p>This document aims to discuss the various methods in which different
+          users may be authenticated in an interoperable manner. In a stateless
+          environment, or one where the ability to track individual users is
+          not important, this can be ignored without peril. </p>
+        <p>There are several technical methods by which distinct users may be
+          identified, from IP address to additional header information to SSL.
+          The different methods create additional requirements and function at
+          various levels of success. </p>
+        <p><b>IP Address</b><br>
+          Users may be differentiated by the IP address from which they are connecting
+            to the SRU server. Unfortunately this is unreliable at best due to
+            the increasing use of web proxy systems -- there may be many users
+            all of which appear to be coming from the same IP address due to
+            a proxy. The advantage is that it is completely transparent to the
+            client and hence the user, so for a small service may be appropriate. </p>
+        <p><b>Basic Authentication</b><br>
+          Basic Authentication is the fairly simple method used in many web servers
+            to authenticate users against a list or database -- the client is
+            required to send a username and password. This is a very easy-to-configure
+            method to authenticate users, however it does not allow for users
+            that are not authenticated -- every request must have a valid user
+            and password sent or it will be rejected. This model is appropriate
+            for a paid-for service or one which is used only by a set of known
+            individuals, but is less appropriate for a service which may be used
+            by anyone. </p>
+        <p><b>Secure Sockets</b><br>
+          SSL is an encrypted version of HTTP (https) and hence is more secure
+            than basic authentication alone as the traffic cannot be easily intercepted.
+            For financial transations using SRU then this is certainly appropriate
+            as the user is already known in advance and every care for the data
+            must be taken. However for every day services that may be used by
+      anyone, it is a very complex solution.</p>
+      <p><strong>Additional Message Data</strong><br>
+        The preferred method for identifying users while still allowing non-authenticated
+          access is by the inclusion of an additional field in the extraRequestData
+            and extraResponseData fields. This method allows the server to
+            chose when authentication is required (for example only if a resultset
+            is needed) and when it can continue to act in a stateless fashion.
+            This may be appropriate for any sort of transaction with the exception
+            of cases when the data should be conveyed in an encrypted fashion,
+            in which case SSL should be used as well. </p>
+        <p>The recommended name for this field is <i>authenticationToken</i>,
+          and hence <i>x-authenticationToken</i> when it is passed on the URL
+          for SRU. If the server sends back one of these tokens with a response,
+          then the client should return it in the same fashion in any subsequent
+          request to allow the server to know that the requests should be considered
+          to be from the same user. </p>
+        <p> Further business logic may be required to manipulate these tokens.
+          For example a separate SOAP service may be required to distribute the
+          tokens on request, to delete tokens when they've finished being used
+          or to enable the sharing of such tokens between users to allow shared
+          access to result sets. No best practice guidelines are currently available
+          for such models, but any interested parties are asked to bring up their
+          requirements on the SRU mailing list so that some may be drafted.
+        <p>The URI for the namespace for this extension is <strong>info:srw/extension/2/auth-1.0 </strong>          <!-- InstanceEndEditable -->
+      <div id="breadcrumbs-bottom"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-bottom" --><a href="../resources/index.html">resources</a>&nbsp;&raquo; authentication
+          tokens <!-- InstanceEndEditable --></div>
+</td></tr>
+
+</table>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://www.loc.gov/">The 
+        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div>
+      <br>
+  <span class="sitenav">
+  <!-- #BeginDate format:Am1 -->July 9, 2007<!-- #EndDate -->
+  </span></td>
+<td align="right"><div class="contactus"><a href="mailto:ndmso@loc.gov">Contact Us</a></div></td>
+</tr></table>
+</body>
+<!-- InstanceEnd --></html>

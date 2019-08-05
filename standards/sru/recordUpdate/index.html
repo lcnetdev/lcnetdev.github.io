@@ -1,0 +1,1001 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/subpage.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>record update -  SRU Version 1.2 Specifications (SRU: Search/Retrieval via URL -- SRU, CQL and ZeeRex, Standards, Library of Congress)</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link type="text/css" media="print" href="../css/sru-print.css" rel="stylesheet">
+<style type="text/css" media="screen">
+@import url(../css/sru-base.css);
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="shortcut icon" href="http://www.loc.gov:8081/standards/sru/images/favicon.ico">
+<!-- InstanceBeginEditable name="head" -->
+<meta name="keywords" content="record update sru version 1.2 specifications sru search retrieval url cql zeerex standards library congress">
+<meta name="description" content="record update SRU Version 1.2 Specifications. SRU is a standard XML-focused search protocol for Internet search queries, utilizing CQL (Contextual Query Language), a standard syntax for representing queries. Standards, The Library of Congress.">
+<style type="text/css">
+<!--
+.style3 {color: #0080FF}
+.style4 {color: #0080FF; font-weight: bold;}
+-->
+</style>
+<!-- InstanceEndEditable -->
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<form action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" name="seek1" method="get">
+<input type="hidden" name="col" value="loc">
+<input type="hidden" name="sc" value="0">
+<input type="hidden" name="ws" value="0">
+<input type="hidden" name="la" value="en">
+<input type="hidden" name="qm" value="0">
+<input type="hidden" name="st" value="1">
+<input type="hidden" name="nh" value="10">
+<input type="hidden" name="lk" value="1">
+<input type="hidden" name="rf" value="0">
+<input type="hidden" name="oq" value="">
+<input type="hidden" name="si" value="0">
+<input type="hidden" name="rq" value="0">
+<input type="hidden" name="qc" value="">
+<table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
+  <div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div></td>
+<td width="116"><select name="qp" tabindex="1">
+<option value="url:/sru" selected>SRU Web Pages</option>
+<option value="url:/standards url:/ead url:/marc">Standards Pages</option>
+<option value="">All Library Pages</option>
+</select></td><td width="117" align="right"><input type="text" name="qt" id="keyword" size="18" value="" tabindex="2"></td>
+<td width="67" align="right"><input class="button" id="search_button" name="search_button" type="submit" value="SEARCH" tabindex="3"></td>
+</tr></table></form>
+<table align="center" class="layout" cellpadding="0" cellspacing="0"><tr><td>
+<div id="graphic"> 
+<h1 class="homepage"><img src="../images/sru.gif" alt="SRU (Search/Retrieval Using URL)" width="600" height="50"></h1>
+</div>
+<div class="goldtop"></div>
+      <div id="breadcrumbs"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-top" --><a href="index.html">record
+      update</a><!-- InstanceEndEditable --></div>
+<div class="clear"><a name="skip_menu"></a></div>
+ <!-- InstanceBeginEditable name="content" -->
+      <h1 align="center">SRU Record update</h1>
+      <p align="center"><b>June 8, 2007 </b></p>
+      <p><a href="#namespaces"> Namespaces</a> - <a href="#request">Request
+          Structure</a> - <a href="#response">Response Structure</a> - <a href="#elements">Elements</a> - <a href="#actions">Actions</a> (Create/Delete/Replace)
+          -  <a href="#diagnostics">Diagnostics</a> -
+          <a href="#examples">examples</a>  - <a href="../xmlFiles#update">XML Files</a> <br>
+      </p>
+      <h3><strong>This is version 1.0 of SRU Record Update</strong></h3>
+      <hr>
+      <h3>Background</h3>
+      <p>The Record Update service allows for remote maintenance from and administration
+        of records within a compliant database. It has a simple and extensible
+        mechanism for this, a single request/response pair that allows for creation,
+        replacing and deleting records and metadata about those records. </p>
+      <p>The need for such a protocol has been expressed by several groups, but
+        may benefit many. In particular, it is required for datasets which are
+        maintained by distributed collaboration and contribution such as union
+        catalogues, local history databases, book review databases and so on.
+        Going further, it also allows many clients to be created for one service
+        rather than a very tightly linked client/server relationship. </p>
+      <p> Although the protocol is being developed under the SRU 'umbrella',
+        there is no need to implement SRU. It would be perfectly feasible to
+        implement Record Update in order to maintain a database served only via
+        OAI, or only via a proprietary HTML interface. To contrast OAI and record
+        update, OAI is a pull mechanism to update databases and is used generally
+        for scheduled batch processing, while record update is a push mechanism
+        intended for more interactive use. </p>
+      <p>Most simple update mechanisms available on the web have been designed
+        for document updating with the assumption that a client posts a document
+        to one or more databases or makes a document available for harvesting,
+        and it is the client (source) that generally controls all maintenance
+        of the document.&nbsp; In contrast, the process of updating metadata
+        in a centralised database has characteristics that argue for a specific
+        updating mechanism.&nbsp; These characteristics include changes that
+        may occur to the metadata on entry to another database.&nbsp; The system
+        of the target database will typically try to match the metadata with
+        a record already on file and then will merge the data, thus an insert
+        is actually changed into a merge.&nbsp; Often the system uses a profile
+        for merging that allows some incoming fields to be rejected if a similar
+        field already exists and allows some to overwrite existing fields.&nbsp; Some
+        fields will be changed on entry, for example by replacing authors and
+        subjects with preferred forms from authority records.&nbsp; Some fields
+        may be automatically generated such as provenance or classification.&nbsp;  The
+        receiving system will also typically validate incoming data, sometimes
+        rejecting the whole record or just the invalid parts of it.&nbsp; These
+        last three cases, authority control, enrichment and validation, can occur
+        to records being inserted that remain unmatched.&nbsp; As no insert command
+        is taken straight on &ldquo;face value&rdquo;, there is a special requirement
+        for keeping records in two separate systems aligned.&nbsp;  The only
+        sure way to guarantee that a record on one database is aligned and stays
+        aligned with another is by exchanging record identifiers.&nbsp;&nbsp; In
+        addition, these identifiers allow a real time access into the database
+        for enriched content.&nbsp;&nbsp; </p>
+      <p>As a consequence, SRU update includes extensive diagnostics that are
+        used to inform a submitting client of any changes that have been made
+        on entry to another database and to convey the record identifier of the
+        record on the target database.&nbsp;  It is envisaged that SRU update
+        will be primarily employed in an interactive situation where immediate
+        response to diagnostics is possible.&nbsp; Alternatively SRU may be a
+        real time background task with a receiving program capable of processing
+        identifiers and diagnostics in update responses. </p>
+      <hr>
+      <h3><a name="operations"></a>Operations</h3>
+      <p>There are two operations in Record Update, the Update operation and
+        the Explain operation. Update (below) contains a parameter which specifies
+        the type of update action to perform (create, replace, or delete), and
+        may be extended by profiles. Explain requests a service description record
+        for the Update operation. The remainder of this document describes the
+        Update operation.</p>
+      <hr>
+      <h2><a name="update"></a>Update Operation</h2>
+      <h3><a name="structure"></a>Message Structure</h3>
+      <h3>&nbsp;</h3>
+      <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a name="namespaces"></a> Namespaces</b>
+      <p> Messages use elements from three different namespaces. <a href="../record-update/xml-files.html">WSDL
+          and Schema files</a> are available for them.</p>
+      <table width="95%" border="1" cellpadding="5" cellspacing="0">
+        <tr bgcolor="#FFF9E5">
+          <th scope="col" width="12%">Prefix</th>
+          <th scope="col" width="12%">Namespace URI</th>
+          <th scope="col" width="76%">Namespace Information </th>
+          <th scope="col" width="76%">Description</th>
+        </tr>
+        <tr>
+          <td scope="row"  ><p>srw</p></td>
+          <td><p class="style4">http://www.loc.gov/zing/srw/</p></td>
+          <td>&nbsp;</td>
+          <td><p>The SRW schema</p></td>
+        </tr>
+        <tr>
+          <td scope="row"  ><p>ucp</p></td>
+          <td><p class="style3"><b>info:lc/xmlns/update-v1</b></p>          </td>
+          <td><span class="style3"><a href="recordUpdateNamespace.html">Namespace
+          Information Page</a></span></td>
+          <td><p>Additional elements for Update</p></td>
+        </tr>
+        <tr>
+          <td scope="row"><p>diag</p></td>
+          <td><p class="style3"><b>http://www.loc.gov/zing/srw/diagnostic/</b></p></td>
+          <td>&nbsp;</td>
+          <td><p>SRW Diagnostics schema</p></td>
+        </tr>
+      </table>
+      <h4>&nbsp;</h4>
+      <h4><a name="request"></a>Request Structure</h4>
+      <h4>&nbsp;</h4>
+      <table width="95%" border="1" cellpadding="5" cellspacing="0">
+        <tr bgcolor="#FFF9E5">
+          <th scope="col" >Name</th>
+          <th scope="col" width="33%">Type</th>
+          <th scope="col"  width="33%">Required</th>
+        </tr>
+        <tr>
+          <td scope="row" >srw:version</td>
+          <td>xsd:string&nbsp;&nbsp; Value=&quot;1.0&quot;</td>
+          <td>Mandatory</td>
+        </tr>
+        <tr>
+          <td scope="row" >ucp:action</td>
+          <td>xsd:string</td>
+          <td>Mandatory</td>
+        </tr>
+        <tr>
+          <td scope="row" >ucp:recordIdentifier</td>
+          <td>xsd:string<br>          </td>
+          <td>Optional </td>
+        </tr>
+        <tr>
+          <td scope="row" >ucp:recordVersions</td>
+          <td>sequence</td>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <td scope="row" >&nbsp;&nbsp;&nbsp;ucp:recordVersion</td>
+          <td></td>
+          <td>Mandatory</td>
+        </tr>
+        <tr>
+          <td scope="row" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ucp:versionType</td>
+          <td>xsd:string</td>
+          <td>Mandatory</td>
+        </tr>
+        <tr>
+          <td scope="row" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ucp:versionValue</td>
+          <td>xsd:string</td>
+          <td>Mandatory</td>
+        </tr>
+        <tr>
+          <td scope="row" >srw:record</td>
+          <td></td>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <td scope="row" >&nbsp;&nbsp;&nbsp;srw:recordPacking</td>
+          <td>xsd:string</td>
+          <td>Mandatory</td>
+        </tr>
+        <tr>
+          <td scope="row" >&nbsp;&nbsp;&nbsp;srw:recordSchema</td>
+          <td>xsd:string</td>
+          <td>Mandatory</td>
+        </tr>
+        <tr>
+          <td scope="row" >&nbsp;&nbsp;&nbsp;srw:recordData</td>
+          <td>srw:stringOrXmlFragment</td>
+          <td>Mandatory</td>
+        </tr>
+        <tr>
+          <td scope="row" >&nbsp;&nbsp;&nbsp;srw:extraRecordData</td>
+          <td>srw:extraDataType</td>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <td scope="row" >srw:extraRequestData</td>
+          <td>srw:extraDataType</td>
+          <td>Optional</td>
+        </tr>
+      </table>
+      <h4>&nbsp;</h4>
+      <h4><a name="response"></a>Response Structure</h4>
+      <h4>&nbsp;</h4>
+      <table width="95%" border="1" cellpadding="5" cellspacing="0">
+        <tr bgcolor="#FFF9E5">
+          <th scope="col" >Name</th>
+          <th scope="col"  width="33%">Type</th>
+          <th scope="col"  width="33%">Required</th>
+        </tr>
+        <tr>
+          <td scope="row" >srw:version</td>
+          <td>xsd:string</td>
+          <td>Mandatory</td>
+        </tr>
+        <tr>
+          <td scope="row" >ucp:operationStatus</td>
+          <td>xsd:string</td>
+          <td>Mandatory</td>
+        </tr>
+        <tr>
+          <td scope="row" >ucp:recordIdentifier</td>
+          <td>xsd:string</td>
+          <td>Optional (see <a href="#id">note</a>)</td>
+        </tr>
+        <tr>
+          <td scope="row" >ucp:recordVersions</td>
+          <td>sequence</td>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <td scope="row" >&nbsp;&nbsp;&nbsp;ucp:recordVersion</td>
+          <td></td>
+          <td>Mandatory</td>
+        </tr>
+        <tr>
+          <td scope="row" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ucp:versionType</td>
+          <td>xsd:string</td>
+          <td>Mandatory</td>
+        </tr>
+        <tr>
+          <td scope="row" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ucp:versionValue</td>
+          <td>xsd:string</td>
+          <td>Mandatory</td>
+        </tr>
+        <tr>
+          <td scope="row" >srw:record</td>
+          <td></td>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <td scope="row">&nbsp;&nbsp;&nbsp;srw:recordPacking</td>
+          <td>xsd:string</td>
+          <td>Mandatory</td>
+        </tr>
+        <tr>
+          <td scope="row" >&nbsp;&nbsp;&nbsp;srw:recordSchema</td>
+          <td>xsd:string</td>
+          <td>Mandatory</td>
+        </tr>
+        <tr>
+          <td scope="row" >&nbsp;&nbsp;&nbsp;srw:recordData</td>
+          <td>srw:stringOrXmlFragment</td>
+          <td>Mandatory</td>
+        </tr>
+        <tr>
+          <td scope="row" >&nbsp;&nbsp;&nbsp;srw:extraRecordData</td>
+          <td>srw:extraDataType</td>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <td scope="row" >srw:diagnostics</td>
+          <td>sequence</td>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <td scope="row" >&nbsp;&nbsp;&nbsp;diag:diagnostic (see <a href="#diagnostics">table</a>)</td>
+          <td></td>
+          <td>Mandatory</td>
+        </tr>
+        <tr>
+          <td scope="row" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;diag:uri</td>
+          <td>xsd:anyURI</td>
+          <td>Mandatory</td>
+        </tr>
+        <tr>
+          <td scope="row" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;diag:details</td>
+          <td>xsd:string</td>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <td scope="row" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;diag:message</td>
+          <td>xsd:string</td>
+          <td>Optional</td>
+        </tr>
+        <tr>
+          <td scope="row" >srw:extraResponseData</td>
+          <td>srw:extraDataType</td>
+          <td>Optional</td>
+        </tr>
+      </table>
+      <hr>
+      <h2><a name="elements"></a>Elements</h2>
+      <h4>version</h4>
+      <p> The version parameter on both request and response has the same semantics
+        as the <a href="../version.html">version</a> parameter from SRU. </p>
+      <h4><a name="actionelement"></a>action</h4>
+      <p>The action parameter determines what action the server should take with
+        the information provided. Actions defined by the base profile and their
+        semantics are:      </p>
+      <table width="95%" border="1" cellpadding="5" cellspacing="0">
+        <tr bgcolor="#FFF9E5">
+          <th scope="col"  width="25%">Identifier</th>
+          <th scope="col" >Description</th>
+        </tr>
+        <tr>
+          <td scope="row"  >info:srw/action/1/create</td>
+          <td><a href="#create">Create</a> a new record</td>
+        </tr>
+        <tr>
+          <td scope="row" >info:srw/action/1/replace</td>
+          <td>Wholly <a href="#replace">replace</a> an existing record with a
+            new record</td>
+        </tr>
+        <tr>
+          <td scope="row" >info:srw/action/1/delete</td>
+          <td><a href="#delete">Delete</a> an existing record</td>
+        </tr>
+      </table>
+      <p>Further profiles may at their discretion create new identifiers for
+        either new actions or extensions of the above actions with additional
+        processing requirements. (This is the reason why URIs are used to identify
+        the action, rather than just enumerating them by integer.)</p>
+      <p>So it is important to note that the URI 'info:srw/action/1/create' (for
+        example) refers to the &quot;create&quot; action defined in this document.&nbsp; Another
+        authority could create its own create action with different semantics.
+        For example, the 'info' authority 'info:srw/action/2' could define a
+        create action with different semantics, with (for example) identifier
+        'info:srw/action/2/create' and the two create actions would be distinguished
+        because their URIs are different. </p>
+      <h4>operationStatus</h4>
+      <p> The status of the operation is returned in this field. Defined values
+        are: </p>
+      <table width="95%" border="1" cellpadding="5" cellspacing="0">
+        <tr bgcolor="#FFF9E5">
+          <th scope="col"  width="25%">Value</th>
+          <th scope="col" >Description</th>
+        </tr>
+        <tr>
+          <td scope="row">success</td>
+          <td>The server has completed the operation successfully</td>
+        </tr>
+        <tr>
+          <td scope="row">fail</td>
+          <td>The server could not complete the operation, additional information
+            may be present in the diagnostics</td>
+        </tr>
+        <tr>
+          <td scope="row">partial</td>
+          <td>Part of the operation was successful, additional information may
+            be present in the diagnostics</td>
+        </tr>
+        <tr>
+          <td scope="row">delayed</td>
+          <td>The server has not yet finished the operation</td>
+        </tr>
+      </table>
+      <h4>&nbsp;</h4>
+      <h4>recordIdentifier</h4>
+      <p>A record identifier is a unique way to distinguish a record within the
+        current context. The string may be any means to determine identity of
+        the record, including but not limited to identifier strings, references
+        to a result set and a position within it or a query which will evaluate
+        to a single record. The recommended solution is an identifier string. </p>
+      <p>Some servers may also support identifying records by sending them in
+        the record parameter. If the recordIdentifier parameter is present, then
+        the record parameter must not be used in this way. </p>
+      <p>The server may create a result set with the record and return it as
+        an identifier. If so, the result set should last for a reasonable amount
+        of time, depending on the context, to allow further references to it. </p>
+      <h4><em><a name="id"></a>Note: The recordIdentifier parameter in the response
+          is provided for the convenience of those using RecordUpdate with the
+          SRU 1.1 record structure. When used with the SRU 1.2 record structure
+          it is recommended to omit this parameter (because the SRU 1.2 record
+          structure includes a record identifier).</em></h4>
+      <h4>recordVersions</h4>
+      <p>RecordVersions is version information concerning the record. This is
+        a means of tracking changes to a single record such that it maintains
+        a persistent identifier throughout its existence, but the changes can
+        still be tracked and referenced. A server may require that the most recent
+        version of the record be supplied in a request to ensure that the operation
+        is taking place on the most recent copy of the record. </p>
+      <p>The information is in the form of a list. Each recordVersion entry in
+        the list is a pair consisting of a type and a value. Each type must be
+        unique within the list. All entries must pertain to the same version.
+        For example, if a checksum and a versionNumber are supplied, then the
+        checksum must be that for the given versionNumber. </p>
+      <table width="95%" border="1" cellpadding="5" cellspacing="0">
+        <tr bgcolor="#FFF9E5">
+          <th scope="col"  width="25%">Identifier</th>
+          <th scope="col" >Description</th>
+        </tr>
+        <tr>
+          <td scope="row">versionNumber</td>
+          <td>An incrementing number or combination of numbers</td>
+        </tr>
+        <tr>
+          <td scope="row">datestamp</td>
+          <td>A datestamp for the time the record was last modified</td>
+        </tr>
+        <tr>
+          <td scope="row">checksum</td>
+          <td>A checksum for the record</td>
+        </tr>
+      </table>
+      <h4>&nbsp;</h4>
+      <h4>record</h4>
+      <p>The record structure contains the actual record data to be used as part
+        of the operation. It has the same structure and semantics as the <a href="#operations">SRU
+        record structure</a>. </p>
+      <p> Profiles and actions may require the presence of the record in either
+        request or response for different actions. </p>
+      <p> Update also allows for a third type of recordPacking: 'url'. If the
+        value of recordPacking in a request is URL, then the value of recordData
+        is a string containing a URL to the record to be operated on. The expected
+        use for this is to allow for clients to send a reference to a large record,
+        possibly on an alternate site, and for the server to collect it at its
+        leisure. </p>
+      <hr>
+      <h2><a name="actions" id="actions"></a>Actions</h2>
+      <h3><a name="create"></a>Create Action</h3>
+      <h4>&nbsp;</h4>
+      <h4>Request</h4>
+      <p>RecordIdentifier may be present, but must not be a resultSetReference.
+        If present, it is a request that the server use the given identifier
+        for the new record.</p>
+      <p>RecordVersions may be present, but may only be a 'number'. If present,
+        it is a request that the server use the given version number for the
+        first version of the new record.</p>
+      <p>Record may be present. If present, it must contain the record to be
+        created. If not present, it is a request for the server to create an
+        empty placeholder record and return a reference to it for later editing.</p>
+      <h4>Response</h4>
+      <p> RecordIdentifier may be present. When the SRU 1.1 record structure
+        is used, it is recommended that recordIdentifier be present, either as
+        a value or a result set reference.&nbsp; When the SRU 1.1 record structure
+        is not used, it is recommended that recordIdentifier not be present.</p>
+      <p>RecordVersions may be present.</p>
+      <p>Record may be present, and it is recommended that it be present if the
+        server has transformed the record in any way. <br>
+      </p>
+      <h3><a name="replace"></a>Replace Action</h3>
+      <h4>&nbsp;</h4>
+      <h4>Request</h4>
+      <p>RecordIdentifier must be present. It identifies the record to be replaced.</p>
+      <p>RecordVersions may be present. If present, they further identify the
+        record to be replaced.</p>
+      <p>Record must be present.</p>
+      <p>Identifiers are crucial for record replace actions and sometimes it
+        is necessary to disambiguate a replace request using the edit replace
+        structure.&nbsp; A metadata record describing a resource on one database
+        may differ substantially from a record for the same resource on another
+        database; when a record replace is sent, it is desirable to indicate
+        unambiguously the nature of the changes being made.&nbsp; This is important
+        so that parts of the record are not inadvertently deleted because they
+        did not appear in the replacement record.&nbsp;&nbsp; Therefore SRU update
+        includes an edit replace structure that can be used in extraRequestData
+        of the request for unambiguously stating the intentions of a request.&nbsp; </p>
+      <table width="91%" border="1" cellpadding="5" cellspacing="0">
+        <tr bgcolor="#FFF9E5">
+          <th scope="col"  width="22%">Element</th>
+          <th scope="col"  width="12%">Type</th>
+          <th scope="col"  width="31%">Occurrence</th>
+        </tr>
+        <tr>
+          <td scope="row" ><p>dataIdentifier</p></td>
+          <td><p>xsd:string</p></td>
+          <td><p>optional (all types)</p>
+              <p> non-repeatable</p></td>
+        </tr>
+        <tr>
+          <td scope="row" ><p>oldValue</p></td>
+          <td><p>xsd:string</p></td>
+          <td><p>Mandatory where editReplaceType is R or D. </p>
+              <p>Omitted for I.</p>
+            <p>Not repeatable.</p></td>
+        </tr>
+        <tr>
+          <td scope="row" ><p>newValue</p></td>
+          <td><p>xsd:string</p></td>
+          <td><p>Mandatory where editReplaceType is I, Omitted for D.</p>
+              <p>Optional for R.</p>
+            <p>Not repeatable.</p></td>
+        </tr>
+        <tr>
+          <td scope="row" ><p>editReplaceType</p></td>
+          <td><p>xsd:string, values:</p>
+              <ul>
+                <li>I=insert</li>
+                <li>D=Delete</li>
+                <li>R=Replace</li>
+              </ul></td>
+          <td><p>mandatory.</p>
+              <p>Not repeatable.</p></td>
+        </tr>
+      </table>
+      <p>In the absence of a dataIdentifier or where the dataIdentifier is ambiguous,
+        the default is to change or delete all occurrences of the specified data
+        which match the specified old value. </p>
+      <p><b>Examples:</b></p>
+      <blockquote>
+        <p>&lt;editReplace&gt;<br>
+          &lt;dataIdentifier&gt;650 / 002&nbsp;: z/001&lt;/dataIdentifier&gt;<br>
+          &lt;oldValue&gt;New Hebrides&lt;/oldValue&gt;<br>
+          &lt;newValue&gt;Vanuatu&lt;/newValue&gt;<br>
+          &lt;editReplaceType&gt;R&lt;/editReplaceType&gt;<br>
+          &lt;/editReplace&gt;</p>
+      </blockquote>
+      <p><i>In the second field 650, replace the first occurrence of subfield
+          z to read  &ldquo;Vanuatu&rdquo;&nbsp; where it was &ldquo;New Hebrides&rdquo;</i></p>
+      <blockquote>
+        <p>&lt;editReplace&gt;<br>
+          &lt;dataIdentifier&gt;Holdings&lt;/dataIdentifier&gt;<br>
+          &lt;newValue&gt;TU&lt;/newValue&gt;<br>
+          &lt;editReplaceType&gt;I&lt;/editReplaceType&gt;<br>
+          &lt;/editReplace&gt;</p>
+      </blockquote>
+      <p><i>In the holdings section of this record, add the institution symbol &ldquo;TU&rdquo;</i></p>
+      <blockquote>
+        <p>&lt;editReplace&gt;<br>
+          &lt;dataIdentifier&gt;Holdings&lt;/dataIdentifier&gt;<br>
+          &lt;oldValue&gt;TU&lt;/oldValue&gt;<br>
+          &lt;editReplaceType&gt;D&lt;/editReplaceType&gt;<br>
+          &lt;/editReplace&gt; </p>
+      </blockquote>
+      <p><i>In the holdings section of this record, delete the institution symbol &ldquo;TU&rdquo;</i></p>
+      <h4>Response</h4>
+      <p>RecordIdentifier may be present. When the SRU 1.1 record structure is
+        used, it is recommended that recordIdentifier be present; it identifies
+        the new record. When the SRU 1.1 record structure is not used, it is
+        recommended that recordIdentifier not be present.</p>
+      <p>RecordVersions may be present. If present, it identifies the new record.</p>
+      <p>Record may be present. It is recommended that it be present if the server
+        has transformed the received record in any way. </p>
+      <h3><a name="delete"></a>Delete Action</h3>
+      <h4>&nbsp;</h4>
+      <h4>Request</h4>
+      <p>The Delete action should only be used when deleting an entire record.&nbsp; When
+        deleting a field, section or defined part of a record, the record replace
+        action should be used, using as necessary the edit replace structure
+        in extraRequestData.</p>
+      <p>It is recommended that recordIdentifier be present. If present, it identifies
+        the record to be deleted. If it is not present, then Record must be present.</p>
+      <p>RecordVersions may be present. If present, they further identify the
+        record to be deleted.</p>
+      <p>Record and recordIdentifier may both be present for redundancy. However,
+        the server is not obliged to cross-check, that is, it may ignore one
+        or the other, but if so should supply a diagnostic. See diagnostics 63
+        and 64. </p>
+      <h4>Response</h4>
+      <p>RecordIdentifier may be present. If present, it identifies the deleted
+        record. When the SRU 1.1 record structure is not used, and if Record
+        is present, it is recommended that recordIdentifier not be present.</p>
+      <p>RecordVersions may be present. If present, they further identify the
+        deleted record.</p>
+      <p>Record may be present. If present, it is the record which was deleted. </p>
+      <hr>
+      <h2><a name="authentication"></a>Authentication</h2>
+      <p>Although authentication and authorisation are an important aspect of
+        practically every update system, the messages themselves do not carry
+        any such information in the base profile. This is for two reasons:</p>
+      <p> 1. The protocol cannot predict all of the business logic requirements
+        that an authentication system might require<br>
+        2. There are already mechanisms available for authenticating to a SOAP
+        service, such as basic authentication in the HTTP layer </p>
+      <p>It is recommended that SRU's authenticationToken system be used if there
+        are no other requirements. This system uses a token to identify the user,
+        but does not specify how that token is initially obtained.</p>
+      <h2>&nbsp;        </h2>
+      <hr>
+      <h2>Record Schema</h2>
+      <p>Although Update does not specify a required record schema, nor does
+        it assume that the records are maintained in any particular schema, records
+        must be sent somehow. The schemas which the system will accept are recorded
+        in the service description record, which is sent in the ExplainResponse
+        message. The server will be prepared to accept any record which will
+        validate against the schemas listed. If there is a preferred schema,
+        it will be noted as the default schema in the configInfo section.</p>
+      <p>If a server accepts more than one record schema, the server will either
+        transform the record into a native schema or save it as sent. Schemas
+        other than those listed in the service description may be stored as sent
+        or rejected.</p>
+      <hr>
+      <h2><a name="concurrent"></a>Concurrent Editing </h2>
+      <p>The protocol does not make any attempt to dictate how the situation
+        of multiple people editing the same record is to be handled by the server,
+        as different usage scenarios will require different solutions.</p>
+      <p>Recommended solutions include:</p>
+      <ul>
+        <li> Use the recordVersions parameter to ensure that the change is against
+          the most recent version of the record. Accept it if it is, otherwise
+          it will be rejected as someone else has edited the record in the mean
+          time.</li>
+        <li> Include a 'locked' status in the record's metadata and have users
+          then set this flag while they are editing the record, and unlock it
+          after they submit their changes.</li>
+        <li> Use a system which tracks changes and accept the change if it does
+          not conflict with other changes to the record. </li>
+      </ul>
+      <hr>
+      <h2><a name="background"></a>Background Processing</h2>
+      <p>While it is generally expected that the UpdateResponse message will
+        be sent after all processing has been completed, this may not be feasible
+        for large databases. Either the change to the record or any subsequent
+        processing may be delayed such that the response cannot say whether the
+        operation was a success or a failure, as it hasn't yet been completed.</p>
+      <p>In this case, the server should return an operationStatus of 'delayed'.
+        The protocol does not specify a mechanism to identify the operation in
+        a future request to discover if it has been completed or not, but solutions
+        might include:</p>
+      <ul>
+        <li> Include a field in extraResponseData or a diagnostic which gives
+          the operation an identifier to be used in a future request. Such a
+          request is out of scope.</li>
+        <li> Simply query the database to see if the change has taken effect. </li>
+      </ul>
+      <hr>
+      <h2><a name="diagnostics"></a>Diagnostics</h2>
+      <p><strong>The diagnostics below are defined for use with the namespace
+          info:srw/diagnostic/12</strong></p>
+      <p> The number in the first column identifies the specific diagnostic within
+        this namespace. Thus for example diagnostic 2 below (in &quot;Msg id&quot;
+        column): &quot;Invalid component:<span style="mso-spacerun: yes">&nbsp; </span>component
+        rejected&quot;, is identified by the uri: info:srw/diagnostic/12/2.</p>
+      <table border="1" cellspacing="0" cellpadding="0">
+        <thead>
+          <tr>
+            <th scope="col" width="67" valign="top"> <p ><b>Msg id</b></p></th>
+            <th scope="col" width="340" valign="top"> <p ><b>Description / Action
+                  taken</b></p></th>
+            <th scope="col" width="245" valign="top"> <p ><b>Other Information</b></p></th>
+          </tr>
+        </thead>
+        <tr>
+          <td scope="row"  colspan="3" valign="top"><p  align="center" style='text-align:center'><i>Validity</i></p></td>
+        </tr>
+        <tr>
+          <td scope="row"   width="67" valign="top"><p >1</p></td>
+          <td width="340" valign="top"><p >Invalid component:&nbsp; record rejected</p></td>
+          <td width="245" valign="top"><p >component id, invalid data </p></td>
+        </tr>
+        <tr>
+          <td scope="row"  width="67" valign="top"><p >2</p></td>
+          <td width="340" valign="top"><p >Invalid component:&nbsp; component
+              rejected</p></td>
+          <td width="245" valign="top"><p >component id, invalid data </p></td>
+        </tr>
+        <tr>
+          <td scope="row"  width="67" valign="top"><p >3</p></td>
+          <td width="340" valign="top"><p >Invalid component:&nbsp; warning only</p></td>
+          <td width="245" valign="top"><p >component id, invalid data</p></td>
+        </tr>
+        <tr>
+          <td scope="row"  width="67" valign="top"><p >4</p></td>
+          <td width="340" valign="top"><p >Invalid component:&nbsp; default value
+              applied</p></td>
+          <td width="245" valign="top"><p >component id, invalid data</p></td>
+        </tr>
+        <tr>
+          <td scope="row"  width="67" valign="top"><p >5</p></td>
+          <td width="340" valign="top"><p >Invalid component:&nbsp; data corrected
+              by server</p></td>
+          <td width="245" valign="top"><p >component id, invalid data</p></td>
+        </tr>
+        <tr>
+          <td scope="row"  width="67" valign="top"><p >6</p></td>
+          <td width="340" valign="top"><p >Invalid repetition of component: record
+              rejected</p></td>
+          <td width="245" valign="top"><p >component id, invalid data</p></td>
+        </tr>
+        <tr>
+          <td scope="row"  width="67" valign="top"><p >7</p></td>
+          <td width="340" valign="top"><p >Invalid repetition of component: component
+              rejected</p></td>
+          <td width="245" valign="top"><p >component id, invalid data</p></td>
+        </tr>
+        <tr>
+          <td scope="row"  width="67" valign="top"><p >8</p></td>
+          <td width="340" valign="top"><p >Invalid repetition of component: warning
+              only</p></td>
+          <td width="245" valign="top"><p >component id, invalid data</p></td>
+        </tr>
+        <tr>
+          <td scope="row"  width="67" valign="top"><p >9</p></td>
+          <td width="340" valign="top"><p >Missing mandatory element: record
+              rejected</p></td>
+          <td width="245" valign="top"><p >component id, invalid data</p></td>
+        </tr>
+        <tr>
+          <td scope="row"  width="67" valign="top"><p >10</p></td>
+          <td width="340" valign="top"><p >Missing mandatory element: warning
+              only</p></td>
+          <td width="245" valign="top"><p >component id, invalid data</p></td>
+        </tr>
+        <tr>
+          <td scope="row"  width="67" valign="top"><p >11</p></td>
+          <td width="340" valign="top"><p >Missing mandatory element: default
+              value applied</p></td>
+          <td width="245" valign="top"><p >component id, invalid data</p></td>
+        </tr>
+        <tr>
+          <td scope="row"  width="67" valign="top"><p >12</p></td>
+          <td width="340" valign="top"><p >Invalid data structure: record rejected</p></td>
+          <td width="245" valign="top"><p >component id, invalid data</p></td>
+        </tr>
+        <tr>
+          <td scope="row"  width="67" valign="top"><p >13</p></td>
+          <td width="340" valign="top"><p >Invalid data structure: component
+              rejected</p></td>
+          <td width="245" valign="top"><p >component id, invalid data</p></td>
+        </tr>
+        <tr>
+          <td scope="row"  width="67" valign="top"><p >14</p></td>
+          <td width="340" valign="top"><p >Invalid data structure: warning only</p></td>
+          <td width="245" valign="top"><p >component id, invalid data</p></td>
+        </tr>
+        <tr>
+          <td scope="row"  width="67" valign="top"><p >15</p></td>
+          <td width="340" valign="top"><p >Invalid data structure: default value
+              applied</p></td>
+          <td width="245" valign="top"><p >component id, invalid data</p></td>
+        </tr>
+        <tr>
+          <td scope="row"  width="67" valign="top"><p >16</p></td>
+          <td width="340" valign="top"><p >Invalid data structure: data corrected
+              by server</p></td>
+          <td width="245" valign="top"><p >component id, invalid data</p></td>
+        </tr>
+        <tr>
+          <td scope="row"  width="67" valign="top"><p >17</p></td>
+          <td width="340" valign="top"><p >Incorrect element length: record rejected</p></td>
+          <td width="245" valign="top"><p >component id, element name, data</p></td>
+        </tr>
+        <tr>
+          <td scope="row"  width="67" valign="top"><p >18</p></td>
+          <td width="340" valign="top"><p >Incorrect element length : component
+              rejected</p></td>
+          <td width="245" valign="top"><p >component id, element name, data</p></td>
+        </tr>
+        <tr>
+          <td scope="row"  width="67" valign="top"><p >19</p></td>
+          <td width="340" valign="top"><p >Incorrect element length : warning
+              only</p></td>
+          <td width="245" valign="top"><p >component id, element name, data</p></td>
+        </tr>
+        <tr>
+          <td scope="row"  width="67" valign="top"><p >20</p></td>
+          <td width="340" valign="top"><p >Incorrect element length : default
+              value applied</p></td>
+          <td width="245" valign="top"><p >component id, element name, data</p></td>
+        </tr>
+        <tr>
+          <td scope="row"  width="67" valign="top"><p >21</p></td>
+          <td width="340" valign="top"><p >Incorrect element length : data corrected
+              by server</p></td>
+          <td width="245" valign="top"><p >component id, element name, data</p></td>
+        </tr>
+        <tr>
+          <td scope="row"  width="67" valign="top"><p >22</p></td>
+          <td width="340" valign="top"><p >Invalid record identifier : record
+              rejected</p></td>
+          <td width="245" valign="top"><p >record identifier</p></td>
+        </tr>
+        <tr>
+          <td scope="row"  width="67" valign="top"><p >23</p></td>
+          <td width="340" valign="top"><p >Invalid record identifier : warning
+              only</p></td>
+          <td width="245" valign="top"><p >record identifier</p></td>
+        </tr>
+        <tr>
+          <td scope="row"  width="67" valign="top"><p >24</p></td>
+          <td width="340" valign="top"><p >Invalid record identifier : default
+              applied</p></td>
+          <td width="245" valign="top"><p >record identifier</p></td>
+        </tr>
+        <tr>
+          <td scope="row"  width="67" valign="top"><p >25</p></td>
+          <td width="340" valign="top"><p >Invalid record identifier : data corrected
+              by server</p></td>
+          <td width="245" valign="top"><p >record identifier</p></td>
+        </tr>
+        <tr>
+          <td scope="row"  width="67" valign="top"><p >26</p></td>
+          <td width="340" valign="top"><p >Invalid component identifier: record
+              rejected</p></td>
+          <td width="245" valign="top"><p >record identifier, component identifier</p></td>
+        </tr>
+        <tr>
+          <td scope="row"  width="67" valign="top"><p >27</p></td>
+          <td width="340" valign="top"><p >Invalid component identifier: component
+              rejected</p></td>
+          <td width="245" valign="top"><p >record identifier, component identifier</p></td>
+        </tr>
+        <tr>
+          <td scope="row"  width="67" valign="top"><p >28</p></td>
+          <td width="340" valign="top"><p >Invalid component identifier: warning
+              only</p></td>
+          <td width="245" valign="top"><p >record identifier, component identifier</p></td>
+        </tr>
+        <tr>
+          <td scope="row"  width="67" valign="top"><p >29</p></td>
+          <td width="340" valign="top"><p >Invalid component identifier: data
+              corrected by server</p></td>
+          <td width="245" valign="top"><p >record identifier, component identifier</p></td>
+        </tr>
+        <tr>
+          <td scope="row"  width="67" valign="top"><p ><span lang="EN-GB">30</span></p></td>
+          <td width="340" valign="top"><p  style='text-autospace:none'><span
+  lang="EN-GB" >Record schema unacceptable: record rejected&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p></td>
+          <td width="245" valign="top"><p >record identifier, component identifier</p></td>
+        </tr>
+        <tr>
+          <td scope="row"  width="67" valign="top"><p >31</p></td>
+          <td width="340" valign="top"><p ><span lang="EN-GB" >Record schema
+                unacceptable: component rejected&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p></td>
+          <td width="245" valign="top"><p >record identifier, component identifier</p></td>
+        </tr>
+        <tr>
+          <td scope="row"  width="67" valign="top"><p >32</p></td>
+          <td width="340" valign="top"><p ><span lang="EN-GB" >Record schema
+                unrecognised: warning only&nbsp; record id</span></p></td>
+          <td width="245" valign="top"><p >record identifier, component identifier</p></td>
+        </tr>
+        <tr>
+          <td scope="row"  width="67" valign="top"><p >33</p></td>
+          <td width="340" valign="top"><p ><span lang="EN-GB" >Record schema
+                unacceptable: record converted</span></p></td>
+          <td width="245" valign="top"><p >record identifier, component identifier<span lang="EN-GB" >,
+                identifier of schema applied</span></p></td>
+        </tr>
+        <tr>
+          <td scope="row"  colspan="3" valign="top"><p  align="center" style='text-align:center'><i>Update</i></p></td>
+        </tr>
+        <tr>
+          <td scope="row"  width="67" valign="top"><p >50</p></td>
+          <td width="340" valign="top"><p >Record not found (replacement or delete)</p></td>
+          <td width="245" valign="top"><p >record id</p></td>
+        </tr>
+        <tr>
+          <td scope="row"  width="67" valign="top"><p >51</p></td>
+          <td width="340" valign="top"><p >Component not found (replacement or
+              delete)</p></td>
+          <td width="245" valign="top"><p >record id, component data</p></td>
+        </tr>
+        <tr>
+          <td scope="row"  width="67" valign="top"><p >52</p></td>
+          <td width="340" valign="top"><p >Record protected or locked by another
+              user</p></td>
+          <td width="245" valign="top"><p >record id</p></td>
+        </tr>
+        <tr>
+          <td scope="row"  width="67" valign="top"><p >53</p></td>
+          <td width="340" valign="top"><p >Cannot delete or replace record or
+              component, authorization failure</p></td>
+          <td width="245" valign="top"><p >record id / component data</p></td>
+        </tr>
+        <tr>
+          <td scope="row"  width="67" valign="top"><p >54</p></td>
+          <td width="340" valign="top"><p >Cannot delete or replace record or
+              component without locking first</p></td>
+          <td width="245" valign="top"><p >record id / component data</p></td>
+        </tr>
+        <tr>
+          <td scope="row"  width="67" valign="top"><p >55</p></td>
+          <td width="340" valign="top"><p >Cannot process update, incorrect or
+              invalid version </p></td>
+          <td width="245" valign="top"><p >record id; latest version #, URL for
+              retrieving latest version of record</p></td>
+        </tr>
+        <tr>
+          <td scope="row"  width="67" valign="top"><p >56</p></td>
+          <td width="340" valign="top"><p >Linked records exist, cannot delete
+              record</p></td>
+          <td width="245" valign="top"><p >record id</p></td>
+        </tr>
+        <tr>
+          <td scope="row"  width="67" valign="top"><p >57</p></td>
+          <td width="340" valign="top"><p >Record or component not found, replacement
+              request processed as an insert</p></td>
+          <td width="245" valign="top"><p >record id of new record</p></td>
+        </tr>
+        <tr>
+          <td scope="row"  width="67" valign="top"><p >58</p></td>
+          <td width="340" valign="top"><p >Suspect duplicate: record or component
+              insert rejected</p></td>
+          <td width="245" valign="top"><p >record id of incoming record, record
+              id of database record</p></td>
+        </tr>
+        <tr>
+          <td scope="row"  width="67" valign="top"><p >59</p></td>
+          <td width="340" valign="top"><p >Suspect duplicate: warning only</p></td>
+          <td width="245" valign="top"><p >record id of incoming record, record
+              id of database record</p></td>
+        </tr>
+        <tr>
+          <td scope="row"  width="67" valign="top"><p >60</p></td>
+          <td width="340" valign="top"><p >Incoming record matches with database
+              record, records merged</p></td>
+          <td width="245" valign="top"><p >record id of database record</p></td>
+        </tr>
+        <tr>
+          <td scope="row"  width="67" valign="top"><p >61</p></td>
+          <td width="340" valign="top"><p >Unspecified database error</p></td>
+          <td width="245" valign="top"><p >record id ++</p></td>
+        </tr>
+        <tr>
+          <td scope="row"  width="67" valign="top"><p >62</p></td>
+          <td width="340" valign="top"><p >Cannot process or store record, insufficient
+              space</p></td>
+          <td width="245" valign="top"><p >record id</p></td>
+        </tr>
+        <tr>
+          <td scope="row"  valign="top"><p>63</p></td>
+          <td valign="top"><p>Both 'recordId and 'record' were included on a
+              'delete' action. 'record' is ignored. Warning only.</p></td>
+          <td valign="top">&nbsp;</td>
+        </tr>
+        <tr>
+          <td scope="row"  valign="top"><p>64</p></td>
+          <td valign="top"><p>Both 'recordId and 'record' were included on a
+              'delete' action. 'recordIds' is ignored. Warning only.</p></td>
+          <td valign="top">&nbsp;</td>
+        </tr>
+        <tr>
+          <td scope="row"  valign="top">65</td>
+          <td valign="top"><p id="nonprop">Not processed (replace or delete).
+              Record identifier retrieved more than one record.</p></td>
+          <td valign="top">&nbsp;</td>
+        </tr>
+      </table>
+      <hr>
+      <h2><a name="examples"></a>Examples</h2>
+      <ul>
+        <li><a href="recordUpdateExamples/example1.xml">example 1 </a></li>
+        <li><a href="recordUpdateExamples/example2.xml">example 2 </a></li>
+        <li><a href="recordUpdateExamples/example3.xml">example 3 </a></li>
+        <li><a href="recordUpdateExamples/example4.xml">example 4</a></li>
+      </ul>
+      <p>&nbsp;</p>
+      <h1>&nbsp;</h1>
+      <!-- InstanceEndEditable -->
+      <div id="breadcrumbs-bottom"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-bottom" --><a href="index.html">record
+            update </a><!-- InstanceEndEditable --></div>
+</td></tr>
+
+</table>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://www.loc.gov/">The 
+        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div>
+      <br>
+  <span class="sitenav">
+  <!-- #BeginDate format:Am1 -->November 25, 2013<!-- #EndDate -->
+  </span></td>
+<td align="right"><div class="contactus"><a href="mailto:ndmso@loc.gov">Contact Us</a></div></td>
+</tr></table>
+</body>
+<!-- InstanceEnd --></html>

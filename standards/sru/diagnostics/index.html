@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/subpage.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Diagnostics: SRU Version 1.2 Specifications (SRU: Search/Retrieval via URL -- SRU, CQL and ZeeRex, Standards, Library of Congress)</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link type="text/css" media="print" href="../css/sru-print.css" rel="stylesheet">
+<style type="text/css" media="screen">
+@import url(../css/sru-base.css);
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="shortcut icon" href="http://www.loc.gov/standards/sru/images/favicon.ico">
+<!-- InstanceBeginEditable name="head" -->
+<meta name="keywords" content="diagnostics sru version 1.2 specifications sru search retrieval url cql zeerex standards library congress">
+<meta name="description" content="Diagnostics: SRU Version 1.2 Specifications. SRU is a standard XML-focused search protocol for Internet search queries, utilizing CQL (Contextual Query Language), a standard syntax for representing queries. Standards, The Library of Congress.">
+<!-- InstanceEndEditable -->
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<form action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" name="seek1" method="get">
+<input type="hidden" name="col" value="loc">
+<input type="hidden" name="sc" value="0">
+<input type="hidden" name="ws" value="0">
+<input type="hidden" name="la" value="en">
+<input type="hidden" name="qm" value="0">
+<input type="hidden" name="st" value="1">
+<input type="hidden" name="nh" value="10">
+<input type="hidden" name="lk" value="1">
+<input type="hidden" name="rf" value="0">
+<input type="hidden" name="oq" value="">
+<input type="hidden" name="si" value="0">
+<input type="hidden" name="rq" value="0">
+<input type="hidden" name="qc" value="">
+<table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
+  <div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div></td>
+<td width="116"><select name="qp" tabindex="1">
+<option value="url:/sru" selected>SRU Web Pages</option>
+<option value="url:/standards url:/ead url:/marc">Standards Pages</option>
+<option value="">All Library Pages</option>
+</select></td><td width="117" align="right"><input type="text" name="qt" id="keyword" size="18" value="" tabindex="2"></td>
+<td width="67" align="right"><input class="button" id="search_button" name="search_button" type="submit" value="SEARCH" tabindex="3"></td>
+</tr></table></form>
+<table align="center" class="layout" cellpadding="0" cellspacing="0"><tr><td>
+<div id="graphic"> 
+<h1 class="homepage"><img src="../images/sru.gif" alt="SRU (Search/Retrieval Using URL)" width="600" height="50"></h1>
+</div>
+<div class="goldtop"></div>
+      <div id="breadcrumbs"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-top" --><a href="../sru-1-2/index.html">sru version 1.2 specs</a>&nbsp;&raquo;&nbsp;diagnostics <!-- InstanceEndEditable --></div>
+<div class="clear"><a name="skip_menu"></a></div>
+ <!-- InstanceBeginEditable name="content" --> 
+      <h3>SRU</h3>
+      <h1>Diagnostics </h1>
+      <p>Sometimes things go wrong. In these cases the server is obliged to report 
+        that something went wrong, by sending a diagnostic record explaining what 
+        happened. A list of <a href="diagnosticsList.html">currently 
+        supported diagnostics</a> is available and more may be identified in the 
+        future. </p>
+      <p> Diagnostics fall into two categories, 'fatal' and 'non-fatal'. A fatal 
+        diagnostic is one in which the execution of the request cannot procede 
+        and no records are available to return. For example, if the client supplied 
+        an invalid query there is nothing that the server can do. A non-fatal 
+        diagnostic on the other hand is one where processing may be affected but 
+        the server can continue. For example if a particular record is not available 
+        in the requested schema but others are, the server may return the ones 
+        which are available rather than failing the entire request. </p>
+      <p> Non-fatal diagnostics are also divided into two categories 'surrogate' 
+        and 'non-surrogate'. Surrogate diagnostics take the place of a record. 
+        For example if the second of three records was not available in the requested 
+        schema, then the response would include the first record, a surrogate 
+        diagnostic explaining that the second record is not available, and then 
+        the final record. Non-surrogate, non-fatal diagnostics are diagnostics 
+        saying that while some or all the records are available, something else 
+        went wrong. For example the requested sorting algorithm might not be available.      </p>
+      <p> Surrogate diagnostics take the place of the record for which they are 
+        a surrogate in the 'records' parameter of the response. Non-surrogate 
+        records, both fatal and non-fatal, are returned in the 'diagnostics' parameter.      </p>
+      <h2>DIAGNOSTIC SCHEMA</h2>
+      <p> Diagnostics are returned in a very simple schema which has only three 
+        elements, 'uri', 'details' and 'message'. </p>
+      <p>The required 'uri' field is a URI, identifying the particular diagnostic. 
+        When the URI begins with "info:srw/diagnostic/1/" <em>(for example, 'info:srw/diagnostic/1/7')</em> 
+        then the diagnostic is from the standard SRU diagnostic list. The 'details' 
+        part contains information specific to the diagnostic, format as specified 
+        by the individual diagnostic definition. The 'message' field contains 
+        a human readable message to be displayed. Only the uri field is required, 
+        the other two are optional. </p>
+      <p>It is recommended for all diagnostics that the final section should be 
+        a distinguishing integer <em>(for example 'http://srw.cheshire3.org/diagnostics/1'</em>)      </p>
+      <p> The identifier for the diagnostic schema is: info:srw/schema/1/diagnostics-v1.1      </p>
+      <table class="standard">
+        <tbody>
+          <tr> 
+            <th scope="col">Name</th>
+            <th scope="col">Type</th>
+            <th scope="col">Mandatory/Optional?</th>
+            <th scope="col">Description</th>
+          </tr>
+          <tr> 
+            <td scope="row"><b>uri</b></td>
+            <td><i>xsd:anyURI</i></td>
+            <td>Mandatory</td>
+            <td>The diagnostic's identifying URI.</td>
+          </tr>
+          <tr> 
+            <td scope="row"><b>details</b></td>
+            <td><i>xsd:string</i></td>
+            <td>Optional</td>
+            <td>Any supplementary information available, often in a format specified 
+              by the diagnostic</td>
+          </tr>
+          <tr> 
+            <td scope="row"><b>message</b></td>
+            <td><i>xsd:string</i></td>
+            <td>Optional</td>
+            <td>A human readable message to display to the end user. The language 
+              and style of this message is determined by the server, and clients 
+              should not rely on this text being appropriate for all situations.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p></p>
+      <h3>Examples</h3>
+      <p> Non-surrogate, fatal diagnostic: </p>
+      <div class="example">&lt;diagnostics&gt;<br />
+        &nbsp;&nbsp;&lt;diagnostic xmlns="http://www.loc.gov/zing/srw/diagnostic/"&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;uri&gt;info:srw/diagnostic/1/38&lt;/uri&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;details&gt;10&lt;/details&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;message&gt;Too many boolean operators, the 
+        maximum is 10. Please try a less complex &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;query.&lt;/message&gt;<br />
+        &nbsp;&nbsp;&lt;/diagnostic&gt;<br />
+        &lt;/diagnostics&gt;</div>
+      <p>Surrogate, non-fatal diagnostic: </p>
+      <div class="example"> &lt;records&gt;<br />
+        &nbsp;&nbsp;&lt;record&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;recordSchema&gt; info:srw/schema/1/diagnostics-v1.1&lt;/recordSchema&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;recordData&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;diagnostic xmlns="http://www.loc.gov/zing/srw/diagnostic/"&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;uri&gt;info:srw/diagnostic/1/65&lt;/uri&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;message&gt;Record 
+        deleted by another user.&lt;/message&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/diagnostic&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/recordData&gt;<br />
+        &nbsp;&nbsp;&lt;/record&gt;<br />
+        &nbsp;...<br />
+        &lt;/records&gt;</div>
+      <p>&nbsp;</p>
+      <h1>SRU Diagnostic Schema </h1>
+      <p> <img src="http://www.loc.gov/images/arrow_o.gif" alt="" width="9" height="9"> <span class="selected">see also <a href="diagnostic.xsd"></a></span><a href="diagnostic.xsd">.xsd</a> </p>
+      <div class="box2">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;<br>
+      &lt;!-- --&gt;<br>
+  &lt;xsd:schema targetNamespace=&quot;http://www.loc.gov/zing/srw/diagnostic/&quot; 
+        xmlns=&quot;http://www.loc.gov/zing/srw/diagnostic/&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; 
+        elementFormDefault=&quot;qualified&quot; attributeFormDefault=&quot;unqualified&quot;&gt;<br>
+  &lt;xsd:element name=&quot;diagnostic&quot; type=&quot;diagnosticType&quot; 
+        nillable=&quot;false&quot;/&gt;<br>
+  &lt;xsd:complexType name=&quot;diagnosticType&quot;&gt;<br>
+  &nbsp;&nbsp;&lt;xsd:all&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:element ref=&quot;uri&quot;/&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:element ref=&quot;details&quot; 
+        minOccurs=&quot;0&quot;/&gt;<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xsd:element ref=&quot;message&quot; 
+        minOccurs=&quot;0&quot;/&gt;<br>
+  &nbsp;&nbsp;&lt;/xsd:all&gt;<br>
+  &lt;/xsd:complexType&gt;<br>
+  &lt;xsd:element name=&quot;uri&quot; type=&quot;xsd:anyURI&quot; nillable=&quot;false&quot;/&gt;<br>
+  &lt;xsd:element name=&quot;details&quot; type=&quot;xsd:string&quot; nillable=&quot;false&quot;/&gt;<br>
+  &lt;xsd:element name=&quot;message&quot; type=&quot;xsd:string&quot; nillable=&quot;false&quot;/&gt;<br>
+  &lt;/xsd:schema&gt; </div>
+      <p>&nbsp;</p>
+ <!-- InstanceEndEditable -->
+      <div id="breadcrumbs-bottom"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-bottom" --><a href="../sru-1-2/index.html">sru version 1.2 specs</a>&nbsp;&raquo; diagnostics <!-- InstanceEndEditable --></div>
+</td></tr>
+
+</table>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://www.loc.gov/">The 
+        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div>
+      <br>
+  <span class="sitenav">
+  <!-- #BeginDate format:Am1 -->September 3, 2013<!-- #EndDate -->
+  </span></td>
+<td align="right"><div class="contactus"><a href="mailto:ndmso@loc.gov">Contact Us</a></div></td>
+</tr></table>
+</body>
+<!-- InstanceEnd --></html>

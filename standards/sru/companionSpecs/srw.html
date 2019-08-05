@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/subpage.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>sru 1.1 archive &raquo;srw -  SRU Version 1.2 Specifications (SRU: Search/Retrieval via URL -- SRU, CQL and ZeeRex, Standards, Library of Congress)</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link type="text/css" media="print" href="../css/sru-print.css" rel="stylesheet">
+<style type="text/css" media="screen">
+@import url(../css/sru-base.css);
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="shortcut icon" href="http://www.loc.gov:8081/standards/sru/images/favicon.ico">
+<!-- InstanceBeginEditable name="head" -->
+<meta name="keywords" content="SRU Version 1.1 archive sru search retrieval url cql zeerex standards library congress">
+<meta name="description" content="SRU Version 1.1 archive. SRU is a standard XML-focused search protocol for Internet search queries, utilizing CQL (Contextual Query Language), a standard syntax for representing queries. Standards, The Library of Congress.">
+<!-- InstanceEndEditable -->
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<form action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" name="seek1" method="get">
+<input type="hidden" name="col" value="loc">
+<input type="hidden" name="sc" value="0">
+<input type="hidden" name="ws" value="0">
+<input type="hidden" name="la" value="en">
+<input type="hidden" name="qm" value="0">
+<input type="hidden" name="st" value="1">
+<input type="hidden" name="nh" value="10">
+<input type="hidden" name="lk" value="1">
+<input type="hidden" name="rf" value="0">
+<input type="hidden" name="oq" value="">
+<input type="hidden" name="si" value="0">
+<input type="hidden" name="rq" value="0">
+<input type="hidden" name="qc" value="">
+<table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
+  <div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div></td>
+<td width="116"><select name="qp" tabindex="1">
+<option value="url:/sru" selected>SRU Web Pages</option>
+<option value="url:/standards url:/ead url:/marc">Standards Pages</option>
+<option value="">All Library Pages</option>
+</select></td><td width="117" align="right"><input type="text" name="qt" id="keyword" size="18" value="" tabindex="2"></td>
+<td width="67" align="right"><input class="button" id="search_button" name="search_button" type="submit" value="SEARCH" tabindex="3"></td>
+</tr></table></form>
+<table align="center" class="layout" cellpadding="0" cellspacing="0"><tr><td>
+<div id="graphic"> 
+<h1 class="homepage"><img src="../images/sru.gif" alt="SRU (Search/Retrieval Using URL)" width="600" height="50"></h1>
+</div>
+<div class="goldtop"></div>
+      <div id="breadcrumbs"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-top" --><a href="../sru-1-1/index.html">sru
+      1.1  </a>&nbsp;&raquo;srw<!-- InstanceEndEditable --></div>
+      <div class="clear"><a name="skip_menu"></a></div>
+ <!-- InstanceBeginEditable name="content" -->
+      <h1>SRU </h1>
+      <h2>SRW: Search/Retrieve Web Service</h2>
+      <p align="left">SRW is a variation of <a href="http://www.loc.gov/standards/sru">SRU</a>.
+        Messages are conveyed from client to server, not by a URL, but instead
+        using XML over HTTP via the <a href="http://www.w3.org">W3C</a> recommendation <a href="http://www.w3.org/TR/SOAP/">SOAP</a>,
+        which specifies how to wrap an XML message within an XML envelope. The
+        SRW specification tries to adhere to the <a href="http://www.ws-i.org/">Web
+        Services Interoperability</a> recommendations. </p>
+      <h3>Benefits of SRW</h3>
+      <p align="left">The incremental benefits of SRW (that is, the advantages
+        of using SRW over SRU) are: better extension support, authentication,
+        and web service features. </p>
+      <h3><a name="version"></a>SOAP Version</h3>
+      <p> SRW clients and servers must support SOAP version 1.1. They may support
+        version 1.2 or later. This is to allow the most flexibility in implementation
+        as possible.
+      <h3>Service Style</h3>
+      <p> The SOAP service style for SRW is document/literal. Messages should
+        be inline with no multrefs.    
+      <h3>Other Considerations</h3>
+      <p> If there is a doubt whether to return a SOAP fault or an SRW diagnostic,
+        then the diagnostic is the preferred solution, as the client must support
+        the diagnostics, and toolkits may not handle SOAP faults as gracefully
+        (see below).     
+      <p>The SOAPAction HTTP header may be present in a request (but should not
+        be required for SRW implementations). If present, its value <em>must</em> be
+        an empty string, and it <em>must</em> be expressed as:
+      <blockquote>
+        <p>SOAPAction: &quot;&quot;</p>
+      </blockquote>
+      <p>(A header of</p>
+      <blockquote>
+        <p>SOAPAction: </p>
+      </blockquote>
+      <p>is incorrect.)<br>
+      </p>
+      <p>
+      <h3>"Toolkit as Impediment"</h3>
+      <p> This phrase, coined by one of the designers of SRW, refers to the fact
+        that different toolkits make some things easy to accomplish where they
+        might be extremely arcane in others. The design of SRW tries to take
+        a good cross sample of well-supported, standards-compliant toolkits,
+        and takes the line of least resistance. Thus if you ever think, 'Why
+        is it done like that?!', the answer is probably that it was easiest to
+        do it that way while remaining standards compliant.
+      <p>
+      <h3><a name="parameters"></a>Parameters</h3>
+      <p>The parameters for the SRW request and response are the same as the
+        SRU searchRetrieve <a href="http://www.loc.gov/standards/sru/sru-spec.html#parameters">request</a> and <a href="http://www.loc.gov/standards/sru/sru-spec.html#responseparameters">response</a> parameters,
+        with the following exceptions:
+      <ul>
+        <li>&nbsp;The <strong>operation</strong> parameter, defined for the SRU
+          request, is not defined for SRW. </li>
+        <li>&nbsp;The <strong>stylesheet</strong> parameter, defined for the
+          SRU request, is not defined for SRW. </li>
+        <li>&nbsp;The <strong>echoedSearch RetrieveRequest</strong> parameter,
+          defined for the SRU response, is not defined for SRW. </li>
+      </ul>
+      <h3>Examples</h3>
+      <p> A typical searchRetrieve request might be:
+      <pre class="box2">&lt;SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+  &lt;SOAP:Body&gt;
+    &lt;SRW:searchRetrieveRequest xmlns:SRW="http://www.loc.gov/zing/srw/"&gt;
+      &lt;SRW:version&gt;1.1&lt;/SRW:version&gt;
+      &lt;SRW:query&gt;(dc.author exact "jones" and  dc.title &gt;= "smith")&lt;/SRW:query&gt;
+      &lt;SRW:startRecord&gt;1&lt;/SRW:startRecord&gt;
+      &lt;SRW:maximumRecords&gt;10&lt;/SRW:maximumRecords&gt;
+      &lt;SRW:recordSchema&gt;info:srw/schema/1/mods-v3.0&lt;/SRW:recordsSchema&gt;
+    &lt;/SRW:searchRetrieveRequest&gt;
+  &lt;/SOAP:Body&gt;
+&lt;/SOAP:Envelope&gt;
+      </pre>
+      <p>The searchRetrieve response would be of the form:<a name="response"></a>
+      <pre class="box2">
+&lt;SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/"&gt;
+  &lt;SOAP:Body&gt;
+    &lt;SRW:searchRetrieveResponse xmlns:SRW="http://www.loc.gov/zing/srw/" 
+         xmlns:DIAG="http://www.loc.gov/zing/srw/diagnostics/"&gt;
+      &lt;SRW:version&gt;1.1&lt;/SRW:version&gt;
+      &lt;SRW:numberOfRecords&gt;2&lt;/SRW:numberOfRecords&gt;
+      &lt;SRW:resultSetId&gt;8c527d60-c3b4-4cec-a1de-1ff80a5932df&lt;/SRW:resultSetId&gt;
+      &lt;SRW:resultSetIdleTime&gt;600&lt;/SRW:resultSetIdleTime&gt;
+      &lt;SRW:records&gt;
+        &lt;SRW:record&gt;
+          &lt;SRW:recordSchema&gt;info:srw/schema/1/mods-v3.0&lt;/SRW:recordSchema&gt;
+          &lt;SRW:recordPacking&gt;string&lt;/SRW:recordPacking&gt;
+          &lt;SRW:recordData&gt;
+            &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
+            &amp;lt;mods xmlns:xlink=&amp;quot;http://www.w3.org/TR/xlink&amp;quot; 
+               xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot; 
+               xmlns=&amp;quot;http://www.loc.gov/mods/&amp;quot; 
+               xsi:schemaLocation=&amp;quot;
+                http://www.loc.gov/standards/mods/mods.xsd&amp;quot;&amp;gt;
+              &amp;lt;titleInfo&amp;gt;
+                &amp;lt;title&amp;gt;Sound and fury : 
+                 the making of the punditocracy /&amp;lt;/title&amp;gt;
+              &amp;lt;/titleInfo&amp;gt;
+              &amp;lt;name type=&amp;quot;personal&amp;quot;&amp;gt;
+                &amp;lt;namePart&amp;gt;Alterman, Eric.&amp;lt;/namePart&amp;gt;
+                &amp;lt;role&amp;gt;creator&amp;lt;/role&amp;gt;
+              &amp;lt;/name&amp;gt;
+              ...
+          &lt;/SRW:recordData&gt;
+          &lt;SRW:recordPosition&gt;1&lt;/SRW:recordPosition&gt;
+        &lt;/SRW:record&gt;
+        &lt;SRW:record&gt;
+          &lt;SRW:recordSchema&gt;info:srw/schema/1/diagnostic-v1.1
+              &lt;/SRW:recordSchema&gt;
+          &lt;SRW:recordPacking&gt;string&lt;/SRW:recordPacking&gt;
+  
+          &lt;SRW:recordData&gt;
+            &amp;lt;diagnostic&amp;gt;
+            &amp;lt;uri&amp;gt;info:srw/diagnostic/1/68&amp;lt;/uri&amp;gt;
+            &amp;lt;details&amp;gt;Not authorised 
+                      to send record&amp;lt;/details&amp;gt;
+          &amp;lt;/diagnostic&amp;gt;
+          &lt;/SRW:recordData&gt;
+          &lt;SRW:recordPosition&gt;2&lt;/SRW:recordPosition&gt;
+        &lt;/SRW:record&gt;
+      &lt;/SRW:records&gt;
+      &lt;SRW:diagnostics&gt;
+        &lt;DIAG:diagnostic&gt;
+          &lt;DIAG:uri&gt;info:srw/diagnostic/1/59&lt;/DIAG:uri&gt;
+          &lt;DIAG:message&gt;Result set created with valid 
+             partial results available&lt;/DIAG:message&gt;
+        &lt;/DIAG:diagnostic&gt;
+      &lt;/SRW:diagnostics&gt;
+    &lt;/SRW:searchRetrieveResponse&gt;
+  &lt;/SOAP:Body&gt;
+&lt;/SOAP:Envelope&gt;</pre>
+ <!-- InstanceEndEditable -->
+      <div id="breadcrumbs-bottom"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-bottom" --><a href="../sru-1-1/index.html">sru
+      1.1  </a>&nbsp;&raquo;srw <!-- InstanceEndEditable --></div>
+</td></tr>
+
+</table>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://www.loc.gov/">The 
+        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div>
+      <br>
+  <span class="sitenav">
+  <!-- #BeginDate format:Am1 -->September 3, 2013<!-- #EndDate -->
+  </span></td>
+<td align="right"><div class="contactus"><a href="mailto:ndmso@loc.gov">Contact Us</a></div></td>
+</tr></table>
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/subpage.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Registered Profiles (SRU: Search/Retrieval via URL -- SRU, CQL and ZeeRex, Standards, Library of Congress)</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link type="text/css" media="print" href="../css/sru-print.css" rel="stylesheet">
+<style type="text/css" media="screen">
+@import url(../css/sru-base.css);
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="shortcut icon" href="http://www.loc.gov:8081/standards/sru/images/favicon.ico">
+<!-- InstanceBeginEditable name="head" -->
+<meta name="keywords" content="profiles sru version 1.2 specifications sru search retrieval url cql zeerex standards library congress">
+<meta name="description" content="profiles: SRU Version 1.2 Specifications. SRU is a standard XML-focused search protocol for Internet search queries, utilizing CQL (Contextual Query Language), a standard syntax for representing queries. Standards, The Library of Congress.">
+<!-- InstanceEndEditable -->
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<form action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" name="seek1" method="get">
+<input type="hidden" name="col" value="loc">
+<input type="hidden" name="sc" value="0">
+<input type="hidden" name="ws" value="0">
+<input type="hidden" name="la" value="en">
+<input type="hidden" name="qm" value="0">
+<input type="hidden" name="st" value="1">
+<input type="hidden" name="nh" value="10">
+<input type="hidden" name="lk" value="1">
+<input type="hidden" name="rf" value="0">
+<input type="hidden" name="oq" value="">
+<input type="hidden" name="si" value="0">
+<input type="hidden" name="rq" value="0">
+<input type="hidden" name="qc" value="">
+<table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
+  <div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div></td>
+<td width="116"><select name="qp" tabindex="1">
+<option value="url:/sru" selected>SRU Web Pages</option>
+<option value="url:/standards url:/ead url:/marc">Standards Pages</option>
+<option value="">All Library Pages</option>
+</select></td><td width="117" align="right"><input type="text" name="qt" id="keyword" size="18" value="" tabindex="2"></td>
+<td width="67" align="right"><input class="button" id="search_button" name="search_button" type="submit" value="SEARCH" tabindex="3"></td>
+</tr></table></form>
+<table align="center" class="layout" cellpadding="0" cellspacing="0"><tr><td>
+<div id="graphic"> 
+<h1 class="homepage"><img src="../images/sru.gif" alt="SRU (Search/Retrieval Using URL)" width="600" height="50"></h1>
+</div>
+<div class="goldtop"></div>
+      <div id="breadcrumbs"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-top" -->registered profiles<!-- InstanceEndEditable --></div>
+<div class="clear"><a name="skip_menu"></a></div>
+ <!-- InstanceBeginEditable name="content" --> 
+      <h1>Registered Profiles</h1>
+      <p>SRU Profiles are documents which specify requirements which a server 
+        or client must conform to in order to claim compliance with that profile. 
+        The first profile below is distinguished as the SRU Base Profile, listing 
+        features recommended in order to ensure interoperability between SRU servers 
+        and clients. The Base Profile features are considered to be the base line 
+        implementation specifications, and if not implemented, the client or server 
+        will be unlikely to interoperate at all. </p>
+      <p> Profiles should not be confused with either context sets in CQL, or 
+        extensions for SRU. Profiles do not define anything new, they only list 
+        a set of requirements. Many profiles have associated context sets, record 
+        schemas and extensions, but the profile itself is just the list of these 
+        things. Each profile should have a unique identifier in order to distinguish 
+        it from other profiles. These identifiers should be listed in the Explain 
+        record. </p>
+      <ul>
+        <li> If you wish to have a profile listed here, then please contact the 
+          <a href="mailto:z3950@loc.gov">SRU Maintenance Agency</a>.</li>
+        <li>Some &quot;reference&quot; links in the table below go to external 
+          Web sites <a href="http://www.loc.gov/global/disclaim.html"><img src="http://www.loc.gov/images/disclaimer.gif" alt="Standard Disclaimer for External Links" width="91" height="16" border="0"></a></li>
+      </ul>
+	  <br>
+      <h2>PROFILES</h2>
+      <table class="standard">
+        <tr> 
+          <th scope="col">Profile </th>
+          <th scope="col">Version</th>
+          <th scope="col">Description/usage&nbsp;&nbsp; </th>
+          <th scope="col">Identifying URI</th>
+        </tr>
+        <tr> 
+          <td scope="row"><a href="../companionSpecs/baseProfile.html">Base Profile </a></td>
+          <td>1.1</td>
+          <td>The base profile for SRU and CQL compliance.</td>
+          <td>info:srw/profile/1/base-profile-v1.1</td>
+        </tr>
+        <tr> 
+          <td scope="row"><a href="http://srw.cheshire3.org/profiles/ZeeRex/">ZeeRex</a></td>
+          <td>1.1</td>
+          <td>Searching registries of services, described by ZeeRex records (eg 
+            registries of SRU servers)</td>
+          <td>info:srw/profile/2/zeerex-1.1</td>
+        </tr>
+        <tr> 
+          <td scope="row"><a href="http://zthes.z3950.org/srw/">zthes</a></td>
+          <td>0.5</td>
+          <td>Thesaurus profile for searching thesauri.</td>
+          <td>http://zthes.z3950.org/srw/0.5/</td>
+        </tr>
+        <tr> 
+          <td scope="row"><a href="http://srw.cheshire3.org/profiles/ccg/">Collectable Card Games</a></td>
+          <td>1.0</td>
+          <td>Searching descriptions of trading cards.</td>
+          <td>http://srw.cheshire3.org/profiles/ccg/1.0/</td>
+        </tr>
+        
+        <tr>
+          <td scope="row"><a href="gils-profile.html">GILS</a></td>
+          <td>1.0</td>
+          <td> an SRU view of the GILS (Global Information Locator Service) profile
+          of ISO 23950</td>
+          <td>info:srw/profile/14/gils-1.0</td>
+        </tr>
+        <tr>
+          <td scope="row"><a href="http://www.norzig.no/sru/profile/1.0/">NorZIG</a></td>
+          <td>1.0</td>
+          <td>A profile to promote interoperability among Norwegian 
+          SRU services<BR></td>
+          <td>info:srw/profile/15/norzig-1.0</td>
+        </tr>
+        <tr>
+          <td scope="row"><a href="bath-profile.html">Bath</a></td>
+          <td>2.0</td>
+          <td>An SRU profile based on the <a href="http://www.collectionscanada.gc.ca/bath/tp-bath2-e.htm">Bath profile for Z39.50</a>.</td>
+          <td>info:srw/profile/1/bath-v2</td>
+        </tr>
+        <tr>
+          <td scope="row"><a href="cql-bibliographic-profile.html">Bib</a></td>
+          <td>1.0</td>
+          <td> Bibliographic Searching</td>
+          <td>info:srw/profile/1/bib-v1</td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable -->
+      <div id="breadcrumbs-bottom"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-bottom" --> 
+        registered profiles <!-- InstanceEndEditable --></div>
+</td></tr>
+
+</table>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://www.loc.gov/">The 
+        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div>
+      <br>
+  <span class="sitenav">
+  <!-- #BeginDate format:Am1 -->December 14, 2015<!-- #EndDate -->
+  </span></td>
+<td align="right"><div class="contactus"><a href="mailto:ndmso@loc.gov">Contact Us</a></div></td>
+</tr></table>
+</body>
+<!-- InstanceEnd --></html>

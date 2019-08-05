@@ -1,0 +1,243 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/subpage.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Explain Operation: SRU </title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link type="text/css" media="print" href="../css/sru-print.css" rel="stylesheet">
+<style type="text/css" media="screen">
+@import url(../css/sru-base.css);
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="shortcut icon" href="http://www.loc.gov/standards/sru/images/favicon.ico">
+<!-- InstanceBeginEditable name="head" -->
+<meta name="keywords" content="explain operation sru version 1.2 specifications sru search retrieval url cql zeerex standards library congress">
+<meta name="description" content="Explain Operation: SRU Version 1.2 Specifications. SRU is a standard XML-focused search protocol for Internet search queries, utilizing CQL (Contextual Query Language), a standard syntax for representing queries. Standards, The Library of Congress.">
+<!-- InstanceEndEditable -->
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<form action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" name="seek1" method="get">
+<input type="hidden" name="col" value="loc">
+<input type="hidden" name="sc" value="0">
+<input type="hidden" name="ws" value="0">
+<input type="hidden" name="la" value="en">
+<input type="hidden" name="qm" value="0">
+<input type="hidden" name="st" value="1">
+<input type="hidden" name="nh" value="10">
+<input type="hidden" name="lk" value="1">
+<input type="hidden" name="rf" value="0">
+<input type="hidden" name="oq" value="">
+<input type="hidden" name="si" value="0">
+<input type="hidden" name="rq" value="0">
+<input type="hidden" name="qc" value="">
+<table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
+  <div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div></td>
+<td width="116"><select name="qp" tabindex="1">
+<option value="url:/sru" selected>SRU Web Pages</option>
+<option value="url:/standards url:/ead url:/marc">Standards Pages</option>
+<option value="">All Library Pages</option>
+</select></td><td width="117" align="right"><input type="text" name="qt" id="keyword" size="18" value="" tabindex="2"></td>
+<td width="67" align="right"><input class="button" id="search_button" name="search_button" type="submit" value="SEARCH" tabindex="3"></td>
+</tr></table></form>
+<table align="center" class="layout" cellpadding="0" cellspacing="0"><tr><td>
+<div id="graphic"> 
+<h1 class="homepage"><img src="../images/sru.gif" alt="SRU (Search/Retrieval Using URL)" width="600" height="50"></h1>
+</div>
+<div class="goldtop"></div>
+      <div id="breadcrumbs"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-top" -->&nbsp;explain operation <!-- InstanceEndEditable --></div>
+<div class="clear"><a name="skip_menu"></a></div>
+ <!-- InstanceBeginEditable name="content" --> 
+      <h3>SRU</h3>
+      <h1>Explain Operation </h1>
+      <p> The Explain operation allows a client to retrieve a description of the 
+        facilities available at an SRU server. It can then be used by the client 
+        to self-configure and provide an appopriate interface to the user. The 
+        record is in XML and follows the ZeeRex Schema. </p>
+      <p> There are two methods for getting the explain record:</p>
+      <ul>
+        <li>Via the SRU Explain Operation.&nbsp;</li>
+        <li>Via the http GET request at the base URL for the service (no parameters). 
+          <br>
+          This can be considered an SRU request (and hence have a default recordPacking 
+          of 'xml'), with no extraRequestData and leaving it up to the server 
+          to determine the version of the response. <br>
+          Otherwise, the response is identical to an SRU explainResponse message.</li>
+      </ul>
+      <h2>PARAMETERS</h2>
+      <h3>Request Parameters</h3>
+      <table class="standard">
+        <tr> 
+          <th width="149" scope="col">Name</th>
+          <th width="133" scope="col">Mandatory/Optional?</th>
+          <th width="420" scope="col">Description</th>
+        </tr>
+        <tr valign="top"> 
+          <td scope="row"><strong>operation</strong></td>
+          <td>Mandatory</td>
+          <td>The string: 'explain'. </td>
+        </tr>
+        <tr valign="top"> 
+          <td scope="row"><b>version</b></td>
+          <td>Mandatory</td>
+          <td>The version of the request, and a statement by the client that it 
+            wants the response to be less than, or preferably equal to, that version. 
+            See <a href="../sru-1-2/common.html#version">Versions</a>.</td>
+        </tr>
+        <tr valign="top"> 
+          <td scope="row"><b>recordPacking</b></td>
+          <td>Optional</td>
+          <td>A string to determine how the explain record should be escaped in 
+            the response. Defined values are 'string' and 'xml'. The default is 
+            'xml'. See <a href="../sru-1-2.html#records">Records</a>. </td>
+        </tr>
+        <tr valign="top"> 
+          <td scope="row"><b>stylesheet</b></td>
+          <td>Optional</td>
+          <td>A URL for a stylesheet. The client requests that the server simply 
+            return this URL in the response. See <a href="../sru-1-2/common.html#stylesheet">Stylesheets</a>.</td>
+        </tr>
+        <tr valign="top"> 
+          <td scope="row"><b>extraRequestData</b></td>
+          <td>Optional</td>
+          <td>Provides additional information for the server to process. See <a href="../sru-1-2/common.html#extraData">Extensions</a>.</td>
+        </tr>
+      </table>
+      <h3>Response Parameters</h3>
+      <table class="standard">
+        <tr> 
+          <th scope="col">Name</th>
+          <th scope="col">Type</th>
+          <th scope="col">Mandatory?</th>
+          <th scope="col">Description</th>
+        </tr>
+        <tr valign="top"> 
+          <td scope="row"><b>version</b></td>
+          <td><i>xsd:string</i></td>
+          <td>Mandatory</td>
+          <td>The version of the response. This MUST be less than or equal to 
+            the version requested by the client. <br> &gt;&gt; See <a href="../sru-1-2/common.html#version">Versions.</a></td>
+        </tr>
+        <tr valign="top"> 
+          <td scope="row"><b>record</b></td>
+          <td><em>record</em></td>
+          <td>Mandatory</td>
+          <td>A single Explain record, wrapped in the record metadata fields. 
+            &gt;&gt; See <a href="../sru-1-2.html#records">Records</a>.</td>
+        </tr>
+        <tr valign="top"> 
+          <td scope="row"><b>extraResponseData</b></td>
+          <td><i>xmlFragment</i></td>
+          <td>Optional</td>
+          <td>Additional information returned by the server. <br> &gt;&gt; See 
+            <a href="../sru-1-2/common.html#extraData">Extensions</a>.</td>
+        </tr>
+        <tr valign="top"> 
+          <td scope="row"><strong>echoedExplainRequest</strong></td>
+          <td><i>&lt;echoedExplainRequest&gt;</i></td>
+          <td>Optional</td>
+          <td>The request parameters echoed back to the client in a simple XML 
+            form. &gt;&gt; See <a href="../sru-1-2/common.html#echoedRequest">Echoing the 
+            Request</a>.</td>
+        </tr>
+      </table>
+      <br>
+      <h2>ZEEREX FOR SRU</h2>
+      <p> ZeeRex/SRU Summary: </p>
+      <ul>
+        <li>The <em>protocol</em> attribute on the serverInfo element MUST have 
+          the value: SRU </li>
+        <li>The <em>transport</em> attribute on the serverInfo element MUST be 
+          one of: http or https </li>
+        <li>The <em>method</em> attribute on the serverInfo element MUST be a 
+          space separated list, comprising any number of the following values: 
+          GET POST SOAP </li>
+        <li>The <em>database</em> element within serverInfo MUST contain the path 
+          section of the URL to the server, without the first / and up to the 
+          ? </li>
+        <li>The <em>set</em> element within indexInfo is used to define the short 
+          names of context sets. </li>
+        <li>Indexes are described by including the name of the index in the <em>name</em> 
+          element within map, and the short name for the context set in the <em>set</em> 
+          attribute on that element. </li>
+        <li>The schemaInfo section is used to described the schemas supported 
+          by the server. </li>
+      </ul>
+      <h2>ZEEREX Specification </h2>
+      <ul>
+        <li><a href="http://explain.z3950.org/overview/">Overview of ZEEREX</a> </li>
+        <li><a href="zeerex-2.0.xsd"> ZEEREX XML Schema</a> </li>
+        <li> <a href="zeerex-2.0.xml-1.dtd">ZEEREX XML DTD </a></li>
+      </ul>
+      <h2>EXAMPLES</h2>
+      <p>The following URLs would all retrieve the explain document:</p>
+      <div class="example"> http://myserver.com/cgi/mysru?operation=explain&amp;version=1.1&amp;recordPacking=xml<br />
+        http://myserver.com/cgi/mysru?<br />
+        http://myserver.com/cgi/mysru</div>
+      <p>The corresponding response from the server would be:</p>
+      <div class="example"> &lt;sru:explainResponse xmlns:sru="http://www.loc.gov/zing/srw/"&gt;<br />
+        &nbsp;&lt;sru:version&gt;1.1&lt;/sru:version&gt;<br />
+        &nbsp;&lt;sru:record&gt;<br />
+        &nbsp;&nbsp;&nbsp;&lt;sru:recordPacking&gt;XML&lt;/sru:recordPacking&gt;<br />
+        &nbsp;&nbsp;&nbsp;&lt;sru:recordSchema&gt;http://explain.z3950.org/dtd/2.1/&lt;/sru:recordSchema&gt;<br />
+        &nbsp;&nbsp;&nbsp;&lt;sru:recordData&gt;<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&lt;zr:explain xmlns:zr="http://explain.z3950.org/dtd/2.1/"&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;zr:serverInfo protocol="SRU" version="1.2" 
+        transport="http" <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        method="GET POST SOAP"&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;zr:host&gt;myserver.com&lt;/zr:host&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;zr:port&gt;80&lt;/zr:port&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;zr:database&gt;cgi/mysru&lt;/zr:database&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/zr:serverInfo&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;zr:databaseInfo&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;title lang="en" primary="true"&gt;SRU 
+        Test Database&lt;/title&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;/zr:databaseInfo&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;zr:indexInfo&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;zr:set name="dc" identifier="info:srw/cql-context-set/1/dc-v1.1"/&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;zr:index&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;zr:map&gt;&lt;zr:name 
+        set="dc"&gt;title&lt;/zr:name&gt;&lt;/zr:map&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/zr:index&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/zr:indexInfo&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;zr:schemaInfo&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;zr:schema name="dc" 
+        identifier="info:srw/schema/1/dc-v1.1"&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;zr:title&gt;Simple 
+        Dublin Core&lt;/zr:title&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/zr:schema&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/zr:schemaInfo&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;zr:configInfo&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;zr:default type="numberOfRecords"&gt;1&lt;/zr:default&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;zr:setting type="maximumRecords"&gt;50&lt;/zr:setting&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;zr:supports 
+        type="proximity"/&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt;/zr:configInfo&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/zr:explain&gt;<br />
+        <br />
+        &nbsp;&nbsp;&nbsp;&lt;/sru:recordData&gt;<br />
+        &nbsp;&lt;/sru:record&gt;<br />
+        &lt;/sru:explainResponse&gt;<br />
+      </div>
+	  
+	  <h3>&nbsp;</h3>
+	  <h3><a href="http://www.loc.gov/z3950/zeerex.html">Additional Zeerex Examples</a> </h3>
+	  <p>&nbsp;</p>
+ <!-- InstanceEndEditable -->
+      <div id="breadcrumbs-bottom"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-bottom" -->&nbsp;explain operation <!-- InstanceEndEditable --></div>
+</td></tr>
+
+</table>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://www.loc.gov/">The 
+        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div>
+      <br>
+  <span class="sitenav">
+  <!-- #BeginDate format:Am1 -->September 6, 2013<!-- #EndDate -->
+  </span></td>
+<td align="right"><div class="contactus"><a href="mailto:ndmso@loc.gov">Contact Us</a></div></td>
+</tr></table>
+</body>
+<!-- InstanceEnd --></html>

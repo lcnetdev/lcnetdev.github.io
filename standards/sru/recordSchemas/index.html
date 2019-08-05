@@ -1,0 +1,232 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/subpage.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>SRU Record Schemas (SRU: Search/Retrieval via URL -- SRU, CQL and ZeeRex, Standards, Library of Congress)</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link type="text/css" media="print" href="../css/sru-print.css" rel="stylesheet">
+<style type="text/css" media="screen">
+@import url(../css/sru-base.css);
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="shortcut icon" href="http://www.loc.gov:8081/standards/sru/images/favicon.ico">
+<!-- InstanceBeginEditable name="head" -->
+<meta name="keywords" content="sru record schemsa sru version 1.2 specifications sru search retrieval url cql zeerex standards library congress">
+<meta name="description" content="SRU Record Schemas: SRU is a standard XML-focused search protocol for Internet search queries, utilizing CQL (Contextual Query Language), a standard syntax for representing queries. Standards, The Library of Congress.">
+<!-- InstanceEndEditable -->
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<form action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" name="seek1" method="get">
+<input type="hidden" name="col" value="loc">
+<input type="hidden" name="sc" value="0">
+<input type="hidden" name="ws" value="0">
+<input type="hidden" name="la" value="en">
+<input type="hidden" name="qm" value="0">
+<input type="hidden" name="st" value="1">
+<input type="hidden" name="nh" value="10">
+<input type="hidden" name="lk" value="1">
+<input type="hidden" name="rf" value="0">
+<input type="hidden" name="oq" value="">
+<input type="hidden" name="si" value="0">
+<input type="hidden" name="rq" value="0">
+<input type="hidden" name="qc" value="">
+<table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
+  <div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div></td>
+<td width="116"><select name="qp" tabindex="1">
+<option value="url:/sru" selected>SRU Web Pages</option>
+<option value="url:/standards url:/ead url:/marc">Standards Pages</option>
+<option value="">All Library Pages</option>
+</select></td><td width="117" align="right"><input type="text" name="qt" id="keyword" size="18" value="" tabindex="2"></td>
+<td width="67" align="right"><input class="button" id="search_button" name="search_button" type="submit" value="SEARCH" tabindex="3"></td>
+</tr></table></form>
+<table align="center" class="layout" cellpadding="0" cellspacing="0"><tr><td>
+<div id="graphic"> 
+<h1 class="homepage"><img src="../images/sru.gif" alt="SRU (Search/Retrieval Using URL)" width="600" height="50"></h1>
+</div>
+<div class="goldtop"></div>
+      <div id="breadcrumbs"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-top" --> record
+      schemas<!-- InstanceEndEditable --></div>
+      <div class="clear"><a name="skip_menu"></a></div>
+ <!-- InstanceBeginEditable name="content" --> 
+      <h2>SRU</h2>
+      <h1>SRU Record Schemas</h1>
+      <p>The table below lists schemas in which records may be transferred. The 
+        list is not exhaustive. None are required to be supported, and any other 
+        schema (whether on the list below or not) may be supported in addition. 
+      </p>
+      <p> The Explain document lists the XML schemas for a given database in which 
+        records may be transferred. Every schemas is unambiguously identified 
+        by a URI and a server may assign a short name, which may or may not be 
+        the same as the short name listed in the table below (and may differ from 
+        the short name that another server assigns).</p>
+      <ul>
+        <li> If you wish to have an identifier listed here, then please contact 
+          the <a href="mailto:z3950@loc.gov">SRU Maintenance Agency</a>.</li>
+        <li>Some &quot;reference&quot; links in the table below go to external 
+          Web sites <a href="http://www.loc.gov/global/disclaim.html"></a></li>
+      </ul>
+	  <br>
+      <table class="standard">
+        <tr> 
+          <th scope="col"> Schema (and link/reference)</th>
+          <th scope="col">Short Name</th>
+          <th scope="col">Identifier</th>
+        </tr>
+        <tr> 
+          <td>Dublin Core Record Schema ( <a href="dc-schema.xsd">.xsd</a> &nbsp; 
+            <a href="dc-schema.html">.html</a> )</td>
+          <td scope="row">dc</td>
+          <td>info:srw/schema/1/dc-v1.1</td>
+        </tr>
+        <tr> 
+          <td><a href="../diagnostics/diagnostic.xsd">SRU Diagnostic Schema</a></td>
+          <td scope="row">diag</td>
+          <td>info:srw/schema/1/diagnostic-v1.1</td>
+        </tr>
+        <tr> 
+          <td><a href="zeerex-2.0.xsd">Explain Schema</a></td>
+          <td scope="row">zeerex</td>
+          <td>http://explain.z3950.org/dtd/2.0/</td>
+        </tr>
+        <tr> 
+          <td><a href="http://www.loc.gov/standards/mods/v3/mods-3-0.xsd">MODS 
+            Schema Version 3.0 </a></td>
+          <td scope="row">mods</td>
+          <td>info:srw/schema/1/mods-v3.0</td>
+        </tr>
+        <tr> 
+          <td><a href="http://www.loc.gov/standards/mods/v3/mods-3-1.xsd">MODS 
+            Schema Version 3.1 </a></td>
+          <td scope="row">mods</td>
+          <td>info:srw/schema/1/mods-v3.1</td>
+        </tr>
+        <tr>
+          <td><a href="http://www.loc.gov/standards/mods/v3/mods-3-2.xsd">MODS
+              Schema Version 3.2 </a></td>
+          <td scope="row">mods</td>
+          <td>info:srw/schema/1/mods-v3.2</td>
+        </tr>
+        <tr>
+          <td><a href="http://www.loc.gov/standards/mods/v3/mods-3-3.xsd">MODS
+              Schema Version 3.3 </a></td>
+          <td scope="row">mods</td>
+          <td>info:srw/schema/1/mods-v3.3</td>
+        </tr>
+        
+        <tr> 
+          <td><a href="http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">MARCXML: 
+            The MARC 21 XML Schema</a></td>
+          <td scope="row">marcxml</td>
+          <td>info:srw/schema/1/marcxml-v1.1</td>
+        </tr>
+        <tr> 
+          <td><a href="http://www.loc.gov/ead/ead2002a.html">EAD DTD Version 2002</a></td>
+          <td scope="row">ead</td>
+          <td>info:srw/schema/1/ead-2002</td>
+        </tr>
+        
+        <tr> 
+          <td>http://srw.o-r-g.org/schemas/ccg/1.0/ccg.dtd</td>
+          <td scope="row">ccg</td>
+          <td>http://srw.cheshire3.org/schemas/ccg/1.0/</td>
+        </tr>
+        <tr> 
+          <td><a href="recordMetadata.xsd">Record 
+            Metadata Schema Version 1.0 <br>
+            </a></td>
+          <td scope="row">rec</td>
+          <td>info:srw/schema/2/rec-1.0</td>
+        </tr>
+        <tr> 
+          <td>See <a href="../extensions/schema-negotiation.html">schema-negotiation.html</a> </td>
+          <td scope="row">server-choice</td>
+          <td>info:srw/schema/1/server-choice</td>
+        </tr>
+        <tr> 
+          <td><a href="http://www.bncf.firenze.sbn.it/progetti/unimarc/slim/documentation/unimarcslim.html">UNIMARC 
+            XML Schema</a></td>
+          <td scope="row">unimarcxml<br> </td>
+          <td>info:srw/schema/8/unimarcxml-v0.1</td>
+        </tr>
+        <tr> 
+          <td><a href="http://www.dlxs.org/docs/12/class/bib/dtd.html">The Bibliographic 
+            Class DTD</a></td>
+          <td scope="row">dlxs-bib</td>
+          <td>info:/srw/schema/10/dlxs-bib-v1.0</td>
+        </tr>
+        <tr>
+          <td><a href="../cql/contextSets/dcx/dcx.xsd">Dublin Core Extended</a> (DCX) </td>
+          <td scope="row">dcx</td>
+          <td>info:/srw/schema/1/dcx-v1.0</td>
+        </tr>
+        <tr>
+          <td>PICA XML Version 1.0&nbsp;&nbsp;<br>
+            <a href="http://www.gbv.de/wikis/cls/PICA_XML_Version_1.0">reference</a>
+|          <a href="pica-xml-v1-0.xsd">schema</a> (pica-xml-v1-0.xsd) </td>
+          <td scope="row">pica-XML</td>
+          <td>info:srw/schema/5/picaXML-v1.0</td>
+        </tr>
+        <tr>
+          <td>MADS Schema Version 1.0<br>
+          <a href="http://www.loc.gov/standards/mads/">reference</a> | <a href="http://www.loc.gov/standards/mads/mads.xsd">schema</a> <br></td>
+          <td scope="row">mads</td>
+          <td>info:srw/schema/1/mads-v1.0</td>
+        </tr>
+        <tr>
+          <td>Zthes Schema Version 1.0<br>
+            <a href="http://zthes.z3950.org/schema/index.html">reference</a> | <a href="http://zthes.z3950.org/schema/zthes-1.0.xsd">schema</a> </td>
+          <td scope="row">zthes</td>
+          <td>http://zthes.z3950.org/xml/1.0/</td>
+        </tr>
+        <tr>
+          <td>ISO 20775 Schema for holdings
+          
+          <br/><a href="http://www.loc.gov/standards/iso20775/">reference</a> | <a href="http://www.loc.gov/standards/iso20775/N130_ISOholdings_v6_1.xsd">schema</a></td>
+          <td scope="row">isohold</td>
+          <td>info:srw/schema/5/iso20775-v1.0</td>
+        </tr>
+        <tr>
+          <td><a href="http://www.prismstandard.org/schemas/pam/2.0/pam.xsd">PRISM Aggregator Message Record Schema Version 2.0</a><BR></td>
+          <td scope="row">pam</td>
+          <td>info:srw/schema/11/pam-v2.0<BR></td>
+        </tr>
+        <tr>
+          <td><a href="http://www.prismstandard.org/schemas/pam/2.1/pam.xsd">PRISM Aggregator Message Record Schema Version 2.1</a><BR></td>
+          <td scope="row">pam</td>
+          <td>info:srw/schema/11/pam-v2.1<BR></td>
+        </tr>
+        <tr>
+          <td>Document Availability Information API (DAIA/XML)<br>
+          <a href="http://purl.org/NET/DAIA">reference</a> |<BR></td>
+          <td scope="row">daiaxml</td>
+          <td>http://ws.gbv.de/daia/<BR></td>
+        </tr>
+        <tr>
+          <td><a href="http://www.expertisecentrumdavid.be/xmlschemas/isad.xsd">ISAD(G): General International Standard Archival Description, Second edition</a><br></td>
+          <td scope="row">isad</td>
+          <td>http://www.expertisecentrumdavid.be/xmlschemas/isad.xsd </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td scope="row">&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+      </table>
+      <!-- InstanceEndEditable -->
+      <div id="breadcrumbs-bottom"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-bottom" -->record
+          schemas <!-- InstanceEndEditable --></div>
+</td></tr>
+
+</table>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://www.loc.gov/">The 
+        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div>
+      <br>
+  <span class="sitenav">
+  <!-- #BeginDate format:Am1 -->June 7, 2017<!-- #EndDate -->
+  </span></td>
+<td align="right"><div class="contactus"><a href="mailto:ndmso@loc.gov">Contact Us</a></div></td>
+</tr></table>
+</body>
+<!-- InstanceEnd --></html>

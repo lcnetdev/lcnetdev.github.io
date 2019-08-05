@@ -1,0 +1,164 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/subpage.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Requesting Metadata - SRU: Search/Retrieval via URL, Standards, Library of Congress</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link type="text/css" media="print" href="../css/sru-print.css" rel="stylesheet">
+<style type="text/css" media="screen">
+@import url(../css/sru-base.css);
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="shortcut icon" href="http://www.loc.gov:8081/standards/sru/images/favicon.ico">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<form action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" name="seek1" method="get">
+<input type="hidden" name="col" value="loc">
+<input type="hidden" name="sc" value="0">
+<input type="hidden" name="ws" value="0">
+<input type="hidden" name="la" value="en">
+<input type="hidden" name="qm" value="0">
+<input type="hidden" name="st" value="1">
+<input type="hidden" name="nh" value="10">
+<input type="hidden" name="lk" value="1">
+<input type="hidden" name="rf" value="0">
+<input type="hidden" name="oq" value="">
+<input type="hidden" name="si" value="0">
+<input type="hidden" name="rq" value="0">
+<input type="hidden" name="qc" value="">
+<table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
+  <div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div></td>
+<td width="116"><select name="qp" tabindex="1">
+<option value="url:/sru" selected>SRU Web Pages</option>
+<option value="url:/standards url:/ead url:/marc">Standards Pages</option>
+<option value="">All Library Pages</option>
+</select></td><td width="117" align="right"><input type="text" name="qt" id="keyword" size="18" value="" tabindex="2"></td>
+<td width="67" align="right"><input class="button" id="search_button" name="search_button" type="submit" value="SEARCH" tabindex="3"></td>
+</tr></table></form>
+<table align="center" class="layout" cellpadding="0" cellspacing="0"><tr><td>
+<div id="graphic"> 
+<h1 class="homepage"><img src="../images/sru.gif" alt="SRU (Search/Retrieval Using URL)" width="600" height="50"></h1>
+</div>
+<div class="goldtop"></div>
+      <div id="breadcrumbs"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-top" -->Requesting
+          Metadata <!-- InstanceEndEditable --></div>
+      <div class="clear"><a name="skip_menu"></a></div>
+ <!-- InstanceBeginEditable name="content" --> 
+      <h1>Requesting Record metadata via SRU&nbsp;</h1>
+      <h3>June 8, 2007</h3>
+      <h3>&nbsp;      </h3>
+      <h5>Modifications</h5>
+      <ul>
+        <li> June 29: <ul>
+        <li><a href="#note">note</a> added. </li>
+        <li>The term &quot;administrative&quot; metadata removed. </li>
+        </ul>
+      </ul>
+      <h3>&nbsp;</h3>
+      <p>An SRU client may retrieve record metadata in lieu of or in addition
+        to record data.&nbsp;&nbsp; Record metadata includes information about
+        the creation and maintenance of the record, its size, history, etc.&nbsp;&nbsp; </p>
+      <p>There is an XML schema, the <b>Record Metadata Schema</b>. or &quot;<b>rmd</b>&quot;,
+        whose identifier is <b><i>info:srw/schema/1/rmd-1.0</i></b> and whose
+        recommended short name is <b>'rmd'</b> . </p>
+      <h5><b><i>Note: the Record Metadata Schema is in development and will be
+            available soon. </i></b></h5>
+      <h5>The XML namespace for this schema is </h5>
+      <h3 align="center"><strong>info:lc/xmlns/rmd-v1</strong></h3>
+      <h5>And there is a draft <a href="../recordSchemas/rmd-v1-namespace-information.html">Namespace
+          Information Page</a>. </h5>
+      <h5>&nbsp;</h5>
+      <h5>&nbsp;</h5>
+      <h2>Requesting Record metadata in lieu of Record Data</h2>
+      <p>A user might retrieve result set records, i.e. record data according
+        to one of the conventional schemas, dublin core or MODS for example,
+        and subsequently wish to retrieve record metadata for one or more of
+        those record. This can be done by issuing a subsequent request, specifying
+        the record metadata schema as the value of the recordSchema parameter,
+        for example, 'rmd'. </p>
+      <blockquote>
+        <h4><a name="note"></a>Note: in order for the client  to issue a request to retrieve
+          a specific record, it must know either the record identifier or the
+          result set position. If the client has already retrieved the record,
+          and if the record has an identifier, then the client knows the identifier
+          if SRU 1.2 is used, because the identifier is part of the record
+          response structure. <br>
+        </h4>
+        <h4>However, if the record does not have an identifier, and if the server
+          does not support result sets, then neither mechanism (record identification
+          via identifier or result set position) is available.&nbsp; In that
+          case, the only way to retrieve the record metadata is by explicitly
+          requesting that it accompany the record data. The client must request
+          it via extraRequestData, and the server supplies it via extraRecordData.
+          This mechanism is described <a href="#along">below</a>. </h4>
+      </blockquote>
+      <p>Other schemas besides rmd may be used to retrieve record metadata. In
+        some cases, a particular schema might be used to retrieve record data
+        and alternatively to retrieve record metadata. (This is not the case
+        with rmd, as it may be used only to retrieve record metadata.)</p>
+      <p>For example, suppose a user retrieves a dublin core record, and subsequently
+        wants to retrieve rights information about that dublin core record. (This
+        is distinguished from rights information about the work described by
+        the dublin core record; that information might be in the dublin core
+        record itself.) Suppose the user wants that information to br provided
+        in a dublin core record. </p>
+      <p>Then in the first retrieval (where the record data is retrieved) the
+        value of the recordSchema parameter would be 'dc' (info:srw/schema/1/dc-v1.1).&nbsp; In
+        the subsequent retrieval the value would be 'dcrmd' (info:srw/schema/1/dcrmd-v1.1).&nbsp; These
+        two identifiers identify the same schema (dublin core) but for different
+        usages.</p>
+      <h2><a name="along"></a>Requesting Record metadata along with Record Data</h2>
+      <p>A client may retrieve result set records, i.e. record data, and in addition,
+        record metadata for those result set records, in the same response. In
+        this case the record metadata is carried within the extraRecordData parameter
+        and it must be explicitly requested by the client in the request, by
+        including an extraRequestData parameter. </p>
+      <p>An SRU extension is defined for this purpose. It allows the client to
+        specify the schema in which to supply the record metadata. The schema
+        may be 'rmd' or it may be another schema.</p>
+      <h3> Record Metadata Extension: recordMetadata</h3>
+      <p>The client indicates that it wants the server to include record metadata
+        using a particular schema, by including the parameter/value pair:</p>
+      <pre class="box2"><b>&amp;x-info-1-recordMetadata=&lt;schema short name&gt;</b></pre>
+      <h4>Examples</h4>
+      <p>The client indicates that it wants the server to include record metadata
+        using the rmd schema, by including the parameter/value pair:</p>
+      <pre class="box2"><b>&amp;x-info-1-recordMetadata=rmd</b></pre>
+      <p>.... or using the dublin core schema:
+      <pre class="box2"><b>&amp;x-info-1-recordMetadata=dcrmd</b>
+      </pre>
+      <h4>Example Request/response </h4>
+      Given the request:
+      <pre class="box2">
+ http://srw.example.org/sru?operation=searchRetrieve&version=1.1
+     &query=dc.title=cat&recordSchema=dc 
+     <b>&amp;x-info-1-recordMetadata=rmd</b></pre>
+      <p>Then the server may consider this a request to include record level
+        metadata along with one or more records in the response, using the rmd
+        schema.    
+      <p>extraRecordData example (highlighted in orange): 
+      <pre class="box2">&lt;record&gt; 
+&nbsp;&nbsp; &lt; recordSchema&gt;info:srw/schema/1/dc-v1.1&lt;/recordSchema&gt; <br>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &lt;recordPacking&gt;xml&lt;/recordPacking&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;recordData&gt; <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt; srw_dc:dc&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;dc:title&gt;This is a Sample Record&lt;/dc:title&gt; &lt;/srw_dc:dc&gt; <br>&nbsp;&nbsp;&nbsp; &lt; /recordData&gt;<br>&nbsp;&nbsp;&nbsp; &lt;recordPosition&gt;1&lt;/recordPosition&gt;<br>&nbsp;&nbsp;&nbsp;<strong> <span class="orange">&lt;extraRecordData&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;recordMetadata:size 
+         xmlns:recordMetadata=&quot;xmlns:rmd=&quot;info:lc/xmlns/rmd-v1&quot;&gt;
+               20000
+      &lt;/recordMetadata:size&gt;<br>&nbsp;&nbsp; &lt; /extraRecordData&gt; </span></strong><br>&lt; /record&gt;</pre>
+      <p></p>
+ <!-- InstanceEndEditable -->
+      <div id="breadcrumbs-bottom"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-bottom" -->Requesting
+      Metadata<!-- InstanceEndEditable --></div>
+</td></tr>
+
+</table>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://www.loc.gov/">The 
+        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div>
+      <br>
+  <span class="sitenav">
+  <!-- #BeginDate format:Am1 -->July 30, 2007<!-- #EndDate -->
+  </span></td>
+<td align="right"><div class="contactus"><a href="mailto:ndmso@loc.gov">Contact Us</a></div></td>
+</tr></table>
+</body>
+<!-- InstanceEnd --></html>

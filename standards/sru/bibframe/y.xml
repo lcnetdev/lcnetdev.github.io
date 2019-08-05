@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://www.loc.gov/standards/sru/bibframe/briefDisplay.xsl"?>
+<zs:searchRetrieveResponse xmlns:zs="http://www.loc.gov/zing/srw/">
+    <allow-access-from domain="*" />
+     <zs:version>1.2</zs:version> 
+    <zs:numberOfRecords>2653</zs:numberOfRecords> 
+    - <zs:records>
+        - <zs:record>
+            <zs:recordSchema>bibframe</zs:recordSchema> 
+            <zs:recordPacking>xml</zs:recordPacking> 
+            - <zs:recordData>
+                - <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:bf="http://bibframe.org/vocab/" xmlns:madsrdf="http://www.loc.gov/mads/rdf/v1#" xmlns:relators="http://id.loc.gov/vocabulary/relators/">
+                    - <bf:Work rdf:about="http://id.loc.gov/resources/bibs/159552">
+                        <rdf:type rdf:resource="http://bibframe.org/vocab/Text" /> 
+                        <bf:authorizedAccessPoint>Sass, Roselis von, 1906- Dann kamen die ersten Menschen</bf:authorizedAccessPoint> 
+                        <bf:label>Dann kamen die ersten Menschen. English</bf:label> 
+                        <madsrdf:authoritativeLabel>Dann kamen die ersten Menschen. English</madsrdf:authoritativeLabel> 
+                        <bf:workTitle rdf:nodeID="btitle7" /> 
+                        <bf:language rdf:resource="http://id.loc.gov/vocabulary/languages/eng" /> 
+                        <bf:translationOf rdf:nodeID="bwork9" /> 
+                        <bf:title>The birth of mankind</bf:title> 
+                        <bf:workTitle rdf:nodeID="btitle11" /> 
+                        <bf:title xml:lang="x-bf-sortable">birth of mankind</bf:title> 
+                        <bf:creator rdf:nodeID="bperson13" /> 
+                        <bf:language rdf:resource="http://id.loc.gov/vocabulary/languages/eng" /> 
+                        <bf:language rdf:nodeID="blanguage15" /> 
+                        <bf:derivedFrom rdf:resource="http://id.loc.gov/resources/bibs/159552.marcxml.xml" /> 
+                        <bf:authorizedAccessPoint xml:lang="x-bf-hashable">sassroselisvon1906dannkamendieerstenmenschenenglishengworktext</bf:authorizedAccessPoint> 
+                    </bf:Work>
+                    - <bf:Work rdf:nodeID="bwork9">
+                        <bf:title>Dann kamen die ersten Menschen.</bf:title> 
+                        <madsrdf:authoritativeLabel>Dann kamen die ersten Menschen.</madsrdf:authoritativeLabel> 
+                        <bf:authorizedAccessPoint>Dann kamen die ersten Menschen.</bf:authorizedAccessPoint> 
+                        <bf:creator rdf:nodeID="bagent14" /> 
+                    </bf:Work>
+                    - <bf:Instance rdf:nodeID="binstance19">
+                        <bf:isbn10 rdf:resource="http://isbn.example.org/857279039X" /> 
+                        <bf:isbn13 rdf:resource="http://isbn.example.org/9788572790390" /> 
+                        <rdf:type rdf:resource="http://bibframe.org/vocab/Monograph" /> 
+                        <bf:title>The birth of mankind</bf:title> 
+                        <bf:instanceTitle rdf:nodeID="btitle25" /> 
+                        <bf:title xml:lang="x-bf-sortable">birth of mankind</bf:title> 
+                        - <bf:publication>
+                            - <bf:Provider>
+                                - <bf:providerName>
+                                    - <bf:Organization>
+                                        <bf:label>Ordem Do Graal Na Terra</bf:label> 
+                                    </bf:Organization>
+                                </bf:providerName>
+                                - <bf:providerPlace>
+                                    - <bf:Place>
+                                        <bf:label>Embu, São Paulo, Brazil :</bf:label> 
+                                    </bf:Place>
+                                </bf:providerPlace>
+                                <bf:copyrightDate>c1997.</bf:copyrightDate> 
+                            </bf:Provider>
+                        </bf:publication>
+                        <bf:modeOfIssuance>monographic</bf:modeOfIssuance> 
+                        <bf:titleStatement>The birth of mankind</bf:titleStatement> 
+                        <bf:responsibilityStatement>Roselis von Sass.</bf:responsibilityStatement> 
+                        <bf:providerStatement>Embu, São Paulo, Brazil : Ordem Do Graal Na Terra, c1997.</bf:providerStatement> 
+                        <bf:extent>139 p. ;</bf:extent> 
+                        <bf:dimensions>22 cm.</bf:dimensions> 
+                        <bf:supplementaryContentNote>Includes bibliographical references.</bf:supplementaryContentNote> 
+                        - <bf:systemNumber>
+                            - <bf:Identifier>
+                                <bf:identifierValue>(DLC) 98140532</bf:identifierValue> 
+                                <bf:identifierScheme>systemNumber</bf:identifierScheme> 
+                            </bf:Identifier>
+                        </bf:systemNumber>
+                        - <bf:lccn>
+                            - <bf:Identifier>
+                                <bf:identifierValue>98140532</bf:identifierValue> 
+                                <bf:identifierScheme>lccn</bf:identifierScheme> 
+                            </bf:Identifier>
+                        </bf:lccn>
+                        <bf:derivedFrom rdf:resource="http://id.loc.gov/resources/bibs/159552.marcxml.xml" /> 
+                    </bf:Instance>
+                    - <bf:Annotation rdf:nodeID="bannotation18">
+                        <bf:derivedFrom rdf:resource="http://id.loc.gov/resources/bibs/159552.marcxml.xml" /> 
+                        - <bf:descriptionSource>
+                            - <bf:Identifier>
+                                <bf:identifierValue>DLC</bf:identifierValue> 
+                                <bf:identifierScheme>descriptionSource</bf:identifierScheme> 
+                            </bf:Identifier>
+                        </bf:descriptionSource>
+                        <bf:descriptionConventions rdf:resource="http://id.loc.gov/vocabulary/descriptionConventions/aacr2" /> 
+                        <bf:generationProcess>DLC transform-tool:2014-08-29-T17:05:00</bf:generationProcess> 
+                        <bf:changeDate>2001-04-17T14:16</bf:changeDate> 
+                    </bf:Annotation>
+                    - <bf:Title rdf:nodeID="btitle7">
+                        <bf:titleValue>Dann kamen die ersten Menschen.</bf:titleValue> 
+                    </bf:Title>
+                    - <bf:Agent rdf:nodeID="bagent14">
+                        <bf:label>Sass, Roselis von,</bf:label> 
+                    </bf:Agent>
+                    - <bf:Title rdf:nodeID="btitle11">
+                        <bf:titleValue>The birth of mankind</bf:titleValue> 
+                    </bf:Title>
+                    - <bf:Person rdf:nodeID="bperson13">
+                        <bf:label>Sass, Roselis von, 1906-</bf:label> 
+                        <bf:authorizedAccessPoint>Sass, Roselis von, 1906-</bf:authorizedAccessPoint> 
+                        - <bf:hasAuthority>
+                            - <madsrdf:Authority>
+                                <madsrdf:authoritativeLabel>Sass, Roselis von, 1906-</madsrdf:authoritativeLabel> 
+                            </madsrdf:Authority>
+                        </bf:hasAuthority>
+                    </bf:Person>
+                    - <bf:Language rdf:nodeID="blanguage15">
+                        <bf:resourcePart>original</bf:resourcePart> 
+                        <bf:languageOfPartUri rdf:resource="http://id.loc.gov/vocabulary/languages/ger" /> 
+                    </bf:Language>
+                    - <bf:Title rdf:nodeID="btitle25">
+                        <bf:titleValue>The birth of mankind</bf:titleValue> 
+                    </bf:Title>
+                </rdf:RDF>
+            </zs:recordData>
+            <zs:recordPosition>1</zs:recordPosition> 
+        </zs:record>
+    </zs:records>
+    <zs:nextRecordPosition>2</zs:nextRecordPosition> 
+    - <zs:echoedSearchRetrieveRequest>
+        <zs:version>1.2</zs:version> 
+        <zs:query>mankind</zs:query> 
+        <zs:startRecord>1</zs:startRecord> 
+        <zs:maximumRecords>1</zs:maximumRecords> 
+        <zs:recordPacking>xml</zs:recordPacking> 
+        <zs:recordSchema>bibframe</zs:recordSchema> 
+    </zs:echoedSearchRetrieveRequest>
+</zs:searchRetrieveResponse>

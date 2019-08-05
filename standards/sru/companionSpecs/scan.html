@@ -1,0 +1,290 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/subpage.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Scan Operation: SRU Version 1.2 Specifications (SRU: Search/Retrieval via URL -- SRU, CQL and ZeeRex, Standards, Library of Congress)</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link type="text/css" media="print" href="../css/sru-print.css" rel="stylesheet">
+<style type="text/css" media="screen">
+@import url(../css/sru-base.css);
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="shortcut icon" href="http://www.loc.gov/standards/sru/images/favicon.ico">
+<!-- InstanceBeginEditable name="head" -->
+<meta name="keywords" content="scan operation sru version 1.2 specifications sru search retrieval url cql zeerex standards library congress">
+<meta name="description" content="Scan Operation: SRU Version 1.2 Specifications. SRU is a standard XML-focused search protocol for Internet search queries, utilizing CQL (Contextual Query Language), a standard syntax for representing queries. Standards, The Library of Congress.">
+<!-- InstanceEndEditable -->
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<form action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" name="seek1" method="get">
+<input type="hidden" name="col" value="loc">
+<input type="hidden" name="sc" value="0">
+<input type="hidden" name="ws" value="0">
+<input type="hidden" name="la" value="en">
+<input type="hidden" name="qm" value="0">
+<input type="hidden" name="st" value="1">
+<input type="hidden" name="nh" value="10">
+<input type="hidden" name="lk" value="1">
+<input type="hidden" name="rf" value="0">
+<input type="hidden" name="oq" value="">
+<input type="hidden" name="si" value="0">
+<input type="hidden" name="rq" value="0">
+<input type="hidden" name="qc" value="">
+<table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
+  <div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div></td>
+<td width="116"><select name="qp" tabindex="1">
+<option value="url:/sru" selected>SRU Web Pages</option>
+<option value="url:/standards url:/ead url:/marc">Standards Pages</option>
+<option value="">All Library Pages</option>
+</select></td><td width="117" align="right"><input type="text" name="qt" id="keyword" size="18" value="" tabindex="2"></td>
+<td width="67" align="right"><input class="button" id="search_button" name="search_button" type="submit" value="SEARCH" tabindex="3"></td>
+</tr></table></form>
+<table align="center" class="layout" cellpadding="0" cellspacing="0"><tr><td>
+<div id="graphic"> 
+<h1 class="homepage"><img src="../images/sru.gif" alt="SRU (Search/Retrieval Using URL)" width="600" height="50"></h1>
+</div>
+<div class="goldtop"></div>
+      <div id="breadcrumbs"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-top" --><a href="../sru-1-2/index.html">sru 
+        version 1.2 specs</a>&nbsp;&raquo;&nbsp;scan operation<!-- InstanceEndEditable --></div>
+<div class="clear"><a name="skip_menu"></a></div>
+ <!-- InstanceBeginEditable name="content" --> 
+      <h2>SRU</h2>
+      <h1>Scan Operation </h1>
+      <p align="left">While the searchRetrieve operation enables searches for 
+        a specific terms within the records, the scan operation allows the client 
+        to request a range of the available terms at a given point within a list 
+        of indexed terms. This enables clients to present an ordered list of values 
+        and, if supported, how many hits there would be for a search on that term. 
+        Scan is often used to select terms for subsequent searching or to verify 
+        a negative search result. </p>
+      <p>The index to be browsed and the start point within it is given in the 
+        scanClause parameter as a complete index, relation, term clause in CQL. 
+        The relation and relation modifiers may be used to determine the format 
+        of the terms returned. For example 'dc.title any fish' will return a list 
+        of keywords, whereas 'dc.title exact fish' would return a list of full 
+        title fields. Range relations, such as &lt;, &gt;=, within and so forth, 
+        are prohibited for use with scan, and diagnostic 'info:srw/diagnostic/1/19' 
+        should be returned. See below for a clarifying example. </p>
+      <p>The term given in the clause is the position within the ordered list 
+        of terms at which to start, however see the responsePosition parameter 
+        below for more information. If the empty term is given, then even if searching 
+        for it is unsupported by the server, it may be interpreted as the beginning 
+        of the term list. </p>
+      <h2>PARAMETERS</h2>
+      <h3>Request</h3>
+      <table class="standard">
+
+          <tr> 
+            <th scope="col">Name</th>
+            <th scope="col">Mandatory/Optional?</th>
+            <th scope="col">Description</th>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><strong>operation</strong></td>
+            <td>mandatory</td>
+            <td>The string: 'scan'. </td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><strong>version</strong></td>
+            <td>mandatory</td>
+            <td>The version of the request, and a statement by the client that 
+              it wants the response to be less than, or preferably equal to, that 
+              version. See <a href="../sru-1-2/common.html#version">Versions</a>.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><strong>scanClause</strong></td>
+            <td>mandatory</td>
+            <td>The index to be browsed and the start point within it, expressed 
+              as a complete index, relation, term clause in CQL. See <a href="../sru-1-2/cql.html">CQL</a>.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><strong>responsePosition</strong></td>
+            <td>optional</td>
+            <td>The position within the list of terms returned where the client 
+              would like the start term to occur. If the position given is 0, 
+              then the term should be immediately before the first term in the 
+              response. If the position given is 1, then the term should be first 
+              in the list, and so forth up to the number of terms requested plus 
+              1, meaning that the term should be immediately after the last term 
+              in the response, even if the number of terms returned is less than 
+              the number requested. The range of values is 0 to the number of 
+              terms requested plus 1. The default value is 1. </td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><strong>maximumTerms</strong></td>
+            <td>optional</td>
+            <td>The number of terms which the client requests be returned. The 
+              actual number returned may be less than this, for example if the 
+              end of the term list is reached, but may not be more. The explain 
+              record for the database may indicate the maximum number of terms 
+              which the server will return at once. All positive integers are 
+              valid for this parameter. If not specified, the default is server 
+              determined.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><strong>stylesheet</strong></td>
+            <td>optional</td>
+            <td>A URL for a stylesheet. The client requests that the server simply 
+              return this URL in the response. See <a href="../sru-1-2/common.html#stylesheet">Stylesheets</a>.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><strong>extraRequestData</strong></td>
+            <td>optional</td>
+            <td>Provides additional information for the server to process. See 
+              <a href="../sru-1-2/common.html#extraData">Extensions</a>.</td>
+          </tr>
+
+      </table>
+      <p> <em>Example: </em></p>
+      <div class="example"> http://myserver.com/sru?operation=scan&amp;version=1.2&amp;scanClause=dc.title 
+        = frog &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;responsePosition=1&amp;maximumTerms=25</div>
+      <h3>Response</h3>
+      <table class="standard">
+        <tbody>
+          <tr> 
+            <th scope="col">Name</th>
+            <th scope="col">Type</th>
+            <th scope="col">Mandatory/Optional?</th>
+            <th scope="col">Description</th>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><strong>version</strong></td>
+            <td><i>xsd:string</i></td>
+            <td>mandatory</td>
+            <td>The version of the response. This MUST be less than or equal to 
+              the version requested by the client. See <a href="../sru-1-2/common.html#version">Versions</a>.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><b>terms</b></td>
+            <td><i>sequence of &lt;term&gt;</i></td>
+            <td>optional</td>
+            <td>A sequence of terms which match the request. See <a href="#terms">Terms</a></td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><strong>diagnostics</strong></td>
+            <td><i>sequence of &lt;diagnostic&gt;</i></td>
+            <td>Optional</td>
+            <td>A sequence of non surrogate diagnostics generated during execution. 
+              See <a href="../diagnostics/index.html">Diagnostics</a>.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><strong>extraResponseData</strong></td>
+            <td><i>xmlFragment</i></td>
+            <td>Optional</td>
+            <td>Additional information returned by the server. See <a href="../sru-1-2/common.html#extraData">Extensions</a>.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><strong>echoedScanRequest</strong></td>
+            <td><i>&lt;echoedScanRequest&gt;</i></td>
+            <td>Optional</td>
+            <td>The request parameters echoed back to the client in a simple XML 
+              form. See <a href="../sru-1-2/common.html#echoedRequest">Echoing the Request</a>.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p></p>
+      <a name="terms"></a> 
+      <h3>Terms</h3>
+      <table class="standard">
+          <tr> 
+            <th scope="col">Name</th>
+            <th scope="col">Type</th>
+            <th scope="col">Mandatory/Optional?</th>
+            <th scope="col">Description</th>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><b>value</b></td>
+            <td><i>xsd:string</i></td>
+            <td>mandatory</td>
+            <td>The term, exactly as it appears in the index.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><b>numberOfRecords</b></td>
+            <td><i>xsd:nonNegativeInteger</i></td>
+            <td>optional</td>
+            <td>The number of records which would be matched if the index in the 
+              request's scanClause was searched with the term in the 'value' field.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><b>displayTerm</b></td>
+            <td><i>xsd:string</i></td>
+            <td>optional</td>
+            <td>A string to display to the end user in place of the term itself. 
+              For example this might add back in diacritics or capitalisation 
+              which do not appear in the index.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><b>whereInList</b></td>
+            <td><i>xsd:string</i></td>
+            <td>optional</td>
+            <td>A flag to indicate the position of the term within the complete 
+              term list. It must be one of the following values: 'first' (the 
+              first term), 'last' (the last term), 'only' (the only term) or 'inner' 
+              (any other term)</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><b>extraTermData</b></td>
+            <td><i>xmlFragment</i></td>
+            <td>optional</td>
+            <td>Additional information concerning the term. See <a href="../sru-1-2/common.html#extraData">Extensions</a>.</td>
+          </tr>
+
+      </table>
+      <br>
+      <p><em>Example:</em></p>
+      <div class="example"> &lt;sru:scanResponse xmlns:srw="http://www.loc.gov/zing/srw/"<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xmlns:diag="http://www.loc.gov/zing/srw/diagnostic/"<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xmlns:myServer="http://myServer.com/"&gt;<br />
+        &lt;sru:version&gt;1.1&lt;/sru:version&gt;<br />
+        &nbsp;&nbsp;&lt;sru:terms&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;sru:term&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;sru:value&gt;cartesian&lt;/sru:value&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;sru:numberOfRecords&gt;35645&lt;/sru:numberOfRecords&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;sru:displayTerm&gt;Carthesian&lt;/sru:displayTerm&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/sru:term&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;sru:term&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;sru:value&gt;carthesian&lt;/sru:value&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;sru:numberOfRecords&gt;2154&lt;/sru:numberOfRecords&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;sru:displayTerm&gt;Carth&eacute;sian&lt;/sru:displayTerm&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/sru:term&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;sru:term&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;sru:value&gt;cat&lt;/sru:value&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;sru:numberOfRecords&gt;8739972&lt;/sru:numberOfRecords&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;sru:displayTerm&gt;Cat&lt;/sru:displayTerm&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/sru:term&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;sru:term&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;sru:value&gt;catholic&lt;/sru:value&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;sru:numberOfRecords&gt;35&lt;/sru:numberOfRecords&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;sru:displayTerm&gt;Catholic&lt;/sru:displayTerm&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;sru:whereInList&gt;last&lt;/sru:whereInList&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;sru:extraTermData&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;myserver:ID&gt;4456888&lt;/myserver:ID&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/sru:extraTermData&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/sru:term&gt;<br />
+        &nbsp;&nbsp;&lt;/sru:terms&gt;<br />
+        &nbsp;&nbsp;&lt;sru:echoedScanRequest&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;sru:version&gt;1.1&lt;/sru:version&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;sru:scanClause&gt;dc.title="cat"&lt;/sru:scanClause&gt; 
+        <br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;sru:responsePosition&gt;3&lt;/sru:responsePosition&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;sru:maximumTerms&gt;3&lt;/sru:maximumTerms&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;sru:stylesheet&gt;http://myserver.com/myStyle&lt;/sru:stylesheet&gt;<br />
+        &nbsp;&nbsp;&lt;/sru:echoedScanRequest&gt;<br />
+        &lt;/sru:scanResponse&gt;</div>
+      <!-- InstanceEndEditable -->
+      <div id="breadcrumbs-bottom"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-bottom" --><a href="../sru-1-2/index.html">sru version 1.2 specs</a>&nbsp;&raquo;&nbsp;scan operation <!-- InstanceEndEditable --></div>
+</td></tr>
+
+</table>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://www.loc.gov/">The 
+        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div>
+      <br>
+  <span class="sitenav">
+  <!-- #BeginDate format:Am1 -->September 3, 2013<!-- #EndDate -->
+  </span></td>
+<td align="right"><div class="contactus"><a href="mailto:ndmso@loc.gov">Contact Us</a></div></td>
+</tr></table>
+</body>
+<!-- InstanceEnd --></html>

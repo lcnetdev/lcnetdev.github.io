@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/subpage.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Accept Extension (SRU: Search/Retrieval via URL -- SRU, CQL and ZeeRex, Standards, Library of Congress)</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link type="text/css" media="print" href="../css/sru-print.css" rel="stylesheet">
+<style type="text/css" media="screen">
+@import url(../css/sru-base.css);
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="shortcut icon" href="http://www.loc.gov:8081/standards/sru/images/favicon.ico">
+<!-- InstanceBeginEditable name="head" -->
+<meta name="keywords" content="accept extension sru version 1.2 specifications sru search retrieval url cql zeerex standards library congress">
+<meta name="description" content="Accept Extension (SRU Resources). SRU is a standard XML-focused search protocol for Internet search queries, utilizing CQL (Contextual Query Language), a standard syntax for representing queries. Standards, The Library of Congress.">
+<!-- InstanceEndEditable -->
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<form action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" name="seek1" method="get">
+<input type="hidden" name="col" value="loc">
+<input type="hidden" name="sc" value="0">
+<input type="hidden" name="ws" value="0">
+<input type="hidden" name="la" value="en">
+<input type="hidden" name="qm" value="0">
+<input type="hidden" name="st" value="1">
+<input type="hidden" name="nh" value="10">
+<input type="hidden" name="lk" value="1">
+<input type="hidden" name="rf" value="0">
+<input type="hidden" name="oq" value="">
+<input type="hidden" name="si" value="0">
+<input type="hidden" name="rq" value="0">
+<input type="hidden" name="qc" value="">
+<table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
+  <div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div></td>
+<td width="116"><select name="qp" tabindex="1">
+<option value="url:/sru" selected>SRU Web Pages</option>
+<option value="url:/standards url:/ead url:/marc">Standards Pages</option>
+<option value="">All Library Pages</option>
+</select></td><td width="117" align="right"><input type="text" name="qt" id="keyword" size="18" value="" tabindex="2"></td>
+<td width="67" align="right"><input class="button" id="search_button" name="search_button" type="submit" value="SEARCH" tabindex="3"></td>
+</tr></table></form>
+<table align="center" class="layout" cellpadding="0" cellspacing="0"><tr><td>
+<div id="graphic"> 
+<h1 class="homepage"><img src="../images/sru.gif" alt="SRU (Search/Retrieval Using URL)" width="600" height="50"></h1>
+</div>
+<div class="goldtop"></div>
+      <div id="breadcrumbs"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-top" --><a href="../resources/index.html">resources</a>&nbsp;&raquo; 
+        accept extension <!-- InstanceEndEditable --></div>
+<div class="clear"><a name="skip_menu"></a></div>
+ <!-- InstanceBeginEditable name="content" -->
+      <h1>Accept Extension</h1>
+
+        <p> SRU messages may include additional information through a built in <a href="../specs/extra-data.html">extension
+            mechanism</a>. Additional information may be included in the request
+            (extraRequestData) or the response (extraResponseData). The client
+            may send extraRequestData at will, and the server is free to honor
+            or ignore it.</p>
+        <p> However, there is a <em>no-unrequested-extraResponseData</em> rule:
+          The server may not send extraResponseData unless it has been requested
+          (for example, via extraRequestData). </p>
+        <p>Sometimes a server may wish to send &quot;helpful&quot; information
+          -- for example to identify ownership of the data/response, to show
+          where the response came from, or to provide additional data which will
+          help process the response -- information that the server thinks would
+          be helpful to a client if the client understands it, and which the
+          client could ignore if it does not understand it. But that would violate
+          the no-unrequested-extraResponseData rule.</p>
+        <p>However, a client may signal that it will accept any data that the
+          server sends (or it may signal that it will accept any data of a specific
+          class). In that case when the server sends data (or data of the indicated
+          class) that data is considered to be &quot;requested&quot; and so does
+          not violate the no-unrequested-extraResponseData rule.</p>
+        <p>The method for the client to signal willingness to accept data is
+          is by the inclusion of an <em>accept</em> extension in extraRequestData.</p>
+        
+      <h2>The Accept Extension</h2>
+        <p>The method for the client to signal willingness to accept data (beyond
+          that which is otherwise requested by other extensions or by request
+          parameters) is is by the inclusion of an <em>accept</em> extension
+          in extraRequestData.</p>
+        <p>This is version 1.0 of the accept Extension. </p>
+        <p>The accept extension has the identifier and namespace: info:srw/1/accept-1.0 </p>
+        
+      <h2>Values</h2>
+        
+      <table class="standard">
+        <tr> 
+          <th scope="col"><div align="center"><strong>Value</strong></div></th>
+          <th scope="col"><div align="center"><strong>Meaning</strong></div></th>
+        </tr>
+        <tr> 
+          <td scope="row">'any' </td>
+          <td>Client indicates that it will accept any extraData anywhere. <br> 
+            <em>Note: Use of 'any' may be appropriate for some applications, however, 
+            developers are cautioned to consider carefully whether they really 
+            need this feature, which will increase complexity and unpredictability. 
+            </em></td>
+        </tr>
+        <tr> 
+          <td scope="row">'anyResponse'</td>
+          <td>Client indicates that it will accept any extraResponseData</td>
+        </tr>
+        <tr> 
+          <td scope="row">'anyRecord'</td>
+          <td>Client indicates that it will accept any extraRecordData</td>
+        </tr>
+        <tr> 
+          <td scope="row">'anyTerm' </td>
+          <td>Client indicates that it will accept any extraTermData</td>
+        </tr>
+      </table>
+        <p>Additional values mayl be added.&nbsp; Profile developers who wish
+          to name a class of data for use in this manner may request that the
+          name be added to the list. (Send request to <a href="mailto:rden@loc.gov">rden@loc.gov</a>.)</p>
+        
+      <h2>For SRU</h2>
+        <p>For SRU, use the parameter 'x-info-1-accept'. e.g:&nbsp;&nbsp; ...&amp;x-info-1-accept=any</p>
+        
+      <h2>For SRW</h2>
+        <p>&lt;extraRequestData&gt;<br>
+  &lt;accept:accept xmlns:accept=&quot;info:srw/1/extensions/accept&quot;&gt;any&lt;/accept:accept&gt;<br>
+  &lt;/extraRequestData&gt;</p>
+ <!-- InstanceEndEditable -->
+      <div id="breadcrumbs-bottom"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-bottom" --><a href="../resources/index.html">resources</a>&nbsp;&raquo; 
+        accept extension<!-- InstanceEndEditable --></div>
+</td></tr>
+
+</table>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://www.loc.gov/">The 
+        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div>
+      <br>
+  <span class="sitenav">
+  <!-- #BeginDate format:Am1 -->July 23, 2007<!-- #EndDate -->
+  </span></td>
+<td align="right"><div class="contactus"><a href="mailto:ndmso@loc.gov">Contact Us</a></div></td>
+</tr></table>
+</body>
+<!-- InstanceEnd --></html>

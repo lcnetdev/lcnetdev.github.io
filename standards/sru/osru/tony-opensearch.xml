@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
+                       xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+  <ShortName>Nature OpenSearch</ShortName>
+  <LongName>Nature OpenSearch: An OpenSearch Interface for nature.com</LongName>
+  <Description>An OpenSearch interface for nature.com</Description>
+  <Tags>nature opensearch</Tags>
+  <Developer>Tony Hammond</Developer>
+  <Contact>interfaces@nature.com</Contact>
+  <Image width="16" height="16" type="image/x-icon">http://www.nature.com/favicon.ico</Image>
+  <Url type="application/xml"
+       template="http://dev-www.nature.com/opensearch/request?operation=searchRetrieve&amp;version=1.1&amp;query={searchTerms}&amp;queryType=cql&amp;http:accept=application/xml" />
+  <Url type="application/rss+xml"
+     template="http://dev-www.nature.com/opensearch/request?operation=searchRetrieve&amp;version=1.1&amp;query={searchTerms}&amp;queryType=plain&amp;http:accept=application/rss+xml" />
+  <Query role="example" searchTerms="gene" />
+  <Language>en-us</Language>
+  <OutputEncoding>UTF-8</OutputEncoding>
+  <InputEncoding>UTF-8</InputEncoding>
+  <SyndicationRight>open</SyndicationRight>
+  <AdultContent>false</AdultContent>
+  <Attribution>&#169; 2009 Nature Publishing Group.</Attribution>
+</OpenSearchDescription>

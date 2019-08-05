@@ -1,0 +1,407 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/subpage.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>SRU/CQL Products </title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link type="text/css" media="print" href="../css/sru-print.css" rel="stylesheet">
+<style type="text/css" media="screen">
+@import url(../css/sru-base.css);
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="shortcut icon" href="http://www.loc.gov:8081/standards/sru/images/favicon.ico">
+<!-- InstanceBeginEditable name="head" -->
+<meta name="keywords" content="servers sru version 1.2 specifications sru search retrieval url cql zeerex standards library congress">
+<meta name="description" content="servers: SRU Version 1.2 Specifications. SRU is a standard XML-focused search protocol for Internet search queries, utilizing CQL (Contextual Query Language), a standard syntax for representing queries. Standards, The Library of Congress.">
+<!-- InstanceEndEditable -->
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<form action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" name="seek1" method="get">
+<input type="hidden" name="col" value="loc">
+<input type="hidden" name="sc" value="0">
+<input type="hidden" name="ws" value="0">
+<input type="hidden" name="la" value="en">
+<input type="hidden" name="qm" value="0">
+<input type="hidden" name="st" value="1">
+<input type="hidden" name="nh" value="10">
+<input type="hidden" name="lk" value="1">
+<input type="hidden" name="rf" value="0">
+<input type="hidden" name="oq" value="">
+<input type="hidden" name="si" value="0">
+<input type="hidden" name="rq" value="0">
+<input type="hidden" name="qc" value="">
+<table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
+  <div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div></td>
+<td width="116"><select name="qp" tabindex="1">
+<option value="url:/sru" selected>SRU Web Pages</option>
+<option value="url:/standards url:/ead url:/marc">Standards Pages</option>
+<option value="">All Library Pages</option>
+</select></td><td width="117" align="right"><input type="text" name="qt" id="keyword" size="18" value="" tabindex="2"></td>
+<td width="67" align="right"><input class="button" id="search_button" name="search_button" type="submit" value="SEARCH" tabindex="3"></td>
+</tr></table></form>
+<table align="center" class="layout" cellpadding="0" cellspacing="0"><tr><td>
+<div id="graphic"> 
+<h1 class="homepage"><img src="../images/sru.gif" alt="SRU (Search/Retrieval Using URL)" width="600" height="50"></h1>
+</div>
+<div class="goldtop"></div>
+      <div id="breadcrumbs"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-top" -->Products<!-- InstanceEndEditable --></div>
+<div class="clear"><a name="skip_menu"></a></div>
+ <!-- InstanceBeginEditable name="content" -->
+ <h3>SRU</h3>
+ <h2>SRU Products </h2>
+      <h4>&nbsp;</h4>
+      <h4><a href="#cqlParsers">CQL Parsers </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#sruSoftware">SRU Software</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#serverSoftware">Server Software </a>&nbsp;&nbsp;&nbsp;<a href="#sruClient">SRU Client</a> &nbsp;&nbsp;&nbsp;<a href="#proxies">Proxies</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#clientServer">Client/Server</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#productLines">Product lines</a></h4>
+<hr/>
+      <h1><a name="cqlParsers" id="cqlParsers"></a>CQL Parsers </h1>
+      <p>CQL-Java version 1.7</p>
+      <p><strong> CQL parser for Java.</strong> <br />
+          <br />
+        July 27, 2010 <br />
+        version 1.7 of CQL-Java. <br />
+  <em><br />
+    Download link</em>: <a href="http://zing.z3950.org/cql/java/">http://zing.z3950.org/cql/java/</a><br />
+  <br />
+        Contact: Mike Taylor, Index Data, <a href="mailto:mike@indexdata.com">mike@indexdata.com</a></p>
+      <h3>CQL-Java</h3>
+      <p><strong> CQL parser for Java.</strong><br />
+          <br />
+          <em>Free/proprietary/other</em>: Free <br />
+          <em>Licence</em>: GNU LGPL<br />
+          <em>Download link</em>: <a href="http://zing.z3950.org/cql/java/">http://zing.z3950.org/cql/java/</a><br />
+          <em>Support</em>: informal support available; commercial arrangements
+        possible with Index Data.<br />
+    <em> System requirements</em>: Java. I've used version 1.4.1 of IBM's
+        JRE, but it doesn't use any sophisticated runtime facilities, so it
+        should be fine on any runtime environment.<br />
+    <em>Language</em>: Java <br />
+    <em>Known servers that run this software</em>:<br />
+    <em>Usage</em>: The front end reads a stream containing a CQL
+        query and produces a parse-tree represented by simple, well-documented
+        node objects. This can either be walked by hand, or fed to one
+        of the provided back ends, which produce XCQL (an XML representation
+        of the query), re-rendered canonicalised CQL, PQF (Prefix Query
+        Format representing an equivalent Z39.50 Type-1 Query) or a raw
+        BER-encoded Type-1 Query.</p>
+      <p><br />
+        Contact: Mike Taylor, Index Data, <a href="mailto:mike@indexdata.com">mike@indexdata.com</a></p>
+      <h3>CQL-Ruby </h3>
+      <p>A CQL parser. </p>
+      <p><b>Version(s)</b> <b>of the product.</b> Current version is
+        0.7.1.<br />
+    <b>Version(s) of SRU, CQL, supported. </b><br />
+    <b>Free/proprietary/other.</b> Free.<br />
+    <b> License.</b> Code is free to use under the terms of the LGPL license.<br />
+    <b>Homepage</b>: <a href="http://cql-ruby.rubyforge.org/">http://cql-ruby.rubyforge.org/</a><br />
+    <b> Download link. <a href="http://rubyforge.org/projects/cql-ruby">http://rubyforge.org/projects/cql-ruby</a></b><br />
+    <b> Support</b>. via google groups <a href="http://groups.google.com/group/cql_ruby">http://groups.google.com/group/cql_ruby</a><br />
+    <b> System requirements.</b> <a href="http://groups.google.com/group/cql_ruby">http://groups.google.com/group/cql_ruby</a> and
+        should run in any ruby 1.8 installation. <br />
+    <b> Language.</b> ruby 1.8<br />
+    <b> Known servers that run this software.</b> <a href="http://old.diglib.org/aquifer/">http://www.dlfaquifer.org</a><br />
+    <b>Usage</b>.<br />
+        require 'cql_ruby' <br />
+        parser = CqlRuby::CqlParser.new <br />
+        puts
+        parser.parse( 'dog and cat' ).to_solr</p>
+      <p><b>Contact</b>.         Chick Markley</p>
+      <h3>CQL Parser (from <a href="http://www.cq2.org">CQ2</a>)</h3>
+      <p><i>This project provides a generic AST parser, written in Python. It
+        is level 1 compliant and easily extensible with functionality for other
+        grammar productions.</i></p>
+      <p>Version of the product described: <b>version 1.1<br />
+        </b>Version(s) of SRU, CQL, supported. <b>CQL 1.1 level 1+</b><br />
+        Free or proprietary (or other): <b>Free</b><br />
+        Liscense: <b>GPL</b>&nbsp; ( Other licenses are available on request.)<br />
+        Download link: <a href="https://www.uitwisselplatform.nl/projects/cqlparser/">https://www.uitwisselplatform.nl/projects/cqlparser/</a><br />
+        Support: <a href="http://www.cq2.org">http://www.cq2.org</a><br />
+        System requirements: n/a<br />
+  <em>Language;</em><b> Python</b></p>
+      <p>Known servers that run this software: <a href="http://www.darenet.nl">www.darenet.nl</a>, <a href="http://www.lorenet.net">www.lorenet.net</a>, <a href="http://edurep.kennisnet.nl">edurep.kennisnet.nl</a>, <a href="http://www.hbo-kennisbank.nl">www.hbo-kennisbank.nl</a>,
+        ...<em><br />
+    </em>Usage -- It parses CQL and create an AST from wich other query languages
+        are <br />
+        easiliy created.&nbsp; Includes Lucene printer.<br />
+  <em> Contact</em>:&nbsp; <b>Erik Groeneveld</b>, Seek You Too, The Netherlands, <a href="mailto:erik@cq2.org">erik@cq2.org</a></p>
+      <h3>Python CQL Parser</h3>
+      <p> <strong>A Python Library for parsing CQL and XCQL. Includes CQL to
+        RPN transformation for PyZ3950.</strong><br />
+    <br />
+    <em>Version</em>: Fully CQL 1.1 compliant<br />
+    <em>Free/proprietary/other</em>: Free <br />
+    <em>Licence</em>: GPL, Open Source<br />
+    <em>Download</em>: <a href="http://srw.cheshire3.org/downloads/">http://srw.cheshire3.org/downloads/ </a><br />
+    <em>System</em> <em>Requirements</em>: Python2.2+<br />
+    <em>Support</em>: Free mailing list support, commercial arrangement
+        possible.<br />
+    <br />
+    <em>Contact</em>: Rob Sanderson <a href="mailto:azaroth@liv.ac.uk">azaroth@liv.ac.uk</a></p>
+      <h3>CQL Parser <strong>for Perl</strong></h3>
+      <p><strong>Essentially a port of Mike Taylor&#8217;s
+        cql-java package listed above, and as such it currently conforms to
+        the v1.0 proximity syntax.</strong> </p>
+      <p>V<em>ersion</em>: CQL-Parser-0.2<br />
+          <em>Free/proprietary/other</em>: Free <br />
+          <em>Licence</em>:<br />
+          <em>Download</em>: <a href="http://search.cpan.org/perldoc?CQL::Parser">http://search.cpan.org/perldoc?CQL::Parser</a><br />
+          <em>System Requirements</em>: <br />
+          <em>Support</em>:<br />
+          <em>Contact</em>: <a href="mailto:esummers@FLSG.FOLLETT.COM">Ed Summers</a> <a name="below" id="below"></a></p>
+      <h3><a href="http://gita.grainger.uiuc.edu/registry/sru/test.htm">CQL
+        Parser Test</a> </h3>
+      <p>        Click on a sample query to generate the XCQL equivalent.
+      Provided by <a href="mailto:thabing@UIUC.EDU">Tom Habing</a></p>
+  <hr/>
+      <h1><a name="sruSoftware"></a>SRU Software </h1>
+      <p><a href="http://search.cpan.org/dist/SRU">SRU CPAN Module</a><br>
+        Includes two plugins for the popular Perl web application frameworks
+      Catalyst and CGI::Application.</p>
+      <p>&nbsp;</p>
+      <hr/>
+      <h1><a name="serverSoftware"></a>Server Software </h1>
+      <h3>OCLC Research Open Source SRW/U Server</h3>
+      <p>Implements both the SRW Web Service and the SRU REST model interface
+        to databases. Included are interfaces that support DSpace's Lucene implementation
+        and OCLC's Pears and Newton databases. </p>
+      <p><em>Version</em>: 1.1 of SRU and CQL are supported.<br />
+          <em>Free/proprietary/other</em>: Free <br />
+          <em>License</em>: OCLC Research Public License<br />
+          <em>Download link</em>: <a href="http://www.oclc.org/research/activities/srw/default.htm">http://www.oclc.org/research/activities/srw/default.htm</a><br />
+          <em>Support</em>: E-mail support. See contact information below.<br />
+          <em>System requirements</em>: Java 1.3<br />
+          <em>Language</em>: Java<br />
+          <em>Known servers that run this software</em>: <a href="http://alcme.oclc.org/srw/search/ORPublications/">http://alcme.oclc.org/srw/search/ORPublications/</a><br />
+          <em><br />
+            Contact</em>: <a href="mailto:levan@oclc.org">Ralph LeVan</a>, OCLC
+        Online Computer Library Center, Inc.</p>
+      <h1>&nbsp;</h1>
+      <hr/>
+      <h1><a name="sruClient"></a>SRU Client </h1>
+      <h3>SRU Client</h3>
+      <p><strong>Description</strong>: Integration with Drupal to link SRU items with Drupal Nodes with   preview.<br />
+          <b>Version</b> <b>of the product.</b> 1.0 <br />
+          <b>Version(s) of SRU supported. </b>1.1<br />
+          <b>Free/proprietary/other.</b> Free.<br />
+          <b> License.</b> C GNU GENERAL PUBLIC LICENSE 2.0 <br />
+          <b> Download link.</b> <a href="http://drupal.org/project/sru_client">http://drupal.org/project/sru_client</a><br />
+          <b> Support</b>. <a href="mailto:enzo@anexusit.com">enzo@anexusit.com</a><br />
+          <b> System requirements. </b>Drupal 6 <br />
+          <b> Language.</b> PHP <br />
+          <b> Known servers that run this software.</b> <a href="http://old.diglib.org/aquifer/">intrallect.com </a><br />
+          <b>Usage</b>. Runs inside drupal as a third party integrator.<br />
+          <b>Contact</b>.         Eduardo Garcia, Anexus IT, <a href="mailto:enzo@anexusit.com">enzo@anexusit.com</a></p>
+      <p>&nbsp;</p>
+      <p><a href="http://drupal.org/project/sru_client"></a>&nbsp;&nbsp; <a href="http://drupal.org/project/sru_client">Drupal SRU Client</a></p>
+      <hr/>
+  <h1><a name="proxies"></a>Proxies</h1>
+      <p><strong>YAZ Proxy</strong></p>
+      <p>The YAZ proxy can run as a front-end to any Z39.50 server and provide
+        SRU/SRW services (as well as Z39.50 services). The mapping between CQL
+        and the Z39.50 type-1 query language is fully configurable. It can map
+        MARC <br />
+        records to MARCXML and other transformations can be performed using XSLT
+        stylesheets (stylesheets for DC and MODS are included). The proxy can
+        normalize different character sets to UTF-8 as required. In addition
+        to its <br />
+        SRU functionality it also includes a host of performance-optimization
+        features such as caching and load management.</p>
+      <p><em>Version</em>: 1.0<br />
+          <em>Free/proprietary/other</em>: Free <br />
+          <em>License</em>: GPL. Other licenses are available on request.<br />
+          <em>Download link</em>: <a href="http://www.indexdata.com/yazproxy/">http://www.indexdata.com/yazproxy/</a><br />
+          <em>Support</em>: Available. <a href="http://www.indexdata.dk/support/">http://www.indexdata.dk/support/</a><br />
+          <em>System requirements</em> Most unixes; YAZ and YAZ++ required (available
+        from same site)<br />
+    <em>Language</em>: C++<br />
+    <em>Known servers that run this software</em>: Library of Congress;
+        others.<br />
+    <em>Usage: </em>Like Viagra for your Z39.50 server<em><br />
+    <br />
+      Contact</em>:&nbsp; <a href="mailto:quinn@indexdata.com">Sebastian
+        Hammer</a> </p>
+      <hr/>
+      <h1><a name="clientServer"></a>Client/Server</h1>
+      <p><a href="http://mylibrary.ockham.org/simple/">Simple SRU client/server</a><br>
+        Search sets of harvested OAI data. Server, provided by Xiaorong Xiang
+        (Notre Dame), supports spelling, synonym,and keyword suggestions.
+        Client provide by Eric Morgan.      </p>
+      <p><a href="http://www.oss4lib.org/taxonomy/term/80">oss4lib open source SRU for libraries</a></p>
+      <hr/>
+      <h1><a name="productLines"></a>Product lines </h1>
+      <h3>Archimed</h3>
+      <p>Archimed products implementing SRW/U are:</p>
+      <ul>
+        <li> QuASAR.
+          Windows client (.Net). used for quick testing and analyzing of the
+          SRW/U services: version of the protocol, index, format of answers,
+          etc. Available free of charge on (French)</li>
+        <li><strong> <a href="http://www.archimed.fr/">SARA</a></strong>.
+          A universal SRW/U server. Can run on Windows (.Net) or Linux (Mono::).
+          It aims at quickly developing plugs-in to interface in SRW/U databases
+          or application not natively searchable with this protocol. Several
+          plugs-in have already been developed, to search with SARA, the following
+          databases or systems: DMOZ, XML files, Index Server, Copernic, WebDav
+          (WebFolder and Exchange), Wiley InterScience, IOP, PubMed, Nature,
+          ScienceDirect, etc. The diversity of sources that can be linked by
+          SARA through the SRW/U protocol makes SARA the adequate tool to normalise
+          access to heterogeneous proprietary systems. </li>
+        <li><strong><a href="http://www.archimed.fr/">BOOK-LINE</a></strong>.
+          A multibase meta search engine interrogating the databases equipped
+          with a Z39.50 and SRW/U footbridge. Combined with SARA, BOOK-LINE can
+          query in one search all native Z39.50 or SRW/U databases and all heterogeneous
+          sources queried in SRW/U.</li>
+      </ul>
+      <p> QuASAR is now available only in French. </p>
+      <p>Contact: <a href="mailto:archimed@inexos.net">Guillaume Li&eacute;kens</a></p>
+      <h3>Cheshire3 Digital Library System</h3>
+      <p> <strong>A full digital library application including both Z39.50 and
+        SRW/U support. Ingests anything from PDF, Word or XML. Supports Unicode
+        and XML namespaces, as well as a distributable architecture and extensive
+        XML configuration.<br />
+        </strong><br />
+        <em> Version</em>: SRU/CQL 1.1, Z39.50-2003, OAI2. Currently Beta.<br />
+        <em>Free/proprietary/other</em>: Free <br />
+        <em>Licence</em>: GPL, Open Source <br />
+        <em>Download</em>: <a href="http://srw.cheshire3.org/downloads/">http://srw.cheshire3.org/downloads/ </a><br />
+        <em>System Requirements</em>: Apache, Python, Mod Python, BerkeleyDB<br />
+        <em>Support</em>: Free mailing list support, commercial arrangement possible.<br />
+        <em><br />
+          Contact</em>: Rob Sanderson <a href="mailto:azaroth@liv.ac.uk">azaroth@liv.ac.uk</a> </p>
+      <h3>RefDB</h3>
+      <p><i>RefDB is a reference database and bibliography tool for SGML, XML,
+        and 
+        LaTeX documents. Command-line tools allow interactive or scriptable 
+        access to the data which are stored in a SQL database. RefDB
+        can also be 
+        accessed through&nbsp;  a Web interface, a SRU interface, or via
+        editor 
+        extensions (Emacs/vim). Libraries for Perl and PHP are available for
+        programmers. RefDB provides sophisticated character encoding handling, using
+        Unicode by default. The SRU server is a CGI application which supports both MODS
+        and risx (a 
+        RIS variant encoded as XML) as output formats. Appropriate default 
+        stylesheets  are provided to make the results human-readable in a web 
+        browser. </i></p>
+      <p><b>Version(s)</b> <b>of the product.</b> The current version 0.9.9 is
+        the first one that supports SRU.<br />
+    <b>Version(s) of SRU, CQL, supported. </b>SRU version 1.2 (explain, searchRetrieve,
+        and scan are implemented) CQL<br />
+        level 2.<br />
+  <b>Free/proprietary/other.</b> Free.<br />
+  <b> License.</b> GNU General Public License.<br />
+  <b>Homepage</b>: <a href="http://refdb.sourceforge.net">http://refdb.sourceforge.net</a><br />
+  <b> Download link. </b><a href="http://sourceforge.net/projects/refdb">http://sourceforge.net/projects/refdb</a><br />
+  <b> Support</b>. via mailing list: <a href="http://lists.sourceforge.net/lists/listinfo/refdb-users">http://lists.sourceforge.net/lists/listinfo/refdb-users</a><br />
+  <b> System requirements.</b> As far as the SRU server is concerned,
+        a web server like Apache and a Perl interpreter with a couple of
+        Perl modules suffice. The RefDB 
+        application server runs on most Unix variants (Linux, FreeBSD,
+        NetBSD,<br />
+        OSX, Solaris) and on Windows/Cygwin. Data are stored in a
+        SQL database 
+        (MySQL, PostgreSQL, and SQLite are supported).<br />
+    <b> Language.</b> The SRU server
+        part of RefDB is 
+        implemented as a Perl CGI application.<br />
+    <b> Known servers that run this software.</b> No public servers
+        to date.<br />
+    <b>Usage</b>. The SRU server part acts as a proxy server for
+        the RefDB application 
+        server. As a CGI application, it plugs right into your web
+        server. You send your SRU queries by typing them into a web
+        browser, via command line tools<br />
+        like wget, via tools like yaz, or by running applications
+        that send SRU
+        request. Your web server then calls the CGI application which
+        returns the 
+        query results.<br />
+    <b>Contact information</b>. Markus Hoenicka <a href="mailto:mhoenicka@users.sourceforge.net">mhoenicka@users.sourceforge.net</a>.</p>
+      <h3>Index Data Products </h3>
+      <p>The following SRU-enabled products have been developed and are supported
+        by Index Data. Configuration and installation assistance and ongoing
+        support is available. Contact David Dorman in the US (<a href="mailto:dorman@indexdata.com">mailto:dorman@indexdata.com</a>,
+        860-346-1237 or toll free 866-489-1568) or Marc Cromme in Denmark (<a href="mailto:quinn@indexdata.com">mailto:quinn@indexdata.com</a>,
+        or +45 3341 0100).&nbsp; More information available at <a href="http://www.indexdata.com/software">http://www.indexdata.com/software</a>.</p>
+      <ul>
+        <li><b>Metaproxy</b> </li>
+      </ul>
+      <p>A proxy front end server that presents a single Z39.50/SRW/SRU front
+        end to multiple back end Z39.50 database servers. It can also work in
+        conjunction with Index Data's library of gateways to access non-Z39.50-compliant
+        database servers. Metaproxy is server software and does not have a client
+        interface but is designed to tie into any existing client search interface.<br>
+  &nbsp;<br>
+        Combines caching; load balancing; filtering; and cross database
+        merging of the result set; and other performance-enhancing mechanisms
+        that speed up retrieval. It is designed for integrating multiple back
+        end databases - within a single organization or across multiple organizations
+        - into what appears from the user's point of view to be a single searchable
+        resource. </p>
+      <p><i>Distributed under the General Public License.</i></p>
+      <ul>
+        <li><b>PHP/YAZ</b> </li>
+      </ul>
+      <p>An extension to <a href="http://www.php.net/">PHP</a>, the web server
+        language that implements Z39.50 origin (client) functionality as well
+        as the SRW/SRU protocols.&nbsp; </p>
+      <p><i>Distributed under the PHP license. </i></p>
+      <ul>
+        <li><b>SIMPLESERVER</b> </li>
+      </ul>
+      <p>A Perl
+        module intended to make it as simple as possible to develop
+        new Z39.50, SRU and SRW servers over any type of database.<br>
+          <br>
+          <i>Available under the BSD license.</i></p>
+      <ul>
+        <li><b>YAZ ++</b> </li>
+      </ul>
+      <p>Toolkit for building Z39.50/SRU clients and servers.&nbsp; An application
+        programming interface&nbsp; to YAZ which supports the development of
+        Z39.50/SRW/SRU client and server applications using C++. Supports SRW/SRU
+        version 1.1 in both the client and server roles. Includes an implementation
+        of the <a href="http://zoom.z3950.org/bind/cplusplus/">ZOOM C++</a> binding
+        and a generic client/server API based on the Observer/Observable design
+        pattern.</p>
+      <p><i>Available under the BSD license and optional support
+        is available from Index Data.</i></p>
+      <ul>
+        <li><b>YAZ Proxy </b></li>
+      </ul>
+      <p>Configurable Z39.50 proxy server and SRW/SRU--Z39.50 gateway and can
+        be used in a number of different applications.</p>
+      <p><i>Available under the GPL license.&nbsp;  Other licensing
+        terms are available to commercial vendors upon request. </i></p>
+      <hr/>
+      <h2>Services</h2>
+      <h3>OpenTranslators</h3>
+      <h4>Provided by CARE Affiliates in conjunction
+        with  Index Data and WebFeat.<br>
+      </h4>
+      <p>Provides access 
+        through SRU to databases supported by WebFeat's&nbsp; 
+      database translators. Access
+      to&nbsp; 
+      more than 9,000 databases, including commercial abstract/citation 
+      databases and reference services.&nbsp; Offered as a <BR>
+      subscription-based, hosted service. </p>
+      <p>More information at <A href="http://indexdata.com/news/#2008-01-08">http://indexdata.com/news/#2008-01-08</A> .</p>
+      <p> For sales information, contact 
+      CARE Affiliates at 1-866-340-9580 or <A href="mailto:info@care-affiliates.com">info@care-affiliates.com</A>.</p>
+	  <hr/>
+	  <BR>
+      <!-- InstanceEndEditable -->
+<div id="breadcrumbs-bottom"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-bottom" -->Products<!-- InstanceEndEditable --></div>
+</td></tr>
+</table>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://www.loc.gov/">The 
+        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div>
+      <br>
+  <span class="sitenav">
+  <!-- #BeginDate format:Am1 -->December 12, 2013<!-- #EndDate -->
+  </span></td>
+<td align="right"><div class="contactus"><a href="mailto:ndmso@loc.gov">Contact Us</a></div></td>
+</tr></table>
+</body>
+<!-- InstanceEnd --></html>

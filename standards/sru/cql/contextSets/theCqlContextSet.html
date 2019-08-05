@@ -1,0 +1,596 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/subpage.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>The CQL Context Set</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link type="text/css" media="print" href="../../css/sru-print.css" rel="stylesheet">
+<style type="text/css" media="screen">
+@import url(../../css/sru-base.css);
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="shortcut icon" href="http://www.loc.gov/standards/sru/images/favicon.ico">
+<!-- InstanceBeginEditable name="head" -->
+<meta name="keywords" content="query language search retrieval via url z39.50 standards library congress">
+<meta name="descrption" content="Contextual Query Language: SRU (Search/Retrieve via URL) is a standard search protocol for Internet search queries, utilizing CQL (Contextual Query Language), a standard query syntax for representing queries.">
+<!-- InstanceEndEditable -->
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<form action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" name="seek1" method="get">
+<input type="hidden" name="col" value="loc">
+<input type="hidden" name="sc" value="0">
+<input type="hidden" name="ws" value="0">
+<input type="hidden" name="la" value="en">
+<input type="hidden" name="qm" value="0">
+<input type="hidden" name="st" value="1">
+<input type="hidden" name="nh" value="10">
+<input type="hidden" name="lk" value="1">
+<input type="hidden" name="rf" value="0">
+<input type="hidden" name="oq" value="">
+<input type="hidden" name="si" value="0">
+<input type="hidden" name="rq" value="0">
+<input type="hidden" name="qc" value="">
+<table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
+  <div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../../index.html">SRU</a></div></td>
+<td width="116"><select name="qp" tabindex="1">
+<option value="url:/sru" selected>SRU Web Pages</option>
+<option value="url:/standards url:/ead url:/marc">Standards Pages</option>
+<option value="">All Library Pages</option>
+</select></td><td width="117" align="right"><input type="text" name="qt" id="keyword" size="18" value="" tabindex="2"></td>
+<td width="67" align="right"><input class="button" id="search_button" name="search_button" type="submit" value="SEARCH" tabindex="3"></td>
+</tr></table></form>
+<table align="center" class="layout" cellpadding="0" cellspacing="0"><tr><td>
+<div id="graphic"> 
+<h1 class="homepage"><img src="../../images/sru.gif" alt="SRU (Search/Retrieval Using URL)" width="600" height="50"></h1>
+</div>
+<div class="goldtop"></div>
+      <div id="breadcrumbs"><a href="../../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-top" --><a href="../index.html">CQL</a>&nbsp;&raquo;the CQL Context Set  <!-- InstanceEndEditable --></div>
+      <div class="clear"><a name="skip_menu"></a></div>
+ <!-- InstanceBeginEditable name="content" --> 
+      <h2 align="center">CQL: Contextual Query Language</h2>
+      <h1 align="center">The CQL Context Set</h1>
+      <h1 align="center">&nbsp;&nbsp;</h1>
+      <p>The CQL context set defines a set of indexes, relations and relation
+        modifiers. The indexes supplied are 'utility' indexes which are generally
+        useful across all applications of the language. These utility indexes
+        are for instances when CQL is required to express a concept not directly
+        related to the records, or for indexes applicable in practically every
+        context. </p>
+      <ul>
+        <li>The reserved name for this context set is: <span class="selected">cql</span></li>
+        <li> The identifier for this context set is: <span class="selected">info:srw/cql-context-set/1/cql-v1.2 </span></li>
+      </ul>
+      <p><span class="selected">Sections: <a href="#indexes"></a></span><a href="#indexes">Indexes</a> | <a href="#relations">Relations</a> | <a href="#relmods">Relation Modifiers</a> | <a href="#booleans">Booleans</a> | <a href="#boolmods">Boolean Modifiers</a> </p>
+      <hr>
+      <h2><a name="indexes"></a>INDEXES</h2>
+      <ul>
+        <li>
+          <p><strong>resultSetId</strong><br>
+            A search clause may be a result set id. This is a special case, where 
+            the index and relation are expressed as "cql.resultSetId =" and the 
+            term is the result set id returned by the server in the 'resultSetId' 
+            parameter of the SRU response. It may be used by itself in a query 
+            to refer to an existing result set from which records are desired. 
+            It may also be used in conjunction with other resultSetId clauses 
+            or other indexes, combined by boolean operators. The semantics of 
+            resultSetId with relations other than "=" is undefined. The semantics 
+            of resultSetId with scan is also undefined.</p>
+          <p>Examples: </p>
+          <ul>
+            <li><span class="highlight">cql.resultSetId</span> = "5940824f-a2ae-41d0-99af-9a20bc4047b1"<br>
+                <i>Match the result set with the given identifier.</i> </li>
+          </ul>
+        </li>
+        <li><strong>allRecords</strong><br>
+          A special index which matches every record available. Every record 
+          is matched no matter what values are provided for the relation and 
+          term, but the recommended syntax is: cql.allRecords = 1. The semantics 
+          for scanning allRecords is not defined.
+          </p>
+      <p>Examples: </p>
+          <ul>
+        <li><span class="highlight">cql.allRecords = 1</span> NOT dc.title 
+          = fish<br>
+                      <i>Search for all records that do not match 'fish' as a word in 
+                        title.</i> </li>
+          </ul>
+        </li>
+        <li><strong>allIndexes</strong><br>
+          Alias: anywhere<br>
+          The 'allIndexes' index will result in a search equivalent to searching 
+          all of the indexes (in all of the context sets) that the server has 
+          access to. The semantics for scanning allIndexes is not defined.
+          </p>
+          <p>Examples: </p>
+          <ul>
+            <li><span class="highlight">cql.allIndexes</span> = fish<br>
+          <i>If the server had three indexes title, creator and date, then 
+            this would be the same as title = fish or creator = fish or date 
+            = fish</i> </li>
+          </ul>
+        </li>
+        <li><strong>anyIndexes</strong><br>
+          Alias: serverChoice<br>
+          The 'anyIndexes' index allows the server to determine how to search 
+          for the given term. The server may choose one or more indexes in which 
+          to search, which may or may not be generally available via CQL. It 
+          may choose a different index to search every time, based on the term 
+          for example, and hence may not produce consistent results via scan.
+          </p>
+          <p> This is the default when the index and relation is omitted from 
+            a search clause. The relation used when the index is omitted is '='. </p>
+          <p>Examples: </p>
+          <ul>
+            <li><span class="highlight">cql.anyIndexes</span> = fish<br>
+          <i>Search in any one or more indexes for the term fish</i> </li>
+          </ul>
+        </li>
+        <li><strong>keywords</strong><br>
+          The keywords index is an index of terms from the record, determined 
+          by the server as being generally descriptive or meaningful to search 
+          on. It might include the full text of a document, descriptive metadata 
+          fields, or anything else generally useful to search as an initial 
+          entry point to the data. Exactly which fields make up this index is 
+          determined by the server, however the choice must be consistent, unlike 
+          anyIndexes above, when the choice can be different for different searches.
+          </p>
+      <p>Examples: </p>
+          <ul>
+        <li><span class="highlight">cql.keywords</span> any/relevant "code 
+          computer calculator programming"<br>
+                      <i>Search in descriptive locations for the given terms</i> </li>
+          </ul>
+        </li>
+      </ul>
+      <hr>
+      <h2><a name="relations"></a>RELATIONS</h2>
+      <p><strong>Implicit Relations</strong><br>
+        These relations are defined as such in the grammar of CQL. The cql context 
+        set only defines their meaning, rather than their existence. </p>
+      <ul>
+        <li> <strong>=<br>
+          </strong>alias: scr<br>
+          This is the default relation, and the server can choose any appropriate 
+          relation or means of comparing the query term with the terms from 
+          the data being searched. If the term is numeric, the most commonly 
+          chosen relation is '=='. For a string term, either 'adj' or '==' as 
+          appropriate for the index and term.
+          </p>
+          <p>Examples: </p>
+          <ul>
+            <li>animal.numberOfLegs <span class="highlight">=</span> 4<br>
+          <i>Recommended to use '=='</i> </li>
+            <li>dc.identifer <span class="highlight">=</span> "gb 141 staff a-m"<br>
+          <i>Recommended to use '=='</i> </li>
+            <li>dc.title <span class="highlight">=</span> "lord of the rings"<br>
+          <i>Recommended to use 'adj'</i> </li>
+            <li>dc.date <span class="highlight">=</span> "2004 2006"<br>
+          <i>Recommended to use 'within'</i> </li>
+          </ul>
+        </li>
+        <li> <strong>==</strong><br>
+          alias:exact<br>
+          This relation is used for exact equality matching. The term in the 
+          data is exactly equal to the term in the search.
+          </p>
+          <p>Examples: </p>
+          <ul>
+            <li>dc.identifier <span class="highlight">==</span> "gb 141 staff 
+              a-m"<br>
+                      <i>Search for the string 'gb 141 staff a-m' in the identifier index.</i> </li>
+            <li>dc.date <span class="highlight">==</span> "2006-09-01 12:00:00"<br>
+          <i>Search for the given datestamp.</i> </li>
+            <li>animal.numberOfLegs <span class="highlight">==</span> 4<br>
+          <i>Search for animals with exactly 4 legs.</i> </li>
+          </ul>
+        </li>
+        <li><strong>&lt;&gt;</strong><br>
+          This relation means 'not equal to' and matches anything which is not 
+          exactly equal to the search term.
+      </p>
+      <p>Examples: </p>
+          <ul>
+        <li>dc.date <span class="highlight">&lt;&gt;</span> 2004-01-01<br>
+            <i>Search for any date except the first of January, 2004</i> </li>
+            <li>dc.identifier <span class="highlight">&lt;&gt;</span> ""<br>
+            <i>Search for any identifier which is not the empty string.</i> </li>
+          </ul>
+        </li>
+        <li> <strong>&lt;</strong>, <strong>&gt;</strong>, <strong>&lt;=</strong>,<strong>&gt;=</strong><br>
+          These relations retain their regular meanings as pertaining to ordered 
+          terms (less than, greater than, less than or equal to, greater than 
+          or equal to).
+          </p>
+      <p>Examples: </p>
+          <ul>
+        <li>dc.date <span class="highlight">&gt;</span> 2006-09-01<br>
+            <i> Search for dates after the 1st of September, 2006</i> </li>
+            <li>animal.numberOfLegs <span class="highlight">&lt;</span> 4<br>
+            <i> Search for animals with less than 4 legs.</i> </li>
+          </ul>
+        </li>
+      </ul>
+      <p><strong>Defined Relations</strong><br>
+        These relations are defined as being widely useful as part of a default 
+        context set. </p>
+      <ul>
+        <li> <strong>adj</strong><br>
+          This relation is used for phrase searches. All of the words in the 
+          search term must appear, and must be adjacent to each other in the 
+          record in the order of the search term. The query could also be expressed 
+          using the PROX boolean operator.
+          </p>
+      <p>Examples: </p>
+          <ul>
+        <li>dc.title <span class="highlight">adj</span> "lord of the rings"<br>
+            <i>Search for the phrase 'lord of the rings' somewhere in the title.</i> </li>
+            <li>dc.description <span class="highlight">adj</span> "blue shirt"<br>
+            <i>Search for 'blue' followed by 'shirt' in the description.</i> </li>
+          </ul>
+        </li>
+        <li> <strong>all</strong>, <strong>any</strong><br>
+          These relations may be used when the term contains multiple items 
+          to indicate "all of these items" or "any of these items". These queries 
+          could be expressed using boolean AND and OR respectively. These relations 
+          have an implicit relation modifier of 'cql.word', which may be changed 
+          by use of alternative relation modifiers.
+          </p>
+                <p>Examples: </p>
+          <ul>
+                  <li>dc.title <span class="highlight">all</span> "lord rings"<br>
+                      <i>Search for both lord and rings in the title.</i> </li>
+            <li>dc.description <span class="highlight">any</span> "computer calculator"<br>
+                      <i>Search for either computer or calculator in the description.</i> </li>
+          </ul>
+        </li>
+        <li> <strong>within</strong><br>
+          Within may be used with a search term that has multiple dimensions. 
+          It matches if the database's term falls completely within the range, 
+          area or volume described by the search term, inclusive of the extents 
+          given.
+      </p>
+      <p>Examples: </p>
+          <ul>
+        <li>dc.date <span class="highlight">within</span> "2002 2003"<br>
+            <i>Search for dates between 2002 and 2003 inclusive.</i> </li>
+            <li>animal.numberOfLegs <span class="highlight">within</span> "2 5"<br>
+            <i>Search for animals that have 2,3,4 or 5 legs.</i> </li>
+          </ul>
+        </li>
+        <li><b><a name="encloses"></a></b><strong>encloses</strong><br>
+          Conversely, encloses is used when the index's data has multiple dimensions. 
+          It matches if the database's term fully encloses the search term.
+          <p>Examples: </p>
+          <ul>
+        <li>foo.dateRange <span class="highlight">encloses</span> 2002 <br>
+            <i>Search for ranges of dates that include the year 2002.</i> </li>
+            <li>geo.area <span class="highlight">encloses</span> "45.3, 19.0" <br>
+            <i>Search for any area that encloses the point 45.3, 19.0</i> </li>
+          </ul>
+        </li>
+      </ul>
+      <hr>
+      <a name="relmods"></a>
+      <h2>RELATION MODIFIERS</h2>
+      <h3> <b>Functional&nbsp; Modifiers </b> </h3>
+      <ul>
+        <li><strong>stem</strong><br>
+          The server should apply a stemming algorithm to the words within the 
+          term. For example such that computing and computer both match the 
+          stem of 'compute'.
+          </p>
+        </li>
+        <li><strong>relevant</strong><br>
+          The server should use a relevancy algorithm for determining matches 
+          and the order of the result set.
+          </p>
+        </li>
+        <li><strong>phonetic</strong><br>
+          The server should use a phonetic algorithm for determining words which 
+          sound like the term.
+          </p>
+        </li>
+        <li><strong>fuzzy</strong><br>
+          The server should be liberal in what it counts as a match. The exact 
+          details of this are left up to the server, but might include permutations 
+          of character order, off-by-one for numerical terms and so forth.
+          </p>
+        </li>
+      </ul>
+      <ul>
+        <li><strong>partial</strong><br>
+          When used with within or encloses, there may be some section which 
+          extends outside of the term. This permits for the database term to 
+          be partially enclosed, or fall partially within the search term.
+          </p>
+        </li>
+      </ul>
+      <p class="old-ver"><em>Note:</em> all of the following functional relation-modifiers 
+        are new in version 1.2. </p>
+      <ul>
+        <li><strong>ignoreCase</strong>, <strong>respectCase</strong><br>
+          The server is instructed to either ignore or respect the case of the 
+          search term, rather than its default behaviour (which is unspecified). 
+          This modifier may be used in sort keys to ensure that terms with the 
+          same letters in different cases are sorted together or separately, 
+          respectively.
+      </p>
+        </li>
+        <li><strong>ignoreAccents</strong>, <strong>respectAccents</strong><br>
+          The server is instructed to either ignore or respect diacritics in 
+          terms, rather than its default behaviour (which is unspecified, but 
+          respectAccents is recommended). This modifier may be used in sort 
+          keys, to ensure that characters with diacritics are sorted together 
+          or separately from those without them.
+      </p>
+        </li>
+        <li><strong>locale=<i>value</i></strong><br>
+          The term should be treated as being from the specified locale. Locales 
+          will in general include specifications for whether sort order is case-sensitive 
+          or insensitive, how it treats accents, and so forth. The default locale 
+          is determined by the server. The value is usually of the form C, french, 
+          fr_CH, fr_CH.iso88591 or similar. This modifier may be used in sort 
+          keys.
+      </p>
+        </li>
+      </ul>
+      <p><em>Examples: </em></p>
+      <ul>
+        <li>dc.title any<span class="highlight">/stem</span> "computing disestablishmentarianism"<br>
+            <i>Find the local stemmed form of 'computing' and 'disestablishmentarianism', 
+              and search for those stems in the stemmed forms of the terms in titles.</i> </li>
+        <li>person.phoneNumber =<span class="highlight">/fuzzy</span> "0151 795-4252"<br>
+            <i>Search for a phone number which is something similar to '0151 795-4252' 
+              but not necessarily exactly that</i> </li>
+        <li>"fish" sortBy dc.title<span class="highlight">/ignoreCase</span><br>
+            <i>Search for 'fish', and then sort the results by title, case insenstively.</i> </li>
+        <li>dc.title within<span class="highlight">/locale=fr</span> "l m" <br>
+            <i>Find all titles between l and m, ensure that the locale is 'fr' for 
+              determining the order for what is between l and m.</i> </li>
+      </ul>
+      <h3> <b>Term-format Modifiers</b></h3>
+      <p> These modifiers specify the format of the search term to ensure that 
+        the correct comparison is performed by the server. These modifiers may 
+        all be used in sort keys.</p>
+      <ul>
+        <li><strong>word</strong><br>
+          The term should be broken into words, according to the server's definition 
+          of a 'word'
+          </p>
+        </li>
+        <li><strong>string</strong><br>
+          The term is a single item, and should not be broken up.
+          </p>
+        </li>
+        <li><strong>isoDate</strong><br>
+          Each item within the term conforms to the ISO 8601 specification for 
+          expressing dates.
+          </p>
+        </li>
+        <li><strong>number</strong><br>
+          Each item within the term is a number.
+      </p>
+        </li>
+        <li><strong>uri</strong><br>
+          Each item within the term is a URI.
+          </p>
+        </li>
+        <li><strong>oid</strong> <br>
+          Each item within the term is an ISO object identifier, dot-separated 
+          format.</li>
+      </ul>
+      <p><em>Examples:</em> </p>
+      <ul>
+        <li>dc.title =<span class="highlight">/string</span> Jaws<br>
+            <i>Search in title for the string 'Jaws', rather than Jaws as a word. 
+              (Equivalent to the use of == as the relation)</i> </li>
+        <li>zeerex.set ==<span class="highlight">/oid</span> "1.2.840.10003.3.1"<br>
+            <i>Search for the given OID as an attribute set.</i> </li>
+        <li>squirrel sortby numberOfLegs<span class="highlight">/number</span><br>
+            <i>Search for squirrel, and sort by the numberOfLegs index ensuring 
+              that it is treated as a number, not a string. (eg '2' would sort after 
+              '10' as a string, but before it as a number)</i> </li>
+      </ul>
+      <p> <b>Masking</b> </p>
+      <ul>
+        <li><strong>masked</strong> (default modifier)<br>
+          The following masking rules and special characters apply for search 
+          terms, unless overridden in a profile via a relation modifier. To explicitly 
+          request this functionality, add 'cql.masked' as a relation modifier.
+          <p></p>
+          <ol>
+        <li>A single asterisk (*) is used to mask zero or more characters.
+          </p>
+        </li>
+            <li>A single question mark (?) is used to mask a single character, 
+              thus N consecutive question-marks means mask N characters.
+              </p>
+        </li>
+            <li>Carat/hat (^) is used as an anchor character for terms that are 
+              word lists, that is, where the relation is 'all' or 'any', or 
+              'adj'. It may not be used to anchor a string, that is, when the 
+              relation is '==' (string matches are, by default, anchored). It 
+              may occur at the beginning or end of a word (with no intervening 
+              space) to mean right or left anchored."^" has no special meaning 
+              when it occurs within a word (not at the beginning or end) or 
+              string but must be escaped nevertheless.
+              </p>
+        </li>
+            <li> Backslash (\) is used to escape '*', '?', quote (") and '^' , 
+              as well as itself. Backslash not followed immediately by one of 
+              these characters is an error.&nbsp;</li>
+          </ol>
+          <p>Examples: </p>
+          <ul>
+        <li>dc.title = <span class="highlight">c*t</span><br>
+            <i>Matches words that start with c and end in t</i> </li>
+            <li>dc.title adj <span class="highlight">"*fish food*"</span><br>
+            <i>Matches a word that ends in fish, followed by a word that starts 
+              with food</i> </li>
+            <li>dc.title = <span class="highlight">c?t</span><br>
+            <i>Matches a three letter word that starts with c and ends in t.</i> </li>
+            <li>dc.title adj <span class="highlight">"^cat in the hat"</span><br>
+            <i>Matches 'cat in the hat' where it is at the beginning of the 
+              field</i> </li>
+            <li>dc.title any <span class="highlight">"^cat ^dog rat^"</span><br>
+            <i>Matches cat at the beginning, dog at the beginning or rat at 
+              the end</i> </li>
+            <li>dc.title == <span class="highlight">"\"Of Couse\", she said"</span><br>
+            <i>Escape internal double quotes within the term.</i> </li>
+          </ul>
+        </li>
+        <li><strong>unmasked</strong><br>
+          Do not apply masking rules, all characters are literal.</li>
+      </ul>
+      <ul>
+        <li><strong>substring<br>
+          </strong> The 'substring' modifier may be used to specify a range of 
+          characters (first and last character) indicating the desired substring 
+          within the field to be searched. The modifier takes a value, of the 
+          form "start:end" where start and end obey the following rules:
+          <ol>
+                <li>Positive integers count forwards through the string, starting 
+                  at 1. The first character is 1, the tenth character is 10. </li>
+            <li>Negative integers count backwards through the string, with -1 
+              being the last character. </li>
+            <li>Both start and end are inclusive of that character. </li>
+            <li>If omitted, start defaults to 1 and end defaults to -1. </li>
+          </ol>
+          <p> Examples: </p>
+          <ul>
+                <li>marc.008 =<span class="highlight">/substring="1:6"</span> 920102 </li>
+            <li>dc.title =<span class="highlight">/substring=":"</span> "The entire 
+              title" </li>
+            <li>dc.title =<span class="highlight">/substring="2:2"</span> h </li>
+            <li>dc.title =<span class="highlight">/substring="-5:"</span> title </li>
+          </ul>
+        </li>
+        <li><strong>regexp</strong><br>
+          The term should be treated as a regular expression. Any features beyond 
+          those found in modern POSIX regular expressions are considered to be 
+          server dependent. This modifier overrides the default 'masked' modifier, 
+          above. It may be used in either a string or word context.
+          <p>Examples:</p>
+          <ul>
+        <li>dc.title adj<span class="highlight">/regexp "(lord|king|ruler) 
+          of th[ea] r.*s"</span><br>
+                      <i>Match lord or king or ruler, followed by of, followed by the 
+                        or tha, followed by r plus zero or more characters plus s</i></li>
+          </ul>
+        </li>
+      </ul>
+      <br>
+      <hr>
+      <a name="booleans"></a>
+      <h2>BOOLEANS</h2>
+      <p> The CQL context set does not define booleans, as these can only be defined 
+        by the CQL grammar. It gives the semantics of the booleans defined. </p>
+      <ul>
+        <li><strong>AND</strong><br>
+          The combination of two sets of records with AND will result in the 
+          set of records that appear in both of the sets.
+          </p>
+        </li>
+        <li><strong>OR</strong><br>
+          The combination of two sets of records with OR will result in the 
+          set of records that appear in either or both of the sets. It is therefor 
+          inclusive OR, not exclusive OR.
+          </p>
+        </li>
+        <li><strong>NOT</strong><br>
+          The combination of two sets of records with NOT will result in the 
+          set of records that appear in the left set, but not in the right hand 
+          set. It cannot be used as a unary operator.
+          </p>
+        </li>
+        <li><strong>PROX</strong><br>
+          The prox (short for proximity) boolean operator allows for the relative 
+          locations of the terms to be used in order to determine the resulting 
+          set of records. The semantics of when a match occurs is defined by 
+          the modifiers or defaults for those modifiers, as described below.
+          </p>
+        </li>
+      </ul>
+      <br>
+      <hr>
+      <a name="boolmods"></a>
+      <h2>BOOLEAN MODIFIERS</h2>
+      <p>The CQL context set defines four boolean modifiers, which are only used 
+        with the prox boolean operator.</p>
+      <ul>
+        <li><strong>distance <i>symbol value</i></strong><br>
+          The distance that the two terms should be separated by.
+          <ol>
+        <li>Symbol is one of: &lt; &gt; &lt;= &gt;= = &lt;&gt;<br>
+          If the modifier is not supplied, it defaults to &lt;=. </li>
+            <li>Value is a non-negative integer. <br>
+              If the modifier is not supplied, it defaults to 1 when unit=word, 
+              or 0 for all other units. </li>
+          </ol>
+        </li>
+        <li><strong>unit=<i>value</i></strong><br>
+          The type of unit for the distance. <br>
+          Value is one of: 'paragraph', 'sentence', 'word' and 'element', and 
+          defaults to 'word'. 
+          &nbsp;These values are explicitly undefined. They are subject to interpretation
+          by the server.&nbsp; See <a href="#proxunits">Proximity Units</a>. </li>
+        <li><strong>unordered</strong><br>
+          The order of the two terms is unimportant. This is the default.
+          </p>
+        </li>
+        <li><strong>ordered</strong><br>
+          The order of the two terms must be as per the query. </li>
+      </ul>
+      <p><em>Examples: </em></p>
+      <ul>
+        <li>cat prox<span class="highlight">/unit=word/distance&gt;2/ordered</span> hat<br>
+            <i>Find 'cat' where it appears more than two words before 'hat'</i>.<br>
+          (&quot;ordered&quot; means 'cat' and 'hat' in that order. &quot;distance &gt;2&quot; means that the proximity between 'cat' and 'hat' is greater than two words. 
+          Would exclude "Cat in the Hat" but would   find "The Big Red Cat in the Big Red Hat".) </li>
+        <li>cat prox<span class="highlight">/unit=paragraph</span> hat<br>
+            <i>Find cat and hat appearing in the same paragraph (distance defaulting 
+              to 0) in either order (unordered default)</i> </li>
+        <li>zeerex.set = cql prox<span class="highlight">/unit=element/distance=0</span> zeerex.index = resultSetId<br>
+            <i>Find the cql context set in the same element as the index name resultSetId. 
+              E.g. search for cql.resultSetId</i></li>
+      </ul>
+      <p>&nbsp;</p>
+      <h4><a name="proxunits"></a>Proximity Units </h4>
+      <p>As noted above proximity units 'paragraph', 'sentence', 'word' and 'element'
+        are explicitly undefined, that is, they are undefined when used by the
+        CQL context set. Other context sets may assign them specific values. <br>
+          <br>
+        Thus compare&nbsp; "prox/unit=word"&nbsp; with "prox/xyz.unit=word".
+        In the first, 'unit' is a prox modifier from the CQL set, and as such
+        its values are undefined, so 'word' is subject to interpretation by the
+        server. In the second, 'unit' is a prox modifier defined by the xyz context
+        set, which may assign&nbsp; the unit 'word' a specific meaning.</p>
+      <p>Other context sets may define additional units, for example, 'street':</p>
+      <p align="center"> prox/xyz.unit="street"</p>
+      <p>Note that this approach, 'prox/xyz.unit="street"', is preferable to
+        'Prox/unit=xyz.street'. In the first case, 'unit' is a modifier defined
+        in the xyz context set, and 'street' is a value defined for that modifier.
+        In the second, 'unit' is a modifier from the cql context set, with a
+        value defined in a different set. so its value would have to be one that
+        is defined in the cql context set. Pairing a modifier from one set with
+        a value from another is not a good practice.</p>
+      <p>&nbsp;</p>
+		 <hr class="dashed">
+      <h2>&nbsp;</h2>
+      <!-- InstanceEndEditable -->
+      <div id="breadcrumbs-bottom"><a href="../../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-bottom" --><a href="../index.html">CQL</a>&nbsp;&raquo;the CQL Context Sete<!-- InstanceEndEditable --></div>
+</td></tr>
+
+</table>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://www.loc.gov/">The 
+        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../../index.html">SRU</a></div>
+      <br>
+  <span class="sitenav">
+  <!-- #BeginDate format:Am1 -->December 11, 2013<!-- #EndDate -->
+  </span></td>
+<td align="right"><div class="contactus"><a href="mailto:ndmso@loc.gov">Contact Us</a></div></td>
+</tr></table>
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/subpage.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>SRU is Simple - SRU: Search/Retrieval via URL, Standards, Library of Congress</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link type="text/css" media="print" href="../css/sru-print.css" rel="stylesheet">
+<style type="text/css" media="screen">
+@import url(../css/sru-base.css);
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="shortcut icon" href="http://www.loc.gov:8081/standards/sru/images/favicon.ico">
+<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<form action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" name="seek1" method="get">
+<input type="hidden" name="col" value="loc">
+<input type="hidden" name="sc" value="0">
+<input type="hidden" name="ws" value="0">
+<input type="hidden" name="la" value="en">
+<input type="hidden" name="qm" value="0">
+<input type="hidden" name="st" value="1">
+<input type="hidden" name="nh" value="10">
+<input type="hidden" name="lk" value="1">
+<input type="hidden" name="rf" value="0">
+<input type="hidden" name="oq" value="">
+<input type="hidden" name="si" value="0">
+<input type="hidden" name="rq" value="0">
+<input type="hidden" name="qc" value="">
+<table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
+  <div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div></td>
+<td width="116"><select name="qp" tabindex="1">
+<option value="url:/sru" selected>SRU Web Pages</option>
+<option value="url:/standards url:/ead url:/marc">Standards Pages</option>
+<option value="">All Library Pages</option>
+</select></td><td width="117" align="right"><input type="text" name="qt" id="keyword" size="18" value="" tabindex="2"></td>
+<td width="67" align="right"><input class="button" id="search_button" name="search_button" type="submit" value="SEARCH" tabindex="3"></td>
+</tr></table></form>
+<table align="center" class="layout" cellpadding="0" cellspacing="0"><tr><td>
+<div id="graphic"> 
+<h1 class="homepage"><img src="../images/sru.gif" alt="SRU (Search/Retrieval Using URL)" width="600" height="50"></h1>
+</div>
+<div class="goldtop"></div>
+      <div id="breadcrumbs"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-top" -->sru
+          simple <!-- InstanceEndEditable --></div>
+<div class="clear"><a name="skip_menu"></a></div>
+ <!-- InstanceBeginEditable name="content" --> 
+      <h1>SRU is Simple!</h1>
+      <p>This page illustrates how simple SRU is.&nbsp; Click
+        on the links below for a demonstration; each link is an SRU URL representing an SRU request.
+        Clicking
+        on the link will result in the corresponding SRU response.</p>
+      <hr>
+      <ol>
+        <li><strong>Start with an Explain request</strong>.<br>
+            <br>
+          <a href="http://lx2.loc.gov:210/LCDB">http://lx2.loc.gov:210/LCDB<br>
+            <br>
+          </a>The Explain record for an SRU server is an XML document that
+            explains features, defaults, etc. It may be used by a client to self-configure
+            and allow it to fully interoperate with the server.&nbsp;<br>
+            As an example,
+            for the above server/database (http://lx2.loc.gov:210/LCDB) you can see that &quot;title&quot; is
+            a supported index, within context set &quot;dc&quot;. That means that the query &quot;dc.title=&lt;search term&gt;&quot; is supported. This is used in step 6 below. <br> 
+          Advanced clients may use Explain information
+          in more sophisticated ways, but this is not strictly necessary. Most
+          clients don't rely on Explain.<br>
+          <br>
+        </li>
+        <li><strong>Next, a simple search for the term &quot;dinosaur&quot;.</strong><br>
+            <br>
+            <a href="http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=dinosaur">http://lx2.loc.gov:210/lcdb?<br>
+              version=1.1&amp; operation=searchRetrieve&amp;query=dinosaur</a><br>
+          <br>
+          For this SRU request, no records are requested in the response. The
+          response shows that there are 2492 records containing the term &quot;dinosaur&quot;.
+          (This is subject to change.)<br><br>
+        </li>
+        <li><strong>Now the user wants to see the first of the 2492 records.</strong><br>
+            <br>
+            <a href="http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=dinosaur&maximumRecords=1">http://lx2.loc.gov:210/lcdb?<br>
+              version=1.1&amp;operation=searchRetrieve&amp;query=dinosaur&amp;maximumRecords=1</a><br>
+          <br>
+          The response includes a single record -- a marcxml record.&nbsp; Note
+          that the request does not specify a particular schema for the record-to-be-retrieved,
+          and so the default, marcxml, is used.<br><br>
+        </li>
+        <li> <strong>Retrieve the same record, different schema -- DC.<br>
+              <br>
+          </strong><a href="http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=dinosaur&maximumRecords=1&recordSchema=dc">http://lx2.loc.gov:210/lcdb?<br>
+            version=1.1&amp;operation=searchRetrieve&amp;<br>
+            query=dinosaur&amp;maximumRecords=1&amp;recordSchema=dc</a><br>
+          <br>
+          Again the response includes a single record -- this time a DC record.&nbsp; Note
+          that DC is one of the supported-schemas listed in the Explain record.<br><br>
+        </li>
+        <li><strong>Retrieve the next five records, this time, MODS records:<br>
+              <br>
+          </strong><a href="http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=dinosaur&startRecord=2&maximumRecords=5&recordSchema=mods">http://lx2.loc.gov:210/lcdb?<br>
+            version=1.1&amp;operation=searchRetrieve&amp;<br>
+            query=dinosaur&amp;startRecord=2&amp;maximumRecords=5&amp;recordSchema=mods</a><br>
+          <br>
+          This request says start with record 2 and return five records. The response includes five MODS records, each wrapped with a &lt;recordPostition&gt;,
+          two through six.<br><br>
+        </li>
+        <li><strong>Search for &quot;dinosaur&quot; in the title.</strong><br>
+            <br>
+            <a href="http://lx2.loc.gov:210/lcdb?version=1.1&operation=searchRetrieve&query=dc.title=dinosaur">http://lx2.loc.gov:210/lcdb?<br>
+              version=1.1&amp;operation=searchRetrieve&amp;<br>
+              query=dc.title=dinosaur</a><br>
+          <br>
+          This query turned up 1928 records (as in step 2, the number is
+          subject to change). <br>
+        </li>
+      </ol>
+ <!-- InstanceEndEditable -->
+      <div id="breadcrumbs-bottom"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-bottom" -->sru
+          simple <!-- InstanceEndEditable --></div>
+</td></tr>
+
+</table>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://www.loc.gov/">The 
+        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div>
+      <br>
+  <span class="sitenav">
+  <!-- #BeginDate format:Am1 -->December 27, 2013<!-- #EndDate -->
+  </span></td>
+<td align="right"><div class="contactus"><a href="mailto:ndmso@loc.gov">Contact Us</a></div></td>
+</tr></table>
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="info:lc/xmlns/rmd-v1" targetNamespace="info:lc/xmlns/rmd-v1" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.loc.gov/mods/xml.xsd"/>
+	<!-- 
+***************root element <recordMetadata> 
+-->
+	<xs:element name="recordMetadata" type="recordMetadataComplexType"/>
+	<!-- 
+*************** complexType recordMetadataComplexType"
+-->
+	<xs:complexType name="recordMetadataComplexType">
+		<xs:choice maxOccurs="unbounded">
+			<!--  
+List of metadata elements 
+-->
+			<xs:element ref="size"/>
+			<xs:element ref="id"/>
+			<xs:element ref="lang"/>
+			<xs:element ref="within"/>
+			<xs:element ref="score"/>
+			<xs:element ref="rank"/>
+			<xs:element ref="modifiableBy"/>
+			<xs:element ref="creationDateTime"/>
+			<xs:element ref="creator"/>
+			<xs:element ref="modification"/>
+			<xs:element ref="cost"/>
+			<!--  
+end List of metadata elements 
+-->
+		</xs:choice>
+		<xs:attribute name="version">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="1.1"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<!--  
+
+*****************element declarations.  All these elements may be referenced individually by other schemas
+-->
+	<!--
+  <size>  in bytes -->
+	<xs:element name="size" type="xs:integer"/>
+	<!--
+  <id>  -->
+	<xs:element name="id" type="xs:string"/>
+	<!-- 
+ <lang>   ISO 639-2b-->
+	<xs:element name="lang" type="xs:string"/>
+	<!--  
+<within>     (?) -->
+	<xs:element name="within"/>
+	<!-- 
+ <score>  from 0 to 100 -->
+	<xs:element name="score"/>
+	<!-- 
+ <rank>  from 1 to result set size -->
+	<xs:element name="rank"/>
+	<!--  
+<modifiableBy>  -->
+	<xs:element name="modifiableBy" type="xs:string"/>
+	<!-- 
+ <creationDateTime>  -->
+	<xs:element name="creationDateTime" type="xs:dateTime"/>
+	<!-- 
+ <creator>  -->
+	<xs:element name="creator" type="xs:string"/>
+	<!-- 
+
+ <modification>  -->
+	<xs:element name="modification" type="modificationComplexType"/>
+	<!-- 
+ <cost>  -->
+	<xs:element name="cost" type="costComplexType"/>
+	<!--  
+***** End element declarations.  
+
+************** complexTypes
+
+** costComplexType  -->
+	<xs:complexType name="costComplexType">
+		<xs:sequence>
+			<xs:element ref="costAmount"/>
+			<xs:element ref="costCurrencyCode"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!--  
+
+** costComplexType  -->
+	<xs:complexType name="modificationComplexType">
+		<xs:sequence>
+			<xs:element ref="modifiedBy"/>
+			<xs:element ref="modificationDateTime"/>
+			<xs:element ref="modificationDescription"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!--  
+
+** additional element declarations
+  -->
+	<xs:element name="costAmount" type="xs:decimal"/>
+	<xs:element name="costCurrencyCode" type="xs:string"/>
+	<!-- currency code, ISO 4217  -->
+	<xs:element name="modifiedBy" type="xs:string"/>
+	<xs:element name="modificationDateTime" type="xs:dateTime"/>
+	<xs:element name="modificationDescription" type="xs:string"/>
+	<!--  -->
+</xs:schema>

@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/subpage.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>DC Record Schema (SRU: Search/Retrieval via URL -- SRU, CQL and ZeeRex, Standards, Library of Congress)</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link type="text/css" media="print" href="../css/sru-print.css" rel="stylesheet">
+<style type="text/css" media="screen">
+@import url(../css/sru-base.css);
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="shortcut icon" href="http://www.loc.gov:8081/standards/sru/images/favicon.ico">
+<!-- InstanceBeginEditable name="head" -->
+<meta name="keywords" content="dc record schema sru version 1.2 specifications sru search retrieval url cql zeerex standards library congress">
+<meta name="description" content="DC Record Schema (SRU Resources). SRU is a standard XML-focused search protocol for Internet search queries, utilizing CQL (Contextual Query Language), a standard syntax for representing queries. Standards, The Library of Congress.">
+<!-- InstanceEndEditable -->
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<form action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" name="seek1" method="get">
+<input type="hidden" name="col" value="loc">
+<input type="hidden" name="sc" value="0">
+<input type="hidden" name="ws" value="0">
+<input type="hidden" name="la" value="en">
+<input type="hidden" name="qm" value="0">
+<input type="hidden" name="st" value="1">
+<input type="hidden" name="nh" value="10">
+<input type="hidden" name="lk" value="1">
+<input type="hidden" name="rf" value="0">
+<input type="hidden" name="oq" value="">
+<input type="hidden" name="si" value="0">
+<input type="hidden" name="rq" value="0">
+<input type="hidden" name="qc" value="">
+<table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
+  <div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div></td>
+<td width="116"><select name="qp" tabindex="1">
+<option value="url:/sru" selected>SRU Web Pages</option>
+<option value="url:/standards url:/ead url:/marc">Standards Pages</option>
+<option value="">All Library Pages</option>
+</select></td><td width="117" align="right"><input type="text" name="qt" id="keyword" size="18" value="" tabindex="2"></td>
+<td width="67" align="right"><input class="button" id="search_button" name="search_button" type="submit" value="SEARCH" tabindex="3"></td>
+</tr></table></form>
+<table align="center" class="layout" cellpadding="0" cellspacing="0"><tr><td>
+<div id="graphic"> 
+<h1 class="homepage"><img src="../images/sru.gif" alt="SRU (Search/Retrieval Using URL)" width="600" height="50"></h1>
+</div>
+<div class="goldtop"></div>
+      <div id="breadcrumbs"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-top" --><a href="../resources/index.html">resources</a>&nbsp;&raquo; 
+        dc schema<!-- InstanceEndEditable --></div>
+<div class="clear"><a name="skip_menu"></a></div>
+ <!-- InstanceBeginEditable name="content" --> 
+      <h1>DC Schema for SRU</h1>
+      <p> <img src="http://www.loc.gov/images/arrow_o.gif" alt="" width="9" height="9"> 
+        <span class="selected">see also </span><a href="dc-schema.xsd">.xsd</a></p>
+      <div class="box2"><p>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;<br>
+        &lt;!-- edited with XML Spy v4.0 U (http://www.xmlspy.com) by Ray Denenberg 
+        (Library of Congress) --&gt;<br>
+        &lt;!-- DC Schema for SRU. February 13, 2004 --&gt;<br>
+        &lt;schema targetNamespace=&quot;info:srw/schema/1/dc-schema&quot; xmlns=&quot;http://www.w3.org/2001/XMLSchema&quot;<br>
+        xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot; xmlns:srw_dc=&quot;info:srw/schema/1/dc-schema&quot;<br>
+        elementFormDefault=&quot;qualified&quot; attributeFormDefault=&quot;unqualified&quot;&gt;<br>
+        <br>
+        &lt;import namespace=&quot;http://purl.org/dc/elements/1.1/&quot; schemaLocation=&quot;http://dublincore.org/schemas/xmls/simpledc20021212.xsd&quot;/&gt;<br>
+        &lt;!-- Allows for either (1) a single DC record (element &quot;&lt;srw_dc:dc&gt;&quot;), 
+        or (2) a collection of DC records (element &quot;&lt;srw_dc:dcCollection&gt;&quot;). 
+        <br>
+        Root element declarations: <br>
+        --&gt;</p>
+      <p>&lt;element name=&quot;dc&quot; type=&quot;srw_dc:srw_dcType&quot;/&gt;<br>
+        &lt;element name=&quot;dcCollection&quot; type=&quot;srw_dc:dcCollectionType&quot;/&gt;<br>
+        <br>
+        &lt;!--<br>
+        End root element declarations:<br>
+        --&gt;<br>
+        <br>
+        &lt;complexType name=&quot;srw_dcType&quot;&gt;<br>
+        &nbsp;&nbsp;&nbsp;&lt;choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;element ref=&quot;dc:title&quot;/&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;element ref=&quot;dc:creator&quot;/&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;element ref=&quot;dc:subject&quot;/&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;element ref=&quot;dc:description&quot;/&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;element ref=&quot;dc:publisher&quot;/&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;element ref=&quot;dc:contributor&quot;/&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;element ref=&quot;dc:date&quot;/&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;element ref=&quot;dc:type&quot;/&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;element ref=&quot;dc:format&quot;/&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;element ref=&quot;dc:identifier&quot;/&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;element ref=&quot;dc:source&quot;/&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;element ref=&quot;dc:language&quot;/&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;element ref=&quot;dc:relation&quot;/&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;element ref=&quot;dc:coverage&quot;/&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;element ref=&quot;dc:rights&quot;/&gt;<br>
+        &nbsp;&nbsp;&nbsp;&lt;/choice&gt;<br>
+        &lt;/complexType&gt;<br>
+        &lt;complexType name=&quot;dcCollectionType&quot;&gt;<br>
+        &nbsp;&nbsp;&nbsp;&lt;sequence&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;element ref=&quot;srw_dc:dc&quot; 
+        maxOccurs=&quot;unbounded&quot;/&gt;<br>
+        &nbsp;&nbsp;&nbsp;&lt;/sequence&gt;<br>
+        &lt;/complexType&gt;</p>
+      <p> &lt;/schema&gt;<br>
+      </p>
+	  </div>
+      <h1>&nbsp;</h1>
+      <!-- InstanceEndEditable -->
+      <div id="breadcrumbs-bottom"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-bottom" --><a href="../resources/index.html">resources</a>&nbsp;&raquo; 
+        dc schema<!-- InstanceEndEditable --></div>
+</td></tr>
+
+</table>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://www.loc.gov/">The 
+        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div>
+      <br>
+  <span class="sitenav">
+  <!-- #BeginDate format:Am1 -->July 9, 2007<!-- #EndDate -->
+  </span></td>
+<td align="right"><div class="contactus"><a href="mailto:ndmso@loc.gov">Contact Us</a></div></td>
+</tr></table>
+</body>
+<!-- InstanceEnd --></html>

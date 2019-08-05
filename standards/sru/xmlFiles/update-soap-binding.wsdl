@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!-- Update Initial Draft --> 
+<!-- 3rd November 2004 --> 
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:ucp-interfaces="http://www.loc.gov/zing/srw/update/interfaces/" xmlns:ucp-soap-binding="http://www.log.gov/zing/srw/update/soap-binding/" xmlns:xcql="http://www.loc.gov/zing/cql/xcql/" xmlns:srw="http://www.loc.gov/zing/srw/" xmlns:diag="http://www.loc.gov/zing/srw/diagnostic/" xmlns:ucp="http://www.loc.gov/zing/srw/update" targetNamespace="http://www.loc.gov/zing/srw/update/soap-binding" > 
+<import namespace="http://www.loc.gov/zing/srw/update/interfaces/" location="update-ports.wsdl" /> 
+<binding name="SOAPBinding" type="ucp-interfaces:updateInterface" > 
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" /> 
+<operation name="update" > 
+<soap:operation soapAction="" style="document" /> 
+<input> 
+<soap:body use="literal" /> 
+</input> 
+<output> 
+<soap:body use="literal" /> 
+</output> 
+</operation> 
+<operation name="explain" > 
+<soap:operation soapAction="" style="document" /> 
+<input> 
+<soap:body use="literal" /> 
+</input> 
+<output> 
+<soap:body use="literal" /> 
+</output> 
+</operation> 
+</binding> 
+</definitions> 

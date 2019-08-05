@@ -1,0 +1,538 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/subpage.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<!-- InstanceBeginEditable name="doctitle" --> 
+<title>searchRetrieve Operation: SRU Version 1.2 Specifications (SRU: Search/Retrieval 
+via URL -- SRU, CQL and ZeeRex, Standards, Library of Congress)</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link type="text/css" media="print" href="css/sru-print.css" rel="stylesheet">
+<style type="text/css" media="screen">
+@import url(css/sru-base.css);
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="shortcut icon" href="http://lcnetdev.github.io/standards/sru/images/favicon.ico">
+<!-- InstanceBeginEditable name="head" --> 
+<meta name="keywords" content="search retrieve operation sru version 1.2 specifications sru search retrieval url cql zeerex standards library congress">
+<meta name="description" content="searchRetrieve Operation: SRU Version 1.2 Specifications. SRU is a standard XML-focused search protocol for Internet search queries, utilizing CQL (Contextual Query Language), a standard syntax for representing queries. Standards, The Library of Congress">
+<!-- InstanceEndEditable -->
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<form action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" name="seek1" method="get">
+<input type="hidden" name="col" value="loc">
+<input type="hidden" name="sc" value="0">
+<input type="hidden" name="ws" value="0">
+<input type="hidden" name="la" value="en">
+<input type="hidden" name="qm" value="0">
+<input type="hidden" name="st" value="1">
+<input type="hidden" name="nh" value="10">
+<input type="hidden" name="lk" value="1">
+<input type="hidden" name="rf" value="0">
+<input type="hidden" name="oq" value="">
+<input type="hidden" name="si" value="0">
+<input type="hidden" name="rq" value="0">
+<input type="hidden" name="qc" value="">
+<table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
+  <div class="sitenav"><a href="http://lcnetdev.github.io/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://lcnetdev.github.io/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="index.html">SRU</a></div></td>
+<td width="116"><select name="qp" tabindex="1">
+<option value="url:/sru" selected>SRU Web Pages</option>
+<option value="url:/standards url:/ead url:/marc">Standards Pages</option>
+<option value="">All Library Pages</option>
+</select></td><td width="117" align="right"><input type="text" name="qt" id="keyword" size="18" value="" tabindex="2"></td>
+<td width="67" align="right"><input class="button" id="search_button" name="search_button" type="submit" value="SEARCH" tabindex="3"></td>
+</tr></table></form>
+<table align="center" class="layout" cellpadding="0" cellspacing="0"><tr><td>
+<div id="graphic"> 
+<h1 class="homepage"><img src="images/sru.gif" alt="SRU (Search/Retrieval Using URL)" width="600" height="50"></h1>
+</div>
+<div class="goldtop"></div>
+      <div id="breadcrumbs"><a href="index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-top" -->&nbsp;searchretrieve operation 1.2 <!-- InstanceEndEditable --></div>
+<div class="clear"><a name="skip_menu"></a></div>
+ <!-- InstanceBeginEditable name="content" --> 
+      <h1>SRU VERSION 1.2 </h1>
+      <h1>SRU Search/Retrieve Operation </h1>
+      <p><span class="selected">SECTIONS:</span> <a href="#params">Parameters</a> 
+        | <a href="#records">Records</a> | <a href="#resultsets">Result Sets</a>&nbsp;|&nbsp;<a href="#whatsNew">What's new in 1.2?</a></p>
+      <p>The searchRetrieve operation is the main operation in SRU. It allows
+         the client to submit a search and retrieve request for matching records
+        from the server.</p>
+      <h2><a name="params"></a>PARAMETERS</h2>
+      <h3>Request Parameters</h3>
+      <table class="standard">
+        <tr> 
+          <th width="17%" scope="col">Name</th>
+          <th width="21%" scope="col">Mandatory/Optional?</th>
+          <th width="62%" scope="col">Description</th>
+        </tr>
+        <tr valign="top"> 
+          <td scope="row"><strong>operation</strong></td>
+          <td>mandatory</td>
+          <td>The string: 'searchRetrieve'.</td>
+        </tr>
+        <tr valign="top"> 
+          <td scope="row"><strong>version</strong></td>
+          <td>mandatory</td>
+          <td>The version of the request, and a statement by the client that it 
+            wants the response to be less than, or preferably equal to, that version. 
+            See <a href="#version">Version</a>.</td>
+        </tr>
+        <tr valign="top"> 
+          <td scope="row"><strong>query</strong></td>
+          <td>mandatory</td>
+          <td>Contains a query expressed in CQL to be processed by the server. 
+            See <a href="/standards/sru/cql/">CQL</a>.</td>
+        </tr>
+        <tr valign="top"> 
+          <td scope="row"><strong>startRecord</strong></td>
+          <td>optional</td>
+          <td>The position within the sequence of matched records of the first 
+            record to be returned. The first position in the sequence is 1. The 
+            value supplied MUST be greater than 0. The default value if not supplied 
+            is 1.</td>
+        </tr>
+        <tr valign="top"> 
+          <td scope="row"><strong>maximumRecords</strong></td>
+          <td>optional</td>
+          <td>The number of records requested to be returned. The value must be 
+            0 or greater. Default value if not supplied is determined by the server. 
+            The server MAY return less than this number of records, for example 
+            if there are fewer matching records than requested, but MUST NOT return 
+            more than this number of records. </td>
+        </tr>
+        <tr valign="top"> 
+          <td scope="row"><strong>recordPacking</strong></td>
+          <td>optional</td>
+          <td>A string to determine how the record should be escaped in the response. 
+            Defined values are 'string' and 'xml'. The default is 'xml'. See <a href="#records">Records</a>.          </td>
+        </tr>
+        <tr valign="top"> 
+          <td scope="row"><strong>recordSchema</strong></td>
+          <td>optional</td>
+          <td>The schema in which the records MUST be returned. The value is the 
+            URI identifier for the schema or the short name for it published by 
+            the server. The default value if not supplied is determined by the 
+            server. See <a href="recordSchemas/index.html">Record Schemas</a>.<br> 
+            <br> <span class="old-ver">For version 1.1: If the recordXPath parameter 
+            is included, it is the abstract schema for purposes of evaluation 
+            by the XPath expression. </span></td>
+        </tr>
+        <tr valign="top"> 
+          <td class="old-ver" scope="row"><strong>recordXPath </strong>which was in 1.1 is excluded in 1.2. <br></td>
+          <td class="old-ver">&nbsp;</td>
+          <td class="old-ver">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td scope="row"><strong>resultSetTTL</strong></td>
+          <td>optional</td>
+          <td>The number of seconds for which the client requests that the result 
+            set created should be maintained. The server MAY choose not to fulfil 
+            this request, and may respond with a different number of seconds. 
+            If resultSetTTL is not supplied then the server will determine the 
+            value. See <a href="#resultsets">Result Sets</a>.</td>
+        </tr>
+        <tr valign="top"> 
+          <td class="old-ver" scope="row"><strong><a name="sortkeys"></a>sortKeys</strong><strong> </strong>which was in 1.1 is excluded in 1.2. </td>
+          <td class="old-ver">&nbsp;</td>
+          <td class="old-ver">&nbsp;</td>
+        </tr>
+        <tr valign="top"> 
+          <td scope="row"><strong>stylesheet</strong></td>
+          <td>optional</td>
+          <td>A URL for a stylesheet. The client requests that the server simply 
+            return this URL in the response. See <a href="#stylesheet">Stylesheets</a>.</td>
+        </tr>
+        <tr valign="top"> 
+          <td scope="row"><strong>extraRequestData</strong></td>
+          <td>optional</td>
+          <td>Provides additional information for the server to process. See <a href="extensions">Extensions</a>.</td>
+      </table>
+      <p><em>Example:</em></p>
+      <div class="example"> <a href="http://lx2.loc.gov:210/LCDB?version=1.1&operation=searchRetrieve&query=dinosaur&maximumRecords=1&recordSchema=mods">http://lx2.loc.gov:210/LCDB?<br>
+  version=1.1&amp;operation=searchRetrieve<br>
+&amp;query=dinosaur&amp;maximumRecords=1&amp;recordSchema=mods</a></div>
+      <p>This example is a search for the term "dinosaur", requesting that at 
+        most one record be returned, in the 'mods' schema.</p>
+      <h3>Response Parameters</h3>
+      <p>The response to an SRU searchRetrieve request is an XML document. The 
+        table below provides a summary and description of the elements provided 
+        by the XML document. The "Type" column indicates either an XML Schema 
+        type ("xsd:") or a type defined within the schema. </p>
+      <table class="standard">
+        <tr> 
+          <th scope="col" width="19%">Name</th>
+          <th scope="col" width="15%">Type</th>
+          <th scope="col" width="19%">Mandatory/Opetional?</th>
+          <th scope="col" width="47%">Description</th>
+        </tr>
+        <tr valign="top"> 
+          <td scope="row"><strong>version</strong></td>
+          <td><i>xsd:string</i></td>
+          <td>Mandatory</td>
+          <td>The version of the response. This MUST be less than or equal to 
+            the version requested by the client. See <a href="#version">Versions</a>.</td>
+        </tr>
+        <tr valign="top"> 
+          <td scope="row"><strong>numberOfRecords</strong></td>
+          <td><i>xsd:integer</i></td>
+          <td>Mandatory</td>
+          <td>The number of records matched by the query. If the query fails this 
+            MUST be 0.</td>
+        </tr>
+        <tr valign="top"> 
+          <td scope="row"><strong>resultSetId</strong></td>
+          <td><i>xsd:string</i></td>
+          <td>Optional</td>
+          <td>The identifier for a result set that was created through the execution 
+            of the query. See <a href="#resultsets">Result Sets</a>. </td>
+        </tr>
+        <tr valign="top"> 
+          <td scope="row"><strong>resultSetIdleTime</strong></td>
+          <td><i>xsd:integer</i></td>
+          <td>Optional</td>
+          <td>The number of seconds after which the created result set will be 
+            deleted. The result set may also become unavailable before this. See 
+            <a href="#resultsets">Result Sets</a>. </td>
+        </tr>
+        <tr valign="top"> 
+          <td scope="row"><strong>records</strong></td>
+          <td><i>sequence of &lt;record&gt;</i></td>
+          <td>Optional</td>
+          <td>A sequence of records matched by the query, or surrogate diagnostics. 
+            See <a href="#records">Records</a>.</td>
+        </tr>
+        <tr valign="top"> 
+          <td scope="row"><strong>nextRecordPosition</strong></td>
+          <td><i>xsd:integer</i></td>
+          <td>Optional</td>
+          <td>The next position within the result set following the final returned 
+            record. If there are no remaining records, this field MUST be omitted.          </td>
+        </tr>
+        <tr valign="top"> 
+          <td scope="row"><strong>diagnostics</strong></td>
+          <td><i>sequence of &lt;diagnostic&gt;</i></td>
+          <td>Optional</td>
+          <td>A sequence of non surrogate diagnostics generated during execution. 
+            See <a href="diagnostics">Diagnostics</a>.</td>
+        </tr>
+        <tr valign="top"> 
+          <td scope="row"><strong>extraResponseData</strong></td>
+          <td><i>&lt;xmlFragment&gt;</i></td>
+          <td>Optional</td>
+          <td>Additional information returned by the server. See <a href="extensions">Extensions</a>.</td>
+        </tr>
+        <tr valign="top"> 
+          <td scope="row"><strong>echoedSearch<br>
+            RetrieveRequest</strong></td>
+          <td><i>&lt;echoedSearch<br>
+            RetrieveRequest&gt;</i></td>
+          <td>Optional</td>
+          <td>The request parameters echoed back to the client in a simple XML 
+            form. See <a href="#echoedRequest">Echoing the Request</a>.</td>
+        </tr>
+      </table>
+      <h2><a name="records"></a>RECORDS</h2>
+      <p>All records in SRU are transferred in XML. Records are not assumed to 
+        be stored in XML. Records which are not natively XML must be first transformed 
+        into XML before being transferred. Records in the response may be expressed 
+        as a single string, or as embedded XML. If a record is transferred as 
+        embedded XML, it must be well-formed and should be validatable against 
+        the record schema.</p>
+      <p>The records parameter in the response is a sequence of <strong>record</strong> 
+        elements, each of which contains either a record or a surrogate <a href="diagnostics/index.html">diagnostic</a> 
+        explaining why that particular record could not be transferred. If the 
+        record schema is unknown or the record cannot be rendered in that schema, 
+        then the server MUST return a diagnostic. </p>
+      <p> Each record element is structured into the following elements:</p>
+      <h3>Record Parameters</h3>
+      <table class="standard">
+        <tr> 
+          <th width="19%" scope="col">Name</th>
+          <th width="20%" scope="col">Type</th>
+          <th width="22%" scope="col">Mandatory/Optional?</th>
+          <th width="39%" scope="col">Description</th>
+        </tr>
+        <tr valign="top"> 
+          <td scope="row"><strong>recordSchema</strong></td>
+          <td><i>xsd:string</i></td>
+          <td>mandatory</td>
+          <td>The URI identifier of the XML schema in which the record is encoded.
+             Although the request may use the server's assigned short name, the
+             response must always be the full URI. See <a href="recordSchemas/index.html">Record
+              Schemas</a>.</td>
+        </tr>
+        <tr valign="top"> 
+          <td scope="row"><strong>recordPacking</strong></td>
+          <td><i>xsd:string</i></td>
+          <td>mandatory</td>
+          <td>The packing used in recordData, as requested by the client or the 
+            default. See below.</td>
+        </tr>
+        <tr valign="top"> 
+          <td scope="row"><strong>recordData</strong></td>
+          <td><i>&lt;stringOrXmlFragment&gt;</i></td>
+          <td>mandatory</td>
+          <td>The record itself, either as a string or embedded XML.</td>
+        </tr>
+        <tr valign="top"> 
+          <td scope="row"><strong>recordIdentifier</strong><b class="old-ver"><br>
+            (new in 
+            1.2) </b></td>
+          <td><i>xsd:string</i></td>
+          <td>optional<br> <br></td>
+          <td>An identifier for the record by which it can unambiguously be retrieved 
+            in a subsequent operation. For example via the 'rec.identifier' index 
+            in CQL.</td>
+        </tr>
+        <tr valign="top"> 
+          <td scope="row"><strong>recordPosition</strong></td>
+          <td><i>xsd:positiveInteger</i></td>
+          <td>optional</td>
+          <td>The position of the record within the result set. See <a href="#resultsets">Result
+               Sets</a>.</td>
+        </tr>
+        <tr valign="top"> 
+          <td scope="row"><strong>extraRecordData</strong></td>
+          <td><i>&lt;xmlFragment&gt;</i></td>
+          <td>optional</td>
+          <td>Any additional information to be transferred with the record. See 
+            <a href="extensions">Extensions</a>.</td>
+        </tr>
+      </table>
+      <p> An example record, in the simple Dublin Core schema, packed as XML:      </p>
+      <div class="example"> &lt;record&gt;<br />
+        &nbsp;&nbsp;&lt;recordSchema&gt;info:srw/schema/1/dc-v1.1&lt;/recordSchema&gt;<br />
+        &nbsp;&nbsp;&lt;recordPacking&gt;xml&lt;/recordPacking&gt;<br />
+        &nbsp;&nbsp;&lt;recordData&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;srw_dc:dc xmlns:srw_dc="info:srw/schema/1/dc-v1.1"&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;dc:title&gt;This is a Sample Record&lt;/dc:title&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/srw_dc:dc&gt;<br />
+        &nbsp;&nbsp;&lt;/recordData&gt;<br />
+        &nbsp;&nbsp;&lt;recordPosition&gt;1&lt;/recordPosition&gt;<br />
+        &nbsp;&nbsp;&lt;extraRecordData&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;rel:score xmlns:rel="info:srw/extensions/2/rel-1.0"&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0.965<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;/rel:rank&gt;<br />
+        &nbsp;&nbsp; &lt;/extraRecordData&gt;<br />
+        &lt;/record&gt;</div>
+      <h3>Record Packing</h3>
+      <p>In order that records which are not well formed do not break the entire 
+        message, it is possible to request that they be transferred as a single 
+        string with the &lt;, &gt; and &amp; characters escaped to their entity 
+        forms. Moreover some toolkits may not be able to distinguish record XML 
+        from the XML which forms the response. However, some clients may prefer 
+        that the records be transferred as XML in order to manipulate them directly 
+        with a stylesheet which renders the records and potentially also the user 
+        interface. </p>
+      <p>This distinction is made via the recordPacking parameter in the request. 
+        If the value of the parameter is 'string', then the server should escape 
+        the record before transfering it. If the value is 'xml', then it should 
+        embed the XML directly into the response. Either way, the data is transfered 
+        within the 'recordData' field. If the server cannot comply with this packing 
+        request, then it must return a <a href="diagnostics/index.html">diagnostic</a>.</p>
+      <h2><a name="resultsets"></a>RESULT SETS</h2>
+      <p>SRU does not assume support of persistent result sets -- that a result 
+        set created by one request may necessarily be accessed by a client in 
+        a subsequent request. SRU does expect the server to state whether or not 
+        it supports persistent result sets, and if so the result set model described 
+        <a href="#model">below</a> is required. </p>
+      <p>There are applications in which result sets are critical; on the other 
+        hand there are applications in which result sets are not viable. An example 
+        of the first might be scientific investigation of a database with comparison 
+        of data sets produced at different times. An example of the latter might 
+        be a very frequently used database of web pages in which persistent result 
+        sets would be an impossible burden on the infrastructure due to the frequency 
+        of use. </p>
+      <p>Even if the server does not make result sets available for public manipulation, 
+        the following model is also important to understand in order to allow 
+        a single request to both match records and then sort them. </p>
+      <h3><a name="model"></a>Result Set Model</h3>
+      <p> Processing of a query results in the selection of a set of records, 
+        represented by a result set maintained at the server; logically it is 
+        an ordered list of references to the records. Once created, a result set 
+        cannot be modified. Any operation which would somehow change a result 
+        set instead creates a new result set. Each result set is referenced via 
+        a unique identifying string, generated by the server when the result set 
+        is created. </p>
+      <p> From the client's point of view, the result set is a set of records 
+        each referenced by an ordinal number, beginning at 1. The client may request 
+        a given record from a result set according to a specific schema. For example 
+        the client may request record 1 in Dublin Core, and subsequently request 
+        record 1 in MODS. The requested schema is not a property of the result 
+        set (nor of the requested records as a member of the result set); the 
+        result set is simply the ordered list of records. </p>
+      <p> A record might be deleted or otherwise become unavailable while a result 
+        sets which references that record still exists. If a client then requests 
+        that record, the server is expected to supply a surrogate diagnostic in 
+        place of the record. For example, if the record at position 2 in a result 
+        set is deleted and then a client requests records 1 through 3, the server 
+        should supply, in order: record 1, a surrogate diagnostic for record 2, 
+        record 3. </p>
+      <p> The records in a result set are not necessarily ordered according to 
+        any specific or predictable scheme, unless it has been created with a 
+        request that contains a sort specification as part of the query. See <a href="sru-1-2/cql.html#sorting">sorting 
+        in CQL</a> for more information regarding 
+        the specifics of sorting. If search and sort specifications are supplied 
+        on the same request then only the final sorted result set is considered 
+        to exist, even if the server internally creates a result set and then 
+        sorts it. </p>
+      <h3>resultSetId</h3>
+      <p> If the server supports result sets, it may include a resultSetId in 
+        the searchRetrieve response, along with an idle time described below. 
+        If another query is submitted then the server will again supply a result 
+        set id. If the result of the query would modify an existing result set 
+        (for example, a request to sort an existing result set), then the server 
+        must supply a new id for this new set. The server should maintain unique 
+        names for each result set created, even if the result sets no longer exist, 
+        such that clients do not mistakenly request records from the new set when 
+        meaning to refer to the previous set with the same identifier. </p>
+      <h3>resultSetIdleTime</h3>
+      <p> The server may supply an idle time along with a result set. The server 
+        is making a good-faith estimate that the result set will remain available 
+        and unchanged (both in content and order) until a timeout (a period of 
+        inactivity exceeding the idle time). The idle time is an integer representing 
+        seconds; it must be a positive integer, and should not be so small that 
+        a client cannot realistically reference the result set again. If the server 
+        does not intend that the result set be referenced, it should omit the 
+        result set identifier in the response. </p>
+      <h2><a name="version"></a>VERSION</h2>
+      <p>In any actively developed protocol or piece of software, there is a
+        concern about interoperability between different versions. In SRU, there
+        is an explicit interoperability mechanism, with precisely defined semantics.
+        The mechanism defined allows for clients and servers using different
+        versions to interact without protocol level errors. Versions of SRU will
+        always be recorded as strings of the format 'major.minor' where major
+        and minor are independent integers. </p>
+      <p><i>Operations:</i> All SRU 1.2 operations have
+        a <strong>version</strong> parameter, with
+        the exception of the parameterless form of the explain request. </p>
+      <p>For example: </p>
+      <div class="example">http://lx2.loc.gov:210/LCDB?<strong>version=1.2</strong>&amp;operation=searchRetrieve&amp;query=dinosaur</div>
+      <p>The version parameter on a request both indicates the version of the
+        request and is a statement by the client that it wants the response to
+        be less than, or preferably equal to, that version. The version parameter
+        in the response message is the version of the response. If the server
+        cannot supply a response in that version or lower, then it must return
+        a diagnostic. If possible this diagnostic would be in the version requested
+        or lower, but that is not a requirement. Here are some examples of how
+        this works in practice. If a 2.0 client asks a 1.1 server for a 2.0 response,
+        then the server is able to respond with a 1.1 response as it is lower
+        than version 2.0. If a 1.1 client asks a 2.0 server for a 1.1 response
+        then the server is able to reduce its response version to accommodate
+        the client. If a 1.1 client asks a 1.1 server for a 1.1 response, then
+        there is no version mismatch and the server is able to accommodate the
+        request. Version 1.0 Version 1.0 was an experiment, and has been officially
+        deprecated. The version 1.0 implementation trial was very useful informing
+        the development of version 1.1, the first non-experimental version. Version
+        1.0 does not have a version parameter in any of the requests or responses
+        and hence cannot be considered to be part of this version interoperability
+        system. If a client requests version 1.0, then the server may return
+        a 1.0 response but is under no obligation to do so.Version Documentation
+        and Changes Documentation for all versions of SRU will be maintained
+        such that server and client authors are able to track changes between
+        versions. A summary document of changes between versions will also be
+        maintained. This version interoperability solution will only work so
+        long as there are no additional mandatory parameters added to a request,
+        and as such the SRU editorial board will endeavor to only ever add optional
+        elements. If there is a requirement to add a mandatory parameter to a
+        request, then this will be announced with as much prior warning as possible.
+        While only the documentation for the most recent version of the protocol
+        is maintained, the changes between versions are listed below. Note that
+        although version 1.0 is officially abandoned, the changes from 1.0 to
+        1.1 are listed, for the benefit of those who have already implemented
+        1.0. &raquo; <a href="sru-1-2/whatsnew.html">Changes between Versions</a></p>
+      <h2><a name="stylesheet"></a>STYLESHEETS</h2>
+      <p>In order to render the response, "thin" clients
+        may provide a stylesheet to turn the response XML into a natively renderable
+        format, often HTML or XHTML. This allows a web browser, or other application
+        capable of rendering stylesheets, to act as a dedicated client without
+        requiring any further application logic. The <a href="#echoedRequest">echoedRequest</a> parameter
+        on the response enables a client to use this stylesheet to also have
+        the request it just made available without any client side logic.</p>
+      <p> <i>Operations</i>: All
+        operations, other than the parameterless explain request, have the <strong>stylesheet</strong> parameter. </p>
+      <p>The value of the parameter is the URL of the stylesheet to be included
+        in the response. This URL is to be included in the href attribute of
+        the xml-stylesheet processing instruction before the response xml. It
+        is likely that the type will be XSL, but not necessarily. If the server
+        cannot fulfill this request it must supply a <a href="diagnostics/index.html">diagnostic</a>.
+        This parameter may not be used with SRU via SOAP. It is a SOAP error
+        to return a stylesheet, and hence an error to request one. If this parameter
+        is not supplied, then the server can, at its discretion, include a default
+        stylesheet. The default stylesheet URL may be included in the explain
+        document. For example, upon receiving the request . . . </p>
+      <div class="example">http://lx2.loc.gov:210/LCDB?version=1.2&amp;operation=searchRetrieve<br>
+  &amp;<strong>stylesheet=/master.xsl</strong>&amp;query=dinosaur</div>
+      <p>. . . the server must include the following as beginning of the response: </p>
+      <div class="example">&lt;?xml version="1.0"?&gt;<br>
+          <strong>&lt;?xml-stylesheet type="text/xsl" href="/master.xsl"?&gt;</strong><br>
+  &lt;sru:searchRetrieveResponse ... </div>
+      <hr class="dashed">
+      <h2><a name="echoedRequest"></a>ECHOING THE REQUEST </h2>
+      <p> Very thin clients, such as
+        a web browser with a stylesheet as above, may not have the facility to record
+        the query that generated the response it has just received. In order to prevent
+        clients having to maintain this information, the server may echo the request
+        back to the client along with the response. There are no request
+        elements associated with this functionality.</p>
+      <p> There is one response
+        element per parameter for the operation in which the request is echoed. The
+        name is the name of the response element prefixed by <strong>echoed</strong>.
+        The parameters are rendered into XML, as per the SRU over SOAP request.</p>
+      <p><b>xQuery</b> <br>
+        xQuery is an additional parameter for searchRetrieve and scan, which has the
+        query rendered in XCQL. This has two benefits: </p>
+      <ol>
+        <li> The client can use XSLT or other XML manipulation to modify the query without
+          having a CQL query parser. </li>
+        <li>The server can return extra information specific to the clauses within
+          the query. See the next section on extensions for more information. </li>
+      </ol>
+      <p><b>baseUrl</b><br>
+        A server can include is own base URL in the echoed request. This allows
+        the client to easily reconstruct queries by simple concatenation, or retrieve
+        the explain document to fetch additional information such as the title and
+        description to include in the results presented to the user. For example: </p>
+      <div class="example"> &lt;echoedSearchRetrieveRequest&gt;<br>
+  &lt;version&gt;1.2&lt;/version&gt;<br>
+  &lt;query&gt;dc.title = dinosaur&lt;/query&gt;<br>
+  &lt;recordSchema&gt;mods&lt;/recordSchema&gt;<br>
+  &lt;xQuery&gt;<br>
+  &lt;searchClause xmlns="http://lcnetdev.github.io/zing/cql/xcql/"&gt;<br>
+  &lt;index&gt;dc.title&lt;/index&gt;<br>
+  &lt;relation&gt;<br>
+  &lt;value&gt;=&lt;/value&gt;<br>
+  &lt;/relation&gt;<br>
+  &lt;term&gt;dinosaur&lt;/term&gt;<br>
+  &lt;/searchClause&gt;<br>
+  &lt;/xQuery&gt;<br>
+  &lt;baseUrl&gt;http://lx2.loc.gov:210/lcdb&lt;/baseUrl&gt; <br>
+  &lt;/echoedSearchRetrieveRequest&gt; </div>
+      <br>
+      <hr class="dashed">
+      <h2>&nbsp;</h2>
+      <h2>What's New in 1.2 <a name="whatsNew"></a></h2>
+      <ol>
+        <li>Record identifier (optional) added to record structure.</li>
+        <li> XCQL parameter becomes optional.</li>
+        <li> XPath parameter dropped (becomes an extension).</li>
+        <li> base url added to response.</li>
+        <li> record hits incorporated into xcql.</li>
+        <li> Z39.92 replaces explain.</li>
+        <li>Sorting is no longer a protocol function. </li>
+      </ol>
+      <p>&nbsp;</p>
+ <!-- InstanceEndEditable -->
+      <div id="breadcrumbs-bottom"><a href="index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-bottom" --><a href="sru-1-2/index.html">sru version </a>&nbsp;searchretrieve operation 1.2<!-- InstanceEndEditable --></div>
+</td></tr>
+</table>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://lcnetdev.github.io/">The 
+        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://lcnetdev.github.io/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="index.html">SRU</a></div>
+      <br>
+  <span class="sitenav">
+  <!-- #BeginDate format:Am1 -->November 26, 2018<!-- #EndDate -->
+  </span></td>
+<td align="right"><div class="contactus"><a href="mailto:ndmso@loc.gov">Contact Us</a></div></td>
+</tr></table>
+</body>
+<!-- InstanceEnd --></html>

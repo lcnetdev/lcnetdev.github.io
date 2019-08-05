@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<soapenv:Body>
+		<updateResponse xmlns="http://www.loc.gov/zing/srw/update/">
+			<ns1:version xmlns:ns1="http://www.loc.gov/zing/srw/">1.0</ns1:version>
+			<operationStatus>success</operationStatus>
+			<recordIdentifier>200225209</recordIdentifier>
+			<ns2:record xmlns:ns2="http://www.loc.gov/zing/srw/">
+				<ns2:recordSchema>info:srw/schema/1/marcxml-v1.1</ns2:recordSchema>
+				<ns2:recordPacking>xml</ns2:recordPacking>
+				<ns2:recordData>
+					<mx:record xmlns:mx="http://www.loc.gov/MARC21/slim">
+						<mx:controlfield tag="001">200225209</mx:controlfield>
+						<mx:leader>     cam a22     2i 4500</mx:leader>
+						<mx:controlfield tag="003">PICA</mx:controlfield>
+						<mx:controlfield tag="008">030605s2003    xxu           000 0 eng d</mx:controlfield>
+						<mx:datafield ind1=" " ind2=" " tag="010">
+							<mx:subfield code="a">   20027501 </mx:subfield>
+						</mx:datafield>
+						<mx:datafield ind1=" " ind2=" " tag="020">
+							<mx:subfield code="a">0766862801 (pbk.)</mx:subfield>
+						</mx:datafield>
+						<mx:datafield ind1=" " ind2=" " tag="020">
+							<mx:subfield code="a">9780766862807 (pbk.)</mx:subfield>
+						</mx:datafield>
+						<mx:datafield ind1="1" ind2=" " tag="029">
+							<mx:subfield code="a">NLGGC</mx:subfield>
+							<mx:subfield code="b">246861533</mx:subfield>
+						</mx:datafield>
+						<mx:datafield ind1=" " ind2=" " tag="040">
+							<mx:subfield code="a">NLGGC</mx:subfield>
+							<mx:subfield code="b">dut</mx:subfield>
+							<mx:subfield code="c">NLGGC</mx:subfield>
+							<mx:subfield code="e">fobidrtb</mx:subfield>
+						</mx:datafield>
+						<mx:datafield ind1=" " ind2="0" tag="050">
+							<mx:subfield code="a">TL214.C93</mx:subfield>
+							<mx:subfield code="b">M33 2003</mx:subfield>
+						</mx:datafield>
+						<mx:datafield ind1="0" ind2=" " tag="082">
+							<mx:subfield code="a">629.28/7/076</mx:subfield>
+							<mx:subfield code="2">21</mx:subfield>
+						</mx:datafield>
+						<mx:datafield ind1="0" ind2="0" tag="245">
+							<mx:subfield code="a">Machinist test.</mx:subfield>
+						</mx:datafield>
+						<mx:datafield ind1="3" ind2=" " tag="246">
+							<mx:subfield code="a">Cylinder head specialist, test M1</mx:subfield>
+						</mx:datafield>
+						<mx:datafield ind1="3" ind2=" " tag="246">
+							<mx:subfield code="a">Test M1</mx:subfield>
+						</mx:datafield>
+						<mx:datafield ind1=" " ind2=" " tag="260">
+							<mx:subfield code="a">Clifton Park, NY :</mx:subfield>
+							<mx:subfield code="b">Thomson/Delmar Learning,</mx:subfield>
+							<mx:subfield code="c">c2003.</mx:subfield>
+						</mx:datafield>
+						<mx:datafield ind1=" " ind2=" " tag="300">
+							<mx:subfield code="a">iv, 70 p. :</mx:subfield>
+							<mx:subfield code="b">ill. ;</mx:subfield>
+							<mx:subfield code="c">28 cm.</mx:subfield>
+						</mx:datafield>
+						<mx:datafield ind1=" " ind2="0" tag="440">
+							<mx:subfield code="a">Delmar's test preparation series</mx:subfield>
+						</mx:datafield>
+						<mx:datafield ind1=" " ind2="0" tag="650">
+							<mx:subfield code="a">Automobiles</mx:subfield>
+							<mx:subfield code="v">Study guides</mx:subfield>
+							<mx:subfield code="x">Motors</mx:subfield>
+							<mx:subfield code="x">Cylinder heads</mx:subfield>
+							<mx:subfield code="x">Examinations.</mx:subfield>
+						</mx:datafield>
+						<mx:datafield ind1=" " ind2="0" tag="650">
+							<mx:subfield code="a">Automobiles</mx:subfield>
+							<mx:subfield code="v">Examinations, questions, etc</mx:subfield>
+							<mx:subfield code="x">Motors</mx:subfield>
+							<mx:subfield code="x">Cylinder heads.</mx:subfield>
+						</mx:datafield>
+						<mx:datafield ind1=" " ind2="0" tag="650">
+							<mx:subfield code="a">Automobile mechanics</mx:subfield>
+							<mx:subfield code="x">Certification.</mx:subfield>
+						</mx:datafield>
+						<mx:datafield ind1=" " ind2="0" tag="650">
+							<mx:subfield code="a">Machine-shop practice</mx:subfield>
+							<mx:subfield code="v">Examinations, questions, etc.</mx:subfield>
+						</mx:datafield>
+						<mx:datafield ind1=" " ind2="0" tag="650">
+							<mx:subfield code="a">Machine-shop practice</mx:subfield>
+							<mx:subfield code="v">Study guides</mx:subfield>
+							<mx:subfield code="x">Examinations.</mx:subfield>
+						</mx:datafield>
+					</mx:record>
+				</ns2:recordData>
+			</ns2:record>
+			<ns3:extraResponseData xmlns:ns3="http://www.loc.gov/zing/srw/"/>
+		</updateResponse>
+	</soapenv:Body>
+</soapenv:Envelope>

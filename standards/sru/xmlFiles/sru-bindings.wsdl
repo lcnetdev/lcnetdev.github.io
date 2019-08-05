@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ZiNG SRU/SRW WSDL Specification                   -->
+<!-- Version 1.1                                       -->
+<!-- 6 October 2004                                    -->
+<definitions xmlns:srw-interfaces="http://www.loc.gov/zing/srw/interfaces/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:ns="http://www.loc.gov/zing/srw/interfaces/" targetNamespace="http://www.loc.gov/zing/srw/sru-bindings/" name="SRW">
+  <import namespace="http://www.loc.gov/zing/srw/interfaces/" location="srw-ports.wsdl"/>
+  <binding name="Explain-HTTPGetBinding" type="srw-interfaces:ExplainPort">
+    <http:binding verb="GET"/>
+    <operation name="ExplainOperation">
+      <http:operation location="?operation=explain"/>
+      <input>
+        <http:urlEncoded/>
+      </input>
+      <output>
+        <mime:mimeXml part="body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="Explain-HTTPGetRootBinding" type="srw-interfaces:ExplainPort">
+    <http:binding verb="GET"/>
+    <operation name="ExplainOperation">
+      <http:operation location=""/>
+      <input>
+        <http:urlEncoded/>
+      </input>
+      <output>
+        <mime:mimeXml part="body"/>
+      </output>
+    </operation>
+  </binding>
+  <binding name="SRU-HTTPGetBinding" type="srw-interfaces:SRWPort">
+    <http:binding verb="GET"/>
+    <operation name="SearchRetrieveOperation">
+      <http:operation location="?operation=searchRetrieve"/>
+      <input>
+        <http:urlEncoded/>
+      </input>
+      <output>
+        <mime:mimeXml part="body"/>
+      </output>
+    </operation>
+    <operation name="ScanOperation">
+      <http:operation location="?operation=scan"/>
+      <input>
+        <http:urlEncoded/>
+      </input>
+      <output>
+        <mime:mimeXml part="body"/>
+      </output>
+    </operation>
+  </binding>
+</definitions>

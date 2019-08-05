@@ -1,0 +1,1443 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/subpage.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Diagnostics List (SRU: Search/Retrieval via URL -- SRU, CQL and ZeeRex, Standards, Library of Congress)</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link type="text/css" media="print" href="../css/sru-print.css" rel="stylesheet">
+<style type="text/css" media="screen">
+@import url(../css/sru-base.css);
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="shortcut icon" href="http://www.loc.gov:8081/standards/sru/images/favicon.ico">
+<!-- InstanceBeginEditable name="head" -->
+<meta name="keywords" content="diagnostics sru version 1.2 specifications sru search retrieval url cql zeerex standards library congress">
+<meta name="description" content="Diagnostics: SRU Version 1.2 Specifications. SRU is a standard XML-focused search protocol for Internet search queries, utilizing CQL (Contextual Query Language), a standard syntax for representing queries. Standards, The Library of Congress.">
+<!-- InstanceEndEditable -->
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<form action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" name="seek1" method="get">
+<input type="hidden" name="col" value="loc">
+<input type="hidden" name="sc" value="0">
+<input type="hidden" name="ws" value="0">
+<input type="hidden" name="la" value="en">
+<input type="hidden" name="qm" value="0">
+<input type="hidden" name="st" value="1">
+<input type="hidden" name="nh" value="10">
+<input type="hidden" name="lk" value="1">
+<input type="hidden" name="rf" value="0">
+<input type="hidden" name="oq" value="">
+<input type="hidden" name="si" value="0">
+<input type="hidden" name="rq" value="0">
+<input type="hidden" name="qc" value="">
+<table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
+  <div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div></td>
+<td width="116"><select name="qp" tabindex="1">
+<option value="url:/sru" selected>SRU Web Pages</option>
+<option value="url:/standards url:/ead url:/marc">Standards Pages</option>
+<option value="">All Library Pages</option>
+</select></td><td width="117" align="right"><input type="text" name="qt" id="keyword" size="18" value="" tabindex="2"></td>
+<td width="67" align="right"><input class="button" id="search_button" name="search_button" type="submit" value="SEARCH" tabindex="3"></td>
+</tr></table></form>
+<table align="center" class="layout" cellpadding="0" cellspacing="0"><tr><td>
+<div id="graphic"> 
+<h1 class="homepage"><img src="../images/sru.gif" alt="SRU (Search/Retrieval Using URL)" width="600" height="50"></h1>
+</div>
+<div class="goldtop"></div>
+      <div id="breadcrumbs"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-top" --><a href="../resources/index.html">resources</a>&nbsp;&raquo; 
+        diagnostics list<!-- InstanceEndEditable --></div>
+<div class="clear"><a name="skip_menu"></a></div>
+ <!-- InstanceBeginEditable name="content" -->
+      <h1>Diagnostics List</h1>
+
+        
+      <p>The diagnostics below are defined for use with the SRU namespace: <span class="selected">info:srw/diagnostic/1</span>. 
+        The number in the first column identifies the specific diagnostic within 
+        that namespace (e.g., diagnostic 2 below is identified by the uri: i<em>nfo:srw/diagnostic/1/2</em>)<strong>.</strong> 
+        The details format is what should be returned in the details field. If 
+        this column is blank, the format is 'undefined' and the server may return 
+        whatever it feels appropriate, including nothing. Some of the diagnostics 
+        from earlier versions of the standards have been deprecated, however they 
+        are still listed here, suitably marked, for reference. For additional 
+        explanation of these diagnostics, see <a href="#notes">Notes</a>. </p>
+      <p><span class="selected">Diagnostic Categories:</span><strong> </strong><a href="#general">General</a> 
+        | <a href="#cql">CQL</a> | <a href="#resultsets">Result Sets</a> | <a href="#records">Records</a> 
+        | <a href="#sorting">Sorting</a> | <a href="#explain">Explain</a> | <a href="#stylesheets">Stylesheets</a> 
+        | <a href="#scan">Scan</a></p>
+      <table class="standard">
+        <tr> 
+          <th scope="col" colspan="4"> <center>
+            <strong><a name="general"></a>General Diagnostics</strong>
+          </center>          </th>
+        </tr>
+        <tr> 
+          <th scope="col" width="9%">Number</th>
+          <th scope="col" colspan="2">Description</th>
+          <th scope="col" width="27%">Details Format</th>
+        </tr>
+        <tr> 
+          <td scope="row">1</td>
+          <td width="37%">General system error</td>
+          <td width="27%"><a href="#1">note</a></td>
+          <td>Debugging information (traceback)</td>
+        </tr>
+        <tr> 
+          <td scope="row">2</td>
+          <td>System temporarily unavailable</td>
+          <td><a href="#2">note</a></td>
+          <td><br> </td>
+        </tr>
+        <tr> 
+          <td scope="row">3</td>
+          <td>Authentication error</td>
+          <td><a href="#3">note</a></td>
+          <td><br> </td>
+        </tr>
+        <tr> 
+          <td scope="row">4</td>
+          <td>Unsupported operation</td>
+          <td><a href="#4">note</a></td>
+          <td><br> </td>
+        </tr>
+        <tr> 
+          <td scope="row">5</td>
+          <td>Unsupported version</td>
+          <td><a href="#5">note</a></td>
+          <td>Highest version supported</td>
+        </tr>
+        <tr> 
+          <td scope="row">6</td>
+          <td>Unsupported parameter value</td>
+          <td><a href="#6">note</a></td>
+          <td>Name of parameter</td>
+        </tr>
+        <tr> 
+          <td scope="row">7</td>
+          <td>Mandatory parameter not supplied</td>
+          <td><a href="#7">note</a></td>
+          <td>Name of missing parameter</td>
+        </tr>
+        <tr>
+          <td scope="row">8</td>
+          <td>Unsupported Parameter</td>
+          <td><a href="#8">note</a></td>
+          <td>Name of the unsupported parameter</td>
+        </tr>
+        <tr>
+          <td scope="row">235</td>
+          <td>Database does not exist</td>
+          <td><a href="#235">note</a></td>
+          <td>&nbsp;</td>
+        </tr>
+        
+        <tr> 
+          <th scope="col" colspan="4" align="center"><a name="cql"></a>Diagnostics 
+            Relating to CQL</th>
+        </tr>
+        <tr> 
+          <th scope="col">Number</th>
+          <th scope="col" colspan="2">Description</th>
+          <th scope="col">Details Format</th>
+        </tr>
+        <tr> 
+          <td scope="row">10</td>
+          <td>Query syntax error</td>
+          <td><a href="#10">note</a></td>
+          <td><br> </td>
+        </tr>
+        <tr> 
+          <td scope="row">11</td>
+          <td colspan="2">DEPRECATED. <strike>Unsupported query type</strike></td>
+          <td><br> </td>
+        </tr>
+        <tr> 
+          <td scope="row">12</td>
+          <td> Too many characters in query<a href="#1"> </a></td>
+          <td><a href="#12">note</a></td>
+          <td>Maximum supported<br> </td>
+        </tr>
+        <tr> 
+          <td scope="row">13</td>
+          <td>Invalid or unsupported use of parentheses</td>
+          <td><a href="#13">note</a></td>
+          <td>Character offset to error</td>
+        </tr>
+        <tr> 
+          <td scope="row">14</td>
+          <td>Invalid or unsupported use of quotes</td>
+          <td><a href="#14">note</a></td>
+          <td>Character offset to error</td>
+        </tr>
+        <tr> 
+          <td scope="row">15</td>
+          <td>Unsupported context set</td>
+          <td><a href="#15">note</a></td>
+          <td>URI or short name of context set</td>
+        </tr>
+        <tr> 
+          <td scope="row">16</td>
+          <td>Unsupported index</td>
+          <td><a href="#16">note</a></td>
+          <td>Name of index</td>
+        </tr>
+        <tr> 
+          <td scope="row">17</td>
+          <td colspan="2">DEPRECATED. <strike>Unsupported combination of index 
+            and index set</strike><a href="#1"> </a></td>
+          <td><br> </td>
+        </tr>
+        <tr> 
+          <td scope="row">18</td>
+          <td>Unsupported combination of indexes</td>
+          <td><a href="#18">note</a></td>
+          <td>Space delimited index names </td>
+        </tr>
+        <tr> 
+          <td scope="row">19</td>
+          <td>Unsupported relation</td>
+          <td><a href="#19">note</a></td>
+          <td>Relation</td>
+        </tr>
+        <tr> 
+          <td scope="row">20</td>
+          <td>Unsupported relation modifier</td>
+          <td><a href="#20">note</a></td>
+          <td>Value</td>
+        </tr>
+        <tr> 
+          <td scope="row">21</td>
+          <td>Unsupported combination of relation modifers</td>
+          <td><a href="#21">note</a></td>
+          <td>Slash separated relation modifiers</td>
+        </tr>
+        <tr> 
+          <td scope="row">22</td>
+          <td>Unsupported combination of relation and index</td>
+          <td><a href="#22">note</a></td>
+          <td>Space separated index and relation</td>
+        </tr>
+        <tr> 
+          <td scope="row">23</td>
+          <td>Too many characters in term</td>
+          <td><a href="#23">note</a></td>
+          <td>Length of longest term</td>
+        </tr>
+        <tr> 
+          <td scope="row">24</td>
+          <td>Unsupported combination of relation and term</td>
+          <td><a href="#24">note</a></td>
+          <td>Space separated relation and term</td>
+        </tr>
+        <tr> 
+          <td scope="row">25</td>
+          <td colspan="2">DEPRECATED. <strike>Special characters not quoted in 
+            term</strike><a href="#1"> </a></td>
+          <td><br> </td>
+        </tr>
+        <tr> 
+          <td scope="row">26</td>
+          <td>Non special character escaped in term</td>
+          <td><a href="#26">note</a></td>
+          <td>Character incorrectly escaped</td>
+        </tr>
+        <tr> 
+          <td scope="row">27</td>
+          <td>Empty term unsupported</td>
+          <td><a href="#27">note</a></td>
+          <td><br> </td>
+        </tr>
+        <tr> 
+          <td scope="row">28</td>
+          <td>Masking character not supported</td>
+          <td><a href="#28">note</a></td>
+          <td><br> </td>
+        </tr>
+        <tr> 
+          <td scope="row">29</td>
+          <td>Masked words too short</td>
+          <td><a href="#29">note</a></td>
+          <td>Minimum word length</td>
+        </tr>
+        <tr> 
+          <td scope="row">30</td>
+          <td>Too many masking characters in term</td>
+          <td><a href="#30">note</a></td>
+          <td>Maximum number supported</td>
+        </tr>
+        <tr> 
+          <td scope="row">31</td>
+          <td>Anchoring character not supported</td>
+          <td><a href="#31">note</a></td>
+          <td><br> </td>
+        </tr>
+        <tr> 
+          <td scope="row">32</td>
+          <td>Anchoring character in unsupported position</td>
+          <td><a href="#32">note</a></td>
+          <td>Character offset</td>
+        </tr>
+        <tr> 
+          <td scope="row">33</td>
+          <td>Combination of proximity/adjacency and masking characters not supported</td>
+          <td><a href="#33">note</a></td>
+          <td><br> </td>
+        </tr>
+        <tr> 
+          <td scope="row">34</td>
+          <td>Combination of proximity/adjacency and anchoring characters not 
+            supported</td>
+          <td><a href="#34">note</a></td>
+          <td><br> </td>
+        </tr>
+        <tr> 
+          <td scope="row">35</td>
+          <td>Term contains only stopwords</td>
+          <td><a href="#35">note</a></td>
+          <td>Value</td>
+        </tr>
+        <tr> 
+          <td scope="row">36</td>
+          <td>Term in invalid format for index or relation</td>
+          <td><a href="#36">note</a></td>
+        </tr>
+        <tr> 
+          <td scope="row">37</td>
+          <td>Unsupported boolean operator</td>
+          <td><a href="#37">note</a></td>
+          <td>Value</td>
+        </tr>
+        <tr> 
+          <td scope="row">38</td>
+          <td>Too many boolean operators in query</td>
+          <td><a href="#38">note</a></td>
+          <td>Maximum number supported</td>
+        </tr>
+        <tr> 
+          <td scope="row">39</td>
+          <td>Proximity not supported</td>
+          <td><a href="#39">note</a></td>
+          <td><br> </td>
+        </tr>
+        <tr> 
+          <td scope="row">40</td>
+          <td>Unsupported proximity relation</td>
+          <td><a href="#40">note</a></td>
+          <td>Value</td>
+        </tr>
+        <tr> 
+          <td scope="row">41</td>
+          <td>Unsupported proximity distance</td>
+          <td><a href="#41">note</a></td>
+          <td>Value</td>
+        </tr>
+        <tr> 
+          <td scope="row">42</td>
+          <td>Unsupported proximity unit</td>
+          <td><a href="#42">note</a></td>
+          <td>Value</td>
+        </tr>
+        <tr> 
+          <td scope="row">43</td>
+          <td>Unsupported proximity ordering</td>
+          <td><a href="#43">note</a></td>
+          <td>Value</td>
+        </tr>
+        <tr> 
+          <td scope="row">44</td>
+          <td>Unsupported combination of proximity modifiers</td>
+          <td><a href="#44">note</a></td>
+          <td>Slash separated values</td>
+        </tr>
+        <tr> 
+          <td scope="row">45</td>
+          <td colspan="2">DEPRECATED. <strike>Prefix assigned to multiple identifiers</strike><a href="#1"> 
+            </a></td>
+          <td><br> </td>
+        </tr>
+        <tr> 
+          <td scope="row">46</td>
+          <td>Unsupported boolean modifier</td>
+          <td><a href="#46">note</a></td>
+          <td>Value</td>
+        </tr>
+        <tr> 
+          <td scope="row">47</td>
+          <td>Cannot process query; reason unknown</td>
+          <td><a href="#47">note</a></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td scope="row">48</td>
+          <td>Query feature unsupported</td>
+          <td><a href="#48">note</a></td>
+          <td>Feature</td>
+        </tr>
+        <tr> 
+          <td scope="row">49</td>
+          <td>Masking character in unsupported position</td>
+          <td><a href="#49">note</a></td>
+          <td>the rejected term</td>
+        </tr>
+        <tr> 
+          <th scope="col" colspan="4"><center>
+              <a name="resultsets"></a>Diagnostics Relating 
+            to Result Sets
+          </center>          </th>
+        </tr>
+        <tr> 
+          <th scope="col">Number</th>
+          <th scope="col" colspan="2">Description</th>
+          <th scope="col">Details Format</th>
+        </tr>
+        <tr> 
+          <td scope="row">50</td>
+          <td>Result sets not supported</td>
+          <td><a href="#50">note</a></td>
+          <td><br> </td>
+        </tr>
+        <tr> 
+          <td scope="row">51</td>
+          <td>Result set does not exist</td>
+          <td><a href="#51">note</a></td>
+          <td>Result set identifier</td>
+        </tr>
+        <tr> 
+          <td scope="row">52</td>
+          <td>Result set temporarily unavailable</td>
+          <td><a href="#52">note</a></td>
+          <td>Result set identifier </td>
+        </tr>
+        <tr> 
+          <td scope="row">53</td>
+          <td>Result sets only supported for retrieval</td>
+          <td><a href="#53">note</a></td>
+          <td><br> </td>
+        </tr>
+        <tr> 
+          <td scope="row">54</td>
+          <td colspan="2">DEPRECATED. <strike>Retrieval may only occur from an 
+            existing result set</strike><a href="#1"> </a></td>
+          <td><br> </td>
+        </tr>
+        <tr> 
+          <td scope="row">55</td>
+          <td>Combination of result sets with search terms not supported</td>
+          <td><a href="#55">note</a></td>
+          <td><br> </td>
+        </tr>
+        <tr> 
+          <td scope="row">56</td>
+          <td colspan="2">DEPRECATED. <strike>Only combination of single result 
+            set with search terms supported</strike><a href="#1"> </a></td>
+          <td><br> </td>
+        </tr>
+        <tr> 
+          <td scope="row">57</td>
+          <td colspan="2">DEPRECATED. <strike>Result set created but no records 
+            available</strike></td>
+          <td><br> </td>
+        </tr>
+        <tr> 
+          <td scope="row">58</td>
+          <td>Result set created with unpredictable partial results available</td>
+          <td><a href="#58">note</a></td>
+          <td><br> </td>
+        </tr>
+        <tr> 
+          <td scope="row">59</td>
+          <td>Result set created with valid partial results available</td>
+          <td><a href="#59">note</a></td>
+          <td><br> </td>
+        </tr>
+        <tr> 
+          <td scope="row">60</td>
+          <td>Result set not created: too many matching records</td>
+          <td><a href="#60">note</a></td>
+          <td>Maximum number</td>
+        </tr>
+        <tr> 
+          <th scope="col" colspan="4" align="center"><a name="records"></a>Diagnostics 
+            Relating to Records</th>
+        </tr>
+        <tr> 
+          <th scope="col">Number</th>
+          <th scope="col" colspan="2">Description<a href="#1"> </a></th>
+          <th scope="col">Details Format</th>
+        </tr>
+        <tr> 
+          <td scope="row">61</td>
+          <td>First record position out of range</td>
+          <td><a href="#61">note</a></td>
+          <td><br> </td>
+        </tr>
+        <tr> 
+          <td scope="row">62</td>
+          <td colspan="2">DEPRECATED. <strike>Negative number of records requested</strike><a href="#1"> 
+            </a></td>
+          <td><br> </td>
+        </tr>
+        <tr> 
+          <td scope="row">63</td>
+          <td colspan="2">DEPRECATED. <strike>System error in retrieving records</strike><a href="#1"> 
+            </a></td>
+          <td><br> </td>
+        </tr>
+        <tr> 
+          <td scope="row">64</td>
+          <td>Record temporarily unavailable</td>
+          <td><a href="#64">note</a></td>
+          <td><br> </td>
+        </tr>
+        <tr> 
+          <td scope="row">65</td>
+          <td>Record does not exist</td>
+          <td><a href="#65">note</a></td>
+          <td><br> </td>
+        </tr>
+        <tr> 
+          <td scope="row">66</td>
+          <td>Unknown schema for retrieval</td>
+          <td><a href="#66">note</a></td>
+          <td>Schema URI or short name</td>
+        </tr>
+        <tr> 
+          <td scope="row">67</td>
+          <td>Record not available in this schema</td>
+          <td><a href="#67">note</a></td>
+          <td>Schema URI or short name</td>
+        </tr>
+        <tr> 
+          <td scope="row">68</td>
+          <td>Not authorised to send record</td>
+          <td><a href="#68">note</a></td>
+          <td><br> </td>
+        </tr>
+        <tr> 
+          <td scope="row">69</td>
+          <td>Not authorised to send record in this schema</td>
+          <td><a href="#69">note</a></td>
+          <td><br> </td>
+        </tr>
+        <tr> 
+          <td scope="row">70</td>
+          <td>Record too large to send</td>
+          <td><a href="#70">note</a></td>
+          <td>Maximum record size</td>
+        </tr>
+        <tr> 
+          <td scope="row">71</td>
+          <td>Unsupported record packing</td>
+          <td><a href="#71">note</a></td>
+          <td><br> </td>
+        </tr>
+        <tr> 
+          <td scope="row">72</td>
+          <td>XPath retrieval unsupported</td>
+          <td><a href="#72">note</a></td>
+          <td><br> </td>
+        </tr>
+        <tr> 
+          <td scope="row">73</td>
+          <td>XPath expression contains unsupported feature</td>
+          <td><a href="#73">note</a></td>
+          <td>Feature</td>
+        </tr>
+        <tr> 
+          <td scope="row">74</td>
+          <td>Unable to evaluate XPath expression</td>
+          <td><a href="#74">note</a></td>
+          <td><br> </td>
+        </tr>
+        <tr> 
+          <th scope="col" colspan="4"><center>
+              <a name="sorting"></a>Diagnostics Relating 
+            to Sorting
+          </center>          </th>
+        </tr>
+        <tr> 
+          <th scope="col">Number</th>
+          <th scope="col" colspan="2">Description<a href="#1"> </a></th>
+          <th scope="col">Details Format</th>
+        </tr>
+        <tr> 
+          <td scope="row">80</td>
+          <td>Sort not supported</td>
+          <td><a href="#80">note</a></td>
+          <td><br> </td>
+        </tr>
+        <tr> 
+          <td scope="row">81</td>
+          <td colspan="2">DEPRECATED. <strike>Unsupported sort type</strike><a href="#1"> 
+            </a></td>
+          <td><br> </td>
+        </tr>
+        <tr> 
+          <td scope="row">82</td>
+          <td>Unsupported sort sequence</td>
+          <td><a href="#82">note</a></td>
+          <td>Sequence</td>
+        </tr>
+        <tr> 
+          <td scope="row">83</td>
+          <td>Too many records to sort</td>
+          <td><a href="#83">note</a></td>
+          <td>Maximum number supported</td>
+        </tr>
+        <tr> 
+          <td scope="row">84</td>
+          <td>Too many sort keys to sort</td>
+          <td><a href="#84">note</a></td>
+          <td>Maximum number supported</td>
+        </tr>
+        <tr> 
+          <td scope="row">85</td>
+          <td colspan="2">DEPRECATED. <strike>Duplicate sort keys</strike><a href="#1"> 
+            </a></td>
+          <td><br> </td>
+        </tr>
+        <tr> 
+          <td scope="row">86</td>
+          <td>Cannot sort: incompatible record formats</td>
+          <td><a href="#86">note</a></td>
+          <td><br> </td>
+        </tr>
+        <tr> 
+          <td scope="row">87</td>
+          <td>Unsupported schema for sort</td>
+          <td><a href="#87">note</a></td>
+          <td>URI or short name of schema given</td>
+        </tr>
+        <tr> 
+          <td scope="row">88</td>
+          <td>Unsupported path for sort</td>
+          <td><a href="#88">note</a></td>
+          <td>XPath</td>
+        </tr>
+        <tr> 
+          <td scope="row">89</td>
+          <td>Path unsupported for schema</td>
+          <td><a href="#89">note</a></td>
+          <td>XPath</td>
+        </tr>
+        <tr> 
+          <td scope="row">90</td>
+          <td>Unsupported direction</td>
+          <td><a href="#90">note</a></td>
+          <td>Value</td>
+        </tr>
+        <tr> 
+          <td scope="row">91</td>
+          <td>Unsupported case</td>
+          <td><a href="#91">note</a></td>
+          <td>Value</td>
+        </tr>
+        <tr> 
+          <td scope="row">92</td>
+          <td>Unsupported missing value action</td>
+          <td><a href="#92">note</a></td>
+          <td>Value</td>
+        </tr>
+        <tr>
+          <td scope="row">93</td>
+          <td>Sort ended due to missing value<br>          </td>
+          <td><a href="#93">note</a></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td scope="row">94</td>
+          <td>Sort spec included both in query and protocol: query prevails </td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td scope="row">95</td>
+          <td>Sort spec included both in query and protocol: protocol prevails </td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td scope="row">96</td>
+          <td>Sort spec included both in query and protocol: error </td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <th scope="col" colspan="4" align="center"><a name="explain"></a>Diagnostics 
+            Relating to Explain</th>
+        </tr>
+        <tr> 
+          <th scope="col">Number</th>
+          <th scope="col" colspan="2">Description<a href="#1"> </a></th>
+          <th scope="col">Details Format</th>
+        </tr>
+        <tr> 
+          <td scope="row">100</td>
+          <td colspan="2">DEPRECATED. <strike>Explain not supported</strike> (Use 
+            4)<a href="#1"> </a></td>
+          <td><br> </td>
+        </tr>
+        <tr> 
+          <td scope="row">101</td>
+          <td colspan="2">DEPRECATED. <strike>Explain request type not supported</strike><a href="#1"> 
+            </a></td>
+          <td><br> </td>
+        </tr>
+        <tr> 
+          <td scope="row">102</td>
+          <td colspan="2">DEPRECATED. <strike>Explain record temporarily unavailable</strike> 
+            (Use 64)<a href="#1"> </a></td>
+          <td><br> </td>
+        </tr>
+        <tr> 
+          <th scope="col" colspan="4"><center>
+              <a name="stylesheets"></a>Diagnostics relating 
+            to Stylesheets
+          </center>          </th>
+        </tr>
+        <tr> 
+          <th scope="col">Number</th>
+          <th scope="col" colspan="2">Description<a href="#1"> </a></th>
+          <th scope="col">Details Format</th>
+        </tr>
+        <tr> 
+          <td scope="row">110</td>
+          <td>Stylesheets not supported</td>
+          <td><a href="#110">note</a></td>
+          <td><br> </td>
+        </tr>
+        <tr> 
+          <td scope="row">111</td>
+          <td>Unsupported stylesheet</td>
+          <td><a href="#111">note</a></td>
+          <td>URL of stylesheet</td>
+        </tr>
+        <tr> 
+          <th colspan="4" scope="col"><center>
+              <a name="scan"></a>Diagnostics relating 
+            to Scan
+          </center>          </th>
+        </tr>
+        <tr> 
+          <th scope="col">Number</th>
+          <th scope="col" colspan="2">Description<a href="#1"> </a></th>
+          <th scope="col">Details Format</th>
+        </tr>
+        <tr> 
+          <td scope="row">120</td>
+          <td>Response position out of range</td>
+          <td><a href="#120">note</a></td>
+          <td><br> </td>
+        </tr>
+        <tr> 
+          <td scope="row">121</td>
+          <td>Too many terms requested<br> </td>
+          <td><a href="#121">note</a></td>
+          <td>maximum number of terms</td>
+        </tr>
+      </table>
+    <p><img src="/images/arrow_up.gif" alt="">&nbsp;<a href="#skip_menu">Back to top</a></p>
+      <h3><a name="notes"></a>Notes</h3>
+      <table class="standard">
+
+          <tr> 
+            <th scope="col">No.</th>
+            <th scope="col">added</th>
+            <th scope="col">Cat.</th>
+            <th scope="col">Description</th>
+            <th scope="col">Notes/Examples</th>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="1"></a>1</td>
+            <td>&nbsp;</td>
+            <td>general</td>
+            <td>General system error</td>
+            <td>The server returns this error when it is unable to supply a more 
+              specific diagnostic. The sever may also optionally supply debugging 
+              information.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="2"></a>2</td>
+            <td>&nbsp;</td>
+            <td>general</td>
+            <td>System temporarily unavailable</td>
+            <td>The server cannot respond right now, perhaps because it's in a 
+              maintenance cycle, but will be able to in the future.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="3"></a>3</td>
+            <td>&nbsp;</td>
+            <td>general</td>
+            <td>Authentication error</td>
+            <td>The request could not be processed due to lack of authentication.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="4"></a>4</td>
+            <td>&nbsp;</td>
+            <td>general</td>
+            <td>Unsupported operation</td>
+            <td><br>
+              Currently three operations are defined -- searchRetrieve, explain, 
+              and scan. searchRetrieve and explain are mandatory, so this diagnostic 
+              would apply only to scan, or in SRU where an undefined operation 
+              is sent. </td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="5"></a>5</td>
+            <td>&nbsp;</td>
+            <td>general</td>
+            <td>Unsupported version</td>
+            <td>Currently only version 1.1 is defined and so this diagnostic has 
+              no meaning. In the future, when another version is defined, for 
+              example version 1.2, this diagnostic may be returned when the server 
+              receives a request where the version parameter indicates 1.2, and 
+              the server doesn't support version 1.2.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="6"></a>6</td>
+            <td>&nbsp;</td>
+            <td>general</td>
+            <td>Unsupported parameter value</td>
+            <td>This diagnostic might be returned for a searchRetrieve request 
+              which includes the recordPacking parameter with a value of 'xml', 
+              when the server does not support that value. The diagnostic might 
+              supply the name of parameter, in this case 'recordPacking'.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="7"></a>7</td>
+            <td>&nbsp;</td>
+            <td>general</td>
+            <td>Mandatory parameter not supplied</td>
+            <td>This diagnostic might be returned for a searchRetrieve request 
+              which omits the query parameter. The diagnostic might supply the 
+              name of missing parameter, in this case 'query'.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="8"></a>8</td>
+            <td>&nbsp;</td>
+            <td>general</td>
+            <td>Unsupported Parameter</td>
+            <td>This diagnostic might be returned for a searchRetrieve request 
+              which includes the recordXPath parameter when the server does not 
+              support that parameter. The diagnostic might supply the name of 
+              unsupported parameter, in this case 'recordXPath'.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="10"></a>10</td>
+            <td>&nbsp;</td>
+            <td>query</td>
+            <td>Query syntax error</td>
+            <td>The query was invalid, but no information is given for exactly 
+              what was wrong with it. Eg. dc.title foo fish (The reason is that 
+              foo isn't a valid relation in the default context set, but the server 
+              isn't telling you this for some reason) </td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="12"></a>12</td>
+            <td>&nbsp;</td>
+            <td>query</td>
+            <td>Too many characters in query<a href="#1"> </a></td>
+            <td>The length (number of characters) of the query exceeds the maximum 
+              length supported by the server. </td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="13"></a>13</td>
+            <td>&nbsp;</td>
+            <td>query</td>
+            <td>Invalid or unsupported use of parentheses</td>
+            <td>The query couldn't be processed due to the use of parentheses. 
+              Typically either that they are mismatched, or in the wrong place. 
+              Eg. (((fish) or (sword and (b or ) c) </td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="14"></a>14</td>
+            <td>&nbsp;</td>
+            <td>query</td>
+            <td>Invalid or unsupported use of quotes</td>
+            <td>The query couldn't be processed due to the use of quotes. Typically 
+              that they are mismatched Eg. "fish' </td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="15"></a>15</td>
+            <td>&nbsp;</td>
+            <td>query</td>
+            <td>Unsupported context set</td>
+            <td>A context set given in the query isn't known to the server. Eg. 
+              foo.title any fish </td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="16"></a>16</td>
+            <td>&nbsp;</td>
+            <td>query</td>
+            <td>Unsupported index</td>
+            <td>The index isn't known, possibly within a context set. Eg. dc.author 
+              any sanderson (dc has a creator index, not author)</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="18"></a>18</td>
+            <td>&nbsp;</td>
+            <td>query</td>
+            <td>Unsupported combination of indexes</td>
+            <td>The particular use of indexes in a boolean query can't be processed. 
+              Eg. The server may not be able to do title queries merged with description 
+              queries. </td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="19"></a>19</td>
+            <td>&nbsp;</td>
+            <td>query</td>
+            <td>Unsupported relation</td>
+            <td>A relation in the query is unknown or unsupported. Eg. The server 
+              can't handle 'within' searches for dates, but can handle equality 
+              searches. </td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="20"></a>20</td>
+            <td>&nbsp;</td>
+            <td>query</td>
+            <td>Unsupported relation modifier</td>
+            <td>A relation modifier in the query is unknown or unsupported by 
+              the server. Eg. 'dc.title any/fuzzy starfish' when fuzzy isn't supported.            </td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="21"></a>21</td>
+            <td>&nbsp;</td>
+            <td>query</td>
+            <td>Unsupported combination of relation modifers</td>
+            <td>Two (or more) relation modifiers can't be used together. Eg. dc.title 
+              any/cql.word/cql.string "star fish" </td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="22"></a>22</td>
+            <td>&nbsp;</td>
+            <td>query</td>
+            <td>Unsupported combination of relation and index</td>
+            <td>While the index and relation are supported, they can't be used 
+              together. Eg. dc.author within "1 5" </td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="23"></a>23</td>
+            <td>&nbsp;</td>
+            <td>query</td>
+            <td>Too many characters in term</td>
+            <td>The term is too long. Eg. The server may simply refuse to process 
+              a term longer than a given length. </td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="24"></a>24</td>
+            <td>&nbsp;</td>
+            <td>query</td>
+            <td>Unsupported combination of relation and term</td>
+            <td>The relation cannot be used to process the term. Eg dc.title within 
+              "sanderson" </td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="26"></a>26</td>
+            <td>&nbsp;</td>
+            <td>query</td>
+            <td>Non special character escaped in term</td>
+            <td>Characters may be escaped incorrectly Eg "\a\r\n\s" </td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="27"></a>27</td>
+            <td>&nbsp;</td>
+            <td>query</td>
+            <td>Empty term unsupported</td>
+            <td>Some servers do not support the use of an empty term for search 
+              or for scan. Eg: dc.title &gt; ""</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="28"></a>28</td>
+            <td>&nbsp;</td>
+            <td>query</td>
+            <td>Masking character not supported</td>
+            <td>A masking character given in the query is not supported. Eg. The 
+              server may not support * or ? or both </td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="29"></a>29</td>
+            <td>&nbsp;</td>
+            <td>query</td>
+            <td>Masked words too short</td>
+            <td>The masked words are too short, so the server won't process them 
+              as they would likely match too many terms. Eg. dc.title any * </td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="30"></a>30</td>
+            <td>&nbsp;</td>
+            <td>query</td>
+            <td>Too many masking characters in term</td>
+            <td>The query has too many masking characters, so the server won't 
+              process them. Eg. dc.title any "???a*f??b* *a?" </td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="31"></a>31</td>
+            <td>&nbsp;</td>
+            <td>query</td>
+            <td>Anchoring character not supported</td>
+            <td>The server doesn't support the anchoring character (^) Eg dc.title 
+              = "^jaws" </td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="32"></a>32</td>
+            <td>&nbsp;</td>
+            <td>query</td>
+            <td>Anchoring character in unsupported position</td>
+            <td>The anchoring character appears in an invalid part of the term, 
+              typically the middle of a word. Eg dc.title any "fi^sh" </td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="33"></a>33</td>
+            <td>&nbsp;</td>
+            <td>query</td>
+            <td>Combination of proximity/adjacency and masking characters not 
+              supported</td>
+            <td>The server cannot handle both adjacency (= relation for words) 
+              or proximity (the boolean) in combination with masking characters. 
+              Eg. dc.title = "this is a titl* fo? a b*k" </td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="34"></a>34</td>
+            <td>&nbsp;</td>
+            <td>query</td>
+            <td>Combination of proximity/adjacency and anchoring characters not 
+              supported</td>
+            <td>Similarly, the server cannot handle anchoring characters. </td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="35"></a>35</td>
+            <td>&nbsp;</td>
+            <td>query</td>
+            <td>Term contains only stopwords</td>
+            <td>If the server does not index words such as 'the' or 'a', and the 
+              term consists only of these words, then while there may be records 
+              that match, the server cannot find any. Eg. dc.title any "the"</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="36"></a>36</td>
+            <td>&nbsp;</td>
+            <td>query</td>
+            <td>Term in invalid format for index or relation</td>
+            <td>This might happen when the index is of dates or numbers, but the 
+              term given is a word. Eg dc.date &gt; "fish"</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="37"></a>37</td>
+            <td>&nbsp;</td>
+            <td>query</td>
+            <td>Unsupported boolean operator</td>
+            <td>For cases when the server does not support all of the boolean 
+              operators defined by CQL. The most commonly unsupported is Proximity, 
+              but could be used for NOT, OR or AND.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="38"></a>38</td>
+            <td>&nbsp;</td>
+            <td>query</td>
+            <td>Too many boolean operators in query</td>
+            <td>There were too many search clauses given for the server to process.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="39"></a>39</td>
+            <td>&nbsp;</td>
+            <td>query</td>
+            <td>Proximity not supported</td>
+            <td>Proximity is not supported at all.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="40"></a>40</td>
+            <td>&nbsp;</td>
+            <td>query</td>
+            <td>Unsupported proximity relation</td>
+            <td>The relation given for the proximity is unsupported. Eg the server 
+              can only process = and &gt; was given.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="41"></a>41</td>
+            <td>&nbsp;</td>
+            <td>query</td>
+            <td>Unsupported proximity distance</td>
+            <td>The distance was too big or too small for the server to handle, 
+              or didn't make sense. Eg 0 characters or less than 100000 words</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="42"></a>42</td>
+            <td>&nbsp;</td>
+            <td>query</td>
+            <td>Unsupported proximity unit</td>
+            <td>The unit of proximity is unsupported, possibly because it is not 
+              defined.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="43"></a>43</td>
+            <td>&nbsp;</td>
+            <td>query</td>
+            <td>Unsupported proximity ordering</td>
+            <td>The server cannot process the requested order or lack thereof 
+              for the proximity boolean</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="44"></a>44</td>
+            <td>&nbsp;</td>
+            <td>query</td>
+            <td>Unsupported combination of proximity modifiers</td>
+            <td>While all of the modifiers are supported individually, this particular 
+              combination is not.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="46"></a>46</td>
+            <td>&nbsp;</td>
+            <td>query</td>
+            <td>Unsupported boolean modifier</td>
+            <td>A boolean modifier on the request isn't supported.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="47"></a>47</td>
+            <td>June 2004</td>
+            <td>query</td>
+            <td>Cannot process query; reason unknown</td>
+            <td>The server can't tell (or isn't telling) you why it can't execute 
+              the query, maybe it's a bad query or maybe it requests an unsupported 
+              capability.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="48"></a>48</td>
+            <td>June 2004</td>
+            <td>query</td>
+            <td>Query feature unsupported</td>
+            <td>the server is able (contrast with 47) to tell you that something 
+              you asked for is not supported.<br> </td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="49"></a>49</td>
+            <td>July 2004</td>
+            <td>query</td>
+            <td>Masking character in unsupported position</td>
+            <td>eg, a server that can handle xyz* but not *xyz or x*yz</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="50"></a>50</td>
+            <td>&nbsp;</td>
+            <td>result set</td>
+            <td>Result sets not supported</td>
+            <td>The server cannot create a persistent result set.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="51"></a>51</td>
+            <td>&nbsp;</td>
+            <td>result set</td>
+            <td>Result set does not exist</td>
+            <td>The client asked for a result set in the query which does not 
+              exist, either because it never did or because it had expired.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="52"></a>52</td>
+            <td>&nbsp;</td>
+            <td>result set</td>
+            <td>Result set temporarily unavailable</td>
+            <td>The result set exists, it cannot be accessed, but will be able 
+              to be accessed again in the future.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="53"></a>53</td>
+            <td>&nbsp;</td>
+            <td>result set</td>
+            <td>Result sets only supported for retrieval</td>
+            <td>Other operations on results apart from retrieval, such as sorting 
+              them or combining them, are not supported.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="55"></a>55</td>
+            <td>&nbsp;</td>
+            <td>result set</td>
+            <td>Combination of result sets with search terms not supported</td>
+            <td>Existing result sets cannot be combined with new terms to create 
+              new result sets. eg cql.resultsetid = foo not dc.title any fish</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="58"></a>58</td>
+            <td>&nbsp;</td>
+            <td>result set</td>
+            <td>Result set created with unpredictable partial results available</td>
+            <td>The result set is not complete, possibly due to the processing 
+              being interupted mid way through. Some of the results may not even 
+              be matches.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="59"></a>59</td>
+            <td>&nbsp;</td>
+            <td>result set</td>
+            <td>Result set created with valid partial results available</td>
+            <td>All of the records in the result set are matches, but not all 
+              records that should be there are.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="60"></a>60</td>
+            <td>&nbsp;</td>
+            <td>result set</td>
+            <td>Result set not created: too many matching records</td>
+            <td>There were too many records to create a persistent result set.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="61"></a>61</td>
+            <td>&nbsp;</td>
+            <td>records</td>
+            <td>First record position out of range</td>
+            <td>For example, if the request matches 10 records, but the start 
+              position is greater than 10.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="64"></a>64</td>
+            <td>&nbsp;</td>
+            <td>records</td>
+            <td>Record temporarily unavailable</td>
+            <td>The record requested cannot be accessed currently, but will be 
+              able to be in the future.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="65"></a>65</td>
+            <td>&nbsp;</td>
+            <td>records</td>
+            <td>Record does not exist</td>
+            <td>The record does not exist, either because it never did, or because 
+              it has subsequently been deleted.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="66"></a>66</td>
+            <td>&nbsp;</td>
+            <td>records</td>
+            <td>Unknown schema for retrieval</td>
+            <td>The record schema requested is unknown. Eg. the client asked for 
+              MODS when the server can only return simple Dublin Core</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="67"></a>67</td>
+            <td>&nbsp;</td>
+            <td>records</td>
+            <td>Record not available in this schema</td>
+            <td>The record schema is known, but this particular record cannot 
+              be transformed into it.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="68"></a>68</td>
+            <td>&nbsp;</td>
+            <td>records</td>
+            <td>Not authorised to send record</td>
+            <td>This particular record requires additional authorisation in order 
+              to receive it.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="69"></a>69</td>
+            <td>&nbsp;</td>
+            <td>records</td>
+            <td>Not authorised to send record in this schema</td>
+            <td>The record can be retrieved in other schemas, but the one requested 
+              requires futher authorisation.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="70"></a>70</td>
+            <td>&nbsp;</td>
+            <td>records</td>
+            <td>Record too large to send</td>
+            <td>The record is too large to send.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="71"></a>71</td>
+            <td>&nbsp;</td>
+            <td>records</td>
+            <td>Unsupported record packing</td>
+            <td>The server supports only one of string or xml, or the client requested 
+              a recordPacking which is unknown.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="72"></a>72</td>
+            <td>&nbsp;</td>
+            <td>records</td>
+            <td>XPath retrieval unsupported</td>
+            <td>The server does not support the retrieval of nodes from within 
+              the record.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="73"></a>73</td>
+            <td>&nbsp;</td>
+            <td>records</td>
+            <td>XPath expression contains unsupported feature</td>
+            <td>Some aspect of the XPath expression is unsupported. For example, 
+              the server might be able to process element nodes, but not functions.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="74"></a>74</td>
+            <td>&nbsp;</td>
+            <td>records</td>
+            <td>Unable to evaluate XPath expression</td>
+            <td>The server could not evaluate the expression, either because it 
+              was invalid or it lacks some capability.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="80"></a>80</td>
+            <td>&nbsp;</td>
+            <td>sort</td>
+            <td>Sort not supported</td>
+            <td>the server cannot perform any sort; that is the server only returns 
+              data in the default sequence.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="82"></a>82</td>
+            <td>&nbsp;</td>
+            <td>sort</td>
+            <td>Unsupported sort sequence</td>
+            <td>The particular sequence of sort keys is not supported, but the 
+              keys may be supported individually.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="83"></a>83</td>
+            <td>&nbsp;</td>
+            <td>sort</td>
+            <td>Too many records to sort</td>
+            <td>used when the server will only sort result sets under a certain 
+              size and the request returned a set larger than that limit. </td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="84"></a>84</td>
+            <td>&nbsp;</td>
+            <td>sort</td>
+            <td>Too many sort keys to sort</td>
+            <td>the server can accept a sort statement within a request but cannot 
+              deliver as requested, e.g. the server can sort by a maximum of 2 
+              keys only such as "title" and "date" but was requested to sort by 
+              "title", "author" and "date".</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="86"></a>86</td>
+            <td>&nbsp;</td>
+            <td>sort</td>
+            <td>Cannot sort: incompatible record formats</td>
+            <td>The result set includes records in different schemas and there 
+              is insufficient commonality among the schemas to enable a sort.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="87"></a>87</td>
+            <td>&nbsp;</td>
+            <td>sort</td>
+            <td>Unsupported schema for sort</td>
+            <td>the server does not support sort for records in a particular schema, 
+              e.g. it supports sort for records in the DC schema but not in the 
+              ONIX schema.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="88"></a>88</td>
+            <td>&nbsp;</td>
+            <td>sort</td>
+            <td>Unsupported path for sort</td>
+            <td>the server can accept a sort statement within a request but cannot 
+              deliver as requested, e.g. the server can deliver in title or date 
+              sequence but subject was requested.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="89"></a>89</td>
+            <td>&nbsp;</td>
+            <td>sort</td>
+            <td>Path unsupported for schema</td>
+            <td>The path given cannot be generated for the schema requested. For 
+              example asking for /record/fulltext within the simple Dublin Core 
+              schema</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="90"></a>90</td>
+            <td>&nbsp;</td>
+            <td>sort</td>
+            <td>Unsupported direction</td>
+            <td>the server can accept a sort statement within a request but cannot 
+              deliver as requested, e.g. the server can deliver in ascending only 
+              but descending was requested.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="91"></a>91</td>
+            <td>&nbsp;</td>
+            <td>sort</td>
+            <td>Unsupported case</td>
+            <td>the server can accept a sort statement within a request but cannot 
+              deliver as requested, e.g. the server's index is single case so 
+              sorting case sensitive is unsupported</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="92"></a>92</td>
+            <td>&nbsp;</td>
+            <td>sort</td>
+            <td>Unsupported missing value action</td>
+            <td>the server can accept a sort statement within a request but cannot 
+              deliver as requested. For example, the request includes a constant 
+              that the server should use where a record being sorted lacks the 
+              data field but the server cannot use the constant to override its 
+              normal behavior, e.g. sorting as a high value. </td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="93"></a>93</td>
+            <td>Dec 2005</td>
+            <td>sort</td>
+            <td>Sort ended due to missing value</td>
+            <td>missingValue of &#8216;abort&#8217; </td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="110"></a>110</td>
+            <td>&nbsp;</td>
+            <td>stylesheet</td>
+            <td>Stylesheets not supported</td>
+            <td>The SRU server does not support stylesheets, or a stylesheet was 
+              requested from an SRW server.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="111"></a>111</td>
+            <td>&nbsp;</td>
+            <td>stylesheet</td>
+            <td>Unsupported stylesheet</td>
+            <td>This particular stylesheet is not supported, but others may be.</td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="120"></a>120</td>
+            <td>&nbsp;</td>
+            <td>scan</td>
+            <td>Response position out of range</td>
+            <td>The request includes a position in response that is not valid 
+              for the list. For example a request indicates a response position 
+              = 15 and maximum terms = 20, meaning that it wants a response to 
+              include 15 entries before the term, plus the term, then another 
+              4. The server would return this diagnostic if there were not 15 
+              previous entries.<br> </td>
+          </tr>
+          <tr valign="top"> 
+            <td scope="row"><a name="121"></a>121</td>
+            <td>July 26, 2004</td>
+            <td>scan</td>
+            <td>Too many terms requested</td>
+            <td>Say you ask for 500 terms and the server has a (fixed) maximum 
+              of 300. It would supply a value of '300' for details. If 'details' 
+              is not supplied, this might mean that the server doesn't have a 
+              fixed maximum and was just unable to deliver all the requested terms.<br>            </td>
+          </tr>
+          <tr valign="top">
+            <td scope="row"><a name="234"></a>235</td>
+            <td>March 16, 2012 </td>
+            <td>&nbsp;</td>
+            <td>Database does not exist</td>
+            <td>&nbsp;</td>
+          </tr>
+      </table>
+	<p><img src="/images/arrow_up.gif" alt="">&nbsp;<a href="#skip_menu">Back to top</a></p>
+      <!-- InstanceEndEditable -->
+      <div id="breadcrumbs-bottom"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-bottom" --><a href="../resources/index.html">resources</a>&nbsp;&raquo; 
+        diagnostics list<!-- InstanceEndEditable --></div>
+</td></tr>
+
+</table>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://www.loc.gov/">The 
+        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div>
+      <br>
+  <span class="sitenav">
+  <!-- #BeginDate format:Am1 -->March 16, 2012<!-- #EndDate -->
+  </span></td>
+<td align="right"><div class="contactus"><a href="mailto:ndmso@loc.gov">Contact Us</a></div></td>
+</tr></table>
+</body>
+<!-- InstanceEnd --></html>

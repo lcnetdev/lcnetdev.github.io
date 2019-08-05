@@ -1,0 +1,492 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/subpage.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Short Topics - SRU Version 1.2 Specifications (SRU: Search/Retrieval via URL -- SRU, CQL and ZeeRex, Standards, Library of Congress)</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link type="text/css" media="print" href="../css/sru-print.css" rel="stylesheet">
+<style type="text/css" media="screen">
+@import url(../css/sru-base.css);
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="shortcut icon" href="http://www.loc.gov/standards/sru/images/favicon.ico">
+<!-- InstanceBeginEditable name="head" -->
+<meta name="keywords" content="short topics sru version 1.2 specifications sru search retrieval url cql zeerex standards library congress">
+<meta name="description" content="Short Topics (Background) SRU Version 1.2 Specifications. SRU is a standard XML-focused search protocol for Internet search queries, utilizing CQL (Contextual Query Language), a standard syntax for representing queries. Standards, The Library of Congress.">
+<!-- InstanceEndEditable -->
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<form action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" name="seek1" method="get">
+<input type="hidden" name="col" value="loc">
+<input type="hidden" name="sc" value="0">
+<input type="hidden" name="ws" value="0">
+<input type="hidden" name="la" value="en">
+<input type="hidden" name="qm" value="0">
+<input type="hidden" name="st" value="1">
+<input type="hidden" name="nh" value="10">
+<input type="hidden" name="lk" value="1">
+<input type="hidden" name="rf" value="0">
+<input type="hidden" name="oq" value="">
+<input type="hidden" name="si" value="0">
+<input type="hidden" name="rq" value="0">
+<input type="hidden" name="qc" value="">
+<table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
+  <div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div></td>
+<td width="116"><select name="qp" tabindex="1">
+<option value="url:/sru" selected>SRU Web Pages</option>
+<option value="url:/standards url:/ead url:/marc">Standards Pages</option>
+<option value="">All Library Pages</option>
+</select></td><td width="117" align="right"><input type="text" name="qt" id="keyword" size="18" value="" tabindex="2"></td>
+<td width="67" align="right"><input class="button" id="search_button" name="search_button" type="submit" value="SEARCH" tabindex="3"></td>
+</tr></table></form>
+<table align="center" class="layout" cellpadding="0" cellspacing="0"><tr><td>
+<div id="graphic"> 
+<h1 class="homepage"><img src="../images/sru.gif" alt="SRU (Search/Retrieval Using URL)" width="600" height="50"></h1>
+</div>
+<div class="goldtop"></div>
+      <div id="breadcrumbs"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-top" --><a href="../background/index.html">background</a>&nbsp;&raquo;&nbsp;short
+          topics &nbsp; <!-- InstanceEndEditable --></div>
+<div class="clear"><a name="skip_menu"></a></div>
+ <!-- InstanceBeginEditable name="content" -->
+    
+        <h1>Short Topics</h1>
+        <ol>
+          <li> <a href="#xquery">XQuery: its Relationship to CQL</a></li>
+          <li><a href="#openurl">OpenURL: Why can't it be used as a query syntax?
+              (Why do we need SRU?)</a></li>
+          <li><a href="#oai">OAI, OpenURL, and sru: How might these three work
+              together?</a></li>
+          <li><a href="#item">Item/Document Order / Resource Delivery Protocol</a>
+          <li><a href="#srupostget">SRU: Post Vs. Get </a>
+          <li> <a href="#opensearch">OpenSearch Vs. SRU Parameter Names </a>
+          <li><a href="#z3950">SRU vs. Z39.50</a>
+          <li><a href="#srw">What are the potential advantages of SRW over SRU?</a>
+          <li><a href="#federated">Federated Search</a>
+      </ol>
+        <hr>
+        <h2><a name="xquery"></a>XQuery: Its Relationship to CQL</h2>
+        <p>Query languages for the most part are either: <br>
+          (a) powerful and expressive but complex and cryptic, not human-friendly;
+            or <br>
+          (b) simple and easy to understand, user-friendly, but lacking in functionality. </p>
+        <p>Examples of (a) are W3C's XQuery, SQL, and the Z39.50 type-1 query.
+          Examples of (b) are CCL and Google. Query languages in general do not
+          combine functionality and user-friendliness; CQL is an attempt to combine
+          these two features. </p>
+        <p>More to the point, CQL's goal is to combine the simplicity and intuitiveness
+          of google searching with the expressive power of the Z39.50 query;
+          to allow users to begin with very simple queries and work their way
+          up to arbitrarily complex expressions as necessary.</p>
+        <p>&nbsp;For example, the following (valid) CQL queries are intuitive
+          and need no explanation:</p>
+        <ul>
+          <li> birds </li>
+          <li> birds or dinosaurs</li>
+          <li> dinosaur not reptile</li>
+          <li> dinosaur and bird or dinobird</li>
+          <li> title= dinosaur and author=crichton</li>
+          <li> (((a and b) or (c not d) not (e or f and g)) and h not i) or j</li>
+          <li> publicationYear &lt; 1980</li>
+          <li> numberOfWheels &lt;= 3</li>
+          <li> numberOfToes &lt;&gt; 3</li>
+        </ul>
+        <p>And the following are reasonably but not completely intuitive:</p>
+        <ul>
+          <li> birds prox dinosaurs&nbsp; --&nbsp; &quot;find birds near dinosaurs&quot;</li>
+          <li> birds proxprox/distance=1/unit=sentence dinosaurs&nbsp; -- &quot;...
+            . Within the same sentence&quot;</li>
+          <li> dc.title= dinosaur and bath.author=crichton&nbsp; -- &quot;find
+            dinosaur in the dc title index and crichton in the bath author index&quot;</li>
+          <li> author all &quot;crichton michael&quot;&nbsp; -- &quot;author
+            contains all of these words&quot;</li>
+          <li> author any &quot;crichton michael&quot;&nbsp; -- &quot;author
+            contains any of these words&quot;</li>
+        </ul>
+        <p>The second set of examples reflect more functionality that those in
+          the first set and are correspondingly more complex, but not disproportionately
+          so.</p>
+        <p>XQuery, on the other hand, is a large and complex specification, which
+          has been in development for a long time (several years) and consists
+          of a number of (12 or so) large documents.&nbsp; It is difficult to
+          comprehend without committing several days to reading the documents.
+          CQL, by contrast, can be understood completely in an hour or so. </p>
+        <p>The XQuery development has been influenced, almost entirely, by two
+          very distinct constituencies: (1) XML-as-document and (2) XML-as-data.&nbsp; The
+          first reflects XML's roots as SGML, while the second reflects a relational
+          database bias.&nbsp; Neither of these constituencies &quot;won&quot;;
+          XQuery, rather than defining different queries for the different models,
+          attempts to meet the needs of both constituencies with a single language. </p>
+        <p>Both XQuery and CQL assume that information is returned as XML. But
+          XQuery goes a step further. It assumes that the information <i>to be
+          queried</i> is (or is representable as) XML; CQL makes no such assumption.&nbsp;</p>
+        <p> Both languages specify a non-xml syntax; XQuery, in addition, defines
+          an alternative XML syntax.* In the XQuery case, this reflects apparent
+          inability to resolve the question of whether an XML query syntax should
+          itself be XML. Though on the surface it seems a good idea, the CQL
+          developers ultimately decided it was not. </p>
+        <blockquote class="box1"> *(CQL did specify an alternative XML sytax,
+          XCQL, in version 1.0, but abandoned it in 1.1. That is, it abandoned
+          it for purposes of <i>submitting </i>the query. CQL retains the XCQL
+          spec to be used by server to &quot;echo&quot; the query that was submitted.)</blockquote>
+        <p>An example of a&nbsp; simple (non-xml) XQuery query is:</p>
+        <pre class="box2">let $title := /book/title<br> &nbsp;&nbsp; return 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;returnedTitle&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $title
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/returnedTitle&gt;</pre>
+        <p>which is reasonably intuitive, it says &quot;find all elements &lt;title&gt; within
+          element &lt;book&gt; and return these as XML fragments each wrapped
+          in an element &lt;returnedTitle&gt;&quot;.</p>
+        <p>This example illustrates some fundamental differences from CQL:</p>
+        <ul>
+          <li> With XQuery, you don't get a result set maintained at the server,
+            rather, you get all the results back in the query response. This
+            is because, unlike Z39.50 (and SRU) there isn't a presumption of
+            a protocol. (Actually, it seems, there is a presumption of <em>no</em> protocol.)&nbsp; CQL
+            doesn't address how results are to be returned, rather, it assumes
+            that there is a protocol which governs its use, for example (but
+            not necessarily), SRU. </li>
+          <li> With XQuery, you search according to a search schema, for example,
+            there is a presumption in the above example that there are &lt;title&gt; elements
+            with &lt;book&gt; elements.&nbsp; Z39.50 (and SRU) use abstract access
+            points instead, for example when you search on 'title' the server
+            interprets '&quot;title' however it chooses. </li>
+          <li>There really is no concept of record in the XQuery data model.
+            In the above example you may get a bunch of titles returned, but
+            they may all be from the same document. You would get a hit count,
+            but it wouldn't be the number of records. </li>
+        </ul>
+        <p>XQuery could be very useful and appropriate for searching, for example,
+          the congressional record, assuming that it is exposed in XML, where
+          the specific schema of the data is well-known. It would also be useful
+          for relational databases.&nbsp; It would not be useful for bibliographic
+          data, record-based databases, or for metasearching across diverse databases;
+          instead, CQL/SRU, will be more appropriate. </p>
+        <hr>
+        <h2> <a name="openurl"></a>OpenURL and SRU</h2>
+        <p>SRU is sometimes compared with OpenURL. People ask &quot;why isn't
+          OpenURL used for searching, rather than SRU?&quot;</p>
+        <p>OpenURL packages metadata, about a desired resource, along with additional
+          context information, into a URL. SRU packages query parameters, which
+          similarly are often metadata about a desired resource, along with protocol
+          information, into a URL. So there are similarities between OpenURL
+          and SRU.</p>
+        <p>But the comparison is superficial. It's useful to look more closely
+          at the OpenURL model. OpenURL links a user to an appropriate resource.
+          It does this in part by including bibliographic information about the
+          resource. As that information might lead to several resources, context
+          information is also included in the URL, to help select the most appropriate
+          from among those several resources. </p>
+        <p>In a typical OpenURL scenario&nbsp; a user (<em>requester</em>) accesses
+          a server (<em>referrer</em>) on which there is an article (<em>referring
+          entity</em>) which cites a reference (<em>referent</em>). The reference
+          looks like it might be a normal link that the user can click, but it's
+          really an OpenURL -- an&nbsp; HTTP URL, not a URL for a specific resource,
+          but instead, metadata about these <em>context entities</em> (requester,
+          referrer, refering entity, referent). And the base url (i.e. where
+          the url is being sent) isn't the location of the desired resource,
+          instead it is what's known as a <em>resolver</em> -- a server designed
+          to take all this information and determine what resource the user really
+          wants (or is &quot;most appropriate&quot;).&nbsp;</p>
+        <blockquote> Note: There may be an additional step: when the user clicks
+          on the link it might first get a menu of services:&nbsp; full text,
+          abstract, table of contents, reviews, etc.&nbsp; The user selects one
+          and this desired&nbsp; <em>service type</em> is also included in the
+          URL.</blockquote>
+        <p>So SRU and OpenURL serve very different purposes. One selects records
+          based on search criteria, the other selects a single resource, the
+          one deemed&nbsp; &quot;most appropriate&quot;, from among a number
+          of potential resources, based on context information. </p>
+        <p>Note also that&nbsp; OpenURL intends to locate a single resource,
+          while SRU finds all resources that meet specified criteria.&nbsp; OpenURL
+          generally returns full text of the resource (or if not full text of
+          the resource, text for some desired service). With SRU, the request
+          can specify the format of the response records, and the response might
+          not include any record, but instead indicate a result count (and the
+          user may subsequently retrieve records from the result set). </p>
+        <p>Thus SRU is an information retrieval protocol. OpenURL is not. On
+          the other hand, OpenURL, clearly, addresses functions that SRU doesn't
+          contemplate.</p>
+        <hr>
+        <h2> <a name="oai"></a>OAI, SRU, and OpenURL: How might these three work
+          together?</h2>
+        <p>These three can work together in a complimentary manner. First consider
+          the complimentary roles of OIA and SRU.</p>
+        <p>In the OAI model, a service provider accesses a metadata repository
+          via the OAI protocol, to harvest records from the repository. There
+          is little selectivity available to the service provider, it simply
+          takes the metadata records available, subject to some basic filtering,
+          for example time of creation or sub-repository name. The result is
+          a somewhat random collection of metadata records. The OAI protocol
+          does not address how that database might be searched. That's where
+          SRU would come in. The service provider would interface an SRU server
+          to the database of metadata records for an SRU client to access. </p>
+        <img src="../background/images/oai.gif" alt="Graphic representation of OAI model" hspace="11" border="0" align="left">
+        <p> In this model, where an SRU server has access to harvested metadata,
+          an OpenURL provider can effectively utilize an SRU client who has access
+          to this server.</p>
+        <p>In the OpenURL model as described <a href="#openurl">above</a> a user
+          accesses an article which cites a reference, which looks like a normal
+          link that the user can click, but it's really an OpenURL, filled with
+          metadata.&nbsp; The system that provides the OpenURL needs access to
+          metadata in order to populate the OpenURL with metadata and also to
+          keep the metadata up-to-date. For example, the system might want to
+          create an OpenURL for a resource for which it has an identifier, or
+          a title; it would search the respository on that identifier or title,
+          thereby obtaining other metadata elements for the resource. </p>
+        <hr>
+        <h2><strong><a name="srupostget"></a>SRU: Post Vs. Get</strong></h2>
+        <p>The question &quot;<i>why not POST an SRU request instead of (or as
+            an alternative to) using GET?&quot; </i>was raised, because:</p>
+        <ol>
+          <li> SRU query URLs sometimes exceed the maximum length supported by
+            some toolkits or servers. <br>
+            <br>
+            By using HTTP POST (rather than GET) to transmit the URL the substring
+            following the base URL would be sent in the body of the HTTP message;
+            this&nbsp; effectively avoids string-length limitations, since usually
+            the base URL isn't terribly long.&nbsp; <br>
+          </li>
+          <li> Certain queries are difficult or impossible to send via GET because
+            of character encoding complexities. There is no way to indicate character
+            encoding with GET; with POST, you can explicitly state the character-set.</li>
+        </ol>
+        <p>SRW uses POST; currently SRU uses GET, and the suggestion is to also
+          allow SRU via POST. Then we would effectively have three methods for
+          how SRW/U is handled via HTTP: </p>
+        <ol>
+          <li> POST with SOAP (SRW)</li>
+          <li>GET (SRU)</li>
+          <li> POST without SOAP (SRUP - new POST option for SRU)</li>
+        </ol>
+        <p>There are two issues: </p>
+        <h3>Resolution</h3>
+<p>Currently&nbsp; SRW and SRU messages go to the same base URL where
+          (some toolkits assume) that anything received via&nbsp; POST is SRW,
+          so the message is passed to SOAP, while GET messages go to a different
+          process for SRU processing.&nbsp; In other words the software distinguishes
+          SRW from SRU solely based on HTTP method, POST or GET. By adding this
+          third method, they wouldn't be able to get away with that any longer. </p>
+        <p>One possible solution is to use different addresses for the different
+          methods, and there are a number of suggestions for resolution, for
+          example, Explain can provide a list of methods supported and corresponding
+          addresses, or this could be done via &lt;links&gt; in &lt;databaseInfo&gt;.&nbsp; And
+          it is also suggested that&nbsp; Explain could&nbsp; make this distinction
+          without distinct addresses: You can already say SRW/U meaning that
+          you support SRW and SRU at the same address.&nbsp; With an addition
+          of a 'method' attribute you can say if you support SRU via POST or
+          GET. (The value would be a space separated list. So you could have: &lt;...
+          protocol=&quot;SRW/U&quot; method=&quot;POST GET&quot;&gt;.)</p>
+        <h3>Complexity of Adding a Third Method</h3>
+<p>The consensus appears to be that the cost of this complexity
+          is worth the gain. Not allowing SRUP would mean that some queries will
+          be impossible without SOAP, and the people affected are likely to just
+          implement it anyway, allowed or not.</p>
+<p>So, assuming we define a third method, SRUP, the SRU choices for an
+          implementor (leaving aside SRW considerations for the moment) become:</p>
+        <ol>
+          <li>SRU alone</li>
+          <li>SRU + SRUP&nbsp; </li>
+          <li> SRUP alone</li>
+        </ol>
+        <p>However, simple clients are most likely to continue to use SRU GET,
+          so it is important that&nbsp; choice (3) be disallowed.&nbsp; The best
+          way to do that is to explicitly declare that conformance to SRU requires
+          that GET be implemented (whether POST is implemented or not).&nbsp; This
+          argues in favor of formalizing SRUP, because otherwise there would
+          be no context for such a conformance rule.&nbsp;&nbsp;&nbsp; </p>
+        <hr>
+        <h2><a name="opensearch" id="opensearch"></a>Opensearch Vs. SRU Parameter
+          Names</h2>
+        <p>One of the interesting features of openSearch is that the parameter
+          names are not fixed. The parameters defined by the openSearch query
+          spec are (1) the query, (2) number of records desired, (3) offset.&nbsp; There
+          are analogous SRU parameters. In SRU these three parameters have well-defined
+          names.&nbsp; However the openSearch spec does not define names for
+          these parameters, rather it allows an openSearch server to use whatever
+          names it wants. For example, consider these three queries:</p>
+        <ol>
+          <li>http://www.solent.tv/opensearch.aspx?q=chicago%20white%20soxr&amp;c=20&amp;s=1</li>
+          <li> http://www.koders.com/?s=chicago%20white%20sox&amp;p=1&amp;output=rss</li>
+          <li> http://www.unto.net/aws?searchTerms=chicago%20white%20sox&amp; <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; searchIndex=SportingGoods&amp;style=desc&amp;format=osrss </li>
+        </ol>
+        <p>In (1) the query is supplied by the parameter with name 'q'. In (2)
+          the query parameter is 's', and in (3), 'searchTerms'. Note also that
+          there are additional parameters beyond the base three, for example
+          'output' in (2) and 'format' in (3).</p>
+        <p>This works, because openSearch requires that a server provide a so-called
+          openSearchDescription, which is in a real sense analogous to ZeeRex,
+          which &quot;explains&quot; all the parameters.&nbsp;&nbsp;</p>
+        <p>The reasoning for this (as explained by the openSearch developer)
+          is to allow a company to use an existing query format, that is, the
+          same parameters, as long as the base three match up semantically.</p>
+        <p> (And it is interesting to observe, this is working in the real world,
+          based on the idea of self-configuring clients, the same concept as
+          that of ZeeRex.)</p>
+        <p>Here is a sample xml element, &lt;url&gt;, which is included in a
+          description file and server to explain the openSearch parameters accepted:</p>
+        <blockquote>&lt;Url&gt;http://search.athenscounty.lib.oh.us/cgi-bin/koha/opensearch?|<br>
+            q={searchTerms}&amp;searchindex=NPLKoha&amp;startPage={startPage}<br>
+            &amp; count={count}&amp;relevanceScale={relevanceScale}&lt;/Url&gt;</blockquote>
+        <p>Thus &quot;q={searchTerms}&quot;&nbsp; serves to explain that the
+          parameter name 'q' is to be used for the query, etc.&nbsp; Note also
+          that this example defines a local parameter, 'relevanceScale'.&nbsp; Local
+          parameters are not expected to necessarily be supported by the client. </p>
+
+        <hr>
+        <h2><a name="z3950"></a>SRU and Z39.50</h2>
+        <p>The SRU Initiative recognizes the importance of Z39.50 (as currently
+          defined and deployed) for business communication. While SRU focuses
+          on getting information to the user, building on Z39.50 semantics enables
+          the creation of gateways to existing Z39.50 systems.</p>
+        <p> SRU combines several Z39.50 features, most notably, the Search, Present,
+          Sort and Scan Services. Additional features/services may be added later
+          or defined later as new web services.</p>
+
+        <h3>Z39.50 Concepts Retained in SRU</h3>
+        <ul>
+          <li>Result Sets </li>
+          <li>Abstract Access points</li>
+          <li>Abstract Record schemas</li>
+          <li>Explain </li>
+          <li>Diagnostics</li>
+        </ul>
+        <h3>Some SRU Differences from Z39.50 </h3>
+        <ul>
+          <li><i><strong>Result Set Named by Server</strong></i><br>
+            In contrast to Z39.50 where the client names the result set, for
+              SRU the server assigns the result set id. </li>
+          <li><i><strong>Connections, Sessions, State</strong></i><br>
+            There is no explicit concept of connection, session, or state. </li>
+          <li><i><strong>No distinction between server and database</strong></i><br>
+            SRU does not distinguish between a server and a database; it is hoped
+              that elimination of the database concept will effect significant
+              simplification (since the multiple-database concept in Z39.50 has
+              caused such complexity), for example Explain is significantly simplified
+              (and hopefully it will therefore become more widely implemented). </li>
+          <li><strong><i>Single record syntax</i></strong><br>
+            All SRU records are retrieved according to a single record syntax
+              (XML) and therefore the (Z39.50) concept of record syntax is not
+              necessary. The (Z39.50) concepts of element set/specification and
+              schema are represented by XML schemas, e.g. Dublin Core, Onix,
+              MODS, and MarcXml.</li>
+          <li><i><strong>String Query</strong></i><br>
+            SRW specifies string queries base on the query language, CQL. Z39.50,
+              in contrast, does not define a human-readable query language. The
+              CQL syntax includes the result set name, and supports both the
+              capability to qualify a result set (e.g. "records in result set
+              'A' where title is 'B' ") and to specify only a result set name
+              (e.g. "records in result set 'A'") analogous to a Z39.50 Present. </li>
+          <li><i><strong>Flat Indexes</strong></i><br>
+            Flat indexes are defined, rather than utilizing attribute vectors
+              as in traditional Z39.50. </li>
+          <li><i><strong>Simplified Explain</strong></i><br>
+            Explain information is not based on the Z39.50 Explain concept of
+              searching an Explain database for specific information, but rather,
+              all explain information for a server is contained in a single file,
+              retrieved in a single operation. Explain information includes supported
+              access points and record schemas. The Explain simplification also
+              owes in large part to the SRW simplification discarding multiple
+              databases and record syntaxes, and it is hoped that there will
+              be more motivation to implement the SRW version of Explain (than
+              there was to implement the Z39.50-1995 Explain) because of the
+              substantial simplification. </li>
+          <li><i><strong>XML instead of ASN.1.</strong></i><br>
+            XML is used for abstract syntax as well as encoding. ASN.1/BER is
+              not used. </li>
+        </ul>
+        <hr>
+        <h2><a name="srw" id="srw"></a>What are the potential advantages of SRW
+          over SRU?</h2>
+        <p>The benefits of SRW are: better extension support, authentication,
+          web service features. </p>
+        <hr>
+        <h2><strong><a name="federated" id="federated"></a>Federated Search</strong></h2>
+        <p><strong>Eric Morgan </strong><br>
+          asks: What are some techniques to implement federated search against
+            a collection of SRU-accessible indexes?</p>
+        <h3>Responses</h3>
+<p><strong>Ralph LeVan<br>
+          </strong>We created a federating database that forwards a search to
+          multiple databases, accumulates the responses to build indexes for
+          a new (single) virtual database, and provides search against this new
+          database. It assumes similarity among the remote databases - does no
+          query mapping or record syntax normalization but uses the explain record
+          from the first database on its list as its own explain record. <strong><br>
+        </strong><br>
+        <strong>Rob Sanderson<br>
+        </strong>Scan all known indexes on remote database and create a document
+        that represents that server, with a field containing all terms in a given
+        index.&nbsp; Index these documents. For a given request, search the proxy
+        documents constructed to find databases that are likely to have a match.
+        Rank them by relevance using the frequency of the term in the index (as
+        retreived with scan). Then search the matching databases in order of
+        relevance. If you're expecting to make this available over the web, then
+        limiting the number of parallel searches at any one time is a good idea
+        or you'll blow away either your own server or the remote database.</p>
+        <p><strong>Matthew Dovey</strong><br>
+          Let's say we search three databases <strong>A</strong>, <strong>B</strong>, <strong>C</strong>.
+          We send a searchRetrieve request to all three ( no records to be returned). <strong>A</strong> says
+          it has 15 results, <strong>B</strong> says 10, and <strong>C</strong>,
+          5. In our user interface we only display 10 records at a time, so we
+          start by displaying the first 10 from <strong>A</strong> (a second
+          searchRetrieve this time asking for 10 records). If the user selects
+          the next page, we pull back the remaining 5 from <strong>A</strong>,
+          and the first 5 from <strong>B</strong>, and so on.</p>
+        <p>An optimization/improvement:</p>
+        <p> <strong><em>the &quot;Centroid&quot; approach </em> </strong></p>
+<p>Retrieve the list of terms from an index from each database via scan.</p>
+        <p> For example, say:</p>
+        <ul>
+          <li>Database <strong>A</strong> for authors returns the list:
+            <ul>
+                <li> Smith - 15 occurences</li>
+              <li> Shakespeare &#8211; 10 occurences</li>
+              <li> Morgan - 1 occurence</li>
+              <li> Dovey - 10 occurences</li>
+              <li> Sanderson &#8211; 15 occurences</li>
+            </ul>
+          </li>
+          <li>Database <strong>B</strong> the list:
+            <ul>
+                <li> Smith - 28 occurences</li>
+              <li> Morgan - 10 occurences</li>
+              <li> Dovey -5 occurences</li>
+            </ul>
+          </li>
+          <li> Database <strong>C</strong>:
+            <ul>
+                <li> Smith - 28 occurences</li>
+              <li> Sanderson &#8211; 10 occurences</li>
+            </ul>
+          </li>
+        </ul>
+        <p>Searching for &quot;author=Morgan&quot;, there is no point in sending
+          a request to database <strong>C</strong>, and probably not much point
+          sending to <strong>A</strong> either. This approach reduces the number
+          of database you need to search for a particular query. (However, it
+          isn't very good if you are trying to locate particular items, for example
+          if these were databases of rare<br>
+          books.)</p>
+
+      
+<!-- InstanceEndEditable -->
+      <div id="breadcrumbs-bottom"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-bottom" --><a href="../background/index.html">background</a>&nbsp;&raquo;&nbsp;short
+          topics <!-- InstanceEndEditable --></div>
+</td></tr>
+
+</table>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://www.loc.gov/">The 
+        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div>
+      <br>
+  <span class="sitenav">
+  <!-- #BeginDate format:Am1 -->November 13, 2013<!-- #EndDate -->
+  </span></td>
+<td align="right"><div class="contactus"><a href="mailto:ndmso@loc.gov">Contact Us</a></div></td>
+</tr></table>
+</body>
+<!-- InstanceEnd --></html>

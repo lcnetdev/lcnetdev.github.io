@@ -1,0 +1,230 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/subpage.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Extra Data (Extensions) - SRU Version 1.2 Specifications (SRU: Search/Retrieval via URL -- SRU, CQL and ZeeRex, Standards, Library of Congress)</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link type="text/css" media="print" href="../css/sru-print.css" rel="stylesheet">
+<style type="text/css" media="screen">
+@import url(../css/sru-base.css);
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="shortcut icon" href="http://www.loc.gov/standards/sru/images/favicon.ico">
+<!-- InstanceBeginEditable name="head" -->
+<meta name="keywords" content="extensions sru version 1.2 specifications sru search retrieval url cql zeerex standards library congress">
+<meta name="description" content="Extensions: SRU Version 1.2 Specifications. SRU is a standard XML-focused search protocol for Internet search queries, utilizing CQL (Contextual Query Language), a standard syntax for representing queries. Standards, The Library of Congress.">
+<style type="text/css">
+<!--
+.style1 {color: #FF6633}
+-->
+</style>
+<!-- InstanceEndEditable -->
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<form action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" name="seek1" method="get">
+<input type="hidden" name="col" value="loc">
+<input type="hidden" name="sc" value="0">
+<input type="hidden" name="ws" value="0">
+<input type="hidden" name="la" value="en">
+<input type="hidden" name="qm" value="0">
+<input type="hidden" name="st" value="1">
+<input type="hidden" name="nh" value="10">
+<input type="hidden" name="lk" value="1">
+<input type="hidden" name="rf" value="0">
+<input type="hidden" name="oq" value="">
+<input type="hidden" name="si" value="0">
+<input type="hidden" name="rq" value="0">
+<input type="hidden" name="qc" value="">
+<table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
+  <div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div></td>
+<td width="116"><select name="qp" tabindex="1">
+<option value="url:/sru" selected>SRU Web Pages</option>
+<option value="url:/standards url:/ead url:/marc">Standards Pages</option>
+<option value="">All Library Pages</option>
+</select></td><td width="117" align="right"><input type="text" name="qt" id="keyword" size="18" value="" tabindex="2"></td>
+<td width="67" align="right"><input class="button" id="search_button" name="search_button" type="submit" value="SEARCH" tabindex="3"></td>
+</tr></table></form>
+<table align="center" class="layout" cellpadding="0" cellspacing="0"><tr><td>
+<div id="graphic"> 
+<h1 class="homepage"><img src="../images/sru.gif" alt="SRU (Search/Retrieval Using URL)" width="600" height="50"></h1>
+</div>
+<div class="goldtop"></div>
+      <div id="breadcrumbs"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-top" --><a href="../sru-1-2/index.html">sru 
+        version 1.2 specs</a>&nbsp;&raquo; extra data / extensions<!-- InstanceEndEditable --></div>
+<div class="clear"><a name="skip_menu"></a></div>
+ <!-- InstanceBeginEditable name="content" --> 
+      <h3>SRU</h3>
+      <h1> Extra Data / Extensions</h1>
+      <p><img src="http://www.loc.gov/images/arrow_o.gif" alt="" width="9" height="9"> List of <a href="registeredExtensions.html">Registered Extensions</a></p>
+      <p>Messages in all of the operations, both in the request and in the response, 
+        have a field in which additional information may be provided. This is 
+        a built in extension mechanism where profiles may specify a schema for 
+        what to include in this section without requiring the developers to change 
+        the basic messages and thus render their implementation uninteroperable 
+        with other servers and clients. It is expected that if there is sufficient 
+        demand for a particular piece of additional information, that piece of 
+        information will be migrated into the protocol in a later version. In 
+        this way, only implemented and useful features will be added in future 
+        versions, rather than features which just seem like a good idea. </p>
+      <h3>Rules and Semantics</h3>
+      <ul>
+        <li> <b>If the server does not understand a piece of information in an 
+          extraRequestData field, it may silently ignore it.</b><br>
+          This is unlike many other request parameters, where if the server does 
+          not implement that particular feature it should respond with a diagnostic. 
+          If the particular request requires some confirmation that it has been 
+          carried out rather than ignored, then the profile designer should include 
+          a field in the extraResponseData. </li>
+        <li><b>The semantics of parameters in the <i>request</i> MAY NOT be modified 
+          by extraRequestData.<br>
+          </b> For example, a x-qt-queryType parameter could not change query 
+          to be an SQL query, as a server that does not understand the x-qt-queryType 
+          extension would expect the query to be in CQL, and thus be unable to 
+          parse it. Instead, the extraData should create a new element for the 
+          information. </li>
+        <li><b>The semantics of parts of the <i>response </i>MAY be modified by 
+          extensions. </b><br>
+          The response semantics may be changed in this way only if the client 
+          specifically requests the change. Clients should also expect to receive 
+          the regular semantics, as servers are at liberty to ignore extraRequestData 
+          fields. </li>
+        <li><b>ExtraResponseData may be sent that is not connected to the search 
+          in the request.<br>
+          </b> For example it may contain cost information regarding the query 
+          or information on the server or database supplying the results. (This 
+          data must, however, have been requested. See next rule.)</li>
+        <li><b>ExtraResponseData MAY NOT be sent unless explicitly requested in 
+          the request.</b></li>
+      </ul>
+      <h3>SRU Parameter</h3>
+      <p> <i>Request</i><br>
+        For SRU the name for an extra-data parameter must begin with 'x-'&nbsp; 
+        -- lower case x followed by hyphen. (The SRU protocol will never include 
+        an official parameter with a name beginning with 'x-'.) It is suggested, 
+        but not required, that the parameter name be 'x-' followed by an identifier 
+        for the extension (again followed by hyphen), followed by the name of 
+        the element within the XML namespace associated with the extension. For 
+      example 'x-info-4-onSearchFail' for &lt;theo:onSearchFail&gt;.      
+      <div class="example"> http://lx2.loc.gov:210/LCDB?...&amp;<strong>x-info4-onSearchFail=scan</strong></div>
+      <p>(In this 
+        example 'info-4' identifies the namespace; see next paragraph.). Note 
+        that this convention does not guarantee uniqueness since (in contrast 
+        to SRW - see <a href="#srw">SRW Parameter</a> below.) the parameter name 
+        will not include a URI. The extension owner should try to make the name 
+        as unique as possible. 
+      <p> If the namespace is identified by an <a href="../resources/infoURI.html">'info:srw' 
+        URI</a> (and note that there is no such requirement, the namespace may 
+        be identified by a URI of a different scheme, for example 'http'), then 
+        a convention that may be used (as in the example above) is to name the 
+        parameter &quot;x-info-&lt;nnn&gt;-&lt;element name&gt;&quot; where &lt;nnn&gt; 
+        is the 'srw:info' <a href="../resources/infoURI.html#authoritystring">authority 
+        string</a>. This convention (suggested but not required) should guarantee 
+        uniqueness. It is strongly suggested that an extension name never be assigned 
+        with this form except by the proper authority for the given 'info' namespace. 
+      <p> <i>Response</i><br>
+Every response has an <strong>extraResponseData</strong> section.
+        This section can include any well-formed XML, and hence servers can include
+        namespaced XML fragments within it in order to convey information back to
+        the client. The extension MUST supply a namespace and the element names
+      with which to do this, if feedback to the client is necessary. For example: 
+      <div class="example">&lt;sru:extraResponseData&gt;<br>
+  &lt;auth:token xmlns:auth="info:srw/extension/2/auth-1.0"&gt;<br>
+        277c6d19-3e5d-4f2d-9659-86a77fb2b7c8<br>
+  &lt;/auth:token&gt;<br>
+  &lt;/sru:extraResponseData&gt;</div>
+      <p><br>
+        As the request may be echoed in SRU, the server must be able to transform 
+        the parameters into their XML form. If it encounters an unrecognised parameter, 
+        the server may either make its best guess as to how to transform the parameter, 
+        or simply not return it at all. It should not, however, add an undefined 
+        namespace to the element as this would invalidate the response. 
+      <p> If the contents of the parameter is an XML structure, then the profile 
+        designer should also specify how to encode this structure for SRU. This 
+        may simply be to escape all of the special characters, but the designer 
+        could also create a string encoding form with rules as to how to generate 
+        the XML in much the same fashion as the relationship between CQL and XCQL. 
+      <h3><a name="srw"></a>SRW Parameter</h3>
+      <p>For SRW, The extra data fields is an XML structure. Even if there is 
+        only one piece of additional information supplied, it must be within a 
+        namespaced XML element. This is in order to ensure that servers can distinguish 
+        a field from one profile from another.&nbsp; Examples:</p>
+      <p class="example">&lt;extraRequestData&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt; theo:onSearchFail xmlns:theo="info:srw/extension/4/searchextensions"&gt;<br>
+        scan 
+        <br>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt; /theo:onSearchFail&gt; <br>
+        &lt;/extraRequestData&gt;</p>
+      <br>
+      <p class="example">&lt;extraResponseData&gt;<br>
+        &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;rob:relevancyAlgorithm xmlns:rob="info:srw/extension/2/relevancy"&gt;CORI 
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &lt; /rob:relevancyAlgorithm&gt;<br>
+        &lt; /extraResponseData&gt; </p>
+      <p>Extra data fields are identified by the root XML element qualified by 
+        the supplied namespace. In the above examples, for the extra request data 
+        the extension's identifier is 'onSearchFail' from namespace info:srw/extension/4/searchExtensions. 
+        The extra response data has identifier 'relevancyAlgorithm' from namespace 
+        info:srw/extension/2/relevancy. Below there is another example, where 
+        the extension's identifier is 'rank', also from the latter namespace. 
+      <h2>Extra Data Example</h2>
+      <p>For an example of how to create an extension, see the <a href="schema-negotiation.html">Record 
+        Schema Negotiation Extension</a> whose purpose is to allow the client 
+        to propose multiple record schemas that it will accept in response and 
+        let the server select one, rather than the client giving the server an 
+        ultimatum as to which record schema to return. This extension modifies 
+        the base semantics of the protocol, as the record schema URI in the response 
+        might not be the one in the recordSchema parameter of the request. 
+      <h2><i>Record, Term and Query Extensions</i></h2>
+      <p>In addition to extra information
+        being included at the top level of the response, there are three further elements
+      in which information can be returned. </p>
+      <p>These are: </p>
+      <ol>
+        <li><b>e</b><strong>xtraRecordData</strong>: Extra information relating to the record
+          in the  searchRetrieve responses. For example, extraRecordData 
+        might include a field with the relevance associated with the record in 
+        a relevance ranked search.  </li>
+        <li><strong>extraTermData</strong>: Extra information relating to the term
+          in the scan response. </li>
+        <li><strong>extraOperandData</strong>: Extra information relation to the query
+          clause echoed back to the client in XCQL. </li>
+      </ol>
+      <p>&nbsp;</p>
+      <p>extraRecordData example (highlighted in <span class="highlight">orange</span>): </p>
+      <p class="example">&lt;record&gt;&nbsp; &lt;recordSchema&gt;info:srw/schema/1/dc-v1.1&lt;/recordSchema&gt; 
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &lt;recordPacking&gt;xml&lt;/recordPacking&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&lt;recordData&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;srw_dc:dc&gt; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;dc:title&gt;Thisis 
+        a Sample Record&lt;/dc:title&gt;<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/srw_dc:dc&gt; <br>
+        &nbsp;&nbsp;&nbsp; &lt;/recordData&gt;<br>
+        &nbsp;&nbsp;&nbsp; &lt;recordPosition&gt;1&lt;/recordPosition&gt;<br>
+        &nbsp;&nbsp;&nbsp;<span class="highlight"> &lt;extraRecordData&gt;<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;rel:rank xmlns:rel=&quot;xmlns:rob=&quot;info:srw/extension/2/relevancy&quot;&gt;0.965&lt;/rel:rank&gt;<br>
+        &nbsp;&nbsp; &nbsp;&lt;/extraRecordData&gt; </span><br>
+        &lt;/record&gt; </p>
+      <h2>extraTermData</h2>
+      <p>And in addition &quot;extra data&quot; can occur within the term element 
+        for any term in a scanResponse message containing profiled information 
+        about the term. This data can include (but is not limited to) metadata 
+        about the&nbsp; term. For example, extraTermData might include a link 
+        to the term within a thesaurus. </p>
+<!-- InstanceEndEditable -->
+      <div id="breadcrumbs-bottom"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-bottom" --><a href="../sru-1-2/index.html">sru 
+        version 1.2 specs</a>&nbsp;&raquo; extra data / extensions<!-- InstanceEndEditable --></div>
+</td></tr>
+</table>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://www.loc.gov/">The 
+        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div>
+      <br>
+  <span class="sitenav">
+  <!-- #BeginDate format:Am1 -->March 31, 2016<!-- #EndDate -->
+  </span></td>
+<td align="right"><div class="contactus"><a href="mailto:ndmso@loc.gov">Contact Us</a></div></td>
+</tr></table>
+</body>
+<!-- InstanceEnd --></html>

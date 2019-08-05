@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/subpage.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Base profile - SRU Version 1.2 Specifications (SRU: Search/Retrieval via URL -- SRU, CQL and ZeeRex, Standards, Library of Congress)</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link type="text/css" media="print" href="../css/sru-print.css" rel="stylesheet">
+<style type="text/css" media="screen">
+@import url(../css/sru-base.css);
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="shortcut icon" href="http://www.loc.gov/standards/sru/images/favicon.ico">
+<!-- InstanceBeginEditable name="head" -->
+<meta name="keywords" content="conformance sru version 1.2 specifications sru search retrieval url cql zeerex standards library congress">
+<meta name="description" content="base profile: SRU Version 1.2 Specifications. SRU is a standard XML-focused search protocol for Internet search queries, utilizing CQL (Contextual Query Language), a standard syntax for representing queries. Standards, The Library of Congress.">
+<!-- InstanceEndEditable -->
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<form action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" name="seek1" method="get">
+<input type="hidden" name="col" value="loc">
+<input type="hidden" name="sc" value="0">
+<input type="hidden" name="ws" value="0">
+<input type="hidden" name="la" value="en">
+<input type="hidden" name="qm" value="0">
+<input type="hidden" name="st" value="1">
+<input type="hidden" name="nh" value="10">
+<input type="hidden" name="lk" value="1">
+<input type="hidden" name="rf" value="0">
+<input type="hidden" name="oq" value="">
+<input type="hidden" name="si" value="0">
+<input type="hidden" name="rq" value="0">
+<input type="hidden" name="qc" value="">
+<table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
+  <div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div></td>
+<td width="116"><select name="qp" tabindex="1">
+<option value="url:/sru" selected>SRU Web Pages</option>
+<option value="url:/standards url:/ead url:/marc">Standards Pages</option>
+<option value="">All Library Pages</option>
+</select></td><td width="117" align="right"><input type="text" name="qt" id="keyword" size="18" value="" tabindex="2"></td>
+<td width="67" align="right"><input class="button" id="search_button" name="search_button" type="submit" value="SEARCH" tabindex="3"></td>
+</tr></table></form>
+<table align="center" class="layout" cellpadding="0" cellspacing="0"><tr><td>
+<div id="graphic"> 
+<h1 class="homepage"><img src="../images/sru.gif" alt="SRU (Search/Retrieval Using URL)" width="600" height="50"></h1>
+</div>
+<div class="goldtop"></div>
+      <div id="breadcrumbs"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-top" -->base profile <!-- InstanceEndEditable --></div>
+<div class="clear"><a name="skip_menu"></a></div>
+ <!-- InstanceBeginEditable name="content" -->
+      <h2>SRU</h2>
+      <h1>SRU Base Profile</h1>
+      <h3>Conformance to this Profile</h3>
+      <p>The features listed in this document are required in order to claim
+        conformance to the SRU base profile. They are necessary in order to ensure
+        interoperability between SRU servers and clients and are considered required
+        for a client or server to be described as supporting the SRU protocol.</p>
+      <p> These features are considered to be the baseline implementation specifications,
+        and if not implemented, the client or server will be unlikey to interoperate
+        at all.</p>
+      <hr class="dashed">
+      <h3>SearchRetrieve Support</h3>
+      <UL>
+        <li> Servers: Must support the searchRetrieve operation </li>
+        <li> Clients: Must support the searchRetrieve operation</li>
+ </UL>
+      <p>In order to claim support for the searchRetrieve operation, at least
+        the following record schemas must be supported:</p>
+      <UL>
+        <li>Servers: Must support the diagnostic schema for returning errors. </li>
+        <li>Clients: Must recognise the diagnostic schema.</li>
+      </UL>
+      <hr class="dashed">
+      <h3>CQL Support</h3>
+      <p>Servers must support the <a href="../cql/conformance.html">CQL Base Profile</a>.</p>
+      <hr class="dashed">
+      <h3><B>Explain Support</B> </h3>
+      <UL>
+        <li>Servers: Must support Explain.</li>
+        <li>Clients: Must be able to retrieve the Explain record. </li>
+ </UL>
+      <p>The Explain record describing the server must be available at the base
+        URL and also via the 'explain' operation.</p>
+      <p>The record must conform to the following minimal specifications:</p>
+      <UL>
+        <li>ServerInfo must be present and contain host, port and database. </li>
+        <li>ServerInfo attribute 'protocol' must be set to 'SRU' or 'SRW/U'.
+          The version attribute must be given for the highest version supported. </li>
+        <li>IndexInfo must be present and contain at least one set and one index
+          element. </li>
+        <li>Each such included index element must include at least one set and
+          name map.</li>
+      </UL>
+      <div id="footer"></div>
+ <!-- InstanceEndEditable -->
+      <div id="breadcrumbs-bottom"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-bottom" -->base profile   <!-- InstanceEndEditable --></div>
+</td></tr>
+
+</table>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://www.loc.gov/">The 
+        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div>
+      <br>
+  <span class="sitenav">
+  <!-- #BeginDate format:Am1 -->November 28, 2016<!-- #EndDate -->
+  </span></td>
+<td align="right"><div class="contactus"><a href="mailto:ndmso@loc.gov">Contact Us</a></div></td>
+</tr></table>
+</body>
+<!-- InstanceEnd --></html>

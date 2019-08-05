@@ -1,0 +1,223 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/subpage.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>CQL Index Naming Convention (SRU: Search/Retrieval via URL -- SRU, CQL and ZeeRex, Standards, Library of Congress)</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link type="text/css" media="print" href="../css/sru-print.css" rel="stylesheet">
+<style type="text/css" media="screen">
+@import url(../css/sru-base.css);
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="shortcut icon" href="http://www.loc.gov:8081/standards/sru/images/favicon.ico">
+<!-- InstanceBeginEditable name="head" -->
+<meta name="keywords" content="profiles sru version 1.2 specifications sru search retrieval url cql zeerex standards library congress">
+<meta name="description" content="profiles: SRU Version 1.2 Specifications. SRU is a standard XML-focused search protocol for Internet search queries, utilizing CQL (Contextual Query Language), a standard syntax for representing queries. Standards, The Library of Congress.">
+<!-- InstanceEndEditable -->
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<form action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" name="seek1" method="get">
+<input type="hidden" name="col" value="loc">
+<input type="hidden" name="sc" value="0">
+<input type="hidden" name="ws" value="0">
+<input type="hidden" name="la" value="en">
+<input type="hidden" name="qm" value="0">
+<input type="hidden" name="st" value="1">
+<input type="hidden" name="nh" value="10">
+<input type="hidden" name="lk" value="1">
+<input type="hidden" name="rf" value="0">
+<input type="hidden" name="oq" value="">
+<input type="hidden" name="si" value="0">
+<input type="hidden" name="rq" value="0">
+<input type="hidden" name="qc" value="">
+<table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
+  <div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div></td>
+<td width="116"><select name="qp" tabindex="1">
+<option value="url:/sru" selected>SRU Web Pages</option>
+<option value="url:/standards url:/ead url:/marc">Standards Pages</option>
+<option value="">All Library Pages</option>
+</select></td><td width="117" align="right"><input type="text" name="qt" id="keyword" size="18" value="" tabindex="2"></td>
+<td width="67" align="right"><input class="button" id="search_button" name="search_button" type="submit" value="SEARCH" tabindex="3"></td>
+</tr></table></form>
+<table align="center" class="layout" cellpadding="0" cellspacing="0"><tr><td>
+<div id="graphic"> 
+<h1 class="homepage"><img src="../images/sru.gif" alt="SRU (Search/Retrieval Using URL)" width="600" height="50"></h1>
+</div>
+<div class="goldtop"></div>
+      <div id="breadcrumbs"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-top" --><a href="../resources/index.html"></a><a href="../resources/index.html">resources</a>&nbsp;&raquo;<a href="../resources/agree.html">implementor
+      agreements&gt;&gt;</a>index naming <!-- InstanceEndEditable --></div>
+      <div class="clear"><a name="skip_menu"></a></div>
+ <!-- InstanceBeginEditable name="content" -->
+ <h1>Implementor Agreement: CQL Index-naming Convention</h1>
+ <p>Implementor agreements are developed and proposed by the SRU Editorial Board
+   and submitted to the SRU Implementor Group for review and comment; subsequently
+   if the Editorial Board determines consensus it approves the proposal. The
+   approval of an implementor agreement in itself is not binding. Implementor
+   agreements serve two purposes: (1) general guidance to developers and implementors;
+   (2) they may be cited by profiles; a profile may declare that in order to
+   claim conformance to that profile a particular implementor agreement is mandatory. </p>
+ <p><strong>Approved: January 1, 2005</strong></p>
+ <table width="100%" border="1" bgcolor="#CCCCCC">
+   <tr>
+     <td bgcolor="#FFFFCC"><p>Intended Audience: This Implementors Agreement
+         is intended for Context Set and Interoperability Profile developers.
+         SRU database implementors might be interested in this document, but
+         should not feel bound by the rules described herein. SRU database implementors
+         with interoperability requirements should be guided by appropriate Interoperability
+         Profiles.</p></td>
+   </tr>
+ </table>
+ <p><strong>Background</strong>&nbsp; </p>
+ <p>This is an implementor agreement for a naming convention for CQL indexes.<br>
+     <strong><br>
+     </strong>Schema designers tend to invent data element names haphazardly
+     without documenting semantics, and this is becoming widely recognized as
+     one of the fundamental barriers to broad interoperability. ISO 11179 addresses
+     part of this problem, by prescribing rules for registering data elements
+     and their semantics to enable re-use and coherence.<br>
+          <strong><br>
+          </strong> We introduce the ideas of <em>referent type</em>, <em>concept</em>,
+          and <em>representation class</em>. Consider for example a database
+          where records are metadata about maps. Consider an index of map creator
+          names. In describing that index, one might consider it to have three
+          logical components: what the database is about (maps), what information
+          is sought (creator), and how that information is represented (name).
+          We refer to these as the referent type, concept, and representation
+          class. </p>
+ <p>The example index might thus be named <em>mapCreatorName</em>. On the other
+   hand it may be sufficient (and perhaps more sensible) to simply name it <em>creator. </em>The
+   name <em>mapCreatorName</em> would be useful when there is more than one possible
+   referent (map, atlas, etc.) and more than one representation (name,code, identifier,
+   etc). When there is only a single referent and only a single representation
+   then the index is adequately described by the single concept, e.g., creator.
+   (And When there is only a single referent but multiple representations then
+   the index might be best named <em>creatorName</em>; when there are multiple
+   referents but only a single representation then the index might be best named <em>mapCreator</em>.)</p>
+ <p>In any case, the <em>concept</em> is the critical component (in the example
+   above, whichever name is chosen, the concept is 'creator'). In order to encourage
+   the re-use of concepts across different contexts, it is useful to deconstruct
+   the index into these three components so that the representation and referent
+   are disentangled from the underlying concept. </p>
+ <hr>
+ <p><strong>Rules<br>
+   </strong> <em>Note: These rules have no protocol significance. For instance,
+   they define component parts of an index, however there is no expectation that
+   servers will parse the index names into component parts. </em></p>
+ <ol>
+   <li><strong>Basic Rules</strong>
+       <p></p>
+     <ol type="a">
+         <li> An Index name has one to three components:
+           <ul>
+               <li><strong>Referent type. </strong>Optional. If omitted it should
+                 be inferable from the index or context set definition (and if
+                 it is not, it is unspecified).</li>
+             <li><strong>Concept. </strong>Required. </li>
+             <li><strong>Representation class</strong>. Optional. If omitted
+               it should be inferable from the index or context set definition
+               (and if it is not, it is unspecified).</li>
+           </ul>
+         </li>
+       <li>The referent type and representation class are single words, English
+         nouns. The concept is one or more words, one (and only one) of which
+         is the <em>base</em> concept, which is an English noun. </li>
+       <li>When contemplating the creation of an index name, the creator should
+         attempt to determine if a suitable index name already exists (in the
+         same or another context set), and if so, use it rather than creating
+         a new index name. </li>
+       <li>A context set definition whose index names conform to this agreement
+         should state so.</li>
+     </ol>
+   <li><strong>Definitions</strong> <br>
+     Every referent type, concept, and representation class should be assigned
+       a single associated definition. Where practical the definition should
+       try to follow ISO 11179 part 4:
+     <ol type="a">
+        <li> be stated in the singular; </li>
+       <li> state what the concept is, not only what it is not; </li>
+       <li>be stated as a descriptive phrase or sentence(s); </li>
+       <li> contain only commonly understood abbreviations; </li>
+       <li> be expressed without embedding definitions of other data or underlying
+         concepts.</li>
+     </ol>
+   </li>
+   <li><strong>Syntax</strong>
+       <ol type="a">
+         <li> The referent type, if present, is the leftmost part. The concept
+           follows, and the representation class, if present, is the the rightmost
+           part. If there is more than one component they are concatenated. </li>
+         <li>If the concept has more than one word, they are concatenated with
+           the base concept the rightmost word.</li>
+         <li>&quot;en-US&quot; spelling is to be used.</li>
+         <li>The character repertoire is letters [A-Z, a-z] and digits (0-9).<br>
+           Note: Since CQL Index names are case insensitive, two index names
+             should be considered equivalent if they are the same when normalized
+             to all lower case. Two such (equivalent) index names should not
+             be defined within the same context set. Similarly, index component
+             parts (referent, concept, representation) are case insensitive and
+             two equivalent component parts of the same type should not be defined.</li>
+       </ol>
+   </li>
+ </ol>
+ <p>For index names that do not conform to this agreement, It is strongly recommended
+   that the context set definition (for the context set to which the index belongs)
+   state that its index names do not conform to this agreement. </p>
+ <hr>
+ <p><strong>Examples</strong> </p>
+ <ol>
+   <li>Consider a database where records are metadata about books. <br>
+     Consider the (hypothetical) index name: <em>abstractLanguageCode</em><br>
+     It has the following components:<br>
+     <strong> Referent type</strong>: 'abstract', <br>
+     <strong>Concept</strong>: 'language'<br>
+     <strong>Representation Class</strong>: ' code'<br>
+     &quot;abstractLanguageCode=de&quot; would find books with an abstract written
+     in German.<br>
+   </li>
+   <li>Suppose instead you want to search on the language of the text rather
+     than that of the abstract. In that case the index name might be <em> textLanguageCode.</em><br>
+   </li>
+   <li>Suppose that only the text is searchable on language, and only by code.
+     In that case a suitable index would be <em>dc.language</em>.<br>
+   </li>
+   <li>Suppose instead you want to search on the language of the record, rather
+     than that of (part of) the resource.<br>
+     Theoretically, an appropriate index name would be: <em>recordLanguageCode.</em><br>
+     However (by rule 4 above) such an index name should not be constructed,
+     instead, the index name <em>rec.languageCode </em>should be used, where
+     'rec' is the <a href="http://srw.cheshire3.org/contextSets/rec/1.1/">Draft
+     Record Metadata Context Set version 1.1 </a>associated with the URI: <em>info:srw/cql-context-set/2/rec-1.1/</em>.
+     For this index name the referent is not included and is implicitly 'record'. <br>
+   </li>
+   <li>Suppose you want to search on abstract languages by code (assuming some
+     code list for abstract languages). The index name might be <em>abstractLanguageCode</em> where
+     'abstractLanguage' is the concept and 'code' is the representation class
+     (no referent type). Note that this index name is identical to the name in
+     example 1. These two index names must not be defined within the same context
+     set. 'abstract' is the referent type in the first and is part of the concept
+     in the second. This example is intended to illustrate that there is no reliable
+     way to parse index names into their component parts; the index name definition
+     should indicate what the component parts are. <br>
+   </li>
+   <li>Consider the index dc.title. The concept is 'title'; there is no explicit
+     referent type nor representation class. </li>
+ </ol>
+ <p>&nbsp;</p>
+ <!-- InstanceEndEditable -->
+ <div id="breadcrumbs-bottom"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-bottom" --><a href="../resources/index.html">resources</a>&nbsp;&raquo;<a href="../resources/agree.html">implementor
+      agreements&gt;&gt;</a>index naming  <!-- InstanceEndEditable --></div>
+</td></tr>
+
+</table>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://www.loc.gov/">The 
+        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div>
+      <br>
+  <span class="sitenav">
+  <!-- #BeginDate format:Am1 -->August 30, 2013<!-- #EndDate -->
+  </span></td>
+<td align="right"><div class="contactus"><a href="mailto:ndmso@loc.gov">Contact Us</a></div></td>
+</tr></table>
+</body>
+<!-- InstanceEnd --></html>

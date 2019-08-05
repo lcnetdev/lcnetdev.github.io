@@ -1,0 +1,241 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/subpage.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Bath Profile for SRU</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link type="text/css" media="print" href="../css/sru-print.css" rel="stylesheet">
+<style type="text/css" media="screen">
+@import url(../css/sru-base.css);
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="shortcut icon" href="http://www.loc.gov/standards/sru/images/favicon.ico">
+<!-- InstanceBeginEditable name="head" -->
+<meta name="keywords" content="conformance sru version 1.2 specifications sru search retrieval url cql zeerex standards library congress">
+<meta name="description" content="base profile: SRU Version 1.2 Specifications. SRU is a standard XML-focused search protocol for Internet search queries, utilizing CQL (Contextual Query Language), a standard syntax for representing queries. Standards, The Library of Congress.">
+<style type="text/css">
+<!--
+.paramTable {vertical-align: top; border: 1px solid; padding: 3px;
+              border-collapse: collapse}
+-->
+</style>
+<!-- InstanceEndEditable -->
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<form action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" name="seek1" method="get">
+<input type="hidden" name="col" value="loc">
+<input type="hidden" name="sc" value="0">
+<input type="hidden" name="ws" value="0">
+<input type="hidden" name="la" value="en">
+<input type="hidden" name="qm" value="0">
+<input type="hidden" name="st" value="1">
+<input type="hidden" name="nh" value="10">
+<input type="hidden" name="lk" value="1">
+<input type="hidden" name="rf" value="0">
+<input type="hidden" name="oq" value="">
+<input type="hidden" name="si" value="0">
+<input type="hidden" name="rq" value="0">
+<input type="hidden" name="qc" value="">
+<table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
+  <div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div></td>
+<td width="116"><select name="qp" tabindex="1">
+<option value="url:/sru" selected>SRU Web Pages</option>
+<option value="url:/standards url:/ead url:/marc">Standards Pages</option>
+<option value="">All Library Pages</option>
+</select></td><td width="117" align="right"><input type="text" name="qt" id="keyword" size="18" value="" tabindex="2"></td>
+<td width="67" align="right"><input class="button" id="search_button" name="search_button" type="submit" value="SEARCH" tabindex="3"></td>
+</tr></table></form>
+<table align="center" class="layout" cellpadding="0" cellspacing="0"><tr><td>
+<div id="graphic"> 
+<h1 class="homepage"><img src="../images/sru.gif" alt="SRU (Search/Retrieval Using URL)" width="600" height="50"></h1>
+</div>
+<div class="goldtop"></div>
+      <div id="breadcrumbs"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-top" --><a href="../resources/index.html">resources</a>&nbsp;&raquo; Bath 
+          profile <!-- InstanceEndEditable --></div>
+      <div class="clear"><a name="skip_menu"></a></div>
+ <!-- InstanceBeginEditable name="content" -->
+ <h1> Bath Profile</h1>
+ <h2>Version 2.0 </h2>
+ <p>This is an SRU profile based on the <a href="http://www.collectionscanada.gc.ca/bath/tp-bath2-e.htm">Bath profile for Z39.50</a>. </p> <hr/>
+      <h2>Access Points </h2>
+      <p>The table below lists the indexes prescribed by this profile for the corresponding access points. The context sets are <a href="http://www.loc.gov/standards/sru/resources/dc-context-set.html">Dublin Core</a>, <a href="http://www.loc.gov/standards/sru/resources/cql-context-set-v1-2.html">CQL</a>, <a href="http://www.loc.gov/standards/sru/resources/bath-context-set.html">Bath</a>, and <a href="http://srw.cheshire3.org/contextSets/rec/1.1/">Rec</a>. </p>
+      <TABLE border="1" cellpadding="3" cellspacing="0" align="center">
+        <TR align="center">
+          <TH width="329">Access Point</TH>
+          <TH width="136">Context Set</TH>
+          <TH width="136">Index</TH>
+        </TR>
+        <TR>
+          <TD>Author, including Creator</TD>
+          <TD>Dublin Core</TD>
+          <TD>creator</TD>
+        </TR>
+        <TR>
+          <TD>Title</TD>
+          <TD>Dublin Core</TD>
+          <TD>title</TD>
+        </TR>
+        <TR>
+          <TD>Subject</TD>
+          <TD>Dublin Core</TD>
+          <TD>subject</TD>
+        </TR>
+        <TR>
+          <TD>Any</TD>
+          <TD>CQL</TD>
+          <TD>anywhere</TD>
+        </TR>
+        <TR>
+          <TD>Standard Identifier</TD>
+          <TD>Dublin Core</TD>
+          <TD>identifier</TD>
+        </TR>
+        <TR>
+          <TD>Date of Publication, including Date of Publication Range</TD>
+          <TD>Dublin Core</TD>
+          <TD>date</TD>
+        </TR>
+        <TR>
+          <TD>Key Title</TD>
+          <TD>Bath</TD>
+          <TD>keyTitle</TD>
+        </TR>
+        <TR>
+          <TD>Format/Type of Material</TD>
+          <TD>Dublin Core</TD>
+          <TD>format</TD>
+        </TR>
+        <TR>
+          <TD>Language</TD>
+          <TD>Dublin Core</TD>
+          <TD>language</TD>
+        </TR>
+        <TR>
+          <TD>Possessing Institution</TD>
+          <TD>Bath</TD>
+          <TD>possessingInstitution</TD>
+        </TR>
+        <TR>
+          <TD>Name</TD>
+          <TD>Bath</TD>
+          <TD>name</TD>
+        </TR>
+        <TR>
+          <TD>Personal Name</TD>
+          <TD>Bath</TD>
+          <TD>personalName</TD>
+        </TR>
+        <TR>
+          <TD>Corporate Name</TD>
+          <TD>Bath</TD>
+          <TD>corporateName</TD>
+        </TR>
+        <TR>
+          <TD>Conference Name</TD>
+          <TD>Bath</TD>
+          <TD>conferenceName</TD>
+        </TR>
+        <TR>
+          <TD>Uniform Title</TD>
+          <TD>Bath</TD>
+          <TD>uniformTitle</TD>
+        </TR>
+        <TR>
+          <TD>ISSN</TD>
+          <TD>Bath</TD>
+          <TD>issn</TD>
+        </TR>
+        <TR>
+          <TD>Remote System Record Number</TD>
+          <TD>Rec</TD>
+          <TD>id</TD>
+        </TR>
+        <TR>
+          <TD>Geographic Name</TD>
+          <TD>Bath</TD>
+          <TD>geographicName</TD>
+        </TR>
+        <TR>
+          <TD>Notes</TD>
+          <TD>Bath</TD>
+          <TD>notes</TD>
+        </TR>
+        <TR>
+          <TD>Topical Subject</TD>
+          <TD>Bath</TD>
+          <TD>topicalSubject</TD>
+        </TR>
+        <TR>
+          <TD>Genre/form Subject</TD>
+          <TD>Bath</TD>
+          <TD>genreForm</TD>
+        </TR>
+      </TABLE>
+      <DIV class="note"> <B></B></DIV>
+      <hr/>
+      <h2>Relations, Wildcarding and Anchoring      </h2>
+      <p>The searches defined in the Z39.50 Bath profile can all be characterized in terms of  a &quot;base search&quot; from the above table, and a &quot;type of search&quot; from the table below, which specifies the relation and wildcarding and ahchoring to be used for CQL.  </p>
+      <table width="547" border="1" align="center">
+        <tr align="center">
+          <td width="238"><strong>Type of Search </strong></td>
+          <td width="118"><strong>Relation</strong></td>
+          <td width="169"><strong>Wildcard/ Anchor</strong></td>
+        </tr>
+        <tr>
+          <td>Keyword with Right Truncation</td>
+          <td>=</td>
+          <td><TT>*</TT> wildcard at the
+	end of the search term and no anchoring</td>
+        </tr>
+        <tr>
+          <td>Exact Match</td>
+          <td>==</td>
+          <td>None</td>
+        </tr>
+        <tr>
+          <td>First Words in Field</td>
+          <td>=</td>
+          <td>no wildcard and a <TT>^</TT> anchor at the start of the search term. </td>
+        </tr>
+        <tr>
+          <td>Phrase</td>
+          <td>=</td>
+          <td>no wildcard and a <TT>^</TT> anchor at the start of the search term. </td>
+        </tr>
+        <tr>
+          <td>First Characters in Field</td>
+          <td>=</td>
+          <td><TT>*</TT> wildcard at the
+	end of the search term and a <TT>^</TT> anchor at the start. </td>
+        </tr>
+        <tr>
+          <td>All others </td>
+          <td>=</td>
+          <td>None</td>
+        </tr>
+      </table><hr/>
+      <h2>Retrieval</h2>
+      <p>Implementors of this profile should support the following record schemas (see <a href="http://www.loc.gov/standards/sru/resources/schemas.html">SRU Record Schemas</a>):</p>
+      <ul>
+        <li><a href="http://www.loc.gov/standards/sru/resources/dc-schema.html">Dublin Core</a></li>
+        <li><a href="http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">Marcxml</a></li>
+      </ul>
+      <p>&nbsp;</p>
+ <!-- InstanceEndEditable -->
+      <div id="breadcrumbs-bottom"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-bottom" --><a href="../resources/index.html">resources</a>&nbsp;&raquo; Bath 
+          profile   <!-- InstanceEndEditable --></div>
+</td></tr>
+
+</table>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://www.loc.gov/">The 
+        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div>
+      <br>
+  <span class="sitenav">
+  <!-- #BeginDate format:Am1 -->July 23, 2009<!-- #EndDate -->
+  </span></td>
+<td align="right"><div class="contactus"><a href="mailto:ndmso@loc.gov">Contact Us</a></div></td>
+</tr></table>
+</body>
+<!-- InstanceEnd --></html>

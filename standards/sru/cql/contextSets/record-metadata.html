@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/subpage.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Record Metadata Context Set Version 1.1 (SRU: Search/Retrieval via URL -- SRU, CQL and ZeeRex, Standards, Library of Congress)</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link type="text/css" media="print" href="../../css/sru-print.css" rel="stylesheet">
+<style type="text/css" media="screen">
+@import url(../../css/sru-base.css);
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="shortcut icon" href="http://www.loc.gov:8081/standards/sru/images/favicon.ico">
+<!-- InstanceBeginEditable name="head" -->
+<meta name="keywords" content="dc context set sru version 1.2 specifications sru search retrieval url cql zeerex standards library congress">
+<meta name="description" content="dc context set: SRU Version 1.2 Specifications. SRU is a standard XML-focused search protocol for Internet search queries, utilizing CQL (Contextual Query Language), a standard syntax for representing queries. Standards, The Library of Congress.">
+<!-- InstanceEndEditable -->
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<form action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" name="seek1" method="get">
+<input type="hidden" name="col" value="loc">
+<input type="hidden" name="sc" value="0">
+<input type="hidden" name="ws" value="0">
+<input type="hidden" name="la" value="en">
+<input type="hidden" name="qm" value="0">
+<input type="hidden" name="st" value="1">
+<input type="hidden" name="nh" value="10">
+<input type="hidden" name="lk" value="1">
+<input type="hidden" name="rf" value="0">
+<input type="hidden" name="oq" value="">
+<input type="hidden" name="si" value="0">
+<input type="hidden" name="rq" value="0">
+<input type="hidden" name="qc" value="">
+<table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
+  <div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../../index.html">SRU</a></div></td>
+<td width="116"><select name="qp" tabindex="1">
+<option value="url:/sru" selected>SRU Web Pages</option>
+<option value="url:/standards url:/ead url:/marc">Standards Pages</option>
+<option value="">All Library Pages</option>
+</select></td><td width="117" align="right"><input type="text" name="qt" id="keyword" size="18" value="" tabindex="2"></td>
+<td width="67" align="right"><input class="button" id="search_button" name="search_button" type="submit" value="SEARCH" tabindex="3"></td>
+</tr></table></form>
+<table align="center" class="layout" cellpadding="0" cellspacing="0"><tr><td>
+<div id="graphic"> 
+<h1 class="homepage"><img src="../../images/sru.gif" alt="SRU (Search/Retrieval Using URL)" width="600" height="50"></h1>
+</div>
+<div class="goldtop"></div>
+      <div id="breadcrumbs"><a href="../../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-top" -->Record Metadata Context Set<!-- InstanceEndEditable --></div>
+<div class="clear"><a name="skip_menu"></a></div>
+ <!-- InstanceBeginEditable name="content" --> 
+      <center>
+        <h2>Record Metadata Context Set</h2>
+      </center>
+      <h3>Introduction</h3>
+      <p> This context set was created to address the need for record metadata   searches as opposed to searches within the records themselves. </p>
+      <p> The identifier for the Record Metadata context set is:  http://srw.cheshire3.org/contextSets/rec/1.0/<br>
+        The recommended prefix for the Record Metadata  context set is:  rec </p>
+      <p> </p>
+      <h3>Indexes</h3>
+      <p>
+      <table width="100%">
+        <tbody>
+          <tr>
+            <th>Index&nbsp;Name</th>
+            <th>Description</th>
+            <th>Z39.50 Attributes</th>
+          </tr>
+          <tr>
+            <td>size</td>
+            <td>The length of the record in bytes </td>
+            <td> - </td>
+          </tr>
+          <tr>
+            <td>id</td>
+            <td>A unique local identifier for the record within the database</td>
+            <td>[util 1=4]</td>
+          </tr>
+          <tr>
+            <td>lang</td>
+            <td>The two letter code for the language the record is written in</td>
+            <td>[util 1=3]</td>
+          </tr>
+          <tr>
+            <td>within</td>
+            <td>The record is contained within a given structure (1)</td>
+            <td> - </td>
+          </tr>
+          <tr>
+            <td>created</td>
+            <td>Timestamp for when the record was created</td>
+            <td>[util 1=1, util 12="creation"] </td>
+          </tr>
+          <tr>
+            <td>modified</td>
+            <td>Timestamp for when the record was created or ever modified</td>
+            <td>[util 1=1]</td>
+          </tr>
+          <tr>
+            <td>lastModified</td>
+            <td>Timestamp for when the record was last modified</td>
+            <td>[util 1=1, util 12="modification"] </td>
+          </tr>
+          <tr>
+            <td>createdBy</td>
+            <td>The agent that created the record</td>
+            <td>[util 1=2, util 12="creation"]</td>
+          </tr>
+          <tr>
+            <td>modifiedBy</td>
+            <td>An agent that created or ever modified the record</td>
+            <td>[util 1=2]</td>
+          </tr>
+          <tr>
+            <td>lastModifiedBy</td>
+            <td>The agent that last modified the record</td>
+            <td>[util 1=2, util 12="modification"]</td>
+          </tr>
+          <tr>
+            <td>modifiableBy</td>
+            <td>Matches if given agent is able to modify the record</td>
+            <td> - </td>
+          </tr>
+        </tbody>
+      </table>
+      </p>
+      <p> </p>
+      <h3>Notes</h3>
+      <p> </p>
+      <ol>
+        <li>The 'within' index is database specific.  A database in SQL might   accept the name of a table for the record to be within.  A file system   based database might accept the name of a directory or file containing   multiple records. </li>
+      </ol>
+      <p> </p>
+      <h3>Examples</h3>
+      <p> </p>
+      <ol>
+        <li>If your client is only able to display records under 50 kilobytes, you might have a query like:
+          <blockquote> dc.title any fish and rec.size &lt; 51200 </blockquote>
+          to retrieve only files with a title that includes 'fish' and are less than the client's maximum size. </li>
+        <li> If you wanted to find records that were have been recently updated by a user, you might send a query like:
+          <blockquote> rec.lastModified &gt; "2002-12-05T18:00:00" and rec.lastModifiedBy="azaroth" </blockquote>
+        </li>
+      </ol>
+      <h1>&nbsp;</h1>
+ <!-- InstanceEndEditable -->
+      <div id="breadcrumbs-bottom"><a href="../../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-bottom" -->Record Metadata Context Set<!-- InstanceEndEditable --></div>
+</td></tr>
+
+</table>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://www.loc.gov/">The 
+        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../../index.html">SRU</a></div>
+      <br>
+  <span class="sitenav">
+  <!-- #BeginDate format:Am1 -->July 30, 2007<!-- #EndDate -->
+  </span></td>
+<td align="right"><div class="contactus"><a href="mailto:ndmso@loc.gov">Contact Us</a></div></td>
+</tr></table>
+</body>
+<!-- InstanceEnd --></html>

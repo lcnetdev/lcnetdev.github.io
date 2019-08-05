@@ -1,0 +1,714 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/subpage.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>CQL Bibliographic Searching - SRU: Search/Retrieval via URL (Standards, Library of Congress)</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link type="text/css" media="print" href="../css/sru-print.css" rel="stylesheet">
+<style type="text/css" media="screen">
+@import url(../css/sru-base.css);
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="shortcut icon" href="http://www.loc.gov:8081/standards/sru/images/favicon.ico">
+<!-- InstanceBeginEditable name="head" -->
+<meta name="keywords" content="cql bibliographic searching sru search retrieval url standards library congress">
+<meta name="description" content="CQL Bibliographic Searching - SRU: Search/Retrieval via URL (Standards, Library of Congress)">
+<!-- InstanceEndEditable -->
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<form action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" name="seek1" method="get">
+<input type="hidden" name="col" value="loc">
+<input type="hidden" name="sc" value="0">
+<input type="hidden" name="ws" value="0">
+<input type="hidden" name="la" value="en">
+<input type="hidden" name="qm" value="0">
+<input type="hidden" name="st" value="1">
+<input type="hidden" name="nh" value="10">
+<input type="hidden" name="lk" value="1">
+<input type="hidden" name="rf" value="0">
+<input type="hidden" name="oq" value="">
+<input type="hidden" name="si" value="0">
+<input type="hidden" name="rq" value="0">
+<input type="hidden" name="qc" value="">
+<table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
+  <div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div></td>
+<td width="116"><select name="qp" tabindex="1">
+<option value="url:/sru" selected>SRU Web Pages</option>
+<option value="url:/standards url:/ead url:/marc">Standards Pages</option>
+<option value="">All Library Pages</option>
+</select></td><td width="117" align="right"><input type="text" name="qt" id="keyword" size="18" value="" tabindex="2"></td>
+<td width="67" align="right"><input class="button" id="search_button" name="search_button" type="submit" value="SEARCH" tabindex="3"></td>
+</tr></table></form>
+<table align="center" class="layout" cellpadding="0" cellspacing="0"><tr><td>
+<div id="graphic"> 
+<h1 class="homepage"><img src="../images/sru.gif" alt="SRU (Search/Retrieval Using URL)" width="600" height="50"></h1>
+</div>
+<div class="goldtop"></div>
+      <div id="breadcrumbs"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-top" -->cql 
+          bibliographic searching <!-- InstanceEndEditable --></div>
+      <div class="clear"><a name="skip_menu"></a></div>
+ <!-- InstanceBeginEditable name="content" --> 
+      <h1>CQL Bibliographic Searching (June 29, 2007) </h1>
+      <p align="center"><span class="selected">SECTIONS:</span> <a href="#title">Title</a> - <a href="#name">Name</a> - <a href="#subject">Subject</a> - <a href="#identifier">Identifier</a> - <a href="#date">Date</a> - <a href="#form"> Format</a> - <a href="#genre">Resource
+        Type/Genre</a> - <a href="#audience">Target
+        Audience</a><br> 
+<a href="#classification">Classification</a> - <a href="#origin">Place
+          of Origin</a> - <a href="#language">Language</a> -&nbsp; <a href="#edition">Edition</a>&nbsp;- <a href="#part">Part</a> - <a href="#issuance">Issuance</a> - <a href="#table">Summary
+        Table</a> - <a href="#committee">Committee</a> </p>
+<hr class="dashed" width="98%">
+<p>This is a blueprint for CQL bibliographic searching.&nbsp; It is intended
+        to guide work that will result in:</p>
+      <ol>
+        <li>A CQL 'bib' context set.</li>
+        <li>An SRU profile for bibliographic searching.</li>
+      </ol>
+      <p>The profile will specify how to combine elements from context sets ('bib',
+        'dc', 'cql', and others) for bibliographic searching.</p>
+      <p>This document is neither a context set specification nor a profile.
+        As noted,&nbsp; it is a blueprint for development of both.</p>
+      <p>The bib context set will define indexes and modifiers, based on MODS.
+        This means that MODS is used for reference semantics. (This does not
+        presume that the data being searched is MODS. This is analogous to Z39.50
+        bib-1 and MARC. The semantics of the bib-1 core Use attributes are defined
+        in terms of MARC but the bib-1 attribute set does not presume that the
+        data being searched is MARC.)&nbsp; </p>
+      <p>The premise of this approach is that when there is an existing defined
+        index (including for example a dublin core index, possibly qualified)
+        appropriate for a bibliographic search, it should be used. &nbsp; When
+        there is no appropriate existing index for a required bibliographic search,
+        a bib index is defined.</p>
+      <p>This document was developed by an <a href="#committee">ad hoc committee</a> over
+        more than a year, and is now ready for contribution to a standards body
+        for further development and standardization. </p>
+      <hr class="dashed" width="98%">
+      <h2><strong><a name="title"></a></strong>Searching by Title</h2>
+      <h3><strong>Title Indexes Defined for the bib Context Set</strong></h3>
+      <ul>
+        <li>bib.titleAbbreviated</li>
+        <li>bib.titleUniform</li>
+        <li>bib.titleTranslated</li>
+        <li>bib.titleAlternative</li>
+        <li>bib.titleSeries</li>
+      </ul>
+      <h3>Relation modifiers</h3>
+<p><strong>Modifiers defined for the bib set:</strong></p>
+      <ul>
+        <li> bib.portion
+          <ul>
+              <li>main</li>
+            <li> sub</li>
+            <li> partNum</li>
+            <li> partName</li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li>bib.titleAuthority&nbsp; (for titleUniform only)
+          <ul>
+              <li>lcnaf</li>
+          </ul>
+        </li>
+      </ul>
+      <p><strong>Modifiers proposed for the CQL set:</strong></p>
+      <ul>
+        <li>lang (the language of the term)</li>
+      </ul>
+      <p><em>Examples</em></p>
+<ol>
+        <li>bib.titleUniform=/bib.portion=main/bib.titleAuthority=lcnaf &quot;Symphonies,
+          no. 5, op. 67, C minor&quot; </li>
+        <li>bib.titleTranslated=/bib.portion=main/lang=fr &quot;homme qui voulut &ecirc;tre
+          roi&quot;      
+        <li>dc.title=&quot;Annual report of notifiable diseases&quot;<br>
+        </li>
+        <li>dc.title=&quot;Annual report of notifiable diseases&quot; OR<br>
+          bib.titleAbbreviated=&quot;Annu. rep. notif. dis.&quot; <br>
+        </li>
+        <li>dc.title=/lang=rus &quot;Geodezja i urzadzenia roline&quot; OR<br>
+          bib.titleTranslated=/lang=eng &quot;Land surveying and agriculture
+          equipment&quot; </li>
+        <li>dc.title=&quot;Focus on grammar&quot; AND bib.titleSub=&quot;basic
+          level&quot;</li>
+      </ol>
+      <p><em>Notes</em></p>
+<ul>
+        <li>As seen in these examples there is no general 'title' index defined
+          for the bib set. To search on unqualified 'title', for example to search
+          for a list of words anywhere within a title field, dc.title is to be
+          used.</li>
+        <li>Similarly there is no bib.titleProper index defined. To search on &quot;title
+          proper&quot; dc.title is to be used.</li>
+      </ul>
+      <hr size="1" noshade>
+      <h2><a name="name"></a>Searching by Name</h2>
+      <h3>Name Indexes <strong>Defined for the bib Context Set</strong></h3>
+      <ul>
+        <li>bib.name</li>
+        <li>bib.namePersonal</li>
+        <li>bib.namePersonalFamily</li>
+        <li>bib.namePersonalGiven</li>
+        <li>bib.nameCorporate</li>
+        <li>bib.nameConference</li>
+      </ul>
+      <h3>Relation Modifiers</h3>
+<ul>
+        <li>bib.date</li>
+        <li> bib.nameAuthority</li>
+        <li>bib.role</li>
+        <li>bib.roleAuthority<br>
+          default <a href="http://www.loc.gov/marc/sourcecode/relator/relatorlist.html">marcrelator</a><br>
+        </li>
+      </ul>
+      <p><em>Examples</em></p>
+<Ol>
+        <li>bib.namePersonal=&quot;Herb Plews&quot;<br>
+          bib.namePersonalGiven=herb PROX bib.namePersonalFamily=plews </li>
+        <li>bib.namePersonal=/bib.role=shortstop &quot;Herb Plews&quot; </li>
+        <li>bib.nameCorporate=ibm </li>
+        <li>bib.nameConference=&quot;International Workshop on Plasma-Based Ion
+          Implantation 1993 : University of Wisconsin--Madison&quot; </li>
+        <li>bib.NamePersonal=/bib.nameAuthority=lcnaf/bib.role=composer/bib.roleAuthority=marcrelator &quot;Beethoven,
+          Ludwig van, 1770-1827&quot;<br>
+        </li>
+        <li>bib.NamePersonal=/bib.role=author/bib.roleAuthority=marcrelator &quot;George
+          Orwell&quot;<br>
+        </li>
+        <li>bib.namePersonal=/bib.date=&quot;1835-1913&quot; &quot;Albert Babeau&quot; </li>
+        <li>dc.contributor=&quot;Florida Department of Agriculture and Consumer
+          Affairs&quot;</li>
+      </ol>
+      <p><em>Notes</em></p>
+<ul>
+        <li>In example 5, &quot;role=composer/bib.roleAuthority=marcrelator&quot; means
+          that the 'role'&nbsp; &quot;composer&quot; is taken from the list 'marcrelator'
+          which is intended to be a nickname for the list of roles at <a href="http://www.loc.gov/marc/sourcecode/relator/relatorlist.html">http://www.loc.gov/marc/sourcecode/relator/relatorlist.html</a>.</li>
+        <li>So, as seen in example 6, to do an <strong>author search</strong>,
+          use &quot;bib.role=author/bib.roleAuthority=marcrelator&quot;.</li>
+        <li>lcnaf refers to the LC name authority file, searchable at <a href="http://authorities.loc.gov/">http://authorities.loc.gov/</a>.
+          The authorized name heading,  &quot;Beethoven, Ludwig van, 1770-1827&quot; (in
+          example 5), can be found there.</li>
+        <li>To search by contributor use dc.contributor; to search by publisher,
+          use dc.publisher; to search by creator, use dc.creator.&nbsp; That
+          is, use these instead of role=contributor, role=publisher or role=creator. </li>
+      </ul>
+      <hr size="1" noshade>
+      <h2><a name="subject"></a>Searching by Subject</h2>
+      <h3>Subject Indexes <strong>Defined for the bib Context Set</strong></h3>
+      <ul>
+        <li>bib.subjectPlace</li>
+        <li>bib.subjectTitle</li>
+        <li>bib.subjectName</li>
+        <li>bib.subjectOccupation</li>
+      </ul>
+      <h3>Relation Modifiers</h3>
+<ul>
+        <li>bib.subjectAuthority (e.g. 'marcgac', 'marccountry', 'iso3166', 'lcsh',
+          'lcnaf')</li>
+      </ul>
+      <p><em> Examples</em></p>
+<ol>
+        <li>dc.subject=&quot;Food additives -- Law and legislation&quot; </li>
+        <li>dc.subject=/bib.subjectAuthority=lcsh &quot;Food additives -- Law
+          and legislation&quot;</li>
+        <li>bib.subjectName= &quot;Ted Williams&quot;</li>
+        <li>bib.subjectName=/bib.subjectAuthority=lcnaf &quot;Williams, Ted,
+          1918-2002&quot;</li>
+      </ol>
+      <p><em>Notes</em></p>
+<ul>
+        <li>No bib index is defined to search on unqualified 'subject', instead
+          (as seen in example 1) dc.subject should be used.</li>
+        <li>Similarly there is no bib.subjectTopic index defined. To search on &quot;subject
+          - topic&quot; dc.subject is to be used.</li>
+      </ul>
+      <hr size="1" noshade>
+      <h2><a name="identifier"></a>Searching by Identifier </h2>
+      <p>The bib context set does not define indexes for identifiers, instead,
+        dc.identifier should be used.&nbsp; </p>
+      <h3>Relation Modifiers</h3>
+<ul>
+        <li>bib.identifierAuthority
+          <ul>
+            <li>hdl</li>
+            <li>doi</li>
+            <li>isbn</li>
+            <li> isrc </li>
+            <li> ismn </li>
+            <li> issn </li>
+            <li> local </li>
+            <li> lccn </li>
+            <li>stock-number</li>
+            <li>uri</li>
+          </ul>
+        </li>
+      </ul>
+      <p><em>Examples</em></p>
+<ul>
+        <li>dc.identifier=n78890351</li>
+        <li>dc.identifier=/bib.identifierAuthority=lccn n78890351</li>
+      </ul>
+      <p>Notes</p>
+<ul>
+        <li>In the first example above (the identifier is an LCCN) this query
+          could be used on a server where lccn is the default identifier type.</li>
+      </ul>
+      <hr size="1" noshade>
+      <h2><a name="date"></a>Searching by Date </h2>
+      <h3><strong>Date Indexes Defined for the bib Context Set</strong></h3>
+      <ul>
+        <li>bib.dateIssued</li>
+        <li>bib.dateCreated</li>
+        <li>bib.dateValid</li>
+        <li>bib.dateModified</li>
+        <li>bib.dateCopyright</li>
+      </ul>
+      <h3>Relation Modifiers</h3>
+<ul>
+        <li>bib.dateAuthority
+          <ul>
+              <li>w3cdtf<br>
+                This is the default. If no dateAuthority is included on a bib
+                  date index, 'w3cdtf' is assumed. </li>
+          </ul>
+        </li>
+      </ul>
+      <p><em>Example</em></p>
+<ol>
+        <li><strong>bib.dateIssued=2001</strong> AND bib.namePersonal=&quot;matilda
+          plews&quot;</li>
+        <li><strong>bib.dateIssued=/dateAuthority=w3cdtf 2001</strong> AND bib.namePersonal=&quot;matilda
+          plews&quot;</li>
+        <li><b>dc.date=2001</b></li>
+      </ol>
+      <p><em>Notes</em></p>
+<ul>
+        <li>Examples 1 and 2 have identical semantics since 'w3cdtf' is the default
+          authority.</li>
+        <li>To search simply on date where no qualification (&quot;created&quot;, &quot;published&quot;,
+          etc.) is intended, dc.date should be used, as in example 3. </li>
+      </ul>
+      <hr size="1" noshade>
+      <h2><a name="form"></a>Searching by Format</h2>
+      <p>The bib context set does not define an index for format, instead, dc.format
+        should be used.&nbsp; </p>
+      <h3>Relation Modifiers</h3>
+<ul>
+        <li>bib.formatAuthority</li>
+      </ul>
+      <p><em>Example</em></p>
+<ul>
+        <li><strong>dc.format=/bib.formatAuthority=modsPhysicalForm print</strong> AND
+          bib.namePersonal=&quot;matilda plews&quot;</li>
+      </ul>
+      <p><em>Notes</em></p>
+<ul>
+        <li>modsPhysicalForm refers to the list at <a href="http://www.loc.gov/marc/sourcecode/form/formlist.html">http://www.loc.gov/marc/sourcecode/form/formlist.html</a></li>
+      </ul>
+      <hr size="1" noshade>
+      <h2><a name="genre"></a>Searching by Resource Type/Genre </h2>
+      <p>The bib context set does not define an index for resource type, instead,
+      dc.type should be used.&nbsp;    </p>
+<h3>Genre Indexes <strong>Defined for the bib Context Set</strong></h3>
+    <ul>
+      <li>bib.genre</li>
+    </ul>
+    <h3>Relation Modifiers</h3>
+<ul>
+      <li>bib.genreAuthority
+        <ul>
+            <li>modsGenre </li>
+        </ul>
+      </li>
+      <li>bib.typeAuthority
+        <ul>
+            <li>modsResource</li>
+        </ul>
+      </li>
+    </ul>
+    <p><em>Examples</em></p>
+<ul>
+      <li><strong>bib.genre=/bib.genreAuthority=modsGenre &quot;humor, satire&quot;</strong> AND
+        bib.namePersonal=&quot;dan jenkins&quot;</li>
+      <li><strong>bib.genre=humor</strong> AND bib.namePersonal=&quot;dan jenkins&quot;</li>
+      <li><strong>dc.type=/bib.typeAuthority=modsResource text</strong> AND bib.namePersonal=&quot;matilda
+        plews&quot;</li>
+    </ul>
+    <p><em>Notes</em></p>
+<ul>
+      <li>bib.genre is for use with a controlled vocabulary. If the authority
+        is omited then a default is assumed (specified in the server's explain
+        information).</li>
+      <li>'modsGenre' refers to the list at <a href="http://www.loc.gov/marc/sourcecode/genre/genrelist.html">http://www.loc.gov/marc/sourcecode/genre/genrelist.html</a>.</li>
+      <li>'modsResource' refers to the enumerated list for resourceType in the
+        MODS schema.</li>
+      <li>Although as noted above, no bib index is defined for resource type
+        and instead dc.type should be used,&nbsp;for bibliographic searching
+        by genre, bib.genre, not dc.type, should be used (even though in general
+        Dublin Core element type covers genre).</li>
+    </ul>
+    <hr size="1" noshade>
+    <h2><a name="audience"></a>Searching by Target Audience</h2>
+    <h3>Target Audience Indexes <strong>Defined for the bib Context Set</strong></h3>
+    <ul>
+      <li>bib.audience</li>
+    </ul>
+    <h3>Relation Modifiers</h3>
+<ul>
+      <li>bib.audienceAuthority
+        <ul>
+            <li>modsAudience</li>
+        </ul>
+      </li>
+    </ul>
+    <p><em>Examples</em></p>
+<ul>
+      <li><strong>bib.audience=/bib.audienceAuthority=modsAudience adolescent</strong> AND
+        bib.namePersonal=&quot;matilda plews&quot;</li>
+      <li><strong>bib.audience=adolescent</strong> AND bib.namePersonal=&quot;matilda
+        plews&quot;</li>
+    </ul>
+    <p><em>Notes</em></p>
+<ul>
+      <li>This index is for use with a controlled vocabulary. If the authority
+        is omited then a default is assumed (specified in the server's explain
+        information).</li>
+      <li>'modsAudience' refers to the list at <a href="http://www.loc.gov/marc/sourcecode/target/targetlist.html">http://www.loc.gov/marc/sourcecode/target/targetlist.html</a></li>
+    </ul>
+    <hr size="1" noshade>
+    <h2><a name="classification"></a>Searching by Classification</h2>
+    <h3>Classification Indexes Defined for the bib Context Set</h3>
+    <ul>
+      <li>bib.classification</li>
+    </ul>
+    <h3>Relation Modifiers</h3>
+<ul>
+      <li>bib.classAuthority
+        <ul>
+            <li>lcc</li>
+        </ul>
+      </li>
+    </ul>
+    <p><em>Examples</em></p>
+<ul>
+      <li>bib.classification=RF110-320</li>
+      <li>bib.classification=/bib.classAuthority=lcc RF110-320</li>
+    </ul>
+    <p><em>Notes</em></p>
+<ol>
+      <li>This index is for use with a controlled vocabulary. If the authority
+        is omited then a default is assumed (specified in the server's explain
+        information).</li>
+      <li>'lcc' as the class authority means the value is from the list at:<br>
+          <a href="http://www.loc.gov/marc/sourcecode/classification/classificationsource.html">http://www.loc.gov/marc/sourcecode/classification/classificationsource.html</a>,
+          and refers to &quot;<a href="http://www.loc.gov/catdir/cpso/lcco/lcco.html">Library
+          of Congress classification</a>&quot;. For the example, click on &quot;R&quot; and
+          then &quot;Subclass
+          RF&quot; see that RF110-320 is the classification for &quot;Otology.
+          Diseases of the ear&quot;.</li>
+    </ol>
+    <hr size="1" noshade>
+    <h2><a name="origin"></a>Searching by Place of Origin</h2>
+    <h3>Place of Origin Indexes <strong>Defined for the bib Context Set</strong></h3>
+    <ul>
+      <li>bib.originPlace</li>
+    </ul>
+    <h3>Relation Modifiers</h3>
+<ul>
+      <li>bib.portion
+        <ul>
+            <li>country</li>
+          <li>city</li>
+        </ul>
+      </li>
+      <li>bib.placeAuthority
+        <ul>
+            <li>marcCC</li>
+          <li>marcCN</li>
+        </ul>
+      </li>
+    </ul>
+    <p><em>Examples</em></p>
+<ul>
+      <li>bib.originPlace=london AND bib.namePersonal=&quot;jack t. ripper&quot;&nbsp; </li>
+      <li><strong>bib.originPlace=/bib.portion=country/bib.placeAuthority=marcCC
+          cu</strong> AND bib.namePersonal=&quot;livan hernandez&quot;</li>
+      <li><strong>bib.originPlace=/bib.portion=country/bib.placeAuthority=marcCN</strong> <strong> cuba</strong> AND
+        bib.namePersonal=&quot;livan hernandez&quot;</li>
+      <li><strong>bib.originPlace=/bib.portion=city havana</strong><strong></strong> AND
+        bib.namePersonal=&quot;livan hernandez&quot;</li>
+    </ul>
+    <p><em>Notes</em></p>
+<ul>
+      <li><a href="http://www.loc.gov/marc/countries/">http://www.loc.gov/marc/countries/</a> lists
+        countries by name and code. marcCC is for country code and marcCN is
+        for country name.</li>
+    </ul>
+    <hr size="1" noshade>
+    <h2><a name="language"></a>Searching by Language </h2>
+    <p>The bib context set does not define language indexes, instead, dc.language
+      should be used. </p>
+    <h3>Relation Modifiers</h3>
+<ul>
+      <li>bib.languageAuthority
+        <ul>
+            <li>rfc3066</li>
+          <li>iso639-2b<br>
+            Default is server defined. Guidance provided by RFC 3066 is recommended.</li>
+        </ul>
+      </li>
+    </ul>
+    <p><em>Examples</em></p>
+<ul>
+      <li><strong>dc.language=english</strong> <strong> </strong> AND bib.subjectPlace=london</li>
+      <li><strong>dc.language=/languageAuthority=iso639-2b car</strong> <strong> </strong> AND
+        bib.subjectPlace=carribean</li>
+    </ul>
+    <hr size="1" noshade>
+    <h2><a name="edition" id="edition"></a>Searching by Edition</h2>
+    <h3>Edition Indexes <strong>Defined for the bib Context Set</strong></h3>
+    <ul>
+      <li>bib.edition</li>
+    </ul>
+    <p><em>Examples </em></p>
+<ul>
+      <li>bib.edition=canadian</li>
+    </ul>
+    <hr size="1" noshade>
+    <h2><a name="part" id="part"></a>Searching by Part</h2>
+    <h3>Part Indexes <strong>Defined for the bib Context Set</strong></h3>
+    <ul>
+      <li>bib.volume</li>
+      <li>bib.issue</li>
+      <li>bib.startPage</li>
+      <li>bib.endPage</li>
+    </ul>
+    <p><em>Examples</em></p>
+<ul>
+      <li>dc.title=&quot;neurology now&quot; AND <strong>bib.volume=1</strong> AND <strong>bib.issue=2</strong> </li>
+    </ul>
+    <hr size="1" noshade>
+    <h2><a name="issuance" id="issuance"></a>Searching by Issuance</h2>
+    <h3>Issuance Index <strong>Defined for the bib Context Set</strong></h3>
+    <ul>
+      <li>bib.issuance</li>
+    </ul>
+    <p>This index takes one of the following two values:</p>
+    <ul>
+      <li>continuing</li>
+      <li>monograph</li>
+    </ul>
+    <p><em>Examples </em></p>
+<ul>
+      <li>dc.title=&quot;neurology now&quot; AND <strong>bib.issuance=continuing</strong></li>
+    </ul>
+    <p><em>Notes</em></p>
+<ul>
+      <li>It remains an open question whether values should be restricted to
+        the above two (in which case a diagnostic needs to be defined) or extensible
+        to other values.<a href="http://www.loc.gov/marc/sourcecode/form/formlist.html"></a>
+      </ul>
+   
+    <hr size="1" noshade>
+    <h2><a name="table"></a>Summary Table</h2>
+    <table class="standard">
+      <tr>
+        <th width="10%" scope="col"><strong>Category</strong></th>
+        <th width="15%" scope="col"><strong>Indexes</strong></th>
+        <th width="16%" scope="col"><strong>Modifiers</strong></th>
+      </tr>
+      <tr>
+        <td scope="row">Title</td>
+        <td><ul>
+            <li>dc.title</li>
+          <li>bib.titleAbbreviated</li>
+          <li>bib.titleUniform</li>
+          <li>bib.titleTranslated</li>
+          <li>bib.titleAlternative</li>
+          <li>bib.titleSeries</li>
+        </ul></td>
+        <td scope="row"><ul>
+            <li>bib.portion (main, sub, partNum, partName)</li>
+          <li>bib.titleAuthority&nbsp; (for titleUniform only)</li>
+          <li>lang </li>
+        </ul></td>
+      </tr>
+      <tr>
+        <td scope="row">Name</td>
+        <td><ul>
+            <li>bib.name</li>
+          <li>bib.namePersonal</li>
+          <li>bib.namePersonalFamily</li>
+          <li>bib.namePersonalGiven</li>
+          <li>bib.nameCorporate</li>
+          <li>bib.nameConference</li>
+          <li>dc.contributor</li>
+          <li>dc.creator</li>
+          <li>dc.publisher</li>
+        </ul></td>
+        <td scope="row"><ul>
+            <li>bib.date</li>
+          <li> bib.nameAuthority</li>
+          <li>bib.role</li>
+          <li>bib.roleAuthority<br>
+            default <a href="http://www.loc.gov/marc/sourcecode/relator/relatorlist.html">marcrelator</a></li>
+        </ul></td>
+      </tr>
+      <tr>
+        <td scope="row">Subject</td>
+        <td><ul>
+            <li>bib.subjectPlace</li>
+          <li>bib.subjectTitle</li>
+          <li>bib.subjectName</li>
+          <li>bib.subjectOccupation</li>
+          <li>dc.subject</li>
+        </ul></td>
+        <td><ul>
+            <li>bib.subjectAuthority</li>
+        </ul></td>
+      </tr>
+      <tr>
+        <td scope="row">Identifier</td>
+        <td><ul>
+            <li>dc.identifier</li>
+        </ul></td>
+        <td><ul>
+            <li>bib.identifierAuthority </li>
+        </ul></td>
+      </tr>
+      <tr>
+        <td scope="row">Date</td>
+        <td><ul>
+            <li>bib.dateIssued</li>
+          <li>bib.dateCreated</li>
+          <li>bib.dateValid</li>
+          <li>bib.dateModified</li>
+          <li>bib.dateCopyright</li>
+        </ul></td>
+        <td><ul>
+            <li>bib.dateAuthority <br>
+              default 'w3cdtf' </li>
+        </ul></td>
+      </tr>
+      <tr>
+        <td scope="row">Resource Type</td>
+        <td><ul>
+            <li>dc.type</li>
+        </ul></td>
+        <td><ul>
+            <li>bib.typeAuthority</li>
+        </ul></td>
+      </tr>
+      <tr scope="row">
+        <td>Format</td>
+        <td><ul>
+            <li>dc.format</li>
+        </ul></td>
+        <td><ul>
+            <li>bib.formatAuthority</li>
+        </ul></td>
+      </tr>
+      <tr>
+        <td scope="row">Genre</td>
+        <td><ul>
+            <li>bib.genre</li>
+        </ul></td>
+        <td><ul>
+            <li>bib.genreAuthority</li>
+        </ul></td>
+      </tr>
+      <tr>
+        <td scope="row">Target Audience</td>
+        <td><ul>
+            <li>bib.audience</li>
+        </ul></td>
+        <td><ul>
+            <li>bib.audienceAuthority</li>
+        </ul></td>
+      </tr>
+      <tr>
+        <td scope="row">Classification</td>
+        <td><ul>
+            <li>bib.classification</li>
+        </ul></td>
+        <td><ul>
+            <li>bib.classAuthority</li>
+        </ul></td>
+      </tr>
+      <tr>
+        <td scope="row">Place of Origin</td>
+        <td><ul>
+            <li>bib.originPlace</li>
+        </ul></td>
+        <td><ul>
+            <li>bib.portion (country)</li>
+          <li>bib.placeAuthority</li>
+        </ul></td>
+      </tr>
+      <tr>
+        <td scope="row">Language</td>
+        <td><ul>
+            <li>dc.language</li>
+        </ul></td>
+        <td><ul>
+            <li>languageAuthority<br>
+              Default: server defined </li>
+        </ul></td>
+      </tr>
+      <tr scope="row">
+        <td>Edition</td>
+        <td><ul>
+            <li>bib.edition</li>
+        </ul></td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td scope="row">Part</td>
+        <td><ul>
+            <li>bib.volume</li>
+          <li>bib.issue</li>
+          <li>bib.startPage</li>
+          <li>bib.endPage</li>
+        </ul></td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td scope="row">Issuance</td>
+        <td><ul>
+            <li>bib.issuance</li>
+        </ul></td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+
+    <p><a name="committee"></a>This was developed by an ad hoc committee
+            which included the following people:</p>
+<ul>
+<li>Leif Andresen</li>
+<li>Ray Denenberg</li>
+<li>Larry Dixson</li>
+<li>Rebecca Guenther</li>
+<li>Jenn Riley</li>
+<li>Mike Rylander</li>
+<li>Rob Sanderson</li>
+<li>Ludia Sardo</li>
+<li>Ryan Scherle</li>
+<li>Ross Singer</li>
+</ul>
+ <!-- InstanceEndEditable -->
+      <div id="breadcrumbs-bottom"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-bottom" -->cql 
+      bibliographic searching<!-- InstanceEndEditable --></div>
+</td></tr>
+
+</table>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://www.loc.gov/">The 
+        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div>
+      <br>
+  <span class="sitenav">
+  <!-- #BeginDate format:Am1 -->January 31, 2008<!-- #EndDate -->
+  </span></td>
+<td align="right"><div class="contactus"><a href="mailto:ndmso@loc.gov">Contact Us</a></div></td>
+</tr></table>
+</body>
+<!-- InstanceEnd --></html>

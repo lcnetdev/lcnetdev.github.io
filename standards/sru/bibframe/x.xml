@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="http://www.loc.gov/standards/sru/bibframe/fullDisplay.xsl"?>
+ <zs:searchRetrieveResponse xmlns:zs="http://www.loc.gov/zing/srw/">
+    <zs:version>1.2</zs:version> 
+    <zs:numberOfRecords>1</zs:numberOfRecords> 
+     <zs:records>
+         <zs:record>
+            <zs:recordSchema>bibframe</zs:recordSchema> 
+            <zs:recordPacking>xml</zs:recordPacking> 
+             <zs:recordData>
+                 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:bf="http://bibframe.org/vocab/" xmlns:madsrdf="http://www.loc.gov/mads/rdf/v1#" xmlns:relators="http://id.loc.gov/vocabulary/relators/">
+                    - <bf:Work rdf:about="http://id.loc.gov/resources/bibs/11737193">
+                        <rdf:type rdf:resource="http://bibframe.org/vocab/Text" /> 
+                        <bf:authorizedAccessPoint>Vēma (Athens, Greece)</bf:authorizedAccessPoint> 
+                        <bf:label>Vēma (Athens, Greece)</bf:label> 
+                        <madsrdf:authoritativeLabel>Vēma (Athens, Greece)</madsrdf:authoritativeLabel> 
+                        <bf:workTitle rdf:nodeID="btitle7" /> 
+                        <bf:title>To vēma</bf:title> 
+                        <bf:workTitle rdf:nodeID="btitle9" /> 
+                        <bf:title xml:lang="x-bf-sortable">vēma</bf:title> 
+                        <bf:frequencyNote>Weekly, Dec. 6, 1987</bf:frequencyNote> 
+                        <bf:frequencyNote>Daily (except Monday), May 13, 1945-ept. 2, 1975</bf:frequencyNote> 
+                        <bf:supplementaryContentNote>Has supplements.</bf:supplementaryContentNote> 
+                        <bf:language rdf:resource="http://id.loc.gov/vocabulary/languages/gre" /> 
+                        <bf:note>Latest issue also available online via the World Wide Web; Greek fonts required to view articles.</bf:note> 
+                        <bf:note>Description based on: Etos 1., ar. 2 (13 Maiöu 1945).</bf:note> 
+                        <bf:note>Latest issue consulted: Etos 73., ar. 12,304 (25 Dek. 1994).</bf:note> 
+                        <bf:note>ACQN: aq 94001149</bf:note> 
+                        <bf:subject rdf:nodeID="bplace19" /> 
+                        <bf:subject rdf:nodeID="btopic20" /> 
+                        <bf:subject rdf:resource="http://id.loc.gov/vocabulary/geographicAreas/e-gr" /> 
+                        <bf:derivedFrom rdf:resource="http://id.loc.gov/resources/bibs/11737193.marcxml.xml" /> 
+                        <bf:authorizedAccessPoint xml:lang="x-bf-hashable">vēmaathensgreecegreworktext</bf:authorizedAccessPoint> 
+                    </bf:Work>
+                     <bf:Instance rdf:nodeID="binstance25">
+                        <rdf:type rdf:resource="http://bibframe.org/vocab/Serial" /> 
+                        <bf:title>To vēma</bf:title> 
+                        <bf:instanceTitle rdf:nodeID="btitle29" /> 
+                        <bf:title xml:lang="x-bf-sortable">vēma</bf:title> 
+                        <bf:title>To vēma tēs Kyriakēs</bf:title> 
+                        <bf:titleVariation rdf:nodeID="btitle32" /> 
+                         <bf:publication>
+                             <bf:Provider>
+                                 <bf:providerName>
+                                     <bf:Organization>
+                                        <bf:label>S.n.</bf:label> 
+                                    </bf:Organization>
+                                </bf:providerName>
+                                 <bf:providerPlace>
+                                     <bf:Place>
+                                        <bf:label>Athēnai Athens, Greece :</bf:label> 
+                                    </bf:Place>
+                                </bf:providerPlace>
+                                <bf:providerDate /> 
+                            </bf:Provider>
+                        </bf:publication>
+                        <bf:modeOfIssuance>serial</bf:modeOfIssuance> 
+                        <bf:otherPhysicalFormat rdf:nodeID="binstance35" /> 
+                        <bf:otherPhysicalFormat rdf:nodeID="binstance36" /> 
+                        <bf:titleStatement>To vēma.</bf:titleStatement> 
+                        <bf:providerStatement>Athēnai Athens, Greece : S.n.</bf:providerStatement> 
+                        <bf:extent>v.</bf:extent> 
+                        <bf:note>Latest issue also available online via the World Wide Web; Greek fonts required to view articles.</bf:note> 
+                        <bf:note>Description based on: Etos 1., ar. 2 (13 Maiöu 1945).</bf:note> 
+                        <bf:note>Latest issue consulted: Etos 73., ar. 12,304 (25 Dek. 1994).</bf:note> 
+                        <bf:note>ACQN: aq 94001149</bf:note> 
+                         <bf:lccn>
+                             <bf:Identifier>
+                                <bf:identifierValue>sn 96058037</bf:identifierValue> 
+                                <bf:identifierScheme>lccn</bf:identifierScheme> 
+                            </bf:Identifier>
+                        </bf:lccn>
+                         <bf:lccn>
+                             <bf:Identifier>
+                                <bf:identifierScheme>lccn</bf:identifierScheme> 
+                                <bf:identifierValue>sn 92020268</bf:identifierValue> 
+                                <bf:identifierStatus>canceled/invalid</bf:identifierStatus> 
+                            </bf:Identifier>
+                        </bf:lccn>
+                        <bf:systemNumber rdf:resource="http://www.worldcat.org/oclc/01773184" /> 
+                        <bf:serialFirstIssue>Began 1922.</bf:serialFirstIssue> 
+                        <bf:derivedFrom rdf:resource="http://id.loc.gov/resources/bibs/11737193.marcxml.xml" /> 
+                    </bf:Instance>
+                     <bf:Instance rdf:nodeID="binstance35">
+                        <bf:title>Latest issue also available online via the World Wide Web; Greek fonts required to view articles.</bf:title> 
+                    </bf:Instance>
+                     <bf:Instance rdf:nodeID="binstance36">
+                        <bf:title>To vēma.Microfilm</bf:title> 
+                         <bf:systemNumber>
+                             <bf:Identifier>
+                                <bf:identifierValue>(DLC)sn 92020628</bf:identifierValue> 
+                                <bf:identifierScheme>systemNumber</bf:identifierScheme> 
+                            </bf:Identifier>
+                        </bf:systemNumber>
+                        <bf:systemNumber rdf:resource="http://www.worldcat.org/oclc/33089503" /> 
+                    </bf:Instance>
+                     <bf:Instance rdf:nodeID="binstance26">
+                        <rdf:type rdf:resource="http://bibframe.org/vocab/Electronic" /> 
+                        <bf:label>Electronic Resource</bf:label> 
+                        <bf:uri rdf:resource="http://bibpurl.oclc.org/web/520" /> 
+                        <bf:uri rdf:resource="http://tovima.dolnet.gr/" /> 
+                    </bf:Instance>
+                     <bf:Annotation rdf:nodeID="bannotation24">
+                        <bf:derivedFrom rdf:resource="http://id.loc.gov/resources/bibs/11737193.marcxml.xml" /> 
+                         <bf:descriptionSource>
+                             <bf:Identifier>
+                                <bf:identifierValue>ICRL</bf:identifierValue> 
+                                <bf:identifierScheme>descriptionSource</bf:identifierScheme> 
+                            </bf:Identifier>
+                        </bf:descriptionSource>
+                        <bf:descriptionLanguage rdf:resource="http://id.loc.gov/vocabulary/languages/eng" /> 
+                        <bf:descriptionConventions rdf:resource="http://id.loc.gov/vocabulary/descriptionConventions/aacr2" /> 
+                        <bf:generationProcess>DLC transform-tool:2014-08-29-T17:05:00</bf:generationProcess> 
+                        <bf:changeDate>2013-04-24T07:52</bf:changeDate> 
+                    </bf:Annotation>
+                     <bf:Title rdf:nodeID="btitle7">
+                        <bf:titleValue>Vēma (Athens, Greece)</bf:titleValue> 
+                    </bf:Title>
+                     <bf:Title rdf:nodeID="btitle9">
+                        <bf:titleValue>To vēma.</bf:titleValue> 
+                    </bf:Title>
+                     <bf:Place rdf:nodeID="bplace19">
+                        <bf:authorizedAccessPoint>Athens (Greece)--Newspapers</bf:authorizedAccessPoint> 
+                        <bf:label>Athens (Greece)--Newspapers</bf:label> 
+                         <bf:hasAuthority>
+                             <madsrdf:Authority>
+                                <rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#ComplexSubject" /> 
+                                <madsrdf:authoritativeLabel xml:lang="en">Athens (Greece)--Newspapers</madsrdf:authoritativeLabel> 
+                            </madsrdf:Authority>
+                        </bf:hasAuthority>
+                    </bf:Place>
+                     <bf:Topic rdf:nodeID="btopic20">
+                        <rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#HierarchicalGeographic" /> 
+                        <bf:authorizedAccessPoint>Greece. Athens.</bf:authorizedAccessPoint> 
+                        <bf:label>Greece. Athens.</bf:label> 
+                         <bf:hasAuthority>
+                             <madsrdf:Authority>
+                                <madsrdf:authoritativeLabel>Greece. Athens.</madsrdf:authoritativeLabel> 
+                                 <madsrdf:componentList rdf:parseType="Collection">
+                                     <madsrdf:Country>
+                                        <madsrdf:authoritativeLabel>Greece</madsrdf:authoritativeLabel> 
+                                    </madsrdf:Country>
+                                     <madsrdf:City>
+                                        <madsrdf:authoritativeLabel>Athens.</madsrdf:authoritativeLabel> 
+                                    </madsrdf:City>
+                                </madsrdf:componentList>
+                            </madsrdf:Authority>
+                        </bf:hasAuthority>
+                    </bf:Topic>
+                     <bf:Title rdf:nodeID="btitle29">
+                        <bf:titleValue>To vēma.</bf:titleValue> 
+                    </bf:Title>
+                     <bf:Title rdf:nodeID="btitle32">
+                        <bf:titleType>Sunday issues for Jan. 3-Dec. 11, 1988 have title:</bf:titleType> 
+                        <bf:titleValue>To vēma tēs Kyriakēs</bf:titleValue> 
+                    </bf:Title>
+                </rdf:RDF>
+            </zs:recordData>
+            <zs:recordPosition>1</zs:recordPosition> 
+        </zs:record>
+    </zs:records>
+     <zs:echoedSearchRetrieveRequest>
+        <zs:version>1.2</zs:version> 
+        <zs:query>rec.id=11737193</zs:query> 
+        <zs:startRecord>1</zs:startRecord> 
+        <zs:maximumRecords>1</zs:maximumRecords> 
+        <zs:recordPacking>xml</zs:recordPacking> 
+        <zs:recordSchema>bibframe</zs:recordSchema> 
+    </zs:echoedSearchRetrieveRequest>
+</zs:searchRetrieveResponse>

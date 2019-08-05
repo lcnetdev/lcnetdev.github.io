@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/subpage.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Differences Between SRU Versions 1.2 and 2.0</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link type="text/css" media="print" href="css/sru-print.css" rel="stylesheet">
+<style type="text/css" media="screen">
+@import url(css/sru-base.css);
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="shortcut icon" href="http://lcnetdev.github.io/standards/sru/images/favicon.ico">
+<!-- InstanceBeginEditable name="head" -->
+<meta name="keywords" content="cool sites sru search retrieval via url standards library congress">
+<meta name="description" content="Cool Sites (SRU: Search/Retrieval via URL, Standards, Library of Congress).">
+<style type="text/css">
+<!--
+.style3 {color: #000099; font-weight: bold; }
+-->
+</style>
+<!-- InstanceEndEditable -->
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<form action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" name="seek1" method="get">
+<input type="hidden" name="col" value="loc">
+<input type="hidden" name="sc" value="0">
+<input type="hidden" name="ws" value="0">
+<input type="hidden" name="la" value="en">
+<input type="hidden" name="qm" value="0">
+<input type="hidden" name="st" value="1">
+<input type="hidden" name="nh" value="10">
+<input type="hidden" name="lk" value="1">
+<input type="hidden" name="rf" value="0">
+<input type="hidden" name="oq" value="">
+<input type="hidden" name="si" value="0">
+<input type="hidden" name="rq" value="0">
+<input type="hidden" name="qc" value="">
+<table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
+  <div class="sitenav"><a href="http://lcnetdev.github.io/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://lcnetdev.github.io/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="index.html">SRU</a></div></td>
+<td width="116"><select name="qp" tabindex="1">
+<option value="url:/sru" selected>SRU Web Pages</option>
+<option value="url:/standards url:/ead url:/marc">Standards Pages</option>
+<option value="">All Library Pages</option>
+</select></td><td width="117" align="right"><input type="text" name="qt" id="keyword" size="18" value="" tabindex="2"></td>
+<td width="67" align="right"><input class="button" id="search_button" name="search_button" type="submit" value="SEARCH" tabindex="3"></td>
+</tr></table></form>
+<table align="center" class="layout" cellpadding="0" cellspacing="0"><tr><td>
+<div id="graphic"> 
+<h1 class="homepage"><img src="images/sru.gif" alt="SRU (Search/Retrieval Using URL)" width="600" height="50"></h1>
+</div>
+<div class="goldtop"></div>
+      <div id="breadcrumbs"><a href="index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-top" --><!-- InstanceEndEditable --></div>
+<div class="clear"><a name="skip_menu"></a></div>
+ <!-- InstanceBeginEditable name="content" -->
+   <h3>SRU</h3>
+   <h1>Summary of the Differences Between SRU Versions 1.2 and 2.0 </h1>
+   <ol>
+     <li><strong>Query  Type</strong>. In SRU 1.1, the only query type that may be used is CQL. In 2.0,  other query types may be used. See <a href="http://docs.oasis-open.org/search-ws/searchRetrieve/v1.0/os/part3-sru2.0/searchRetrieve-v1.0-os-part3-sru2.0.html#query">http://docs.oasis-open.org/search-ws/searchRetrieve/v1.0/os/part3-sru2.0/searchRetrieve-v1.0-os-part3-sru2.0.html#query</a> .</li>
+     <li><strong>Sorting</strong>.&nbsp; In SRU 1.1, sorting was part of the  protocol.&nbsp; In 1.2 it was removed from the  protocol and made a function of CQL.&nbsp; In  2.0 it is a function of both. (The reason is that now you can use a query  language other than CQL, and that query language might not support sorting.)  See <a href="http://docs.oasis-open.org/search-ws/searchRetrieve/v1.0/os/part3-sru2.0/searchRetrieve-v1.0-os-part3-sru2.0.html#sorting">http://docs.oasis-open.org/search-ws/searchRetrieve/v1.0/os/part3-sru2.0/searchRetrieve-v1.0-os-part3-sru2.0.html#sorting</a></li>
+     <li><strong>Faceted Search</strong>.&nbsp; New in 2.0.&nbsp;  See <a href="http://docs.oasis-open.org/search-ws/searchRetrieve/v1.0/os/part3-sru2.0/searchRetrieve-v1.0-os-part3-sru2.0.html#_Toc324162452">http://docs.oasis-open.org/search-ws/searchRetrieve/v1.0/os/part3-sru2.0/searchRetrieve-v1.0-os-part3-sru2.0.html#_Toc324162452</a> &#12290;</li>
+     <li><strong>Stylesheet Rendering</strong>.&nbsp; In  SRU 1.2, a stylesheet may be applied to results, but it must be applied by the  client&nbsp; (the client supplies the  stylesheet link, and the server simply attached it as a processing instruction  in the XML).&nbsp; In 2.0 the client may  request that the server apply the stylesheet and return formatted results.&nbsp; See <a href="http://docs.oasis-open.org/search-ws/searchRetrieve/v1.0/os/part3-sru2.0/searchRetrieve-v1.0-os-part3-sru2.0.html#stylesheet">http://docs.oasis-open.org/search-ws/searchRetrieve/v1.0/os/part3-sru2.0/searchRetrieve-v1.0-os-part3-sru2.0.html#stylesheet</a></li>
+     <li><strong>Response  Format</strong>. In SRU 1.2 there is a single response format defined and all  responses must be in that format.&nbsp; In 2.0  the client may request an alternative format.&nbsp;  See</li>
+     <ul>
+       <li>&nbsp;<a href="http://docs.oasis-open.org/search-ws/searchRetrieve/v1.0/os/part3-sru2.0/searchRetrieve-v1.0-os-part3-sru2.0.html#httpAccept">http://docs.oasis-open.org/search-ws/searchRetrieve/v1.0/os/part3-sru2.0/searchRetrieve-v1.0-os-part3-sru2.0.html#httpAccept</a>&nbsp; and&nbsp; </li>
+       <li><a href="http://docs.oasis-open.org/search-ws/searchRetrieve/v1.0/os/part3-sru2.0/searchRetrieve-v1.0-os-part3-sru2.0.html#responseType">http://docs.oasis-open.org/search-ws/searchRetrieve/v1.0/os/part3-sru2.0/searchRetrieve-v1.0-os-part3-sru2.0.html#responseType</a>&nbsp; &nbsp;and </li>
+       <li><a href="http://docs.oasis-open.org/search-ws/searchRetrieve/v1.0/os/part3-sru2.0/searchRetrieve-v1.0-os-part3-sru2.0.html#_Toc324162493">http://docs.oasis-open.org/search-ws/searchRetrieve/v1.0/os/part3-sru2.0/searchRetrieve-v1.0-os-part3-sru2.0.html#_Toc324162493</a> &nbsp;.</li>
+     </ul>
+     <li><strong>Record  packing</strong>. Record packing is defined in SRU 1.2 but completely re-defined in  2.0. See <a href="http://docs.oasis-open.org/search-ws/searchRetrieve/v1.0/os/part3-sru2.0/searchRetrieve-v1.0-os-part3-sru2.0.html#recordPacking">http://docs.oasis-open.org/search-ws/searchRetrieve/v1.0/os/part3-sru2.0/searchRetrieve-v1.0-os-part3-sru2.0.html#recordPacking</a>&nbsp; .</li>
+     <li><strong>Result  Set Time to Live</strong>. In SRU 1.2 the client can supply the parameter  resultSetTTL, however no mechanism is provided for the server to acknowledge  it.&nbsp; In 2.0, response element  &lt;resultSetTTL&gt;&nbsp; is added. See <a href="http://docs.oasis-open.org/search-ws/searchRetrieve/v1.0/os/part3-sru2.0/searchRetrieve-v1.0-os-part3-sru2.0.html#TTLandIdle">http://docs.oasis-open.org/search-ws/searchRetrieve/v1.0/os/part3-sru2.0/searchRetrieve-v1.0-os-part3-sru2.0.html#TTLandIdle</a></li>
+     <li><strong>Result  Count Precision.&nbsp; </strong>In SRU 2.0<strong> </strong>response  element&lt;resultCountPrecision&gt; is defined. It allows the server to  indicate or estimate the accuracy of the result count as reported by response  element&nbsp; &lt;numberOfRecordselement &gt;.  See <a href="http://docs.oasis-open.org/search-ws/searchRetrieve/v1.0/os/part3-sru2.0/searchRetrieve-v1.0-os-part3-sru2.0.html#resultCountPrecision">http://docs.oasis-open.org/search-ws/searchRetrieve/v1.0/os/part3-sru2.0/searchRetrieve-v1.0-os-part3-sru2.0.html#resultCountPrecision</a></li>
+     <li><strong>Search  Result Analysis</strong>.&nbsp; In SRU 2.0 The  response may provide analysis of the search results. See <a href="http://docs.oasis-open.org/search-ws/searchRetrieve/v1.0/os/part3-sru2.0/searchRetrieve-v1.0-os-part3-sru2.0.html#analysis">http://docs.oasis-open.org/search-ws/searchRetrieve/v1.0/os/part3-sru2.0/searchRetrieve-v1.0-os-part3-sru2.0.html#analysis</a></li>
+   </ol>
+   <p>&nbsp;</p>
+   <h2>&nbsp;</h2>
+  <hr/>
+  <h2>&nbsp;</h2> 
+  <!-- InstanceEndEditable -->
+      <div id="breadcrumbs-bottom"><a href="index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-bottom" --><!-- InstanceEndEditable --></div>
+</td></tr>
+</table>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://lcnetdev.github.io/">The 
+        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://lcnetdev.github.io/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="index.html">SRU</a></div>
+      <br>
+  <span class="sitenav">
+  <!-- #BeginDate format:Am1 -->November 18, 2015<!-- #EndDate -->
+  </span></td>
+<td align="right"><div class="contactus"><a href="mailto:ndmso@loc.gov">Contact Us</a></div></td>
+</tr></table>
+</body>
+<!-- InstanceEnd --></html>

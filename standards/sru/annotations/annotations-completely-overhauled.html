@@ -1,0 +1,508 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js">
+<head>
+<title>BIBFRAME Implementation Testbed and Register (BIBFRAME - Bibliographic Framework Initiative, Library of Congress)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="bibframe, bibliographic framework, transition, initiative, marc, cataloging, library of congress" />
+<meta name="description" content="The BIBFRAME  model and vocabulary consider resources that are cataloged as works with corresponding instances (physical and/or electronic). The metadata describing a work is an amalgamation of the some of the data that was formerly associated with the uniform title authority record combined with subject data that was associated with the bibliographic  records. Thus each cataloging resource must have a work description, and, if the cataloging resource exists physically or electronically, one or more instance descriptions." />
+
+<link rel="dc.relation.isPartOf" href="http://www.loc.gov/bibframe/" title="BIBFRAME - Bibliographic Framework Initiative (Library of Congress)" />
+<meta name="dc.subject" content="bibliographic framework" />
+<meta name="dc.subject" content="bibframe update forum" />
+<meta name="dc.subject" content="bibframe" />
+<meta name="dc.type" content="webpage" />
+<meta name="dc.identifier" content="http://www.loc.gov/bibframe/docs/vocab-category.html" />
+<meta name="dc.language" content="en" />
+
+<link type="text/css" media="screen" rel="stylesheet" href="file://///lcdataserver/LOCPROF.003/rden/Desktop/dreamweaver/bibframe/css/styles.css" />
+<link type="text/css" media="print" rel="stylesheet" href="/css/loc_print_v2.css" />
+<!--[if lte IE 7]><link type="text/css" media="screen" rel="stylesheet" href="/css/loc_lte_ie6.css" /><![endif]-->
+<!--#include virtual="/bibframe/include/share-tool.html"-->
+<script type="text/javascript" src="http://cdn.loc.gov/js/lib/modernizr-1.5.min.js"></script></head>
+<body>
+<a id="skip" href="#skip_menu">skip navigation</a><hr/>
+<div id="container">
+  <!--#include virtual="../include/branding.html"-->
+  <!--#include virtual="/cdn/html/lochead.html"-->
+  <div id="crumb_nav"><a href="http://www.loc.gov">The Library of Congress</a> &gt; <a href="/bibframe/">BIBFRAME</a> &gt; Implementation Testbed &amp; Register</div>
+  <div id="content">
+    <!--#include virtual="../include/leftnav.html"-->
+    <div id="main_body">
+    	<!--#include virtual="../include/share-tool-bar.html"-->
+      <div id="page_head"><span style="width: 100%;"><a name="skip_menu"></a></span>
+        <div id="header">
+          <h1 class="title">BIBFRAME Annotations</h1>
+        </div>
+        
+        <div class="abstract">
+          <h2>Introduction </h2>
+        </div>
+        <div class="body">
+          <div class="section">
+            <p> An annotation asserts information about a resource. Comments on the web about photos,  videos, and articles; reviews of restaurants and books -- these are considered to be annotations. When an annotation asserts information about a BIBFRAME resource, we refer to it as a BIBFRAME annotation. </p>
+            <p>An annotation involves three resources: (1) the annotation itself, (2) the annotation target, (3) the annotation body. The annotation points to both the target and the body, and conveys that the body is somehow &quot;about&quot; or &quot;related to&quot; the target. This is illustrated in the following diagram.</p>
+            <p><img src="http://www.w3.org/TR/annotation-model/images/intro_model.png" alt="Basic Annotation Model" width="400" /></p>
+            <p>A book, for example, might be described by a BIBFRAME Work.&nbsp;&nbsp; There may be a  review of that book.  An annotation might be created to say that  
+              this resource -the review, is about that resource - the book.  The Work is the target of the annotation; the review is the body. </p>
+            <p>.For a BIBFRAME annotation, the  target is a BIBFRAME resource, typically a BIBFRAMEWork or a BIBFRAME Instance.</p>
+            <h3>Relationship to W3C Work on Web Annotations</h3>
+            <p>The W3C has chartered a <a href="http://www.w3.org/annotation/">Web Annotation Working Group</a> (WG) to &quot;define a generic data model for annotations, and        define the basic infrastructural elements to make it deployable in        browsers and reading systems through suitable user interfaces&quot;.  BIBFRFAME is following this work closely, and though it is a work in progress, BIBFRAME intends to develop its annotation specification as a profile of the W3C work. The WG has published a draft <a href="http://www.w3.org/TR/annotation-model/">Data Model</a> and has prepared a draft <a href="http://w3c.github.io/web-annotation/protocol/wd/">Protocol</a>. This document reflects both the W3C Data Model and the Protocol, and as such, is also a work in progress. BIBFRAME annotations will use the W3C Annotation Namespace <a href="http://www.w3.org/ns/oa">http://www.w3.org/ns/oa#</a> whenever possible and practical, to express properties, classes, etc.  
+              We use the prefix 'oa:' for this namespace. For example, annotations are members of the class oa:Annotation.</p>
+            <p>The W3C annotation work is referred to as &quot;Web Annotations&quot;. Any BIBFRAME annotation will be a web annotation, however
+            we'll use the term &quot;web annotation&quot; in this document specifically to refer to the W3C work.</p>
+            <div class="subsection">
+              <div class="subsection">
+                <div class="subsection">
+                  <h3>Expressing the &quot;aboutness&quot; of an Annotation</h3>
+                  <p>An annotation is normally expressed for a reason. Web annotations refer to the reason as &quot;Motivation&quot;. There is a partial list of web annotation motivations at <a href="http://www.w3.org/TR/annotation-model/#motivations">http://www.w3.org/TR/annotation-model/#motivations</a>. For example, if an annotation expresses a comment, then the motivation is &quot;commenting&quot;.  To express this motivation, the annotation uses the property oa:motivatedBy, whose object, oa:Commenting,  is an instance of class oa:Motivation. This is a subClass of skos:Concept which allows us to define broader and narrower motivations. Any of the motivations in this table may be used as the motivation for a BIBFRAME annotation. </p>
+                  <p>BIBFRAME class bf:Motivation is defined, a subclass of oa:Motivation, and its instances are motivations necessary for BIBFRAME, not supported by web annotations.  Any external ontology is free to define a similar motivation class, for motivations that are not supported by web annotations or BIBFRAME. </p>
+                  <h3>Example of a BIBFRAME Annotation</h3>
+                  <p>A user wishes to comment on a BIBFRAME Work.</p>
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td colspan="3" bgcolor="#CCCCCC">&lt;http://bibframe.example.org/annotation/annotationX&gt;</td>
+                      </tr>
+                      <tr>
+                        <td bgcolor="#CCCCCC">&nbsp;</td>
+                        <td bgcolor="#CCCCCC">a</td>
+                        <td bgcolor="#CCCCCC">oa:Annotation ;</td>
+                      </tr>
+                      <tr>
+                        <td width="53" bgcolor="#CCCCCC"> </td>
+                        <td width="175" bgcolor="#CCCCCC">oa:hasTarget</td>
+                        <td width="389" bgcolor="#CCCCCC"><p>&lt;http://bibframe.example.org/works/callOfTheWildlife&gt;  ; </p></td>
+                      </tr>
+                      <tr>
+                        <td bgcolor="#CCCCCC">&nbsp;</td>
+                        <td bgcolor="#CCCCCC">oa:motivatedBy</td>
+                        <td bgcolor="#CCCCCC">oaCcommenting  ;</td>
+                      </tr>
+                      <tr>
+                        <td bgcolor="#CCCCCC"> </td>
+                        <td bgcolor="#CCCCCC">oa:hasBody</td>
+                        <td bgcolor="#CCCCCC">&quot;I like this book&quot; ;</td>
+                      </tr>
+                      <tr>
+                        <td bgcolor="#CCCCCC"> </td>
+                        <td bgcolor="#CCCCCC">oa:annotatedAt</td>
+                        <td bgcolor="#CCCCCC">&quot;2015-15-15&quot; ;</td>
+                      </tr>
+                      <tr>
+                        <td bgcolor="#CCCCCC"> </td>
+                        <td bgcolor="#CCCCCC">oa:annotatedBy</td>
+                        <td bgcolor="#CCCCCC">&lt;http://bibframe.example.org/authority/mrAnnotator&gt; ;</td>
+                      </tr>
+                      <tr>
+                        <td bgcolor="#CCCCCC">&nbsp;</td>
+                        <td bgcolor="#CCCCCC">bf:annotationSource</td>
+                        <td bgcolor="#CCCCCC">&lt;http://bibframe.example.org/authority/msCommentor&gt;.</td>
+                      </tr>
+                    </tbody>
+                  </table><hr/>
+                  <h2>Annotation-Friendly Resources</h2>
+                  <p>Essentially the reasons for this spec are to:</p>
+                  <ol>
+                    <li>Provide the capability for users to annotate BIBFRAME resources.</li>
+                    <li>Ensure that BIBFRAME annotations are compatible with web annotations.</li>
+                    <li>Ensure that BIBFRAME resouces are &quot;Annotation-friendly&quot;.</li>
+                  </ol>
+                  <p>&quot;Annotation-Friendly&quot; is a term coined by this specification (not web annotations), and while web annotations provides support for friendliness, it isn't a high priority.  A resource is &quot;annotation-friendly&quot; if it provides for a client to submit an annotation, and for a user to discover annotations for that resource. </p>
+                  <p>The web annotation protocol (referenced above) provides a number of features and we will look at three here in particular: </p>
+                  <ol>
+                    <li>Party 1 creates a resource and makes it annotation-friendly</li>
+                    <li>Party 2 annotates that resource</li>
+                    <li>Party 3 finds annotations for that resource</li>
+                  </ol>
+                  <h3>Making a resource &ldquo;Annotation-Friendly&rdquo;</h3>
+                  <p>Sue creates a resource <a href="http://example.com%20/sues-resources/resource1">http://example.com  /sues-resources/resource1</a> .  <br />
+                    She creates an annotation container for the resource: <a href="http://example.com%20/sues-resources/resource1/annotations/">http://example.com  /sues-resources/resource1/annotations/</a>   <br />
+                  </p>
+                  <p>Annotation containers are described in the web annotation protocol. For purposes of this specification, it is prescribed that when you create a resouce and you intend that it be annotation friendly, create a resource whose URI is &quot;annotations/&quot; appended to the URI of the resource to be annotated. </p>
+                  <h3>Annotating the Resource</h3>
+                  <p>Fred has created and wants to submit an annotation for <a href="http://example.com/%20sues-resources/resource1">http://example.com/  sues-resources/resource1</a>.   He posts  (via HTTP POST) the annotation to the container, <a href="http://example.com/sues-resources/resource1/annotations/">http://example.com/sues-resources/resource1/annotations/</a>  .  As a  result the server:</p>
+                  <ol>
+                    <li><span dir="ltr"> </span>Creates an annotation  resource.  </li>
+                    <li><span dir="ltr"> </span>Lists the URI of the  created annotation resource in the container. </li>
+                    <li><span dir="ltr"> </span>Returns a  response which includes: </li>
+                    <ul>
+                      <li><span dir="ltr"> </span>The submitted annotation, augmented with additional information,  for example &ldquo;oa:annotatedAt&rdquo;  (time of annotation).</li>
+                    <li><span dir="ltr"> </span>The URI of the created  annotation.</li></ul></ol>
+                  <h3>Finding the Annotations</h3>
+                  <p>Finally, Lydia, a researcher, discovers resource <a href="http://example.com%20/sues-resources/resource1">http://example.com /sues-resources/resource1</a> and wants to find  its annotations.  She does an HTTP GET  on <a href="http://example.com/sues-resources/resource1/annotations/">http://example.com/sues-resources/resource1/annotations/</a>, and the list of annotation URIs is provided. </p>
+                  <h3><hr/>
+                  </h3>
+                  <h2>                  BIBFRAME Item and Material  as Annotations</h2>
+                  <p>BIBFRAME defines classes for physical items and material, bf:Item and bf:Material. These may exist independent of annotations, or they may be attached to BIBFRAME Instances via annotations. </p>
+                  <h3>Item </h3>
+                  <p> An Item is a physical materialization of an Instance. For example for the paperback Instance of a Work (a book), an Item would be a physical copy of that paperback.  And just as there may be many Instances for a given Work, there may be many Items for a given Instance, which may all reside at a single institutions or may be spread across institutions.                  </p>
+                  <p>Following is an example of a bf:Item.</p>
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td colspan="3" bgcolor="#CCCCCC">&lt;http://bibframe.example.org/items/itemX&gt;</td>
+                      </tr>
+                      <tr>
+                        <td bgcolor="#CCCCCC">&nbsp;</td>
+                        <td bgcolor="#CCCCCC">a</td>
+                        <td bgcolor="#CCCCCC">bf:Item ;</td>
+                      </tr>
+                      <tr>
+                        <td width="53" bgcolor="#CCCCCC"> </td>
+                        <td width="175" bgcolor="#CCCCCC">bf:ItemOf</td>
+                        <td width="389" bgcolor="#CCCCCC"><p>&lt;http://bibframe.example.org/instances/callOfTheWildlife&gt;  ; </p></td>
+                      </tr>
+                      <tr>
+                        <td bgcolor="#CCCCCC">&nbsp;</td>
+                        <td bgcolor="#CCCCCC">bf:institution</td>
+                        <td bgcolor="#CCCCCC">&lt;<a href="http://id.loc.gov/vocabulary/organizations/dlc">http://id.loc.gov/vocabulary/organizations/dlc</a>&gt;</td>
+                      </tr>
+                      <tr>
+                        <td bgcolor="#CCCCCC">&nbsp;</td>
+                        <td bgcolor="#CCCCCC">bf:subLocation</td>
+                        <td bgcolor="#CCCCCC">&quot;Jefferson or Adams Building Reading Rooms&quot; ; </td>
+                      </tr>
+                      <tr>
+                        <td bgcolor="#CCCCCC"> </td>
+                        <td bgcolor="#CCCCCC">bf:callNumber</td>
+                        <td bgcolor="#CCCCCC">&quot;PS3572.O5 B5 1987C&quot;    ;</td>
+                      </tr>
+                      <tr>
+                        <td bgcolor="#CCCCCC"> </td>
+                        <td bgcolor="#CCCCCC">bf:copyNote</td>
+                        <td bgcolor="#CCCCCC">&quot;Copy 157&quot; ; </td>
+                      </tr>
+                      <tr>
+                        <td bgcolor="#CCCCCC"> </td>
+                        <td bgcolor="#CCCCCC">bf:copyNote</td>
+                        <td bgcolor="#CCCCCC">&quot;Signed by the author.&quot; ; </td>
+                      </tr>
+                      <tr>
+                        <td bgcolor="#CCCCCC">&nbsp;</td>
+                        <td bgcolor="#CCCCCC">bf:copyId</td>
+                        <td bgcolor="#CCCCCC">&quot;71234&quot; ; </td>
+                      </tr>
+                      <tr>
+                        <td bgcolor="#CCCCCC">&nbsp;</td>
+                        <td bgcolor="#CCCCCC">bf:accessCondition</td>
+                        <td bgcolor="#CCCCCC">&quot;Access  is restricted; consult library for details&quot; ;</td>
+                      </tr>
+                      <tr>
+                        <td bgcolor="#CCCCCC">&nbsp;</td>
+                        <td bgcolor="#CCCCCC">bf:circulationStatus</td>
+                        <td bgcolor="#CCCCCC">&quot;non-circulating&quot; .</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <h3>Material</h3>
+                  <p>A Material is a collection of objects. The objects might be Items of an Instance with some properties in common - e.g. same general location, access policy, etc. Or they may be physical manifestations of parts of the Instance, when an Instance is composed of many parts. </p>
+                  <p>A Material exists for one of two possible reasons:</p>
+                  <ol>
+                    <li>There are a large number of Items represented by the Material, which summarizes information common to a the Items so that they do not need to be repeated in every Item.</li>
+                    <li>The Material is a summary description of the individual objects held by the institution, for an Instance.</li>
+                  </ol>
+                  <h3>Item and Material Scenarios</h3>
+                  <p>So there are three possible scenarios: </p>
+                  <ol>
+                    <li>An Item or Items not represented by a Material.</li>
+                    <li>A group of Items with a Material summarizing the Items.</li>
+                    <li>A Material which is a  summary description of a group of objects, but no individual Items.                  </li>
+                  </ol>
+                  <p>These three scenarios are depicted as follows:</p></p>
+                 <img src="../scenarios.png" width="600" height="400"  alt=""/>
+                  <p>Note that an Item is always either an item of an Instance, denoted by the itemOf property, or a component of a Material, denoted by the componentOf property. A Material is always a material of an Instance, denoted by the materialOf property.                  </p>
+                  <h3>Classes and Properties </h3>
+                  <p>Classes and corresponding properties are summarized in the following two tables. </p>
+                  <p><strong>Classes</strong></p>
+                  <table border="1" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="237" valign="top" bgcolor="#CCCCCC"><br />
+                        <strong>Class</strong></td>
+                      <td width="122" valign="top" bgcolor="#CCCCCC"><p><strong>SubClass    Of</strong></p></td>
+                    </tr>
+                    <tr>
+                      <td width="237" valign="top" bgcolor="#CCCCCC"><p>Item</p></td>
+                      <td width="122" valign="top" bgcolor="#CCCCCC"><p>Material</p></td>
+                    </tr>
+                    <tr>
+                      <td width="237" valign="top" bgcolor="#CCCCCC"><p>Material</p></td>
+                      <td width="122" valign="top" bgcolor="#CCCCCC"><p>Resource</p></td>
+                    </tr>
+                  </table>
+                  <p><strong>Properties</strong></p>
+                  <table border="1" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="237" valign="top" bgcolor="#CCCCCC"><br />
+                        <strong>Property</strong></td>
+                      <td width="116" valign="top" bgcolor="#CCCCCC"><p><strong>Property of</strong></p></td>
+                      <td width="106" valign="top" bgcolor="#CCCCCC"><p><strong>Expected Value</strong></p></td>
+                    </tr>
+                    <tr>
+                      <td width="237" valign="top" bgcolor="#CCCCCC">barcode</td>
+                      <td width="116" valign="top" bgcolor="#CCCCCC"><p>Item<strong> </strong></p></td>
+                      <td width="106" valign="top" bgcolor="#CCCCCC"><p><strong>&nbsp;</strong>literal</p></td>
+                    </tr>
+                    <tr>
+                      <td width="237" valign="top" bgcolor="#CCCCCC">circulationStatus</td>
+                      <td width="116" valign="top" bgcolor="#CCCCCC"><p>Item</p></td>
+                      <td width="106" valign="top" bgcolor="#CCCCCC"><p>literal</p></td>
+                    </tr>
+                    <tr>
+                      <td width="237" valign="top" bgcolor="#CCCCCC">componentOf</td>
+                      <td width="116" valign="top" bgcolor="#CCCCCC"><p>Item<strong> </strong></p></td>
+                      <td width="106" valign="top" bgcolor="#CCCCCC"><p>Material<strong> </strong></p></td>
+                    </tr>
+                    <tr>
+                      <td width="237" valign="top" bgcolor="#CCCCCC">copyNote</td>
+                      <td width="116" valign="top" bgcolor="#CCCCCC"><p>Item</p></td>
+                      <td width="106" valign="top" bgcolor="#CCCCCC"><p>literal</p></td>
+                    </tr>
+                    <tr>
+                      <td valign="top" bgcolor="#CCCCCC">institution</td>
+                      <td valign="top" bgcolor="#CCCCCC"><p>Material</p></td>
+                      <td valign="top" bgcolor="#CCCCCC"><p>Agent</p></td>
+                    </tr>
+                    <tr>
+                      <td width="237" valign="top" bgcolor="#CCCCCC">itemId</td>
+                      <td width="116" valign="top" bgcolor="#CCCCCC"><p>Item</p></td>
+                      <td width="106" valign="top" bgcolor="#CCCCCC"><p>literal</p></td>
+                    </tr>
+                    <tr>
+                      <td valign="top" bgcolor="#CCCCCC">itemOf</td>
+                      <td valign="top" bgcolor="#CCCCCC">Item</td>
+                      <td valign="top" bgcolor="#CCCCCC">Instance</td>
+                    </tr>
+                    <tr>
+                      <td width="237" valign="top" bgcolor="#CCCCCC">shelfMark</td>
+                      <td width="116" valign="top" bgcolor="#CCCCCC"><p>Item</p></td>
+                      <td width="106" valign="top" bgcolor="#CCCCCC"><p>literal</p></td>
+                    </tr>
+                    <tr>
+                      <td width="237" valign="top" bgcolor="#CCCCCC">shelfMarkDdc</td>
+                      <td width="116" valign="top" bgcolor="#CCCCCC"><p>Item</p></td>
+                      <td width="106" valign="top" bgcolor="#CCCCCC"><p>literal</p></td>
+                    </tr>
+                    <tr>
+                      <td width="237" valign="top" bgcolor="#CCCCCC">shelfMarkLcc</td>
+                      <td width="116" valign="top" bgcolor="#CCCCCC"><p>Item</p></td>
+                      <td width="106" valign="top" bgcolor="#CCCCCC"><p>literal</p></td>
+                    </tr>
+                    <tr>
+                      <td width="237" valign="top" bgcolor="#CCCCCC">shelfMarkNlm</td>
+                      <td width="116" valign="top" bgcolor="#CCCCCC"><p>Item</p></td>
+                      <td width="106" valign="top" bgcolor="#CCCCCC"><p>literal</p></td>
+                    </tr>
+                    <tr>
+                      <td width="237" valign="top" bgcolor="#CCCCCC">shelfMarkScheme</td>
+                      <td width="116" valign="top" bgcolor="#CCCCCC"><p>Item</p></td>
+                      <td width="106" valign="top" bgcolor="#CCCCCC"><p>literal</p></td>
+                    </tr>
+                    <tr>
+                      <td width="237" valign="top" bgcolor="#CCCCCC">shelfMarkUdc</td>
+                      <td width="116" valign="top" bgcolor="#CCCCCC"><p>Item</p></td>
+                      <td width="106" valign="top" bgcolor="#CCCCCC"><p>literal</p></td>
+                    </tr>
+                    <tr>
+                      <td width="237" valign="top" bgcolor="#CCCCCC">accessCondition</td>
+                      <td width="116" valign="top" bgcolor="#CCCCCC"><p>Material </p></td>
+                      <td width="106" valign="top" bgcolor="#CCCCCC"><p>literal&nbsp;</p></td>
+                    </tr>
+                    <tr>
+                      <td width="237" valign="top" bgcolor="#CCCCCC">electronicLocator</td>
+                      <td width="116" valign="top" bgcolor="#CCCCCC"><p>Material</p></td>
+                      <td width="106" valign="top" bgcolor="#CCCCCC"><p>literal</p></td>
+                    </tr>
+                    <tr>
+                      <td width="237" valign="top" bgcolor="#CCCCCC">enumerationAndChronology</td>
+                      <td width="116" valign="top" bgcolor="#CCCCCC"><p>Material</p></td>
+                      <td width="106" valign="top" bgcolor="#CCCCCC"><p>literal</p></td>
+                    </tr>
+                    <tr>
+                      <td width="237" valign="top" bgcolor="#CCCCCC">materialOf</td>
+                      <td width="116" valign="top" bgcolor="#CCCCCC"><p>Material</p></td>
+                      <td width="106" valign="top" bgcolor="#CCCCCC"><p>Instance</p></td>
+                    </tr>
+                    <tr>
+                      <td width="237" valign="top" bgcolor="#CCCCCC">lendingPolicy</td>
+                      <td width="116" valign="top" bgcolor="#CCCCCC"><p>Material</p></td>
+                      <td width="106" valign="top" bgcolor="#CCCCCC"><p>literal</p></td>
+                    </tr>
+                    <tr>
+                      <td width="237" valign="top" bgcolor="#CCCCCC">reproductionPolicy</td>
+                      <td width="116" valign="top" bgcolor="#CCCCCC"><p>Material</p></td>
+                      <td width="106" valign="top" bgcolor="#CCCCCC"><p>literal</p></td>
+                    </tr>
+                    <tr>
+                      <td width="237" valign="top" bgcolor="#CCCCCC">retentionPolicy</td>
+                      <td width="116" valign="top" bgcolor="#CCCCCC"><p>Material</p></td>
+                      <td width="106" valign="top" bgcolor="#CCCCCC"><p>literal</p></td>
+                    </tr>
+                    <tr>
+                      <td width="237" valign="top" bgcolor="#CCCCCC">subLocation</td>
+                      <td width="116" valign="top" bgcolor="#CCCCCC"><p>Material</p></td>
+                      <td width="106" valign="top" bgcolor="#CCCCCC"><p>literal</p></td>
+                    </tr>
+                  </table>
+                  <p>(Ed. Note: </p>
+                  <ol>
+                    <li>bf:Item and bf:Material replace what were formerly bf:HeldItem and bf:HeldMaterial.  Those were subclasses of bf:Annotation.  As of this draft there is no class bf:Annotation - BIBFRAME annotations are of class oa:Annotation. Item and Material are subclasses of bf:Resource. An Item or Material may exist with no connection to an annotation, or it may be asserted as an annotation.</li>
+                    <li>itemOf and materialOf replace holdingFor.</li>
+                    <li>institution replaces heldBy )</li>
+                  </ol>
+                  <h2>Scenarios for Item/Material as Body of Annotation</h2>
+                  <h3>Scenario 1: Item Only, No Material</h3>
+                  <p> If an institution holds an Item and creates a bf:Item (with no corresponding bf:Material) then that Item is an Item of an Instance.   A user, upon discovering the Instance, may want to find Items for that Instance.  If the bf:Instance resides at the same institution as the bf:Item, then Items for that Instance can be found by a simple query (&quot;find Items for this Instance).  In this case there is no need to annotate the Instance
+                  Call this scenario 1A.</p>
+                  <p>In scenario 1B, InstitutionX, http://institutionx.example.org/, upon acquiring a book, creates a bf:Item: </p>
+                  <p>http://institutionX.example.org/bibframe/items/itemX</p>
+                  <p>which  describes that book. It needs to create, within the bf:Item, a link to a bf:Instance. But in this scenario, InstitutionX does not create bf:Instance descriptions. Instead, it has an arrangement with one or more remote institutions to attach its Items to their Instances.   Now, let's say, as in scenario 1A, a user, upon discovering the Instance, may want to find Items for that Instance.  The link from Item to Instance isn't going to help (and there is no reverse link, from Instance to Item).  In this case we are going to want there to be an annotation, saying &quot;this Item is an Item of this Instance&quot;. (In scenario 1A, such an annotation is not necessary).  The annotation might look something like this:
+                  </p>
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td colspan="3" bgcolor="#CCCCCC">&lt;...annotationXYZ&gt;</td>
+                      </tr>
+                      <tr>
+                        <td bgcolor="#CCCCCC">&nbsp;</td>
+                        <td bgcolor="#CCCCCC">a</td>
+                        <td bgcolor="#CCCCCC">oa:Annotation ;</td>
+                      </tr>
+                      <tr>
+                        <td bgcolor="#CCCCCC">&nbsp;</td>
+                        <td bgcolor="#CCCCCC">oa:hasBody</td>
+                        <td bgcolor="#CCCCCC">&lt;http://institutionX.example.org/bibframe/items/itemX&gt;  ;</td>
+                      </tr>
+                      <tr>
+                        <td width="53" bgcolor="#CCCCCC"> </td>
+                        <td width="175" bgcolor="#CCCCCC">oa:hasTarget</td>
+                        <td width="389" bgcolor="#CCCCCC"><p>&lt;http://institutionY.example.org/bibframe/instances/instanceXYZ&gt;  ; </p></td>
+                      </tr>
+                      <tr>
+                        <td bgcolor="#CCCCCC">&nbsp;</td>
+                        <td bgcolor="#CCCCCC">oa:motivatedBy</td>
+                        <td bgcolor="#CCCCCC">bf:AttachingItems  .</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p>Note that the &quot;motivation&quot; is bf:attachingItems, in the BIBFRAME namespace. </p>
+                  <p>If InstitutionX wishes to submit multiple Items for an Instance, it can submit multiple annotations, or it can submit a single annotation with multiple bodies. (Hence the pluralization of the motivation.) This is illustrated graphically:</p>
+                  <p><img src="../scenario1.png" width="500" height="300"  alt=""/></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Scenario 2: Items With Material</p>
+                  <p>In this scenario, InstitutionX wishes to submit as an annotation a group of Items with a Material summarizing the Items.   The annotation might look something like this:                  </p>
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td colspan="3" bgcolor="#CCCCCC">&lt;...annotationXYW&gt;</td>
+                      </tr>
+                      <tr>
+                        <td bgcolor="#CCCCCC">&nbsp;</td>
+                        <td bgcolor="#CCCCCC">a</td>
+                        <td bgcolor="#CCCCCC">oa:Annotation ;</td>
+                      </tr>
+                      <tr>
+                        <td bgcolor="#CCCCCC">&nbsp;</td>
+                        <td bgcolor="#CCCCCC">oa:hasBody</td>
+                        <td bgcolor="#CCCCCC">&lt;http://institutionX.example.org/bibframe/items/itemX&gt;  ;</td>
+                      </tr>
+                      <tr>
+                        <td bgcolor="#CCCCCC">&nbsp;</td>
+                        <td bgcolor="#CCCCCC">oa:hasBody</td>
+                        <td bgcolor="#CCCCCC">&lt;http://institutionX.example.org/bibframe/items/itemY&gt;  ;</td>
+                      </tr>
+                      <tr>
+                        <td bgcolor="#CCCCCC">&nbsp;</td>
+                        <td bgcolor="#CCCCCC">oa:hasBody</td>
+                        <td bgcolor="#CCCCCC">&lt;http://institutionX.example.org/bibframe/material/materialXY&gt;  ;</td>
+                      </tr>
+                      <tr>
+                        <td width="53" bgcolor="#CCCCCC"> </td>
+                        <td width="155" bgcolor="#CCCCCC">oa:hasTarget</td>
+                        <td width="419" bgcolor="#CCCCCC"><p>&lt;http://institutionY.example.org/bibframe/instances/instanceXYZ&gt;  ; </p></td>
+                      </tr>
+                      <tr>
+                        <td bgcolor="#CCCCCC">&nbsp;</td>
+                        <td bgcolor="#CCCCCC">oa:motivatedBy</td>
+                        <td bgcolor="#CCCCCC">bf:AttachingItems  .</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p></p>
+                  <p>Graphically:</p>
+                  <p><img src="../scenario2.png" width="500" height="300"  alt=""/></p>
+                  <p></p>
+                  <p></p>
+                  <p></p>
+                  <h3>Scenario 3: Material but no Individual Items</h3>
+                  <p>In this scenario, InstitutionX wishes to submit as an annotation a Material alone summarizing the Items.   The annotation might look something like this: </p>
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td colspan="3" bgcolor="#CCCCCC">&lt;...annotationXZW&gt;</td>
+                      </tr>
+                      <tr>
+                        <td bgcolor="#CCCCCC">&nbsp;</td>
+                        <td bgcolor="#CCCCCC">a</td>
+                        <td bgcolor="#CCCCCC">oa:Annotation ;</td>
+                      </tr>
+                      <tr>
+                        <td bgcolor="#CCCCCC">&nbsp;</td>
+                        <td bgcolor="#CCCCCC">oa:hasBody</td>
+                        <td bgcolor="#CCCCCC">&lt;http://institutionX.example.org/bibframe/material/materialZ&gt;  ;</td>
+                      </tr>
+                      <tr>
+                        <td width="53" bgcolor="#CCCCCC"> </td>
+                        <td width="155" bgcolor="#CCCCCC">oa:hasTarget</td>
+                        <td width="419" bgcolor="#CCCCCC"><p>&lt;http://institutionY.example.org/bibframe/instances/instanceXYZ&gt;  ; </p></td>
+                      </tr>
+                      <tr>
+                        <td bgcolor="#CCCCCC">&nbsp;</td>
+                        <td bgcolor="#CCCCCC">oa:motivatedBy</td>
+                        <td bgcolor="#CCCCCC">bf:AttachingMaterial  .</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p>Graphically:</p>
+                  <p><img src="../scenario3.png" width="500" height="300"  alt=""/></p>
+                  <p>&nbsp;</p>
+                  <h2>Other BIBFRAME Annotations</h2>
+                  <p>To be continued ..... (CoverArt, TableOfContents, etc.)</p>
+                  <p>&nbsp;</p>
+                  <p>&nbsp;</p>
+                  <p>&nbsp;</p>
+                  <p>&nbsp;</p>
+                  <p>&nbsp;</p>
+                  <p>&nbsp;</p>
+                  <div class="body">
+                    <div class="section">
+                      <div class="subsection">
+                        <div class="subsection">
+                          <div class="subsection">
+                            <p></p>
+                            <p></p>
+                            <p></p>
+                            <p>&nbsp;</p>
+                            <p></p>
+                            <p></p>
+                            <p></p>
+                            <p></p>
+                            <p></p>
+                            <p></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+

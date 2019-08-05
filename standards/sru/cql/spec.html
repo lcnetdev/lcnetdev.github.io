@@ -1,0 +1,456 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/subpage.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>CQL: the Contextual Query Language: Specifications (SRU: Search/Retrieval via URL, Standards, Library of Congress)</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link type="text/css" media="print" href="../css/sru-print.css" rel="stylesheet">
+<style type="text/css" media="screen">
+@import url(../css/sru-base.css);
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="shortcut icon" href="http://www.loc.gov/standards/sru/images/favicon.ico">
+<!-- InstanceBeginEditable name="head" -->
+<meta name="keywords" content="query language search retrieval via url z39.50 standards library congress">
+<meta name="descrption" content="Contextual Query Language: SRU (Search/Retrieve via URL) is a standard search protocol for Internet search queries, utilizing CQL (Contextual Query Language), a standard query syntax for representing queries.">
+<!-- InstanceEndEditable -->
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<form action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" name="seek1" method="get">
+<input type="hidden" name="col" value="loc">
+<input type="hidden" name="sc" value="0">
+<input type="hidden" name="ws" value="0">
+<input type="hidden" name="la" value="en">
+<input type="hidden" name="qm" value="0">
+<input type="hidden" name="st" value="1">
+<input type="hidden" name="nh" value="10">
+<input type="hidden" name="lk" value="1">
+<input type="hidden" name="rf" value="0">
+<input type="hidden" name="oq" value="">
+<input type="hidden" name="si" value="0">
+<input type="hidden" name="rq" value="0">
+<input type="hidden" name="qc" value="">
+<table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
+  <div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div></td>
+<td width="116"><select name="qp" tabindex="1">
+<option value="url:/sru" selected>SRU Web Pages</option>
+<option value="url:/standards url:/ead url:/marc">Standards Pages</option>
+<option value="">All Library Pages</option>
+</select></td><td width="117" align="right"><input type="text" name="qt" id="keyword" size="18" value="" tabindex="2"></td>
+<td width="67" align="right"><input class="button" id="search_button" name="search_button" type="submit" value="SEARCH" tabindex="3"></td>
+</tr></table></form>
+<table align="center" class="layout" cellpadding="0" cellspacing="0"><tr><td>
+<div id="graphic"> 
+<h1 class="homepage"><img src="../images/sru.gif" alt="SRU (Search/Retrieval Using URL)" width="600" height="50"></h1>
+</div>
+<div class="goldtop"></div>
+      <div id="breadcrumbs"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-top" --><a href="index.html">sru 
+        version 1.2 specs</a>&nbsp;&raquo;&nbsp;cql: contextual query language<!-- InstanceEndEditable --></div>
+<div class="clear"><a name="skip_menu"></a></div>
+ <!-- InstanceBeginEditable name="content" --> 
+      <h2 align="center">CQL: Contextual Query Language</h2>
+      <h1 align="center">Specification</h1>
+      <p><a href="#rules">Query Syntax</a> 
+      | <a href="#bnf">BNF</a></p>
+      <p>See Also <a href="contextSets">CQL Context Sets </a></p>
+      <hr class="dashed">
+		 <hr class="dashed">
+      <h2><a name="rules"></a>Query Syntax </h2>
+      <ol>
+        <li><span class="selected">CQL Query</span><br>
+          A CQL query consists of either a single search clause [example 1], or 
+          multiple search clauses connected by boolean operators [example 2]. 
+          It may have a sort specification at the end, following the 'sortBy' 
+          keyword [example 3]. In addition it may include prefix assignments which 
+          assign short names to context set identifiers [example 4].<br>
+          <br>
+<div class="box2"><em>Examples: </em>
+<ol>
+<li>dc.title any fish </li>
+<li>dc.title any fish or dc.creator any sanderson </li>
+<li>dc.title any fish sortBy dc.date/sort.ascending </li>
+<li>&gt; dc = "info:srw/context-sets/1/dc-v1.1" dc.title any fish </li>
+</ol>
+</div>
+</li>
+
+        <li><span class="selected">Search Clause</span><br>
+          A search clause consists of either an index, relation and a search term 
+          [example 1], or a search term by itself [example 2]. If the clause consists 
+          of just a term, then the index is treated as 'cql.serverChoice', and 
+          the relation is treated as '=' [example 3]. <span class="style1">(Treated 
+          differently in versions 1.1&nbsp; and 1.2. See <a href="#note1">note 
+          1</a>.) <br>
+          <br>
+          </span>
+<div class="box2"><em>Examples: </em>
+<ol>
+<li>dc.title any fish </li>
+<li>fish </li>
+<li>cql.serverChoice = fish </li>
+</ol>
+</div>
+</li>
+
+        <li> <span class="selected">Search Term</span><br>
+          Search terms MAY be enclosed in double quotes [example 1], though need 
+          not be [example 2]. Search terms MUST be enclosed in double quotes if 
+          they contain any of the following characters: &lt; &gt; = / ( ) and 
+          whitespace [example 3]. The search term may be an empty string [example 
+          4], but must be present in a search clause. The empty search term has 
+          no defined semantics. <br>
+          <br>
+<div class="box2"><em>Examples: </em>
+<ol>
+<li>"fish" </li>
+<li>fish</li>
+<li>"squirrels fish" </li>
+<li>"" </li>
+</ol>
+</div>
+</li>
+
+        <li> <span class="selected">Index Name</span><br>
+          An index name always includes a base name [example 1] and may also include 
+          a prefix [example 2], which determines the context set of which the 
+          index is a part. The base name and the prefix are separated by a dot 
+          character ('.'). If multiple '.' characters are present, then the first 
+          should be treated as the prefix/base name delimiter. If the prefix is 
+        not supplied, it is determined by the server. <br>
+<div class="box2">Examples:
+<ol>
+<li><span class="highlight">title</span> any fish </li>
+<li><span class="highlight">dc.title</span> any fish </li>
+</ol>
+</div>
+</li>
+
+      <li> <span class="selected">Relation</span><br>
+    The relation in a search clause specifies the relationship between the 
+    index and search term. It also always includes a base name [example 
+    1] and may also include a prefix providing a context for the relation 
+    [example 2]. If a relation does not have a prefix, the context set is 
+    'cql'. If no relation is supplied in a search clause, then = is assumed, 
+    which means that the relation is determined by the server. <i> See <a href="#note1">note 1</a> regarding 
+      version differences.<br>
+</i><em><br>
+</em>
+<div class="box2"><em>Examples: </em>
+<ol>
+<li>dc.title <span class="highlight">any</span> fish </li>
+<li>dc.title <span class="highlight">cql.any</span> fish <br>
+</li>
+</ol>
+</div>
+</li>
+      <li><span class="selected"> Relation Modifiers</span><br>
+Relations may be modified by one or more relation modifiers. Relation 
+modifiers always include a base name, and may include a prefix for a 
+context set as above [example 1]. If a prefix is not supplied, the context 
+set is 'cql'. Relation modifiers are separated from each other and from 
+the relation by forward slash characters('/'). Whitespace may be present 
+on either side of a '/' character, but the relation plus modifiers group 
+may not end in a '/' [example 2]. Relation modifiers may also have a 
+comparison symbol and a value. The comparison symbol is any of = &lt; 
+&lt;= &gt; &gt;= &lt;&gt;. The value must obey the same rules for quoting 
+      as search terms, above [example 3].<br>
+<div class="box2"><em>Examples: </em>
+<ol>
+<li>dc.title any<span class="highlight">/relevant</span> fish </li>
+<li>dc.title any<span class="highlight">/ relevant /cql.string</span> fish </li>
+<li>dc.title any<span class="highlight">/rel.algorithm=cori</span> fish </li>
+</ol>
+</div>
+</li>
+                
+        <li><span class="selected">Boolean Operators</span><br>
+          Search clauses may be linked by boolean operators. These are: <strong>and</strong>, 
+          <strong>or</strong>, <strong>not</strong> and <strong>prox</strong> 
+          [example 1]. Note that&nbsp; <strong>not</strong> is 'and-not' and must 
+          not be used as a unary operator. Boolean operators all have the same 
+          precedence; they are evaluated left-to-right. Parentheses may be used 
+          to overide left-to-right evaluation [example 2].<br>
+<div class="box2"><em>Examples: </em>
+<ol>
+<li>dc.title any fish <span class="highlight">or</span> dc.creator 
+              any sanderson </li>
+<li>dc.title any fish or <span class="highlight">(</span>dc.creator 
+              any sanderson and dc.identifier = "id:1234567"<span class="highlight">)</span></li>
+</ol>
+</div>
+      </li>
+        
+        <li><span class="selected"> Boolean Modifiers</span><br>
+          Booleans may be modified by one or more boolean modifiers, separated 
+          as per relation modifiers with '/' characters. Again, boolean modifiers 
+          consist of a base name and may include a prefix determining the modifier's 
+          context set [example 1]. If not supplied, then the context set is 'cql'. 
+          As per relation modifiers, they may also have a comparison symbol and 
+          a value [example 2].<br>
+<div class="box2"><em>Examples: </em>
+<ol>
+<li>dc.title any fish or<span class="highlight">/rel.combine=sum</span> dc.creator any sanderson </li>
+<li>dc.title any fish prox<span class="highlight">/unit=word/distance&gt;3</span> dc.title any squirrel<br>
+</li>
+</ol>
+</div>
+<li><span class="selected">Proximity Modifiers</b></span><br>
+          Basic proximity modifiers are defined in the <a href="contextSets/theCqlContextSet.html">CQL
+          context set</a>. Proximity units
+          'word', 'sentence', 'paragraph', and 'element' are defined in the CQL
+          context set, and may also be defined in other context sets. Within
+          the CQL set they are explicitly undefined. When defined in another
+          context set they may be assigned specific meaning.<br>
+          <br>
+          Thus compare&nbsp; "prox/unit=word"&nbsp; with "prox/xyz.unit=word". 
+          In the first, 'unit' is a prox modifier from the CQL set, and as
+          such its values are undefined, so 'word' is subject to interpretation
+          by the server. In the second, 'unit' is a prox modifier defined by
+          the xyz context set, which may assign&nbsp; the unit 'word' a specific
+          meaning.<br>
+          <br>
+The context set xyz may define additional units, for example, 'street':<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	prox/xyz.unit="street"<br>
+          <br>
+          Note that this approach, 'prox/xyz.unit="street"', is preferable to
+          'Prox/unit=xyz.street'. In the first case, 'unit' is a modifier define
+          in the xyz context set, and 'street' is a value defined for that modifier.
+          In the second, 'unit' is a modifier from the cql context set, with
+          a value defined in a different set. so its value would have to be
+          one that is defined in the cql context set. Pairing a modifier from
+      one set with a value from another is not a good practice. <br>
+</li>
+        
+      <li> <span class="selected"><a name="sorting"></a>Sorting </span><em>(See 
+  <a href="#note2">note 2</a> regarding version differences.)</em><br>
+  Queries may include explicit information on how to sort the result set 
+  generated by the search. The sort specification is included at the end, 
+  and is separated by a 'sortBy' keyword. The specification consists of 
+  an ordered list of indexes, potentially with modifiers, to use as keys 
+  on which to sort the result set. If multiple keys are given, then the 
+  second and subsequent keys should be used to determine the order of 
+  items that would otherwise sort together. Each index used as a sort 
+  key has the same semantics as when it is used to search. <br>
+  <br>
+  Modifiers may be attached to the index in the same way as to booleans 
+  and relations in the main part of the query. These modifiers may be 
+  part of any context set, but the CQL context set and the Sort context 
+  set are especially important. If a modifier may be used in this way 
+  should be stated in the description of its semantics, and it is the 
+  only time at which modifiers may be attached to indexes. As many types 
+  of search also require specification of term order (for example the 
+  &lt;, &gt; and within relations), these modifiers are often specified 
+          as relation modifiers. <br>
+<br>
+<div class="box2"><em>Examples: </em>
+<ol>
+<li>"cat" <span class="highlight">sortBy dc.title</span> </li>
+<li>"dinosaur" <span class="highlight">sortBy dc.date/sort.descending 
+      dc.title/sort.ascending</span></li>
+</ol>
+</div>
+</li>
+        
+        <li> <span class="selected">Prefix Assignment</span><br>
+          Warning: The use of Prefix Maps is very uncommon.<br>
+          A Prefix Map may be used to assign context set names to specific identifiers 
+          in order to be sure that the server maps them in a desired fashion. 
+          It may occur at any place in the query and applies to anything below 
+          the map in the query tree. A prefix assignment is specified by: '&gt;' 
+          shortname '=' identifier [example 1]. The shortname and '=' sign may 
+          be omitted, in which case it sets a default context set for indexes 
+          [example 2].<br>
+<div class="box2"><em>Examples: </em>
+<ol>
+<li><span class="highlight">&gt; dc = "http://deepcustard.org/"</span> dc.custardDepth &gt; 10 </li>
+<li><span class="highlight">&gt; "http://deepcustard.org/"</span> custardDepth &gt; 10 </li>
+</ol>
+</div>
+</li>
+        
+        <li> <span class="selected">Case Insensitive </span><br>
+          All parts of CQL are case insensitive apart from user supplied search 
+          terms, values for modifiers and prefix map identifiers, which may or 
+          may not be case sensitive. If any case insensitive part of CQL is specified 
+          with both upper and lower case, it is for aesthetic purposes only.<br>
+<div class="box2">
+<em>Examples:</em>
+<ol>
+<li>dC.tiTlE any fish </li>
+<li>dc.TitlE Any/rEl.algOriThm=cori fish soRtbY Dc.TitlE 
+</ol>
+</div>
+</ol>
+
+      <p class="highlight">Notes:
+</p>
+<ol>
+<li><a name="note1"></a>In version 1.2 the default relation is '=', 
+            while in version 1.1, the default relation is 'scr'. In version 1.1 
+            the '=' relation means &quot;adjacency&quot;. In version 1.2 the &quot;=&quot; 
+            relation from version 1.1 is replaced by new relation 'adj'.</li>
+<li><a name="note2"></a> In version 1.1, a <a href="http://www.loc.gov/standards/sru/sru-1-1.html#sort">sort 
+            parameter</a> is included in the searchRetrieve operation. That parameter 
+            is dropped in version 1.2 and instead the sort specification becomes 
+            part of the CQL query.&nbsp;&nbsp;</li>
+</ol>
+<hr class="dashed">
+      <h2><a name="bnf"></a>BNF</h2>
+      <p>Following is the Backus Naur Form (BNF) definition for CQL. ["::=" represents 
+        "is defined as"]</p>
+      <table class="standard">
+        <tr> 
+          <td scope="row" align="right" valign="top" width="15%">sortedQuery</td>
+          <td valign="top" width="1%">::=</td>
+          <td width="84%"> prefixAssignment sortedQuery <br>
+            | scopedClause ['sortby' sortSpec]</td>
+        </tr>
+        <tr> 
+          <td scope="row" align="right">sortSpec</td>
+          <td>::=</td>
+          <td>sortSpec singleSpec | singleSpec</td>
+        </tr>
+        <tr> 
+          <td scope="row" align="right">singleSpec</td>
+          <td>::=</td>
+          <td>index [modifierList] </td>
+        </tr>
+        <tr> 
+          <td scope="row" colspan="3" valign="top">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="redtext">Note: 
+            The above three assignments are new in version 1.2 to accomodate the 
+            sortSpec.</span></td>
+        </tr>
+        <tr> 
+          <td height="37" align="right" valign="top" scope="row"> cqlQuery </td>
+          <td valign="top">::= </td>
+          <td>prefixAssignment cqlQuery <br>
+            | scopedClause </td>
+        </tr>
+        <tr> 
+          <td scope="row" align="right" valign="top"> prefixAssignment </td>
+          <td valign="top">::= </td>
+          <td>'&gt;' prefix '=' uri <br>
+            | '&gt;' uri </td>
+        </tr>
+        <tr> 
+          <td scope="row" align="right" valign="top"> scopedClause </td>
+          <td valign="top">::= </td>
+          <td>scopedClause booleanGroup searchClause <br>
+            | searchClause </td>
+        </tr>
+        <tr> 
+          <td scope="row" align="right"> booleanGroup </td>
+          <td>::= </td>
+          <td>boolean [modifierList] </td>
+        </tr>
+        <tr> 
+          <td scope="row" align="right" valign="top"> boolean </td>
+          <td valign="top">::= </td>
+          <td>'and' | 'or' | 'not' | 'prox' </td>
+        </tr>
+        <tr> 
+          <td scope="row" align="right" valign="top"> searchClause </td>
+          <td valign="top">::= </td>
+          <td> '(' cqlQuery ')'<br>
+            | index relation searchTerm<br>
+            | searchTerm </td>
+        </tr>
+        <tr> 
+          <td scope="row" align="right"> relation </td>
+          <td>::= </td>
+          <td>comparitor [modifierList] </td>
+        </tr>
+        <tr> 
+          <td scope="row" align="right"> comparitor </td>
+          <td>::= </td>
+          <td>comparitorSymbol | namedComparitor </td>
+        </tr>
+        <tr> 
+          <td scope="row" align="right"> comparitorSymbol </td>
+          <td>::= </td>
+          <td>'=' | '&gt;' | '&lt;' | '&gt;=' | '&lt;=' | '&lt;&gt;' | '==' </td>
+        </tr>
+        <tr> 
+          <td scope="row" align="right"> namedComparitor </td>
+          <td>::= </td>
+          <td>identifier </td>
+        </tr>
+        <tr> 
+          <td scope="row" align="right"> modifierList </td>
+          <td>::= </td>
+          <td>modifierList modifier<strong> | </strong>modifier </td>
+        </tr>
+        <tr> 
+          <td scope="row" align="right"> modifier </td>
+          <td>::= </td>
+          <td>'/' modifierName [comparitorSymbol modifierValue] </td>
+        </tr>
+        <tr> 
+          <td scope="row" align="right">prefix, uri, modifierName, modifierValue, 
+            searchTerm, index </td>
+          <td valign="top">::= </td>
+          <td valign="top">term </td>
+        </tr>
+        <tr> 
+          <td scope="row" align="right"> term </td>
+          <td>::= </td>
+          <td>identifier | 'and' | 'or' | 'not' | 'prox' | 'sortby' </td>
+        </tr>
+        <tr> 
+          <td scope="row" align="right" valign="top"> identifier </td>
+          <td valign="top">::= </td>
+          <td>charString1 | charString2 </td>
+        </tr>
+        <tr> 
+          <td scope="row" align="right" valign="top"> <em>charString1</em> </td>
+          <td valign="top">:= </td>
+          <td><em>Any sequence of characters that does not include any of the 
+            following:</em> <blockquote><em>whitespace<br>
+              </em><em>( (open parenthesis )</em><br>
+              <em>) (close parenthesis)</em><br>
+              <em>=<br>
+              </em><em>&lt;<br>
+              </em><em>&gt;</em><br>
+              <em>'"' (double quote)<br>
+              </em><em>/</em></blockquote>
+            <em> If the final sequence is a reserved word, that token is returned 
+            instead. Note that '.' (period) may be included, and a sequence of 
+            digits is also permitted. Reserved words are 'and', 'or', 'not', and 
+            'prox' (case insensitive). When a reserved word is used in a search 
+            term, case is preserved. </em> </td>
+        </tr>
+        <tr> 
+          <td scope="row" align="right" valign="top"> <em>charString2</em> </td>
+          <td valign="top">:= </td>
+          <td><em>Double quotes enclosing a sequence of any characters except 
+            double quote (unless preceded by backslash (\)). Backslash escapes 
+            the character following it. The resultant value includes all backslash 
+            characters except those releasing a double quote (this allows other 
+            systems to interpret the backslash character). The surrounding double 
+            quotes are not included. </em> </td>
+        </tr>
+      </table>
+      <br>
+      <hr class="dashed">
+      <h2>&nbsp;</h2>
+      <hr class="dashed">
+      <h2>&nbsp;</h2>
+      <!-- InstanceEndEditable -->
+      <div id="breadcrumbs-bottom"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-bottom" --><a href="index.html">specifications</a>&nbsp;&raquo;&nbsp;cql: 
+        contextual query language<!-- InstanceEndEditable --></div>
+</td></tr>
+
+</table>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://www.loc.gov/">The 
+        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div>
+      <br>
+  <span class="sitenav">
+  <!-- #BeginDate format:Am1 -->February 17, 2016<!-- #EndDate -->
+  </span></td>
+<td align="right"><div class="contactus"><a href="mailto:ndmso@loc.gov">Contact Us</a></div></td>
+</tr></table>
+</body>
+<!-- InstanceEnd --></html>

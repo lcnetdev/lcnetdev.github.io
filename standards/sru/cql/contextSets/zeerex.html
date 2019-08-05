@@ -1,0 +1,179 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/subpage.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Record Metadata Context Set Version 1.1 (SRU: Search/Retrieval via URL -- SRU, CQL and ZeeRex, Standards, Library of Congress)</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link type="text/css" media="print" href="../../css/sru-print.css" rel="stylesheet">
+<style type="text/css" media="screen">
+@import url(../../css/sru-base.css);
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="shortcut icon" href="http://www.loc.gov:8081/standards/sru/images/favicon.ico">
+<!-- InstanceBeginEditable name="head" -->
+<meta name="keywords" content="dc context set sru version 1.2 specifications sru search retrieval url cql zeerex standards library congress">
+<meta name="description" content="dc context set: SRU Version 1.2 Specifications. SRU is a standard XML-focused search protocol for Internet search queries, utilizing CQL (Contextual Query Language), a standard syntax for representing queries. Standards, The Library of Congress.">
+<!-- InstanceEndEditable -->
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<form action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" name="seek1" method="get">
+<input type="hidden" name="col" value="loc">
+<input type="hidden" name="sc" value="0">
+<input type="hidden" name="ws" value="0">
+<input type="hidden" name="la" value="en">
+<input type="hidden" name="qm" value="0">
+<input type="hidden" name="st" value="1">
+<input type="hidden" name="nh" value="10">
+<input type="hidden" name="lk" value="1">
+<input type="hidden" name="rf" value="0">
+<input type="hidden" name="oq" value="">
+<input type="hidden" name="si" value="0">
+<input type="hidden" name="rq" value="0">
+<input type="hidden" name="qc" value="">
+<table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
+  <div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../../index.html">SRU</a></div></td>
+<td width="116"><select name="qp" tabindex="1">
+<option value="url:/sru" selected>SRU Web Pages</option>
+<option value="url:/standards url:/ead url:/marc">Standards Pages</option>
+<option value="">All Library Pages</option>
+</select></td><td width="117" align="right"><input type="text" name="qt" id="keyword" size="18" value="" tabindex="2"></td>
+<td width="67" align="right"><input class="button" id="search_button" name="search_button" type="submit" value="SEARCH" tabindex="3"></td>
+</tr></table></form>
+<table align="center" class="layout" cellpadding="0" cellspacing="0"><tr><td>
+<div id="graphic"> 
+<h1 class="homepage"><img src="../../images/sru.gif" alt="SRU (Search/Retrieval Using URL)" width="600" height="50"></h1>
+</div>
+<div class="goldtop"></div>
+      <div id="breadcrumbs"><a href="../../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-top" -->ZeeRex Context Set<!-- InstanceEndEditable --></div>
+<div class="clear"><a name="skip_menu"></a></div>
+ <!-- InstanceBeginEditable name="content" --> 
+
+     
+       
+            <h2>ZeeRex Context Set</h2>
+       
+          <p> <em>Version 1.1.1, 19th of May, 2006</em></p>
+          <p> </p>
+          <h3>Introduction</h3>
+          <p> The ZeeRex record schema is used in SRW/U to describe the capabilities of the server, <br>
+          and is described in full at <a href="http://web.archive.org/web/20120702134948/http://explain.z3950.org/">http://explain.z3950.org/</a>.    <br>
+          Although there is an explain operation which will retrieve the record   describing the server, ZeeRex is <br>
+          designed such that the records can be   aggregated into a registry style database.  <br>
+          Once in this registry there   needs to be a way to search them and this context set,<br>
+along with others   in the <a href="http://web.archive.org/web/20120702134948/http://srw.cheshire3.org/profiles/ZeeRex/">ZeeRex profile</a>, is the means for systems supporting CQL. </p>
+          <p> If you're wondering why all the other <a href="http://web.archive.org/web/20120702134948/http://explain.z3950.org/search/attrs.html">ZeeRex attribute set</a> access points aren't listed below,<br>
+then you should check out the <a href="http://web.archive.org/web/20120702134948/http://srw.cheshire3.org/profiles/ZeeRex/">profile</a>. </p>
+          <p> </p>
+          <h3>Context Set</h3>
+          <p> The identifier for the context set is: <strong>info:srw/cql-context-set/2/zeerex-1.1</strong><br>
+            The recommended short name is: <strong>zeerex</strong><br>
+            The maintainer of the context set is:  Rob Sanderson, azaroth@liv.ac.uk </p>
+          <p> </p>
+          <h3>Indexes</h3>
+          <p>
+          <table width="50%" align="left">
+            <tbody>
+              <tr>
+                <th width="9%">Index&nbsp;Name</th>
+                <th width="91%" align="left">Description</th>
+              </tr>
+              <tr>
+                <td>numberOfRecords</td>
+                <td>The number of records in the described database.  (/explain/serverInfo/database@numrecs)</td>
+              </tr>
+              <tr>
+                <td>set</td>
+                <td>A supported context set or attribute set identifier. (/explain/indexInfo/set@identifier)</td>
+              </tr>
+              <tr>
+                <td>index</td>
+                <td>The name of a supported index. (See Note 1) (/explain/indexInfo/index/map/name)</td>
+              </tr>
+              <tr>
+                <td>attributeType</td>
+                <td>An attribute type for Z39.50 (/explain/indexInfo/index/map/attr@type)</td>
+              </tr>
+              <tr>
+                <td>attributeValue</td>
+                <td>An attribute value for Z39.50 (/explain/indexInfo/index/map/attr)</td>
+              </tr>
+              <tr>
+                <td>schema</td>
+                <td>The identifier of a supported record schema (/explain/schemaInfo/schema@identifier)</td>
+              </tr>
+              <tr>
+                <td>recordSyntax</td>
+                <td>The OID identifier of a supported record syntax  for Z39.50 (/explain/recordInfo/recordSyntax@identifier)</td>
+              </tr>
+              <tr valign="top">
+                <td>supports_*</td>
+                <td><p>Multiple indexes.  There is one  index for each 'supports' type available for all protocols supported by  ZeeRex.<br>
+                Whenever the list maintained in the ZeeRex specification is  updated, this should also be considered to have <br>
+                been updated. For example  supports_resultSets or supports_relationModifier.  For types which are flags  <br>
+                (resultSets, proximity, etc.) the server should accept 'true' for  true/present and 'false' for false/not present.<br>
+(/explain/configInfo/supports@type=*)</p></td>
+              </tr>
+              <tr valign="top">
+                <td>default_*</td>
+                <td>Multiple indexes.  As per supports_*,  but used for searching default values.</td>
+              </tr>
+              <tr valign="top">
+                <td>setting_*</td>
+                <td>Multiple indexes.  As per supports_*,  but used for searching setting values.</td>
+              </tr>
+            </tbody>
+          </table>
+          </p>
+          <p> </p>
+          <h3>Notes</h3>
+          <p> <strong>1.</strong><br>
+            This will search only the name and not the context set, for example zrx.index exact "title".    <br>
+            This will then find title indexes from any context set.  You will   obviously be wondering how to <br>
+            find indexes from one context set, and the   answer is unfortunately not very pretty. <br>
+            As the short name of a context   set is up to the server to define, you would need to retrieve <br>
+            the   record and parse it to find out the mapping from identifer to short   name. <br>
+            This short name would not necessarily apply across all of the   aggregated records so we must <br>
+            use the full URI identifier.  CQL has a   method for searching for two pieces of information in relation <br>
+            to each   other -- the Proximity boolean.  Using prox, we can say that the set and   the index need <br>
+            to come from the same element.  So to search for   cql.anywher<br>
+zrx.set exact "info:srw/cql-context-set/1/cql-v1.1" prox/unit=element/distance=0 zrx.index exact "anywhere" </p>
+<br>
+Note that this usage, as opposed to simply AND ing the two operands, may   not be available in all services which use the ZeeRex context set.
+<p> This issue also applies to some supports_* access points as well, for   example finding servers which support other parts of CQL which are   contextualised, for example relation modifiers. </p>
+<p> This issue also applies in spades for Z39.50 searching where attributes   have three pieces of information -- attribute set, attribute type and   attribute value. </p>
+<p> </p>
+<h3>Examples</h3>
+<p> Some examples of how the context set might be used. </p>
+<p>
+<table width="90%">
+  <tbody>
+    <tr>
+      <td><pre>    zrx.numberOfRecords &gt; 10000      zrx.supports_proximity=1      zrx.supports_relationModifier any "CORI LR"         prox/unit=element/distance=0     zrx.set exact "info:srw/cql-context-set/2/relevance-1.0"      zrx.schema exact "info:srw/schema/1/dc-v1.1"      zrx.attributeType = 1        prox/unit=element/distance=0     zrx.attributeValue = 4        prox/unit=element/distance=0     zrx.set exact/zrx.oid "1.2.840.10003.3.1"    </pre></td>
+    </tr>
+  </tbody>
+</table>
+</p>
+<p> </p>
+<p> <strong>Changes</strong></p>
+<ul>
+  <li>(1.1.1) Added default_*, setting_* at request of Mike Taylor. </li>
+</ul>
+<hr>
+<h2>&nbsp;</h2></center></center>
+ <!-- InstanceEndEditable -->
+      <div id="breadcrumbs-bottom"><a href="../../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-bottom" -->ZeeRex Context Set<!-- InstanceEndEditable --></div>
+</td></tr>
+
+</table>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://www.loc.gov/">The 
+        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../../index.html">SRU</a></div>
+      <br>
+  <span class="sitenav">
+  <!-- #BeginDate format:Am1 -->December 16, 2015<!-- #EndDate -->
+  </span></td>
+<td align="right"><div class="contactus"><a href="mailto:ndmso@loc.gov">Contact Us</a></div></td>
+</tr></table>
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/subpage.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Network Context Set Version 1.1 (SRU: Search/Retrieval via URL -- SRU, CQL and ZeeRex, Standards, Library of Congress)</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link type="text/css" media="print" href="../../css/sru-print.css" rel="stylesheet">
+<style type="text/css" media="screen">
+@import url(../../css/sru-base.css);
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="shortcut icon" href="http://www.loc.gov:8081/standards/sru/images/favicon.ico">
+<!-- InstanceBeginEditable name="head" -->
+<meta name="keywords" content="dc context set sru version 1.2 specifications sru search retrieval url cql zeerex standards library congress">
+<meta name="description" content="dc context set: SRU Version 1.2 Specifications. SRU is a standard XML-focused search protocol for Internet search queries, utilizing CQL (Contextual Query Language), a standard syntax for representing queries. Standards, The Library of Congress.">
+<!-- InstanceEndEditable -->
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<form action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" name="seek1" method="get">
+<input type="hidden" name="col" value="loc">
+<input type="hidden" name="sc" value="0">
+<input type="hidden" name="ws" value="0">
+<input type="hidden" name="la" value="en">
+<input type="hidden" name="qm" value="0">
+<input type="hidden" name="st" value="1">
+<input type="hidden" name="nh" value="10">
+<input type="hidden" name="lk" value="1">
+<input type="hidden" name="rf" value="0">
+<input type="hidden" name="oq" value="">
+<input type="hidden" name="si" value="0">
+<input type="hidden" name="rq" value="0">
+<input type="hidden" name="qc" value="">
+<table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
+  <div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../../index.html">SRU</a></div></td>
+<td width="116"><select name="qp" tabindex="1">
+<option value="url:/sru" selected>SRU Web Pages</option>
+<option value="url:/standards url:/ead url:/marc">Standards Pages</option>
+<option value="">All Library Pages</option>
+</select></td><td width="117" align="right"><input type="text" name="qt" id="keyword" size="18" value="" tabindex="2"></td>
+<td width="67" align="right"><input class="button" id="search_button" name="search_button" type="submit" value="SEARCH" tabindex="3"></td>
+</tr></table></form>
+<table align="center" class="layout" cellpadding="0" cellspacing="0"><tr><td>
+<div id="graphic"> 
+<h1 class="homepage"><img src="../../images/sru.gif" alt="SRU (Search/Retrieval Using URL)" width="600" height="50"></h1>
+</div>
+<div class="goldtop"></div>
+      <div id="breadcrumbs"><a href="../../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-top" -->Network Context Set<!-- InstanceEndEditable --></div>
+<div class="clear"><a name="skip_menu"></a></div>
+ <!-- InstanceBeginEditable name="content" --> 
+
+        <center>
+          <h2>Network Context Set</h2>
+        </center>
+        <h3>Introduction</h3>
+        <p> This context set was created to address the need for network oriented   information retrieval, such as IP addresses, port numbers and protocols.    This is intended to be very broad in scope to allow specific needs to   be addressed in futher, related, sets.  For example, a related context   set which exposed more of the Explain data for SRW might also include   being able to search by supported indexes and record schemas or   supported attribute combinations in Z39.50. </p>
+        <p> The identifier for the Network context set is:  http://srw.cheshire3.org/contextSets/net/1.0/<br>
+          The recommended prefix for the Network  index set is:  net </p>
+        <p> </p>
+        <h3>Indexes</h3>
+        <p>
+        <table width="100%">
+          <tbody>
+            <tr>
+              <th>Index&nbsp;Name</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>host</td>
+              <td>A network address of the host, either numeric IP or resolvable name</td>
+            </tr>
+            <tr>
+              <td>ipRange</td>
+              <td>A - separated pair of network address for the host, in dotted quad notation</td>
+            </tr>
+            <tr>
+              <td>port</td>
+              <td>A network port</td>
+            </tr>
+            <tr>
+              <td>protocol</td>
+              <td>The name of a protocol</td>
+            </tr>
+            <tr>
+              <td>version</td>
+              <td>The version of the protocol</td>
+            </tr>
+            <tr>
+              <td>method</td>
+              <td>An HTTP method. Possible values, in upper case: "GET" "POST" "HEAD" "PUT" "DELETE" "OPTIONS" "TRACE" "CONNECT"</td>
+            </tr>
+            <tr>
+              <td>path</td>
+              <td>A unique path to a specific resource, if appropriate to the protocol (1)</td>
+            </tr>
+          </tbody>
+        </table>
+        </p>
+        <p> </p>
+        <h3>Relation Modifiers</h3>
+        <p>
+        <table width="100%">
+          <tbody>
+            <tr>
+              <th>Relation Modifier Name</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>ipAddress</td>
+              <td>An IP address in dotted quad notation (eg 123.234.123.234)</td>
+            </tr>
+          </tbody>
+        </table>
+        </p>
+        <p> </p>
+        <h3>Notes</h3>
+        <p> </p>
+        <ol>
+          <li>Path is protocol specific.  In HTTP and related protocols such as   SOAP or SRW this would contain the 'path' part of a URL (eg   '/indexSets/net/'),  for IRC it would contain the name of a channel, for   Z39.50 it would contain the name of a database and so forth.  On the   other hand SMTP has no notion of a 'path' within an SMTP server so this   would not be an appropriate index to use. </li>
+        </ol>
+        <p> </p>
+        <h3>Examples</h3>
+        <p> </p>
+        <ol>
+          <li> In a database of explain records, one could search for:
+            <blockquote> host="srw.o-r-g.org" and port=8080 and protocol="srw" and version=1.0 </blockquote>
+            in order to find all of the databases at http://srw.o-r-g.org:8080/ that use srw version 1.0 </li>
+          <li> In a database of IRC servers, one could search for:
+            <blockquote>path="#linux"</blockquote>
+            in order to find all of the servers that have a channel named '#linux' </li>
+        </ol>
+        <h2>&nbsp;</h2></center>
+ <!-- InstanceEndEditable -->
+      <div id="breadcrumbs-bottom"><a href="../../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-bottom" -->Network Context Set<!-- InstanceEndEditable --></div>
+</td></tr>
+
+</table>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://www.loc.gov/">The 
+        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../../index.html">SRU</a></div>
+      <br>
+  <span class="sitenav">
+  <!-- #BeginDate format:Am1 -->December 16, 2015<!-- #EndDate -->
+  </span></td>
+<td align="right"><div class="contactus"><a href="mailto:ndmso@loc.gov">Contact Us</a></div></td>
+</tr></table>
+</body>
+<!-- InstanceEnd --></html>

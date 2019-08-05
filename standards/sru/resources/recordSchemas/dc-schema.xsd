@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/subpage.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>record update -  SRU Version 1.2 Specifications (SRU: Search/Retrieval via URL -- SRU, CQL and ZeeRex, Standards, Library of Congress)</title>
+<!-- InstanceEndEditable --> 
+<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<link TYPE="text/css" MEDIA="print" HREF="../css/sru-print.css" REL="stylesheet">
+<style TYPE="text/css" MEDIA="screen">
+@import url(../css/sru-base.css);
+</style>
+<meta HTTP-EQUIV="Content-Language" CONTENT="en-us">
+<link REL="shortcut icon" HREF="http://www.loc.gov:8081/standards/sru/images/favicon.ico">
+<!-- InstanceBeginEditable name="head" -->
+
+<!-- REDIRECT 
+-->
+<meta HTTP-EQUIV="refresh" CONTENT="0; url=http://www.loc.gov/standards/sru/recordUpdate/" />
+<!--
+
+-->
+
+
+<style TYPE="text/css">
+<!--
+.style3 {color: #0080FF}
+.style4 {color: #0080FF; font-weight: bold;}
+-->
+</style>
+<!-- InstanceEndEditable -->
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<form ACTION="http://search.loc.gov:8765/query.html" ACCEPT-CHARSET="utf-8" name="seek1" METHOD="get">
+<input TYPE="hidden" name="col" VALUE="loc">
+<input TYPE="hidden" name="sc" VALUE="0">
+<input TYPE="hidden" name="ws" VALUE="0">
+<input TYPE="hidden" name="la" VALUE="en">
+<input TYPE="hidden" name="qm" VALUE="0">
+<input TYPE="hidden" name="st" VALUE="1">
+<input TYPE="hidden" name="nh" VALUE="10">
+<input TYPE="hidden" name="lk" VALUE="1">
+<input TYPE="hidden" name="rf" VALUE="0">
+<input TYPE="hidden" name="oq" VALUE="">
+<input TYPE="hidden" name="si" VALUE="0">
+<input TYPE="hidden" name="rq" VALUE="0">
+<input TYPE="hidden" name="qc" VALUE="">
+<table ALIGN="center" CLASS="header" CELLPADDING="0" CELLSPACING="0" BORDER="0"><tr><td WIDTH="475"><a id="skip" HREF="#skip_menu">&nbsp;</a>
+  <div CLASS="sitenav"><a HREF="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a HREF="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a HREF="../index.html">SRU</a></div></td>
+<td WIDTH="116"><select name="qp" TABINDEX="1">
+<option VALUE="url:/sru" selected>SRU Web Pages</option>
+<option VALUE="url:/standards url:/ead url:/marc">Standards Pages</option>
+<option VALUE="">All Library Pages</option>
+</select></td><td WIDTH="117" ALIGN="right"><input TYPE="text" name="qt" id="keyword" SIZE="18" VALUE="" TABINDEX="2"></td>
+<td WIDTH="67" ALIGN="right"><input CLASS="button" id="search_button" name="search_button" TYPE="submit" VALUE="SEARCH" TABINDEX="3"></td>
+</tr></table></form>
+<table ALIGN="center" CLASS="layout" CELLPADDING="0" CELLSPACING="0"><tr><td>
+<div id="graphic"> 
+<h1 CLASS="homepage"><img SRC="../images/sru.gif" ALT="SRU (Search/Retrieval Using URL)" WIDTH="600" HEIGHT="50"></h1>
+</div>
+<div CLASS="goldtop"></div>
+      <div id="breadcrumbs"><a HREF="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-top" --><a HREF="index.html">record
+      update</a><!-- InstanceEndEditable --></div>
+<div CLASS="clear"><a name="skip_menu"></a></div>
+ <!-- InstanceBeginEditable name="content" -->
+      <h1 ALIGN="center">.........redirecting </h1>
+      <!-- InstanceEndEditable -->
+      <div id="breadcrumbs-bottom"><a HREF="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-bottom" --><a HREF="index.html">record
+            update </a><!-- InstanceEndEditable --></div>
+</td></tr>
+
+</table>
+<table ALIGN="center" CLASS="footer" CELLPADDING="0" CELLSPACING="0" BORDER="0"><tr VALIGN="top"><td><div CLASS="sitenav"><a HREF="http://www.loc.gov/">The 
+        Library of Congress</a>&nbsp;&raquo;&nbsp;<a HREF="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a HREF="../index.html">SRU</a></div>
+      <br>
+  <span CLASS="sitenav">
+  <!-- #BeginDate format:Am1 -->November 26, 2013<!-- #EndDate -->
+  </span></td>
+<td ALIGN="right"><div CLASS="contactus"><a HREF="mailto:ndmso@loc.gov">Contact Us</a></div></td>
+</tr></table>
+</body>
+<!-- InstanceEnd --></html>

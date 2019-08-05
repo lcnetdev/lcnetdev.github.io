@@ -1,0 +1,987 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/subpage.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>GILS profile - SRU Version 1.2 Specifications (SRU: Search/Retrieval via URL -- SRU, CQL and ZeeRex, Standards, Library of Congress)</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link type="text/css" media="print" href="../css/sru-print.css" rel="stylesheet">
+<style type="text/css" media="screen">
+@import url(../css/sru-base.css);
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="shortcut icon" href="http://www.loc.gov/standards/sru/images/favicon.ico">
+<!-- InstanceBeginEditable name="head" -->
+<meta name="keywords" content="conformance sru version 1.2 specifications sru search retrieval url cql zeerex standards library congress">
+<meta name="description" content="base profile: SRU Version 1.2 Specifications. SRU is a standard XML-focused search protocol for Internet search queries, utilizing CQL (Contextual Query Language), a standard syntax for representing queries. Standards, The Library of Congress.">
+<style type="text/css">
+<!--
+.paramTable {vertical-align: top; border: 1px solid; padding: 3px;
+              border-collapse: collapse}
+-->
+</style>
+<!-- InstanceEndEditable -->
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<form action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" name="seek1" method="get">
+<input type="hidden" name="col" value="loc">
+<input type="hidden" name="sc" value="0">
+<input type="hidden" name="ws" value="0">
+<input type="hidden" name="la" value="en">
+<input type="hidden" name="qm" value="0">
+<input type="hidden" name="st" value="1">
+<input type="hidden" name="nh" value="10">
+<input type="hidden" name="lk" value="1">
+<input type="hidden" name="rf" value="0">
+<input type="hidden" name="oq" value="">
+<input type="hidden" name="si" value="0">
+<input type="hidden" name="rq" value="0">
+<input type="hidden" name="qc" value="">
+<table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
+  <div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div></td>
+<td width="116"><select name="qp" tabindex="1">
+<option value="url:/sru" selected>SRU Web Pages</option>
+<option value="url:/standards url:/ead url:/marc">Standards Pages</option>
+<option value="">All Library Pages</option>
+</select></td><td width="117" align="right"><input type="text" name="qt" id="keyword" size="18" value="" tabindex="2"></td>
+<td width="67" align="right"><input class="button" id="search_button" name="search_button" type="submit" value="SEARCH" tabindex="3"></td>
+</tr></table></form>
+<table align="center" class="layout" cellpadding="0" cellspacing="0"><tr><td>
+<div id="graphic"> 
+<h1 class="homepage"><img src="../images/sru.gif" alt="SRU (Search/Retrieval Using URL)" width="600" height="50"></h1>
+</div>
+<div class="goldtop"></div>
+      <div id="breadcrumbs"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-top" --><a href="../profiles/index.html">profiles</a>&nbsp;&raquo; GILS
+          profile <!-- InstanceEndEditable --></div>
+      <div class="clear"><a name="skip_menu"></a></div>
+ <!-- InstanceBeginEditable name="content" -->
+ <h1> GILS Profile</h1>
+
+      <p>This profile provides an SRU view of the GILS (Global Information Locator
+        Service) profile of ISO 23950.</p>
+      <p>The identifier for this profile is: 
+        <b>info:srw/profile/14/gils-1.0</b>
+      <hr/>
+      <h2>Relations</h2>
+     
+      GILS requires only the implicit relations provided in the grammar of CQL:
+      Less Than (&lt;), Less Than or Equal (&lt;=), Equal (=), Greater Than or Equal (&gt;=),
+  Greater Than (&gt;), Not Equal (&lt;&gt;).<br>
+GILS does not require the default relations defined in CQL.
+<hr/>
+      <h2>Relation Modifiers</h2>
+      <h2>&nbsp;</h2>
+      <b>Term Format</b><br>
+GILS requires four of the CQL defined structures: <strong>string</strong>, <strong>word</strong>, <strong>uri</strong>,
+and <strong>isoDate.</strong>
+<hr/>
+<h2>Indexes</h2>
+<p>GILS queries in CQL use indexes from the <a href="../cql/contextSets/gils-context-set.html">gils
+    context set</a>, as well as indexes
+  defined in three other context sets: <a href="../resources/cql-context-set-v1-2.html">cql</a>, <a href="http://srw.cheshire3.org/contextSets/rec/1.1/">rec</a> (Record
+  Metadata), and <a href="../cql/contextSets/dc-context-set.html">dc</a> (Dublin
+  Core).</p>
+<p><b>Required Indexes</b><br>
+  GILS requires that certain indexes be searchable, but only when content is
+    present. These indexes are: Identifier, Subject, Agency Creator, Title, and
+    Publication Date.</STRONG></p>
+<table class="paramTable" width="100%">
+  <tr>
+    <th>Context</th>
+    <th>Index&nbsp;Names</th>
+    <th>Description</th>
+    <th>Z39.50 Attributes</th>
+  </tr>
+  <tr>
+    <td>cql</td>
+    <td>anywhere</td>
+    <td>The set of all indexes from all context sets known to the server.</td>
+    <td>[bib-1 1=1016<br>
+      1= 1035]</td>
+  </tr>
+  <tr>
+    <td>cql</td>
+    <td>serverChoice</td>
+    <td>The set of one or more indexes from any context sets known to the server.</td>
+    <td>[bib-1 1=1016<br>
+      1= 1035]</td>
+  </tr>
+  <tr>
+    <td colspan="4"><center>
+      <b>Title, author, and description of the information resource</b>
+    </center></td>
+  </tr>
+  <tr>
+    <td>dc</td>
+    <td>title<br>
+      name</td>
+    <td>The name of the information resource.</td>
+    <td>[bib-1 1=4<br>
+      1= 1097]</td>
+  </tr>
+  <tr>
+    <td>dc</td>
+    <td>author<br>
+      creator</td>
+    <td>The name of the originator of the information resource.<br>
+      Note: <i>originator</i> is defined as "The agent, whether person or organization,
+      responsible for all or portions of the information resource."</td>
+    <td>[bib-1 1=1005<br>
+      1= 1098]</td>
+  </tr>
+  <tr>
+    <td>dc</td>
+    <td>agencyCreator<br>
+      corporateAuthor</td>
+    <td>The name of the organization responsible for the information resource.</td>
+    <td>[bib-1 1=1005<br>
+      1= 1098]</td>
+  </tr>
+  <tr>
+    <td>dc</td>
+    <td>contributor</td>
+    <td>The name of the contributor, other than the originator, of the information
+      resource.</td>
+    <td>[bib-1 1=1003<br>
+      1= 1106]</td>
+  </tr>
+  <tr>
+    <td>dc</td>
+    <td>description</td>
+    <td>The text describing the information resource.<br>
+      Note: Also known as "abstract" in GILS.</td>
+    <td>[bib-1 1=62<br>
+      1= 1100]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>keywords</td>
+    <td>The group of words or phrases describing the information resource.</td>
+    <td>[bib-1 1= 29]</td>
+  </tr>
+  <tr>
+    <td>dc</td>
+    <td>subject</td>
+    <td>The terms of the controlled vocabulary associated with the subject of
+      the information resource.<br>
+      Note: Also known as "subjectTermsControlled" in GILS.</td>
+    <td>[bib-1 1=1112<br>
+      1=1114<br>
+      1=1099]<br>
+      [gils 1=2002<br>
+      1= 2057]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>subjectThesaurus</td>
+    <td>The name of the thesaurus or similar authoritative source of terms associated
+      with the subject of the information resource.</td>
+    <td>[bib-1 1=1113]<br>
+      [gils 1= 2036]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>subjectTermsUncontrolled</td>
+    <td>The terms, not from a controlled vocabulary, associated with the subject
+      of the information resource.</td>
+    <td>[bib-1 1= 29]</td>
+  </tr>
+  <tr>
+    <td>dc</td>
+    <td>identifier</td>
+    <td>The identifier of the information resource.</td>
+    <td>[bib-1 1= 1007]</td>
+  </tr>
+  <tr>
+    <td>dc</td>
+    <td>language</td>
+    <td>The identifier of the language of the information resource.</td>
+    <td>[bib-1 1=54<br>
+      1= 1105]</td>
+  </tr>
+  <tr>
+    <td>dc</td>
+    <td>source</td>
+    <td>The text describing the source from which the information resource is
+      derived.</td>
+    <td>[bib-1 1=1155<br>
+      1=1108]<br>
+      [gils 1= 2035]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>audience</td>
+    <td>The text describing the intended audience of the information resource.</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>lineOfBusiness</td>
+    <td>The identifier of the line of business of the information resource.<br>
+      Note: <i>line of business</i> is defined as: "The designation developed
+      by the U.S. Federal Office of Management and Budget (OMB) as a way to group
+      information resources, part of the OMB Federal Enterprise Architecture
+      program."
+            </definition>    </td>
+    <td></td>
+  </tr>
+  <tr>
+    <td colspan="4"><center>
+      <b>Date and time period for the information resource</b>
+    </center></td>
+  </tr>
+  <tr>
+    <td>dc</td>
+    <td>date<br>
+      publicationDate</td>
+    <td>The date of publication of the information resource.</td>
+    <td>[bib-1 1=31<br>
+      1= 1102]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>creationDate</td>
+    <td>The date of origination of the information resource</td>
+    <td>[util 1=1,<br>
+      12="modification"]<br>
+      [bib-1 1= 1012]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>modificationDate</td>
+    <td>The date of modification of the information resource.</td>
+    <td>[util 1=1,<br>
+      12="modification"]<br>
+      [bib-1 1= 1012]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>lastReviewDate</td>
+    <td>The date of last review of the information resource.</td>
+    <td>[util 1=1,<br>
+      12="modification"]<br>
+      [bib-1 1= 1012]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>timePeriod</td>
+    <td>The time period associated with the information resource.</td>
+    <td>[bib-1 1=1125]<br>
+      [gils 1= 2062]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>timePeriodTextual</td>
+    <td>The text describing the time period associated with the information resource.</td>
+    <td>[bib-1 1=1126]<br>
+      [gils 1= 2045]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>timePeriodStructured</td>
+    <td>The date range associated with the information resource.</td>
+    <td>[bib-1 1=1127]<br>
+      [gils 1= 2044]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>beginningDate</td>
+    <td>The start date of the period associated with the information resource.</td>
+    <td>[bib-1 1=1128]<br>
+      [gils 1= 2072]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>endingDate</td>
+    <td>The end date of the period associated with the information resource.</td>
+    <td>[bib-1 1=1129]<br>
+      [gils 1= 2073]</td>
+  </tr>
+  <tr>
+    <td colspan="4"><center>
+      <b>Place details for the information resource</b>
+    </center></td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>publicationPlace</td>
+    <td>The name of the location of publication of the information resource.</td>
+    <td>[bib-1 1= 59]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>spatialDomain</td>
+    <td>The set of geographic designations of the coverage of the information
+      resource.</td>
+    <td>[bib-1 1=1116]<br>
+      [gils 1= 2059]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>bounds</td>
+    <td>The set of geographic coordinates that delimit the coverage of the information
+      resource.</td>
+    <td>[bib-1 1=1117]<br>
+      [gils 1= 2060]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>north</td>
+    <td>The value of the northern-most coordinate of the location of the coverage
+      of the information resource.</td>
+    <td>[bib-1 1=1120]<br>
+      [gils 1= 2040]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>west</td>
+    <td>The value of the western-most coordinate of the location of the coverage
+      of the information resource.</td>
+    <td>[bib-1 1=1118]<br>
+      [gils 1= 2038]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>south</td>
+    <td>The value of the southern-most coordinate of the location of the coverage
+      of the information resource.</td>
+    <td>[bib-1 1=1121]<br>
+      [gils 1= 2041]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>east</td>
+    <td>The value of the eastern-most coordinate of the location of the coverage
+      of the information resource.</td>
+    <td>[bib-1 1=1119]<br>
+      [gils 1= 2039]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>place</td>
+    <td>The name designating the location associated with the information resource.</td>
+    <td>[bib-1 1=1122]<br>
+      [gils 1= 2061]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>placeKeywordThesaurus</td>
+    <td>The name of the registered thesaurus or similar authoritative source
+      of place names associated with the information resource.</td>
+    <td>[bib-1 1=1123]<br>
+      [gils 1= 2043]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>placeKeyword</td>
+    <td>The name designating the location identified in the authoritative source
+      of location names associated with the information resource.</td>
+    <td>[bib-1 1=1124]<br>
+      [gils 1= 2042]</td>
+  </tr>
+  <tr>
+    <td colspan="4"><center>
+      <b>Contact details for the information resource</b>
+    </center></td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>contact</td>
+    <td>The party acting as contact for the information resource. <br>
+      Note: The party may be a person, an organization, or both.</td>
+    <td>[bib-1 1=1162]<br>
+      [gils 1= 2067]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>contactName</td>
+    <td>The name of the person acting as contact for the information resource.</td>
+    <td>[bib-1 1=1163]<br>
+      [gils 1= 2023]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>contactOrganization</td>
+    <td>The name of the organization acting as contact for the information resource.</td>
+    <td>[bib-1 1=1164]<br>
+      [gils 1= 2024]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>contactStreetAddress</td>
+    <td>The name of the street of the location of the contact for the information
+      resource.</td>
+    <td>[bib-1 1=1165]<br>
+      [gils 1= 2025]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>contactCity</td>
+    <td>The name of the city of the location of the contact for the information
+      resource.</td>
+    <td>[bib-1 1=1166]<br>
+      [gils 1= 2026]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>contactStateOrProvince</td>
+    <td>The name of the sub-division of the country of the location of the contact
+      for the information resource.</td>
+    <td>[bib-1 1=1167]<br>
+      [gils 1= 2027]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>contactZipOrPostalCode</td>
+    <td>The postcode of the location of the contact for the information resource.</td>
+    <td>[bib-1 1=1168]<br>
+      [gils 1= 2028]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>contactCountry</td>
+    <td>The name of the country of the location of the contact for the information
+      resource.</td>
+    <td>[bib-1 1=1169]<br>
+      [gils 1= 2029]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>contactNetworkAddress</td>
+    <td>The identifier of the Internet electronic mail address for the contact
+      for the information resource.</td>
+    <td>[bib-1 1=1170]<br>
+      [gils 1= 2030]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>contactHoursOfService</td>
+    <td>The text describing the hours of service of the contact for the information
+      resource.</td>
+    <td>[bib-1 1=1171]<br>
+      [gils 1= 2031]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>contactTelephone</td>
+    <td>The number of the telephone of the contact for the information resource.</td>
+    <td>[bib-1 1=1172]<br>
+      [gils 1= 2032]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>contactFax</td>
+    <td>The number of the fax of the contact for the information resource.</td>
+    <td>[bib-1 1=1173]<br>
+      [gils 1= 2033]</td>
+  </tr>
+  <tr>
+    <td colspan="4"><center>
+      <b>Constraints on access or use of the information resource</b>
+    </center></td>
+  </tr>
+  <tr>
+    <td>dc</td>
+    <td>rights<br>
+      copyright<br>
+      useConstraints</td>
+    <td>The text describing the constraints on use of the information resource.</td>
+    <td>[bib-1 1=1161<br>
+      [gils 1= 2005]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>accessConstraints</td>
+    <td>The text describing the constraints on access of the information resource</td>
+    <td>[bib-1 1=1157 1=1158]<br>
+      [gils 1=2066 1= 2004]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>securityClassification</td>
+    <td>The text describing security classification control constraints of the
+      information resource.</td>
+    <td>[bib-1 1=1160]<br>
+      [gils 1= 2053]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>originatorDisseminationControl</td>
+    <td>The text describing dissemination control constraints assigned by the
+      originator of the information resource.</td>
+    <td>[bib-1 1=1159]<br>
+      [gils 1= 2052]</td>
+  </tr>
+  <tr>
+    <td colspan="4"><center>
+      <b>Records management characteristics of the information resource</b>
+    </center></td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>purpose</td>
+    <td>The text describing the purpose of the information resource.</td>
+    <td>[bib-1 1=1175]<br>
+      [gils 1= 2003]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>agencyProgram</td>
+    <td>The text describing the agency programme associated with the information
+      resource.</td>
+    <td>[bib-1 1=1176]<br>
+      [gils 1= 2034]</td>
+  </tr>
+  <tr>
+    <td colspan="4"><center>
+      <b>Related characteristics of the information resource</b>
+    </center></td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>methodology</td>
+    <td>The text describing the methodology used to produce the information resource.</td>
+    <td>[bib-1 1=1156]<br>
+      [gils 1= 2037]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>supplementalInformation</td>
+    <td>The supplemental information associated with the information resource.</td>
+    <td>[bib-1 1=1174]<br>
+      [gils 1= 2050]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>crossReference</td>
+    <td>The cross-reference to another information resource associated with the
+      information resource.</td>
+    <td>[bib-1 1=1177]<br>
+      [gils 1= 2068]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>crossReferenceTitle</td>
+    <td>The name that is the distinctive designation of the cross-referenced
+      information resource.</td>
+    <td>[bib-1 1=1178]<br>
+      [gils 1= 2046]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>crossReferenceRelationship</td>
+    <td>The text describing the relationship of the cross referenced information
+      resource to the information resource.</td>
+    <td>[bib-1 1=1179]<br>
+      [gils 1= 2070]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>crossReferenceLinkage</td>
+    <td>The code and identifier pair identifying the address of the cross-referenced
+      information resource.</td>
+    <td>[bib-1 1=1180]<br>
+      [gils 1= 2047]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>linkageType</td>
+    <td>The code identifying the data type at the address of the cross-referenced
+      information resource. <br>
+      Note: By convention on the Internet, the code is expressed as a MIME type.</td>
+    <td>[bib-1 1=1153]<br>
+      [gils 1= 2022]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>linkage</td>
+    <td>The identifier of the address of the cross-referenced information resource. <br>
+      Note: By convention on the Internet, the identifier is expressed as a URN
+        or URL.</td>
+    <td>[bib-1 1=1154]<br>
+      [gils 1= 2021]</td>
+  </tr>
+  <tr>
+    <td colspan="4"><center>
+      <b>Characteristics of the information resource product</b>
+    </center></td>
+  </tr>
+  <tr>
+    <td>dc</td>
+    <td>publisher<br>
+      distributor</td>
+    <td>The name and other information associated with the party acting as distributor
+      of the information resource product.</td>
+    <td>[bib-1 1=1131<br>
+      1=1101]<br>
+      [gils 1= 2000]</td>
+  </tr>
+  <tr>
+    <td>dc</td>
+    <td>productLanguage<br>
+      languageOfResource</td>
+    <td>The identifier of the language of the information resource product.<br>
+      Note: May use ISO 639, Codes for the representation of names of languages.</td>
+    <td>[bib-1 1=54<br>
+      1= 1105]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>productCreationDate</td>
+    <td>The date of original creation of the information resource product.</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>productLastReviewDate</td>
+    <td>The date of last review of the information resource product.</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>dc</td>
+    <td>format</td>
+    <td>The code identifying the data type at the reference address of the information
+      resource product. <br>
+      Note: By convention on the Internet, the code is expressed as a MIME type.</td>
+    <td>[bib-1 1=1153<br>
+      1=1107]<br>
+      [gils 1= 2022]</td>
+  </tr>
+  <tr>
+    <td>dc</td>
+    <td>type</td>
+    <td>The code identifying the medium of the information resource product.</td>
+    <td>[bib-1 1=1031<br>
+      1= 1103]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>availability</td>
+    <td>The product derived from the information resource. <br>
+      Note: Product may include service.</td>
+    <td>[bib-1 1=xxx]<br>
+      [gils 1= 2063]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>medium</td>
+    <td>The code identifying the medium of the information resource product.</td>
+    <td>[bib-1 1= 1031]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>resourceDescription</td>
+    <td>The name of the information resource product.</td>
+    <td>[bib-1 1=1143]<br>
+      [gils 1= 2016]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>orderProcess</td>
+    <td>The ordering information for the information resource product.</td>
+    <td>[bib-1 1=1144]<br>
+      [gils 1= 2064]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>orderInformation</td>
+    <td>The text describing the process for ordering the information resource
+      product.</td>
+    <td>[bib-1 1=1145]<br>
+      [gils 1= 2017]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>cost</td>
+    <td>The indicator identifying whether or not there is a price for the information
+      resource product. <br>
+      Note: A value of zero means free of charge.</td>
+    <td>[bib-1 1=1146]<br>
+      [gils 1= 2054]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>costInformation</td>
+    <td>The text describing the price of the information resource product. <br>
+      Note: Text may include conditional price information.</td>
+    <td>[bib-1 1=1147]<br>
+      [gils 1= 2055]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>technicalPrerequisites</td>
+    <td>The text describing technical prerequisites for use of the information
+      resource product.</td>
+    <td>[bib-1 1=1148]<br>
+      [gils 1= 2018]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>productTimePeriod</td>
+    <td>The time period associated with the information resource product.</td>
+    <td>[bib-1 1=1149]<br>
+      [gils 1= 2065]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>productTimeTextual</td>
+    <td>The text describing the time period associated with the information resource
+      product.</td>
+    <td>[bib-1 1=1150]<br>
+      [gils 1= 2020]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>productTimeStructured</td>
+    <td>The date range associated with the information resource product.</td>
+    <td>[bib-1 1=1151]<br>
+      [gils 1= 2019]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>beginningDate</td>
+    <td>The start date of the period associated with the information resource
+      product.</td>
+    <td>[bib-1 1=1128]<br>
+      [gils 1= 2072]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>endingDate</td>
+    <td>The end date of the period associated with the information resource product.</td>
+    <td>[bib-1 1=1129]<br>
+      [gils 1= 2073]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>linkageType</td>
+    <td>The code identifying the data type at the reference address of the information
+      resource product. <br>
+      Note: By convention on the Internet, the code is expressed as a MIME type.</td>
+    <td>[bib-1 1=1153]<br>
+      [gils 1= 2022]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>productIdentifier<br>
+      linkage</td>
+    <td>The identifier of the information resource product. <br>
+      Note: By convention on the Internet, the identifier is expressed as a URN
+        or URL.</td>
+    <td>[bib-1 1=1154]<br>
+      [gils 1= 2021]</td>
+  </tr>
+  <tr>
+    <td colspan="4"><center>
+      <b>Distributor details for the information resource product</b>
+    </center></td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>distributorName</td>
+    <td>The name of the person acting as distributor of the information resource
+      product.</td>
+    <td>[bib-1 1=1132]<br>
+      [gils 1= 2001]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>distributorOrganization</td>
+    <td>The name of the organization acting as distributor of the information
+      resource product.</td>
+    <td>[bib-1 1=1133]<br>
+      [gils 1= 2006]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>distributorStreetAddress</td>
+    <td>The name of the street of the location of the distributor of the information
+      resource product.</td>
+    <td>[bib-1 1=1134]<br>
+      [gils 1= 2007]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>distributorCity</td>
+    <td>The name of the city of the location of the distributor of the information
+      resource product.</td>
+    <td>[bib-1 1=1135]<br>
+      [gils 1= 2008]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>distributorStateOrProvince</td>
+    <td>The name of the sub-division of the country of the location of the distributor
+      of the information resource product.</td>
+    <td>[bib-1 1=1136]<br>
+      [gils 1= 2009]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>distributorZipOrPostalCode</td>
+    <td>The postcode of the location of the distributor of the information resource
+      product.</td>
+    <td>[bib-1 1=1137]<br>
+      [gils 1= 2010]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>distributorCountry</td>
+    <td>The name of the country of the location of the distributor of the information
+      resource product.</td>
+    <td>[bib-1 1=1138]<br>
+      [gils 1= 2011]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>distributorNetworkAddress</td>
+    <td>The identifier of the Internet electronic mail address of the distributor
+      of the information resource product.</td>
+    <td>[bib-1 1=1139]<br>
+      [gils 1= 2012]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>distributorHoursOfService</td>
+    <td>The text describing the hours of service of the distributor of the information
+      resource product.</td>
+    <td>[bib-1 1=1140]<br>
+      [gils 1= 2013]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>distributorTelephone</td>
+    <td>The number of the telephone of the distributor of the information resource
+      product.</td>
+    <td>[bib-1 1=1141]<br>
+      [gils 1= 2014]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>distributorFax</td>
+    <td>The number of the fax of the distributor of the information resource
+      product.</td>
+    <td>[bib-1 1=1142]<br>
+      [gils 1= 2015]</td>
+  </tr>
+  <tr>
+    <td colspan="4"><center>
+      <b>Records management characteristics of the information resource product</b>
+    </center></td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>dispositionAuthority<br>
+      scheduleNumber</td>
+    <td>The identifier of the disposition authority of the information resource.<br>
+      Note: <i>records control schedule</i> is defined as: "The schedule or list
+      of events, times, etc. in the life cycle of a record or document."</td>
+    <td>[bib-1 1=1181]<br>
+      [gils 1= 2056]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>vitalRecords</td>
+    <td>The indicator of vital record designation of the information resource
+      product.<br>
+      Note: <i>vital records</i> is defined in 36 CFR 1236 as: "essential agency
+      records that are needed to meet operational responsibilities under national
+      security emergencies or other emergency or disaster conditions ( emergency
+      operating records) or to protect the legal and financial rights of the
+      Government and those affected by Government activities (legal and financial
+      rights records)."</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td colspan="4"><center>
+      <b>Characteristics of the locator record of the information resource</b>
+    </center></td>
+  </tr>
+  <tr>
+    <td>rec</td>
+    <td>locationIdentifier<br>
+      identifier</td>
+    <td>The identifier of the location of the locator record of the information
+      resource. <br>
+      Note: Typically assigned at search time by the server, e.g., directory
+      structure, SQL table, record store identifier.</td>
+    <td>[util 1=4]<br>
+      [bib-1 1= 12]</td>
+  </tr>
+  <tr>
+    <td>rec</td>
+    <td>languageCode</td>
+    <td>The code of the language of the locator record of the information resource. <br>
+      Note: Also known as languageOfRecord in GILS.</td>
+    <td>[util 1=3]<br>
+      [bib-1 1=1183]<br>
+      [gils 1= 2071]</td>
+  </tr>
+  <tr>
+    <td>rec</td>
+    <td>creationAgentName<br>
+      recordSource</td>
+    <td>The name of the agent responsible for creation of the locator record
+      of the information resource.</td>
+    <td>[util 1=2,<br>
+      12="creation"]<br>
+      [bib-1 1= 1019]</td>
+  </tr>
+  <tr>
+    <td>rec</td>
+    <td>creationDate</td>
+    <td>The date of origination of the locator record of the information resource.</td>
+    <td>[util 1=1,<br>
+      12="modification"]<br>
+      [bib-1 1= 1012]</td>
+  </tr>
+  <tr>
+    <td>rec</td>
+    <td>lastModificationDate</td>
+    <td>The date of modification of the locator record of the information resource.</td>
+    <td>[util 1=1,<br>
+      12="modification"]<br>
+      [bib-1 1= 1012]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>originalControlIdentifier</td>
+    <td>The identifier of an original locator record from which was derived the
+      locator record of the information resource.</td>
+    <td>[bib-1 1=1182]<br>
+      [gils 1= 2049]</td>
+  </tr>
+  <tr>
+    <td>gils</td>
+    <td>recordReviewDate</td>
+    <td>The date scheduled for review of the locator record of the information
+      resource.</td>
+    <td>[bib-1 1=1184]<br>
+      [gils 1= 2051]</td>
+  </tr>
+</table><hr/>
+<h2>Examples</h2>
+<ol>
+  <li>To retrieve records about information resources having "USGS" in the point
+    of contact and modified since 1 January 2004, the query would be:
+    <blockquote> gils.contact =  "USGS" and rec.lastModified &gt; "2004-01-01"</blockquote>
+  </li>
+</ol>
+<div id="footer"></div>
+ <!-- InstanceEndEditable -->
+      <div id="breadcrumbs-bottom"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-bottom" --><a href="../profiles/index.html">profiles</a>&nbsp;&raquo; GILS
+          profile   <!-- InstanceEndEditable --></div>
+</td></tr>
+
+</table>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://www.loc.gov/">The 
+        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div>
+      <br>
+  <span class="sitenav">
+  <!-- #BeginDate format:Am1 -->December 14, 2015<!-- #EndDate -->
+  </span></td>
+<td align="right"><div class="contactus"><a href="mailto:ndmso@loc.gov">Contact Us</a></div></td>
+</tr></table>
+</body>
+<!-- InstanceEnd --></html>

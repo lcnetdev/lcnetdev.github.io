@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Update Initial Draft -->
+<!-- 3rd November 2004 -->
+<definitions 
+xmlns="http://schemas.xmlsoap.org/wsdl/" 
+xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+ xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" 
+ xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+ xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" 
+ xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+  xmlns:ucp-interfaces="http://www.loc.gov/zing/srw/update/interfaces/" 
+  xmlns:xcql="http://www.loc.gov/zing/cql/xcql/" 
+  xmlns:srw="http://www.loc.gov/zing/srw/" 
+  xmlns:diag="http://www.loc.gov/zing/srw/diagnostic/"
+   xmlns:ucp="http://www.loc.gov/zing/srw/update/"
+    targetNamespace="http://www.loc.gov/zing/srw/update/interfaces/">
+<types>
+<xs:schema xmlns:ucp="http://www.loc.gov/zing/srw/update/">
+<xs:import namespace="http://www.loc.gov/zing/srw/update/" schemaLocation="update.xsd"/>
+</xs:schema>
+</types>
+<message name="updateRequest">
+<part name="body" element="ucp:updateRequest"/>
+</message>
+<message name="updateResponse">
+<part name="body" element="ucp:updateResponse"/>
+</message>
+<message name="explainRequest">
+<part name="body" element="ucp:explainRequest"/>
+</message>
+<message name="explainResponse">
+<part name="body" element="ucp:explainResponse"/>
+</message>
+<portType name="updateInterface">
+<operation name="update">
+<input message="ucp-interfaces:updateRequest"/>
+<output message="ucp-interfaces:updateResponse"/>
+</operation>
+<operation name="explain">
+<input message="ucp-interfaces:explainRequest"/>
+<output message="ucp-interfaces:explainResponse"/>
+</operation>
+</portType>
+</definitions>

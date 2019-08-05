@@ -1,0 +1,220 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/subpage.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Protocol Transport: SRU Version 1.2 Specifications (SRU: Search/Retrieval via URL -- SRU, CQL and ZeeRex, Standards, Library of Congress)</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link type="text/css" media="print" href="../css/sru-print.css" rel="stylesheet">
+<style type="text/css" media="screen">
+@import url(../css/sru-base.css);
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="shortcut icon" href="http://www.loc.gov/standards/sru/images/favicon.ico">
+<!-- InstanceBeginEditable name="head" -->
+<meta name="keywords" content="protocol transport sru version 1.2 specifications sru search retrieval url cql zeerex standards library congress">
+<meta name="description" content="Protocol Transport: SRU Version 1.2 Specifications. SRU is a standard XML-focused search protocol for Internet search queries, utilizing CQL (Contextual Query Language), a standard syntax for representing queries. Standards, The Library of Congress.">
+<!-- InstanceEndEditable -->
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<form action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" name="seek1" method="get">
+<input type="hidden" name="col" value="loc">
+<input type="hidden" name="sc" value="0">
+<input type="hidden" name="ws" value="0">
+<input type="hidden" name="la" value="en">
+<input type="hidden" name="qm" value="0">
+<input type="hidden" name="st" value="1">
+<input type="hidden" name="nh" value="10">
+<input type="hidden" name="lk" value="1">
+<input type="hidden" name="rf" value="0">
+<input type="hidden" name="oq" value="">
+<input type="hidden" name="si" value="0">
+<input type="hidden" name="rq" value="0">
+<input type="hidden" name="qc" value="">
+<table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
+  <div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div></td>
+<td width="116"><select name="qp" tabindex="1">
+<option value="url:/sru" selected>SRU Web Pages</option>
+<option value="url:/standards url:/ead url:/marc">Standards Pages</option>
+<option value="">All Library Pages</option>
+</select></td><td width="117" align="right"><input type="text" name="qt" id="keyword" size="18" value="" tabindex="2"></td>
+<td width="67" align="right"><input class="button" id="search_button" name="search_button" type="submit" value="SEARCH" tabindex="3"></td>
+</tr></table></form>
+<table align="center" class="layout" cellpadding="0" cellspacing="0"><tr><td>
+<div id="graphic"> 
+<h1 class="homepage"><img src="../images/sru.gif" alt="SRU (Search/Retrieval Using URL)" width="600" height="50"></h1>
+</div>
+<div class="goldtop"></div>
+      <div id="breadcrumbs"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-top" --><a href="../sru-1-2/index.html">sru 
+        version 1.2 specs</a>&nbsp;&raquo;&nbsp;protocol transport<!-- InstanceEndEditable --></div>
+<div class="clear"><a name="skip_menu"></a></div>
+ <!-- InstanceBeginEditable name="content" -->
+      <h1>Protocol Transport </h1>
+
+        <p><span class="selected">SECTIONS:</span> <a href="#get">SRU via HTTP
+            GET</a> | <a href="#encoding">Encoding Issues</a> | <a href="#post">SRU
+            via HTTP POST</a> | <a href="#soap">SRU via HTTP SOAP</a> <i>(formerly
+            SRW)  </i><a href="http://www.loc.gov/global/disclaim.html"></a></p>
+        <a name="get"></a>
+      <h2>SRU VIA HTTP GET</h2>
+      <p> The client MAY send an SRU request via the HTTP GET method. A URL is
+        constructed and sent to the server with fixed parameter names with
+        fixed meanings. When unicode characters need to be encoded, there are
+        some additional constraints, discussed below. </p>
+      <p> The response MUST be XML conforming to the response
+        schema of the operation. SRU via HTTP GET can thus be described as the
+        simplest case of XML over HTTP. </p>
+      <p> An example of what might pass over the wire: </p>
+      <div class="example"> GET /lcdb?version=1.2&amp;operation=searchRetrieve&amp;query=dinosaur HTTP/1.1<br>
+      Host: lx2.loc.gov:210/LCDB </div>
+      <a name="encoding"></a>
+      <h3><a name="syntax"></a>Syntax</h3>
+      <p>An SRU request (when transported via HTTP GET) is a URI as described in <a href="http://www.faqs.org/rfcs/rfc3986.html">RFC 3986</a> (See <a href="#note1">Note 1</a>).  Specifically it is an HTTP URL (as described in section 3.3 of<a href="http://www.faqs.org/rfcs/rfc1738.html"> RFC 1738</a>; however there are some further notes about character encoding below, and uses the standard &amp; separated <em>key=value</em> encoding for parameters in the query part of the URI.</p>
+      <p>The
+        parameters for the query section of the URL (the information following
+        the question mark) of the various operations are described in their own
+        sections.</p>
+     <a name="encoding"></a> 
+      <h2>ENCODING ISSUES</h2>
+      <p>The following encoding procedure is recommended, in particular, to accomodate
+        Unicode characters (characters from the Universal Character Set, ISO 10646)
+        beyond U+007F, which are not valid in a URI.  This is normally relevant only to the query parameter of the <a href="../sru-1-2.html">searchRetrieve</a> operation and the scanClause parameter of the <a href="scan.html">scan</a> operation.</p>
+      <ol>
+        <li> Convert the value to UTF-8. </li>
+        <li> Percent-encode characters as necessary within the value.
+          See <a href="http://www.faqs.org/rfcs/rfc3986.html">rfc 3986</a> section
+          2.1. </li>
+        <li> Construct a the URI from the parameter names and encoded values. </li>
+      </ol>
+      <p>Note: In step 2, it is recommended to percent-encode every character in
+        a value that is not in the URI unreserved set, that is, all
+        except alphabetic characters, decimal digits, and the following four special
+        characters: dash(-), period (.), underscore (_), tilde (~). By this procedure
+        some characters may be percent-encoded that do not need to be -- For example
+        '?' occurring in a value does not need to be percent encoded, but it
+        is safe to do so. If in doubt, percent-encode.</p>
+      <h3>Examples</h3>
+      <p>Consider the following parameter: </p>
+      <div class="example"> query=dc.title =/word kirkeg&aring;rd </div>
+      <p>The name of the parameter is "query" and the value is "dc.title =/word kirkeg&aring;rd"</p>
+      <p>Note that the first '=' (following "query") <em>must not</em> be
+        percent encoded as it is used as a URI delimeter, it is not part of a parameter
+        name or value. The second '=' (preceding the '/') <em>must</em> be percent encoded
+        as it is part of a value.</p>
+      <p>The following characters must be percent encoded:</p>
+      <ul>
+        <li>the second '=', percent encoded as %3D</li>
+        <li>the '/', percent encoded as %2F</li>
+        <li>the spaces, percent encoded as %20</li>
+        <li>the '&aring;'.&nbsp;&nbsp; Its UTF-8 representation is C3A5, two octets,
+          and correspondingly it is represented in a URI as two characters percent
+          encoded as %C3%A5.</li>
+      </ul>
+      <p>The resulting parameter to be sent to the server would then be: </p>
+      <div class="example"> query=dc.title%20%3D%2Fword%20kirkeg%C3%A5rd </div>
+      <h3>Server Procedure</h3>
+      <ol>
+        <li>Parse received request based on '?', '&amp;', and '=' into component parts: the base URL, and parameter names and values.</li>
+        <li>For each parameter:
+          <ol type="a">
+              <li>Decode all %-escapes.</li>
+            <li>Treat the result as a UTF-8 string.</li>
+          </ol>
+        </li>
+      </ol>
+      <p><em>Notes:</em></p>
+      <p><em><a name="note1" id="note1"></a>1.</em> <em>RFC 1738 is obsoleted by RFC 3986. However, RFC 1738 describes
+        the 'http:' URI scheme; RFC 3986 does not, instead indicating that
+        a separate document will be written to do so, but it has not yet been
+        written. So currently there is no valid, normative reference for the
+        'http:' URI scheme, and so the obsolete RFC 1738 is referenced. When
+        there is a valid, normative reference, it will be listed here.</em></p>
+      <a name="post"></a>
+      <h2>SRU VIA HTTP POST</h2>
+      <h5>&nbsp;</h5>
+      <p> Instead of constructing a URL, the parameters may be sent via POST to
+        the server. The Content-type header MUST be set to
+        'application/x-www-form-urlencoded'. Compare to 'text/xml' for SRU via
+        SOAP below, which can be used to distinguish the two transports at the
+        same end point. </p>
+      <p> POST has several benefits over GET for transfering the
+        request to the server. Primarily the issues with character encoding in
+        URLs are removed, and an explicit character set can be submitted in the
+        Content-type HTTP header. Secondly, very long queries might generate a
+        URL for HTTP GET that is not acceptable by some web servers or client.
+        This length restriction can be avoided by using POST. </p>
+      <p> The response for SRU via POST is identical to that of SRU via GET, an xml document. </p>
+      <p> <em>An example of what might be passed over the wire in the request: 
+        </em></p>
+      <div class="example"> POST /lcdb HTTP/1.1<br>
+        Host: lx2.loc.gov:210<br>
+        Content-type: application/x-www-form-urlencoded; charset=iso-8859-1<br>
+        Content-length: 51<br>
+      version=1.1&amp;operation=searchRetrieve&amp;query=dinosaur </div>
+      <a name="soap"></a>
+      <h2>SRU VIA HTTP SOAP</h2>
+      <h5>(Note: &quot;SRU via HTTP SOAP &quot; is the former SRW) </h5>
+      <p> SRU via SOAP is a binding to the <a href="http://www.w3.org/TR/SOAP/">SOAP recommendation</a> of the <a href="http://www.w3.org/">W3C</a>.
+        In this transport, the request is encoded in XML and wrapped in some
+        additional SOAP specific elements. The response is the same XML as SRU
+        via GET or POST, but wrapped in additional SOAP specific elements. </p>
+      <p> The incremental benefits of SRU via SOAP are the ease of structured
+        extensions, web service facilities such as proxying and request
+        routing, and the potential for better authentication systems. </p>
+      <h3> SOAP Requirements </h3>
+      <ul>
+        <li>Clients
+          and servers MUST support SOAP version 1.1, and MAY support version 1.2
+          or higher. This requirement is allow as much flexibility in
+          implementation as possible. </li>
+        <li>The service style is 'document/literal'. </li>
+        <li>Messages MUST be inline with no multirefs. </li>
+        <li>The
+          SOAPAction HTTP header may be present, but should not be required. If
+          present its value MUST be the empty string. It MUST be expressed as:
+          <div class="example"> SOAPAction: "" </div>
+        </li>
+        <li>As
+          specified by SOAP, for version 1.1 the Content-type header MUST be
+          'text/xml'. For version 1.2 the header value MUST be
+          'application/soap+xml'. End points supporting both versions of SOAP and
+          SRU via POST thus have three content-type headers to consider. </li>
+      </ul>
+      <p> The specification tries to adhere to the <a href="http://www.ws-i.org/">Web
+          Services Interoperability</a> recommendations. </p>
+      <h3> Parameter Differences </h3>
+      <p> There are some differences regarding the parameters that can be transported via the SOAP binding. </p>
+      <ul>
+        <li>The 'operation' request parameter MUST NOT be sent. The operation is determined by the XML constructions employed. </li>
+        <li>The 'stylesheet' request parameter MUST NOT be sent. SOAP prevents the use of stylesheets to render the response. </li>
+      </ul>
+      <p> <em>Example SOAP request: </em></p>
+      <div class="example">
+&lt;SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/"&gt;<br />
+&nbsp;&nbsp;&lt;SOAP:Body&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;SRW:searchRetrieveRequest xmlns:SRW="http://www.loc.gov/zing/srw/"&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;SRW:version&gt;1.1&lt;/SRW:version&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;SRW:query&gt;dinosaur&lt;/SRW:query&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;SRW:startRecord&gt;1&lt;/SRW:startRecord&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;SRW:maximumRecords&gt;1&lt;/SRW:maximumRecords&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;SRW:recordSchema&gt;info:srw/schema/1/mods-v3.0&lt;/SRW:recordsSchema&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;/SRW:searchRetrieveRequest&gt;<br />
+&nbsp;&nbsp;&lt;/SOAP:Body&gt;<br />
+&lt;/SOAP:Envelope&gt;</div>
+      <!-- InstanceEndEditable -->
+      <div id="breadcrumbs-bottom"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-bottom" --><a href="../sru-1-2/index.html">sru 
+        version 1.2 specs</a>&nbsp;&raquo;&nbsp;protocol transport<!-- InstanceEndEditable --></div>
+</td></tr>
+
+</table>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://www.loc.gov/">The 
+        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div>
+      <br>
+  <span class="sitenav">
+  <!-- #BeginDate format:Am1 -->March 31, 2016<!-- #EndDate -->
+  </span></td>
+<td align="right"><div class="contactus"><a href="mailto:ndmso@loc.gov">Contact Us</a></div></td>
+</tr></table>
+</body>
+<!-- InstanceEnd --></html>

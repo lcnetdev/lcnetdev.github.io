@@ -1,0 +1,274 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/subpage.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>CQL Context Set: Version 1.1 (SRU: Search/Retrieval via URL -- SRU, CQL and ZeeRex, Standards, Library of Congress)</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link type="text/css" media="print" href="../../css/sru-print.css" rel="stylesheet">
+<style type="text/css" media="screen">
+@import url(../../css/sru-base.css);
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="shortcut icon" href="http://www.loc.gov:8081/standards/sru/images/favicon.ico">
+<!-- InstanceBeginEditable name="head" -->
+<meta name="keywords" content="cql context set version 1.1 specifications sru search retrieval url cql zeerex standards library congress">
+<meta name="description" content="CQL Context Set, Version 1.1. SRU is a standard XML-focused search protocol for Internet search queries, utilizing CQL (Contextual Query Language), a standard syntax for representing queries. Standards, The Library of Congress.">
+<!-- InstanceEndEditable -->
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<form action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" name="seek1" method="get">
+<input type="hidden" name="col" value="loc">
+<input type="hidden" name="sc" value="0">
+<input type="hidden" name="ws" value="0">
+<input type="hidden" name="la" value="en">
+<input type="hidden" name="qm" value="0">
+<input type="hidden" name="st" value="1">
+<input type="hidden" name="nh" value="10">
+<input type="hidden" name="lk" value="1">
+<input type="hidden" name="rf" value="0">
+<input type="hidden" name="oq" value="">
+<input type="hidden" name="si" value="0">
+<input type="hidden" name="rq" value="0">
+<input type="hidden" name="qc" value="">
+<table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
+  <div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../../index.html">SRU</a></div></td>
+<td width="116"><select name="qp" tabindex="1">
+<option value="url:/sru" selected>SRU Web Pages</option>
+<option value="url:/standards url:/ead url:/marc">Standards Pages</option>
+<option value="">All Library Pages</option>
+</select></td><td width="117" align="right"><input type="text" name="qt" id="keyword" size="18" value="" tabindex="2"></td>
+<td width="67" align="right"><input class="button" id="search_button" name="search_button" type="submit" value="SEARCH" tabindex="3"></td>
+</tr></table></form>
+<table align="center" class="layout" cellpadding="0" cellspacing="0"><tr><td>
+<div id="graphic"> 
+<h1 class="homepage"><img src="../../images/sru.gif" alt="SRU (Search/Retrieval Using URL)" width="600" height="50"></h1>
+</div>
+<div class="goldtop"></div>
+      <div id="breadcrumbs"><a href="../../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-top" --><a href="../../resources/index.html">resources</a>&nbsp;&raquo; 
+        cql context set ver. 1.1<!-- InstanceEndEditable --></div>
+<div class="clear"><a name="skip_menu"></a></div>
+ <!-- InstanceBeginEditable name="content" --> 
+      <h1>The CQL Context Set (version 1.1)</h1>
+      <p> <img src="http://www.loc.gov/images/arrow_o.gif" alt="" width="9" height="9"> 
+        <span class="selected">see also</span> <a href="http://www.loc.gov/standards/sru/cql/contextSets/cql-context-set-v1-2.html">version 
+        1.2</a></p>
+      <p> The CQL context set defines a set of indexes, relations and relation 
+        modifiers. The indexes supplied are 'utility' indexes which do not directly 
+        reference any data. These utility indexes are for instances when CQL is 
+        required to express a concept not directly related to the records. </p>
+      <p><em>Historical note:</em> In CQL version 1.0, this was the 'srw' index 
+        set. Implementers may wish to accept the 'srw' as a reserved name for 
+        the identifier 'http://www.loc.gov/zing/cql/srw-indexes/v1.0/' with the 
+        same semantics as below. srw.resultSetName has been renamed to cql.resultSetId 
+        for consistency. </p>
+      <ul>
+        <li>The reserved name for this context set is: <span class="selected">cql</span></li>
+        <li> The identifier for this context set is: <span class="selected">info:srw/cql-context-set/1/cql-v1.1</span></li>
+      </ul>
+      <p><span class="selected">Sections:</span> <a href="#indexes">Indexes</a> 
+        | <a href="#relations">Relations</a> | <a href="#relmods">Relation Modifiers</a> 
+        | <a href="#relations"></a><a href="#relquals">Relation Qualifiers</a> 
+        | <a href="#relations"></a><a href="#boolmods">Boolean Modifiers</a></p>
+      <hr>
+      <h2><a name="indexes"></a>Indexes</h2>
+      <ul>
+        <li> <strong>resultSetId</strong><br>
+          A search clause may be a result set id. This is a special case, where 
+          the index and relation are expressed as "cql.resultSetId =" and the 
+          term is the result set id returned by the server in the 'resultSetId' 
+          parameter of the response. It may be used by itself in a query to refer 
+          to an existing result set from which records are desired. It may also 
+          be used in conjunction with other resultSetId clauses or other indexes, 
+          combined by boolean operators. The semantics of resultSetId with relations 
+          other than "=" is undefined. </li>
+        <li> <strong>serverChoice</strong><br>
+          This is the default when the index and relation is omitted from a search 
+          clause. 'cql.serverChoice' means that the server will choose an index 
+          for the given term. The relation used is 'scr', hence 'cql.serverChoice 
+          scr "term"' is an equivalent search clause to '"term"'. </li>
+        <li> <strong>anywhere</strong><br>
+          This means "search all indexes from all context sets you know". (By 
+          contrast, cql.serverChoice means essentially "search any index -- your 
+          choice -- from any context set you know".) </li>
+        <li><strong>allRecords<br>
+          </strong>A special index which matches every record available.&nbsp; 
+          Every record is matched no matter what values are provided for the relation 
+          and term,&nbsp; but the recommended syntax is: cql.allRecords = 1.</li>
+      </ul>
+      <hr>
+      <h2><a name="relations"></a>Relations</h2>
+      <p><strong>Implicit Relations</strong><br>
+        These relations are defined as such in the grammar of CQL. The cql context 
+        set only defines their meaning, rather than their existence. </p>
+      <ul>
+        <li> <strong>&lt;</strong>, <strong>&gt;</strong>, <strong>&lt;=</strong>, 
+          and <strong>&gt;=</strong> retain their regular meanings as relations 
+          pertaining to ordered terms </li>
+        <li> <strong>=</strong> is used: 
+          <ul>
+            <li> For word adjacency, when the term is a list of words. That is 
+              to say that the words appear in that order with no others intervening. 
+            </li>
+            <li> Otherwise, for exact equality of value. </li>
+          </ul>
+        </li>
+        <li> <strong>&lt;&gt;</strong> is 'not equal to'. </li>
+      </ul>
+      <p><strong>Default Relations</strong><br>
+        These relations are defined as being widely useful as part of a default 
+        context set. </p>
+      <ul>
+        <li> <strong>scr</strong> is used to mean "server choice relation". It 
+          is used when the client wishes the server to choose the most appropriate 
+          relation for the index or term. It is assumed when relation is omitted. 
+        </li>
+        <li> <strong>exact</strong> is used for exact string matching, when the 
+          term is a character string. =/cql.string is synonymous. </li>
+        <li> <strong>all</strong> and <strong>any</strong> may be used when the 
+          term contains multiple items to indicate "all of these items" or "any 
+          of these items". These queries could be expressed using boolean AND 
+          and OR respectively. These relations have an implicit relation modifier 
+          of 'cql.word'. </li>
+        <li> <strong>within</strong> may be used with a search term that has multiple 
+          dimensions. It matches if the database's term falls completely within 
+          the range, area or volume described by the search term. For example: 
+          dc.date within "2002 2003" </li>
+        <li> <strong>encloses</strong> may be used when the index's data has multiple 
+          dimensions. It matches if the database's term fully encloses the search 
+          term. For example: xxx.dateRange encloses 2002 </li>
+      </ul>
+      <hr>
+      <h2><a name="relmods"></a>Relation Modifiers</h2>
+      <p><strong>Term Functions</strong><br>
+        These relation modifiers request that the server perform some algorithm 
+        on each item within the term before processing. If named algorithms are 
+        required, then further context sets should define relation modifiers for 
+        these. </p>
+      <ul>
+        <li> <strong>stem</strong><br>
+          The server should apply a stemming algorithm to the words within the 
+          term. For example such that computing and computer both match the stem 
+          of 'compute'. </li>
+        <li> <strong>relevant</strong><br>
+          The server should use a relevancy algorithm for determining matches 
+          and the order of the result set. </li>
+        <li> <strong>phonetic</strong><br>
+          The server should use a phonetic algorithm for determining words which 
+          sound like the term. </li>
+        <li> <strong>fuzzy</strong><br>
+          The server should be liberal in what it counts as a match. The exact 
+          details of this are left up to the server, but might include permutations 
+          of character order, off-by-one for numerical terms and so forth. </li>
+      </ul>
+      <hr>
+      <h2><strong><a name="relquals"></a>Relation Qualifiers </strong> </h2>
+      <p>These modifiers qualify the relation to more precisely determine its 
+        semantics.</p>
+      <ul>
+        <li> <strong>partial</strong><br>
+          When used with within or encloses, there may be some section which extends 
+          without the term. This permits for the database term to be partially 
+          enclosed, or fall partially within the search term. </li>
+        <li> <strong>Term Format</strong><br>
+          These relation modifiers describe the format or structure of the term 
+          in some fashion. </li>
+        <li> <strong>word</strong><br>
+          The term should be broken into words, according to the server's definition 
+          of a 'word' </li>
+        <li> <strong>string</strong><br>
+          The term is a single item, and should not be broken up. </li>
+        <li> <strong>isoDate</strong><br>
+          Each item within the term conforms to the ISO 8601 specification for 
+          expressing dates. </li>
+        <li> <strong>number</strong><br>
+          Each item within the term is a number. </li>
+        <li> <strong>uri</strong><br>
+          Each item within the term is a URI. </li>
+        <li> <strong>masked</strong> (default modifier)<br>
+          The following masking rules and special characters apply for search 
+          terms, unless overridden in a profile via a relation modifier. To explicitly 
+          request this functionality, add 'cql.masked' as a relation modifier. 
+          <ol>
+            <li> A single asterisk (*) is used to mask zero or more characters. 
+            </li>
+            <li> A single question mark (?) is used to mask a single character, 
+              thus N consecutive question-marks means mask N characters. </li>
+            <li> Carat/hat (^) is used as an anchor character for terms that are 
+              word lists, that is, where the relation is 'all' or 'any', or '=' 
+              when used for word adjacency. It may not be used to anchor a string, 
+              that is, when relation is 'exact' (string matches are, by default, 
+              anchored). It may occur at the beginning or end of a word (with 
+              no intervening space) to mean right or left anchored."^" has no 
+              special meaning when it occurs within a word (not at the beginning 
+              or end) or string but must be escaped nevertheless. </li>
+            <li> Backslash (\) is used to escape '*', '?', quote (") and '^' , 
+              as well as itself. Backslash not followed immediately by one of 
+              these characters is an error.&nbsp; <br>
+              See masking examples below. </li>
+          </ol>
+        </li>
+        <li><strong>unmasked<br>
+          </strong>Do not apply masking rules.</li>
+        <li><strong>oid</strong> <br>
+          The term is an ISO object identifier, dot-separated format. Example 
+          <br>
+          &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'zeerex.set exact/cql.oid "1.2.840.10003.3.1"'</li>
+      </ul>
+      <p><em>Masking examples: </em></p>
+      <ol>
+        <li> <a name="example6"></a>dc.title = c*t <i>(matches cat and coast etc.)</i><br>
+          dc.title = "*fish food*" <i>(matches unanchored 'fish food')</i> </li>
+        <li> <a name="example7"></a>dc.title = c?t <i>(matches cat and cot, not 
+          coast or ct)</i><br>
+          " ?" <i>(matches any single character)</i> </li>
+        <li> <a name="example8"></a>dc.title = "^cat in the hat" <i>(matches 'cat 
+          in the hat' where it is at the beginning of the field)</i><br>
+          dc.title any "^cat ^dog eats rat" <i>(matches 'cat eats rat', 'dog eats 
+          cat', 'cat loves bat', but not 'bat loves cat')</i> </li>
+        <li> <a name="example9"></a>dc.title = "\"Of Couse\" she said"<br>
+          dc.identifier exact "\\\"\^\*\?andSomeMoreCharacters" </li>
+      </ol>
+      <h2><a name="boolmods"></a>Boolean Modifiers</h2>
+      <p>The CQL context set defines four boolean modifiers, which are only used 
+        with the prox boolean operator.</p>
+      <ul>
+        <li><strong>distance</strong><br>
+          The distance that the two terms should be separated by.<br>
+          Takes the form:<br>
+          &nbsp;&nbsp;&nbsp;&nbsp; distance [relation] [value] <br>
+          where relation is one of: "&lt;", "&gt;" ,"&lt;=" ,"&gt;=" ,"=" , "&lt;&gt;"; 
+          <i>default "&lt;="</i><br>
+          and value is a non-negative integer.<br>
+          e.g. "distance&lt;2" <br>
+          <i>default: 1 for word, zero otherwise</i> </li>
+        <li><strong>unit</strong><br>
+          The type of unit for the distance. <br>
+          Takes the form:<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unit=[value]<br>
+          where value is one of: 'paragraph', 'sentence', 'word' and 'element', 
+          or a value from another context set. <br>
+          e.g. "unit=sentence" <br>
+          <i>default "word"</i></li>
+        <li><strong>ordered</strong><br>
+          The order of the two terms must be as per the query. </li>
+        <li> <strong>unordered</strong><br>
+          The order of the two terms is unimportant. This is the default. </li>
+      </ul>
+      <!-- InstanceEndEditable -->
+      <div id="breadcrumbs-bottom"><a href="../../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-bottom" --><a href="../../resources/index.html">resources</a>&nbsp;&raquo; 
+        cql context set ver 1.1<!-- InstanceEndEditable --></div>
+</td></tr>
+
+</table>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://www.loc.gov/">The 
+        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../../index.html">SRU</a></div>
+      <br>
+  <span class="sitenav">
+  <!-- #BeginDate format:Am1 -->December 16, 2015<!-- #EndDate -->
+  </span></td>
+<td align="right"><div class="contactus"><a href="mailto:ndmso@loc.gov">Contact Us</a></div></td>
+</tr></table>
+</body>
+<!-- InstanceEnd --></html>

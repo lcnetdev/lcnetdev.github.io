@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/subpage.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>CQL: the Contextual Query Language: Specifications (SRU: Search/Retrieval via URL, Standards, Library of Congress)</title>
+<!-- InstanceEndEditable --> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link type="text/css" media="print" href="../../css/sru-print.css" rel="stylesheet">
+<style type="text/css" media="screen">
+@import url(../../css/sru-base.css);
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="shortcut icon" href="http://www.loc.gov/standards/sru/images/favicon.ico">
+<!-- InstanceBeginEditable name="head" -->
+<meta name="keywords" content="query language search retrieval via url z39.50 standards library congress">
+<meta name="descrption" content="Contextual Query Language: SRU (Search/Retrieve via URL) is a standard search protocol for Internet search queries, utilizing CQL (Contextual Query Language), a standard query syntax for representing queries.">
+<!-- InstanceEndEditable -->
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<form action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" name="seek1" method="get">
+<input type="hidden" name="col" value="loc">
+<input type="hidden" name="sc" value="0">
+<input type="hidden" name="ws" value="0">
+<input type="hidden" name="la" value="en">
+<input type="hidden" name="qm" value="0">
+<input type="hidden" name="st" value="1">
+<input type="hidden" name="nh" value="10">
+<input type="hidden" name="lk" value="1">
+<input type="hidden" name="rf" value="0">
+<input type="hidden" name="oq" value="">
+<input type="hidden" name="si" value="0">
+<input type="hidden" name="rq" value="0">
+<input type="hidden" name="qc" value="">
+<table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
+  <div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../../index.html">SRU</a></div></td>
+<td width="116"><select name="qp" tabindex="1">
+<option value="url:/sru" selected>SRU Web Pages</option>
+<option value="url:/standards url:/ead url:/marc">Standards Pages</option>
+<option value="">All Library Pages</option>
+</select></td><td width="117" align="right"><input type="text" name="qt" id="keyword" size="18" value="" tabindex="2"></td>
+<td width="67" align="right"><input class="button" id="search_button" name="search_button" type="submit" value="SEARCH" tabindex="3"></td>
+</tr></table></form>
+<table align="center" class="layout" cellpadding="0" cellspacing="0"><tr><td>
+<div id="graphic"> 
+<h1 class="homepage"><img src="../../images/sru.gif" alt="SRU (Search/Retrieval Using URL)" width="600" height="50"></h1>
+</div>
+<div class="goldtop"></div>
+      <div id="breadcrumbs"><a href="../../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-top" --><a href="../index.html">sru 
+        version 1.2 specs</a>&nbsp;&raquo;&nbsp;cql: contextual query language<!-- InstanceEndEditable --></div>
+<div class="clear"><a name="skip_menu"></a></div>
+ <!-- InstanceBeginEditable name="content" --> 
+      <h2 align="center">CQL: Contextual Query Language</h2>
+      <h1 align="center">CQL Context Sets &nbsp;</h1>
+      <ul><li>
+          <h3><a href="listOfContextSets.html">List of Context Sets</a>&nbsp;</h3>
+      </li>
+        <li>
+          <h3><a href="theCqlContextSet.html"><b>The CQL</b> Context Set</a></h3>
+        </li>
+      </ul>
+      <p>CQL is so-named (&quot;Contextual Query Language&quot;) because it is 
+        founded on the concept of searching by semantics or context, rather than 
+        by syntax. The same search may be performed in a different way on very 
+        different underlying data structures in different servers, but the important 
+        thing is that both servers understand the intent behind the query. In 
+        order for multiple communities to define their own semantics, CQL uses 
+        Context Sets in order to ensure cross-domain interoperability. </p>
+      <p>Context sets permit CQL users to create their own indexes, relations, 
+        relation modifiers and boolean modiers without fear of chosing the same 
+        name as someone else and thereby having an ambiguous query. All of these 
+        four aspects of CQL must come from a context set, however there are rules 
+        for determining the prevailing default if one is not supplied. Context 
+        sets allow CQL to be used by communities in ways which the designers could 
+        not have foreseen, while still maintaining the same rules for parsing 
+        which allow interoperability.</p>
+      <p>When defining a new context set, it is necessary to provide a description 
+        of the semantics of each item within it. While context sets may contain 
+        indexes, relations, relation modifiers and boolean modifiers, there is 
+        no requirement that all should be present; in fact it is expected that 
+        most context sets will only define indexes.</p>
+      <p>Each context set has a unique identifier, a URI. When sending the context 
+        set in a query, a short form is used. These short names may be sent as 
+        a mapping within the query itself, or be published by the recipient of 
+        the query in some protocol dependent fashion. The prefix 'cql' is reserved 
+        for the base CQL context set, but authors may wish to recommend a short 
+        name for use with their set. </p>
+      <p> An index, relation, or modifier qualified by a context is represented 
+        in the form <i>prefix</i>.<i>value</i>, where <i>prefix</i> is a short 
+        name for a unique context set identifier.</p>
+      <hr class="dashed">
+      <h2>&nbsp;</h2>
+      <!-- InstanceEndEditable -->
+      <div id="breadcrumbs-bottom"><a href="../../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-bottom" --><a href="../index.html">specifications</a>&nbsp;&raquo;&nbsp;cql: 
+        contextual query language<!-- InstanceEndEditable --></div>
+</td></tr>
+
+</table>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://www.loc.gov/">The 
+        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../../index.html">SRU</a></div>
+      <br>
+  <span class="sitenav">
+  <!-- #BeginDate format:Am1 -->August 30, 2013<!-- #EndDate -->
+  </span></td>
+<td align="right"><div class="contactus"><a href="mailto:ndmso@loc.gov">Contact Us</a></div></td>
+</tr></table>
+</body>
+<!-- InstanceEnd --></html>
