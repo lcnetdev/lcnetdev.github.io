@@ -1,5 +1,5 @@
 <!-- edited with XML Spy v4.3 U (http://www.xmlspy.com) by Morgan Cundiff (Library of Congress) -->
-<xsd:schema targetNamespace="http://www.loc.gov/mix/" xmlns="http://www.loc.gov/mix/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xsd:schema targetNamespace="http://lcnetdev.github.io/mix/" xmlns="http://lcnetdev.github.io/mix/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
   <xsd:element name="mix">
     <xsd:annotation>
       <xsd:documentation>NISO Data Dictionary: Technical Metadata for Digital Still Images 

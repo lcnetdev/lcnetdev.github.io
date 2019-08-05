@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js">
+<head>
+<title>Titles: Topics and Issues (BIBFRAME - Bibliographic Framework Initiative, Library of Congress)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="titles, topics, issues, listserv, bibframe, bibliographic framework, transition, initiative, marc, cataloging, library of congress" />
+<meta name="description" content="Titles: Topics and Issues (BIBFRAME - Bibliographic Framework Initiative, Library of Congress). On the BIBFRAME listserv there is interesting an valuable discussion on a wide variety of BIBFRAME topics. BIBFRAME Topics and Issues attempts to break down the discussion into a descrete list of topics, to describe the issues pertaining to each topic, and to record conclusions, agreements, and remaining areas of disagreement. Each topic entry will remain open and when there are new issues, conclusions, or areas of agreement or disagreement to report, the entry will be updated." />
+
+<link rel="dc.relation.isPartOf" href="http://lcnetdev.github.io/bibframe/" title="BIBFRAME - Bibliographic Framework Initiative (Library of Congress)" />
+<meta name="dc.subject" content="bibliographic framework" />
+<meta name="dc.subject" content="BIBFRAME" />
+<meta name="dc.subject" content="topics and issues" />
+<meta name="dc.subject" content="titles" />
+<meta name="dc.type" content="webpage" />
+<meta name="dc.identifier" content="http://lcnetdev.github.io/bibframe/topics/titles.html" />
+<meta name="dc.language" content="en" />
+
+<link type="text/css" media="screen" rel="stylesheet" href="../css/styles.css" />
+<link type="text/css" media="print" rel="stylesheet" href="/css/loc_print_v2.css" />
+<!--[if lte IE 7]><link type="text/css" media="screen" rel="stylesheet" href="/css/loc_lte_ie6.css" /><![endif]-->
+<!--#include virtual="/bibframe/include/share-tool.html"-->
+<script type="text/javascript" src="http://cdn.loc.gov/js/lib/modernizr-1.5.min.js"></script></head>
+<body>
+<a id="skip" href="#skip_menu">skip navigation</a>
+<div id="container">
+  <!--#include virtual="../include/branding.html"-->
+  <!--#include virtual="/cdn/html/lochead.html"-->
+  <div id="crumb_nav"><a href="http://lcnetdev.github.io">The Library of Congress</a> &gt; <a href="/bibframe/">BIBFRAME</a> &gt; <a href="index.html">Topics and Issues</a> &gt; Titles</div>
+  <div id="content">
+    <!--#include virtual="../include/leftnav.html"-->
+    <div id="main_body">
+    	<!--#include virtual="../include/share-tool-bar.html"-->
+            <div id="page_head"><span style="width: 100%;"><a name="skip_menu"></a></span>
+              <h1>Titles<br />
+          <span>BIBFRAME Topics and Issues</span></h1>
+      </div>
+ <div id="main_nav"><a href="index.html" class="ar-back">Back to Topics and Issues Home</a></div>
+      <p>There was a great deal of discussion surrounding BIBFRAME titles, across several different threads, mostly during July, 2014. Much of the discussion reflected confusion over whether a title can/should be expressed as a literal or does a resource need to be constructed to accomodate structured information about the title as well as the various title attributes such as &quot;title source&quot;, &quot;title assigner&quot;, &quot;title type&quot; and others.</p>
+      <p>Provided below  is a summary of the &quot;current state&quot; of the BIBFRAME title, followed by a proposed simplification. </p>
+      <h3> Current State of the BIBFRAME Title</h3>
+      <p><strong>To begin, we have ...</strong></p>
+      <ul>
+        <li><em>bf:title</em></li>
+        <li><em>bf:workTitle</em></li>
+        <li><em>bf:instanceTitle</em></li>
+      </ul>
+      <p>Where bf:title is a literal, but bf:workTitle and bf:instanceTitle are both resources, of type bf:Title.</p>
+      <p>bf:Titile includes structured information about a title. Properties of bf:Title include bf:partTitle, bf:subtitle, bf:titleType,  a few others, and of course the actual title, bf:titleValue. </p>
+      <p>bf:title is just a convenient way provided to indicate a literal title without having to create a bf:Title resource. </p>
+      <p><strong>And further</strong> ...</p>
+      <p>An Instance may have, in addition to bf:instanceTitle:</p>
+      <ul>
+        <li><em>abbreviatedTitle </em></li>
+        <li><em>
+          keyTitle </em></li>
+      </ul>
+      <p><strong>And Finally</strong>, there is ....</p>
+      <ul>
+        <li><em>titleVariation</em></li>
+      </ul>
+      <p>Which is a bf:Title, and may belong to a Work or Instance.</p>
+      <h3>Proposed Simplification      </h3>
+      <ul>
+        <li>bf:workTitle and bf:instanceTitle could become literals, and the associated properties now represented within bf:Title could be represented instead as direct properties of the Work or Instance, since there would be only one Work or Instance title. See example 1. </li>
+        <li>bf:title could then be eliminated.</li>
+        <li>Aternatively, bf:title could be retained and bf:workTitle and bf:instanceTitle eliminated. bf:title would be distinguishable as a Work title (formerly, uniform title) or  Instance title (formerly title proper) because it would be a property of a bf:Work or bf:Instance respectively.</li>
+      <li>abbreviatedTitle, keyTitle, and titleVariation could become properties whose object could be either a literal or resource. Thus, one could string together the title attributes and represent a title as a literal, or if necessary, create a resource of type bf:Title and represent the title attributes as its properties.  See examples 2, 3, and 4.</li></ul>
+      <h3>Examples</h3>
+      <p><strong>Example 1</strong>. Consider the Work: Mahler's second symphony, in C minor, for Soprano, alto, mixed voices, and orchestra. (See <a href="http://id.loc.gov/resources/bibs/13757818.marcxml.xml"><strong>http://id.loc.gov/resources/bibs/13757818.marcxml.xml</strong></a>.) This information could be represented as follows:</p>
+      <table width="700" border="0" align="center">
+        <tr>
+          <td bgcolor="#FCFED8"><p>&lt;bf:Work&gt;<br />
+            <strong>&nbsp;&nbsp;&nbsp;&nbsp;&lt;bf:workTitle&gt;Symphonies no.2, C minor&lt;/bf:workTitle&gt;</strong><br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;bf:agent rdf:nodeID=&rdquo;bnode-x24z100&rdquo;/&gt; <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;bf:musicMedium&gt;soprano&lt;/bf:musicMedium&gt; <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;bf:musicMedium&gt;alto&lt;/bf:musicMedium&gt;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;bf:musicMedium&gt;mixed voices&lt;/bf:musicMedium&gt;<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;bf:musicMedium&gt;orchestra&lt;/bf:musicMedium&gt; <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;bf:musicKey&gt;C minor&lt;/bf:musicKey&gt; <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;bf:musicNumber&gt;no. 2&lt;/bf:musicNumber&gt;<br />
+            &lt;/bf:Work&gt;<br />
+            <strong>&lt;!-- <br />
+              </strong>BIBFRAME Authority --&gt; <br />
+            &lt;bf:Person rdf:nodeID=&rdquo;bnode-x24z100&rdquo;&gt; <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;bf:authorizedAccessPoint&gt;Mahler, Gustav, 1860-1911&lt;/bf:authorizedAccessPoint&gt; <br />
+          &lt;/bf:Person&gt;</p></td>
+        </tr>
+      </table>
+      <p><strong>Example 2</strong>. Here, a bf:Title resource is created for an abbreviated title, so that the source can be represented (along with the actual title).</p>
+      <table width="700" border="0" align="center">
+        <tr>
+          <td bgcolor="#FCFED8"><p>&lt;bf:Instance&gt;<br />
+            <strong>&nbsp;&nbsp;&nbsp;&nbsp;&lt;bf:abbreviatedTitle </strong>rdf:resource=&rdquo;http://www.example.com/titles/abbreviated/jama<strong>&rdquo;/&gt;</strong><br />            
+            &lt;/bf:Instance&gt; </p>
+            <p><strong>&lt;bf:Title </strong>rdf:about=&rdquo;http://www.example.com/titles/abbreviated/jama<strong>&rdquo;&gt;</strong><br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;bf:titleValue&gt;<strong>JAMA</strong>&lt;/bf:titleValue&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;bf:titleSource&gt;<strong>dnlm</strong>&lt;/bf:titleSource&gt;<br />
+  &lt;/bf:Title&gt;</p></td>
+        </tr>
+      </table>
+      <p><strong>Example 3</strong>. A key title.  bf:Title resource is created so that the qualifier (&quot;Barrington&quot;) can be represented.</p>
+      <table width="700" border="0" align="center">
+        <tr>
+          <td bgcolor="#FCFED8"><p>&lt;bf:Instance&gt;<br />
+            <strong>&nbsp;&nbsp;&nbsp;&nbsp;&lt;bf:KeyTitle </strong>rdf:resource=&rdquo;http://www.example.com/titles/key/economicEducationBulletinBarrington<strong>&rdquo;/&gt;</strong><br />
+            &lt;/bf:Instance&gt; </p>
+            <p><strong>&lt;bf:Title </strong>rdf:about=&rdquo;http://www.example.com/titles/key/economicEducationBulletinBarrington<strong>&rdquo;&gt;</strong><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;bf:titleValue&gt;<strong>Economic Education Bulletin</strong>&lt;/bf:titleValue&gt;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;bf:titleQualifier&gt;<strong>Barrington</strong>&lt;/bf:titleQualifier&gt;<br />
+            &lt;/bf:Title&gt;</p></td>
+        </tr>
+      </table>
+      <p><strong>Example 4</strong>. Same title as in example 3 is represented as a literal (qualifier included)</p>
+      <table width="700" border="0" align="center">
+        <tr>
+          <td bgcolor="#FCFED8"><p>&lt;bf:Instance&gt;<br />
+            <strong>&nbsp;&nbsp;&nbsp;&nbsp;&lt;bf:keyTitle&gt;Economic Education Bulletin. (Great Barrington)&lt;/bf:keyTitle&gt;</strong><br />
+            &lt;/bf:Instance&gt;</p></td>
+        </tr>
+      </table>
+      <p></p>
+      <p></p>
+      <h3>Questions</h3>
+      <ol>
+        <li>Is it better to retain bf:workTitle and bf:instanceTitle and drop bf:title, or retain bf:title and drop bf:workTitle and bf:instanceTitle?</li>
+        <li>Properties whose objects may be either a literal or resource are a source of some controversy. Some ontologies do this, however, some experts warn against this practice. What are the pros and cons?</li>
+      </ol>
+      <p><strong>Last Updated: </strong>
+      <!-- #BeginDate format:Am1 -->October 21, 2014<!-- #EndDate --></p>
+      <div class="clear"><!-- --></div>
+    </div><!-- end id:main_body -->
+  </div><!-- end id:content -->
+  <!--#include virtual="/cdn/html/locfoot.html"-->
+</div><!-- end id:container -->
+</body>
+</html>

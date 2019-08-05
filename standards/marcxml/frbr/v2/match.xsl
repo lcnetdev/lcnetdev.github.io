@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns:fm="http://www.loc.gov/MARC21/frbr/match" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-	<xsl:include href="http://www.loc.gov/standards/marcxml/xslt/MARC21slimUtils.xsl"/>
+<xsl:stylesheet version="1.0" xmlns:marc="http://lcnetdev.github.io/MARC21/slim" xmlns:fm="http://lcnetdev.github.io/MARC21/frbr/match" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<xsl:include href="http://lcnetdev.github.io/standards/marcxml/xslt/MARC21slimUtils.xsl"/>
 	<xsl:output media-type="xml" indent="yes"/>
 
 	<xsl:template match="node()|@*">

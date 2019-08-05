@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="2.0" xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns:fm="http://www.loc.gov/MARC21/frbr/match" xmlns="http://www.loc.gov/MARC21/frbr" xmlns:mods="http://www.loc.gov/mods/" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" exclude-result-prefixes="marc">
-	<xsl:include href="http://www.loc.gov/marcxml/xslt/MARC21slimUtils.xsl"/>
+<xsl:stylesheet version="2.0" xmlns:marc="http://lcnetdev.github.io/MARC21/slim" xmlns:fm="http://lcnetdev.github.io/MARC21/frbr/match" xmlns="http://lcnetdev.github.io/MARC21/frbr" xmlns:mods="http://lcnetdev.github.io/mods/" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" exclude-result-prefixes="marc">
+	<xsl:include href="http://lcnetdev.github.io/marcxml/xslt/MARC21slimUtils.xsl"/>
 	<xsl:output media-type="xml" indent="yes"/>
 
 	<xsl:template match="/">
@@ -8,7 +8,7 @@
 	</xsl:template>
 
 	<xsl:template match="marc:collection">
-		<xsl:processing-instruction name="xml-stylesheet">type="text/xsl" href="http://www.loc.gov/standards/marcxml/frbr/frbr2html.xsl"</xsl:processing-instruction>
+		<xsl:processing-instruction name="xml-stylesheet">type="text/xsl" href="http://lcnetdev.github.io/standards/marcxml/frbr/frbr2html.xsl"</xsl:processing-instruction>
 
 		<frbr>
 			<!-- match and display: 240 243 245 a n p -->

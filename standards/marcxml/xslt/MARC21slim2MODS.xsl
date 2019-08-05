@@ -1,5 +1,5 @@
-<xsl:stylesheet xmlns="http://www.loc.gov/mods/v3" xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" exclude-result-prefixes="xlink marc" version="1.0">
-	<xsl:include href="http://www.loc.gov/marcxml/xslt/MARC21slimUtils.xsl"></xsl:include>
+<xsl:stylesheet xmlns="http://lcnetdev.github.io/mods/v3" xmlns:marc="http://lcnetdev.github.io/MARC21/slim" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" exclude-result-prefixes="xlink marc" version="1.0">
+	<xsl:include href="http://lcnetdev.github.io/marcxml/xslt/MARC21slimUtils.xsl"></xsl:include>
 	<xsl:output encoding="UTF-8" indent="yes" method="xml"></xsl:output>
 	<!--
 Revision 1.13 datafield 028 fixed attribute placement  2006/12/07 ntra
@@ -34,7 +34,7 @@ Added Log Comment
 	<xsl:template match="/">
 		<xsl:choose>
 			<xsl:when test="//marc:collection">
-				<modsCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-1.xsd">
+				<modsCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://lcnetdev.github.io/mods/v3 http://lcnetdev.github.io/standards/mods/v3/mods-3-1.xsd">
 					<xsl:for-each select="//marc:collection/marc:record">
 						<mods version="3.2">
 							<xsl:call-template name="marcRecord"></xsl:call-template>
@@ -43,7 +43,7 @@ Added Log Comment
 				</modsCollection>
 			</xsl:when>
 			<xsl:otherwise>
-				<mods xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.1" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-1.xsd">
+				<mods xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.1" xsi:schemaLocation="http://lcnetdev.github.io/mods/v3 http://lcnetdev.github.io/standards/mods/v3/mods-3-1.xsd">
 					<xsl:for-each select="//marc:record">
 						<xsl:call-template name="marcRecord"></xsl:call-template>
 					</xsl:for-each>

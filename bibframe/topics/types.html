@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js">
+<head>
+<title>Types: Topics and Issues (BIBFRAME - Bibliographic Framework Initiative, Library of Congress)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="authorities, topics, issues, listserv, bibframe, bibliographic framework, transition, initiative, marc, cataloging, library of congress" />
+<meta name="description" content="Authorities: Topics and Issues (BIBFRAME - Bibliographic Framework Initiative, Library of Congress). On the BIBFRAME listserv there is interesting an valuable discussion on a wide variety of BIBFRAME topics. BIBFRAME Topics and Issues attempts to break down the discussion into a descrete list of topics, to describe the issues pertaining to each topic, and to record conclusions, agreements, and remaining areas of disagreement. Each topic entry will remain open and when there are new issues, conclusions, or areas of agreement or disagreement to report, the entry will be updated." />
+
+<link rel="dc.relation.isPartOf" href="http://lcnetdev.github.io/bibframe/" title="BIBFRAME - Bibliographic Framework Initiative (Library of Congress)" />
+<meta name="dc.subject" content="bibliographic framework" />
+<meta name="dc.subject" content="BIBFRAME" />
+<meta name="dc.subject" content="topics and issues" />
+<meta name="dc.subject" content="authorities" />
+<meta name="dc.type" content="webpage" />
+<meta name="dc.identifier" content="http://lcnetdev.github.io/bibframe/topics/authorities.html" />
+<meta name="dc.language" content="en" />
+
+<link type="text/css" media="screen" rel="stylesheet" href="../css/styles.css" />
+<link type="text/css" media="print" rel="stylesheet" href="/css/loc_print_v2.css" />
+<!--[if lte IE 7]><link type="text/css" media="screen" rel="stylesheet" href="/css/loc_lte_ie6.css" /><![endif]-->
+<!--#include virtual="/bibframe/include/share-tool.html"-->
+<script type="text/javascript" src="http://cdn.loc.gov/js/lib/modernizr-1.5.min.js"></script></head>
+<body>
+<a id="skip" href="#skip_menu">skip navigation</a>
+<div id="container">
+  <!--#include virtual="../include/branding.html"-->
+  <!--#include virtual="/cdn/html/lochead.html"-->
+  <div id="crumb_nav"><a href="http://lcnetdev.github.io">The Library of Congress</a> &gt; <a href="/bibframe/">BIBFRAME</a> &gt; <a href="index.html">Topics and Issues</a> &gt; Types</div>
+  <div id="content">
+    <!--#include virtual="../include/leftnav.html"-->
+    <div id="main_body">
+    	<!--#include virtual="../include/share-tool-bar.html"-->
+            <div id="page_head"><span style="width: 100%;"><a name="skip_menu"></a></span>
+        <h1>Types<br />
+          <span>BIBFRAME Topics and Issues</span></h1>
+      </div>
+ <div id="main_nav"><a href="index.html" class="ar-back">Back to Topics and Issues Home</a></div>
+      <p>The BIBFRAME vocabulary has been developed using advice on  structure from a variety of sources, many conflicting, so in some cases decisions have been made  that are not consistent with previous approaches.  Sometimes a cue was taken from the data  being modeled based on how it has been treated  in the past.  For example only a few classification scheme  have direct tagging in MARC and many more can be input to a MARC record with a  code indicating the type.  Perhaps we  have enough experience now to investigate whether consistent approaches can be  developed so that eventually we can have a guide for adding additional  elements.  </p>
+<p>One issue is how to handle a concept that needs to be typed.  Some examples are the various title types,  provider types, identifier types, note types, classification types, title  relationship types, agent to title relationship types, and annotation  types.  As one can see there are both  numerous and varied in scope.</p>
+<p>The following table shows how these are currently handled. For each category some types are identified via specific property  names (<em>type-as-property</em>) and in some cases a mechanism is then provided to designate the &ldquo;other&rdquo;  types (<em>type-as-value</em>). </p>
+<table width="666" border="2">
+  <tr>
+    <th width="90">Category</th>
+    <th width="265">Type as Property</th>
+    <th width="10" >&nbsp;</th>
+    <th width="271" >Type as Value</th>
+ 
+  </tr>
+    <tr>
+      <td>Titles</td>
+      <td> The following properties are defined for different types of titles: bf:workTitle, bf:instanceTitle, bf:keyTitle,  bf:abbreviatedTitle, bf:titleVariation. </td>
+      <td>&nbsp;</td>
+      <td> bf:workTitle, bf:instanceTitle, and bf:titleVariation have  range  bf:Title, which has property  bf:titleType which further refines the type: e.g.,  spine title, translated title.</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Providers</td>
+      <td>bf:publication, bf:production, bf:distribution, bf:manufacture, are subproperties of general property bf:provider.</td>
+      <td>&nbsp;</td>
+      <td>General property bf:provider, and its subproperties, have range  bf:Provider, which has  property bf:providerRole for indication additional roles  (e.g.,  construction, release, printing).</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Identifiers</td>
+      <td>Properties are defined for approximately 25 specific identifier types: e.g. bf:issn, bf:lccn. These are all subproperties of general property  bf:identifier.  </td>
+      <td>&nbsp;</td>
+      <td>General property  bf:identifier, and its subproperties, have range bf:Identifier which has property  bf:identifierScheme to indicate additional types, for example, &quot;publisher number', &quot;nbn&quot;, &quot;system number&quot;, &quot;doi&quot;, &quot;isbn&quot;, &quot;ismn&quot;, &quot;issn&quot;, &quot;istc&quot;, etc.</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Notes</td>
+      <td>Properties are defined for approximately 25 specific note types:. e.g. bf:languageNote. These are all subproperties of general property bf:note.</td>
+      <td>&nbsp;</td>
+      <td>General property bf:note, and its subproperties, have  range literal so there is no other way to indicate additional note types.</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Classification</td>
+      <td>bf:classificationDdc,  bf:classificationLcc, bf:classificationUdc, bf:classificationNlm  are  subproperties of general property bf:classification.</td>
+      <td>&nbsp;</td>
+      <td><p>General property bf:classification, and its subproperties, have  range  bf:Classification which has property  bf:classificationScheme for indication of additional classification schemes (e.g.,  International patent classification, ipc).</p></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Work/Instance to Work/Instance Relationships</td>
+      <td>Properties bf:relatedWork,  bf:relatedInstance, bf:hasExpression, plus properties for approximately 40 specific relationship  types, based on RDA and MARC, are defined.</td>
+      <td>&nbsp;</td>
+      <td>Work/Instance to Work/Instance relationship propertes all have range of bf:Work, bf:Instance, or bf:Resource. There is is no &quot;type-as-value&quot; mechanism provided to indicate the relationship type.</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>Agent  to Work/Instance  relationships </td>
+      <td>bf: creator and bf:contributor are subproperties of bf:agent. In addition it is prescribed that relators from external vocabularies may be used. For example, relators:act (where relators: is the prefix for <a property="madsrdf:hasTopMemberOfMADSScheme skos:hasTopConcept" href="http://id.loc.gov/vocabulary/relators/">http://id.loc.gov/vocabulary/relators</a>).</td>
+      <td>&nbsp;</td>
+      <td>General property bf:relator has range  bf:Relator which has property   bf:relatorRole for indication of additional roles.</td>
+    </tr>
+    </table>
+<h3>Approaches</h3>
+<p>There are a number of models/approaches that could be used:</p>
+<ol>
+  <li>Establish a general property and <em>many </em>sub-properties, as for identifiers. See example 1.</li>
+  <li>Establish a general property whose  range is a structure  that has a type-as-value  property to  enable any type to be conveyed. See example 2.</li>
+  <li>Employ a combination of 1 and 2. See example 3.</li>
+  <li>Establish properties for a few of the <em><strong>most commonly occurring</strong></em>, as currently with title.</li>
+  <li>Allow the use of any list to specify a type-as-property in its own  namespaces, as currently with relators:.</li>
+  </ol>
+<h3>Examples</h3>
+<p>Following is an example   &nbsp;of approach 1. InstanceXYZ has an identifier,  and the identifier scheme, issn, is conveyed by the property bf:issn.</p>
+<table width="700" border="0" align="center">
+  <tr>
+    <td bgcolor="#FCFED8"><p><em>Example 1. </em>   </p>
+      <p>&lt;<a href="http://example.com/xyz/identifiers/book1/identifier1">http://example.com/xyz//InstanceXYZ</a>&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bf:issn  [<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a                                       bf:Identifier ;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bf:identifierValue                &quot;<em>12345678</em>&quot; . ] </p></td>
+  </tr>
+</table>
+<p>Following is an example   &nbsp;of approach 2. In this case the general property bf:identifier is used and the scheme is  conveyed by the property bf:identifierScheme.</p>
+<table width="700" border="0" align="center">
+  <tr>
+    <td bgcolor="#FCFED8"><p>  <em>Example 2.</em></p>
+      <p> &lt;<a href="http://example.com/xyz/identifiers/book1/identifier1">http://example.com/xyz//Work1</a>&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bf:identifier  [<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a                                    bf:Identifier ;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bf:identifierScheme     &quot;'issn&quot; ;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bf:identifierValue      &quot;<em>12345678</em>&quot; . ] . </p></td>
+  </tr>
+</table>
+<p>In the following example (approach 3), the scheme is conveyed both by the property, bf:issn, and the property bf:identifierScheme.</p>
+<table width="700" border="0" align="center">
+  <tr>
+    <td bgcolor="#FCFED8"><p><em>Example 3.</em>    </p>
+      <p>&lt;<a href="http://example.com/xyz/identifiers/book1/identifier1">http://example.com/xyz//InstanceXYZ</a>&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bf:issn  [<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a                                       bf:Identifier ;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bf:identifierScheme     &quot;'issn&quot; ;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bf:identifierValue                &quot;<em>12345678</em>&quot; . ] </p></td>
+  </tr>
+</table>
+<p>This example is the same except that a URI is supplied rather than a literal for bf:identifierScheme.</p>
+<table width="700" border="0" align="center">
+  <tr>
+    <td bgcolor="#FCFED8"><p><em>Example 4.</em>    </p>
+      <p>&lt;<a href="http://example.com/xyz/identifiers/book1/identifier1">http://example.com/xyz//InstanceXYZ</a>&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bf:issn  [<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a                                       bf:Identifier ;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bf:identifierScheme     &lt;<a href="http://id.loc.gov/vocabulary/identifiers/issn">http://id.loc.gov/vocabulary/identifiers/issn</a>&gt;  ;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bf:identifierValue                &quot;<em>9780099483793</em>&quot; . ] </p></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<h3>Questions</h3>
+<ul>
+  <li>In example 3 where an identifier structure is used to represent the type-as-value, and in addition  the type-as-property  mechanism is employed, what guidelines are needed to clarify how the two can be used  together, e.g., use type-as-value to refine the type-as-property? Provide a literal for the type-as-property?   Provide a URI for the type-as-property?   </li>
+<li>Should the type-as-value  be allowed to be either literal (as in example 3) or URI (example 4)? Should guidelines say that a URI is preferred?   </li>
+  <li> If type-list  namespaces are allowed, what guidelines can be developed to encourage communities to use the same lists, to improve interoperability and  processing efficiency, and to encourage use of  publicand well-maintained lists rather than private or local.  </li>
+</ul>
+<div class="clear"><!-- --></div>
+    </div><!-- end id:main_body -->
+  </div><!-- end id:content -->
+  <!--#include virtual="/cdn/html/locfoot.html"-->
+</div><!-- end id:container -->
+</body>
+</html>

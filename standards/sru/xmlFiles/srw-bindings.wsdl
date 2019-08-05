@@ -2,8 +2,8 @@
 <!-- ZiNG SRU/SRW WSDL Specification                   -->
 <!-- Version 1.1                                       -->
 <!-- 6 October 2004                                    -->
-<definitions xmlns:srw-interfaces="http://www.loc.gov/zing/srw/interfaces/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://www.loc.gov/zing/srw/srw-bindings/" name="SRW">
-  <import namespace="http://www.loc.gov/zing/srw/interfaces/" location="srw-ports.wsdl"/>
+<definitions xmlns:srw-interfaces="http://lcnetdev.github.io/zing/srw/interfaces/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://lcnetdev.github.io/zing/srw/srw-bindings/" name="SRW">
+  <import namespace="http://lcnetdev.github.io/zing/srw/interfaces/" location="srw-ports.wsdl"/>
   <binding name="SRW-SoapBinding" type="srw-interfaces:SRWPort">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
     <operation name="SearchRetrieveOperation">

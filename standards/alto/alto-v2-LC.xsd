@@ -33,8 +33,8 @@ with the assistance of Gregor Retti (Unisversity of Innsbruck), Alexander Egger 
 	3.  Push version to 2.0 to reflect change in maintenance agency.
 	4.  Removed CCS copyright statement.
 -->
-<xsd:schema targetNamespace="http://www.loc.gov/standards/alto/ns-v2#" xmlns="http://www.loc.gov/standards/alto/ns-v2#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" elementFormDefault="qualified" attributeFormDefault="unqualified">
-	<xsd:import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://www.loc.gov/standards/xlink/xlink.xsd"/>
+<xsd:schema targetNamespace="http://lcnetdev.github.io/standards/alto/ns-v2#" xmlns="http://lcnetdev.github.io/standards/alto/ns-v2#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://lcnetdev.github.io/standards/xlink/xlink.xsd"/>
 	<xsd:element name="alto">
 		<xsd:annotation>
 			<xsd:documentation>ALTO (analyzed layout and text object) stores layout information and 

@@ -10,7 +10,7 @@
 @import url(../css/sru-base.css);
 </style>
 <meta http-equiv="Content-Language" content="en-us">
-<link rel="shortcut icon" href="http://www.loc.gov:8081/standards/sru/images/favicon.ico">
+<link rel="shortcut icon" href="http://lcnetdev.github.io:8081/standards/sru/images/favicon.ico">
 <!-- InstanceBeginEditable name="head" -->
 <meta name="keywords" content="cql bibliographic searching sru search retrieval url standards library congress">
 <meta name="description" content="CQL Bibliographic Searching - SRU: Search/Retrieval via URL (Standards, Library of Congress)">
@@ -33,7 +33,7 @@
 <input type="hidden" name="rq" value="0">
 <input type="hidden" name="qc" value="">
 <table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
-  <div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div></td>
+  <div class="sitenav"><a href="http://lcnetdev.github.io/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://lcnetdev.github.io/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div></td>
 <td width="116"><select name="qp" tabindex="1">
 <option value="url:/sru" selected>SRU Web Pages</option>
 <option value="url:/standards url:/ead url:/marc">Standards Pages</option>
@@ -158,7 +158,7 @@
         <li> bib.nameAuthority</li>
         <li>bib.role</li>
         <li>bib.roleAuthority<br>
-          default <a href="http://www.loc.gov/marc/sourcecode/relator/relatorlist.html">marcrelator</a><br>
+          default <a href="http://lcnetdev.github.io/marc/sourcecode/relator/relatorlist.html">marcrelator</a><br>
         </li>
       </ul>
       <p><em>Examples</em></p>
@@ -183,7 +183,7 @@
 <ul>
         <li>In example 5, &quot;role=composer/bib.roleAuthority=marcrelator&quot; means
           that the 'role'&nbsp; &quot;composer&quot; is taken from the list 'marcrelator'
-          which is intended to be a nickname for the list of roles at <a href="http://www.loc.gov/marc/sourcecode/relator/relatorlist.html">http://www.loc.gov/marc/sourcecode/relator/relatorlist.html</a>.</li>
+          which is intended to be a nickname for the list of roles at <a href="http://lcnetdev.github.io/marc/sourcecode/relator/relatorlist.html">http://lcnetdev.github.io/marc/sourcecode/relator/relatorlist.html</a>.</li>
         <li>So, as seen in example 6, to do an <strong>author search</strong>,
           use &quot;bib.role=author/bib.roleAuthority=marcrelator&quot;.</li>
         <li>lcnaf refers to the LC name authority file, searchable at <a href="http://authorities.loc.gov/">http://authorities.loc.gov/</a>.
@@ -304,7 +304,7 @@
       </ul>
       <p><em>Notes</em></p>
 <ul>
-        <li>modsPhysicalForm refers to the list at <a href="http://www.loc.gov/marc/sourcecode/form/formlist.html">http://www.loc.gov/marc/sourcecode/form/formlist.html</a></li>
+        <li>modsPhysicalForm refers to the list at <a href="http://lcnetdev.github.io/marc/sourcecode/form/formlist.html">http://lcnetdev.github.io/marc/sourcecode/form/formlist.html</a></li>
       </ul>
       <hr size="1" noshade>
       <h2><a name="genre"></a>Searching by Resource Type/Genre </h2>
@@ -340,7 +340,7 @@
       <li>bib.genre is for use with a controlled vocabulary. If the authority
         is omited then a default is assumed (specified in the server's explain
         information).</li>
-      <li>'modsGenre' refers to the list at <a href="http://www.loc.gov/marc/sourcecode/genre/genrelist.html">http://www.loc.gov/marc/sourcecode/genre/genrelist.html</a>.</li>
+      <li>'modsGenre' refers to the list at <a href="http://lcnetdev.github.io/marc/sourcecode/genre/genrelist.html">http://lcnetdev.github.io/marc/sourcecode/genre/genrelist.html</a>.</li>
       <li>'modsResource' refers to the enumerated list for resourceType in the
         MODS schema.</li>
       <li>Although as noted above, no bib index is defined for resource type
@@ -374,7 +374,7 @@
       <li>This index is for use with a controlled vocabulary. If the authority
         is omited then a default is assumed (specified in the server's explain
         information).</li>
-      <li>'modsAudience' refers to the list at <a href="http://www.loc.gov/marc/sourcecode/target/targetlist.html">http://www.loc.gov/marc/sourcecode/target/targetlist.html</a></li>
+      <li>'modsAudience' refers to the list at <a href="http://lcnetdev.github.io/marc/sourcecode/target/targetlist.html">http://lcnetdev.github.io/marc/sourcecode/target/targetlist.html</a></li>
     </ul>
     <hr size="1" noshade>
     <h2><a name="classification"></a>Searching by Classification</h2>
@@ -401,8 +401,8 @@
         is omited then a default is assumed (specified in the server's explain
         information).</li>
       <li>'lcc' as the class authority means the value is from the list at:<br>
-          <a href="http://www.loc.gov/marc/sourcecode/classification/classificationsource.html">http://www.loc.gov/marc/sourcecode/classification/classificationsource.html</a>,
-          and refers to &quot;<a href="http://www.loc.gov/catdir/cpso/lcco/lcco.html">Library
+          <a href="http://lcnetdev.github.io/marc/sourcecode/classification/classificationsource.html">http://lcnetdev.github.io/marc/sourcecode/classification/classificationsource.html</a>,
+          and refers to &quot;<a href="http://lcnetdev.github.io/catdir/cpso/lcco/lcco.html">Library
           of Congress classification</a>&quot;. For the example, click on &quot;R&quot; and
           then &quot;Subclass
           RF&quot; see that RF110-320 is the classification for &quot;Otology.
@@ -441,7 +441,7 @@
     </ul>
     <p><em>Notes</em></p>
 <ul>
-      <li><a href="http://www.loc.gov/marc/countries/">http://www.loc.gov/marc/countries/</a> lists
+      <li><a href="http://lcnetdev.github.io/marc/countries/">http://lcnetdev.github.io/marc/countries/</a> lists
         countries by name and code. marcCC is for country code and marcCN is
         for country name.</li>
     </ul>
@@ -507,7 +507,7 @@
 <ul>
       <li>It remains an open question whether values should be restricted to
         the above two (in which case a diagnostic needs to be defined) or extensible
-        to other values.<a href="http://www.loc.gov/marc/sourcecode/form/formlist.html"></a>
+        to other values.<a href="http://lcnetdev.github.io/marc/sourcecode/form/formlist.html"></a>
       </ul>
    
     <hr size="1" noshade>
@@ -552,7 +552,7 @@
           <li> bib.nameAuthority</li>
           <li>bib.role</li>
           <li>bib.roleAuthority<br>
-            default <a href="http://www.loc.gov/marc/sourcecode/relator/relatorlist.html">marcrelator</a></li>
+            default <a href="http://lcnetdev.github.io/marc/sourcecode/relator/relatorlist.html">marcrelator</a></li>
         </ul></td>
       </tr>
       <tr>
@@ -702,8 +702,8 @@
 </td></tr>
 
 </table>
-<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://www.loc.gov/">The 
-        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://lcnetdev.github.io/">The 
+        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://lcnetdev.github.io/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div>
       <br>
   <span class="sitenav">
   <!-- #BeginDate format:Am1 -->January 31, 2008<!-- #EndDate -->

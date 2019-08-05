@@ -2,22 +2,22 @@
 <xsl:stylesheet version="1.0"
 
 	xmlns:xlink="http://www.w3.org/1999/xlink" 
-	xmlns:mods="http://www.loc.gov/mods/v3"
+	xmlns:mods="http://lcnetdev.github.io/mods/v3"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-	xmlns:zs="http://www.loc.gov/zing/srw/"
+	xmlns:zs="http://lcnetdev.github.io/zing/srw/"
 	exclude-result-prefixes="mods zs" >
 	<xsl:output method="html" indent="yes" encoding="UTF-8"/>
 	 <!-- Stylesheet to unwrap z3950 search records and transform 
 	 MODS3 to HTML: brief version
 	-->
 
-<xsl:variable name="dictionary" select="document('http://www.loc.gov/standards/mods/modsDictionary.xml')/dictionary"/>
+<xsl:variable name="dictionary" select="document('http://lcnetdev.github.io/standards/mods/modsDictionary.xml')/dictionary"/>
 	<xsl:template match="/">	
 		<html>
 			<head>
 				<style type="text/css">TD {vertical-align:top}</style>
 				<title>Search Results: MODS Brief Format</title>
-				<link href="http://www.loc.gov/standards/mods/v3/zsCitation.css" type="text/css" rel="stylesheet"/>
+				<link href="http://lcnetdev.github.io/standards/mods/v3/zsCitation.css" type="text/css" rel="stylesheet"/>
 			</head>
 			<body>
 			<table width="90%" align="center" cellspacing="0" bgColor="#ffffcc" >
@@ -150,6 +150,6 @@
 
 </xsl:stylesheet><!-- Stylus Studio meta-information - (c)1998-2003 Copyright Sonic Software Corporation. All rights reserved.
 <metaInformation>
-<scenarios ><scenario default="no" name="Scenario2" userelativepaths="yes" externalpreview="no" url="http://www.loc.gov/standards/mods/instances/mods99042030.xml" htmlbaseurl="" outputurl="" processortype="internal" commandline="" additionalpath="" additionalclasspath="" postprocessortype="none" postprocesscommandline="" postprocessadditionalpath="" postprocessgeneratedext=""/><scenario default="yes" name="MODS to HTML" userelativepaths="yes" externalpreview="no" url="..\..\..\temp\zsExample.xml" htmlbaseurl="" outputurl="..\test_files\modshtml.html" processortype="xalan" commandline="" additionalpath="" additionalclasspath="" postprocessortype="none" postprocesscommandline="" postprocessadditionalpath="" postprocessgeneratedext=""/><scenario default="no" name="Scenario2" userelativepaths="yes" externalpreview="no" url="http://www.loc.gov/standards/mods/instances/mods99042030.xml" htmlbaseurl="" outputurl="" processortype="internal" commandline="" additionalpath="" additionalclasspath="" postprocessortype="none" postprocesscommandline="" postprocessadditionalpath="" postprocessgeneratedext=""/><scenario default="no" name="MODS to HTML" userelativepaths="yes" externalpreview="no" url="..\..\..\temp\zsExample.xml" htmlbaseurl="" outputurl="..\test_files\modshtml.html" processortype="internal" commandline="" additionalpath="" additionalclasspath="" postprocessortype="none" postprocesscommandline="" postprocessadditionalpath="" postprocessgeneratedext=""/></scenarios><MapperInfo srcSchemaPath="" srcSchemaRoot="" srcSchemaPathIsRelative="yes" srcSchemaInterpretAsXML="no" destSchemaPath="" destSchemaRoot="" destSchemaPathIsRelative="yes" destSchemaInterpretAsXML="no"/>
+<scenarios ><scenario default="no" name="Scenario2" userelativepaths="yes" externalpreview="no" url="http://lcnetdev.github.io/standards/mods/instances/mods99042030.xml" htmlbaseurl="" outputurl="" processortype="internal" commandline="" additionalpath="" additionalclasspath="" postprocessortype="none" postprocesscommandline="" postprocessadditionalpath="" postprocessgeneratedext=""/><scenario default="yes" name="MODS to HTML" userelativepaths="yes" externalpreview="no" url="..\..\..\temp\zsExample.xml" htmlbaseurl="" outputurl="..\test_files\modshtml.html" processortype="xalan" commandline="" additionalpath="" additionalclasspath="" postprocessortype="none" postprocesscommandline="" postprocessadditionalpath="" postprocessgeneratedext=""/><scenario default="no" name="Scenario2" userelativepaths="yes" externalpreview="no" url="http://lcnetdev.github.io/standards/mods/instances/mods99042030.xml" htmlbaseurl="" outputurl="" processortype="internal" commandline="" additionalpath="" additionalclasspath="" postprocessortype="none" postprocesscommandline="" postprocessadditionalpath="" postprocessgeneratedext=""/><scenario default="no" name="MODS to HTML" userelativepaths="yes" externalpreview="no" url="..\..\..\temp\zsExample.xml" htmlbaseurl="" outputurl="..\test_files\modshtml.html" processortype="internal" commandline="" additionalpath="" additionalclasspath="" postprocessortype="none" postprocesscommandline="" postprocessadditionalpath="" postprocessgeneratedext=""/></scenarios><MapperInfo srcSchemaPath="" srcSchemaRoot="" srcSchemaPathIsRelative="yes" srcSchemaInterpretAsXML="no" destSchemaPath="" destSchemaRoot="" destSchemaPathIsRelative="yes" destSchemaInterpretAsXML="no"/>
 </metaInformation>
 -->

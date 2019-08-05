@@ -48,7 +48,7 @@ adapted for MODS RDF, by Ray Denenberg, March 2012
         <xsl:variable name="localNamespaces">
         <vars:namespaces>
             <vars:ns prefix="ri" value="http://id.loc.gov/ontologies/RecordInfo#"/>
-   <vars:ns prefix="madsrdf" value="http://www.loc.gov/mads/rdf/v1#"/> 
+   <vars:ns prefix="madsrdf" value="http://lcnetdev.github.io/mads/rdf/v1#"/> 
             <vars:ns prefix="modsrdf" value="#"/>
         </vars:namespaces>
     </xsl:variable>
@@ -218,12 +218,12 @@ adapted for MODS RDF, by Ray Denenberg, March 2012
                 </tr>
             </xsl:if>
             <xsl:call-template name="rdftypes"/>
-            <xsl:if test="rdfs:subClassOf or $mads2skos/rdf:RDF/rdf:Description[@rdf:about=concat('http://www.loc.gov/mads/rdf/v1' , $cname)]/rdfs:subClassOf">
+            <xsl:if test="rdfs:subClassOf or $mads2skos/rdf:RDF/rdf:Description[@rdf:about=concat('http://lcnetdev.github.io/mads/rdf/v1' , $cname)]/rdfs:subClassOf">
                 <tr>
                     <td class="tdleft">SubClass Of: </td>
                     <td>
                         <xsl:apply-templates select="rdfs:subClassOf"/>
-                        <xsl:apply-templates select="$mads2skos/rdf:RDF/rdf:Description[@rdf:about=concat('http://www.loc.gov/mads/rdf/v1' , $cname)]/rdfs:subClassOf"/>
+                        <xsl:apply-templates select="$mads2skos/rdf:RDF/rdf:Description[@rdf:about=concat('http://lcnetdev.github.io/mads/rdf/v1' , $cname)]/rdfs:subClassOf"/>
                         <xsl:call-template name="spaces"/>
                     </td>
                 </tr>
@@ -254,11 +254,11 @@ adapted for MODS RDF, by Ray Denenberg, March 2012
                 </tr>
             </xsl:if>
             <!--
-            <xsl:if test="$mads2skos/rdf:RDF/rdf:Description[@rdf:about eq concat('http://www.loc.gov/mads/rdf/v1' , $cname)]">
+            <xsl:if test="$mads2skos/rdf:RDF/rdf:Description[@rdf:about eq concat('http://lcnetdev.github.io/mads/rdf/v1' , $cname)]">
                 <tr>
                     <td class="tdleft">SKOS Mapping: </td>
                     <td>
-                        <xsl:apply-templates select="$mads2skos/rdf:RDF/rdf:Description[@rdf:about=concat('http://www.loc.gov/mads/rdf/v1' , $cname)]/*"/>
+                        <xsl:apply-templates select="$mads2skos/rdf:RDF/rdf:Description[@rdf:about=concat('http://lcnetdev.github.io/mads/rdf/v1' , $cname)]/*"/>
                     </td>
                 </tr>  
             </xsl:if>
@@ -330,12 +330,12 @@ Following commented out for MODS RDF
                 </tr>
             </xsl:if>
             <xsl:call-template name="rdftypes"/>
-            <xsl:if test="rdfs:subPropertyOf or $mads2skos/rdf:RDF/rdf:Description[@rdf:about=concat('http://www.loc.gov/mads/rdf/v1' , $cname)]/rdfs:subPropertyOf">
+            <xsl:if test="rdfs:subPropertyOf or $mads2skos/rdf:RDF/rdf:Description[@rdf:about=concat('http://lcnetdev.github.io/mads/rdf/v1' , $cname)]/rdfs:subPropertyOf">
                 <tr>
                     <td>SubProperty Of: </td>
                     <td>
                         <xsl:apply-templates select="rdfs:subPropertyOf"/>
-                        <xsl:apply-templates select="$mads2skos/rdf:RDF/rdf:Description[@rdf:about=concat('http://www.loc.gov/mads/rdf/v1' , $cname)]/rdfs:subPropertyOf"/>
+                        <xsl:apply-templates select="$mads2skos/rdf:RDF/rdf:Description[@rdf:about=concat('http://lcnetdev.github.io/mads/rdf/v1' , $cname)]/rdfs:subPropertyOf"/>
                         <xsl:call-template name="spaces"/>
                     </td>
                 </tr>
@@ -367,11 +367,11 @@ Following commented out for MODS RDF
                     </td>
                 </tr>
             </xsl:if>
-            <xsl:if test="$mads2skos/rdf:RDF/rdf:Description[@rdf:about=concat('http://www.loc.gov/mads/rdf/v1' , $cname)]/owl:equivalentProperty">
+            <xsl:if test="$mads2skos/rdf:RDF/rdf:Description[@rdf:about=concat('http://lcnetdev.github.io/mads/rdf/v1' , $cname)]/owl:equivalentProperty">
                 <tr>
                     <td>Equivalent Property: </td>
                     <td>
-                        <xsl:apply-templates select="$mads2skos/rdf:RDF/rdf:Description[@rdf:about=concat('http://www.loc.gov/mads/rdf/v1' , $cname)]/owl:equivalentProperty"/>
+                        <xsl:apply-templates select="$mads2skos/rdf:RDF/rdf:Description[@rdf:about=concat('http://lcnetdev.github.io/mads/rdf/v1' , $cname)]/owl:equivalentProperty"/>
                         <xsl:call-template name="spaces"/>
                     </td>
                 </tr>

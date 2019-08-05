@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<title>What's New in BIBFRAME 2.0 (BIBFRAME - Bibliographic Framework Initiative, Library of Congress)</title>
+<meta name="keywords" content="bibframe, BIBFRAME 2.0, category view, bibliographic framework, transition, initiative, marc, cataloging, library of congress">
+<meta name="description" content="Following is a list of changes from BIBFRAME 1.0 to 2.0. These are the more significant changes; the list is not intended to be exhaustive.  (BIBFRAME - Bibliographic Framework Initiative, Library of Congress)">
+
+<link rel="dc.relation.isPartOf" href="http://lcnetdev.github.io/bibframe/" title="BIBFRAME - Bibliographic Framework Initiative (Library of Congress)">
+<meta name="dc.subject" content="bibliographic framework">
+<meta name="dc.subject" content="BIBFRAME 2.0">
+<meta name="dc.subject" content="BIBFRAME Resource">
+<meta name="dc.subject" content="bibframe">
+<meta name="dc.type" content="web page">
+<meta name="dc.identifier" content="http://lcnetdev.github.io/bibframe/docs/bibframe2-whatsnew.html">
+<meta name="dc.language" content="en">
+
+<link type="text/css" media="screen" rel="stylesheet" href="../css/styles.css">
+<link type="text/css" media="print" rel="stylesheet" href="/css/loc_print_v2.css">
+<!--[if lte IE 7]><link type="text/css" media="screen" rel="stylesheet" href="/css/loc_lte_ie6.css"><![endif]-->
+<!--#include virtual="/bibframe/include/share-tool.html"-->
+<script type="text/javascript" src="http://cdn.loc.gov/js/lib/modernizr-1.5.min.js"></script>
+</head>
+<body>
+<a id="skip" href="#skip_menu">skip navigation</a>
+<div id="container">
+  <!--#include virtual="../include/branding.html"-->
+  <!--#include virtual="/cdn/html/lochead.html"-->
+  <div id="crumb_nav"><a href="http://lcnetdev.github.io">The Library of Congress</a> &gt; <a href="/bibframe/">BIBFRAME</a> &gt; <a href="index.html">Model &amp; Vocabulary</a> &gt; What's new in BIBFRAME 2.0 </div>
+  <div id="content">
+    <!--#include virtual="../include/leftnav.html"-->
+    <div id="main_body">
+    	<!--#include virtual="../include/share-tool-bar.html"-->
+      <div id="page_head"><span style="width: 100%;"><a name="skip_menu"></a></span>
+        <h1>What's New in BIBFRAME 2.0</h1>
+      </div>
+      
+      <p>Following is a list of changes from BIBFRAME 1.0 to  2.0.  These are the more significant  changes; the list is not intended to be exhaustive. </p>
+      <ul>
+        <li><strong>Elimination of Authority class</strong>. Persons, organizations, places (things with names) are represented as  real world objects  rather than  identified by name.<br>
+        </li>
+        <li><strong>Elimination of Annotation class</strong>. Things that were annotations in 1.0, e.g. tableOfContents, are now  properties. <br>
+        </li>
+        <li><strong>Introduction of items</strong>. Class  bf:Item is introduced for items (which were represented as annotations in 1.0).<br>
+        </li>
+        <li><strong>Introduction  of events</strong>. Class bf:Event is  introduced. See  <a href="http://lcnetdev.github.io/bibframe/docs/pdf/bf2-eventmodel-march2017.pdf">http://lcnetdev.github.io/bibframe/docs/pdf/bf2-eventmodel-march2017.pdf</a> (PDF, 892 KB).</li>
+
+        <li><strong>Remodeling of titles</strong>. See <a href="http://lcnetdev.github.io/bibframe/docs/pdf/bf2-titles-march2017.pdf">http://lcnetdev.github.io/bibframe/docs/pdf/bf2-titles-march2017.pdf</a> (PDF, 195 KB).  Most notably,  classes WorkTitle and InstanceTitle are  removed (merged into bf:Title).</li>
+        <li><strong>Remodeling of identifiers</strong>. See <a href="http://lcnetdev.github.io/bibframe/docs/pdf/bf2-identifiers-march2017.pdf">http://lcnetdev.github.io/bibframe/docs/pdf/bf2-identifiers-march2017.pdf</a> (PDF, 192 KB).  Most notably, identifier types are distinguished by class rather than property.  (1.0 had many identifier properties and a single identifier class.  2.0 has a single identifier property and many  identifier classes.)</li>
+        <li><strong>Remodeling of notes</strong>. See <a href="http://lcnetdev.github.io/bibframe/docs/pdf/bf2-notes-march2017.pdf">http://lcnetdev.github.io/bibframe/docs/pdf/bf2-notes-march2017.pdf</a> (PDF, 136 KB)<br>
+        </li>
+        <li><strong>Remodeling of roles</strong>.  See <a href="http://lcnetdev.github.io/bibframe/docs/pdf/bf2-roles-march2017.pdf">http://lcnetdev.github.io/bibframe/docs/pdf/bf2-roles-march2017.pdf</a> (PDF, 89 KB) <br>
+        Class bf:Contribution is introduced which pairs agents and roles.</li>
+        <li><strong>Ontology</strong>. BIBFRAME 2.0 is formally expressed as an OWL rather than  an RDFS ontology. Many properties are now defined as object properties.  Several properties now have inverses defined.</li>
+        <li>Addition of several  properties and classes to support better alignment with cataloging norms.</li>
+      </ul>
+
+      <p class="backtotop"><a href="#skip_menu">Back to Top</a></p>
+    </div>
+    <div class="clear"><!-- --></div>
+    </div><!-- end id:main_body -->
+  </div><!-- end id:content -->
+  <!--#include virtual="/cdn/html/locfoot.html"-->
+</div><!-- end id:container -->
+</body>
+</html>

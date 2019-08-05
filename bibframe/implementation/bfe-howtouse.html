@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js">
+<head>
+<title>Using the BIBFRAME Editor (BIBFRAME - Bibliographic Framework Initiative, Library of Congress)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="editor, how to, bibframe, bibliographic framework, transition, initiative, marc, cataloging, library of congress" />
+<meta name="description" content="The BIBFRAME Editor (BFE) is a simple tool that enables input of any BIBFRAME vocabulary element. The BFE will be frequently improved as small features are added and user comments come in. There is a Demo version that you may directly experiment with. In addition, our primary purpose for the tool is the open source Download version of the software that you may take and integrate into your experimental systems, enabling many features that the Demo cannot provide." />
+
+<link rel="dc.relation.isPartOf" href="http://lcnetdev.github.io/bibframe/" title="BIBFRAME - Bibliographic Framework Initiative (Library of Congress)" />
+<meta name="dc.subject" content="bibliographic framework" />
+<meta name="dc.subject" content="bibframe" />
+<meta name="dc.subject" content="editor" />
+<meta name="dc.type" content="webpage" />
+<meta name="dc.identifier" content="http://lcnetdev.github.io/bibframe/implementation/bfe-howtouse.html" />
+<meta name="dc.language" content="en" />
+
+<link type="text/css" media="screen" rel="stylesheet" href="../css/styles.css" />
+<link type="text/css" media="print" rel="stylesheet" href="/css/loc_print_v2.css" />
+<!--[if lte IE 7]><link type="text/css" media="screen" rel="stylesheet" href="/css/loc_lte_ie6.css" /><![endif]-->
+<!--#include virtual="/bibframe/include/share-tool.html"-->
+<script type="text/javascript" src="http://cdn.loc.gov/js/lib/modernizr-1.5.min.js"></script></head>
+<body>
+<a id="skip" href="#skip_menu">skip navigation</a>
+<div id="container">
+  <!--#include virtual="../include/branding.html"-->
+  <!--#include virtual="/cdn/html/lochead.html"-->
+  <div id="crumb_nav"><a href="http://lcnetdev.github.io">The Library of Congress</a> &gt; <a href="/bibframe/">BIBFRAME</a> &gt; <a href="index.html">Implementation, Tools, and Downloads</a> &gt; Using the BIBFRAME Editor</div>
+  <div id="content">
+    <!--#include virtual="../include/leftnav.html"-->
+    <div id="main_body">
+    	<!--#include virtual="../include/share-tool-bar.html"-->
+      <div id="page_head">
+        <h1><span style="width: 100%;"><a name="skip_menu"></a></span>Using the BIBFRAME Editor
+        </h1>
+      </div>
+
+     
+      <p class="msg-info">The BIBFRAME Editor (BFE) is a simple tool that enables  input of any BIBFRAME vocabulary element.   The BFE will be frequently improved as small features are added and user  comments come in.  There is a Demo  version that you may directly experiment with. In addition, our primary purpose  for the tool is the open source Download version of the software that you may  take and integrate into your experimental systems, enabling many features that  the Demo cannot provide.   </p>
+      <p>Here are some points to remember when &ldquo;playing&rdquo; with the  online Demo:</p>
+      <p>1) The only templates available to you &ldquo;out of the box&rdquo; are  holding, instance, work, authority, and &ldquo;all&rdquo;.   The tool, however, includes all the BF vocabulary  properties in support of enabling the selection of subsets (templates) of these  large templates, creating new ones for specific uses by catalogers (e.g.,  minimal description for a book, sheet music).   In the code source, the base Profiles are available for your  manipulation.</p>
+      <p>2)  There is NO back  end storage at this time in the Demo.  A  completed description is staged for export and saving but until we have added a  datastore to the Demo you cannot save your input.  It is expected that if you Download you are  planning to use the tool with a datastore, which you will need to configure  locally and from which you could retrieve descriptions for editing. </p>
+      <p>3)  The left hand  column of the input screen lists the templates currently available.  These are fully configurable if you download  the source code.  It is where we plan to  add ones from time to time on the Demo.</p>
+      <p>4)  The right side of  the input screen lists the resource template(s) and its properties for describing  material.</p>
+      <p>5)  A few fields  feature a typeahead, or lookup, service.    The Demo looks only at the LC&rsquo;s  ID.LOC.GOV at the moment, but with Download developers can create new lookup  points, bringing in lists from other Linked Data services.  The data is then recorded via a URI to the  data.</p>
+      <p>6)  For any label  preceding a data box, the definition may be found in the <a href="http://bibframe.org/vocab/" class="external">BIBFRAME Vocabulary</a>.</p>
+      <p>7)  If an entity is  structured in the BIBFRAME Vocabulary, then click on the data box to bring up a  new template for the structured components.</p>
+      <p>8)  The Demo works  under a number of browsers (Firefox, Chrome) but not all IE browsers.</p>
+    </div>
+    <!-- end id:main_body -->
+  </div><!-- end id:content -->
+  <!--#include virtual="/cdn/html/locfoot.html"-->
+</div><!-- end id:container -->
+</body>
+</html>

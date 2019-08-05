@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xlink="http://www.w3.org/TR/xlink" xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns="http://www.loc.gov/MARC21/slim" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" exclude-result-prefixes="marc">
+<xsl:stylesheet version="1.0" xmlns:xlink="http://www.w3.org/TR/xlink" xmlns:marc="http://lcnetdev.github.io/MARC21/slim" xmlns="http://lcnetdev.github.io/MARC21/slim" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" exclude-result-prefixes="marc">
 	<xsl:output method="xml" indent="yes" encoding="UTF-8"/>
 	<xsl:template match="marc:collection">
 		<collection>

@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js">
+<head>
+<title>Identifiers: Topics and Issues (BIBFRAME - Bibliographic Framework Initiative, Library of Congress)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="identifiers, topics, issues, listserv, bibframe, bibliographic framework, transition, initiative, marc, cataloging, library of congress" />
+<meta name="description" content="Identifiers: Topics and Issues (BIBFRAME - Bibliographic Framework Initiative, Library of Congress). On the BIBFRAME listserv there is interesting an valuable discussion on a wide variety of BIBFRAME topics. BIBFRAME Topics and Issues attempts to break down the discussion into a descrete list of topics, to describe the issues pertaining to each topic, and to record conclusions, agreements, and remaining areas of disagreement. Each topic entry will remain open and when there are new issues, conclusions, or areas of agreement or disagreement to report, the entry will be updated." />
+
+<link rel="dc.relation.isPartOf" href="http://lcnetdev.github.io/bibframe/" title="BIBFRAME - Bibliographic Framework Initiative (Library of Congress)" />
+<meta name="dc.subject" content="bibliographic framework" />
+<meta name="dc.subject" content="BIBFRAME" />
+<meta name="dc.subject" content="topics and issues" />
+<meta name="dc.subject" content="identifiers" />
+<meta name="dc.type" content="webpage" />
+<meta name="dc.identifier" content="http://lcnetdev.github.io/bibframe/topics/identifiers.html" />
+<meta name="dc.language" content="en" />
+
+<link type="text/css" media="screen" rel="stylesheet" href="../css/styles.css" />
+<link type="text/css" media="print" rel="stylesheet" href="/css/loc_print_v2.css" />
+<!--[if lte IE 7]><link type="text/css" media="screen" rel="stylesheet" href="/css/loc_lte_ie6.css" /><![endif]-->
+<!--#include virtual="/bibframe/include/share-tool.html"-->
+<script type="text/javascript" src="http://cdn.loc.gov/js/lib/modernizr-1.5.min.js"></script></head>
+<body>
+<a id="skip" href="#skip_menu">skip navigation</a>
+<div id="container">
+  <!--#include virtual="../include/branding.html"-->
+  <!--#include virtual="/cdn/html/lochead.html"-->
+  <div id="crumb_nav"><a href="http://lcnetdev.github.io">The Library of Congress</a> &gt; <a href="/bibframe/">BIBFRAME</a> &gt; <a href="index.html">Topics and Issues</a> &gt; Identifiers</div>
+  <div id="content">
+    <!--#include virtual="../include/leftnav.html"-->
+    <div id="main_body">
+    	<!--#include virtual="../include/share-tool-bar.html"-->
+            <div id="page_head"><span style="width: 100%;"><a name="skip_menu"></a></span>
+        <h1>Identifiers<br />
+          <span>BIBFRAME Topics and Issues</span></h1>
+      </div>
+ <div id="main_nav"><a href="index.html" class="ar-back">Back to Topics and Issues Home</a></div>
+      <p>A BIBFRAME resource may have several identifiers.  An Instance may have for example an  ISBN, ISSN, ISMN, and LCCN.  A Work might have an ISAN, ISTC, and ISWC. We refer to these as &quot;identifier schemes&quot;. For example, for the <em>ISSN</em>: <em>0961-8368</em>,  the identifier scheme is 'issn' and the identifier value is '0961-8368'. </p>
+      <p>For each identifier represented in the resource's description  there is a bf:Identifier, a resource which records the value of the identifier, ,information about the  identifier such as qualifier, assigners and   status, along with the identifer value. </p>
+      <h3>Issues</h3>
+      <ol>
+        <li>Av identifier is of little use unless the identifier scheme is known. The identifier scheme usually cannot be determined from the identifier value alone. How does (or should) BIBFRAME indicate the scheme?      </li>
+        <li>For a given identifier scheme, there is often a cannonical way to represent an identifer in that scheme via a URI. For example, issn '0961-8368'   can be represented as urn:ISSN:0961-8368. What is the relationship between the strings '0961-8368'   and 'urn:ISSN:0961-8368'?      </li>
+      </ol>
+      <h3><strong>Representing the Identifier Scheme</strong></h3>
+      <p>        Using the example issn 0961-8368, there are several ways to represent it.</p>
+      <p>Here, the scheme is represented by the property bf:identifierScheme, as the string &quot;issn&quot;. 
+      </p>
+      <table width="400" border="0" align="center">
+        <tr>
+          <td bgcolor="#FCFED8"><table width="600" border="0" align="center">
+            <tr>
+              <td bgcolor="#FCFED8"><p>&nbsp;&nbsp;&lt;<a href="http://linked-data.stanford.edu/works/books/1234">http://www.example.com/works</a>&gt;   a bf:Work ;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bf:title                          &quot;Protein Science&quot; ;&nbsp;                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+                &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;bf:identifier [<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  bf:Identifier ;<br />
+                <strong>&nbsp; &nbsp; &nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong>bf:identifierScheme<strong>&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;issn&quot;  ;</strong><br />
+                <strong>&nbsp; &nbsp; &nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong>bf:identifierValue<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &quot;0961-8368&quot; . ] .<br />
+              </p></td>
+            </tr>
+          </table></td>
+        </tr>
+      </table>
+      <p>Here, similarly, the scheme is represented by the property bf:identifierScheme, but instead of a string, a resource (<strong><a href="http://id.loc.gov/vocabulary/identifiers/isbn">http://id.loc.gov/vocabulary/identifiers/issn</a></strong>) is supplied.</p><table width="400" border="0" align="center">
+        <tr>
+          <td bgcolor="#FCFED8"><table width="600" border="0" align="center">
+            <tr>
+              <td bgcolor="#FCFED8"><p>&nbsp;&nbsp;&lt;<a href="http://linked-data.stanford.edu/works/books/1234">http://www.example.com/works</a>&gt;   a bf:Work ;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bf:title                          &quot;Protein Science&quot; ;&nbsp;                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;bf:identifier [<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  bf:Identifier ;<br />
+<strong>&nbsp; &nbsp; &nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong>bf:identifierScheme<strong>&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;&lt;<a href="http://id.loc.gov/vocabulary/identifiers/isbn">http://id.loc.gov/vocabulary/identifiers/issn</a>&gt;&quot;  ;</strong><br />
+<strong>&nbsp; &nbsp; &nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong>bf:identifierValue<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &quot;0961-8368&quot; . ] .<br />
+              </p></td>
+            </tr>
+          </table></td>
+        </tr>
+      </table>
+      <p>bf:issn is a subproperty of bf:identifier (used in the above examples). So here, the scheme is indicated by the property, and so bf:identifierScheme is not necessary.</p>
+      <table width="400" border="0" align="center">
+      <tr>
+        <td bgcolor="#FCFED8"><table width="600" border="0" align="center">
+          <tr>
+            <td bgcolor="#FCFED8"><table width="400" border="0" align="center">
+              <tr>
+                <td bgcolor="#FCFED8"><table width="600" border="0" align="center">
+                  <tr>
+                    <td bgcolor="#FCFED8"><p>&nbsp;&nbsp;&lt;<a href="http://linked-data.stanford.edu/works/books/1234">http://www.example.com/works</a>&gt;   a bf:Work ;<br />
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bf:title                          &quot;Protein Science&quot; ;&nbsp;                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+                      &nbsp; &nbsp;&nbsp;&nbsp;<strong>&nbsp;bf:issn</strong> [<br />
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  bf:Identifier ;<br />
+                      <strong>&nbsp; &nbsp; &nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong>bf:identifierValue<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>  &quot;0961-8368&quot; . ] .<br />
+                    </p></td>
+                  </tr>
+                </table></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+      </table>
+      <p>There are roughly 35 or so of these subproperties of bf:identifier, corresponding to identifier schemes. </p>
+      <p><em>Note: among these properties are bf:urn and bf:uri. These are not proper identifier schemes and these properties will probably be removed.</em></p>
+      <p>For those schemes not represented by a property, bf:identifierScheme may be used to indicate the scheme.      </p>
+      <h3><strong>URI Representation</strong></h3>
+      <p> For a given identifier scheme, there is often a cannonical way to represent an identifer in that scheme via a URI. The benefit of supplying the URI representation is that it provides a uniform/normalized form for better performance. (It is not intended that by supplying the URI form there is any guarantee that the URI will resolve.)</p>
+      <p>'urn:ISSN:0961-8368' is the URI representation of issn '0961-8368':</p>
+      <table width="400" border="0" align="center">
+        <tr>
+          <td bgcolor="#FCFED8"><table width="600" border="0" align="center">
+            <tr>
+              <td bgcolor="#FCFED8"><p>&nbsp;&nbsp;&lt;<a href="http://linked-data.stanford.edu/works/books/1234">http://www.example.com/works</a>&gt;   a bf:Work ;<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bf:title                          &quot;Protein Science&quot; ;&nbsp;                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+                &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;bf:identifier [<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  bf:Identifier ;<br />
+                <strong>&nbsp; &nbsp; &nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong>bf:identifierScheme<strong>&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>&nbsp;&quot;issn&quot;  <strong>;</strong><br />
+                <strong>&nbsp; &nbsp; &nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong>bf:identifierValue<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &quot;</strong>0961-8368&quot; ;<br />
+                <strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bf:uriRepresentation&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &ldquo;urn:ISSN:0961-8368&rdquo;</strong><strong></strong> &nbsp;. ] .</p></td>
+            </tr>
+          </table></td>
+        </tr>
+      </table>
+      <p><em>Note: the property bf:uriRepresentation is not yet part of the BIBFRAME vocabulary. It is proposed for addition. </em></p>
+      <p>If the string '0961-8368' is an identifier whose scheme is 'issn', what is the string 'urn:ISSN:0961-8368'? Is it another identifier for the same resource, with a different scheme? No, it is not. Its scheme cannot be 'urn' because there may be many identifiers (of different schemes) that have urn representations. ( A resource can have only one identifier in any given scheme.) For the same reason, the scheme cannot be 'uri'. </p>
+      <p>So, 'urn:ISSN:0961-8368' is not a separate identifier, it is simply said to be &quot;the URI representation of issn 0961-8368&quot;.      </p>
+      <p><strong>Last Updated: </strong>
+      <!-- #BeginDate format:Am1 -->October 23, 2014<!-- #EndDate --></p>
+      <div class="clear"><!-- --></div>
+    </div><!-- end id:main_body -->
+  </div><!-- end id:content -->
+  <!--#include virtual="/cdn/html/locfoot.html"-->
+</div><!-- end id:container -->
+</body>
+</html>

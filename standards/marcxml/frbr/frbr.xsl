@@ -1,5 +1,5 @@
 <?xml version='1.0'?>
-<xsl:stylesheet version="2.0" xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:stylesheet version="2.0" xmlns:marc="http://lcnetdev.github.io/MARC21/slim" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 <xsl:import href="MARC21slim2FullRecord.xsl"/>
 <xsl:include href="../xslt/MARC21slimUtils.xsl"/>
 
@@ -44,7 +44,7 @@
 							<xsl:otherwise>LDR6=<xsl:value-of select="$leader6"/></xsl:otherwise>
 						</xsl:choose>
 						<!--
-						<xsl:variable name="languages" select="document('http://www.loc.gov/standards/iso639-2/langcodes.xml')/languages"/>
+						<xsl:variable name="languages" select="document('http://lcnetdev.github.io/standards/iso639-2/langcodes.xml')/languages"/>
 						<xsl:value-of select="$languages/language[@ISO639-2=$langauge]/@English"/>
 						-->
 						<xsl:variable name="language" select="substring(marc:controlfield[@tag=008],36,3)"/>

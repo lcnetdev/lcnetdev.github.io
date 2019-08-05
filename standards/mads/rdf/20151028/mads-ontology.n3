@@ -1,10 +1,10 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix madsrdf: <http://www.loc.gov/mads/rdf/v1#> .
+@prefix madsrdf: <http://lcnetdev.github.io/mads/rdf/v1#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix : <http://www.loc.gov/standards/mads/rdf/v1.rdf#> .
+@prefix : <http://lcnetdev.github.io/standards/mads/rdf/v1.rdf#> .
 
 madsrdf:Address
     a owl:Class ;
@@ -1231,7 +1231,7 @@ madsrdf:workOrigin
     rdfs:label "Work locale"^^xsd:string ;
     rdfs:range madsrdf:Geographic .
 
-<http://www.loc.gov/standards/mads/rdf/v1.rdf>
+<http://lcnetdev.github.io/standards/mads/rdf/v1.rdf>
     a owl:Ontology ;
     rdfs:comment """Updated: 10 May 2012 - Added Language Class; componentList and
       elementList now has the union of rdf:List or rdf:Seq for a range."""@en .

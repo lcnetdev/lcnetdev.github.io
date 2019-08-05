@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js">
+<head>
+<title>BIBFRAME 1.0 Vocabulary: Terminology and Conventions (BIBFRAME - Bibliographic Framework Initiative, Library of Congress)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="bibframe 1.0, bibframe, vocabulary, vocabulary conventions, terminology, bibliographic framework, transition, initiative, marc, cataloging, library of congress" />
+<meta name="description" content="This document represents a previous version of the BIBFRAME Vocabulary which is now deprecated. For the BIBFRAME 2.0 RDF Conventions document, go to http://lcnetdev.github.io/bibframe/docs/bibframe2-rdf-conventions.html." />
+<link rel="dc.relation.isPartOf" href="http://lcnetdev.github.io/bibframe/" title="BIBFRAME - Bibliographic Framework Initiative (Library of Congress)" />
+<meta name="dc.subject" content="bibliographic framework" /><br />
+<meta name="dc.subject" content="vocabulary" />
+<meta name="dc.subject" content="bibframe 1.0" />
+<meta name="dc.subject" content="conventions" />
+<meta name="dc.subject" content="terminology" />
+<meta name="dc.type" content="webpage" />
+<meta name="dc.identifier" content="http://lcnetdev.github.io/bibframe/docs/vocab-conventions.html" />
+<meta name="dc.language" content="en" />
+
+<link type="text/css" media="screen" rel="stylesheet" href="../css/styles.css" />
+<link type="text/css" media="print" rel="stylesheet" href="/css/loc_print_v2.css" />
+<!--[if lte IE 7]><link type="text/css" media="screen" rel="stylesheet" href="/css/loc_lte_ie6.css" /><![endif]-->
+<!--#include virtual="/bibframe/include/share-tool.html"-->
+<script type="text/javascript" src="http://cdn.loc.gov/js/lib/modernizr-1.5.min.js"></script></head>
+<body>
+<a id="skip" href="#skip_menu">skip navigation</a>
+<div id="container">
+  <!--#include virtual="../include/branding.html"-->
+  <!--#include virtual="/cdn/html/lochead.html"-->
+  <div id="crumb_nav"><a href="http://lcnetdev.github.io">The Library of Congress</a> &gt; <a href="/bibframe/">BIBFRAME</a> &gt; <a href="index.html">Model &amp; Vocabulary</a> &gt; BIBFRAME 1.0 Vocabulary: Terminology and Conventions</div>
+  <div id="content">
+    <!--#include virtual="../include/leftnav.html"-->
+    <div id="main_body">
+    	<!--#include virtual="../include/share-tool-bar.html"-->
+      <div id="page_head"><span style="width: 100%;"><a name="skip_menu"></a></span>
+        <h1>BIBFRAME 1.0 Vocabulary: Terminology and Conventions</h1>
+      </div>
+
+     
+      <p class="msg-info">This document represents a previous version of the BIBFRAME Vocabulary which is now deprecated. For the BIBFRAME 2.0 RDF Conventions document, go to <a href="/bibframe/docs/bibframe2-rdf-conventions.html" class="ar-more">http://lcnetdev.github.io/bibframe/docs/bibframe2-rdf-conventions.html</a></p>
+<p>The BIBFRAME vocabulary uses  a Linked Data model and thus leverages  the RDF modeling practice of uniquely identifying as Web resources all  entities, attributes, and relationships (i.e., properties) between entities.</p>
+      <h2>Terminology</h2>
+      <ul class="bullet">
+        <li>An <strong><em>RDF class </em></strong>is a type of  thing.</li>
+        <li>An <strong><em>RDF  property </em></strong>is a relationship between entities. It provides attributes for  an individual class.</li>
+        <li><strong><em>BIBFRAME Resource </em></strong>refers to a BIBFRAME Work,  Instance, Authority, Annotation, or any subclass of these classes.</li>
+        <li><strong><em>BIBFRAME cataloging resource</em></strong> refers to the  work or instance being described.</li>
+        <li><strong><em>BIBFRAME Core Classes</em></strong> are: Work, Instance,  Authority and Annotation. The following are the BIBFRAME definitions for these  entities. Any of the Core Classes may have subclasses, which may have their own  properties.
+          <ul>
+            <li><strong><em>BIBFRAME Work</em></strong> reflects a conceptual entity. A BIBFRAME Work is an abstract entity, as there  is no single material object one can point to. The Work exists as a Web based  control point that reflects both commonality of content between and among the  various Instances associated with the Work as well as a reference point for  other Works. Common properties of Works include contextual relationships to  BIBFRAME Authorities related to the “subjectness” (topic, person, etc.) of the work  as well as the entities (person, organization, jurisdiction, etc.) associated  with its creation. Works can relate to other works reflecting specific  relationships. </li>
+            <li><strong><em>BIBFRAME Instance</em></strong> reflects an individual, material embodiment of a BIBFRAME Work that can be  physical or digital in nature. A BIBFRAME Instance includes properties specific  to the materialization information related to the publication, production, manufacture,  and distribution of the material. Instances may relate to each other, to  BIBFRAME Works, or to Authorities related to their physical or digital aspects.</li>
+            <li><strong><em>BIBFRAME Annotation</em></strong> asserts information about a BIBFRAME Work, Instance, Authority or another  Annotation.  Annotations are asserted in  order to:<br />
+              -  Express opinions about a resource, for example a review.<br />
+              -  Attach institution specific information, for example holdings. <br />
+              -  Contribute enhancements to a resource description, for example cover art or  summary descriptions.</li>
+            <li><strong><em>BIBFRAME Authority</em></strong> is  used to identify the following that may be associated with a Work or Instance: <br />
+              <strong><em>- Agents</em></strong>: people, organizations,  jurisdictions, etc., with roles such as authors, editors, distributors, etc. <br />
+              - <strong><em>Places</em>:  </strong>geographic areas such as towns,  countries, continents, etc.<br />
+              <strong>- <em>Subjects</em>:  </strong>topical concepts, temporal concepts, places,  agents, etc. that works are about.  <br />
+              BIBFRAME Authorities are not  designed to replace existing authority efforts but rather provide a common,  lightweight abstraction layer over various different Web based authority  efforts to enable use of existing authority data.</li>
+          </ul>
+        </li>
+        <li><strong><em>Domain</em> and <em>Range</em></strong>
+          <ul>
+            <li><strong><em>Domains </em></strong>are the  subjects of a statement (i.e. an RDF triple) and indicate that a property  applies to a particular class.</li>
+          <li><strong><em>Ranges</em></strong> are the  objects of the statement, or the expected value.  Range of properties<strong></strong>may be a  URI/structured entity or literal/typed data.   If both are needed distinct properties are defined.</li></ul>
+        Domains and Ranges may be restricted to one  BIBFRAME Core Class, i.e. <em>Work</em>, <em>Instance</em>, <em>Authority</em> or <em>Annotation</em>.  If applicable to all Core Classes they have  domain Resource; if applicable to more than one but not all they have no domain  specified. </li>
+          <li><strong><em>Structured Entity:  </em></strong>a structured entity is a BIBFRAME class,  a subclass of a core class, defined to be the range of a property whose object  is intended to be structured, i.e., it is necessary to parse the value into  separate properties. In this case a class is established for the structured  entity with applicable properties.</li>
+        <li><strong><em>Local data</em></strong> may be added to any BIBFRAME  graph by adding an external namespace property that extends BIBFRAME.<strong> </strong></li>
+      </ul>
+      <h2>Naming conventions for classes  and properties</h2>
+      <ul class="bullet">
+        <li><strong>Camel case is used  for class and property names, even acronyms.</strong>   When terms conventionally have hyphens, they are changed to camelCase.<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;partNumber,  issnL, classificationDdc<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stockNumber  rather than stock-number<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IntendedAudience </li>
+        <li><strong>Class and property names are singular, not plural. </strong><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Person  (the class of persons)<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;note  (the property note)</li>
+        <li><strong>Properties may have  the same name as a class if that is appropriate</strong>; the upper case on the class  name will distinguish them.<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;property:  title<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;class:  Title</li>
+        <li> <strong>Properties and classes  must have English <u>labels</u></strong>, and may have labels in other languages in the  future.<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rdf:label &quot;Title&quot;<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rdf:label &quot;Titel&quot;^^@de</li>
+        <li><strong>Names are generally  short and descriptive</strong>, not abstract.<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;titleType   not    typeOfTitle or hasTitle</li>
+        <li><strong>All property names must be unique across  classes. </strong><br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;property:  classification <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Classification  (class) property: classificationNumber, not classification</li>
+        <li><strong>If an attribute of a class may be either a  string or URI/structured entity, then distinct properties are defined for these  two cases</strong>:<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;property  for URI: musicMedium<br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;property  for string: musicMediumNote</li>
+      </ul>
+    </div>
+
+      <div class="clear"><!-- --></div>
+    </div><!-- end id:main_body -->
+  </div><!-- end id:content -->
+  <!--#include virtual="/cdn/html/locfoot.html"-->
+</div><!-- end id:container -->
+</body>
+</html>

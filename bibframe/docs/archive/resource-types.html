@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<title>BIBFRAME Resource Types Discussion Paper: 25 June 2013 (BIBFRAME - Bibliographic Framework Initiative) | Library of Congress</title>
+<meta name="keywords" content="bibframe, category view, bibliographic framework, transition, initiative, marc, cataloging, library of congress">
+<meta name="description" content="BIBFRAME Relationships: Draft Specification, 25 April 2014. A <strong>BIBFRAME Relationship </strong>is a relationship between a BIBFRAME Work or Instance and another BIBFRAME Work  or Instance. (BIBFRAME - Bibliographic Framework Initiative, Library of Congress)">
+
+<link rel="dc.relation.isPartOf" href="http://lcnetdev.github.io/bibframe/docs/archive/" title="Document Archive: BIBFRAME - Bibliographic Framework Initiative (Library of Congress)">
+<meta name="dc.subject" content="bibliographic framework">
+<meta name="dc.subject" content="vocabulary">
+<meta name="dc.subject" content="resource types">
+<meta name="dc.subject" content="bibframe">
+<meta name="dc.type" content="webpage">
+<meta name="dc.identifier" content="http://lcnetdev.github.io/bibframe/docs/archive/resource-types.html">
+<meta name="dc.language" content="en">
+
+<link type="text/css" media="screen" rel="stylesheet" href="/bibframe/css/styles.css">
+<link type="text/css" media="print" rel="stylesheet" href="/css/loc_print_v2.css">
+<!--[if lte IE 7]><link type="text/css" media="screen" rel="stylesheet" href="/css/loc_lte_ie6.css"><![endif]-->
+<!--#include virtual="/bibframe/include/share-tool.html"-->
+<script type="text/javascript" src="http://cdn.loc.gov/js/lib/modernizr-1.5.min.js"></script></head>
+<body>
+<a id="skip" href="#skip_menu">skip navigation</a>
+<div id="container">
+  <!--#include virtual="/bibframe/include/branding.html"-->
+  <!--#include virtual="/cdn/html/lochead.html"-->
+  <div id="crumb_nav"><a href="http://lcnetdev.github.io">The Library of Congress</a> &gt; <a href="/bibframe/">BIBFRAME</a> &gt; <a href="/bibframe/docs/index.html">Model &amp; Vocabulary</a> &gt; <a href="index.html">Document Archive</a> &gt; BIBFRAME Resource Types Discussion Paper &mdash; 25 June 2013</div>
+  <div id="content">
+    <!--#include virtual="/bibframe/include/leftnav.html"-->
+    <div id="main_body">
+    	<!--#include virtual="/bibframe/include/share-tool-bar.html"-->
+      <div id="page_head"><span style="width: 100%;"><a name="skip_menu"></a></span>
+        <h1>BIBFRAME Resource Types Discussion Paper<br>
+        <span>25 June 2013</span></h1>
+      </div>
+      <ul class="bullet">
+        <li>Latest version: <a href="http://lcnetdev.github.io/bibframe/docs/archive/resource-types.html">http://lcnetdev.github.io/bibframe/docs/archive/resource-types.html</a></li>
+        <li>Editor: Rebecca Guenther</li>
+        <li>Contributors<em> (in alphabetical order)</em>: Jan Ashton, British Library; Karim Boughida, George Washington University Libraries; Alan Danskin, British Library; Corine Deliot, British Library; Ray Denenberg, Library of Congress; Nancy Fallgren, National Library of Medicine; Jean Godby, OCLC; Rebecca Guenther, Library of Congress; Reinhold Heuvelmann, German National Library; Sally McCallum, Library of Congress; Eric Miller, Zepheira; Uche Ogbuji, Zepheira; Jackie Shieh, George Washington University Libraries; Nate Trail, Library of Congress; Beacher Wiggins, Library of Congress</li>
+</ul>
+      
+      <p class="dot-top" style="margin-bottom:5px;"><strong>Status of this Document</strong></p>
+        <p><a rel="license" href="http://creativecommons.org/publicdomain/zero/1.0/"><img src="http://i.creativecommons.org/l/zero/1.0/88x31.png" style="border-style: none" alt="CC0" align="right"></a> <i>Note: This section describes the status of this document at the time of its publication. Other documents may supersede this document.</i> To the extent possible under law, <a rel="dct:publisher" href="http://lcnetdev.github.io/"><span property="dct:title">Library of Congress</span></a> has waived all copyright and related or neighboring rights to this work. This work is published from the United States.        </p>
+        <p><span class="loc_notice">This document was prepared in support of the BIBFRAME  Vocabulary 1.0 and made available to the BIBFRAME Community for review.</span>  It largely still supports the <a href="../index.html">BIBFRAME  vocabulary 2.0</a>, but it had not been updated.</p>
+ 
+      <div class="box-anchor">
+        <h3>Table of Contents </h3>
+<ul class="anchor">
+      <li>
+      <a href="#introduction"><b>Introduction</b></a></li>
+      <li> <a href="#standards"><b>Current Standards/Efforts for Creative Works Types</b></a>
+        <ol>
+          <li><a href="#standards-1">MARC/MODS</a></li>
+          <li><a href="#standards-2">RDA Content</a></li>
+          <li><a href="#standards-3">Dublin Core Resource Types</a></li>
+          <li><a href="#standards-4">Schema.org CreativeWork Subclasses and Product Types Ontology</a></li>
+        </ol>
+      </li>
+  <li><a href="#aspects"><b>Multiple Aspects of Resource Types</b></a></li>
+  <li><a href="#proposal"><b>Proposal</b></a></li>
+  <li><a href="#appendix1"><b>Appendix 1: Mapping RDA Content Types to Bibframe Creative Work Subclasses</b></a></li>
+  <li><a href="#appendix2"><b>Appendix 2: Mapping Dublin Core Resource Type to BIBFRAME Resource Type</b></a></li>
+</ul>
+</div>
+
+
+<h2 id="intro">1. Introduction</h2>
+    
+<p>Resource types are needed to establish broad categories of material which are frequently used in discovering and managing bibliographic data. In many metadata schemes this is a required element and it calls for a controlled list to be able to do anything useful with it. In BIBFRAME the broadest categorization will be subclasses of the CreativeWork class, and more specific types that characterize the physical resource will be subclasses of Instance. In looking at other attempts to categorize this information, there is wide variety in the granularity of the subclasses/terms and how to combine different aspects. This paper attempts to start a discussion so that we can understand how to represent these various aspects in BIBFRAME. It is currently limited to CreativeWork subclasses; Instance subclasses will be explored in a later paper.</p>
+
+        
+<h2 class="dot-top" id="standards">2. Current Standards/Efforts for CreativeWork Types</h2>
+<h3 id="standards-1">2.1 MARC/MODS</h3>
+            
+<p>CreativeWork subclasses are generally contained in LDR/06, which represents very broad categories. In some cases the categories combine different aspects (e.g. manuscript). There is an attempt to separate content and carrier aspects, where physical categories can be coded in 007. Additional more specific categories are in several character positions of 008, which are based on the resource types in LDR/06, as well as several variable fields (e.g. genre in 655). It is not always clear which of the various elements that carry this information apply to work vs. instance, and this will need to be analyzed further.
+MARC categories in LDR/06 are as follows. MODS resource types are essentially equivalent and the MODS term used is in parentheses after each if different from the MARC term.</p>
+			<table class="std full">
+					<tr>
+						<th width="7%">LDR/06</th>
+						<th width="20%">MARC term</th>
+						<th width="22%">MODS term</th>
+						<th width="51%">Note</th>
+					</tr>
+                <tr>
+
+                  <td>a</td>
+                  <td>Language    material </td>
+                  <td>text </td>
+                  <td>Defined as    text; serial vs. monographic categories are in LDR/07 and electronic vs    analog are elsewhere </td>
+                </tr>
+                <tr>
+                  <td>c</td>
+
+                  <td>Notated music </td>
+                  <td>notated music </td>
+                  <td> </td>
+                </tr>
+                <tr>
+                  <td>d</td>
+                  <td>Manuscript    notated music </td>
+
+                  <td>notated music + manuscript = "yes"</td>
+                  <td>Combination of term and manuscript attribute</td>
+                </tr>
+                <tr>
+                  <td>e </td>
+                  <td>Cartographic material </td>
+                  <td>cartographic </td>
+
+                  <td> </td>
+                </tr>
+                <tr>
+                  <td>f</td>
+                  <td>Manuscript    cartographic material </td>
+                  <td>cartographic + manuscript = "yes"</td>
+                  <td>Combination of term and manuscript attribute</td>
+
+                </tr>
+                <tr>
+                  <td>g</td>
+                  <td>Projected    medium </td>
+                  <td>moving image </td>
+                  <td>Equates more    or less to moving image except for slide which is still image </td>
+                </tr>
+
+                <tr>
+                  <td>I</td>
+                  <td>Nonmusical    sound recording </td>
+                  <td>sound    recording-nonmusical </td>
+                  <td> </td>
+                </tr>
+                <tr>
+
+                  <td>j</td>
+                  <td>Musical sound    recording</td>
+                  <td>sound    recording-musical</td>
+                  <td>In MODS there    is also a sound recording </td>
+                </tr>
+                <tr>
+                  <td>k</td>
+
+                  <td>Two-dimensional    nonprojectable graphic</td>
+                  <td>still image</td>
+                  <td>Equates more    or less to still image except for slide, which is included in projected </td>
+                </tr>
+                <tr>
+                  <td>m</td>
+                  <td>Computer file</td>
+
+                  <td>software,    multimedia</td>
+                  <td>Definition    says to use only for software, numeric data, computer oriented multimedia,    online systems</td>
+                </tr>
+                <tr>
+                  <td>o</td>
+                  <td>Kit</td>
+                  <td>Not in MODS</td>
+
+                  <td>Specific    definition including a mixture of components but major aspect is that it’s    instructional</td>
+                </tr>
+                <tr>
+                  <td>p</td>
+                  <td>Mixed    materials</td>
+                  <td>mixed material</td>
+
+                  <td>Also defined    as a mixture of formats and major aspect is that materials are related about    a person or body, i.e. archival material and that it’s not instructional. So    not strictly used for multiple types of resources and doesn’t exactly equate    to multimedia because of the archival aspect.)</td>
+                </tr>
+                <tr>
+                  <td>r</td>
+                  <td>Three-dimensional    artifact or naturally occurring object</td>
+                  <td>three-dimensional    object</td>
+
+                  <td> </td>
+                </tr>
+                <tr>
+                  <td>t</td>
+                  <td>Manuscript    language material</td>
+                  <td>text + manuscript = "yes"</td>
+                  <td>Combination of term and manuscript attribute</td>
+
+                </tr>
+
+          </table>
+         
+              <p>Note  this paper does not treat MARC Bibliographic Level (e.g. monograph, serial, integrating  resource, etc.). This aspect has to do with issuance and is not considered part  of resource type for purposes of this discussion.</p>
+
+          <h3 id="standards-2">2.2 RDA Content</h3>
+          <p>RDA 6.9 defines content types; these are considered "other identifying attributes of expressions". (Note that there is a Form of work, but these are much more specific, e.g. play, motion picture, radio program and does not have a controlled list within RDA.) RDA Content Type is defined as: "a categorization reflecting the fundamental form of communication in which the content is expressed and the human sense through which it is intended to be perceived." Thus it combines both the basic resource type plus another aspect (how it is to be perceived, e.g. tactile, notated. Cartographic is apparently another aspect of how it is perceived since it combines the basic content type with the cartographic aspect. Digital seems to be indicated as the value "computer" under RDA Media Type. Content type is recorded using a term on the controlled list that is part of RDA. These are:</p>
+<ul class="bullet">                                        
+<li>Text</li>
+<li>Tactile text</li>
+<li>Performed music</li>
+<li>Sounds</li>
+<li>Spoken word</li>
+<li>2 dimensional. moving image</li>
+<li>3 dimensional moving image</li>
+<li>Still image</li>
+<li>Tactile image</li>
+<li>Cartographic dataset</li>
+<li>Cartographic image</li>
+<li>Cartographic moving image</li>
+<li>Cartographic tactile image</li>
+<li>Cartographic 3 dimensional form</li>
+<li>Cartographic tactile 3 dimensional form</li>
+<li>3 dimensional form</li>
+<li>Tactile 3 dimensional form</li>
+<li>Notated music</li>
+<li>Tactile music</li>
+<li>Notated movement</li>
+<li>Tactile movement</li>
+<li>Computer dataset</li>
+<li>Computer program</li>
+</ul>
+
+<p>Some of these map to values in MARC LDR/06, although MARC provides a separate variable field to include content type (336).</p>
+              
+<h3 id="standards-3">2.3 Dublin Core Resource Types</h3>
+    
+<p>A working group developed a list of controlled values for dc:type in the late 1990s. These are also high level categorizations with some but not complete equivalence to MARC LDR/06 values. More than one can be applied; for instance  “collection” is a different aspect and is combined with another term. There are a few that are different types, such as event (perhaps that is a named entity  rather than resource type) and service (perhaps should be a subtype).  It is  not clear how broadly this set has been implemented.</p>
+
+<ul class="bullet">
+<li>Collection</li>
+<li>Dataset</li>
+<li>Event</li>
+<li>Image</li>
+<li>InteractiveResource</li>
+<li>MovingImage</li>
+<li>PhysicalObject</li>
+<li>Service</li>
+<li>Software</li>
+<li>Sound</li>
+<li>StillImage</li>
+<li>Text</li>
+</ul>
+
+<h3 id="standards-4">2.4 Schema.org CreativeWork Subclasses and Product Types Ontology</h3>
+             
+<p>Schema.org  defines subclasses of CreativeWork. These are  generally have finer granularity than  the other resource type lists and sometimes combine a number of different  aspects. Subclasses  are noted below (except a few subclasses have additional subclasses which have  not been indicated). This is understandably focused on web resources so has  limited applicability. Some of the classes may be expressed as media object  under the property encoding (e.g. an article can be a videoObject or an  audioObject)</p>
+
+<ul class="plain">
+  <li>Article
+    <ul>
+      <li>    BlogPosting</li>
+      <li>    NewsArticle</li>
+      <li>    ScholarlyArticle</li>
+    </ul>
+  </li>
+  <li>    Blog</li>
+  <li>
+    Book </li>
+  <li>    Comment</li>
+  <li>    Diet</li>
+  <li>    ExercisePlan</li>
+  <li>    ItemList</li>
+  <li>    Map</li>
+  <li>
+    MediaObject
+    <ul>
+      <li>    AudioObject</li>
+      <li>    ImageObject</li>
+      <li>    MusicVideoObject</li>
+      <li>    VideoObject</li>
+    </ul>
+  </li>
+  <li>
+    Movie</li>
+  <li>    MusicPlaylist
+    <ul>
+      <li>    MusicAlbum</li>
+    </ul>
+  </li>
+  <li>    MusicRecording</li>
+  <li>    Painting</li>
+  <li>    Photograph</li>
+  <li>
+    Recipe</li>
+  <li>    Review</li>
+  <li>    Sculpture</li>
+  <li>    SoftwareApplication
+    <ul>
+      <li>    MobileApplication</li>
+      <li>    WebApplication</li>
+    </ul>
+  </li>
+  <li>
+    TVEdisode   TVEpisode </li>
+  <li>    TVSeason</li>
+  <li>    TVSeries</li>
+  <li>    WebPage
+    <ul>
+      <li>    AboutPage</li>
+      <li>
+        CheckOutPage</li>
+      <li>    CollectionPage</li>
+      <li>    ContactPage</li>
+      <li>    ItemPage</li>
+      <li>    MedicalWebPage</li>
+      <li>
+        ProfilePage</li>
+      <li>    SearchResultsPage</li>
+    </ul>
+  </li>
+  <li>    WebPageElement
+    <ul>
+      <li>    SiteNavigationElement</li>
+      <li>    Table</li>
+      <li>
+        WPAdBlock</li>
+      <li>    WPFooter</li>
+      <li>    WPHeader</li>
+      <li>    WPSideBar</li>
+    </ul>
+  </li>
+  </ul>
+
+    
+<p>The  product types ontology (<a href="http://www.productontology.org/">www.productontology.org</a>) is closely related to schema.org and may be worth considering for resource types with finer granularity; it includes over  300,000 types for products and services (many of which are irrelevant for  bibliographic data).</p>
+        
+<h2 class="dot-top" id="aspects">3. Multiple Aspects of Resource Types</h2>        
+            
+<p>There are a variety of practices in terms of combining different aspects of the resource type. In some cases separate terms are established in the same list and multiple values used and in other cases the controlled terms "precoordinate" the different aspects.
+<p><em>The additional aspects are:</em>
+<ul class="plain">
+<li>Whether a manuscript, e.g., handwritten or typed transcript</li>
+<li>Whether a collection, e.g., aggregated work</li>
+<li>Whether digital or analog</li>
+<li>Whether tactile</li>
+</ul>
+<em>Other aspects are:</em>
+<ul class="plain">
+<li>Dissertations: this has to do with the context in which it was created (how should this be represented? Is a resource that was originally presented as a dissertation and later published still a dissertation?)</li>
+<li>Mixed material: this has a very specific definition in MARC limited to archival type objects, while some have used it as meaning having multiple forms regardless of its orientation</li>
+<li>Multimedia: this can also be multiple forms of media. In some cases it is used for web resources in general that have audio or video embedded. It implies that it's software driven.</li>
+</ul>        
+</p>
+<h2 class="dot-top" id="proposal">4. Proposal</h2>
+<p>The proposed list is a melding of the MODS, MARC, and RDA lists and checked against the other lists in this document. Multiple terms may be used to make a more specific resource type, e.g. cartographic and still image.</p>
+<p>Some subtypes are included as examples but there will be additional ones. This requires further work. Note that there will also need to be a list developed for BF Instance types such as media or carrier types; this will be forthcoming. Note that physical and digital will be included under Instance types.
+Definitions are included below (from various sources including MARC, RDA, MODS, Wikipedia, Dublin Core).</p>
+<ul class="bullet">
+<li>
+<b>Language material:</b> A form of notation for language intended to be perceived visually and understood through the use of language, i.e. text in written or spoken form.
+NOTE: although the term comes from MARC Leader/06 it expresses what we want here better than "text". This enables an audio book to be considered as language material and text/html (for a webpage, which can have image and other formats embedded) as multimedia.  Subtypes: book, journal, legislation, newspaper, article, letter, dissertation</li>
+<li>
+<b>Cartography:</b> Resources that show spatial information, including maps, atlases, globes, digital maps, and other cartographic items.
+	Subtypes:  map, globe, remote sensing image
+NOTE: This is often called "cartographic" but that term is not chosen because it is an adjective and all the other types are nouns.
+</li>
+
+<li>
+<b>Dataset:</b> Data encoded in a defined structure. Includes numeric data, environmental data, etc., used by applications software to calculate averages, correlations, etc., or to produce models, etc., but not normally displayed in its raw form.
+</li>
+<li>
+<b>Notated music:</b> Graphic, non-realized representations of musical works intended to be perceived visually or by touch.
+</li>
+<li>
+<b>Notated movement:</b> Graphic, non-realized representations of movement intended to be perceived visually or by touch, e.g. dance.</li>
+<li>
+<b>Audio:</b> Resources expressed in an audible form, including music or other sounds.
+	Subtypes: musical, nonmusical, sounds, spoken word</li>
+<li>
+<b>Still image:</b> Resources expressed through line, shape, shading, etc., intended to be perceived visually as a still image or images in two dimensions. Includes two-dimensional images and slides and transparencies.
+</li>
+<li>
+<b>Moving image:</b> Images intended to be perceived as moving, including motion pictures (using live action and/or animation), film and video recordings of performances, events, etc.  Subtypes: two-dimensional, three-dimensional
+</li>
+
+<li>
+<b>Three dimensional object:</b> Resources in a form intended to be perceived visually in three-dimensions. Includes man-made objects such as models, sculptures, clothing, and toys, as well as naturally occurring objects such as specimens mounted for viewing.
+</li>
+<li>
+<b>Software/multimedia:</b>  Electronic resources that are computer programs (i.e. digitally encoded instructions intended to be processed and performed by a computer) or resources that consist of multiple media types many of which are software driven, e.g. videogames, websites.</li>
+<li>
+<b>Mixed material:</b> Resources comprised of multiple types and not driven by software. This may include materials in two or more forms that are related by virtue of their having been accumulated by or about a person or body, e.g. archival fonds.
+</li>
+<li>
+<b>Collection:</b> An aggregation of resources.  May be combined with the above or used instead of the above.</li>
+  
+  <li>
+<b>Manuscript:</b> Resources that are written in handwriting or typescript. These are generally unique resources. To be combined with the above (they should not be used alone).</li>
+  <li>
+<b>Tactile:</b> Resources that are intended to be perceived by touch. To be combined with the above (they should not be used alone).</li>
+</ul>
+          
+<h2 class="dot-top" id="appendix1">5. <u>Appendix 1</u>: Mapping RDA Content Types to Bibframe Creative Work Subclasses</h2>        
+  <table class="std full">
+	<tr>
+		<th>RDA content type value</th>
+		<th>BIBFRAME Work subclass</th>
+	</tr>
+  <tr>
+    <td>Text</td>
+    <td>Language    material </td>
+  </tr>
+  <tr>
+    <td>Tactile    text</td>
+
+    <td>Language    material + Tactile</td>
+  </tr>
+  <tr>
+    <td>Performed    music</td>
+    <td>Audio    with subtype: musical</td>
+  </tr>
+  <tr>
+
+    <td>Sounds</td>
+    <td>Audio    with subtype: nonmusical + sounds</td>
+  </tr>
+  <tr>
+    <td>Spoken    word</td>
+    <td>Audio    with subtype: nonmusical + spoken word</td>
+  </tr>
+
+  <tr>
+    <td>2-dimensional    moving image</td>
+    <td>Moving    image with subtype: Two dimensional</td>
+  </tr>
+  <tr>
+    <td>3-dimensional    moving image</td>
+    <td>Moving    image with subtype: Three dimensional</td>
+
+  </tr>
+  <tr>
+    <td>Still    image</td>
+    <td>Still    image</td>
+  </tr>
+  <tr>
+    <td>Tactile    image</td>
+
+    <td>Still    image + Tactile</td>
+  </tr>
+  <tr>
+    <td>Cartographic    dataset</td>
+    <td>Cartography    + Dataset</td>
+  </tr>
+  <tr>
+
+    <td>Cartographic    image</td>
+    <td>Cartography    + Still image</td>
+  </tr>
+  <tr>
+    <td>Cartographic    moving image</td>
+    <td>Cartography    + Moving image</td>
+  </tr>
+
+  <tr>
+    <td>Cartographic    tactile image</td>
+    <td>Cartography    + Tactile + Still image</td>
+  </tr>
+  <tr>
+    <td>Cartographic    3-dimensional form</td>
+    <td>Cartography    + Three dimensional object</td>
+
+  </tr>
+  <tr>
+    <td>Cartographic    tactile 3-dimensional form</td>
+    <td>Cartography    + Tactile + Three dimensional object</td>
+  </tr>
+  <tr>
+    <td>3-dimensional    form</td>
+
+    <td>Three    dimensional object</td>
+  </tr>
+  <tr>
+    <td>Tactile    3-dimensional form</td>
+    <td>Three    dimensional object + Tactile</td>
+  </tr>
+  <tr>
+
+    <td>Notated    music</td>
+    <td>Notated    music</td>
+  </tr>
+  <tr>
+    <td>Tactile    music</td>
+    <td>Notated    music + Tactile</td>
+  </tr>
+
+  <tr>
+    <td>Notated    movement</td>
+    <td>Notated    movement</td>
+  </tr>
+  <tr>
+    <td>Tactile    movement</td>
+    <td>Notated    movement + Tactile</td>
+
+  </tr>
+  <tr>
+    <td>Computer    dataset</td>
+    <td>Dataset</td>
+  </tr>
+  <tr>
+    <td>Computer    program</td>
+
+    <td>Software/multimedia</td>
+  </tr>
+</table>
+           
+<h2 class="dot-top" id="appendix2">6. <u>Appendix 2</u>: Mapping Dublin Core Resource Type to BIBFRAME Resource Type</h2>        
+ <table class="std full">
+					<tr>
+						<th class="span6">DC Resource Type</th>
+						<th class="span6">BIBFRAME Resource Type</th>
+		</tr>
+  <tr>
+    <td>Collection</td>
+
+    <td>Collection</td>
+  </tr>
+  <tr>
+    <td>Dataset</td>
+    <td>Dataset</td>
+  </tr>
+  <tr>
+
+    <td>Event</td>
+    <td>No    mapping (BIBFRAME Authority) </td>
+  </tr>
+  <tr>
+    <td>Image</td>
+    <td>Still    image or Moving Image or Cartography</td>
+  </tr>
+
+  <tr>
+    <td>InteractiveResource</td>
+    <td>Software/multimedia</td>
+  </tr>
+  <tr>
+    <td>MovingImage</td>
+    <td>Moving    image</td>
+
+  </tr>
+  <tr>
+    <td>PhysicalObject</td>
+    <td>Three    dimensional object</td>
+  </tr>
+  <tr>
+    <td>Service</td>
+
+    <td>No    mapping (BIBFRAME Authority)</td>
+  </tr>
+  <tr>
+    <td>Software</td>
+    <td>Software/multimedia</td>
+  </tr>
+  <tr>
+
+    <td>Sound</td>
+    <td>Audio</td>
+  </tr>
+  <tr>
+    <td>StillImage</td>
+    <td>Still    image</td>
+  </tr>
+
+  <tr>
+    <td>Text</td>
+    <td>Language    material</td>
+  </tr>
+</table>
+
+<p class="backtotop"><a href="#skip_menu">Back to Top</a></p>
+    </div>
+    <div class="clear"><!-- --></div>
+  </div><!-- end id:main_body -->
+</div><!-- end id:content -->
+  <!--#include virtual="/cdn/html/locfoot.html"-->
+<!-- end id:container -->
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js">
+<head>
+<title>BIBFRAME Library of Congress Implementation Progress Report (BIBFRAME - Bibliographic Framework Initiative, Library of Congress)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="implementation, registerk bibframe, bibliographic framework, transition, initiative, marc, cataloging, library of congress" />
+<meta name="description" content="The BIBFRAME implementation register is established  to list BIBFRAME implementations - existing, developing, and planned. It will be maintained  here. Any organization implementing a BIBFRAME project or  application can be listed, subject to the requirements below. If an  organization has multiple BIBFRAME projects it may have each listed in a  separate entry." />
+
+<link rel="dc.relation.isPartOf" href="http://lcnetdev.github.io/bibframe/" title="BIBFRAME - Bibliographic Framework Initiative (Library of Congress)" />
+<meta name="dc.subject" content="bibliographic framework" />
+<meta name="dc.subject" content="bibframe" />
+<meta name="dc.subject" content="implementation register" />
+<meta name="dc.type" content="webpage" />
+<meta name="dc.identifier" content="http://lcnetdev.github.io/bibframe/implmentors/register.html" />
+<meta name="dc.language" content="en" />
+
+<link type="text/css" media="screen" rel="stylesheet" href="../css/styles.css" />
+<link type="text/css" media="print" rel="stylesheet" href="/css/loc_print_v2.css" />
+<!--[if lte IE 7]><link type="text/css" media="screen" rel="stylesheet" href="/css/loc_lte_ie6.css" /><![endif]-->
+<!--#include virtual="/bibframe/include/share-tool.html"-->
+<script type="text/javascript" src="http://cdn.loc.gov/js/lib/modernizr-1.5.min.js"></script></head>
+<body>
+<a id="skip" href="#skip_menu">skip navigation</a>
+<div id="container">
+  <!--#include virtual="../include/branding.html"-->
+  <!--#include virtual="/cdn/html/lochead.html"-->
+  <div id="crumb_nav"><a href="http://lcnetdev.github.io">The Library of Congress</a> &gt; <a href="/bibframe/">BIBFRAME</a> &gt; <a href="index.html">Implementation &amp; Testing</a> &gt; Implememtation Register</div>
+  <div id="content">
+    <!--#include virtual="../include/leftnav.html"-->
+    <div id="main_body">
+    	<!--#include virtual="../include/share-tool-bar.html"-->
+      <div id="page_head"><span style="width: 100%;"><a name="skip_menu"></a></span>
+        <h2>BIBFRAME Implementation Progress Report: </h2>
+        <h1>Library of Congress, October 2014</h1>
+      </div>
+
+     
+      <p>NDMSO staff are working on  various aspects of BIBFRAME with a recent focus on the vocabulary and its  transformation.  Our goal had been to  keep the vocabulary stabile for a year to enable development of test implementations,  but we have begun to compile a set of issues on the vocabulary.  The MARC to BIBFRAME transformation is also  constantly undergoing refinement, correction, and expansion in response to our  internal testing and to your testing in the testbed.  Nate Trail reloads it almost every week. We have  also been working with contractors on the tools described below.</p>
+      <p>We have also begun planning for a  BIBFRAME pilot that Beacher Wiggins, Director for cataloging and acquisitions,  plans to start next spring/summer.   We  will know more about that at the next report time. <br />
+        <br />
+      Since the spring we have completed a contract for an analysis of AV material <a href="/bibframe/docs/">BIBFRAME AV Modeling Study</a> which I hope all of you have read.  We have begun to hold meetings to sort out  the impact on accommodating their needs in BF. </p>
+      <p> In addition the following contract work is completed or underway.</p>
+      <h3><strong>Metaproxy  for BIBFRAME Output</strong></h3>
+      <p><strong>Summary:</strong><br />
+      This project enables the open  source software, Metaproxy, to send results to clients in the emerging BIBFRAME  RDF. LC uses the Metaproxy software to support the SRU and Z39.50  protocol queries to its Voyager catalog.   Although the extension to Metaproxy has been completed, replacement of  the existing version of Metaproxy at LC will take several months as it has to  go through an installation process.    With this version of Metaproxy, a user is be able to submit an  SRU request (which includes a normal CQL query) to Metaproxy and request  BIBFRAME data in the response. The request indicates this by specifying a value  of &lsquo;bibframe&rsquo; for the record Schema parameter.   After the proxy queries the MARC system and the server returns MARCXML  records to the proxy, the MARCXML records are converted by Metaproxy to  BIBFRAME. <br />
+      <strong>Contractor</strong>: Indexdata.  <br />
+        <strong>Status</strong>:
+      The software enhancement was completed in  September, but LC has work to do to install in the LC system as Metaproxy is a  key part of our ILS setup.   Indexdata  will be making a version of Metaproxy with this new enhancement available open  source (GPL) in the next few weeks. </p>
+      <h3><strong><br />
+      Preservation  Metadata for AV Materials</strong></h3>
+<p><strong>        Summary:</strong><br />
+        This study targets better  understanding of the relationship between the BIBFRAME description metadata and  PREMIS preservation metadata, in order to develop a proposal for handling  the relationship.   The contractor is analyzing an adaptation of the BIBFRAME model  proposed for AV materials in the AV Modeling Study (cited above) with respect  to the data model provided in PREMIS. This  may also include an analysis of what is available in other format-specific  metadata standards such as PBCore and EBUCore. <br />
+        <strong>Contractor</strong>: AudioVisual Preservation Solutions.  <br />
+      <strong>Study  expected</strong>:  Spring 2015.</p>
+      <h3><strong><br />
+      Search and Display   </strong></h3>
+      <p><strong>Summary:</strong><br />
+        A contractor  is developing a search and display tool, to encourage experimentation with searching and displaying BF style metadata. It will query some kind of store  (an index or database, for example) containing resource descriptions that are  compatible with the BIBFRAME Vocabulary and Model.  The tool will display the data in a way  useful for bringing out the valuable linkages in the descriptions and the  structure of the descriptions.  It will  support a form of faceting to navigate the result set and database.    We will make the resulting code available for free download so that others  can experiment with and build on the tool.   <br />
+      <strong>Contractor</strong>:  Influx Library User Experience.  <br />
+      <strong>Product  expected</strong>: Around the end of February 2015.<br />
+      <br />
+      </p>
+      <h3><strong>Profile Editor  </strong></h3>
+      <p><strong>Summary</strong><br />
+        The BIBFRAME Editor downloadable  from the BIBFRAME website needs profiles to guide the input process. Otherwise users are  confronted with all of the possible properties in BIBFRAME, an  inefficient mode of operation. This web-based application (basic  easy-to-use, HTML-based interface) will enable creation and editing of <a href="http://lcnetdev.github.io/bibframe/docs/bibframe-profiles.html">BIBFRAME Profiles</a>, thus limiting the interface properties  initially on the screen to those the user needs for the situation, for example,  type of resource (e.g., map, music, book) or the type of description (e.g.,  preliminary, brief, full)  The Profile  Editor will be able to list all local BIBFRAME Profiles, to load one such  Profile, to modify the Profile and to save the Profile, in addition to creating  new BIBFRAME Profiles and saving them.  <br />
+      <strong>Contractor</strong>:  Smart Software Solutions <br />
+      <strong>Product  expected</strong>: Around the end of February 2015.</p>
+      <h3><strong><br />
+        SRU/BIBFRAME  Search </strong></h3>
+      <p><strong>summary:</strong><br />
+        This project will enable the open  source software, Metaproxy, to retrieve data from a BIBFRAME-based triple store  data base.   This will enable the Library  of Congress to determine the issues and enhancements needed for the SRU  standard search protocol and its query language Contextual Query Language (CQL).  We want to gather  information and experience concerning the natural working relationship between  SRU and BIBFRAME.  The project will involve enhancement of Metaproxy&rsquo;s SRU search  processing and retrieval component, thus allowing anyone to run Metaproxy in  front of an SRU (or Z39.50) client to search a remote BIBFRAME/SPARQL  store.  Specifically, it would also allow  the Library of Congress to run their Metaproxy front-end in front of their own  triple store.<br />
+      <strong>Contractor</strong>:  Indexdata  <br />
+      <strong>Product expected</strong>: Around the end of January 2015.</p>
+<p class="msg-info">&nbsp;</p><div style="padding:5px;border-bottom:1px dotted #ddd;">      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -3,7 +3,7 @@
     xmlns:dc="http://purl.org/dc/elements/1.1/" 
     xmlns:sru_dc="info:srw/schema/1/dc-schema" 
     xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" 
-    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.loc.gov/mods/v3" 
+    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://lcnetdev.github.io/mods/v3" 
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" exclude-result-prefixes="sru_dc oai_dc dc" 
     version="1.0">
     <!--
@@ -33,17 +33,17 @@
         To truly detect these efficiently, XSL/XPath 2.0 or XQuery may be needed in order to utilize regular expressions.
         
         [1] http://www.openarchives.org/OAI/openarchivesprotocol.html#MetadataNamespaces
-        [2] http://www.loc.gov/standards/sru/record-schemas.html
+        [2] http://lcnetdev.github.io/standards/sru/record-schemas.html
         
     -->
     <xsl:output method="xml" indent="yes" encoding="UTF-8"/>
     <!-- ws 1.2 -->
-    <xsl:include href="http://www.loc.gov/standards/mods/inc/dcmiType.xsl"/>
-    <xsl:include href="http://www.loc.gov/standards/mods/inc/mimeType.xsl"/>
-    <xsl:include href="http://www.loc.gov/standards/mods/inc/csdgm.xsl"/>
-    <xsl:include href="http://www.loc.gov/standards/mods/inc/forms.xsl"/>
-    <xsl:include href="http://www.loc.gov/standards/mods/inc/iso3166-1.xsl"/>
-    <xsl:include href="http://www.loc.gov/standards/mods/inc/iso639-2.xsl"/>
+    <xsl:include href="http://lcnetdev.github.io/standards/mods/inc/dcmiType.xsl"/>
+    <xsl:include href="http://lcnetdev.github.io/standards/mods/inc/mimeType.xsl"/>
+    <xsl:include href="http://lcnetdev.github.io/standards/mods/inc/csdgm.xsl"/>
+    <xsl:include href="http://lcnetdev.github.io/standards/mods/inc/forms.xsl"/>
+    <xsl:include href="http://lcnetdev.github.io/standards/mods/inc/iso3166-1.xsl"/>
+    <xsl:include href="http://lcnetdev.github.io/standards/mods/inc/iso639-2.xsl"/>
     <!-- Do you have a Handle server?  If so, specify the base URI below including the trailing slash a la: http://hdl.loc.gov/ -->
     <xsl:variable name="handleServer">
 		<xsl:text>http://hdl.loc.gov/</xsl:text>
@@ -61,9 +61,9 @@
         </xsl:if>
     </xsl:template>
     <xsl:template match="sru_dc:dcCollection">
-        <modsCollection xmlns="http://www.loc.gov/mods/v3" 
+        <modsCollection xmlns="http://lcnetdev.github.io/mods/v3" 
             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-            xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd">
+            xsi:schemaLocation="http://lcnetdev.github.io/mods/v3 http://lcnetdev.github.io/standards/mods/v3/mods-3-5.xsd">
 			<xsl:apply-templates select="sru_dc:dc">
 				<xsl:with-param name="dcCollection">
 					<xsl:text>true</xsl:text>
@@ -80,9 +80,9 @@
 				</mods>
 			</xsl:when>
 			<xsl:otherwise>
-			    <mods version="3.5" xmlns="http://www.loc.gov/mods/v3" 
+			    <mods version="3.5" xmlns="http://lcnetdev.github.io/mods/v3" 
 			        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-			        xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd">
+			        xsi:schemaLocation="http://lcnetdev.github.io/mods/v3 http://lcnetdev.github.io/standards/mods/v3/mods-3-5.xsd">
 					<xsl:call-template name="dcMain"/>
 				</mods>
 			</xsl:otherwise>
@@ -90,9 +90,9 @@
         
     </xsl:template>
     <xsl:template match="oai_dc:dc">
-        <mods version="3.5" xmlns="http://www.loc.gov/mods/v3" 
+        <mods version="3.5" xmlns="http://lcnetdev.github.io/mods/v3" 
             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-            xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd">
+            xsi:schemaLocation="http://lcnetdev.github.io/mods/v3 http://lcnetdev.github.io/standards/mods/v3/mods-3-5.xsd">
 			<xsl:call-template name="dcMain"/>
         </mods>
     </xsl:template>

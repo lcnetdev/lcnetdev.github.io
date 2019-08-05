@@ -2,8 +2,8 @@
 <!-- videoMD version 2.0 -->
 <!-- edited with XML Spy v4.0.1 (http://www.xmlspy.com) by D. Casey (User Technology Associates, Inc.) -->
 <!-- edited with oXygen by K. Bredenberg -->
-<xs:schema targetNamespace="http://www.loc.gov/videoMD/" xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	xmlns="http://www.loc.gov/videoMD/" elementFormDefault="qualified">
+<xs:schema targetNamespace="http://lcnetdev.github.io/videoMD/" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://lcnetdev.github.io/videoMD/" elementFormDefault="qualified">
 	<!--============================================================
 
   VIDEOMD: Video Technical Metadata Extension Schema

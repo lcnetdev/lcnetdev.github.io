@@ -3,7 +3,7 @@
 stylesheet to convert a MODS XML (version 3.x) record to RDF
 Ray Denenberg, Library of Congess
                                                          -->
-<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:mods="http://www.loc.gov/mods/v3" xmlns:modsrdf="http://www.loc.gov/mods/rdf/v1#" xmlns:madsrdf="http://www.loc.gov/mads/rdf/v1#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:identifier="http://id.loc.gov/vocabulary/identifier/" xmlns:relator="http://id.loc.gov/vocabulary/relator/" xmlns:note="http://id.loc.gov/vocabulary/note/" xmlns:abstract="http://id.loc.gov/vocabulary/abstract/" xmlns:access="http://id.loc.gov/vocabulary/access/" xmlns:class="http://id.loc.gov/vocabulary/class/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:ri="http://id.loc.gov/ontologies/RecordInfo#">
+<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:mods="http://lcnetdev.github.io/mods/v3" xmlns:modsrdf="http://lcnetdev.github.io/mods/rdf/v1#" xmlns:madsrdf="http://lcnetdev.github.io/mads/rdf/v1#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:identifier="http://id.loc.gov/vocabulary/identifier/" xmlns:relator="http://id.loc.gov/vocabulary/relator/" xmlns:note="http://id.loc.gov/vocabulary/note/" xmlns:abstract="http://id.loc.gov/vocabulary/abstract/" xmlns:access="http://id.loc.gov/vocabulary/access/" xmlns:class="http://id.loc.gov/vocabulary/class/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:ri="http://id.loc.gov/ontologies/RecordInfo#">
 	<xsl:output method="xml" indent="yes"/>
 	<!-- 
 *******************************************************
@@ -109,7 +109,7 @@ If there is a uniflorm title (there should be no more than one, though this is n
 		<rdf:RDF>
 				<xsl:comment>
 
-This RDF description created by the stylesheet at http://www.loc.gov/standards/mods/modsrdf/modsrdf.xsl 
+This RDF description created by the stylesheet at http://lcnetdev.github.io/standards/mods/modsrdf/modsrdf.xsl 
 
 </xsl:comment>
 			<!-- -->
@@ -176,7 +176,7 @@ This requires that an identifier of type 'modsIdentifier' has been added to the 
 					<xsl:value-of select="/mods:mods/mods:identifier[@type='modsIdentifier']"/>
 				</xsl:when>
 				<xsl:otherwise>
-					<xsl:text>http://www.loc.gov/mods/rdf/v1#MODS123456</xsl:text>
+					<xsl:text>http://lcnetdev.github.io/mods/rdf/v1#MODS123456</xsl:text>
 				</xsl:otherwise>
 			</xsl:choose>
 		</xsl:variable>
@@ -502,8 +502,8 @@ If the classification scheme (authority attribute) belongs to the list (see top)
 *******genre
 </xsl:comment>
 		<modsrdf:genre>
-			<GenreForm xmlns="http://www.loc.gov/mads/rdf/v1#">
-				<rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#GenreForm"/>
+			<GenreForm xmlns="http://lcnetdev.github.io/mads/rdf/v1#">
+				<rdf:type rdf:resource="http://lcnetdev.github.io/mads/rdf/v1#GenreForm"/>
 				<rdfs:label>
 					<xsl:value-of select="."/>
 				</rdfs:label>
@@ -568,7 +568,7 @@ If type="code" a URI is generated; if not, text.
 </xsl:comment>
 		<xsl:value-of select="$newline"/>
 		<xsl:for-each select="mods:languageTerm">
-			<xsl:element name="LanguageOfResource" namespace="http://www.loc.gov/mods/rdf/v1#">
+			<xsl:element name="LanguageOfResource" namespace="http://lcnetdev.github.io/mods/rdf/v1#">
 				<xsl:choose>
 					<xsl:when test="@type='code' or @authority">
 						<xsl:attribute name="rdf:resource" select="concat('http://id.loc.gov/vocabulary/language#',.)"/>
@@ -589,58 +589,58 @@ If type="code" a URI is generated; if not, text.
 		
 ***************location
 </xsl:comment>
-		<xsl:element name="locationOfResource" namespace="http://www.loc.gov/mods/rdf/v1#">
-			<xsl:element name="Location" namespace="http://www.loc.gov/mods/rdf/v1#">
+		<xsl:element name="locationOfResource" namespace="http://lcnetdev.github.io/mods/rdf/v1#">
+			<xsl:element name="Location" namespace="http://lcnetdev.github.io/mods/rdf/v1#">
 				<!-- -->
 				<xsl:for-each select="mods:physicalLocation">
-					<xsl:element name="locationPhysicalLocation" namespace="http://www.loc.gov/mods/rdf/v1#">
+					<xsl:element name="locationPhysicalLocation" namespace="http://lcnetdev.github.io/mods/rdf/v1#">
 						<xsl:value-of select="."/>
 					</xsl:element>
 				</xsl:for-each>
 				<!-- -->
 				<xsl:for-each select="mods:shelfLocator">
-					<xsl:element name="locationShelfLocator" namespace="http://www.loc.gov/mods/rdf/v1#">
+					<xsl:element name="locationShelfLocator" namespace="http://lcnetdev.github.io/mods/rdf/v1#">
 						<xsl:value-of select="."/>
 					</xsl:element>
 				</xsl:for-each>
 				<!-- -->
 				<xsl:for-each select="mods:url">
-					<xsl:element name="locationUrl" namespace="http://www.loc.gov/mods/rdf/v1#">
+					<xsl:element name="locationUrl" namespace="http://lcnetdev.github.io/mods/rdf/v1#">
 						<xsl:value-of select="."/>
 					</xsl:element>
 				</xsl:for-each>
 				<!-- -->
 				<xsl:if test="mods:holdingSimple">
 					<xsl:for-each select="mods:holdingSimple/mods:copyInformation">
-						<xsl:element name="locationCopy" namespace="http://www.loc.gov/mods/rdf/v1#">
-							<xsl:element name="Copy" namespace="http://www.loc.gov/mods/rdf/v1#">
+						<xsl:element name="locationCopy" namespace="http://lcnetdev.github.io/mods/rdf/v1#">
+							<xsl:element name="Copy" namespace="http://lcnetdev.github.io/mods/rdf/v1#">
 								<!-- -->
 								<xsl:if test="mods:form">
-									<xsl:element name="locationCopyForm" namespace="http://www.loc.gov/mods/rdf/v1#">
+									<xsl:element name="locationCopyForm" namespace="http://lcnetdev.github.io/mods/rdf/v1#">
 										<xsl:value-of select="mods:form"/>
 									</xsl:element>
 								</xsl:if>
 								<!-- -->
 								<xsl:for-each select="mods:subLocation">
-									<xsl:element name="locationCopySubLocation" namespace="http://www.loc.gov/mods/rdf/v1#">
+									<xsl:element name="locationCopySubLocation" namespace="http://lcnetdev.github.io/mods/rdf/v1#">
 										<xsl:value-of select="."/>
 									</xsl:element>
 								</xsl:for-each>
 								<!-- -->
 								<xsl:for-each select="mods:shelfLocator">
-									<xsl:element name="locationCopyShelfLocator" namespace="http://www.loc.gov/mods/rdf/v1#">
+									<xsl:element name="locationCopyShelfLocator" namespace="http://lcnetdev.github.io/mods/rdf/v1#">
 										<xsl:value-of select="."/>
 									</xsl:element>
 								</xsl:for-each>
 								<!-- -->
 								<xsl:for-each select="mods:electronicLocator">
-									<xsl:element name="locationCopyElectronicLocator" namespace="http://www.loc.gov/mods/rdf/v1#">
+									<xsl:element name="locationCopyElectronicLocator" namespace="http://lcnetdev.github.io/mods/rdf/v1#">
 										<xsl:value-of select="."/>
 									</xsl:element>
 								</xsl:for-each>
 								<!-- -->
 								<xsl:for-each select="mods:note">
-									<xsl:element name="locationCopyNote" namespace="http://www.loc.gov/mods/rdf/v1#">
+									<xsl:element name="locationCopyNote" namespace="http://lcnetdev.github.io/mods/rdf/v1#">
 										<xsl:value-of select="."/>
 									</xsl:element>
 								</xsl:for-each>
@@ -662,7 +662,7 @@ If type="code" a URI is generated; if not, text.
 											</xsl:otherwise>
 										</xsl:choose>
 									</xsl:variable>
-									<xsl:element name="{$enumChronElementName}" namespace="http://www.loc.gov/mods/rdf/v1#">
+									<xsl:element name="{$enumChronElementName}" namespace="http://lcnetdev.github.io/mods/rdf/v1#">
 										<xsl:value-of select="."/>
 									</xsl:element>
 								</xsl:for-each>
@@ -737,7 +737,7 @@ Main NameTemplate
 			** Name **			
 			</xsl:comment>
 			<xsl:value-of select="$newline"/>
-			<xsl:element name="{$nameOrNamePrincipal}" namespace="http://www.loc.gov/mods/rdf/v1#">
+			<xsl:element name="{$nameOrNamePrincipal}" namespace="http://lcnetdev.github.io/mods/rdf/v1#">
 				<xsl:value-of select="$newline"/>
 				<xsl:call-template name="nameElement">
 					<xsl:with-param name="isThisOnePrincipal" select="$thisIsThePrincipalName"/>
@@ -839,7 +839,7 @@ rdf name element: personalName, corporateName, etc.
 		</xsl:variable>
 		<xsl:variable name="NameType" select="concat( upper-case( substring( $nameType , 1, 1) ) , substring( $nameType , 2 ) )"/>
 		<!-- -->
-		<xsl:element name="{concat($NameType, 'Name')}" namespace="http://www.loc.gov/mads/rdf/v1#">
+		<xsl:element name="{concat($NameType, 'Name')}" namespace="http://lcnetdev.github.io/mads/rdf/v1#">
 			<xsl:if test="$about='yes'">
 				<xsl:attribute name="rdf:about" select="$nameId"/>
 			</xsl:if>
@@ -856,44 +856,44 @@ rdf name element: personalName, corporateName, etc.
 				</xsl:choose>
 			</xsl:element>
 			<!-- -->
-			<xsl:element name="elementList" namespace="http://www.loc.gov/mads/rdf/v1#">
+			<xsl:element name="elementList" namespace="http://lcnetdev.github.io/mads/rdf/v1#">
 				<xsl:attribute name="rdf:parseType">Collection</xsl:attribute>
 				<!-- -->
 				<xsl:if test="mods:namePart[not(@type)]">
-					<xsl:element name="FullNameElement" namespace="http://www.loc.gov/mads/rdf/v1#">
-						<xsl:element name="elementValue" namespace="http://www.loc.gov/mads/rdf/v1#">
+					<xsl:element name="FullNameElement" namespace="http://lcnetdev.github.io/mads/rdf/v1#">
+						<xsl:element name="elementValue" namespace="http://lcnetdev.github.io/mads/rdf/v1#">
 							<xsl:value-of select="mods:namePart"/>
 						</xsl:element>
 					</xsl:element>
 				</xsl:if>
 				<!-- -->
 				<xsl:if test="mods:namePart[@type='family']">
-					<xsl:element name="FamilyNameElement" namespace="http://www.loc.gov/mads/rdf/v1#">
-						<xsl:element name="elementValue" namespace="http://www.loc.gov/mads/rdf/v1#">
+					<xsl:element name="FamilyNameElement" namespace="http://lcnetdev.github.io/mads/rdf/v1#">
+						<xsl:element name="elementValue" namespace="http://lcnetdev.github.io/mads/rdf/v1#">
 							<xsl:value-of select="mods:namePart[@type='family']"/>
 						</xsl:element>
 					</xsl:element>
 				</xsl:if>
 				<!-- -->
 				<xsl:if test="mods:namePart[@type='given']">
-					<xsl:element name="GivenNameElement" namespace="http://www.loc.gov/mads/rdf/v1#">
-						<xsl:element name="elementValue" namespace="http://www.loc.gov/mads/rdf/v1#">
+					<xsl:element name="GivenNameElement" namespace="http://lcnetdev.github.io/mads/rdf/v1#">
+						<xsl:element name="elementValue" namespace="http://lcnetdev.github.io/mads/rdf/v1#">
 							<xsl:value-of select="mods:namePart[@type='given']"/>
 						</xsl:element>
 					</xsl:element>
 				</xsl:if>
 				<!-- -->
 				<xsl:if test="mods:namePart[@type='termsOfAddress']">
-					<xsl:element name="termsOfAddressNameElement" namespace="http://www.loc.gov/mads/rdf/v1#">
-						<xsl:element name="elementValue" namespace="http://www.loc.gov/mads/rdf/v1#">
+					<xsl:element name="termsOfAddressNameElement" namespace="http://lcnetdev.github.io/mads/rdf/v1#">
+						<xsl:element name="elementValue" namespace="http://lcnetdev.github.io/mads/rdf/v1#">
 							<xsl:value-of select="mods:namePart[@type='termsOfAddress']"/>
 						</xsl:element>
 					</xsl:element>
 				</xsl:if>
 				<!-- -->
 				<xsl:if test="mods:namePart[@type='date']">
-					<xsl:element name="DateNameElement" namespace="http://www.loc.gov/mads/rdf/v1#">
-						<xsl:element name="elementValue" namespace="http://www.loc.gov/mads/rdf/v1#">
+					<xsl:element name="DateNameElement" namespace="http://lcnetdev.github.io/mads/rdf/v1#">
+						<xsl:element name="elementValue" namespace="http://lcnetdev.github.io/mads/rdf/v1#">
 							<xsl:value-of select="mods:namePart[@type='date']"/>
 						</xsl:element>
 					</xsl:element>
@@ -989,15 +989,15 @@ type other than statementOfResponsibility
 *******place of origin
 </xsl:comment>
 						<xsl:value-of select="$newline"/>
-						<xsl:element name="placeOfOrigin" namespace="http://www.loc.gov/mods/rdf/v1#">
-							<xsl:element name="Geographic" namespace="http://www.loc.gov/mads/rdf/v1#">
+						<xsl:element name="placeOfOrigin" namespace="http://lcnetdev.github.io/mods/rdf/v1#">
+							<xsl:element name="Geographic" namespace="http://lcnetdev.github.io/mads/rdf/v1#">
 								<xsl:element name="label" namespace="http://www.w3.org/2000/01/rdf-schema#">
 									<xsl:value-of select="."/>
 								</xsl:element>
-								<xsl:element name="elementList" namespace="http://www.loc.gov/mads/rdf/v1#">
+								<xsl:element name="elementList" namespace="http://lcnetdev.github.io/mads/rdf/v1#">
 									<xsl:attribute name="rdf:parseType">Collection</xsl:attribute>
-									<xsl:element name="GeographicElement" namespace="http://www.loc.gov/mads/rdf/v1#">
-										<xsl:element name="elementValue" namespace="http://www.loc.gov/mads/rdf/v1#">
+									<xsl:element name="GeographicElement" namespace="http://lcnetdev.github.io/mads/rdf/v1#">
+										<xsl:element name="elementValue" namespace="http://lcnetdev.github.io/mads/rdf/v1#">
 											<xsl:value-of select="."/>
 										</xsl:element>
 									</xsl:element>
@@ -1015,15 +1015,15 @@ type other than statementOfResponsibility
 *******  publisher
 </xsl:comment>
 					<xsl:value-of select="$newline"/>
-					<xsl:element name="publisher" namespace="http://www.loc.gov/mods/rdf/v1#">
-						<xsl:element name="CorporateName" namespace="http://www.loc.gov/mads/rdf/v1#">
+					<xsl:element name="publisher" namespace="http://lcnetdev.github.io/mods/rdf/v1#">
+						<xsl:element name="CorporateName" namespace="http://lcnetdev.github.io/mads/rdf/v1#">
 							<xsl:element name="label" namespace="http://www.w3.org/2000/01/rdf-schema#">
 								<xsl:value-of select="."/>
 							</xsl:element>
-							<xsl:element name="elementList" namespace="http://www.loc.gov/mads/rdf/v1#">
+							<xsl:element name="elementList" namespace="http://lcnetdev.github.io/mads/rdf/v1#">
 								<xsl:attribute name="rdf:parseType">Collection</xsl:attribute>
-								<xsl:element name="FullNameElement" namespace="http://www.loc.gov/mads/rdf/v1#">
-									<xsl:element name="elementValue" namespace="http://www.loc.gov/mads/rdf/v1#">
+								<xsl:element name="FullNameElement" namespace="http://lcnetdev.github.io/mads/rdf/v1#">
+									<xsl:element name="elementValue" namespace="http://lcnetdev.github.io/mads/rdf/v1#">
 										<xsl:value-of select="."/>
 									</xsl:element>
 								</xsl:element>
@@ -1040,7 +1040,7 @@ type other than statementOfResponsibility
 						<xsl:with-param name="point" select="@point"/>
 						<xsl:with-param name="normal" select="@encoding"/>
 						<xsl:with-param name="value" select="."/>
-						<xsl:with-param name="namespace">http://www.loc.gov/mods/rdf/v1#</xsl:with-param>
+						<xsl:with-param name="namespace">http://lcnetdev.github.io/mods/rdf/v1#</xsl:with-param>
 						<xsl:with-param name="elementPrefix">resource</xsl:with-param>
 					</xsl:call-template>
 				</xsl:when>
@@ -1068,42 +1068,42 @@ type other than statementOfResponsibility
 *******part
 </xsl:comment>
 		<xsl:value-of select="$newline"/>
-		<xsl:element name="part" namespace="http://www.loc.gov/mods/rdf/v1#">
+		<xsl:element name="part" namespace="http://lcnetdev.github.io/mods/rdf/v1#">
 			<xsl:value-of select="$newline"/>
-			<xsl:element name="Part" namespace="http://www.loc.gov/mods/rdf/v1#">
+			<xsl:element name="Part" namespace="http://lcnetdev.github.io/mods/rdf/v1#">
 				<xsl:value-of select="$newline"/>
 				<!-- create elements for each attribute -->
 				<!-- Part - partType -->
 				<xsl:if test="@type">
-					<xsl:element name="partType" namespace="http://www.loc.gov/mods/rdf/v1#">
+					<xsl:element name="partType" namespace="http://lcnetdev.github.io/mods/rdf/v1#">
 						<xsl:value-of select="@type"/>
 					</xsl:element>
 					<xsl:value-of select="$newline"/>
 				</xsl:if>
 				<!-- Part - order -->
 				<xsl:if test="@order">
-					<xsl:element name="partOrder" namespace="http://www.loc.gov/mods/rdf/v1#">
+					<xsl:element name="partOrder" namespace="http://lcnetdev.github.io/mods/rdf/v1#">
 						<xsl:value-of select="@order"/>
 					</xsl:element>
 					<xsl:value-of select="$newline"/>
 				</xsl:if>
 				<!-- Part - level -->
 				<xsl:if test="mods:detail/@level">
-					<xsl:element name="partLevel" namespace="http://www.loc.gov/mods/rdf/v1#">
+					<xsl:element name="partLevel" namespace="http://lcnetdev.github.io/mods/rdf/v1#">
 						<xsl:value-of select="mods:detail/@level"/>
 					</xsl:element>
 					<xsl:value-of select="$newline"/>
 				</xsl:if>
 				<!-- Part - extent/@unit -->
 				<xsl:if test="mods:extent/@unit">
-					<xsl:element name="partUnit" namespace="http://www.loc.gov/mods/rdf/v1#">
+					<xsl:element name="partUnit" namespace="http://lcnetdev.github.io/mods/rdf/v1#">
 						<xsl:value-of select="mods:extent/@unit"/>
 					</xsl:element>
 					<xsl:value-of select="$newline"/>
 				</xsl:if>
 				<!-- Part - detailType -->
 				<xsl:if test="mods:detail/@type">
-					<xsl:element name="partDetailType" namespace="http://www.loc.gov/mods/rdf/v1#">
+					<xsl:element name="partDetailType" namespace="http://lcnetdev.github.io/mods/rdf/v1#">
 						<xsl:value-of select="mods:detail/@type"/>
 					</xsl:element>
 					<xsl:value-of select="$newline"/>
@@ -1117,14 +1117,14 @@ type other than statementOfResponsibility
 								<xsl:with-param name="point" select="@point"/>
 								<xsl:with-param name="normal" select="@encoding"/>
 								<xsl:with-param name="value" select="."/>
-								<xsl:with-param name="namespace">http://www.loc.gov/mods/rdf/v1#</xsl:with-param>
+								<xsl:with-param name="namespace">http://lcnetdev.github.io/mods/rdf/v1#</xsl:with-param>
 								<xsl:with-param name="elementPrefix">part</xsl:with-param>
 							</xsl:call-template>
 							<xsl:value-of select="$newline"/>
 						</xsl:when>
 						<xsl:otherwise>
 							<xsl:variable name="localName" select="local-name()"/>
-							<xsl:element name="{concat('part', upper-case( substring($localName , 1 , 1) ) , substring($localName, 2 ) )}" namespace="http://www.loc.gov/mods/rdf/v1#">
+							<xsl:element name="{concat('part', upper-case( substring($localName , 1 , 1) ) , substring($localName, 2 ) )}" namespace="http://lcnetdev.github.io/mods/rdf/v1#">
 								<xsl:value-of select="."/>
 							</xsl:element>
 							<xsl:value-of select="$newline"/>
@@ -1192,7 +1192,7 @@ the physicalDescription  in MODS wraps a number of elements, for convenience onl
 -->
 	<xsl:template name="recordInfo">
 		<!-- -->
-		<xsl:element name="administrativeMedatata" namespace="http://www.loc.gov/mods/rdf/v1#">
+		<xsl:element name="administrativeMedatata" namespace="http://lcnetdev.github.io/mods/rdf/v1#">
 			<xsl:value-of select="$newline"/>
 			<xsl:element name="AdministrativeMedatata" namespace="http://id.loc.gov/ontologies/RecordInfo#">
 				<xsl:value-of select="$newline"/>
@@ -1345,7 +1345,7 @@ case 3  simple subject-->
 						</xsl:otherwise>
 					</xsl:choose>
 				</xsl:variable>
-				<xsl:element name="{concat('subject',$subjectSuffix)}" namespace="http://www.loc.gov/mods/rdf/v1#">
+				<xsl:element name="{concat('subject',$subjectSuffix)}" namespace="http://lcnetdev.github.io/mods/rdf/v1#">
 					<xsl:call-template name="simpleSubject">
 						<xsl:with-param name="subjectType" select="$subjectType"/>
 					</xsl:call-template>
@@ -1402,8 +1402,8 @@ for Subject: titleInfo
 -->
 			<xsl:when test="$subjectType='titleInfo'">
 				<xsl:for-each select="mods:titleInfo">
-					<subjectTitle xmlns="http://www.loc.gov/mods/rdf/v1#">
-						<Title xmlns="http://www.loc.gov/mads/rdf/v1#">
+					<subjectTitle xmlns="http://lcnetdev.github.io/mods/rdf/v1#">
+						<Title xmlns="http://lcnetdev.github.io/mads/rdf/v1#">
 							<xsl:call-template name="titleMainSubTemplate"/>
 						</Title>
 					</subjectTitle>
@@ -1416,7 +1416,7 @@ for Subject: name
 -->
 			<xsl:when test="$subjectType='name'">
 				<xsl:for-each select="mods:name">
-					<subjectName xmlns="http://www.loc.gov/mods/rdf/v1#">
+					<subjectName xmlns="http://lcnetdev.github.io/mods/rdf/v1#">
 						<xsl:call-template name="nameElement">
 							<xsl:with-param name="isThisOnePrincipal" select="no"/>
 							<xsl:with-param name="about" select="no"/>
@@ -1431,8 +1431,8 @@ for Subject: name
 for Subject: geographicCode
 -->
 			<xsl:when test="$subjectType='geographicCode'">
-				<subjectGeographicCode xmlns="http://www.loc.gov/mods/rdf/v1#">
-					<Geographic xmlns="http://www.loc.gov/mads/rdf/v1#">
+				<subjectGeographicCode xmlns="http://lcnetdev.github.io/mods/rdf/v1#">
+					<Geographic xmlns="http://lcnetdev.github.io/mads/rdf/v1#">
 						<xsl:variable name="uri" select="concat('http://id.loc.gov/vocabulary/gac/',mods:geographicCode)"/>
 						<rdfs:label>
 							<xsl:value-of select="$uri"/>
@@ -1470,16 +1470,16 @@ when there is only a single subelement of subject, and it is flat.
 			</xsl:choose>
 		</xsl:variable>
 		<xsl:value-of select="$newline"/>
-		<xsl:element name="{$SubjectType}" namespace="http://www.loc.gov/mads/rdf/v1#">
+		<xsl:element name="{$SubjectType}" namespace="http://lcnetdev.github.io/mads/rdf/v1#">
 			<xsl:value-of select="$newline"/>
 			<xsl:element name="label" namespace="http://www.w3.org/2000/01/rdf-schema#">
 				<xsl:value-of select="$value"/>
 			</xsl:element>
 			<xsl:value-of select="$newline"/>
-			<xsl:element name="elementList" namespace="http://www.loc.gov/mads/rdf/v1#">
+			<xsl:element name="elementList" namespace="http://lcnetdev.github.io/mads/rdf/v1#">
 				<xsl:attribute name="rdf:parseType">Collection</xsl:attribute>
-				<xsl:element name="{concat($SubjectType,'Element')}" namespace="http://www.loc.gov/mads/rdf/v1#">
-					<xsl:element name="elementValue" namespace="http://www.loc.gov/mads/rdf/v1#">
+				<xsl:element name="{concat($SubjectType,'Element')}" namespace="http://lcnetdev.github.io/mads/rdf/v1#">
+					<xsl:element name="elementValue" namespace="http://lcnetdev.github.io/mads/rdf/v1#">
 						<xsl:value-of select="$value"/>
 					</xsl:element>
 				</xsl:element>
@@ -1490,9 +1490,9 @@ when there is only a single subelement of subject, and it is flat.
 	</xsl:template>
 	<!-- -->
 	<xsl:template name="complexSubject">
-		<subjectComplex xmlns="http://www.loc.gov/mods/rdf/v1#">
+		<subjectComplex xmlns="http://lcnetdev.github.io/mods/rdf/v1#">
 			<xsl:value-of select="$newline"/>
-			<ComplexSubject xmlns="http://www.loc.gov/mads/rdf/v1#">
+			<ComplexSubject xmlns="http://lcnetdev.github.io/mads/rdf/v1#">
 				<!--  have to get the aggregate label -->
 				<xsl:value-of select="$newline"/>
 				<rdfs:label>
@@ -1552,7 +1552,7 @@ End Templates for MODS subject
 			 ******* Cartographics
 			<xsl:value-of select="$newline"/>
 		</xsl:comment>
-		<cartographics xmlns="http://www.loc.gov/mads/rdf/v1#">
+		<cartographics xmlns="http://lcnetdev.github.io/mads/rdf/v1#">
 			<Cartographics>
 				<xsl:if test="mods:cartographics/mods:scale">
 					<scale>
@@ -1615,7 +1615,7 @@ Templates for MODS titleInfo element
 *******  Principal Title
 </xsl:comment>
 		<!-- -->
-		<xsl:element name="titlePrincipal" namespace="http://www.loc.gov/mods/rdf/v1#">
+		<xsl:element name="titlePrincipal" namespace="http://lcnetdev.github.io/mods/rdf/v1#">
 			<xsl:call-template name="titlePreliminarySubTemplate">
 				<xsl:with-param name="principal" select="$yes"/>
 			</xsl:call-template>
@@ -1628,7 +1628,7 @@ Templates for MODS titleInfo element
 	<xsl:template name="titlePreliminarySubTemplate">
 		<xsl:param name="principal"/>
 		<xsl:value-of select="$newline"/>
-		<xsl:element name="Title" namespace="http://www.loc.gov/mads/rdf/v1#">
+		<xsl:element name="Title" namespace="http://lcnetdev.github.io/mads/rdf/v1#">
 			<!-- if it is primary title (usage="primary") attach primary title identifier -->
 			<xsl:if test="@usage">
 				<xsl:attribute name="rdf:about" select="$primaryTitleIdentifier"/>
@@ -1666,7 +1666,7 @@ Templates for MODS titleInfo element
 					<xsl:text>http://www.w3.org/2000/01/rdf-schema#</xsl:text>
 				</xsl:when>
 				<xsl:otherwise>
-					<xsl:text>http://www.loc.gov/mads/rdf/v1#</xsl:text>
+					<xsl:text>http://lcnetdev.github.io/mads/rdf/v1#</xsl:text>
 				</xsl:otherwise>
 			</xsl:choose>
 		</xsl:variable>
@@ -1676,27 +1676,27 @@ Templates for MODS titleInfo element
 			<xsl:call-template name="titleString"/>
 		</xsl:element>
 		<xsl:value-of select="$newline"/>
-		<xsl:element name="elementList" namespace="http://www.loc.gov/mads/rdf/v1#">
+		<xsl:element name="elementList" namespace="http://lcnetdev.github.io/mads/rdf/v1#">
 			<xsl:attribute name="rdf:parseType">Collection</xsl:attribute>
 			<xsl:value-of select="$newline"/>
 			<xsl:if test="mods:nonSort">
-				<xsl:element name="nonSortElement" namespace="http://www.loc.gov/mads/rdf/v1#">
-					<xsl:element name="elementvalue" namespace="http://www.loc.gov/mads/rdf/v1#">
+				<xsl:element name="nonSortElement" namespace="http://lcnetdev.github.io/mads/rdf/v1#">
+					<xsl:element name="elementvalue" namespace="http://lcnetdev.github.io/mads/rdf/v1#">
 						<xsl:value-of select="mods:nonSort"/>
 					</xsl:element>
 				</xsl:element>
 			</xsl:if>
 			<xsl:value-of select="$newline"/>
-			<xsl:element name="mainTitleElement" namespace="http://www.loc.gov/mads/rdf/v1#">
-				<xsl:element name="elementValue" namespace="http://www.loc.gov/mads/rdf/v1#">
+			<xsl:element name="mainTitleElement" namespace="http://lcnetdev.github.io/mads/rdf/v1#">
+				<xsl:element name="elementValue" namespace="http://lcnetdev.github.io/mads/rdf/v1#">
 					<xsl:value-of select="mods:title"/>
 				</xsl:element>
 			</xsl:element>
 			<xsl:value-of select="$newline"/>
 			<xsl:if test="mods:subTitle">
-				<xsl:element name="SubTitleElement" namespace="http://www.loc.gov/mads/rdf/v1#">
+				<xsl:element name="SubTitleElement" namespace="http://lcnetdev.github.io/mads/rdf/v1#">
 					<xsl:value-of select="$newline"/>
-					<xsl:element name="elementValue" namespace="http://www.loc.gov/mads/rdf/v1#">
+					<xsl:element name="elementValue" namespace="http://lcnetdev.github.io/mads/rdf/v1#">
 						<xsl:value-of select="mods:subTitle"/>
 					</xsl:element>
 					<xsl:value-of select="$newline"/>
@@ -1705,16 +1705,16 @@ Templates for MODS titleInfo element
 			</xsl:if>
 			<xsl:if test="mods:partName">
 				<xsl:value-of select="$newline"/>
-				<xsl:element name="PartNameElement" namespace="http://www.loc.gov/mads/rdf/v1#">
-					<xsl:element name="elementValue" namespace="http://www.loc.gov/mads/rdf/v1#">
+				<xsl:element name="PartNameElement" namespace="http://lcnetdev.github.io/mads/rdf/v1#">
+					<xsl:element name="elementValue" namespace="http://lcnetdev.github.io/mads/rdf/v1#">
 						<xsl:value-of select="mods:partName"/>
 					</xsl:element>
 				</xsl:element>
 				<xsl:value-of select="$newline"/>
 			</xsl:if>
 			<xsl:if test="mods:partNumber">
-				<xsl:element name="PartNumber" namespace="http://www.loc.gov/mads/rdf/v1#">
-					<xsl:element name="elementValue" namespace="http://www.loc.gov/mads/rdf/v1#">
+				<xsl:element name="PartNumber" namespace="http://lcnetdev.github.io/mads/rdf/v1#">
+					<xsl:element name="elementValue" namespace="http://lcnetdev.github.io/mads/rdf/v1#">
 						<xsl:value-of select="mods:partNumber"/>
 					</xsl:element>
 				</xsl:element>
@@ -1762,7 +1762,7 @@ Templates for MODS titleInfo element
 		</xsl:variable>
 		<!-- -->
 		<xsl:value-of select="$newline"/>
-		<xsl:element name="{$variantElementName}" namespace="http://www.loc.gov/mads/rdf/v1#">
+		<xsl:element name="{$variantElementName}" namespace="http://lcnetdev.github.io/mads/rdf/v1#">
 			<xsl:call-template name="titlePreliminarySubTemplate"/>
 		</xsl:element>
 		<xsl:value-of select="$newline"/>
@@ -1773,7 +1773,7 @@ Templates for MODS titleInfo element
 	<xsl:template name="nameTitle">
 		<!--  -->
 		<xsl:value-of select="$newline"/>
-		<NameTitle xmlns="http://www.loc.gov/mads/rdf/v1#">
+		<NameTitle xmlns="http://lcnetdev.github.io/mads/rdf/v1#">
 			<rdfs:label>
 				<xsl:value-of select="$principalNameString"/>
 				<xsl:text> -- </xsl:text>
@@ -1800,7 +1800,7 @@ Get the principal name type  (e.g. "personal")
 					</xsl:for-each>
 				</xsl:variable>
 				<!-- -->
-				<xsl:element name="{concat(upper-case(substring( $principalNameType , 1, 1) ), substring( $principalNameType , 2 ), 'Name' )}" namespace="http://www.loc.gov/mads/rdf/v1#">
+				<xsl:element name="{concat(upper-case(substring( $principalNameType , 1, 1) ), substring( $principalNameType , 2 ), 'Name' )}" namespace="http://lcnetdev.github.io/mads/rdf/v1#">
 					<xsl:attribute name="rdf:about" select="$principalNameIdentifier"/>
 				</xsl:element>
 				<xsl:call-template name="titlePreliminarySubTemplate"/>
@@ -1859,7 +1859,7 @@ End templates for MODS titleInfo element
 			<xsl:value-of select="concat('**********',$elementName)"/>
 		</xsl:comment>
 		<xsl:value-of select="$newline"/>
-		<xsl:element name="{$elementName}" namespace="http://www.loc.gov/mods/rdf/v1#">
+		<xsl:element name="{$elementName}" namespace="http://lcnetdev.github.io/mods/rdf/v1#">
 			<xsl:value-of select="$elementValue"/>
 		</xsl:element>
 		<xsl:value-of select="$newline"/>

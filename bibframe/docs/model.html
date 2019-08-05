@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js">
+<head>
+<title>Overview of the BIBFRAME Model (BIBFRAME - Bibliographic Framework Initiative, Library of Congress)</title>
+<meta http-equiv="refresh" content="0; url=http://lcnetdev.github.io/bibframe/docs/bibframe2-model.html">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="bibframe, model, bibliographic framework, transition, initiative, marc, cataloging, library of congress" />
+<meta name="description" content="Overview of the BIBFRAME Model. The BIBFRAME model and vocabulary consider resources that are cataloged as works with corresponding instances (physical and/or electronic). The metadata describing a work is an amalgamation of the some of the data that was formerly associated with the uniform title authority record combined with subject data that was associated with the bibliographic  records. Thus each cataloging resource must have a work description, and, if the cataloging resource exists physically or electronically, one or more instance descriptions." />
+
+<link rel="dc.relation.isPartOf" href="http://lcnetdev.github.io/bibframe/" title="BIBFRAME - Bibliographic Framework Initiative (Library of Congress)" />
+<meta name="dc.subject" content="bibliographic framework" />
+<meta name="dc.subject" content="vocabulary" />
+<meta name="dc.subject" content="mmodel" />
+<meta name="dc.subject" content="bibframe" />
+<meta name="dc.type" content="webpage" />
+<meta name="dc.identifier" content="http://lcnetdev.github.io/bibframe/docs/model.html" />
+<meta name="dc.language" content="en" />
+
+<link type="text/css" media="screen" rel="stylesheet" href="../css/styles.css" />
+<link type="text/css" media="print" rel="stylesheet" href="/css/loc_print_v2.css" />
+<!--[if lte IE 7]><link type="text/css" media="screen" rel="stylesheet" href="/css/loc_lte_ie6.css" /><![endif]-->
+<!--#include virtual="/bibframe/include/share-tool.html"-->
+<script type="text/javascript" src="http://cdn.loc.gov/js/lib/modernizr-1.5.min.js"></script></head>
+<body>
+<a id="skip" href="#skip_menu">skip navigation</a>
+<div id="container">
+  <!--#include virtual="../include/branding.html"-->
+  <!--#include virtual="/cdn/html/lochead.html"-->
+  <div id="crumb_nav"><a href="http://lcnetdev.github.io">The Library of Congress</a> &gt; <a href="/bibframe/">BIBFRAME</a> &gt; <a href="index.html">Model &amp; Vocabulary</a> &gt; Overview of the BIBFRAME Model</div>
+  <div id="content">
+    <!--#include virtual="../include/leftnav.html"-->
+    <div id="main_body">
+    	<!--#include virtual="../include/share-tool-bar.html"-->
+      <div id="page_head"><span style="width: 100%;"><a name="skip_menu"></a></span>
+        <h1>Overview of the BIBFRAME Model</h1>
+      </div>
+
+          <h1><img src="images/bibframe.png" alt="" width="325" align="right" /></h1>
+          <p>In translating the MARC 21 format to a Linked Data model it is important to deconstruct and then reconstruct the informational assets that comprise MARC. The BIBFRAME Model consists of the following core classes:</p>
+          <p> </p>
+          <ul>
+            <li><strong>Creative Work</strong> - a resource reflecting a conceptual essence of the cataloging resource.</li>
+            <li><strong>Instance</strong> - a resource reflecting an individual, material embodiment of the Work.</li>
+            <li><strong>Authority</strong> - a resource reflecting key authority concepts that have defined   relationships reflected in the Work and Instance. Example of Authority   Resources include People, Places, Topics, Organizations,   etc. One important concept in Authority is domain, which is the entity   taking responsibility for the recognition, organization and maintenance   (to ensure integrity) of the authoritative resources.</li>
+            <li><strong>Annotation</strong> - a resource that enhances our knowledge about another resource when   knowing, minimally, 'who' is doing the annotating is important. Library Holdings, Cover Art and Reviews are examples types.</li>
+          </ul>
+          <p> These Information Resources can then be re-assembled into  				a coherent architecture that allows for cooperative  				cataloging at a far more granular level than before.  				Then, as we leverage the Web as an architecture for data,  				whenever updates to these Resources are performed  				(e.g. someone adds new information about a Person, new  				mappings related to a Subject, etc.) notification events  				can occur to automatically update systems that reference  				these Resources.  Further, these information assets can  				now be more effectively utilized at a granular level and  				provide a richer substrate in which local collections,  				special collections and third party data can easily  				annotate and contextualize cooperative library  				content. </p>
+          <div class="msg-notice">
+              <h3>Learn More</h3>
+ <p><a href="/bibframe/pdf/marcld-report-11-21-2012.pdf">Bibliographic Framework as a Web of Data: Linked Data Model and Supporting Services</a> [PDF,   2.91 MB] (November 21, 2012)</p>
+        </div>
+
+ <div class="clear"><!-- --></div>
+    </div><!-- end id:main_body -->
+  </div><!-- end id:content -->
+  <!--#include virtual="/cdn/html/locfoot.html"-->
+</div><!-- end id:container -->
+</body>
+</html>

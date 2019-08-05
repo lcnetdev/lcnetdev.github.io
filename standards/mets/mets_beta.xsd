@@ -36,7 +36,7 @@
 	25. Change mdSec model to ALL, to enable differing order of mdRef/mdWrap elements.
 	26. Extend documentation on <par> and <seq> elements.
  -->
-<xsd:schema targetNamespace="http://www.loc.gov/METS/" xmlns="http://www.loc.gov/METS/" xmlns:xsd="http://www.w3.org/2000/10/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xsd:schema targetNamespace="http://lcnetdev.github.io/METS/" xmlns="http://lcnetdev.github.io/METS/" xmlns:xsd="http://www.w3.org/2000/10/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
   <xsd:element name="mets" type="metsType">
     <xsd:annotation>
       <xsd:documentation>METS: Metadata Encoding and Transmission Standard.
@@ -118,7 +118,7 @@
 	6. LASTMODDATE: the date the METS object was last modifified; and
 	7. PROFILE: the registered profile to which  this METS document conforms.
 	METS registry information is available from the Library of Congress at
-	http://www.loc.gov/mets.</xsd:documentation>
+	http://lcnetdev.github.io/mets.</xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
       <xsd:element ref="dmdSec" minOccurs="0" maxOccurs="unbounded"/>

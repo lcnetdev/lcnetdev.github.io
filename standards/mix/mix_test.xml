@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with Emacs by Morgan Cundiff (Library of Congress) -->
-<mix xmlns="http://www.loc.gov/mix/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://www.loc.gov/mix/ http://www.loc.gov/mix/mix.xsd"  >
+<mix xmlns="http://lcnetdev.github.io/mix/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://lcnetdev.github.io/mix/ http://lcnetdev.github.io/mix/mix.xsd"  >
 
   <BasicImageParameters>
     <Format>

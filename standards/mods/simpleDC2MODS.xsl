@@ -19,11 +19,11 @@
 	    To truly detect these efficiently, XSL/XPath 2.0 or XQuery may be needed in order to utilize regular expressions.
 	    
 	    [1] http://www.openarchives.org/OAI/openarchivesprotocol.html#MetadataNamespaces
-	    [2] http://www.loc.gov/standards/sru/record-schemas.html
+	    [2] http://lcnetdev.github.io/standards/sru/record-schemas.html
 	        
 	-->
 
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sru_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" exclude-result-prefixes="sru_dc oai_dc dc" version="1.0">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sru_dc="info:srw/schema/1/dc-schema" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://lcnetdev.github.io/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" exclude-result-prefixes="sru_dc oai_dc dc" version="1.0">
     <xsl:output method="xml" indent="yes" encoding="UTF-8"/>
     <xsl:include href="inc/dcmiType.xsl"/>
     <xsl:include href="inc/mimeType.xsl"/>
@@ -48,7 +48,7 @@
         </xsl:if>
     </xsl:template>
     <xsl:template match="sru_dc:dcCollection">
-        <modsCollection xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-2.xsd">
+        <modsCollection xmlns="http://lcnetdev.github.io/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://lcnetdev.github.io/mods/v3 http://lcnetdev.github.io/standards/mods/v3/mods-3-2.xsd">
 			<xsl:apply-templates select="sru_dc:dc">
 				<xsl:with-param name="dcCollection">
 					<xsl:text>true</xsl:text>
@@ -65,7 +65,7 @@
 				</mods>
 			</xsl:when>
 			<xsl:otherwise>
-				<mods version="3.2" xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-2.xsd">
+				<mods version="3.2" xmlns="http://lcnetdev.github.io/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://lcnetdev.github.io/mods/v3 http://lcnetdev.github.io/standards/mods/v3/mods-3-2.xsd">
 					<xsl:call-template name="dcMain"/>
 				</mods>
 			</xsl:otherwise>
@@ -73,7 +73,7 @@
         
     </xsl:template>
     <xsl:template match="oai_dc:dc">
-        <mods version="3.2" xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-2.xsd">
+        <mods version="3.2" xmlns="http://lcnetdev.github.io/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://lcnetdev.github.io/mods/v3 http://lcnetdev.github.io/standards/mods/v3/mods-3-2.xsd">
 			<xsl:call-template name="dcMain"/>
         </mods>
     </xsl:template>

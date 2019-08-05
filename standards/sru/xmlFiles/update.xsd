@@ -2,15 +2,15 @@
 <!-- Update Initial Draft -->
 <!-- 3rd November 2004 -->
 <xsd:schema 
-targetNamespace="http://www.loc.gov/zing/srw/update/" 
+targetNamespace="http://lcnetdev.github.io/zing/srw/update/" 
 elementFormDefault="unqualified" 
 attributeFormDefault="unqualified" 
-xmlns:ucp="http://www.loc.gov/zing/srw/update/" 
+xmlns:ucp="http://lcnetdev.github.io/zing/srw/update/" 
 xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
-xmlns:srw="http://www.loc.gov/zing/srw/" 
-xmlns:diag="http://www.loc.gov/zing/srw/diagnostic/">
-<xsd:import namespace="http://www.loc.gov/zing/srw/" schemaLocation="http://www.loc.gov/standards/sru/xmlFiles/srw-types.xsd"/>
-<xsd:import namespace="http://www.loc.gov/zing/srw/diagnostic/" schemaLocation="http://www.loc.gov/standards/sru/xmlFiles/diagnostics.xsd"/>
+xmlns:srw="http://lcnetdev.github.io/zing/srw/" 
+xmlns:diag="http://lcnetdev.github.io/zing/srw/diagnostic/">
+<xsd:import namespace="http://lcnetdev.github.io/zing/srw/" schemaLocation="http://lcnetdev.github.io/standards/sru/xmlFiles/srw-types.xsd"/>
+<xsd:import namespace="http://lcnetdev.github.io/zing/srw/diagnostic/" schemaLocation="http://lcnetdev.github.io/standards/sru/xmlFiles/diagnostics.xsd"/>
 <xsd:element name="updateRequest" type="ucp:updateRequestType"/>
 <xsd:complexType name="updateRequestType">
 <xsd:complexContent>

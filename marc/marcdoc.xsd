@@ -5,8 +5,8 @@
 <!-- DRAFT SCHEMA - This is not an official schema.  A finalized schema will be made available in early 2007 -->
 
 
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:marc="http://www.loc.gov/MARC21/slim" elementFormDefault="qualified" attributeFormDefault="unqualified">
-	<xs:import namespace="http://www.loc.gov/MARC21/slim" schemaLocation="MARC21slim-x.xsd"/>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:marc="http://lcnetdev.github.io/MARC21/slim" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://lcnetdev.github.io/MARC21/slim" schemaLocation="MARC21slim-x.xsd"/>
 	<!-- 
 ********************root element declaration 
 -->

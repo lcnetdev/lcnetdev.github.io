@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<title>BIBFRAME Resource Types Discussion Paper: 25 June 2013 (BIBFRAME - Bibliographic Framework Initiative) | Library of Congress</title>
+<meta name="keywords" content="bibframe, category view, bibliographic framework, transition, initiative, marc, cataloging, library of congress">
+<meta name="description" content="BIBFRAME Relationships: Draft Specification, 25 April 2014. A <strong>BIBFRAME Relationship </strong>is a relationship between a BIBFRAME Work or Instance and another BIBFRAME Work  or Instance. (BIBFRAME - Bibliographic Framework Initiative, Library of Congress)">
+
+<link rel="dc.relation.isPartOf" href="http://lcnetdev.github.io/bibframe/docs/archive/" title="Document Archive: BIBFRAME - Bibliographic Framework Initiative (Library of Congress)">
+<meta name="dc.subject" content="bibliographic framework">
+<meta name="dc.subject" content="vocabulary">
+<meta name="dc.subject" content="resource types">
+<meta name="dc.subject" content="bibframe">
+<meta name="dc.type" content="webpage">
+<meta name="dc.identifier" content="http://lcnetdev.github.io/bibframe/docs/archive/resource-types.html">
+<meta name="dc.language" content="en">
+
+<link type="text/css" media="screen" rel="stylesheet" href="/bibframe/css/styles.css">
+<link type="text/css" media="print" rel="stylesheet" href="/css/loc_print_v2.css">
+<!--[if lte IE 7]><link type="text/css" media="screen" rel="stylesheet" href="/css/loc_lte_ie6.css"><![endif]-->
+<!--#include virtual="/bibframe/include/share-tool.html"-->
+<script type="text/javascript" src="http://cdn.loc.gov/js/lib/modernizr-1.5.min.js"></script></head>
+<body>
+<a id="skip" href="#skip_menu">skip navigation</a>
+<div id="container">
+  <!--#include virtual="/bibframe/include/branding.html"-->
+  <!--#include virtual="/cdn/html/lochead.html"-->
+  <div id="crumb_nav"><a href="http://lcnetdev.github.io">The Library of Congress</a> &gt; <a href="/bibframe/">BIBFRAME</a> &gt; <a href="/bibframe/docs/index.html">Model &amp; Vocabulary</a> &gt; <a href="index.html">Document Archive</a> &gt; BIBFRAME Resource Types Discussion Paper &mdash; 25 June 2013</div>
+  <div id="content">
+    <!--#include virtual="/bibframe/include/leftnav.html"-->
+    <div id="main_body">
+    	<!--#include virtual="/bibframe/include/share-tool-bar.html"-->
+      <div id="page_head"><span style="width: 100%;"><a name="skip_menu"></a></span>
+        <h1>BIBFRAME Resource Types Discussion Paper<br>
+        <span>25 June 2013</span></h1>
+      </div>
+      <ul class="bullet">
+        <li>Latest version: <a href="http://lcnetdev.github.io/bibframe/docs/archive/resource-types.html">http://lcnetdev.github.io/bibframe/docs/archive/annotations.html</a></li>
+        <li>Editor: Ray Denenberg, Library of Congress</li>
+        <li>Contributors<em> (in alphabetical order)</em>:Jan  Ashton, British Library;               Karim Boughida, George Washington University Libraries;               Alan  Danskin, British Library;               Corine  Deliot, British Library;               Nancy Fallgren, National Library of Medicine;               Ted  Fons, OCLC;               Kevin  Ford, Library of Congress;             Jean  Godby, OCLC;             Uche Ogbuji, Zepheira;               Rebecca  Guenther, Library of Congress;               Reinhold  Heuvelmann, German National Library;               Sally McCallum, Library of Congress;               Eric  Miller, Zepheira;               Jackie Shieh, George Washington University Libraries;               Nate Trail, Library of Congress;               Beacher Wiggins, Library of Congress</li>
+</ul>
+      
+      <p class="dot-top" style="margin-bottom:5px;"><strong>Status of this Document</strong></p>
+        <p><a rel="license" href="http://creativecommons.org/publicdomain/zero/1.0/"><img src="http://i.creativecommons.org/l/zero/1.0/88x31.png" style="border-style: none" alt="CC0" align="right"></a> <i>Note: This section describes the status of this document at the time of its publication. Other documents may supersede this document.</i> To the extent possible under law, <a rel="dct:publisher" href="http://lcnetdev.github.io/"><span property="dct:title">Library of Congress</span></a> has waived all copyright and related or neighboring rights to this work. This work is published from the United States.        </p>
+        <p><span class="loc_notice">This document was prepared in support of the BIBFRAME  Vocabulary 1.0 and made available to the BIBFRAME Community for review.</span>  It largely still supports the <a href="../index.html">BIBFRAME  vocabulary 2.0</a>, but it had not been updated.</p>
+ 
+<div class="box-anchor">
+<h3>Table of Contents </h3>
+<ul class="anchor">
+<li>
+<a href="#intro"><b>Introduction</b></a>
+   <ol>
+    <li><a href="#aims">Aims of the Model</a></li>	
+    <li><a href="#use-cases">Use Cases</a></li>
+    <li><a href="#terminology">Terminology</a></li>
+   </ol>
+</li>
+<li><a href="#what"><strong>What is a BIBFRAME Annotation?</strong></a>
+  <ol>
+    <li><a href="#purpose">Purpose of an Annotation</a></li>
+    <li><a href="#extrinsic">Annotations are Extrinsic</a></li>
+  </ol>
+</li>
+<li><a href="#parties"><strong>Parties to a  BIBFRAME Annotation</strong></a></li>
+<li><a href="#rdf"><b>RDF Representation</b></a>
+    <ol>
+       <li><a href="#components">Components</a></li>
+       <li><a href="#basic-form">Basic Form</a></li>
+       <li><a href="#properties">Properties</a></li>
+       <li><a href="#classes">Classes </a></li>
+    </ol>
+</li>
+<li><a href="#examples"><b>Annotation Examples</b></a>          
+    <ol>
+       <li><a href="#cover-art">Cover Art</a></li>	
+       <li><a href="#holding">Holding</a></li>
+       <li><a href="#review">Review</a></li>
+       <li><a href="#description">Description</a></li>
+       <li><a href="#external">Annotation Using an External Namespace</a></li>
+       </ol>
+</li>
+<li><a href="#summary"><b>Summary of BIBFRAME Annotation Properties</b></a></li>
+</ul>
+</div>
+
+
+<h2 id="intro">1. Introduction</h2>
+    
+            <p>Annotations are commomplace on  the web.  Comments about photos,  videos, and articles; reviews of restaurants and books -- these are considered informally to be web Annotations. </p>
+            <p>In a narrower context there are BIBFRAME  Annotations. In general, an Annotation asserts information about a resource; a BIBFRAME Annotation asserts information about a BIBFRAME resource. </p>
+            <p>A book, for example, might be described by a BIBFRAME Work.   A review of that book may be attached, via a BIBFRAME Annotation, to that BIBFRAME Work. </p>
+<h3 id="aims">1.1 Aims of This Model</h3>
+     <p> The general BIBFRAME model  defines four core resource classes: Work, Instance, Authority,  and Annotation; this model focuses on the latter, the BIBFRAME Annotation.  
+The aim is to define BIBFRAME  Annotations and enable them to be expressed and exchanged interoperably and efficiently.</p>
+              <p>It is also the aim of this model to be compatible and interoperable, where appropriate, with other Annotation community efforts.  </p>
+              
+<h3 id="use-cases">1.2 Use Cases</h3>              
+ <p>Following are  use case scenarios motivating the development of the BIBFRAME Annotation model. </p>  
+  <ul>
+                <li>
+<strong>Cover Art</strong>. 
+			      <em>Hennepin County Library acquires an ebook copy of </em>Shakespeare's Macbeth.<em> The library wishes to find cover art that it can use to advertise its copy. (Either there was no cover art supplied with the copy, or the cover art supplied was not deemed satisfactory.) There are dozens or perhaps  hundreds of cover art images for Macbeth. For many of these images, someone (either the artist, or a third-party annotator) has created an annotation saying "this image is cover art for this Instance". The Library can search cover art Annotations and select one that it likes.</em><br>
+			      <br>
+                </li>
+			    <li>
+<strong>Holdings</strong>.<em> Lucy is looking for a copy of the book </em>Plum Island, by DeMille.<em> She would like to find a local library that holds a copy, within her town of Independence Missouri. She searches by title and finds the BIBFRAME Work, which points to instances. Holding Annotations are attached to Instances, and she discovers that Blue River Library has a copy, which she is able to borrow.<br>
+			    </em><br>
+                </li>
+			    <li>
+<strong>Reviews</strong>. <em>Amy is trying to determine whether she wants to read the book </em>Shining Girls by Beuke<em>; she would like to read  reviews. There are many reviews - at Goodreads, Amazon, NY Times, NPR, and various other web sites. Amy would prefer to be able to gather a list of links to reviews, rather than going to each review site individually to look for a review of the book. <br>
+  Any reviewer is of course free to post a review to whatever review site he/she chooses. However, if, when a review is written, an Annotation can be created saying "this review reviews this book", then Amy can search for review Annotations and find at least  those reviews for which Annotations exist. </em><br>
+			      <br>
+			    </li>
+			    <li>
+<strong>Descriptions</strong>.<em> Tom is doing research on Brazil's political history. He comes across the BIBFRAME Work describing the book </em>Order and progress : a political history of Brazil by Schneider.<em> The Work has valuable information about the book, but Tom wonders if there is additional information available, not included in the Work, information that might help him decide whether the book will be useful to his research. <br>
+  Someone familiar with this book might see the BIBFRAME Work and notice that there is information missing which might be interesting or useful to a researcher, and attach a Description Annotation with that information. <br>
+  Tom searches for Annotations of the Work and finds  Description Annotations that tell him additional information about the book.</em> </li>
+      </ul>
+		        <p>These four scenarios are used to develop this model. An RDF class is defined for each. However, other use cases will surface and new Annotation classes will be defined. It is not the intent of this model to constrain the Annotation classes to the set of classes described in this document; this is a model, not a specification. </p>
+<h3 id="terminology">1.3 Terminology</h3>         
+  <p> The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" 
+                  in this document are to be interpreted as described in <a href="http://www.ietf.org/rfc/rfc2119" class="external">RFC 2119</a>.</p>
+                <p>A BIBFRAME Annotation, annotating a BIBFRAME resource (Work, Instance), is said to be "attached to"  the resource.</p>
+
+<h2 class="dot-top" id="what">2. What is a BIBFRAME Annotation?</h2>
+
+<p>An Annotation asserts information about a resource; the resource is referred to as the  Annotation Target. In the BIBFRAME context, the  Target is a BIBFRAME resource: Work,  Instance, Authority, or Annotation </p>
+                   <p><em><strong>Note: </strong>This version of this model describes use cases for Works and Instances only. Future use cases may be described for Authorities. The concept of annotating an Annotation is for further study.</em></p>
+                   <p>A BIBFRAME Work might correspond to a book, a BIBFRAME Instance might correspond to a particular publication of that book, and a BIBFRAME Authority might correspond to the author of the book. Thus the Work, Instance, and Authority are surrogates for the book, publication, and author. An Annotation -- for example a description -- attached  to the Work, Instance, or Authority, would, in this sense, pertain to the book, publication, or person. </p>
+              <p>The  nature of the relationship between a resource and an Annotation of the resource -- the "aboutness"  of the Annotation  -- is conveyed by its Class (see <em><a href="#classes">Classes</a></em>). </p>
+      <h3 id="purpose">2.1 Purpose of an Annotation </h3>
+      <p>Annotations  are asserted in order to:</p>
+                   <ul class="bullet">
+                     <li>Express  opinions about a resource,  for example a review.</li>
+                     <li> Attach  institution specific information, for example holdings.</li>
+                     <li>Contribute  enhancements to a resource description,  for example cover art or summary descriptions.</li>
+                   </ul>
+                   <h3 id="extrinsic">2.2 Annotations are Extrinsic </h3>
+              <p> The information asserted by an Annotation is  generally   extrinsic to its Target.</p>
+      <p> Please feel free to skip the remainder of this section, which provides a precise explanation of the above statement.</p>
+                   <blockquote>
+                     <p><em>Let:</em><br>
+                     <strong>BR </strong> = a BIBFRAME resource  (Work or Instance).  <br>
+                     <strong>A </strong>= the collective information represented by its Annotations. <br>
+                     <strong> AR </strong>= the <strong> "</strong>Annotated BIBFRAME Resource": the union of <strong>A </strong>and <strong>BR. </strong><br>
+                       <em><br>
+                       <strong>AR</strong>  represents the  collective information of the Resource and its Annotations. </em></p>
+                     <p><strong>C </strong>= the entity responsible for creating <strong>BR</strong>.<br> 
+                       <em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(May be one or more individuals and organizations. May simply be a cataloger.) </em><br>
+                       <strong>C' </strong>("C prime") = an individual or  organization distinct from <strong>C</strong> <br>
+                       <em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(i.e <strong>C'</strong>  is not authorized to contribute  information directly to <strong>BR</strong>). </em>                       </p>
+                     <p><em>Then:</em><br>
+                       - 
+Any information that is part of <strong>BR </strong>is  contributed by <strong>C</strong>.  <br>
+- 
+Conversely, in general, if <strong>C </strong>has information to contribute to <strong>AR</strong>, it is normally contributed via <strong>BR.<br>
+          </strong><em>&nbsp;&nbsp;&nbsp;&nbsp;(This is simply for modeling purposes. It is not a hard rule.)</em>                     <br>
+          - 
+          Any information contributed to <strong>AR </strong>by <strong>C' </strong>is contributed via <strong>A </strong>(i.e. via Annotation).</p>
+      </blockquote>
+                   <p>That is, the collective information -- the annotated resource, <strong>AR</strong> -- is  <strong>BR </strong>together with <strong>A</strong>:   <strong>C </strong>contributes via <strong>BR</strong>, <strong>C'</strong> via <strong>A</strong>. </p>
+                   <h2 id="parties">3. Parties to a BIBFRAME Annotation</h2>
+                   <p>In the BIBFRAME Annotation scenario illustrated in the following diagram, a reviewer reviews a book; subsequently, an Annotator creates an Annotation saying that "this review reviews this book".</p>
+                   <p>[IMAGE]</p>
+            
+<p>The parties and objects involved in this scenario are:</p>
+<ul class="bullet">
+  <li><strong>Target</strong>. I<em>n the illustration</em>: t<em>he BIBFRAME Work describing the book .</em><br>
+  </li>
+  <li><strong>Payload</strong>. <em>The book review.</em><br>
+  </li>
+  <li><strong>Class-specific Assertion</strong>. <em>The link (in red) from the Annotation to the review, property: ' review'; asserting that this review reviews the Target.</em></li>
+  <li><strong>General Annotation Assertions</strong>.<em>Links (in blue) from the Annotation to:</em>
+    <ol>
+      <li><em>The BIBFRAME Work, property: 'annotates'; asserting that the Work is the Target.</em></li>
+      <li><em>The reviewer, property: 'payloadSource'; asserting that the reviewer is the source of the review.</em></li>
+      <li><em>The annotator, property: 'annotationAssertedby'; asserting that the annotator is the individual who asserted the Annotation.</em><br>
+      </li>
+    </ol>
+  </li>
+  <li><strong>Payload Source</strong><em>. The Reviewer.</em><br>
+    In general, the author, artist, reviewer, etc. who created the payload.</li>
+  <li><strong>Annotator.</strong> The person or process that created the Annotation. It may, but need not, be the same as the source.</li>
+  <li><strong>Annotation.</strong> The Annotation itself. </li>
+  </ul>
+<h2 id="rdf">4. RDF Representation</h2>
+<p>BIBFRAME Annotations are represented in RDF (<a href="http://www.w3.org/RDF/" class="external">Resource Description Framework</a>).</p>
+<p>The prefix <strong>bf:</strong> denotes the BIBFRAME namespace.</p>
+<h3 id="components">4.1 Components of a BIBFRAME Annotation</h3>
+<p>The components of a BIBFRAME Annotation are:</p>
+<ol>
+  <li><strong>General Annotation Assertions.</strong> <br>
+    <em>RDF triples with properties which are common to all BIBFRAME Annotations. </em><br>
+    <ul>
+      <li><strong>bf:annotates</strong>. Expresses the Target.</li>
+      <li><strong>bf:payloadSource</strong><em>. </em>Expresses the source of the payload of the Annotation. Generally, a BIBFRAME Authority.</li>
+      <li><strong>bf:payloadSourceLink</strong><em>. </em>Points to a resource than contains the payload. <br>
+      </li>
+      <li><strong>bf:annotationAssertedBy.</strong> Expresses the Annotator.</li>
+    </ul>
+  </li>
+  <li><strong>Class-specific Assertions</strong>.<br>
+    <em>RDF triples where the properties are specific to the Annotation class.</em><br>
+    <strong>Note:</strong> The scenario in the above picture presents the simplest (non-degenerate) case: a single class-specific assertion, bf:review. ("Non-degenerate" because any Annotation whose target is a BIBFRAME resource is considered a BIBFRAME Annotation, BIBFRAME Annotations can exist with no class-specific properties.)</li>
+  <li><strong>Payload</strong>.<br>
+    <em>The collective information in the objects of the class-specific assertions. <br>
+    </em>In the simplest case there is a single class-specific assertion and the payload is a single resource, as in the Review scenario depicted above. However there may be more than one class-specific assertion, as in the cover art example below where there are two class-specific assertions, whose objects are the cover art image and a thumbnail; the image and thumbnail collectively is the payload.</li>
+  </ol>
+<h3 id="form">4.2 Basic Form</h3>
+<p>The basic BIBFRAME Annotation takes the following form:</p>
+<div class="msg-info" style="margin-bottom:15px;">
+  <pre style="font-size:9pt;">{Annotation URI}         <b>a</b>                          (Annotation class) ;</pre>
+  <blockquote>
+    <p>(<em>Class-specific Assertions</em>: one or more triples whose properties are specific 
+      to the Annotation class and whose objects are specific to the corresponding properties.)</p>  
+    </blockquote>
+  <pre style="font-size:9pt;">                         <b>bf:annotates</b>               (BIBFRAME Resource) ;
+                         <b>bf:annotationAssertedBy</b>    (BIBFRAME Authority) ;
+                         <b>bf:payloadSource</b>           (BIBFRAME Authority) ;
+                         <b>bf:payloadSourceLink</b>       (web resource) ;
+                         <b>bf:dateOfAssertion</b>         (xs:date e.g. '20130710') ;</pre>
+</div>
+<h3 id="proerties">4.3 Properties</h3>
+<p>In general a BIBFRAME Annotation includes the following properties:</p>
+<table class="std full">
+			  <tr>
+						<th width="20%">Property (or Properties)</th>
+						<th width="22%">Description</th>
+						<th width="51%">Occurence</th>
+	  </tr>
+                <tr>
+
+                  <td>bf:annotates</td>
+                  <td>Expresses the Annotation Target.</td>
+                  <td><strong>Mandatory.</strong><br>                    <strong>Repeatable:</strong> There may be multiple Targets -- <em>as long as</em> all of the information in the Annotation applies to all of the Targets.</td>
+                </tr>
+                <tr>
+                  <td><em>Class-specific Assertions</em></td>
+                  <td> Triples whose properties are specific to the Annotation class. </td>
+                  <td><strong>Optional.</strong><br>
+                  Normally, at least one. For the degenerate case there may be none. </td>
+                </tr>
+                <tr>
+                  <td>bf:annotationAssertedBy </td>
+
+                  <td>Expresses the Annotator.</td>
+                  <td><strong>Strongly recommended.</strong></td>
+                </tr>
+                <tr>
+                  <td>bf:payloadSource</td>
+                  <td>Expresses the Annotation payload Source.</td>
+
+                  <td><strong>Optional.</strong></td>
+                </tr>
+                <tr>
+                  <td>bf:payloadSourceLink</td>
+                  <td>Points to a resource than contains the payload.</td>
+                  <td><strong>Optional. </strong><br>
+                  Useful for an inline Annotation, to cite where the information was extracted from. See <a href="#summary-desc">Summary Description</a> example.</td>
+
+                </tr>
+                <tr>
+                  <td>bf:dateOfAssertion</td>
+                  <td>Expresses the date that the Annotation was asserted.</td>
+                  <td><strong>Optional. </strong></td>
+                </tr>
+
+      </table>
+         
+              <h3 id="classes">4.4 Classes</h3>
+              <p>As noted above a BIBFRAME Annotation asserts information <em>about</em> a BIBFRAME resource. The "aboutness" is (normally) expressed by a BIBFRAME Annotation class.              </p>
+              <p>Note. We say "normally" because this is not a requirement, since, as noted above, any Annotation whose target is a BIBFRAME resource is considered a BIBFRAME Annotation. So, a BIBFRAME Annotation may be of a class from an external namespace, such as in the example below, <em>Annotation Using an External Namespace</em>, where the class, defined in an external namespace, is declared to be a subclass of bf:Annotation, although even this is not a requirement. In fact, a BIBFRAME Annotation may have no class at all, it may express its "aboutness' in some other manner, though this is beyond the scope of this model.</p>
+      <p>So BIBFRAME Annotations are (normally) of class bf:Annotation and subclasses are defined for specific Annotation categories. For example bf:CoverArt is a subclass of bf:Annotation, thus ....</p>
+              <pre>&lt;http://xyz.org/bibframeTestCases/Annotations/Annotation/CoverArt&gt;  <b>a</b>  bf:CoverArt ;</pre>
+              <p>.... expresses that the Annotation is class bf:CoverArt, and since bf:CoverArt is a subclass of bf:Annotation, it also expresses that this is an Annotation.</p>
+      <p>Annotation classes defined in the BIBFRAME namespace are:</p>
+              <ul class="bullet">
+                <li>bf:CoverArt</li>
+                <li>bf:Holding</li>
+                <li>bf:Review</li>
+                <li>bf:Description</li>
+      </ul>
+                
+                <em>All are subclasses of </em>
+<ul class="bullet">
+        <li>bf:Annotation</li>
+      </ul>
+      <p>In addition, bf:Description has subclasses</p>
+              <ul class="bullet">
+                <li>bf:Summary</li>
+                <li>bf:Abstract</li>
+                <li>bf:TableOfContents</li>
+              </ul>
+              <h2 id="examples">5. Annotation Examples</h2>
+              <p><em>http://xyz.com URIs used for BIBFRAME resources identifiers are fictitious.</em></p>
+              <h3 id="cover-art">5.1 Cover Art</h3>
+              <p>In this example we look at a cover art Annotation. This scenario is represented by the BIBFRAME Test Case: <a href="http://bibframe.org/tools/tests/AnnotationCoverArt.html">AnnotationCoverArt</a></p>
+              <p>The BIBFRAME Work, &lt;<em>http://xyz.org/bibframeTestCases/Annotations/Work/Wildlife</em>&gt;, which represents the book <em>"Wildlife sanctuaries &amp; the Audubon Society : places to hide and seek"</em>.</p>
+      <p>The Work has a BIBFRAME Instance, &lt;<em>http://xyz.org/bibframeTestCases/Annotations/Instance/Wildlife</em>&gt;, which has cover art at &lt;<em>http://xyz.org/bibframeTestCases/Annotations/payload/coverArt.jpg</em>&gt; and the cover art has a thumbnail at &lt;<em>http://xyz.org/bibframeTestCases/Annotations/payload/coverArtThumb.jpg</em>&gt;</p>
+              <p>An annotator supplies a link to the cover art image, asserting that this image is cover art for the Instance, and also includes a link to a thumbnail, for the benefit of a user who might like to inspect the thumbnail before deciding whether to retrieve the larger image.</p>
+              <div class="i_alignleft border"><img src="images/image1.jpg" width="600" height="449" alt="Cover Art Illustration"/></div>
+              
+          <p class="clear-std">The Annotation itself may be represented in RDF triples as:</p>
+          <div class="msg-info" style="margin-bottom:15px;">
+            <pre style="font-size:9pt;">&lt;http://xyz.org/bibframeTestCases/Annotations/Annotation/CoverArt&gt;   a   bf:CoverArt;
+  bf:coverArtFor &lt;http://xyz.org/bfTestCases/Annotations/Instance/Wildlife&gt;  ;
+  bf:coverArt    &lt;http://xyz.org/bfTestCases/Annotations/payload/coverArt.jpg&gt; ;
+  bf:coverArtThumb &lt;http://xyz.org/bfTestCases/Annotations/payload/coverArtThumb.jpg&gt; ;      
+  bf:annotationAssertedBy &lt;http://xyz.org/bfTestCases/Annotation/Authority/RaysAnnotationService&gt; ; 
+  bf:dateOfAssertion  "20131010" .</pre>
+      </div>
+          <p class="clear-std">The class-specific properties are found in triples 3 and 4, bf:coverArt and bf:coverArtThumb. These two properties are defined with domain of class bf:CoverArt, so they are valid only within a cover art Annotation. bf:annotationAssertedBy and bf:dateOfAssertion have domain bf:Annotation, so they may occur in any BIBFRAME Annotation. bf:coverArtFor is a subproperty of bf:annotates.</p>
+          <h3 id="holding">5.2 Holding</h3>
+          <p>In BIBFRAME Test case <a href="http://bibframe.org/tools/tests/AnnotationHolding.html">AnnotationHolding</a>,</p>
+      <p><em>&lt;http://xyz.org/bibframeTestCases/Annotations/Instance/Bluebeard&gt;</em> is an instance of the BIBFRAME Work representing the book <em>Bluebeard</em> by Vonnegut.</p>
+      <p>The Holding Annotation of the Instance can be represented as follows.</p>
+      <div class="msg-info" style="margin-bottom:15px;">
+        <pre style="font-size:9pt;">&lt;http://xyz.org/bibframeTestCases/Annotations/Annotation/Holding&gt;   a   bf:Holding;
+     bf:annotationAssertedBy   &lt;http://id.loc.gov/vocabulary/organizations/dlc&gt; ;
+     bf:dateOfAssertion        &quot;20130808&quot; ;
+     bf:holds                  &lt;http://xyz.org/bfTestCases/Annotations/Instance/bluebeard&gt; ;   
+     bf:heldBy                 &lt;http://id.loc.gov/vocabulary/organizations/dlc&gt; ;
+     bf:subLocation            &quot;Jefferson or Adams Building Reading Rooms&quot; ;
+     bf:callNumber             &quot;PS3572.O5 B5 1987C&quot; ;
+     bf:copyNote               &quot;Copy 157&quot; ;
+     bf:copyNote               &quot;Signed by the author.&quot; ;
+     bf:copyId                 &quot;71234&quot; ;
+     bf:circulationStatus      &quot;non-circulating&quot; ;
+     bf:accessCondition        &quot;Access is restricted; consult library for details&quot; .</pre>
+      </div>
+      <p>bf:holds is is a subproperty of bf:annotates.</p>
+      <p>Properties in triples 5 through 12 are specific to Holding Annotations, that is, their domain is class Holding. These Holding properties are defined by this document, however additional Holding properties may be defined.</p>
+      <h3>5.3 Review</h3>
+          <p>BIBFRAME Review Annotations may be external or inline, and an example of each follows. In eithers case the following are properties of bf:Review.</p>
+          <ul class="bullet">
+            <li>bf:reviews (subproperty of bf:annotates)</li>
+            <li>bf:beginningOfReview</li>
+            <li>bf:fullReview</li>
+            <li>bf:review (equivalent to bf:fullReview)</li>
+          </ul>
+          <p>bf:beginningOfReview allows the Annotator to include the beginning of the review inline (this does not mean it is an inline review, just that the beginning of the review is provided inline). bf:fullReview is in effect like a "Read More" button, and normally provides a link to the entire review.</p>
+          <h4>External Review</h4>
+          <p>The following Annotation expresses that the New York Times review at <a href="http://www.nytimes.com/books/97/09/28/lifetimes/vonnegut-bluebird.html">http://www.nytimes.com/books/97/09/28/lifetimes/vonnegut-bluebird.html</a> reviews the book <em>Bluebeard</em> <em>- a Novel </em>by Vonnegut.</p>
+          <p>This scenario is represented by the BIBFRAME Test Case: <a href="http://bibframe.org/tools/tests/AnnotationReviewExternal.html">AnnotationReviewExternal.</a></p>
+          <div class="msg-info" style="margin-bottom:15px;">
+            <pre style="font-size:9pt;">&lt;http://xyz.org/bfTestCases/Annotations/Annotation/ReviewExternal&gt;   <b>a</b>   bf:Review;
+  bf:reviews            &lt;http://xyz.org/bfTestCases/Annotations/Work/bluebeard&gt; ;
+  bf:beginningOfReview  &quot;BY the high imaginative standards of Kurt Vonnegut at his best - 
+                        ''Cat's Cradle'' and 'laughterhouse-Five'' come to mind - 'Bluebeard,' 
+                        it seems to me, is a minor achievement.  .....&quot;
+  bf:fullReview         &lt;http://www.nytimes.com/books/97/09/28/lifetimes/vonnegut-bluebird.html&gt; ;  
+  bf:payloadSource   	&lt;http://xyz.org/bfTestCases/Annotations/Authority/NYTimesReviews&gt; ;
+  bf:annotationAssertedBy  &lt;http://xyz.org/bfTestCases/Annotations/Annotation/Authority/RaysServ&gt; ;
+  bf:dateOfAssertion    &quot;20130806&quot; .</pre>
+          </div>
+          <div>
+            <p>Note that in this example, the organization who reviewed the Work (bf:payloadSource) is not the same organization that asserted the Annotation (bf:annotationAssertedBy).</p>
+            <h4>Inline Review</h4>
+            <p>This example is also a review of <em>Bluebeard</em>; in this case the entire review is inline: the content of the review is contained within the Annotation.</p>
+            <p>This scenario is represented by the BIBFRAME Test Case: <a href="http://bibframe.org/tools/tests/AnnotationReviewInline.html">AnnotationReviewInline.</a></p>
+            <div class="msg-info" style="margin-bottom:15px;">
+              <pre style="font-size:9pt;">&lt;http://xyz.org/bfTestCases/Annotations/Annotation/ReviewInline&gt;   a   bf:Review;
+     bf:reviews         &lt;http://xyz.org/bibframeTestCases/Annotations/Work/bluebeard&gt; ;
+     bf:review          genid:A21756 ;
+     bf:payloadSource   &lt;http://xyz.org/bfTestCases/Annotations//Authority/RaysAnnotationService&gt; ;
+     bf:annotationAssertedBy  &lt;http://xyz.org/bfTestCases/Annotations//Authority/RaysServ&gt; ;
+     bf:dateOfAssertion       "20130807" .
+
+genid:A21756         a                cnt:ContentAsText ;
+                     cnt:chars        &quot;it ain't Cats Cradle but still vintage Vonnegut!&quot;
+                     dcterms:format   'text/plain' .</pre>
+            </div>
+            <p>In this example, the Annotator and reviewer are the same.</p>
+            <p>Inline Annotations such as this one use the W3C specification <a href="http://www.w3.org/TR/Content-in-RDF10/">Representing Content in RDF</a>. The following namespaces are used:</p>
+            <table class="std full">
+              <tr>
+                <th width="20%">Prefix</th>
+                <th width="22%">Namespace</th>
+                <th width="51%">Description</th>
+              </tr>
+              <tr>
+                <td>cnt</td>
+                <td>http://www.w3.org/2011/content#</td>
+                <td><a href="http://www.w3.org/TR/Content-in-RDF10/">Representing Content in RDF</a></td>
+              </tr>
+              <tr>
+                <td>dcterms</td>
+                <td>http://purl.org/dc/terms/</td>
+                <td><a href="http://dublincore.org/documents/dcmi-terms/">Dublin Core Terms</a></td>
+              </tr>
+            </table>
+            <h3>5.4 Description</h3>
+            <p>BIBFRAME Description Annotations are all of class bf:Description, however bf:Description is subject to refinement (subclassing). If no subclass is declared (as in the first example below), it is referred to (informally) as a "plain description". This document declares Description subclasses: bf:Summary, bf:Abstract, and bf:TableOfContents. Additional subclasses of bf:Description can be declared. Below are examples of a "plain description and a "summary description". No matter what the Description (sub) class, the same properties are used:</p>
+            <ul>
+              <li>bf:describes (subproperty of bf:annotates)</li>
+              <li>bf:beginningOfDescription</li>
+              <li>bf:fullDescription</li>
+              <li>bf:description (equivalent to bf:fullDescription)</li>
+            </ul>
+            <p>These are analogous to the listed bf:Review properties.</p>
+            <h4>Plain Description</h4>
+            <p>In the scenario depicted in BIBFRAME test case <a href="http://bibframe.org/tools/tests/AnnotationDescription.html">AnnotationDescription,</a> the BIBFRAME Work Bluebeard is annotated by a description. The beginning of the description is supplied inline, along with a link to the full description. The Annotation can be represented as follows:</p>
+            <div class="msg-info" style="margin-bottom:15px;">
+              <pre style="font-size:9pt;">&lt;http://xyz.org/bfTestCases/Annotations/Annotation/Description&gt;   <b>a</b>   bf:Description;
+  bf:describes            &lt;http://xyz.org/bfTestCases/Annotations/Work/bluebeard&gt; ;
+  bf:annotationAssertedBy &lt;http://xyz.org/bfTestCases/Annotations/Authority/RaysServ&gt;	;
+  bf:payloadSource        &lt;http://xyz.org/bfTestCases/Annotations/Authority/Wikipedia&gt; ;
+  bf:dateOfAssertion   	  &quot;20131010&quot; ;
+  bf:beginningOfdescription   &quot;Bluebeard, the Autobiography of Rabo Karabekian (1916–1988) is 
+                              a 1987 novel by best-selling author Kurt Vonnegut. It is told as a 
+                              first person narrative and describes the late years of fictional 
+                              Abstract Expressionist painter Rabo Karabekian, who first appeared, 
+                              rather briefly, in Breakfast of Champions. Circumstances of the 
+                              novel bear rough resemblance to the fairy tale of Bluebeard 
+                              popularized by Charles Perrault. Karabekian mentions this 
+                              relationship once in the novel.&quot; ;
+  bf:fullDescription      &lt;http://en.wikipedia.org/wiki/Bluebeard_%28Vonnegut_novel%29&gt; .</pre>
+            </div>
+            <h4>Summary Description</h4>
+            <p>In the scenario depicted in BIBFRAME test case <a href="http://bibframe.org/tools/tests/AnnotationDescriptionSummary.html">AnnotationDescriptionSummary</a> the BIBFRAME Work describing the book: <em>Order and progress : a political history of Brazil</em> by Schneider; is annotated by a summary.</p>
+            <p>Class bf:Summary is a subclass of bf:Description.</p>
+            <p>The Annotation can be represented as follows:</p>
+            <div class="msg-info" style="margin-bottom:15px;">
+              <pre style="font-size:9pt;">&lt;http://xyz.org/bfTestCases/Annotations/Annotation/DescriptionSummary&gt;   <b>a</b>   bf:Summary;
+  bf:describes            &lt;http://xyz.org/bfTestCases/Annotations/Work/orderAndProgress&gt; ;
+  bf:annotationAssertedBy &lt;http://xyz.org/bfTestCases/Annotations/Authority/RaysServ&gt; ;
+  bf:dateOfAssertion   	  &quot;20131010&quot; ;
+  bf:payloadSource        &lt;http://xyz.org/bfTestCases/Annotations/Authority/Amazon&gt; ;
+  bf:payloadSourceLink &lt;http://www.amazon.com/Order-And-Progress-Political-History/dp/0813310768&gt; ;
+  bf:description     	  genid:A21760 .
+
+genid:A21760  a          cnt:ContentAsText ;
+              cnt:chars  &quot;In this account of five centuries of political development in Brazil, 
+                         Dr Schneider examines the causes and consequences of the enduring tension
+                         between order and progress - the two goals expressed in the country's
+                         national motto. He focuses on the historical roles of the three actors at
+                         the centre of Brazil's national life that have traditionally favoured 
+                         order: the Church, the military, and the propertied classes. At the same
+                         time he gives careful consideration to the champions of progress, such as
+                         urban professionals, the intelligentsia and the middle class. The author
+                         weaves in discussion of the social and economic life of Brazil and how it
+                         has influenced political development since the colonial era.&quot; ;
+              dcterms:format    'text/plain' .</pre>
+            </div>
+            <h3 id="external">5.5 Annotation Using an External Namespace</h3>
+            <p>This example is included ito illustrate that BIBFRAME Annotations are not constrained to BIBFRAME defined classes and properties.</p>
+            <p><a href="#components">Components</a> (above) describes the components of a basic BIBFRAME Annotation. However, any Annotation where the Target is a BIBFRAME Resource may be considered a BIBFRAME Annotation. For example, the following may be considered a BIBFRAME Annotation:</p>
+            <div class="msg-info" style="margin-bottom:15px;">
+              <pre style="font-size:9pt;">&lt;http://library.local.org/annotationXYZ&gt;  <b>a</b>                         em:Watcher;
+                                          em:pingback               &lt;library.local.org/works/w1&gt; ;
+                                          bf:annotates              &lt;library.local.org/works/w1&gt; ;
+                                          bf:annotationAssertedBy   &lt;library.local.org/em&gt; .  </pre>
+            </div>
+            <p>"em:" denotes some namespace other than "bf:". Class em:Watcher may be declared to be a subclass of bf:Annotation, and em:pingback would have range em:Watcher. </p>
+            <h2 id="summary">6. Summary of BIBFRAME Annotation Properties and Classes</h2>
+            <h3 id="properties">6.1 Properties</h3>
+
+            <table width="98%" class="std full">
+                                                                <tr>
+                                                                  <th width="33%">Property</th>
+                                                                  <th width="18%">Domain</th>
+                                                                  <th width="33%">Range</th>
+                                                                  <th width="16%">Subproperty of </th>
+                                                                  <th width="16%"><strong>Equivalent to </strong></th>
+                                                                </tr>
+                                                                <tr>
+                                                                  <td colspan="5" valign="top"><div align="center"><strong>General Annotation Properties </strong></div></td>
+                                                                </tr>
+                                                                <tr>
+                                                                  <td valign="top"><strong>bf:annotates</strong>                                                                  <strong>bf:annotationAssertedBy</strong>                                                                  <strong>bf:payloadSource</strong>                                                                    <strong>bf:payloadSourceLink</strong>                                                                  <strong>bf:dateOfAssertion</strong></td>
+                                                                  <td valign="top">bf:Annotation                                                                    bf:Annotation                                                                  bf:Annotation                                                                  bf:Annotation                                                                  bf:Annotation</td>
+                                                                  <td valign="top">bf:Work  
+                                                                  or Instance<br>                                                                  bf:Authority<br>                                                                  bf:Authority                                                                    <br>
+                                                                  resource                                                                    <br>
+                                                                  xs:date                                                                  </td>
+                                                                  <td colspan="2" valign="top">
+<p> </p>
+                                                                  <p> </p>
+</td>
+                                                                </tr>
+                                                                
+                                                                <tr>
+                                                                  <td colspan="5"><div align="center"><strong>Cover Art Annotation Properties </strong></div></td>
+                                                                </tr>
+                                                                <tr>
+                                                                  <td>
+<strong>bf:coverArtFor<br>
+</strong><strong>bf:coverArt<br>
+                                                                    </strong><strong>bf:coverArtThumb</strong>
+                                                                  </td>
+                                                                  <td>
+bf:CoverArt<br>
+                                                                    bf:CoverArt<br>
+                                                                    bf:CoverArt
+                                                                  </td>
+                                                                  <td>
+bf:Instance<br>
+                                                                    resource<br>
+                                                                  resource
+                                                                  </td>
+                                                                  <td colspan="2" valign="top">bf:annotates</td>
+                                                                </tr>
+                                                                
+                                                                <tr>
+                                                                  <td colspan="5"><div align="center"><strong>Holding Annotation Properties </strong></div></td>
+                                                                </tr>
+                                                                <tr>
+                                                                  <td><strong>bf:holds<br>
+                                                                  </strong><strong>bf:heldBy<br>
+                                                                  </strong><strong>bf:subLocation<br>
+                                                                  </strong><strong>bf:callNumber<br>
+                                                                  </strong><strong>bf:copyNote<br>
+                                                                  </strong><strong>bf:copyId<br>
+                                                                  bf:circulationStatus<br>
+                                                                  bf:accessCondition</strong><br>
+                                                   
+</td>
+                                                                  <td>bf:Holding<br>
+                                                                  bf:Holding<br>
+                                                                  bf:Holding<br>
+                                                                  bf:Holding<br>
+                                                                  bf:Holding<br>
+                                                                  bf:Holding<br>
+                                                                  bf:Holding<br>
+bf:Holding
+                                                                  </td>
+                                                                  <td valign="top">bf:Instance<br>bf:Authority<br>xs:string<br>xs:string<br>xs:string<br>                                                                    xs:string<br>
+                                                                  xs:string<br>xs:string                                                                    <br></td>
+                                                                  <td valign="top">bf:annotates                                                                      </td>
+                                                                  <td> </td>
+                                                                </tr>
+                                                                <tr>
+                                                                  <td colspan="5"><div align="center"><strong>Review Annotation Properties </strong></div></td>
+                                                                </tr>
+                                                                <tr>
+                                                                  <td><strong>bf:reviews</strong><br>                                                                          <strong>bf:beginningOfReview</strong><strong><br>
+                                                                    bf:fullReview</strong><strong><br>
+                                                                    </strong><strong> bf:review</strong></td>
+                                                                  <td>bf:Review<br>
+                                                                    bf:Review<br>
+                                                                    bf:Review <br>
+                                                                    bf:Review</td>
+                                                                  <td>bf:Work<br>
+                                                                    xs:string<br>
+                                                                    resource<br>
+                                                                    resource</td>
+                                                                  <td valign="top">bf:annotates</td>
+                                                                  <td valign="bottom">
+                                                                  bf:review <br>
+                                                                    bf:fullReview</td>
+                                                                </tr>
+                                                                
+                                                                <tr>
+                                                                  <td colspan="5"><div align="center"><strong>Description Annotation Properties </strong></div></td>
+                                                                </tr>
+                                                                <tr>
+                                                                  <td><strong>bf:describes<br>
+                                                                  </strong><strong>bf:beginningOfdescription<br>
+                                                                  </strong><strong>bf:fullDescription</strong><strong><br>
+                                                                  bf:description</strong>                                                                  </td>
+                                                                  <td>bf:Description<br>
+                                                                  bf:Description<br>
+                                                                  bf:Description<br>bf:Description</td>
+                                                                  <td>bf:Work  
+                                                                    or 
+                                                                    Instance <br>
+                                                                    xs:string<br>
+                                                                  resource<br>resource</td>
+                                                                  <td valign="top">bf:annotates</td>
+                                                                  <td valign="bottom">                                                                    bf:description<br>
+                                                                  bf:fullDescription<br>                                                                  </td>
+                                                                </tr>
+                                                          </table>
+                                       
+ <table class="std full">
+                                                        <tr>
+                                                          <th width="29%">Class</th>
+                                                          <th width="71%">Subclass of </th>
+                                                        </tr>
+                                                        
+                                                        <tr>
+                                                          <td valign="top"><strong>bf:Annotation</strong></td>
+                                                          <td valign="top">&nbsp;</td>
+                                                        </tr>
+                                                        
+                                                        <tr>
+                                                          <td><strong>bf:CoverArt<br>
+                                                          bf:Review<br>
+                                                          bf:Holding<br>
+                                                          bf:Description<br>
+                                                          </strong></td>
+                                                          <td>bf:Annotation<br>
+                                                            bf:Annotation<br>
+bf:Annotation<br>
+bf:Annotation                                                            </td>
+                                                        </tr>
+                                                        
+                                                        
+                                                        <tr>
+                                                          <td><strong>bf:Summary<br>
+                                                          bf:Abstract</strong><br>                                                          <strong>bf:TableOfContents</strong></td>
+                                                          <td>bf:Description<br>
+                                                          bf:Description<br>
+                                                          bf:Description</td>
+                                                        </tr>
+                                                      </table>
+ <p class="backtotop"><a href="#skip_menu">Back to Top</a></p>
+    </div>
+
+    <div class="clear"><!-- --></div>
+  </div><!-- end id:main_body -->
+</div><!-- end id:content -->
+  <!--#include virtual="/cdn/html/locfoot.html"-->
+<!-- end id:container -->
+</body>
+</html>

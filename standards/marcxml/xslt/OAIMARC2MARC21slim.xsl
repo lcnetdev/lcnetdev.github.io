@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns="http://www.loc.gov/MARC21/slim" xmlns:oai="http://www.openarchives.org/OAI/1.1/oai_marc" version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" exclude-result-prefixes="oai">
+<xsl:stylesheet xmlns="http://lcnetdev.github.io/MARC21/slim" xmlns:oai="http://www.openarchives.org/OAI/1.1/oai_marc" version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" exclude-result-prefixes="oai">
 	<xsl:template match="oai:oai_marc">
-		<record xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC21/slim
-		http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd" >
+		<record xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://lcnetdev.github.io/MARC21/slim
+		http://lcnetdev.github.io/standards/marcxml/schema/MARC21slim.xsd" >
 			<leader>
 				<xsl:text>     </xsl:text>
 				<xsl:value-of select="@status"/>
@@ -85,6 +85,6 @@
 	</xsl:template>
 </xsl:stylesheet><!-- Stylus Studio meta-information - (c)1998-2002 eXcelon Corp.
 <metaInformation>
-<scenarios/><MapperInfo srcSchemaPath="oai_marc.xsd" srcSchemaRoot="oai_marc" srcSchemaPathIsRelative="yes" srcSchemaInterpretAsXML="no" destSchemaPath="http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd" destSchemaRoot="" destSchemaPathIsRelative="yes" destSchemaInterpretAsXML="no"/>
+<scenarios/><MapperInfo srcSchemaPath="oai_marc.xsd" srcSchemaRoot="oai_marc" srcSchemaPathIsRelative="yes" srcSchemaInterpretAsXML="no" destSchemaPath="http://lcnetdev.github.io/standards/marcxml/schema/MARC21slim.xsd" destSchemaRoot="" destSchemaPathIsRelative="yes" destSchemaInterpretAsXML="no"/>
 </metaInformation>
 -->

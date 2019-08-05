@@ -10,7 +10,7 @@
 @import url(../css/sru-base.css);
 </style>
 <meta http-equiv="Content-Language" content="en-us">
-<link rel="shortcut icon" href="http://www.loc.gov:8081/standards/sru/images/favicon.ico">
+<link rel="shortcut icon" href="http://lcnetdev.github.io:8081/standards/sru/images/favicon.ico">
 <!-- InstanceBeginEditable name="head" -->
 <meta name="keywords" content="SRU Version 1.1 archive specifications sru search retrieval url cql zeerex standards library congress">
 <meta name="description" content="SRU Version 1.1 archive. SRU is a standard XML-focused search protocol for Internet search queries, utilizing CQL (Contextual Query Language), a standard syntax for representing queries. Standards, The Library of Congress.">
@@ -33,7 +33,7 @@
 <input type="hidden" name="rq" value="0">
 <input type="hidden" name="qc" value="">
 <table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
-  <div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div></td>
+  <div class="sitenav"><a href="http://lcnetdev.github.io/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://lcnetdev.github.io/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div></td>
 <td width="116"><select name="qp" tabindex="1">
 <option value="url:/sru" selected>SRU Web Pages</option>
 <option value="url:/standards url:/ead url:/marc">Standards Pages</option>
@@ -62,12 +62,12 @@
       <UL>
         <LI><STRONG><A 
         href="sru-bindings.wsdl">SRU Bindings</A> (wsdl)</STRONG><BR>
-            <EM>Namespace URI:</EM> http://www.loc.gov/zing/srw/sru-bindings/&nbsp;&nbsp;&nbsp; (<i>see <a href="#note">note</a></i>.)<BR>
+            <EM>Namespace URI:</EM> http://lcnetdev.github.io/zing/srw/sru-bindings/&nbsp;&nbsp;&nbsp; (<i>see <a href="#note">note</a></i>.)<BR>
             <EM>Imports:</EM> SRW Ports<BR>
           REST-like binding of the messages to HTTP for SRU.
         <LI><STRONG><A 
         href="sru-sample-service.wsdl">SRU Sample Service</A> (wsdl)</STRONG><BR>
-              <EM>Namespace URI:</EM> http://www.loc.gov/zing/srw/sru-sample-service/ &nbsp;&nbsp;&nbsp; (<i>see <a href="#note">note</a></i>.)<BR>
+              <EM>Namespace URI:</EM> http://lcnetdev.github.io/zing/srw/sru-sample-service/ &nbsp;&nbsp;&nbsp; (<i>see <a href="#note">note</a></i>.)<BR>
               <EM>Imports:</EM> SRU Bindings<BR>
           Example of importing SRU Bindings a specifying a local endpoint for
           a local SRU service. </LI>
@@ -76,12 +76,12 @@
       <UL>
         <LI><STRONG><A 
         href="diagnostics.xsd">Diagnostic Schema</A> (xsd)</STRONG><BR>
-            <EM>Namespace URI:</EM> http://www.loc.gov/zing/srw/diagnostic/&nbsp;&nbsp;&nbsp; (<i>see <a href="#note">note</a></i>.)<BR>
+            <EM>Namespace URI:</EM> http://lcnetdev.github.io/zing/srw/diagnostic/&nbsp;&nbsp;&nbsp; (<i>see <a href="#note">note</a></i>.)<BR>
             <EM>Imports:</EM> N/A<BR>
           structure for diagnostic records
         <LI><STRONG><A 
         href="xcql.xsd">XCQL Schema</A> (xsd)</STRONG><BR>
-              <EM>Namespace URI:</EM> http://www.loc.gov/zing/cql/xcql/&nbsp;&nbsp;&nbsp; (<i>see <a href="#note">note</a></i>.)<BR>
+              <EM>Namespace URI:</EM> http://lcnetdev.github.io/zing/cql/xcql/&nbsp;&nbsp;&nbsp; (<i>see <a href="#note">note</a></i>.)<BR>
               <EM>Imports:</EM> N/A<BR>
           XML structure for echoing back a CQL query (aimed at clients performing
           XSLT transformations) </LI>
@@ -90,12 +90,12 @@
       <UL>
         <LI><STRONG><A 
         href="srw-bindings.wsdl">SRW Bindings</A> (wsdl)</STRONG><BR>
-            <EM>Namespace URI:</EM> http://www.loc.gov/zing/srw/srw-bindings/&nbsp;&nbsp;&nbsp; (<i>see <a href="#note">note</a></i>.)<BR>
+            <EM>Namespace URI:</EM> http://lcnetdev.github.io/zing/srw/srw-bindings/&nbsp;&nbsp;&nbsp; (<i>see <a href="#note">note</a></i>.)<BR>
             <EM>Imports:</EM> SRW Ports<BR>
           Binding of the messages to SOAP and HTTP for SRW.
         <LI><STRONG><A 
         href="srw-sample-service.wsdl">SRW Sample Service</A> (wsdl)</STRONG><BR>
-              <EM>Namespace URI:</EM> http://www.loc.gov/zing/srw/srw-sample-service/&nbsp;&nbsp;&nbsp; (<i>see <a href="#note">note</a></i>.)<BR>
+              <EM>Namespace URI:</EM> http://lcnetdev.github.io/zing/srw/srw-sample-service/&nbsp;&nbsp;&nbsp; (<i>see <a href="#note">note</a></i>.)<BR>
               <EM>Imports:</EM> SRW Bindings<BR>
           Example of importing SRW Bindings a specifying a local endpoint for
           a local SRW service. </LI>
@@ -104,13 +104,13 @@
       <UL>
         <LI><STRONG><A 
         href="srw-types.xsd">SRW Types</A> (xsd)</STRONG><BR>
-            <EM>Namespace URI: </EM>http://www.loc.gov/zing/srw/&nbsp;&nbsp; (<i>see
+            <EM>Namespace URI: </EM>http://lcnetdev.github.io/zing/srw/&nbsp;&nbsp; (<i>see
             <a href="#note">note</a></i>.) <BR>
             <EM>Imports:</EM> Diagnostic Schema and XCQL Schema<BR>
           XML Schema specifying the XML structures used in the SRW/SRU messages
         <LI><STRONG><A 
         href="srw-ports.wsdl">SRW Ports</A> (wsdl)</STRONG><BR>
-            <EM>Namespace URI:</EM> http://www.loc.gov/zing/srw/interfaces/&nbsp;&nbsp;&nbsp; (<i>see <a href="#note">note</a></i>.)<BR>
+            <EM>Namespace URI:</EM> http://lcnetdev.github.io/zing/srw/interfaces/&nbsp;&nbsp;&nbsp; (<i>see <a href="#note">note</a></i>.)<BR>
             <EM>Imports:</EM> SRW Types<BR>
           WSDL defining the messages used by SRW and SRU </LI>
       </UL>
@@ -131,8 +131,8 @@
       <div id="breadcrumbs-bottom"><a href="../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-bottom" -->xml files  <!-- InstanceEndEditable --></div>
 </td></tr>
 </table>
-<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://www.loc.gov/">The 
-        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://lcnetdev.github.io/">The 
+        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://lcnetdev.github.io/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div>
       <br>
   <span class="sitenav">
   <!-- #BeginDate format:Am1 -->November 25, 2013<!-- #EndDate -->

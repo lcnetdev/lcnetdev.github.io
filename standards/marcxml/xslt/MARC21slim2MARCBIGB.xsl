@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="2.0" xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" exclude-result-prefixes="marc">
+<xsl:stylesheet version="2.0" xmlns:marc="http://lcnetdev.github.io/MARC21/slim" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" exclude-result-prefixes="marc">
 	<xsl:output method="xml" indent="yes" doctype-system="ftp://ftp.loc.gov/pub/marcdtd/mrcbxmlfile.dtd"/>
 
 	<xsl:variable name="fixedFile" select="document('MARCBIGFixedPositionsB.xml')"/>

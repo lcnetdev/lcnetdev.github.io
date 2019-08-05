@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="info:lc/xmlns/rmd-v1" targetNamespace="info:lc/xmlns/rmd-v1" elementFormDefault="qualified" attributeFormDefault="unqualified">
-	<xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.loc.gov/mods/xml.xsd"/>
+	<xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://lcnetdev.github.io/mods/xml.xsd"/>
 	<!-- 
 ***************root element <recordMetadata> 
 -->

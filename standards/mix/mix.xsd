@@ -60,9 +60,9 @@
 <!-- localProfileURL (7.1.3.2.2.2) element name changed to localProfileURI  -->
 <!-- end of Change History Version 1.0 to Version 2.0 -->
 
-<xsd:schema targetNamespace="http://www.loc.gov/mix/v20" 
+<xsd:schema targetNamespace="http://lcnetdev.github.io/mix/v20" 
 	    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-	    xmlns="http://www.loc.gov/mix/v20"
+	    xmlns="http://lcnetdev.github.io/mix/v20"
 	    elementFormDefault="qualified"
 	    attributeFormDefault="unqualified"
 	    >

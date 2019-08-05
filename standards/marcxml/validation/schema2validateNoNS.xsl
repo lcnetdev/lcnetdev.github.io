@@ -4,7 +4,7 @@
 <xsl:output indent="yes"/>
 
 <xsl:template match="/">
-	<oxsl:stylesheet version="1.0" xmlns:marc="http://www.loc.gov/MARC21/slim">
+	<oxsl:stylesheet version="1.0" xmlns:marc="http://lcnetdev.github.io/MARC21/slim">
 		<xsl:apply-templates select="schema"/>
 	</oxsl:stylesheet>
 </xsl:template>

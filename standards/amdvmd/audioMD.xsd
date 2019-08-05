@@ -2,8 +2,8 @@
 <!-- AudioMD version 2.0 -->
 <!-- edited with XML Spy v4.0.1 (http://www.xmlspy.com) by D. Casey (User Technology Associates, Inc.) -->
 <!-- edited with oXygen by K. Bredenberg -->
-<xs:schema targetNamespace="http://www.loc.gov/audioMD/" xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	xmlns="http://www.loc.gov/audioMD/" elementFormDefault="qualified">
+<xs:schema targetNamespace="http://lcnetdev.github.io/audioMD/" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://lcnetdev.github.io/audioMD/" elementFormDefault="qualified">
 	<!--============================================================
 
   AUDIOMD: Audio Technical Metadata Extension Schema  

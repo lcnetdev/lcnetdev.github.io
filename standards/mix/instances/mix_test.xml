@@ -2,7 +2,7 @@
 <!-- edited with Emacs by Morgan Cundiff (Library of Congress) -->
 <!-- This document is only for the purpose of illustrating basic MIX document structure. The values are legal but may not be realistic -->
 
-<mix xmlns="http://www.loc.gov/mix/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://www.loc.gov/mix/ http://www.loc.gov/mix/mix.xsd"  >
+<mix xmlns="http://lcnetdev.github.io/mix/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://lcnetdev.github.io/mix/ http://lcnetdev.github.io/mix/mix.xsd"  >
 
   <BasicImageParameters>
     <Format>

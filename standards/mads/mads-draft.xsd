@@ -3,9 +3,9 @@
 <!-- MADS, an XML schema based on  the MARC Authorities Format 
 ******************* April 29, 2004 ***************************
 -->
-<xsd:schema targetNamespace="http://www.loc.gov/mads/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.loc.gov/mads/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xsd:schema targetNamespace="http://lcnetdev.github.io/mads/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://lcnetdev.github.io/mads/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xsd:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
-	<xsd:import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://www.loc.gov/standards/mods/xlink.xsd"/>
+	<xsd:import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://lcnetdev.github.io/standards/mods/xlink.xsd"/>
 	<!-- 
 	
 	Root Elements	
@@ -492,15 +492,15 @@ definition of languageAndAuthority Attribute Group
 	<xsd:attribute name="authority"/>
 	<!--
 				For Name: Value is from the list at  
-				http:/www.loc.gov/marc/sourcecode/authorityfile/authorityfilesource.html
+				http:/lcnetdev.github.io/marc/sourcecode/authorityfile/authorityfilesource.html
 				For Title: Value is from the list at 
-				http:/www.loc.gov/marc/sourcecode/authorityfile/authorityfilesource.html
+				http:/lcnetdev.github.io/marc/sourcecode/authorityfile/authorityfilesource.html
 				For genre: Value is from the list at 		
-				http://www.loc.gov/marc/sourcecode/genre/genresource.html
+				http://lcnetdev.github.io/marc/sourcecode/genre/genresource.html
 				For geographic: Value is from the list at 		
-				 http:/www.loc.gov/marc/sourcecode/subject/subjectsource.html
+				 http:/lcnetdev.github.io/marc/sourcecode/subject/subjectsource.html
 				For organizations (source): Value is from the list at 		
-				http://www.loc.gov/marc/sourcecode/organization/organizationsource.html.  
+				http://lcnetdev.github.io/marc/sourcecode/organization/organizationsource.html.  
 
  ********** language attribute group definition  **********  	                       	  
 -->

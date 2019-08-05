@@ -59,14 +59,14 @@ There are two problems with this:
 
 These need to be corrected.   Meanwhile, this version uses:
 
-schemaLocation="http://www.loc.gov/standards/sru/sru-2-0/schemas/xxx.xsd"/
+schemaLocation="http://lcnetdev.github.io/standards/sru/sru-2-0/schemas/xxx.xsd"/
 
 ************************************************************
 ************************************************************	
 	-->
 	
-	<wsdl:import namespace="http://docs.oasis-open.org/ns/search-ws/sruResponse" location="http://www.loc.gov/standards/sru/sru-2-0/schemas/sruResponse.xsd"/>
-	<wsdl:import namespace="http://docs.oasis-open.org/ns/search-ws/sruRequest" location="http://www.loc.gov/standards/sru/sru-2-0/schemas/sruRequest.xsd"/>
+	<wsdl:import namespace="http://docs.oasis-open.org/ns/search-ws/sruResponse" location="http://lcnetdev.github.io/standards/sru/sru-2-0/schemas/sruResponse.xsd"/>
+	<wsdl:import namespace="http://docs.oasis-open.org/ns/search-ws/sruRequest" location="http://lcnetdev.github.io/standards/sru/sru-2-0/schemas/sruRequest.xsd"/>
 	
 	<wsdl:types>
 		<xs:schema targetNamespace="http://new.webservice.namespace" elementFormDefault="qualified"/>

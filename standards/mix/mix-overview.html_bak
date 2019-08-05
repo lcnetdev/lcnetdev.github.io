@@ -3,7 +3,7 @@
 <html>
 <head>
 <title>MIX Overview (Metadata for Images in XML, Library of Congress)</title>
-<base href="http://www.loc.gov/standards/mix/mix-overview.html">
+<base href="http://lcnetdev.github.io/standards/mix/mix-overview.html">
 <meta name="keywords" content="mix overview metadata image schema web site library congress xml">
 <meta name="description" content="This document gives an overview of Metadata for Images in XML (MIX) maintained by the Library of Congress">
 <META http-equiv="Content-Style-Type" content="text/css">
@@ -12,7 +12,7 @@
 <body link="#993300" vlink="#CC6600" bgcolor="#FFFFFF" alink="#CC0000">
 <table width=600 cellpadding=4 cellspacing=0 border=0 align=center>
   <tr> 
-    <td><a href="http://www.loc.gov/standards/mix/"><img src="images/mix-bar.gif" width="600" height="40" alt="Metadata for Images in XML (MIX): Office Web Site" border="0"></a></td>
+    <td><a href="http://lcnetdev.github.io/standards/mix/"><img src="images/mix-bar.gif" width="600" height="40" alt="Metadata for Images in XML (MIX): Office Web Site" border="0"></a></td>
   </tr>
   
 
@@ -37,9 +37,9 @@
       <h2>1. Uses</h2>
       <p>MIX could potentially be used as follows:</p>
       <ul>
-        <li>as a <a href="http://www.loc.gov/z3950/agency/zing/zing.html">Z39.50 
+        <li>as a <a href="http://lcnetdev.github.io/z3950/agency/zing/zing.html">Z39.50 
           Next Generation</a> specified format</li>
-        <li>as an extension schema to <a href="http://www.loc.gov/mets/">METS</a> 
+        <li>as an extension schema to <a href="http://lcnetdev.github.io/mets/">METS</a> 
           (Metadata Encoding and Transmission Standard)</li>
         <li>to represent metadata for harvesting </li>
         <li>for original resource description in XML syntax</li>
@@ -66,7 +66,7 @@
           at the element level.</li>
       </ul>
       <h2>4. Limitations of MIX</h2>
-      <p>MIX includes a subset of data from the <i><a href="http://www.loc.gov/marc/bibliographic/">MARC 
+      <p>MIX includes a subset of data from the <i><a href="http://lcnetdev.github.io/marc/bibliographic/">MARC 
         21 Format for Bibliographic Data</a></i>. As an element set that allows 
         for the representation of data already in MARC-based systems, it is intended 
         to allow for the conversion of core fields while some specific data may 
@@ -94,15 +94,15 @@
       <p>Note that the order of elements in the MIX schema does not assume display 
         order. A stylesheet would be used to control display order of MIX records.</p>
       <p><img src="images/mix-arrow.gif" width="600" height="20" alt=""></p>
-      <div class="menu"><a href="http://www.loc.gov/standards/mix/">MIX Home Page</a> 
-        - <a href="http://www.loc.gov/standards/">Standards Home Page</a> - <a href="http://www.loc.gov/">Library 
+      <div class="menu"><a href="http://lcnetdev.github.io/standards/mix/">MIX Home Page</a> 
+        - <a href="http://lcnetdev.github.io/standards/">Standards Home Page</a> - <a href="http://lcnetdev.github.io/">Library 
         of Congress Home Page</a></div>
       <P> 
       <HR noshade size="1">
-      <a href="http://www.loc.gov/standards/mix/"><img src="images/mix-icon.gif" width="125" height="54" align="right" alt="MIX Icon (" border="0"></a> 
+      <a href="http://lcnetdev.github.io/standards/mix/"><img src="images/mix-icon.gif" width="125" height="54" align="right" alt="MIX Icon (" border="0"></a> 
       <ADDRESS> 
       <!--help desk email start -->
-      <a href="http://www.loc.gov/help/help-desk.html">Library of Congress Help 
+      <a href="http://lcnetdev.github.io/help/help-desk.html">Library of Congress Help 
       Desk<br>
       </a> 
       <!--help desk email end -->

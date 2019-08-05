@@ -1,12 +1,12 @@
 <?xml version="1.0" ?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns="http://www.loc.gov/MARC21/slim">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns="http://lcnetdev.github.io/MARC21/slim">
 	<xsl:template match="/">
 		<xsl:apply-templates/>
 	</xsl:template>
 
 	<xsl:template match="mrcbfile | mrcafile">
-		<collection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC21/slim
-		http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd" >
+		<collection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://lcnetdev.github.io/MARC21/slim
+		http://lcnetdev.github.io/standards/marcxml/schema/MARC21slim.xsd" >
 			<xsl:apply-templates/>
 		</collection>
 	</xsl:template>

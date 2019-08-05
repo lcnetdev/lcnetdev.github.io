@@ -3,6 +3,6 @@
     <ShortName>LC SRU</ShortName>
     <Description>LC Z39.50/SRU Server</Description>
     <InputEncoding>UTF-8</InputEncoding>
-    <Image width="16" height="16" type="image/x-icon">http://www.loc.gov:8081/standards/sru/images/favicon.ico</Image>
-    <Url type="text/html" template="http://www.loc.gov/z39voy?version=1.1&amp;operation=searchRetrieve&amp;query={searchTerms}&amp;maximumRecords=10&amp;recordSchema=marcxml&amp;stylesheet=http://www.loc.gov/z3950/owcbrief.xsl"/>
+    <Image width="16" height="16" type="image/x-icon">http://lcnetdev.github.io:8081/standards/sru/images/favicon.ico</Image>
+    <Url type="text/html" template="http://lcnetdev.github.io/z39voy?version=1.1&amp;operation=searchRetrieve&amp;query={searchTerms}&amp;maximumRecords=10&amp;recordSchema=marcxml&amp;stylesheet=http://lcnetdev.github.io/z3950/owcbrief.xsl"/>
 </OpenSearchDescription>

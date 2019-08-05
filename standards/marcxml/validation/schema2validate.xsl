@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
-<xsl:stylesheet version="1.0" xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:oxsl="dummy-uri">
+<xsl:stylesheet version="1.0" xmlns:marc="http://lcnetdev.github.io/MARC21/slim" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:oxsl="dummy-uri">
 	<xsl:namespace-alias stylesheet-prefix="oxsl" result-prefix="xsl"/>
 	<xsl:output encoding="UTF-8"/>
 
 	<xsl:template match="/">
-		<oxsl:stylesheet version="1.0" exclude-result-prefixes="marc xs" xmlns:marc="http://www.loc.gov/MARC21/slim">
+		<oxsl:stylesheet version="1.0" exclude-result-prefixes="marc xs" xmlns:marc="http://lcnetdev.github.io/MARC21/slim">
 			<oxsl:output indent="yes" encoding="UTF-8"/>
 			<oxsl:template name="validateDatafield">
 				<oxsl:param name="isObselete" select="false()"/>

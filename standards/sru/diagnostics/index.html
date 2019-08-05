@@ -10,7 +10,7 @@
 @import url(../css/sru-base.css);
 </style>
 <meta http-equiv="Content-Language" content="en-us">
-<link rel="shortcut icon" href="http://www.loc.gov/standards/sru/images/favicon.ico">
+<link rel="shortcut icon" href="http://lcnetdev.github.io/standards/sru/images/favicon.ico">
 <!-- InstanceBeginEditable name="head" -->
 <meta name="keywords" content="diagnostics sru version 1.2 specifications sru search retrieval url cql zeerex standards library congress">
 <meta name="description" content="Diagnostics: SRU Version 1.2 Specifications. SRU is a standard XML-focused search protocol for Internet search queries, utilizing CQL (Contextual Query Language), a standard syntax for representing queries. Standards, The Library of Congress.">
@@ -33,7 +33,7 @@
 <input type="hidden" name="rq" value="0">
 <input type="hidden" name="qc" value="">
 <table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
-  <div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div></td>
+  <div class="sitenav"><a href="http://lcnetdev.github.io/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://lcnetdev.github.io/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div></td>
 <td width="116"><select name="qp" tabindex="1">
 <option value="url:/sru" selected>SRU Web Pages</option>
 <option value="url:/standards url:/ead url:/marc">Standards Pages</option>
@@ -123,7 +123,7 @@
       <h3>Examples</h3>
       <p> Non-surrogate, fatal diagnostic: </p>
       <div class="example">&lt;diagnostics&gt;<br />
-        &nbsp;&nbsp;&lt;diagnostic xmlns="http://www.loc.gov/zing/srw/diagnostic/"&gt;<br />
+        &nbsp;&nbsp;&lt;diagnostic xmlns="http://lcnetdev.github.io/zing/srw/diagnostic/"&gt;<br />
         &nbsp;&nbsp;&nbsp;&nbsp;&lt;uri&gt;info:srw/diagnostic/1/38&lt;/uri&gt;<br />
         &nbsp;&nbsp;&nbsp;&nbsp;&lt;details&gt;10&lt;/details&gt;<br />
         &nbsp;&nbsp;&nbsp;&nbsp;&lt;message&gt;Too many boolean operators, the 
@@ -135,7 +135,7 @@
         &nbsp;&nbsp;&lt;record&gt;<br />
         &nbsp;&nbsp;&nbsp;&nbsp;&lt;recordSchema&gt; info:srw/schema/1/diagnostics-v1.1&lt;/recordSchema&gt;<br />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;recordData&gt;<br />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;diagnostic xmlns="http://www.loc.gov/zing/srw/diagnostic/"&gt;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;diagnostic xmlns="http://lcnetdev.github.io/zing/srw/diagnostic/"&gt;<br />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;uri&gt;info:srw/diagnostic/1/65&lt;/uri&gt;<br />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;message&gt;Record 
         deleted by another user.&lt;/message&gt;<br />
@@ -146,11 +146,11 @@
         &lt;/records&gt;</div>
       <p>&nbsp;</p>
       <h1>SRU Diagnostic Schema </h1>
-      <p> <img src="http://www.loc.gov/images/arrow_o.gif" alt="" width="9" height="9"> <span class="selected">see also <a href="diagnostic.xsd"></a></span><a href="diagnostic.xsd">.xsd</a> </p>
+      <p> <img src="http://lcnetdev.github.io/images/arrow_o.gif" alt="" width="9" height="9"> <span class="selected">see also <a href="diagnostic.xsd"></a></span><a href="diagnostic.xsd">.xsd</a> </p>
       <div class="box2">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;<br>
       &lt;!-- --&gt;<br>
-  &lt;xsd:schema targetNamespace=&quot;http://www.loc.gov/zing/srw/diagnostic/&quot; 
-        xmlns=&quot;http://www.loc.gov/zing/srw/diagnostic/&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; 
+  &lt;xsd:schema targetNamespace=&quot;http://lcnetdev.github.io/zing/srw/diagnostic/&quot; 
+        xmlns=&quot;http://lcnetdev.github.io/zing/srw/diagnostic/&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; 
         elementFormDefault=&quot;qualified&quot; attributeFormDefault=&quot;unqualified&quot;&gt;<br>
   &lt;xsd:element name=&quot;diagnostic&quot; type=&quot;diagnosticType&quot; 
         nillable=&quot;false&quot;/&gt;<br>
@@ -173,8 +173,8 @@
 </td></tr>
 
 </table>
-<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://www.loc.gov/">The 
-        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://lcnetdev.github.io/">The 
+        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://lcnetdev.github.io/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div>
       <br>
   <span class="sitenav">
   <!-- #BeginDate format:Am1 -->September 3, 2013<!-- #EndDate -->

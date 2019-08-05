@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js">
+<head>
+<title>BIBFRAME Implementation Testbed and Register (BIBFRAME - Bibliographic Framework Initiative, Library of Congress)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="bibframe, bibliographic framework, transition, initiative, marc, cataloging, library of congress" />
+<meta name="description" content="The BIBFRAME  model and vocabulary consider resources that are cataloged as works with corresponding instances (physical and/or electronic). The metadata describing a work is an amalgamation of the some of the data that was formerly associated with the uniform title authority record combined with subject data that was associated with the bibliographic  records. Thus each cataloging resource must have a work description, and, if the cataloging resource exists physically or electronically, one or more instance descriptions." />
+
+<link rel="dc.relation.isPartOf" href="http://lcnetdev.github.io/bibframe/" title="BIBFRAME - Bibliographic Framework Initiative (Library of Congress)" />
+<meta name="dc.subject" content="bibliographic framework" />
+<meta name="dc.subject" content="bibframe update forum" />
+<meta name="dc.subject" content="bibframe" />
+<meta name="dc.type" content="webpage" />
+<meta name="dc.identifier" content="http://lcnetdev.github.io/bibframe/docs/vocab-category.html" />
+<meta name="dc.language" content="en" />
+
+<link type="text/css" media="screen" rel="stylesheet" href="../css/styles.css" />
+<link type="text/css" media="print" rel="stylesheet" href="/css/loc_print_v2.css" />
+<!--[if lte IE 7]><link type="text/css" media="screen" rel="stylesheet" href="/css/loc_lte_ie6.css" /><![endif]-->
+<!--#include virtual="/bibframe/include/share-tool.html"-->
+<script type="text/javascript" src="http://cdn.loc.gov/js/lib/modernizr-1.5.min.js"></script></head>
+<body>
+<a id="skip" href="#skip_menu">skip navigation</a>
+<div id="container">
+  <!--#include virtual="../include/branding.html"-->
+  <!--#include virtual="/cdn/html/lochead.html"-->
+  <div id="crumb_nav"><a href="http://lcnetdev.github.io">The Library of Congress</a> &gt; <a href="/bibframe/">BIBFRAME</a> &gt; Implementation Testbed &amp; Register</div>
+  <div id="content">
+    <!--#include virtual="../include/leftnav.html"-->
+    <div id="main_body">
+    	<!--#include virtual="../include/share-tool-bar.html"-->
+      <div id="page_head"><span style="width: 100%;"><a name="skip_menu"></a></span>
+        <div id="header">
+          <h1 class="title">BIBFRAME Annotations</h1>
+        </div>
+        
+        <div class="abstract">
+          <h2>Introduction </h2>
+        </div>
+        <div class="body">
+          <div class="section">
+            <p> An annotation asserts information about a resource. Comments on the web about photos,  videos, and articles; reviews of restaurants and books -- these are considered to be annotations. When an annotation asserts information about a BIBFRAME resource, we refer to it as a BIBFRAME annotation. </p>
+            <p>An annotation involves three resources: (1) the annotation itself, (2) the annotation target, (3) the annotation body. The annotation points to both the target and the body, and conveys that the body is somehow &quot;about&quot; or &quot;related to&quot; the target. This is illustrated in the following diagram.</p>
+            <p><img src="http://www.w3.org/TR/annotation-model/images/intro_model.png" alt="Basic Annotation Model" width="400" /></p>
+            <p>A book, for example, might be described by a BIBFRAME Work.&nbsp;&nbsp; There may be a  review of that book.  An annotation might be created to say that  
+              this resource -the review, is about that resource -the book.  The Work is the target of the annotation; the review is the body. </p>
+            <p>.For a BIBFRAME annotation, the  target is a BIBFRAME resource: Work,  Instance, Authority, or Annotation.</p>
+            <h3>Relationship to W3C Work on Web Annotations</h3>
+            <p>The W3C has chartered a <a href="http://www.w3.org/annotation/">Web Annotation Working Group</a> (WG) to &quot;define a generic data model for annotations, and        define the basic infrastructural elements to make it deployable in        browsers and reading systems through suitable user interfaces&quot;.  BIBFRFAME is following this work closely, and though it is a work in progress, BIBFRAME intends to develop its annotation specification as a profile of the W3C work. The WG has published a draft <a href="http://www.w3.org/TR/annotation-model/">Data Model</a> and has prepared a draft <a href="http://w3c.github.io/web-annotation/protocol/wd/">Protocol</a>. This document reflects both the W3C Data Model and the Protocol, and as such, is also a work in progress. BIBFRAME annotations will use the W3C Annotation Namespace <a href="http://www.w3.org/ns/oa">http://www.w3.org/ns/oa#</a> whenever possible and practical, to express properties, classes, etc.  
+              We use the prefix 'oa:' for this namespace. For example, annotations are members of the class oa:Annotation.</p>
+            <p>The W3C annotation work is referred to as &quot;Web Annotations&quot;. Any BIBFRAME annotation will be a web annotation, however
+            we'll use the term &quot;web annotation&quot; in this document specifically to refer to the W3C work.</p>
+            <div class="subsection">
+              <div class="subsection">
+                <div class="subsection">
+                  <h3>Expressing the &quot;aboutness&quot; of an Annotation</h3>
+                  <p>An annotation is normally expressed for a reason. Web annotations refer to the reason as &quot;Motivation&quot;. There is a partial list of web annotation motivations at <a href="http://www.w3.org/TR/annotation-model/#motivations">http://www.w3.org/TR/annotation-model/#motivations</a>. For example, if an annotation expresses a comment, then the motivation is &quot;commenting&quot;.  To express this motivation, the annotation uses the property oa:motivatedBy, whose object, oa:commenting,  is an instance of class oa:Motivation. This is a subClass of skos:Concept which allows us to define broader and narrower motivations. Any of the motivations in this table may be used as the motivation for a BIBFRAME annotation. </p>
+                  <p>BIBFRAME class bf:Motivation is defined, a subclass of oa:Motivation, and its instances are motivations necessary for BIBFRAME, not supported by web annotations.  Any external ontology is free to define a similar motivation class, for motivations that are not supported by web annotations or BIBFRAME. </p>
+                  <h2>Annotation-Friendly Resources</h2>
+                  <p>Essentially the reasons for this spec are to:</p>
+                  <ol>
+                    <li>Provide the capability for users to annotate BIBFRAME resources.</li>
+                    <li>Ensure that BIBFRAME annotations are compatible with web annotations.</li>
+                    <li>Ensure that BIBFRAME resouces are Annotation-friendly.</li>
+                  </ol>
+                  <p>We deal here with the third of these purposes. &quot;Annotation-Friendly&quot; is a term coined by this specification (not web annotations), and while web annotations provides support for friendliness, it isn't a high priority.  A resource is &quot;annotation-friendly&quot; if it provides for a client to submit an annotation, and for a user to discover annotations for that resource. </p>
+                  <p>The web annotation protocol (referenced above) provides a number of features and we will look at three here in particular: </p>
+                  <ol>
+                    <li>Party 1 creates a resource and makes it annotation-friendly</li>
+                    <li>Party 2 annotates that resource</li>
+                    <li>Party 3 finds annotations for that resource</li>
+                  </ol>
+                  <h3>Making a resource &ldquo;Annotation-Friendly&rdquo;</h3>
+                  <p>Sue creates a resource <a href="http://example.com%20/sues-resources/resource1">http://example.com  /sues-resources/resource1</a> .  <br />
+                    She creates an annotation container for the resource: <a href="http://example.com%20/sues-resources/resource1/annotations/">http://example.com  /sues-resources/resource1/annotations/</a>   <br />
+                  </p>
+                  <p>Annotation containers are described in the web annotation protocol. For purposes of this specification, it is prescribed that when you create a resouce and you intend that it be annotation friendly, create a resource whose URI is &quot;annoations/&quot; appended to the URI of the resource to be annotated. </p>
+                  <h3>Annotating the Resource</h3>
+                  <p>Fred has created and wants to submit an annotation for <a href="http://example.com/%20sues-resources/resource1">http://example.com/  sues-resources/resource1</a>.   He posts  (via HTTP POST) the annotation to the container, <a href="http://example.com/sues-resources/resource1/annotations/">http://example.com/sues-resources/resource1/annotations/</a>  .  As a  result the server:</p>
+                  <ol>
+                    <li><span dir="ltr"> </span>Creates an annotation  resource.  </li>
+                    <li><span dir="ltr"> </span>Lists the URI of the  created annotation resource in the container. </li>
+                    <li><span dir="ltr"> </span>Returns a  response which includes: </li>
+                    <ol>
+                      <li><span dir="ltr"> </span>The annotation as  submitted.</li>
+                      <li><span dir="ltr"> </span>Additional information,  for example &ldquo;oa:annotatedAt&rdquo;  (time of annotation).</li>
+                      <li><span dir="ltr"> </span>The URI of the created  annotation. </li>
+                    </ol>
+                  </ol>
+                  <h3>Finding the Annotations</h3>
+                  <p>Finally, Lydia, a researcher, discovers resource <a href="http://example.com%20/sues-resources/resource1">http://example.com /sues-resources/resource1</a> and wants to find  its annotations.  She does an HTTP GET  on <a href="http://example.com/sues-resources/resource1/annotations/">http://example.com/sues-resources/resource1/annotations/</a>, and the list of annotation URIs is provided. </p>
+                  <p></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h1><!-- end id:container --></h1>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+

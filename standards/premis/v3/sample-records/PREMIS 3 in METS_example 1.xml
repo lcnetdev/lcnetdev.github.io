@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mets:mets xmlns:mets="http://www.loc.gov/METS/" xmlns:xlink="http://www.w3.org/1999/xlink"
+<mets:mets xmlns:mets="http://lcnetdev.github.io/METS/" xmlns:xlink="http://www.w3.org/1999/xlink"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/version18/mets.xsd">
+    xsi:schemaLocation="http://lcnetdev.github.io/METS/ http://lcnetdev.github.io/standards/mets/version18/mets.xsd">
     <mets:metsHdr CREATEDATE="2016-08-19T17:06:26"/>
     <mets:amdSec ID="amdSec_1">
         <mets:techMD ID="techMD_1" ADMID="amdSec_2">
             <mets:mdWrap MDTYPE="PREMIS:OBJECT">
                 <mets:xmlData>
-                    <premis:object xmlns:premis="http://www.loc.gov/premis/v3" xsi:type="premis:file"
-                        xsi:schemaLocation="http://www.loc.gov/premis/v3 http://www.loc.gov/standards/premis/v3/premis.xsd"
+                    <premis:object xmlns:premis="http://lcnetdev.github.io/premis/v3" xsi:type="premis:file"
+                        xsi:schemaLocation="http://lcnetdev.github.io/premis/v3 http://lcnetdev.github.io/standards/premis/v3/premis.xsd"
                         version="3.0">
                         <premis:objectIdentifier>
                             <premis:objectIdentifierType>local</premis:objectIdentifierType>
@@ -125,8 +125,8 @@
         <mets:digiprovMD ID="digiprovMD_1">
             <mets:mdWrap MDTYPE="PREMIS:EVENT">
                 <mets:xmlData>
-                    <premis:event xmlns:premis="http://www.loc.gov/premis/v3"
-                        xsi:schemaLocation="http://www.loc.gov/premis/v3 http://www.loc.gov/standards/premis/v3/premis.xsd"
+                    <premis:event xmlns:premis="http://lcnetdev.github.io/premis/v3"
+                        xsi:schemaLocation="http://lcnetdev.github.io/premis/v3 http://lcnetdev.github.io/standards/premis/v3/premis.xsd"
                         version="3.0">
                         <premis:eventIdentifier>
                             <premis:eventIdentifierType>UUID</premis:eventIdentifierType>
@@ -162,8 +162,8 @@
         <mets:digiprovMD ID="digiprovMD_2"> 
             <mets:mdWrap MDTYPE="PREMIS:AGENT">
                 <mets:xmlData>
-                    <premis:agent xmlns:premis="http://www.loc.gov/premis/v3"
-                        xsi:schemaLocation="http://www.loc.gov/premis/v3 http://www.loc.gov/standards/premis/v3/premis.xsd"
+                    <premis:agent xmlns:premis="http://lcnetdev.github.io/premis/v3"
+                        xsi:schemaLocation="http://lcnetdev.github.io/premis/v3 http://lcnetdev.github.io/standards/premis/v3/premis.xsd"
                         version="3.0">
                         <premis:agentIdentifier>
                             <premis:agentIdentifierType>local</premis:agentIdentifierType>
@@ -180,8 +180,8 @@
         <mets:digiprovMD ID="digiprovMD_3"> 
             <mets:mdWrap MDTYPE="PREMIS:AGENT">
                 <mets:xmlData>
-                    <premis:agent xmlns:premis="http://www.loc.gov/premis/v3"
-                        xsi:schemaLocation="http://www.loc.gov/premis/v3 http://www.loc.gov/standards/premis/v3/premis.xsd"
+                    <premis:agent xmlns:premis="http://lcnetdev.github.io/premis/v3"
+                        xsi:schemaLocation="http://lcnetdev.github.io/premis/v3 http://lcnetdev.github.io/standards/premis/v3/premis.xsd"
                         version="3.0">
                         <premis:agentIdentifier>
                             <premis:agentIdentifierType>local</premis:agentIdentifierType>
@@ -202,9 +202,9 @@
           <mets:techMD ID="techMD_2" ADMID="amdSec_3">
             <mets:mdWrap MDTYPE="PREMIS:OBJECT">
                 <mets:xmlData>
-                    <premis:object xmlns:premis="http://www.loc.gov/premis/v3"
+                    <premis:object xmlns:premis="http://lcnetdev.github.io/premis/v3"
                         xsi:type="premis:intellectualEntity"
-                        xsi:schemaLocation="http://www.loc.gov/premis/v3 http://www.loc.gov/standards/premis/v3/premis.xsd"
+                        xsi:schemaLocation="http://lcnetdev.github.io/premis/v3 http://lcnetdev.github.io/standards/premis/v3/premis.xsd"
                         version="3.0">
                         <premis:objectIdentifier>
                             <premis:objectIdentifierType>local</premis:objectIdentifierType>
@@ -248,9 +248,9 @@
         <mets:techMD ID="techMD_3" ADMID="amdSec_4">
             <mets:mdWrap MDTYPE="PREMIS:OBJECT">
                 <mets:xmlData>
-                    <premis:object xmlns:premis="http://www.loc.gov/premis/v3"
+                    <premis:object xmlns:premis="http://lcnetdev.github.io/premis/v3"
                         xsi:type="premis:intellectualEntity"
-                        xsi:schemaLocation="http://www.loc.gov/premis/v3 http://www.loc.gov/standards/premis/v3/premis.xsd"
+                        xsi:schemaLocation="http://lcnetdev.github.io/premis/v3 http://lcnetdev.github.io/standards/premis/v3/premis.xsd"
                         version="3.0">
                         <premis:objectIdentifier>
                             <premis:objectIdentifierType>local</premis:objectIdentifierType>
@@ -294,9 +294,9 @@
         <mets:techMD ID="techMD_4" ADMID="amdSec_5">
             <mets:mdWrap MDTYPE="PREMIS:OBJECT">
                 <mets:xmlData>
-                    <premis:object xmlns:premis="http://www.loc.gov/premis/v3"
+                    <premis:object xmlns:premis="http://lcnetdev.github.io/premis/v3"
                         xsi:type="premis:intellectualEntity"
-                        xsi:schemaLocation="http://www.loc.gov/premis/v3 http://www.loc.gov/standards/premis/v3/premis.xsd"
+                        xsi:schemaLocation="http://lcnetdev.github.io/premis/v3 http://lcnetdev.github.io/standards/premis/v3/premis.xsd"
                         version="3.0">
                         <premis:objectIdentifier>
                             <premis:objectIdentifierType>local</premis:objectIdentifierType>
@@ -347,9 +347,9 @@
         <mets:techMD ID="techMD_5">
             <mets:mdWrap MDTYPE="PREMIS:OBJECT">
                 <mets:xmlData>
-                    <premis:object xmlns:premis="http://www.loc.gov/premis/v3"
+                    <premis:object xmlns:premis="http://lcnetdev.github.io/premis/v3"
                         xsi:type="premis:intellectualEntity"
-                        xsi:schemaLocation="http://www.loc.gov/premis/v3 http://www.loc.gov/standards/premis/v3/premis.xsd"
+                        xsi:schemaLocation="http://lcnetdev.github.io/premis/v3 http://lcnetdev.github.io/standards/premis/v3/premis.xsd"
                         version="3.0">
                         <premis:objectIdentifier>
                             <premis:objectIdentifierType>local</premis:objectIdentifierType>
@@ -378,9 +378,9 @@
         <mets:techMD ID="techMD_6" ADMID="amdSec_4">
             <mets:mdWrap MDTYPE="PREMIS:OBJECT">
                 <mets:xmlData>
-                    <premis:object xmlns:premis="http://www.loc.gov/premis/v3"
+                    <premis:object xmlns:premis="http://lcnetdev.github.io/premis/v3"
                         xsi:type="premis:representation"
-                        xsi:schemaLocation="http://www.loc.gov/premis/v3 http://www.loc.gov/standards/premis/v3/premis.xsd"
+                        xsi:schemaLocation="http://lcnetdev.github.io/premis/v3 http://lcnetdev.github.io/standards/premis/v3/premis.xsd"
                         version="3.0">
                         <premis:objectIdentifier>
                             <premis:objectIdentifierType>local</premis:objectIdentifierType>
@@ -426,9 +426,9 @@
         <mets:techMD ID="techMD_7">
             <mets:mdWrap MDTYPE="PREMIS:OBJECT">
                 <mets:xmlData>
-                    <premis:object xmlns:premis="http://www.loc.gov/premis/v3"
+                    <premis:object xmlns:premis="http://lcnetdev.github.io/premis/v3"
                         xsi:type="premis:bitstream"
-                        xsi:schemaLocation="http://www.loc.gov/premis/v3 http://www.loc.gov/standards/premis/v3/premis.xsd"
+                        xsi:schemaLocation="http://lcnetdev.github.io/premis/v3 http://lcnetdev.github.io/standards/premis/v3/premis.xsd"
                         version="3.0">
                         <premis:objectIdentifier>
                             <premis:objectIdentifierType>local</premis:objectIdentifierType>
@@ -483,8 +483,8 @@
         <mets:rightsMD ID="rights_1"> 
             <mets:mdWrap MDTYPE="PREMIS:RIGHTS">
                 <mets:xmlData>
-		  <premis:rights xmlns:premis="http://www.loc.gov/premis/v3"
-                        xsi:schemaLocation="http://www.loc.gov/premis/v3 http://www.loc.gov/standards/premis/v3/premis.xsd"
+		  <premis:rights xmlns:premis="http://lcnetdev.github.io/premis/v3"
+                        xsi:schemaLocation="http://lcnetdev.github.io/premis/v3 http://lcnetdev.github.io/standards/premis/v3/premis.xsd"
                         version="3.0">
                     <premis:rightsStatement >
                         <premis:rightsStatementIdentifier>
@@ -529,8 +529,8 @@
         <mets:digiprovMD ID="digiprovMD_4"> 
             <mets:mdWrap MDTYPE="PREMIS:AGENT">
                 <mets:xmlData>
-                    <premis:agent xmlns:premis="http://www.loc.gov/premis/v3"
-                        xsi:schemaLocation="http://www.loc.gov/premis/v3 http://www.loc.gov/standards/premis/v3/premis.xsd"
+                    <premis:agent xmlns:premis="http://lcnetdev.github.io/premis/v3"
+                        xsi:schemaLocation="http://lcnetdev.github.io/premis/v3 http://lcnetdev.github.io/standards/premis/v3/premis.xsd"
                         version="3.0">
                         <premis:agentIdentifier>
                             <premis:agentIdentifierType>local</premis:agentIdentifierType>

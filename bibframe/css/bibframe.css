@@ -1,0 +1,30 @@
+/********************
+Site specific styles here
+********************/
+blockquote {
+	margin-left: 20px;
+}
+/********************
+left nav
+********************/
+#left_nav .leftnavimg {
+background: transparent url(../images/left-image.jpg) 0 0 no-repeat;
+}
+pre {
+	color:#000;
+	font-size: 10pt;
+}
+pre strong {
+	font-weight: bold;
+	font-family: "Courier New", Courier, monospace;
+	color: #333;
+	background-color:#fbfbfb;
+}
+caption {
+	font-weight: bold;
+	color: #3366CC;
+}
+p.caption {
+	color: #3366CC;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+}

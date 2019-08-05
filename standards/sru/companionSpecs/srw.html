@@ -10,7 +10,7 @@
 @import url(../css/sru-base.css);
 </style>
 <meta http-equiv="Content-Language" content="en-us">
-<link rel="shortcut icon" href="http://www.loc.gov:8081/standards/sru/images/favicon.ico">
+<link rel="shortcut icon" href="http://lcnetdev.github.io:8081/standards/sru/images/favicon.ico">
 <!-- InstanceBeginEditable name="head" -->
 <meta name="keywords" content="SRU Version 1.1 archive sru search retrieval url cql zeerex standards library congress">
 <meta name="description" content="SRU Version 1.1 archive. SRU is a standard XML-focused search protocol for Internet search queries, utilizing CQL (Contextual Query Language), a standard syntax for representing queries. Standards, The Library of Congress.">
@@ -33,7 +33,7 @@
 <input type="hidden" name="rq" value="0">
 <input type="hidden" name="qc" value="">
 <table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
-  <div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div></td>
+  <div class="sitenav"><a href="http://lcnetdev.github.io/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://lcnetdev.github.io/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div></td>
 <td width="116"><select name="qp" tabindex="1">
 <option value="url:/sru" selected>SRU Web Pages</option>
 <option value="url:/standards url:/ead url:/marc">Standards Pages</option>
@@ -52,7 +52,7 @@
  <!-- InstanceBeginEditable name="content" -->
       <h1>SRU </h1>
       <h2>SRW: Search/Retrieve Web Service</h2>
-      <p align="left">SRW is a variation of <a href="http://www.loc.gov/standards/sru">SRU</a>.
+      <p align="left">SRW is a variation of <a href="http://lcnetdev.github.io/standards/sru">SRU</a>.
         Messages are conveyed from client to server, not by a URL, but instead
         using XML over HTTP via the <a href="http://www.w3.org">W3C</a> recommendation <a href="http://www.w3.org/TR/SOAP/">SOAP</a>,
         which specifies how to wrap an XML message within an XML envelope. The
@@ -98,7 +98,7 @@
       <p>
       <h3><a name="parameters"></a>Parameters</h3>
       <p>The parameters for the SRW request and response are the same as the
-        SRU searchRetrieve <a href="http://www.loc.gov/standards/sru/sru-spec.html#parameters">request</a> and <a href="http://www.loc.gov/standards/sru/sru-spec.html#responseparameters">response</a> parameters,
+        SRU searchRetrieve <a href="http://lcnetdev.github.io/standards/sru/sru-spec.html#parameters">request</a> and <a href="http://lcnetdev.github.io/standards/sru/sru-spec.html#responseparameters">response</a> parameters,
         with the following exceptions:
       <ul>
         <li>&nbsp;The <strong>operation</strong> parameter, defined for the SRU
@@ -112,7 +112,7 @@
       <p> A typical searchRetrieve request might be:
       <pre class="box2">&lt;SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/"&gt;
   &lt;SOAP:Body&gt;
-    &lt;SRW:searchRetrieveRequest xmlns:SRW="http://www.loc.gov/zing/srw/"&gt;
+    &lt;SRW:searchRetrieveRequest xmlns:SRW="http://lcnetdev.github.io/zing/srw/"&gt;
       &lt;SRW:version&gt;1.1&lt;/SRW:version&gt;
       &lt;SRW:query&gt;(dc.author exact "jones" and  dc.title &gt;= "smith")&lt;/SRW:query&gt;
       &lt;SRW:startRecord&gt;1&lt;/SRW:startRecord&gt;
@@ -126,8 +126,8 @@
       <pre class="box2">
 &lt;SOAP:Envelope xmlns:SOAP="http://schemas.xmlsoap.org/soap/envelope/"&gt;
   &lt;SOAP:Body&gt;
-    &lt;SRW:searchRetrieveResponse xmlns:SRW="http://www.loc.gov/zing/srw/" 
-         xmlns:DIAG="http://www.loc.gov/zing/srw/diagnostics/"&gt;
+    &lt;SRW:searchRetrieveResponse xmlns:SRW="http://lcnetdev.github.io/zing/srw/" 
+         xmlns:DIAG="http://lcnetdev.github.io/zing/srw/diagnostics/"&gt;
       &lt;SRW:version&gt;1.1&lt;/SRW:version&gt;
       &lt;SRW:numberOfRecords&gt;2&lt;/SRW:numberOfRecords&gt;
       &lt;SRW:resultSetId&gt;8c527d60-c3b4-4cec-a1de-1ff80a5932df&lt;/SRW:resultSetId&gt;
@@ -140,9 +140,9 @@
             &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;
             &amp;lt;mods xmlns:xlink=&amp;quot;http://www.w3.org/TR/xlink&amp;quot; 
                xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot; 
-               xmlns=&amp;quot;http://www.loc.gov/mods/&amp;quot; 
+               xmlns=&amp;quot;http://lcnetdev.github.io/mods/&amp;quot; 
                xsi:schemaLocation=&amp;quot;
-                http://www.loc.gov/standards/mods/mods.xsd&amp;quot;&amp;gt;
+                http://lcnetdev.github.io/standards/mods/mods.xsd&amp;quot;&amp;gt;
               &amp;lt;titleInfo&amp;gt;
                 &amp;lt;title&amp;gt;Sound and fury : 
                  the making of the punditocracy /&amp;lt;/title&amp;gt;
@@ -186,8 +186,8 @@
 </td></tr>
 
 </table>
-<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://www.loc.gov/">The 
-        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://lcnetdev.github.io/">The 
+        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://lcnetdev.github.io/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../index.html">SRU</a></div>
       <br>
   <span class="sitenav">
   <!-- #BeginDate format:Am1 -->September 3, 2013<!-- #EndDate -->

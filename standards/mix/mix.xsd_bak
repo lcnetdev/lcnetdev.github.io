@@ -2,7 +2,7 @@
 <!-- edited with XML Spy v4.4 U (http://www.xmlspy.com) by 4.0  Installed Multi Suite for 4 users (Library of Congress) -->
 <!-- created by Morgan Cundiff (Library of Congress) -->
 <!-- Version 0.2, April 11, 2003 -->
-<xsd:schema targetNamespace="http://www.loc.gov/mix/" xmlns="http://www.loc.gov/mix/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" version="0.2">
+<xsd:schema targetNamespace="http://lcnetdev.github.io/mix/" xmlns="http://lcnetdev.github.io/mix/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" version="0.2">
 	<xsd:element name="mix">
 		<xsd:annotation>
 			<xsd:documentation>NISO Data Dictionary: Technical Metadata for Digital Still Images</xsd:documentation>

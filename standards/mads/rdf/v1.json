@@ -13,32 +13,32 @@
   },
   "@graph": [
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#phone",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#phone",
       "@type": [
         "owl:DatatypeProperty",
         "rdf:Property"
       ],
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Affiliation"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Affiliation"
       },
       "rdfs:label": "Phone"
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#DateNameElement",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#DateNameElement",
       "@type": "owl:Class",
       "rdfs:label": "Date Name\n      Element",
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#NameElement"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#NameElement"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#isTopMemberOfMADSScheme",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#isTopMemberOfMADSScheme",
       "@type": [
         "owl:ObjectProperty",
         "rdf:Property"
       ],
       "owl:inverseOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#hasTopMemberOfMADSScheme"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasTopMemberOfMADSScheme"
       },
       "rdfs:comment": "Identifies a MADS Scheme in\n      which the Authority is at the top of the hierarchy.",
       "rdfs:domain": {
@@ -46,30 +46,30 @@
       },
       "rdfs:label": "Is Top Member of MADS\n      Scheme",
       "rdfs:range": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#MADSScheme"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#MADSScheme"
       },
       "rdfs:subPropertyOf": [
         {
           "@id": "skos:topConceptOf"
         },
         {
-          "@id": "http://www.loc.gov/mads/rdf/v1#isMemberOfMADSScheme"
+          "@id": "http://lcnetdev.github.io/mads/rdf/v1#isMemberOfMADSScheme"
         }
       ]
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#hasExpansionVariant",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasExpansionVariant",
       "@type": [
         "rdf:Property",
         "owl:ObjectProperty"
       ],
       "rdfs:label": "Has Expansion\n      Variant",
       "rdfs:subPropertyOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#hasVariant"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasVariant"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#Region",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#Region",
       "@type": "owl:Class",
       "rdfs:comment": "Describes a resource whose\n      label is an area that has the status of a jurisdiction, usually incorporating more than one\n      first level jurisdiction. ",
       "rdfs:label": {
@@ -77,17 +77,17 @@
         "@value": "Region Type"
       },
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Geographic"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Geographic"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#hasBroaderAuthority",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasBroaderAuthority",
       "@type": [
         "owl:ObjectProperty",
         "rdf:Property"
       ],
       "owl:inverseOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#hasNarrowerAuthority"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasNarrowerAuthority"
       },
       "rdfs:label": "Has Broader\n      Authority",
       "rdfs:subPropertyOf": [
@@ -95,12 +95,12 @@
           "@id": "skos:broader"
         },
         {
-          "@id": "http://www.loc.gov/mads/rdf/v1#hasRelatedAuthority"
+          "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasRelatedAuthority"
         }
       ]
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#Occupation",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#Occupation",
       "@type": "owl:Class",
       "rdfs:comment": "Describes a resource whose\n      label represents an occcupation.",
       "rdfs:label": {
@@ -108,22 +108,22 @@
         "@value": "Occupation Type"
       },
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#SimpleType"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#SimpleType"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#NameElement",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#NameElement",
       "@type": "owl:Class",
       "rdfs:label": {
         "@language": "en",
         "@value": "Name Element"
       },
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Element"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Element"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#elementList",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#elementList",
       "@type": [
         "rdf:Property",
         "owl:ObjectProperty"
@@ -138,27 +138,27 @@
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#PartNumberElement",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#PartNumberElement",
       "@type": "owl:Class",
       "rdfs:label": "Part Number\n      Element",
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#TitleElement"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#TitleElement"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#birthDate",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#birthDate",
       "@type": [
         "rdf:Property",
         "owl:DatatypeProperty"
       ],
       "rdfs:comment": "The year a person was born.\n      Date of birth may also include the month and day of the person’s birth. (RDA\n      9.3.2.1)",
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#RWO"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#RWO"
       },
       "rdfs:label": "Birth Date"
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#Language",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#Language",
       "@type": "owl:Class",
       "owl:equivalentClass": {
         "@id": "dcterms:LinguisticSystem"
@@ -172,11 +172,11 @@
         "@value": "Language Type"
       },
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#SimpleType"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#SimpleType"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#ConferenceName",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#ConferenceName",
       "@type": "owl:Class",
       "rdfs:comment": "Describes a resource whose\n      label represents a conference name.",
       "rdfs:label": {
@@ -184,23 +184,23 @@
         "@value": "Conference Name Type"
       },
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Name"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Name"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#honoraryTitle",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#honoraryTitle",
       "@type": [
         "rdf:Property",
         "owl:DatatypeProperty"
       ],
       "rdfs:comment": "Designation indicative of\n      royalty, nobility, or ecclesiastical rank or office, or a term of address for a person of\n      religious vocation.",
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#RWO"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#RWO"
       },
       "rdfs:label": "Honorary Title"
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#hasBroaderExternalAuthority",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasBroaderExternalAuthority",
       "@type": [
         "rdf:Property",
         "owl:ObjectProperty"
@@ -212,12 +212,12 @@
           "@id": "skos:broadMatch"
         },
         {
-          "@id": "http://www.loc.gov/mads/rdf/v1#hasBroaderAuthority"
+          "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasBroaderAuthority"
         }
       ]
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#see",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#see",
       "@type": "owl:ObjectProperty",
       "rdfs:comment": "Denotes a relationship\n      between an Authority and/or DeprecatedAuthority. The relationship may or may or may not be\n      reciprocated and there is no certainty that the related resource will further illuminate the\n      original resource.",
       "rdfs:domain": {
@@ -232,7 +232,7 @@
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#creationDateEnd",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#creationDateEnd",
       "@type": [
         "rdf:Property",
         "owl:DatatypeProperty"
@@ -241,7 +241,7 @@
       "rdfs:label": ""
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#Title",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#Title",
       "@type": "owl:Class",
       "rdfs:comment": "Describes a resource whose\n      label represents a title.",
       "rdfs:label": {
@@ -249,11 +249,11 @@
         "@value": "Title Type"
       },
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#SimpleType"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#SimpleType"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#City",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#City",
       "@type": "owl:Class",
       "rdfs:comment": "Describes a resource whose\n      label is an inhabited place incorporated as a city, town, etc.",
       "rdfs:label": {
@@ -261,11 +261,11 @@
         "@value": "City Type"
       },
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Geographic"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Geographic"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#Geographic",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#Geographic",
       "@type": "owl:Class",
       "rdfs:comment": {
         "@language": "en",
@@ -276,7 +276,7 @@
         "@value": "Geographic Authority"
       },
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#SimpleType"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#SimpleType"
       }
     },
     {
@@ -284,25 +284,25 @@
       "@type": "owl:AnnotationProperty"
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#extendedAddress",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#extendedAddress",
       "@type": [
         "owl:DatatypeProperty",
         "rdf:Property"
       ],
       "rdfs:comment": "The second address line, if\n      needed.",
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Address"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Address"
       },
       "rdfs:label": "Extended Address"
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#hasNarrowerAuthority",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasNarrowerAuthority",
       "@type": [
         "owl:ObjectProperty",
         "rdf:Property"
       ],
       "owl:inverseOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#hasBroaderAuthority"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasBroaderAuthority"
       },
       "rdfs:comment": "Creates a direct\n      relationship between an Authority and one that is more narrowly defined.",
       "rdfs:label": "Has Narrower\n      Authority",
@@ -311,18 +311,18 @@
           "@id": "skos:narrower"
         },
         {
-          "@id": "http://www.loc.gov/mads/rdf/v1#hasRelatedAuthority"
+          "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasRelatedAuthority"
         }
       ]
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#hasLaterEstablishedForm",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasLaterEstablishedForm",
       "@type": [
         "rdf:Property",
         "owl:ObjectProperty"
       ],
       "owl:inverseOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#hasEarlierEstablishedForm"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasEarlierEstablishedForm"
       },
       "rdfs:comment": {
         "@language": "en",
@@ -330,26 +330,26 @@
       },
       "rdfs:label": "Has Later Established\n      Form",
       "rdfs:subPropertyOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#see"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#see"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#hasAffiliation",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasAffiliation",
       "@type": [
         "rdf:Property",
         "owl:ObjectProperty"
       ],
       "rdfs:comment": "Property to associate an\n      individual, such as a foaf:Agent, to a group or organization with which an individual is or\n      has been affiliated.",
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#RWO"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#RWO"
       },
       "rdfs:label": "Has Affiliation",
       "rdfs:range": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Affiliation"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Affiliation"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#Territory",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#Territory",
       "@type": "owl:Class",
       "rdfs:comment": "Describes a resource whose\n      label is a geographical area belonging to or under the jurisdiction of a governmental\n      authority. ",
       "rdfs:label": {
@@ -357,7 +357,7 @@
         "@value": "Territory Type"
       },
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Geographic"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Geographic"
       }
     },
     {
@@ -366,16 +366,16 @@
       "owl:unionOf": {
         "@list": [
           {
-            "@id": "http://www.loc.gov/mads/rdf/v1#Authority"
+            "@id": "http://lcnetdev.github.io/mads/rdf/v1#Authority"
           },
           {
-            "@id": "http://www.loc.gov/mads/rdf/v1#DeprecatedAuthority"
+            "@id": "http://lcnetdev.github.io/mads/rdf/v1#DeprecatedAuthority"
           }
         ]
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#Address",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#Address",
       "@type": "owl:Class",
       "rdfs:label": {
         "@language": "en",
@@ -388,32 +388,32 @@
       "owl:unionOf": {
         "@list": [
           {
-            "@id": "http://www.loc.gov/mads/rdf/v1#Authority"
+            "@id": "http://lcnetdev.github.io/mads/rdf/v1#Authority"
           },
           {
-            "@id": "http://www.loc.gov/mads/rdf/v1#DeprecatedAuthority"
+            "@id": "http://lcnetdev.github.io/mads/rdf/v1#DeprecatedAuthority"
           }
         ]
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#ComplexType",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#ComplexType",
       "@type": "owl:Class",
       "owl:disjointUnionOf": {
         "@list": [
           {
-            "@id": "http://www.loc.gov/mads/rdf/v1#HierarchicalGeographic"
+            "@id": "http://lcnetdev.github.io/mads/rdf/v1#HierarchicalGeographic"
           },
           {
-            "@id": "http://www.loc.gov/mads/rdf/v1#ComplexSubject"
+            "@id": "http://lcnetdev.github.io/mads/rdf/v1#ComplexSubject"
           },
           {
-            "@id": "http://www.loc.gov/mads/rdf/v1#NameTitle"
+            "@id": "http://lcnetdev.github.io/mads/rdf/v1#NameTitle"
           }
         ]
       },
       "owl:disjointWith": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#SimpleType"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#SimpleType"
       },
       "owl:equivalentClass": {
         "@id": "_:f5a318f85d5ff435e84b9e2827385624cb4"
@@ -427,7 +427,7 @@
         "@value": "Complex Type"
       },
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#MADSType"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#MADSType"
       }
     },
     {
@@ -436,16 +436,16 @@
       "owl:unionOf": {
         "@list": [
           {
-            "@id": "http://www.loc.gov/mads/rdf/v1#Authority"
+            "@id": "http://lcnetdev.github.io/mads/rdf/v1#Authority"
           },
           {
-            "@id": "http://www.loc.gov/mads/rdf/v1#MADSCollection"
+            "@id": "http://lcnetdev.github.io/mads/rdf/v1#MADSCollection"
           }
         ]
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#hasReciprocalAuthority",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasReciprocalAuthority",
       "@type": [
         "rdf:Property",
         "owl:SymmetricProperty",
@@ -458,7 +458,7 @@
       "rdfs:label": "Has Reciprocal\n      Authority",
       "rdfs:subPropertyOf": [
         {
-          "@id": "http://www.loc.gov/mads/rdf/v1#hasRelatedAuthority"
+          "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasRelatedAuthority"
         },
         {
           "@id": "skos:related"
@@ -466,18 +466,18 @@
       ]
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#GeographicElement",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#GeographicElement",
       "@type": "owl:Class",
       "rdfs:label": {
         "@language": "en",
         "@value": "Geographic Element"
       },
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Element"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Element"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#HierarchicalGeographic",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#HierarchicalGeographic",
       "@type": "owl:Class",
       "rdfs:comment": {
         "@language": "en",
@@ -488,18 +488,18 @@
         "@value": "Hierarchical Geographic Type"
       },
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#ComplexType"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#ComplexType"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#deprecatedLabel",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#deprecatedLabel",
       "@type": [
         "owl:AnnotationProperty",
         "rdf:Property"
       ],
       "rdfs:comment": "A label once considered\n      authoritative (controlled and curated) but which is no longer.",
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#DeprecatedAuthority"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#DeprecatedAuthority"
       },
       "rdfs:label": "Deprecated Label",
       "rdfs:subPropertyOf": [
@@ -512,25 +512,25 @@
       ]
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#hasCorporateParentAuthority",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasCorporateParentAuthority",
       "@type": [
         "owl:ObjectProperty",
         "rdf:Property"
       ],
       "rdfs:comment": "Establishes a relationship\n      between a CorporateName Authority and one of the same that is more broadly\n      defined.",
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#CorporateName"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#CorporateName"
       },
       "rdfs:label": "Has Parent\n      Organization",
       "rdfs:range": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#CorporateName"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#CorporateName"
       },
       "rdfs:subPropertyOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#hasRelatedAuthority"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasRelatedAuthority"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#FamilyName",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#FamilyName",
       "@type": "owl:Class",
       "rdfs:comment": "Describes a resource whose\n      label represents a family name.",
       "rdfs:label": {
@@ -538,11 +538,11 @@
         "@value": "Family Name Type"
       },
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Name"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Name"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#citationStatus",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#citationStatus",
       "@type": [
         "owl:DatatypeProperty",
         "rdf:Property"
@@ -552,7 +552,7 @@
         "@value": "Should use a standard term - such as 'found' or 'not found' - to\n      indicate whether the cited resource yielded information about the resource related to the\n      madsrdf:Source."
       },
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Source"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Source"
       },
       "rdfs:label": {
         "@language": "en",
@@ -563,7 +563,7 @@
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#hasExactExternalAuthority",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasExactExternalAuthority",
       "@type": [
         "owl:SymmetricProperty",
         "owl:TransitiveProperty",
@@ -577,19 +577,19 @@
           "@id": "skos:exactMatch"
         },
         {
-          "@id": "http://www.loc.gov/mads/rdf/v1#hasCloseExternalAuthority"
+          "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasCloseExternalAuthority"
         }
       ]
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#componentList",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#componentList",
       "@type": [
         "owl:ObjectProperty",
         "rdf:Property"
       ],
       "rdfs:comment": "madsrdf:componentList\n      organizes the madsrdf:SimpleType resources whose labels are represented in the label of the\n      associated madsrdf:ComplexType resource.",
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#ComplexType"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#ComplexType"
       },
       "rdfs:label": "Component List",
       "rdfs:range": {
@@ -597,7 +597,7 @@
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#workOrigin",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#workOrigin",
       "@type": [
         "rdf:Property",
         "owl:ObjectProperty"
@@ -605,33 +605,33 @@
       "rdfs:comment": "The country or other territorial jurisdiction from which a work originated.",
       "rdfs:label": "Work locale",
       "rdfs:range": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Geographic"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Geographic"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#country",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#country",
       "@type": [
         "owl:AnnotationProperty",
         "rdf:Property"
       ],
       "rdfs:comment": "Country associated with an\n      address.",
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Address"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Address"
       },
       "rdfs:label": "Country"
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#DeprecatedAuthority",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#DeprecatedAuthority",
       "@type": "owl:Class",
       "owl:disjointWith": [
         {
-          "@id": "http://www.loc.gov/mads/rdf/v1#Authority"
+          "@id": "http://lcnetdev.github.io/mads/rdf/v1#Authority"
         },
         {
-          "@id": "http://www.loc.gov/mads/rdf/v1#MADSScheme"
+          "@id": "http://lcnetdev.github.io/mads/rdf/v1#MADSScheme"
         },
         {
-          "@id": "http://www.loc.gov/mads/rdf/v1#MADSCollection"
+          "@id": "http://lcnetdev.github.io/mads/rdf/v1#MADSCollection"
         }
       ],
       "rdfs:comment": "A former\n      Authority.",
@@ -641,13 +641,13 @@
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#elementValue",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#elementValue",
       "@type": [
         "rdf:Property",
         "owl:DatatypeProperty"
       ],
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Element"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Element"
       },
       "rdfs:label": "Element Value",
       "rdfs:range": {
@@ -655,7 +655,7 @@
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#creationDateStart",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#creationDateStart",
       "@type": [
         "rdf:Property",
         "owl:DatatypeProperty"
@@ -664,19 +664,19 @@
       "rdfs:label": "Work begun"
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#deathDate",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#deathDate",
       "@type": [
         "rdf:Property",
         "owl:DatatypeProperty"
       ],
       "rdfs:comment": "The year a person died.\n      Date of death may also include the month and day of the person’s death. (RDA\n      9.3.3.1)",
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#RWO"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#RWO"
       },
       "rdfs:label": "Death Date"
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#Element",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#Element",
       "@type": "owl:Class",
       "owl:equivalentClass": {
         "@id": "_:f5a318f85d5ff435e84b9e2827385624cb5"
@@ -688,7 +688,7 @@
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#authoritativeLabel",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#authoritativeLabel",
       "@type": [
         "owl:AnnotationProperty",
         "rdf:Property"
@@ -698,7 +698,7 @@
         "@value": "A lexical string representing a controlled, curated label for the\n      Authority."
       },
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Authority"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Authority"
       },
       "rdfs:label": {
         "@language": "en",
@@ -714,37 +714,37 @@
       ]
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#Source",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#Source",
       "@type": "owl:Class",
       "rdfs:comment": "A resource that represents\n      the source of information about another resource. madsrdf:Source is a type of\n      citation.",
       "rdfs:label": "Source"
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#postcode",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#postcode",
       "@type": [
         "owl:DatatypeProperty",
         "rdf:Property"
       ],
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Address"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Address"
       },
       "rdfs:label": "Post Code / Zip\n      Code"
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#Authority",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#Authority",
       "@type": "owl:Class",
       "owl:disjointWith": [
         {
-          "@id": "http://www.loc.gov/mads/rdf/v1#MADSScheme"
+          "@id": "http://lcnetdev.github.io/mads/rdf/v1#MADSScheme"
         },
         {
-          "@id": "http://www.loc.gov/mads/rdf/v1#MADSCollection"
+          "@id": "http://lcnetdev.github.io/mads/rdf/v1#MADSCollection"
         },
         {
-          "@id": "http://www.loc.gov/mads/rdf/v1#DeprecatedAuthority"
+          "@id": "http://lcnetdev.github.io/mads/rdf/v1#DeprecatedAuthority"
         },
         {
-          "@id": "http://www.loc.gov/mads/rdf/v1#Variant"
+          "@id": "http://lcnetdev.github.io/mads/rdf/v1#Variant"
         }
       ],
       "rdfs:comment": "A concept with a controlled\n      label.",
@@ -762,7 +762,7 @@
       ]
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#city",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#city",
       "@type": [
         "owl:AnnotationProperty",
         "rdf:Property"
@@ -772,7 +772,7 @@
         "@value": "The city component of an address."
       },
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Address"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Address"
       },
       "rdfs:label": {
         "@language": "en",
@@ -780,22 +780,22 @@
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#LanguageElement",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#LanguageElement",
       "@type": "owl:Class",
       "rdfs:label": "Language Element",
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Element"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Element"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#variantLabel",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#variantLabel",
       "@type": [
         "rdf:Property",
         "owl:DatatypeProperty"
       ],
       "rdfs:comment": "The lexical, variant form\n      of an authoritative label.",
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Variant"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Variant"
       },
       "rdfs:label": "Variant Label",
       "rdfs:subPropertyOf": {
@@ -803,7 +803,7 @@
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#exampleNote",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#exampleNote",
       "@type": [
         "owl:AnnotationProperty",
         "rdf:Property"
@@ -814,11 +814,11 @@
       "rdfs:comment": "A example of how the\n      resource might be used.",
       "rdfs:label": "Example Note",
       "rdfs:subPropertyOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#note"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#note"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#Area",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#Area",
       "@type": "owl:Class",
       "rdfs:comment": "Describes a resource whose\n      label is a non-jurisdictional geographic entity.",
       "rdfs:label": {
@@ -826,11 +826,11 @@
         "@value": "Area Type"
       },
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Geographic"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Geographic"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#ExtraterrestrialArea",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#ExtraterrestrialArea",
       "@type": "owl:Class",
       "rdfs:comment": "Describes a resource whose\n      label is any extraterrestrial entity or space, including a solar system, a galaxy, a star\n      system, and a planet, including a geographic feature of an individual planet.",
       "rdfs:label": {
@@ -838,23 +838,23 @@
         "@value": "Extraterrestrial Area Type"
       },
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Geographic"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Geographic"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#natureOfAffiliation",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#natureOfAffiliation",
       "@type": [
         "rdf:Property",
         "owl:AnnotationProperty"
       ],
       "rdfs:comment": "Records the individual's\n      role or position in the organization with which the individual is affiliated. A \"job title\"\n      might be appropriate.",
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Affiliation"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Affiliation"
       },
       "rdfs:label": "Nature of\n      Affiliation"
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#scopeNote",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#scopeNote",
       "@type": [
         "owl:AnnotationProperty",
         "rdf:Property"
@@ -864,23 +864,23 @@
       },
       "rdfs:label": "Scope Note",
       "rdfs:subPropertyOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#note"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#note"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#activityStartDate",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#activityStartDate",
       "@type": [
         "rdf:Property",
         "owl:DatatypeProperty"
       ],
       "rdfs:comment": "Earliest date in a period of activity.\n    ",
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#RWO"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#RWO"
       },
       "rdfs:label": "Activity Start"
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#fullerName",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#fullerName",
       "@type": [
         "owl:ObjectProperty",
         "rdf:Property"
@@ -888,26 +888,26 @@
       "rdfs:comment": "Full form of name needed to\n      distinguish a person from another person with the same preferred name.",
       "rdfs:label": "Fuller Name",
       "rdfs:range": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#PersonalName"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#PersonalName"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#associatedLanguage",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#associatedLanguage",
       "@type": [
         "owl:ObjectProperty",
         "rdf:Property"
       ],
       "rdfs:comment": "Language that a person,\n      organization, or family uses for publication, communication, etc., or in which a work is\n      expressed. ",
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#RWO"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#RWO"
       },
       "rdfs:label": "Associated\n      Language",
       "rdfs:range": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Language"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Language"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#note",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#note",
       "@type": [
         "rdf:Property",
         "owl:AnnotationProperty"
@@ -919,36 +919,36 @@
       "rdfs:label": "Note"
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#FamilyNameElement",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#FamilyNameElement",
       "@type": "owl:Class",
       "rdfs:label": "Family Name\n      Element",
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#NameElement"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#NameElement"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#identifiesRWO",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#identifiesRWO",
       "@type": [
         "rdf:Property",
         "owl:ObjectProperty"
       ],
       "owl:inverseOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#isIdentifiedByAuthority"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#isIdentifiedByAuthority"
       },
       "rdfs:comment": "Associates a\n      madsrdf:Authority with the Real World Object that is the subject of the authority's\n      label.",
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Authority"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Authority"
       },
       "rdfs:label": "Identifies RWO",
       "rdfs:range": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#RWO"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#RWO"
       },
       "rdfs:subPropertyOf": {
         "@id": "foaf:focus"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#Topic",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#Topic",
       "@type": "owl:Class",
       "rdfs:comment": "Describes a resource whose\n      label represents a topic.",
       "rdfs:label": {
@@ -956,55 +956,55 @@
         "@value": "Topic Type"
       },
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#SimpleType"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#SimpleType"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#PartNameElement",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#PartNameElement",
       "@type": "owl:Class",
       "rdfs:label": "Part Name\n      Element",
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#TitleElement"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#TitleElement"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#hasAbbreviationVariant",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasAbbreviationVariant",
       "@type": [
         "owl:ObjectProperty",
         "rdf:Property"
       ],
       "rdfs:label": "Has Abbreviation\n      Variant",
       "rdfs:subPropertyOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#hasVariant"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasVariant"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#MADSType",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#MADSType",
       "@type": "owl:Class",
       "owl:disjointWith": [
         {
-          "@id": "http://www.loc.gov/mads/rdf/v1#MADSScheme"
+          "@id": "http://lcnetdev.github.io/mads/rdf/v1#MADSScheme"
         },
         {
-          "@id": "http://www.loc.gov/mads/rdf/v1#MADSCollection"
+          "@id": "http://lcnetdev.github.io/mads/rdf/v1#MADSCollection"
         }
       ],
       "rdfs:label": "MADS Type"
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#streetAddress",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#streetAddress",
       "@type": [
         "owl:DatatypeProperty",
         "rdf:Property"
       ],
       "rdfs:comment": "First line of address. For\n      second line, use madsrdf:extendedAddress.",
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Address"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Address"
       },
       "rdfs:label": "Street Address"
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#hasChararacteristic",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasChararacteristic",
       "@type": [
         "rdf:Property",
         "owl:ObjectProperty"
@@ -1013,7 +1013,7 @@
       "rdfs:label": "Other characteristic"
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#hasNarrowerExternalAuthority",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasNarrowerExternalAuthority",
       "@type": [
         "rdf:Property",
         "owl:ObjectProperty"
@@ -1022,7 +1022,7 @@
       "rdfs:label": "Has Narrower External\n      Authority",
       "rdfs:subPropertyOf": [
         {
-          "@id": "http://www.loc.gov/mads/rdf/v1#hasNarrowerAuthority"
+          "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasNarrowerAuthority"
         },
         {
           "@id": "skos:narrowMatch"
@@ -1030,7 +1030,7 @@
       ]
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#deletionNote",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#deletionNote",
       "@type": [
         "owl:AnnotationProperty",
         "rdf:Property"
@@ -1038,52 +1038,52 @@
       "rdfs:comment": "A note pertaining to the\n      deletion of a resource.",
       "rdfs:label": "Deletion Note",
       "rdfs:subPropertyOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#changeNote"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#changeNote"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#TermsOfAddressNameElement",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#TermsOfAddressNameElement",
       "@type": "owl:Class",
       "rdfs:label": "Terms of Address\n      Element",
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#NameElement"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#NameElement"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#fieldOfActivity",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#fieldOfActivity",
       "@type": [
         "owl:ObjectProperty",
         "rdf:Property"
       ],
       "rdfs:comment": "The field of activity\n      associated with an individual.",
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#RWO"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#RWO"
       },
       "rdfs:label": "Field of\n      Activity"
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#hasCorporateSubsidiaryAuthority",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasCorporateSubsidiaryAuthority",
       "@type": [
         "rdf:Property",
         "owl:ObjectProperty"
       ],
       "owl:inverseOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#hasCorporateParentAuthority"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasCorporateParentAuthority"
       },
       "rdfs:comment": "Establishes a relationship\n      between a CorporateName Authority and one of the same that is more narrowly\n      defined.",
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#CorporateName"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#CorporateName"
       },
       "rdfs:label": "Is Parent Organization\n      Of",
       "rdfs:range": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#CorporateName"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#CorporateName"
       },
       "rdfs:subPropertyOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#hasRelatedAuthority"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasRelatedAuthority"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#hasTranslationVariant",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasTranslationVariant",
       "@type": [
         "rdf:Property",
         "owl:ObjectProperty"
@@ -1091,26 +1091,26 @@
       "rdfs:comment": "A Variant whose label\n      represents a translation of that of the authoritative label.",
       "rdfs:label": "Has Translation\n      Variant",
       "rdfs:subPropertyOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#hasVariant"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasVariant"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#occupation",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#occupation",
       "@type": [
         "owl:ObjectProperty",
         "rdf:Property"
       ],
       "rdfs:comment": "A profession or occupation\n      in which the person works or has worked.",
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#RWO"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#RWO"
       },
       "rdfs:label": "Occupation",
       "rdfs:range": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Occupation"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Occupation"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#hasSource",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasSource",
       "@type": [
         "rdf:Property",
         "owl:ObjectProperty"
@@ -1121,11 +1121,11 @@
       },
       "rdfs:label": "Has Source",
       "rdfs:range": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Source"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Source"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#useInstead",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#useInstead",
       "@type": [
         "owl:ObjectProperty",
         "rdf:Property"
@@ -1133,11 +1133,11 @@
       "rdfs:comment": "\"Use [This Other Resource]\n      Instead.\" Traditional \"USE\" reference.",
       "rdfs:label": "Use Instead",
       "rdfs:subPropertyOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#see"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#see"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#NameTitle",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#NameTitle",
       "@type": "owl:Class",
       "rdfs:comment": {
         "@language": "en",
@@ -1148,34 +1148,34 @@
         "@value": "Name/Title Type"
       },
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#ComplexType"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#ComplexType"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#establishDate",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#establishDate",
       "@type": [
         "rdf:Property",
         "owl:DatatypeProperty"
       ],
       "rdfs:comment": "The year a corporate body was established. Date of establishment may also include the month and day of the corporate body’s establishment.\n    ",
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#RWO"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#RWO"
       },
       "rdfs:label": "Established"
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#TitleElement",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#TitleElement",
       "@type": "owl:Class",
       "rdfs:label": {
         "@language": "en",
         "@value": "Title Element"
       },
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Element"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Element"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#classification",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#classification",
       "@type": [
         "rdf:Property",
         "owl:AnnotationProperty"
@@ -1185,7 +1185,7 @@
         "@value": "The classification code associated with a\n      madsrdf:Authority."
       },
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Authority"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Authority"
       },
       "rdfs:label": {
         "@language": "en",
@@ -1196,19 +1196,19 @@
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#SubTitleElement",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#SubTitleElement",
       "@type": "owl:Class",
       "rdfs:label": "Subtitle Element",
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#TitleElement"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#TitleElement"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#MainTitleElement",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#MainTitleElement",
       "@type": "owl:Class",
       "rdfs:label": "Main Title\n      Element",
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#TitleElement"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#TitleElement"
       }
     },
     {
@@ -1219,7 +1219,7 @@
         "@value": "1"
       },
       "owl:onProperty": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#elementValue"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#elementValue"
       }
     },
     {
@@ -1230,7 +1230,7 @@
         "@value": "1"
       },
       "owl:onProperty": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#componentList"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#componentList"
       }
     },
     {
@@ -1239,37 +1239,37 @@
       "owl:unionOf": {
         "@list": [
           {
-            "@id": "http://www.loc.gov/mads/rdf/v1#Authority"
+            "@id": "http://lcnetdev.github.io/mads/rdf/v1#Authority"
           },
           {
-            "@id": "http://www.loc.gov/mads/rdf/v1#DeprecatedAuthority"
+            "@id": "http://lcnetdev.github.io/mads/rdf/v1#DeprecatedAuthority"
           },
           {
-            "@id": "http://www.loc.gov/mads/rdf/v1#Variant"
+            "@id": "http://lcnetdev.github.io/mads/rdf/v1#Variant"
           }
         ]
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#terminateDate",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#terminateDate",
       "@type": [
         "rdf:Property",
         "owl:DatatypeProperty"
       ],
       "rdfs:comment": "The year a corporate body was terminated. Date of termination may also include the month and day of the corporate body’s termination. \n    ",
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#RWO"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#RWO"
       },
       "rdfs:label": "Terminated"
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#Identifier",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#Identifier",
       "@type": "owl:Class",
       "rdfs:comment": "A madsrdf:Identifier\n      resource describes an identifier by associating the identifier value with its type. To be used\n      to record identifiers for a resource in the absence of URIs.",
       "rdfs:label": "Other Identifier"
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#hasReciprocalExternalAuthority",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasReciprocalExternalAuthority",
       "@type": [
         "rdf:Property",
         "owl:SymmetricProperty",
@@ -1282,47 +1282,47 @@
           "@id": "skos:relatedMatch"
         },
         {
-          "@id": "http://www.loc.gov/mads/rdf/v1#hasReciprocalAuthority"
+          "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasReciprocalAuthority"
         }
       ]
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#useFor",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#useFor",
       "@type": [
         "rdf:Property",
         "owl:ObjectProperty"
       ],
       "owl:inverseOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#useInstead"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#useInstead"
       },
       "rdfs:comment": "\"Use [This Resource] For.\"\n      Traditional \"USE FOR\" reference.",
       "rdfs:label": "Use For",
       "rdfs:subPropertyOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#see"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#see"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#isMemberOfMADSScheme",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#isMemberOfMADSScheme",
       "@type": [
         "rdf:Property",
         "owl:ObjectProperty"
       ],
       "owl:inverseOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#hasMADSSchemeMember"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasMADSSchemeMember"
       },
       "rdfs:domain": {
         "@id": "_:f5a318f85d5ff435e84b9e2827385624cb28"
       },
       "rdfs:label": "Is Member of MADS\n      Scheme",
       "rdfs:range": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#MADSScheme"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#MADSScheme"
       },
       "rdfs:subPropertyOf": {
         "@id": "skos:inScheme"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#changeNote",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#changeNote",
       "@type": [
         "rdf:Property",
         "owl:AnnotationProperty"
@@ -1339,11 +1339,11 @@
         "@value": "Change Note"
       },
       "rdfs:subPropertyOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#note"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#note"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#PersonalName",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#PersonalName",
       "@type": "owl:Class",
       "rdfs:comment": "Describes a resource whose\n      label represents a personal name.",
       "rdfs:label": {
@@ -1351,37 +1351,37 @@
         "@value": "Personal Name Type"
       },
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Name"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Name"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#deathPlace",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#deathPlace",
       "@type": [
         "owl:ObjectProperty",
         "rdf:Property"
       ],
       "rdfs:comment": "The town, city, province,\n      state, and/or country in which a person died.",
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#RWO"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#RWO"
       },
       "rdfs:label": "Place of Death",
       "rdfs:range": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Geographic"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Geographic"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#email",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#email",
       "@type": [
         "rdf:Property",
         "owl:DatatypeProperty"
       ],
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Affiliation"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Affiliation"
       },
       "rdfs:label": "Email"
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#historyNote",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#historyNote",
       "@type": "owl:AnnotationProperty",
       "owl:equivalentProperty": {
         "@id": "skos:historyNote"
@@ -1389,11 +1389,11 @@
       "rdfs:comment": "A note pertaining to the\n      history of the resource.",
       "rdfs:label": "History Note",
       "rdfs:subPropertyOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#note"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#note"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#hasIdentifier",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasIdentifier",
       "@type": [
         "owl:ObjectProperty",
         "rdf:Property"
@@ -1401,23 +1401,23 @@
       "rdfs:comment": "Associates a resource with\n      a madsrdf:Identifier.",
       "rdfs:label": "Has Identifier",
       "rdfs:range": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Identifier"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Identifier"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#prominentFamilyMember",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#prominentFamilyMember",
       "@type": [
         "rdf:Property",
         "owl:DatatypeProperty"
       ],
       "rdfs:comment": "A well-known individual who\n      is a member of the family.",
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#RWO"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#RWO"
       },
       "rdfs:label": "Prominent Family\n      Member"
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#citationNote",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#citationNote",
       "@type": [
         "owl:AnnotationProperty",
         "rdf:Property"
@@ -1427,7 +1427,7 @@
         "@value": "A note about how the madsrdf:Source relates to the resource about\n      which the madsrdf:Source is the information source."
       },
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Source"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Source"
       },
       "rdfs:label": {
         "@language": "en",
@@ -1435,7 +1435,7 @@
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#CitySection",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#CitySection",
       "@type": "owl:Class",
       "rdfs:comment": "Describes a resource whose\n      label is a smaller unit within a populated place, e.g., a neighborhood, park, or\n      street.",
       "rdfs:label": {
@@ -1443,11 +1443,11 @@
         "@value": "City Section Type"
       },
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Geographic"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Geographic"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#Province",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#Province",
       "@type": "owl:Class",
       "rdfs:comment": "Describes a resource whose\n      label is a first order political division, e.g. Ontario, within a country, e.g. Canada. ",
       "rdfs:label": {
@@ -1455,11 +1455,11 @@
         "@value": "Province Type"
       },
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Geographic"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Geographic"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#County",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#County",
       "@type": "owl:Class",
       "rdfs:comment": "Describes a resource whose\n      label is the largest local administrative unit, e.g. Warwickshire, in a country, e.g.\n      England.",
       "rdfs:label": {
@@ -1467,29 +1467,29 @@
         "@value": "County Type"
       },
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Geographic"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Geographic"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#isIdentifiedByAuthority",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#isIdentifiedByAuthority",
       "@type": [
         "owl:ObjectProperty",
         "rdf:Property"
       ],
       "owl:inverseOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#identifiesRWO"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#identifiesRWO"
       },
       "rdfs:comment": "Associates a Real World\n      Object with its Authority description.",
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#RWO"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#RWO"
       },
       "rdfs:label": "Is Identified By\n      Authority",
       "rdfs:range": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Authority"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Authority"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#GenreForm",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#GenreForm",
       "@type": "owl:Class",
       "rdfs:comment": {
         "@language": "en",
@@ -1500,36 +1500,36 @@
         "@value": "Genre/Form Type"
       },
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#SimpleType"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#SimpleType"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#hasAffiliationAddress",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasAffiliationAddress",
       "@type": [
         "owl:ObjectProperty",
         "rdf:Property"
       ],
       "rdfs:comment": "The address of the group or\n      organization with which an individual is associated.",
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Affiliation"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Affiliation"
       },
       "rdfs:label": "Has Affiliation\n      Address",
       "rdfs:range": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Address"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Address"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#MADSScheme",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#MADSScheme",
       "@type": "owl:Class",
       "owl:disjointWith": [
         {
-          "@id": "http://www.loc.gov/mads/rdf/v1#Variant"
+          "@id": "http://lcnetdev.github.io/mads/rdf/v1#Variant"
         },
         {
-          "@id": "http://www.loc.gov/mads/rdf/v1#Authority"
+          "@id": "http://lcnetdev.github.io/mads/rdf/v1#Authority"
         },
         {
-          "@id": "http://www.loc.gov/mads/rdf/v1#MADSCollection"
+          "@id": "http://lcnetdev.github.io/mads/rdf/v1#MADSCollection"
         }
       ],
       "rdfs:comment": {
@@ -1545,7 +1545,7 @@
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#ComplexSubject",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#ComplexSubject",
       "@type": "owl:Class",
       "rdfs:comment": {
         "@language": "en",
@@ -1556,49 +1556,49 @@
         "@value": "Complex Subject Type"
       },
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#ComplexType"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#ComplexType"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#FullNameElement",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#FullNameElement",
       "@type": "owl:Class",
       "rdfs:label": "Fullname Element",
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#NameElement"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#NameElement"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#birthPlace",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#birthPlace",
       "@type": [
         "rdf:Property",
         "owl:ObjectProperty"
       ],
       "rdfs:comment": "The town, city, province,\n      state, and/or country in which a person was born.",
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#RWO"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#RWO"
       },
       "rdfs:label": "Place of Birth",
       "rdfs:range": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Geographic"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Geographic"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#hasTopMemberOfMADSScheme",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasTopMemberOfMADSScheme",
       "@type": [
         "rdf:Property",
         "owl:ObjectProperty"
       ],
       "rdfs:comment": "Identifies an Authority\n      that is at the top of the hierarchy of authorities within the MADS Scheme.",
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#MADSScheme"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#MADSScheme"
       },
       "rdfs:label": "Has Top Member of MADS\n      Scheme",
       "rdfs:range": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Authority"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Authority"
       },
       "rdfs:subPropertyOf": [
         {
-          "@id": "http://www.loc.gov/mads/rdf/v1#hasMADSSchemeMember"
+          "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasMADSSchemeMember"
         },
         {
           "@id": "skos:hasTopConcept"
@@ -1606,13 +1606,13 @@
       ]
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#isMemberOfMADSCollection",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#isMemberOfMADSCollection",
       "@type": [
         "rdf:Property",
         "owl:ObjectProperty"
       ],
       "owl:inverseOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#hasMADSCollectionMember"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasMADSCollectionMember"
       },
       "rdfs:comment": {
         "@language": "en",
@@ -1626,18 +1626,18 @@
         "@value": "Is Member Of MADSCollection"
       },
       "rdfs:range": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#MADSCollection"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#MADSCollection"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#affiliationEnd",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#affiliationEnd",
       "@type": [
         "rdf:Property",
         "owl:DatatypeProperty"
       ],
       "rdfs:comment": "The date an individual\n      ceased to be affiliated with an organization.",
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Affiliation"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Affiliation"
       },
       "rdfs:label": "Affiliation\n      Ended",
       "rdfs:range": {
@@ -1645,15 +1645,15 @@
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#GivenNameElement",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#GivenNameElement",
       "@type": "owl:Class",
       "rdfs:label": "Given Name\n      Element",
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#NameElement"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#NameElement"
       }
     },
     {
-      "@id": "http://www.loc.gov/standards/mads/rdf/v1.rdf",
+      "@id": "http://lcnetdev.github.io/standards/mads/rdf/v1.rdf",
       "@type": "owl:Ontology",
       "rdfs:comment": {
         "@language": "en",
@@ -1661,18 +1661,18 @@
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#hasAcronymVariant",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasAcronymVariant",
       "@type": [
         "owl:ObjectProperty",
         "rdf:Property"
       ],
       "rdfs:label": "Has Acronym\n      Variant",
       "rdfs:subPropertyOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#hasVariant"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasVariant"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#SimpleType",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#SimpleType",
       "@type": "owl:Class",
       "rdfs:comment": {
         "@language": "en",
@@ -1683,11 +1683,11 @@
         "@value": "Simple Type"
       },
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#MADSType"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#MADSType"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#hasHiddenVariant",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasHiddenVariant",
       "@type": [
         "owl:ObjectProperty",
         "rdf:Property"
@@ -1697,28 +1697,28 @@
         "@value": "Use for variants that are searchable, but not necessarily for\n      display."
       },
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Authority"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Authority"
       },
       "rdfs:label": {
         "@language": "en",
         "@value": "Has Hidden Variant"
       },
       "rdfs:range": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Variant"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Variant"
       },
       "rdfs:subPropertyOf": {
         "@id": "skosxl:hiddenLabel"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#affiliationStart",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#affiliationStart",
       "@type": [
         "rdf:Property",
         "owl:DatatypeProperty"
       ],
       "rdfs:comment": "The date an individual\n      established an affiliation with an organization.",
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Affiliation"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Affiliation"
       },
       "rdfs:label": "Affiliation\n      Started",
       "rdfs:range": {
@@ -1726,7 +1726,7 @@
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#code",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#code",
       "@type": [
         "rdf:Property",
         "owl:DatatypeProperty"
@@ -1741,7 +1741,7 @@
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#hasRelatedAuthority",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasRelatedAuthority",
       "@type": [
         "owl:ObjectProperty",
         "rdf:Property"
@@ -1751,14 +1751,14 @@
         "@value": "Unless the relationship can be more specifically identified, use\n      'hasRelatedAuthority.'"
       },
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Authority"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Authority"
       },
       "rdfs:label": {
         "@language": "en",
         "@value": "Has Related Authority"
       },
       "rdfs:range": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Authority"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Authority"
       },
       "rdfs:subPropertyOf": {
         "@id": "skos:semanticRelation"
@@ -1769,31 +1769,31 @@
       "@type": "owl:AnnotationProperty"
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#hours",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#hours",
       "@type": [
         "owl:DatatypeProperty",
         "rdf:Property"
       ],
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Affiliation"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Affiliation"
       },
       "rdfs:label": "Hours"
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#hasMADSSchemeMember",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasMADSSchemeMember",
       "@type": [
         "rdf:Property",
         "owl:ObjectProperty"
       ],
       "owl:inverseOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#isMemberOfMADSScheme"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#isMemberOfMADSScheme"
       },
       "rdfs:comment": {
         "@language": "en",
         "@value": "Associates an Authority or Collection with a\n      madsrdf:MADSScheme."
       },
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#MADSScheme"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#MADSScheme"
       },
       "rdfs:label": "Has MADS Scheme\n      Member",
       "rdfs:range": {
@@ -1801,31 +1801,31 @@
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#entityDescriptor",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#entityDescriptor",
       "@type": [
         "rdf:Property",
         "owl:DatatypeProperty"
       ],
       "rdfs:comment": "Any attribute that serves\n      to characterize a person, family or corporate body or that may be needed for differentiation\n      from other persons. families or corporate bodies and for which separate content designation is\n      not already defined.Or ",
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#RWO"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#RWO"
       },
       "rdfs:label": "Entity\n      Descriptor"
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#fax",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#fax",
       "@type": [
         "owl:DatatypeProperty",
         "rdf:Property"
       ],
       "rdfs:comment": "Fax number",
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Affiliation"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Affiliation"
       },
       "rdfs:label": "Fax"
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#Country",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#Country",
       "@type": "owl:Class",
       "rdfs:comment": "Describes a resource whose\n      label is a country, i.e. a political entity considered a country. ",
       "rdfs:label": {
@@ -1833,18 +1833,18 @@
         "@value": "Country Type"
       },
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Geographic"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Geographic"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#idValue",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#idValue",
       "@type": [
         "rdf:Property",
         "owl:DatatypeProperty"
       ],
       "rdfs:comment": "The value of the identifier\n      conforming to the Identifier Scheme syntax.",
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Identifier"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Identifier"
       },
       "rdfs:label": "Identifier Value",
       "rdfs:range": {
@@ -1856,7 +1856,7 @@
       "@type": "owl:Class"
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#CorporateName",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#CorporateName",
       "@type": "owl:Class",
       "rdfs:comment": "Describes a resource whose\n      label is the name of a corporate entity, which may include political or ecclesiastical\n      entities.",
       "rdfs:label": {
@@ -1864,18 +1864,18 @@
         "@value": "Corporate Name Type"
       },
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Name"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Name"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#hiddenLabel",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#hiddenLabel",
       "@type": [
         "owl:DatatypeProperty",
         "rdf:Property"
       ],
       "rdfs:comment": "A label entered for\n      discovery purposes but not shown.",
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Variant"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Variant"
       },
       "rdfs:label": "Hidden Label",
       "rdfs:subPropertyOf": {
@@ -1883,13 +1883,13 @@
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#hasEarlierEstablishedForm",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasEarlierEstablishedForm",
       "@type": [
         "owl:ObjectProperty",
         "rdf:Property"
       ],
       "owl:inverseOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#hasLaterEstablishedForm"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasLaterEstablishedForm"
       },
       "rdfs:comment": {
         "@language": "en",
@@ -1897,7 +1897,7 @@
       },
       "rdfs:label": "Has Earlier Established\n      Form",
       "rdfs:subPropertyOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#see"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#see"
       }
     },
     {
@@ -1906,35 +1906,35 @@
       "owl:unionOf": {
         "@list": [
           {
-            "@id": "http://www.loc.gov/mads/rdf/v1#Authority"
+            "@id": "http://lcnetdev.github.io/mads/rdf/v1#Authority"
           },
           {
-            "@id": "http://www.loc.gov/mads/rdf/v1#MADSCollection"
+            "@id": "http://lcnetdev.github.io/mads/rdf/v1#MADSCollection"
           }
         ]
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#idScheme",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#idScheme",
       "@type": [
         "owl:AnnotationProperty",
         "rdf:Property"
       ],
       "rdfs:comment": "The scheme associated with\n      the identifier. For example, \"LCCN\" would be used when the Identifier Value (madsrdf:idValue)\n      is a LC Control Number.",
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Identifier"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Identifier"
       },
       "rdfs:label": "Identifier\n      Scheme"
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#GenreFormElement",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#GenreFormElement",
       "@type": "owl:Class",
       "rdfs:label": {
         "@language": "en",
         "@value": "Genre/Form Element"
       },
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Element"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Element"
       }
     },
     {
@@ -1957,10 +1957,10 @@
       "owl:unionOf": {
         "@list": [
           {
-            "@id": "http://www.loc.gov/mads/rdf/v1#Authority"
+            "@id": "http://lcnetdev.github.io/mads/rdf/v1#Authority"
           },
           {
-            "@id": "http://www.loc.gov/mads/rdf/v1#DeprecatedAuthority"
+            "@id": "http://lcnetdev.github.io/mads/rdf/v1#DeprecatedAuthority"
           }
         ]
       }
@@ -1980,17 +1980,17 @@
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#MADSCollection",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#MADSCollection",
       "@type": "owl:Class",
       "owl:disjointWith": [
         {
-          "@id": "http://www.loc.gov/mads/rdf/v1#Variant"
+          "@id": "http://lcnetdev.github.io/mads/rdf/v1#Variant"
         },
         {
-          "@id": "http://www.loc.gov/mads/rdf/v1#MADSScheme"
+          "@id": "http://lcnetdev.github.io/mads/rdf/v1#MADSScheme"
         },
         {
-          "@id": "http://www.loc.gov/mads/rdf/v1#Authority"
+          "@id": "http://lcnetdev.github.io/mads/rdf/v1#Authority"
         }
       ],
       "rdfs:comment": "A madsrdf:Collection is an\n      organizational unit, members of which will have some form of intellectually unifying theme but\n      not to the extent that it defines an independent knowledge organization system. It aggregates\n      madsrdf:Authority descriptions or other madsrdf:MADSCollection resources.",
@@ -2000,7 +2000,7 @@
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#citationSource",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#citationSource",
       "@type": [
         "owl:AnnotationProperty",
         "rdf:Property"
@@ -2010,7 +2010,7 @@
         "@value": "The cited resource."
       },
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Source"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Source"
       },
       "rdfs:label": {
         "@language": "en",
@@ -2018,7 +2018,7 @@
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#hasVariant",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasVariant",
       "@type": [
         "owl:ObjectProperty",
         "rdf:Property"
@@ -2028,18 +2028,18 @@
         "@value": "Associates a Variant with an Authority or Deprecrated Authority.\n      Unless the variant type can be more specifically identified, use 'hasVariant.'"
       },
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Authority"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Authority"
       },
       "rdfs:label": "Has Variant",
       "rdfs:range": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Variant"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Variant"
       },
       "rdfs:subPropertyOf": {
         "@id": "skosxl:altLabel"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#Affiliation",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#Affiliation",
       "@type": "owl:Class",
       "rdfs:comment": {
         "@language": "en",
@@ -2051,7 +2051,7 @@
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#hasCloseExternalAuthority",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasCloseExternalAuthority",
       "@type": [
         "owl:SymmetricProperty",
         "rdf:Property",
@@ -2061,7 +2061,7 @@
       "rdfs:label": "Has Close External\n      Authority",
       "rdfs:subPropertyOf": [
         {
-          "@id": "http://www.loc.gov/mads/rdf/v1#hasRelatedAuthority"
+          "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasRelatedAuthority"
         },
         {
           "@id": "skos:closeMatch"
@@ -2069,27 +2069,27 @@
       ]
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#organization",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#organization",
       "@type": [
         "owl:AnnotationProperty",
         "rdf:Property"
       ],
       "rdfs:comment": "The group or organization\n      with which an individual is associated.",
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Affiliation"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Affiliation"
       },
       "rdfs:label": "Organization or\n      Group"
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#TemporalElement",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#TemporalElement",
       "@type": "owl:Class",
       "rdfs:label": "Temporal Element",
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Element"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Element"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#Island",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#Island",
       "@type": "owl:Class",
       "rdfs:comment": "Describes a resource whose\n      label is a tract of land surrounded by water and smaller than a continent but is not itself a\n      separate country. ",
       "rdfs:label": {
@@ -2097,11 +2097,11 @@
         "@value": "Island Type"
       },
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Geographic"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Geographic"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#Continent",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#Continent",
       "@type": "owl:Class",
       "rdfs:comment": "Describes a resource whose\n      label is one of seven large landmasses on Earth. These are: Asia, Africa, Europe, North\n      America, South America, Australia, and Antarctica.",
       "rdfs:label": {
@@ -2109,59 +2109,59 @@
         "@value": "Continent Type"
       },
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Geographic"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Geographic"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#TopicElement",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#TopicElement",
       "@type": "owl:Class",
       "rdfs:label": {
         "@language": "en",
         "@value": "Topic Element"
       },
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Element"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Element"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#activityEndDate",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#activityEndDate",
       "@type": [
         "rdf:Property",
         "owl:DatatypeProperty"
       ],
       "rdfs:comment": "Latest date in a period of activity.\n    ",
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#RWO"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#RWO"
       },
       "rdfs:label": "Activity End"
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#gender",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#gender",
       "@type": [
         "owl:DataTypeProperty",
         "rdf:Property"
       ],
       "rdfs:comment": "The gender with which a\n      person identifies. ",
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#RWO"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#RWO"
       },
       "rdfs:label": "Gender"
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#hasMADSCollectionMember",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#hasMADSCollectionMember",
       "@type": [
         "rdf:Property",
         "owl:ObjectProperty"
       ],
       "owl:inverseOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#isMemberOfMADSCollection"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#isMemberOfMADSCollection"
       },
       "rdfs:comment": {
         "@language": "en",
         "@value": "Associates an Authority or other Collection with a\n      madsrdf:MADSCollection."
       },
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#MADSCollection"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#MADSCollection"
       },
       "rdfs:label": {
         "@language": "en",
@@ -2175,7 +2175,7 @@
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#adminMetadata",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#adminMetadata",
       "@type": [
         "rdf:Property",
         "owl:ObjectProperty"
@@ -2193,14 +2193,14 @@
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#state",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#state",
       "@type": [
         "rdf:Property",
         "owl:AnnotationProperty"
       ],
       "rdfs:comment": "The state associated with\n      an address.",
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Address"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Address"
       },
       "rdfs:label": "State"
     },
@@ -2210,27 +2210,27 @@
       "owl:unionOf": {
         "@list": [
           {
-            "@id": "http://www.loc.gov/mads/rdf/v1#Authority"
+            "@id": "http://lcnetdev.github.io/mads/rdf/v1#Authority"
           },
           {
-            "@id": "http://www.loc.gov/mads/rdf/v1#MADSCollection"
+            "@id": "http://lcnetdev.github.io/mads/rdf/v1#MADSCollection"
           }
         ]
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#associatedLocale",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#associatedLocale",
       "@type": [
         "owl:ObjectProperty",
         "rdf:Property"
       ],
       "rdfs:comment": "A town, city, province,\n      state, and/or country associated with persons, corporate bodies, families, works, and\n      expressions.",
       "rdfs:domain": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#RWO"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#RWO"
       },
       "rdfs:label": "Associated Locale",
       "rdfs:range": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Geographic"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Geographic"
       }
     },
     {
@@ -2239,16 +2239,16 @@
       "owl:unionOf": {
         "@list": [
           {
-            "@id": "http://www.loc.gov/mads/rdf/v1#Authority"
+            "@id": "http://lcnetdev.github.io/mads/rdf/v1#Authority"
           },
           {
-            "@id": "http://www.loc.gov/mads/rdf/v1#MADSCollection"
+            "@id": "http://lcnetdev.github.io/mads/rdf/v1#MADSCollection"
           }
         ]
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#extension",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#extension",
       "@type": [
         "rdf:Property",
         "owl:ObjectProperty"
@@ -2256,7 +2256,7 @@
       "rdfs:label": "Extension"
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#definitionNote",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#definitionNote",
       "@type": [
         "rdf:Property",
         "owl:AnnotationProperty"
@@ -2273,7 +2273,7 @@
         "@value": "Definition Note"
       },
       "rdfs:subPropertyOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#note"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#note"
       }
     },
     {
@@ -2282,10 +2282,10 @@
       "owl:unionOf": {
         "@list": [
           {
-            "@id": "http://www.loc.gov/mads/rdf/v1#Authority"
+            "@id": "http://lcnetdev.github.io/mads/rdf/v1#Authority"
           },
           {
-            "@id": "http://www.loc.gov/mads/rdf/v1#MADSCollection"
+            "@id": "http://lcnetdev.github.io/mads/rdf/v1#MADSCollection"
           }
         ]
       }
@@ -2295,7 +2295,7 @@
       "@type": "rdfs:Datatype"
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#Temporal",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#Temporal",
       "@type": "owl:Class",
       "rdfs:comment": "Describes a resource whose\n      label represents a time-based notion.",
       "rdfs:label": {
@@ -2303,19 +2303,19 @@
         "@value": "Temporal Type"
       },
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#SimpleType"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#SimpleType"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#NonSortElement",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#NonSortElement",
       "@type": "owl:Class",
       "rdfs:label": "Non-sort Element",
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#TitleElement"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#TitleElement"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#editorialNote",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#editorialNote",
       "@type": [
         "owl:AnnotationProperty",
         "rdf:Property"
@@ -2326,11 +2326,11 @@
       "rdfs:comment": "A note pertaining to the\n      management of the label associated with the resource.",
       "rdfs:label": "Editorial Note",
       "rdfs:subPropertyOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#note"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#note"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#RWO",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#RWO",
       "@type": "owl:Class",
       "rdfs:comment": "A madsrdf:RWO is an\n      abstract entity and identifies a Real World Object (RWO) identified by the label of a\n      madsrdf:Authority or madsrdf:DeprecatedAuthority.",
       "rdfs:label": "Real World\n      Object",
@@ -2339,7 +2339,7 @@
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#Name",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#Name",
       "@type": "owl:Class",
       "rdfs:comment": {
         "@language": "en",
@@ -2350,21 +2350,21 @@
         "@value": "Name Type"
       },
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#SimpleType"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#SimpleType"
       }
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#Variant",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#Variant",
       "@type": "owl:Class",
       "owl:disjointWith": [
         {
-          "@id": "http://www.loc.gov/mads/rdf/v1#Authority"
+          "@id": "http://lcnetdev.github.io/mads/rdf/v1#Authority"
         },
         {
-          "@id": "http://www.loc.gov/mads/rdf/v1#MADSScheme"
+          "@id": "http://lcnetdev.github.io/mads/rdf/v1#MADSScheme"
         },
         {
-          "@id": "http://www.loc.gov/mads/rdf/v1#MADSCollection"
+          "@id": "http://lcnetdev.github.io/mads/rdf/v1#MADSCollection"
         }
       ],
       "rdfs:comment": {
@@ -2385,7 +2385,7 @@
       ]
     },
     {
-      "@id": "http://www.loc.gov/mads/rdf/v1#State",
+      "@id": "http://lcnetdev.github.io/mads/rdf/v1#State",
       "@type": "owl:Class",
       "rdfs:comment": "Describes a resource whose\n      label is a first order political division, e.g. Montana, within a country, e.g.\n      U.S.",
       "rdfs:label": {
@@ -2393,7 +2393,7 @@
         "@value": "State Type"
       },
       "rdfs:subClassOf": {
-        "@id": "http://www.loc.gov/mads/rdf/v1#Geographic"
+        "@id": "http://lcnetdev.github.io/mads/rdf/v1#Geographic"
       }
     }
   ]

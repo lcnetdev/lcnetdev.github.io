@@ -39,21 +39,21 @@ There are two problems with this:
 
 These need to be corrected.   Meanwhile, this version uses:
 
-schemaLocation="http://www.loc.gov/standards/sru/sru-2-0/schemas/xxx.xsd"/
+schemaLocation="http://lcnetdev.github.io/standards/sru/sru-2-0/schemas/xxx.xsd"/
 
 ************************************************************
 ************************************************************
 -->
 
-	<xs:import namespace="http://docs.oasis-open.org/ns/search-ws/diagnostic" schemaLocation="http://www.loc.gov/standards/sru/sru-2-0/schemas/diagnostic.xsd"/>
+	<xs:import namespace="http://docs.oasis-open.org/ns/search-ws/diagnostic" schemaLocation="http://lcnetdev.github.io/standards/sru/sru-2-0/schemas/diagnostic.xsd"/>
 	<!-- -->
-	<xs:import namespace="http://docs.oasis-open.org/ns/search-ws/facetedResults" schemaLocation="http://www.loc.gov/standards/sru/sru-2-0/schemas/facetedResults.xsd"/>
+	<xs:import namespace="http://docs.oasis-open.org/ns/search-ws/facetedResults" schemaLocation="http://lcnetdev.github.io/standards/sru/sru-2-0/schemas/facetedResults.xsd"/>
 	<!-- -->
-	<xs:import namespace="http://docs.oasis-open.org/ns/search-ws/searchResultAnalysis" schemaLocation="http://www.loc.gov/standards/sru/sru-2-0/schemas/searchResultAnalysis.xsd"/>
+	<xs:import namespace="http://docs.oasis-open.org/ns/search-ws/searchResultAnalysis" schemaLocation="http://lcnetdev.github.io/standards/sru/sru-2-0/schemas/searchResultAnalysis.xsd"/>
 	<!-- -->
-	<xs:import namespace="http://docs.oasis-open.org/ns/search-ws/xcql" schemaLocation="http://www.loc.gov/standards/sru/sru-2-0/schemas/xcql.xsd"/>
+	<xs:import namespace="http://docs.oasis-open.org/ns/search-ws/xcql" schemaLocation="http://lcnetdev.github.io/standards/sru/sru-2-0/schemas/xcql.xsd"/>
 	<!-- -->
-	<xs:import namespace="http://docs.oasis-open.org/ns/search-ws/scan" schemaLocation="http://www.loc.gov/standards/sru/sru-2-0/schemas/scan.xsd"/>
+	<xs:import namespace="http://docs.oasis-open.org/ns/search-ws/scan" schemaLocation="http://lcnetdev.github.io/standards/sru/sru-2-0/schemas/scan.xsd"/>
 	<!--  
 ***************************************************************************************************************
 *                                                                                                                                         * 

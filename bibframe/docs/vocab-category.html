@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js">
+<head>
+<title>BIBFRAME Vocabulary: Description of Category View (BIBFRAME - Bibliographic Framework Initiative, Library of Congress)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="bibframe, category view, bibliographic framework, transition, initiative, marc, cataloging, library of congress" />
+<meta name="description" content="The BIBFRAME  model and vocabulary consider resources that are cataloged as works with corresponding instances (physical and/or electronic). The metadata describing a work is an amalgamation of the some of the data that was formerly associated with the uniform title authority record combined with subject data that was associated with the bibliographic  records. Thus each cataloging resource must have a work description, and, if the cataloging resource exists physically or electronically, one or more instance descriptions.<" />
+
+<link rel="dc.relation.isPartOf" href="http://lcnetdev.github.io/bibframe/" title="BIBFRAME - Bibliographic Framework Initiative (Library of Congress)" />
+<meta name="dc.subject" content="bibliographic framework" /><br />
+<meta name="dc.subject" content="vocabulary" />
+<meta name="dc.subject" content="category view" />
+<meta name="dc.subject" content="bibframe" />
+<meta name="dc.type" content="webpage" />
+<meta name="dc.identifier" content="http://lcnetdev.github.io/bibframe/docs/vocab-category.html" />
+<meta name="dc.language" content="en" />
+
+<link type="text/css" media="screen" rel="stylesheet" href="../css/styles.css" />
+<link type="text/css" media="print" rel="stylesheet" href="/css/loc_print_v2.css" />
+<!--[if lte IE 7]><link type="text/css" media="screen" rel="stylesheet" href="/css/loc_lte_ie6.css" /><![endif]-->
+<!--#include virtual="/bibframe/include/share-tool.html"-->
+<script type="text/javascript" src="http://cdn.loc.gov/js/lib/modernizr-1.5.min.js"></script></head>
+<body>
+<a id="skip" href="#skip_menu">skip navigation</a>
+<div id="container">
+  <!--#include virtual="../include/branding.html"-->
+  <!--#include virtual="/cdn/html/lochead.html"-->
+  <div id="crumb_nav"><a href="http://lcnetdev.github.io">The Library of Congress</a> &gt; <a href="/bibframe/">BIBFRAME</a> &gt; <a href="index.html">Model &amp; Vocabulary</a> &gt; BIBFRAME Vocabulary: Description of Category View</div>
+  <div id="content">
+    <!--#include virtual="../include/leftnav.html"-->
+    <div id="main_body">
+    	<!--#include virtual="../include/share-tool-bar.html"-->
+      <div id="page_head"><span style="width: 100%;"><a name="skip_menu"></a></span>
+        <h1>Description of the  Category View of the BIBFRAME Vocabulary</h1>
+      </div>
+
+     
+      <p class="msg-info">This document describes the classes and properties of the <a href="http://bibframe.org/vocab/" class="external">BIBFRAME Vocabulary</a> as functional groups.</p>
+      <h2>Introduction</h2>
+<p>The BIBFRAME  model and vocabulary consider resources that are cataloged as <u>works</u> with  corresponding <u>instances</u> (physical and/or electronic).  The metadata describing a <u>work</u> is an  amalgamation of the some of the data that was formerly associated with the uniform  title authority record combined with subject data that was associated with the bibliographic  records. Thus each cataloging resource  must have a work description, and, if the cataloging resource exists physically  or electronically, one or more instance descriptions.</p>
+      <p>        The  following description explains the type of data that is included in this  initial vocabulary in the following areas:</p>
+      <ul class="bullet">
+        <li class="bullet">General Information</li>
+        <li class="bullet">          Cataloging Resource Category Information</li>
+        <li class="bullet">          Title Information</li>
+        <li class="bullet">          Instance Description Information</li>
+        <li class="bullet">          Identifier Information</li>
+        <li class="bullet">          Note Information</li>
+        <li class="bullet">          Subject Information</li>
+        <li class="bullet">          Subject Classification  Information</li>
+        <li class="bullet">          Subject Term  Information</li>
+        <li class="bullet">          Relationship Information</li>
+        <li class="bullet">          General Relationship  Information</li>
+        <li class="bullet">          Agent Relationships </li>
+        <li class="bullet">          Cataloging Resource  Relationships </li>
+        <li class="bullet">          Annotation Information</li>
+        <li class="bullet">          Holdings Annotation  Information</li>
+        <li class="bullet">          Administrative Information</li>
+      </ul>
+<p>The view of the vocabulary that is organized like these  categories of information is the one labeled &quot;<a href="http://bibframe.org/vocab-category/" class="external">Category View</a>.&quot;  It is recommended that this overview of the vocabulary be  read before exploring the vocabulary in detail.</p>
+      <h2>General Information</h2>
+      <p>        The  &quot;general&quot; category is made of several high level RDF and BIBFRAME  properties that are inherited by most of the classes and subclasses in the  vocabulary, such as:</p>
+      <ul class="bullet">
+        <li><em>label</em>  (a  general property for a string value)</li>
+        <li><em>identifier</em>  (a general property that specifies an  identifier for information about a resource)</li>
+        <li><em>authorizedAccessPoint </em> (a string that is formulated according to  description rules)</li>
+      </ul>
+      <p>        Since  Authority data and Annotation data may be related to descriptions at many  points, the two properties <em>hasAuthority</em> and <em>hasAnnotation</em> are  also considered &quot;general&quot; properties.</p>
+      <h2>Cataloging Resource Category Information</h2>
+      <p>        A set of  categories for the type and content of a cataloging resource are provided as <u>work subclasses</u>.  These classes are  roughly comparable to the MARC Type of Resource or the MODS Resource Type,  e.g., <em>Text</em>, <em>Audio</em>, <em>MovingImage</em>.  As in MODS, multiple classes may be specified  for a cataloging resource, e.g., <em>Cartography</em> and <em>Dataset</em>.  These class designations are expected to be used  to cue the elements called for in various profiles and to enable various  internal database or display options.  Since  different applications, such as event descriptions or museum object  descriptions, would usually use different high level categories for their material,  other resource categories can be specified via other namespaces.   For  the library community, focusing on one set will improve interchange of data.</p>
+      <p>        Instances  may also have basic categories that relate to the form of the instance, that  are treated as <u>instance subclasses</u>.   They include <em>Print</em>, <em>Electronic</em>, <em>Manuscript</em>, <em>Tactile</em>,  etc.  Additionally the basic  subclasses for mode of issuance can be applied to cataloging resource  instances:  <em>Monograph</em>, <em>MultipartMonograph</em>, <em>Serial</em>, and <em>Integratin</em>g.       </p>
+      <p>        Three more detailed <u>category properties</u> are included in the vocabulary that reflect the  dichotomy currently in the RDA cataloging rules that are used in  libraries.  They are <em>contentCategory</em>, <em>mediaCategory</em>, and <em>carrierCategory</em> which correspond for RDA content  type, media type, and carrier type, respectively.  </p>
+      <h2>Title Information</h2>
+      <h3>Instance titles</h3>
+      <p>        The <em>instanceTitle</em> is the title for the instance of the resource that is being cataloged.  It is determined by the cataloger following  cataloging conventions.  For example, if  using RDA conventions, the  title proper for the manifestation is probably  the instance title.  An <em>instanceTitle </em>can  be parsed into 4 main parts via the <em>Title</em> Class:  <em>titleValue</em>, <em>subtitle</em>, <em>partNumber</em>,  and <em>partName</em>.  If any other  elements are needed for the <em>instanceTitle</em>, they are included as the  property named <em>titleAttribute.</em></p>
+      <h3>Work titles</h3>
+      <p>        The <em>workTitle</em> is a more formal title property that is roughly comparable to the former  library uniform title.  It is also  composed of the same <em>Title</em> parts as <em>instanceTitle</em>, but <em>titleAttribute</em> is more  likely to be needed for data to differentiate the title from other work titles.</p>
+      <p>        The RDA  cataloging rules contain a list of attributes of a title that may be used to  enhance the information about the title, be affixed as a <em>titleAttribute</em> to a <em>workTitle</em>, or be used by systems to provide end users with  additional information about the work.   Properties are provided for those special attributes to be used if  desirable, e.g., <em>musicKey</em>, <em>musicNumber</em>, <em>treatySignator</em>.</p>
+      <h3>Special types of titles</h3>
+      <p>        The title  of a cataloging resource can be recorded in various ways because of the  variation in cataloging conventions, variations in types of resources,  etc.  </p>
+      <p>        A simple <em>title</em> property for the title as a string is provided for when no more specificity is  needed or available, such as data coming from a Dublin Core application or other simple data format.</p>
+      <p>        A <em>titleStatement</em> property is provided for the title information that is transcribed from the  principal source of information for the cataloging resource.  An example is the transcription of the title  from the title page of a book.  Recording  a title statement is recommended by some cataloging conventions, such as the  ISBD specifications. </p>
+      <p>        Two special  titles are also special properties:  <em>abbreviatedTitle</em> and <em>keyTitle</em>.  These special  titles may include the <em>titleQualifier</em> and <em>titleSource</em> in addition to the <em>titleValue</em>.</p>
+      <p>        Variations  on titles may also be encoded with <em>titleVariation</em>.  These variations are currently encoded in  MARC via the Bibliographic 246 field and the Authority 4XX fields.  The variations may be parsed via the <em>Title</em> class, enabling the  <em>titleVariationDate</em> to also be recorded.</p>
+      <p>        And finally  if a more specific indication of the type of title or title variation is  needed, such as a portion of a title or a spine title, the <em>Title </em>Class  provides a property for that purpose, <em>titleType</em>.</p>
+      <h2>Instance Description Information </h2>
+      <p>        The group of  properties designated as &quot;instance description&quot; includes the common information  included in a description of a manifestation of a work.  These include information about edition,  dimensions and extent, mode of issuance and frequency, and serial first and  last issue.  It also includes several  &quot;statement&quot; properties, e.g., responsibility statement, provider  statement, that some conventions require be transcribed from an item.  All of the above are specified as literal  strings as they, at least initially, will not be amenable to strict control. </p>
+      <p>        However some instance provider information may be specified  in a controlled form.  For example the publisher  statement may be given as a simple literal string, or be parsed into the place,  name, and date with URIs used for the values (except date which would logically  be a datatyped literal string).  While  four specific roles are provided in the vocabulary, <em>publication</em>, <em>production</em>, <em>manufacture</em>, <em>distribution</em>, additional or more specific provider  roles can be specified with the <em>providerRole</em> property.</p>
+      <h2>Identifier Information</h2>
+      <p>        There are  many identifiers that are applied to information objects.  Some identify a work, e.g., ISWC, but most identify  instances, e.g., ISBN.  Currently 39  identifier lists are included as separate properties, such as <em>isbn13</em>, <em>ismn</em>, <em>upc</em>, <em>ansi</em>, <em>issn</em>.   Additional identifiers may be included in a record using the property <em>identifier</em>,  which may have a value of a URI or may point to a class <em>Identifier</em> where  the scheme may be specified in addition to the value.  The class <em>Identifier</em> may also be  pointed to by any of the specific identifiers if additional data about an  identifier is needed such as the assigner, status, or qualifier.</p>
+      <h2>Note Information</h2>
+      <p>        The properties  designated as Note Information are a miscellany of information about cataloging  resources that has been grouped together for this view but are a broad spectrum  of facets of a cataloging resource.  They  have therefore been treated in several ways:   specific properties for specific information, e.g., <em>awardNote</em>; classes  where several elements of information can be grouped, e.g., the class <em>IntendedAudience</em> which brings together <em>audience</em> and <em>audienceAssigner</em>; and a  general &quot;note&quot; property, <em>note, </em>for other miscellaneous  information about the cataloging resource<em>.</em>  Other classes in this area include for example <em>Language </em>and <em>Arrangement</em>. Where possible information is specified  by URIs but much of this type of miscellaneous information will by nature be strings.</p>
+      <h2>Subject Information</h2>
+      <p>        Two types  of subject information are accommodated:   classification and term.   Currently four classification schemes have their own property: LCC, DDC,  UDC, and NLM.  All other schemes (of  which there are over 150 listed in the MARC documentation) use the property <em>classification.</em> The class <em>Classification</em> provides the  property <em>classificationScheme</em> to designate the scheme used for the  classification valuer.  Classification values may be  provided as URIs or as strings.  Any  classification property, specific or general, may use the class <em>Classification</em> to segment and/or provide additional information about the classification value.  While the class <em>Classification</em> provides a property for the item number, there is a separate element in the holdings  area for classification numbers used as shelf marks and the item number is more  logically included there.<br />
+      Subject  terms are encoded through the Authority class, where they may be strings or  URIs.</p>
+      <h2>Relationship Information</h2>
+      <p>        In this section two important types of relationships are  treated, cataloging resource to agent, and cataloging resource to cataloging  resource. </p>
+      <p>To express a relationship between an agent and a cataloging  resource, commonly called a &quot;role&quot;, the main role properties <em>agent</em> (most general), <em>creator</em>, <em>contributor</em>, and <em>relator</em> are used.  Additionally if a specific role from another  namespace is desired, it may be declared and then used.  And the <em>relator</em> property also enables  the role to be included as a text string using the class <em>Relator</em>.  These roles use the property <em>agent</em> to  point to a BIBFRAME <em>Authority</em>, which provides information about the  agent – string/inline information about the agent or a URI pointing to the  description of the agent.   See the  BIBFRAME Authorities specification for a fuller explanation.</p>
+      <p>Similarly, to express a relationship between two cataloging  resources, a number of relationship properties from the very general, <em>relatedTo</em>,  to the specific, <em>continuesInPart</em>, are used.  They all have a range of a URI for a pointer  to the work for the related cataloging resource.  As with the above, the relationship may also  be expressed with a property from another name space, if that namespace is  first declared.  A related resource may  not be cited as a string as it is expected that the related Work or Instance  description can be created even if it is very minimal.  The ultimate fallback, however, is to cite  the related resource in a note.  </p>
+      <p>For relationships between cataloging resources there are  currently approximately fifty specified in the vocabulary.  They may be categorized as follows:</p>
+      <ul class="bullet">
+        <li><strong>very genera</strong>l - work to work, instance to instance, work to  instance, and, a subproperty of the first, work to expression.</li>
+        <li><strong>general </strong>- relationships such as <em>hasEquivalent</em>, <em>hasPart</em>, <em>accompanies</em>, <em>precedes</em>, <em>succeeds</em>, <em>hasDerivative</em>.  (These largely correspond to the RDA general  categories for organizing relationships.)</li>
+        <li><strong>specific</strong> - relationships that may be considered sub  relationships to any of the very general or general such as <em>supplementTo</em> (<em>accompanies</em>), <em>supersedes</em> (<em>precedes</em>), <em>continuedBy</em> (<em>succeeds</em>),  and <em>translationOf</em>  (<em>hasDerivative</em>). </li>
+      </ul>
+      <p>Relationships between cataloging resources are generally  specified so that they may go either direction.  </p>
+      <p>To encode the FRBR relationships that are found in RDA that  would be between two BIBFRAME works, the <em>hasExpression </em>and <em>expressionOf </em>relationships are used.  RDA/FRBR  relationships between manifestations and expressions or works are expressed  using the <em>hasInstance</em> and <em>instanceOf </em>properties.</p>
+      <h2>Annotation Information</h2>
+      <p>        The  BIBFRAME Annotation is an important element of BIBFRAME as it enables asserting  information about a work or instance such as &quot;I hold it&quot;, &quot;here  is a review of it&quot;, etc.  At this  point five key annotation types are specified in the vocabulary:  cover art, summary, review, table of  contents, and holdings, although any other type of annotation may be made using  the <em>annotates</em> property. The <em>Annotation</em> class vocabulary enables  recording the date the assertion was made, who made the assertion, and the source  of the annotation content.  For cover  art, summary, review, and table of contents, subclasses carry the annotation information  via a URI pointing to the content or the embedded content itself.  For example, for a review it may include the  text of the review, or point to place where the review is carried or is  currently stored.</p>
+      <p>        Asserting  holdings is richer.  It includes two  subclasses relating to holdings, <em>HeldMaterial </em>and <em>HeldItem</em>.  <em>HeldMaterial</em> includes the general  holdings information for a cataloging entity such as the summary enumeration  and chronology in string form, retention policy, and reproduction policy.  The <em>HeldItem</em> class includes the shelf mark,  barcode, and circulation status for one part of the holding.  </p>
+      <p>        Note that  even though the MARC Holdings format includes information about both the  &quot;obtain&quot; and the &quot;prediction&quot; functions, this version of  the vocabulary only works with the &quot;obtain&quot; currently.</p>
+      <h2>Authority Information </h2>
+      <p>        Authority  information is associated with agents, places and subjects that are needed to  fully describe a cataloging resource.   The vocabulary assumes that current authority files are called upon for  many description needs to enable use of existing authority data.  </p>
+      <p>        It should  be noted that the model and vocabulary employ the work description in place of  the uniform title authority records that were used in the MARC  environment.  Those records are therefore  converted to works in a BIBFRAME environment.   The vocabulary for titles attempts to support this different configuration  of that information.</p>
+      <p>        BIBFRAME  suggests the use of authorized forms from authority files for some elements of description that have not been treated like that before, such as <em>providerName</em>, <em>providerPlace</em>, and <em>dissertationInstitution</em>.  .</p>
+      <h2>Administrative Information</h2>
+      <p>        A small  amount of administrative information may be associated with a description via  the properties listed under that section.   This includes general information about the description of a cataloging  resource such as <em>creationDate,</em> <em>changeDate,</em> <em>descriptionConventions,</em> <em>descriptionLanguage,</em> <em>descriptionSource</em>. </p>
+</div>
+
+      <div class="clear"><!-- --></div>
+    </div><!-- end id:main_body -->
+  </div><!-- end id:content -->
+  <!--#include virtual="/cdn/html/locfoot.html"-->
+</div><!-- end id:container -->
+</body>
+</html>

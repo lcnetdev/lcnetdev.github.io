@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<soapenv:Body>
-		<updateResponse xmlns="http://www.loc.gov/zing/srw/update/">
-			<ns1:version xmlns:ns1="http://www.loc.gov/zing/srw/">1.0</ns1:version>
+		<updateResponse xmlns="http://lcnetdev.github.io/zing/srw/update/">
+			<ns1:version xmlns:ns1="http://lcnetdev.github.io/zing/srw/">1.0</ns1:version>
 			<operationStatus>success</operationStatus>
 			<recordIdentifier>123123933</recordIdentifier>
-			<ns2:record xmlns:ns2="http://www.loc.gov/zing/srw/">
+			<ns2:record xmlns:ns2="http://lcnetdev.github.io/zing/srw/">
 				<ns2:recordSchema>info:srw/schema/1/marcxml-v1.1</ns2:recordSchema>
 				<ns2:recordPacking>xml</ns2:recordPacking>
 				<ns2:recordData>
-					<mx:record xmlns:mx="http://www.loc.gov/MARC21/slim">
+					<mx:record xmlns:mx="http://lcnetdev.github.io/MARC21/slim">
 						<mx:leader>     cam a22      i 4500</mx:leader>
 						<mx:controlfield tag="001">123123933</mx:controlfield>
 						<mx:controlfield tag="003">PICA</mx:controlfield>
@@ -83,7 +83,7 @@
 					</mx:record>
 				</ns2:recordData>
 			</ns2:record>
-			<ns3:extraResponseData xmlns:ns3="http://www.loc.gov/zing/srw/"/>
+			<ns3:extraResponseData xmlns:ns3="http://lcnetdev.github.io/zing/srw/"/>
 		</updateResponse>
 	</soapenv:Body>
 </soapenv:Envelope>

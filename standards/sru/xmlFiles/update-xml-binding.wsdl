@@ -7,14 +7,14 @@ xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
 xmlns:xs="http://www.w3.org/2001/XMLSchema" 
 xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" 
 xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" 
-xmlns:ucp-interfaces="http://www.loc.gov/zing/srw/update/interfaces/" 
-xmlns:ucp-xml-binding="http://www.loc.gov/zing/srw/update/xml-binding/"
- xmlns:xcql="http://www.loc.gov/zing/cql/xcql/" 
- xmlns:srw="http://www.loc.gov/zing/srw/" 
- xmlns:diag="http://www.loc.gov/zing/srw/diagnostic/" 
- xmlns:ucp="http://www.loc.gov/zing/srw/update"
-  targetNamespace="http://www.loc.gov/zing/srw/update/xml-binding">
-<import namespace="http://www.loc.gov/zing/srw/update/interfaces/" location="update-ports.wsdl"/>
+xmlns:ucp-interfaces="http://lcnetdev.github.io/zing/srw/update/interfaces/" 
+xmlns:ucp-xml-binding="http://lcnetdev.github.io/zing/srw/update/xml-binding/"
+ xmlns:xcql="http://lcnetdev.github.io/zing/cql/xcql/" 
+ xmlns:srw="http://lcnetdev.github.io/zing/srw/" 
+ xmlns:diag="http://lcnetdev.github.io/zing/srw/diagnostic/" 
+ xmlns:ucp="http://lcnetdev.github.io/zing/srw/update"
+  targetNamespace="http://lcnetdev.github.io/zing/srw/update/xml-binding">
+<import namespace="http://lcnetdev.github.io/zing/srw/update/interfaces/" location="update-ports.wsdl"/>
 <binding name="XML-Binding" type="ucp-interfaces:updateInterface">
 <http:binding verb="POST"/>
 <operation name="update">

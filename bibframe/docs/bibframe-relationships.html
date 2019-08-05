@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<title>BIBFRAME Relationships: Draft Specification, 25 April 2014 (BIBFRAME - Bibliographic Framework Initiative, Library of Congress)</title>
+<meta name="keywords" content="bibframe, category view, bibliographic framework, transition, initiative, marc, cataloging, library of congress">
+<meta name="description" content="BIBFRAME Relationships: Draft Specification, 25 April 2014. A <strong>BIBFRAME Relationship </strong>is a relationship between a BIBFRAME Work or Instance and another BIBFRAME Work  or Instance. (BIBFRAME - Bibliographic Framework Initiative, Library of Congress)">
+
+<link rel="dc.relation.isPartOf" href="http://lcnetdev.github.io/bibframe/" title="BIBFRAME - Bibliographic Framework Initiative (Library of Congress)">
+<meta name="dc.subject" content="bibliographic framework">
+<meta name="dc.subject" content="vocabulary">
+<meta name="dc.subject" content="relationships">
+<meta name="dc.subject" content="bibframe">
+<meta name="dc.type" content="webpage">
+<meta name="dc.identifier" content="http://lcnetdev.github.io/bibframe/docs/bibframe-relationships.html">
+<meta name="dc.language" content="en">
+
+<link type="text/css" media="screen" rel="stylesheet" href="../css/styles.css">
+<link type="text/css" media="print" rel="stylesheet" href="/css/loc_print_v2.css">
+<!--[if lte IE 7]><link type="text/css" media="screen" rel="stylesheet" href="/css/loc_lte_ie6.css"><![endif]-->
+<!--#include virtual="/bibframe/include/share-tool.html"-->
+<script type="text/javascript" src="http://cdn.loc.gov/js/lib/modernizr-1.5.min.js"></script></head>
+<body>
+<a id="skip" href="#skip_menu">skip navigation</a>
+<div id="container">
+  <!--#include virtual="../include/branding.html"-->
+  <!--#include virtual="/cdn/html/lochead.html"-->
+  <div id="crumb_nav"><a href="http://lcnetdev.github.io">The Library of Congress</a> &gt; <a href="/bibframe/">BIBFRAME</a> &gt; <a href="index.html">Model &amp; Vocabulary</a> &gt; BIBFRAME Relationships Draft Specification  &mdash; 25 April 2014</div>
+  <div id="content">
+    <!--#include virtual="../include/leftnav.html"-->
+    <div id="main_body">
+    	<!--#include virtual="../include/share-tool-bar.html"-->
+      <div id="page_head"><span style="width: 100%;"><a name="skip_menu"></a></span>
+        <h1>BIBFRAME Relationships<br>
+        <span>Draft Specification (25 April 2014)</span></h1>
+      </div>
+      <p class="dot-top" style="margin-bottom:5px;"><strong>Status of this Document</strong></p>
+        <ul class="bullet">
+          <li>Draft for public review (25 April 2014)</li>
+          <li>Please send general comments about this document to the listserv <a href="mailto:bibframe@loc.gov">bibframe@loc.gov</a> or via email to <a href="mailto:bfcomments@loc.gov">bfcomments@loc.gov</a>.</li>
+          <li>To the extent possible under law, the Library of Congress has waived all copyright and related or neighboring rights to this work.</li>
+      </ul>
+      <div class="box-anchor">
+        <h3>Table of Contents </h3>
+<ul class="anchor">
+      <li><a href="#intro"> Introduction</a></li>
+      <li><a href="#connect">Relationships that  Connect Works and Instances</a></li>
+      <li><a href="#other">Other Resource Relationships</a><br />
+      - <a href="#works">Works, Expressions, Translations</a><br />
+      - <a href="#equiv">Equivalent Instances</a></li>
+      <li><a href="#external">External Relationships</a></li>
+      <li><a href="#relprop">Relationships and Properties</a><br />
+        - <a href="#basic">Basic Relationships</a><br />
+        - <a href="#table">Table of Relationship Properties</a></li>
+    </ul>
+</div>
+
+
+<h2 id="intro">1. Introduction</h2>
+<p>A <strong>BIBFRAME Relationship </strong>is a relationship between a BIBFRAME Work or Instance and another BIBFRAME Work  or Instance.<br />
+Thus there are four types of relationships:</p>
+<ol start="1" type="1">
+  <li>Work to Work </li>
+  <li>Work to Instance </li>
+  <li>Instance to Work </li>
+  <li>Instance to Instance </li>
+</ol>
+<p>A relationship is expressed as an RDF triple, i.e.  subject/property/object. Example:</p>
+<blockquote>
+  <p>&lsquo;<em>WorkA bf:precedes  WorkB&rsquo;</em> .</p>
+</blockquote>
+<p>The subject and object of the RDF triple are referred to informally  as the &ldquo;subject resource&rdquo; and the &ldquo;object resource&rdquo; respectively. <br />
+  The following example shows a BIBFRAME Work to Work  relationship. BIBFRAME Work <em>Adventures of Tom Sawyer – Hebrew </em>(work1, the  subject Work),is a translation of <em>Adventures of Tom Sawyer </em>(work2,  the object Work, not shown). </p>
+<div class="msg-info">
+  <pre>&lt;bf:Work rdf:about=&quot;http://bibframe.examples.org/work1&rdquo;&gt;
+    &lt;bf:workTitle&gt;
+&nbsp;&nbsp;&nbsp;    &lt;bf:Title&gt;
+&nbsp;&nbsp;        &lt;bf:titleValue&gt;Adventures of Tom Sawyer &lt;/bf:  titleValue&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    &lt;bf:titleAttribute&gt;Hebrew&lt;/bf: titleAttribute&gt;
+&nbsp;&nbsp;&nbsp;    &lt;/bf:Title&gt;
+    &lt;/bf:workTitle&gt;
+    &lt;bf:creator&gt;
+    &nbsp;&nbsp;&nbsp;&lt;bf:Authority&gt;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;bf:authorizedAccessPoint&gt;Twain, Mark,  1835-1910&lt;/bf:authorizedAccessPoint&gt;
+    &nbsp;&nbsp;&nbsp;&lt;/bf:Authority&gt;
+    &lt;/bf:creator&gt;
+&nbsp;&nbsp;&nbsp; <strong>&lt;bf:isTranslationOf rdf:resource=&rdquo;  http://bibframe.examples.org/work2&rdquo;/&gt;</strong>
+&lt;/bf:Work&gt;</pre></div>
+<p>Figure 1: Work to Work Relationship</p>
+
+<h2 id="connect" class="dot-top">2. Relationships that Connect Works and Instances</h2>
+<p>BIBFRAME Works and Instances are united through  relationships expressed via properties bf:hasInstance and bf:instanceOf. </p>
+<p>In the following Work to Instance relationship, the BIBFRAME  Work has an Instance in the form of a printed paperback. This relationship is  expressed by the property bf:hasInstance. </p>
+<div class="msg-info">
+  <pre>&lt;bf:Work rdf:about=&quot;http://bibframe.examples.org/<strong>work2</strong>&rdquo;&gt;
+    &lt;bf:workTitle&gt;
+&nbsp;&nbsp;&nbsp;    &lt;bf:Title&gt;
+&nbsp;&nbsp;        &lt;bf:titleValue&gt;Paradise lost&lt;/bf:titleValue&gt;
+&nbsp;&nbsp;&nbsp;    &lt;/bf:Title&gt;
+    &lt;/bf:workTitle&gt;
+    &lt;bf:creator&gt;
+    &nbsp;&nbsp;&nbsp;&lt;bf:Authority&gt;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;bf:authorizedAccessPoint&gt; Milton, John, 1608-1674&lt;/bf:authorizedAccessPoint&gt;
+    &nbsp;&nbsp;&nbsp;&lt;/bf:Authority&gt;
+    &lt;/bf:creator&gt;
+&nbsp;&nbsp;&nbsp; <strong>&lt;bf:hasInstance rdf:resource=”http://bibframe.examples.org/instance1”/&gt;</strong>
+&lt;/bf:Work&gt;</pre>
+</div>
+<p>Figure2a: Work to Instance relationship: hasInstance.</p>
+<p>The following Instance to Work relationship is the inverse  of the previous relationship; the subject and object resources are reversed.  The subject Instance is the paperback and the relationship expresses that it is  an Instance of the above BIBFRAME Work.</p>
+<div class="msg-info">
+  <pre>&lt;bf:Instance rdf:about=&quot;http://bibframe.examples.org/<strong>instance1</strong>&quot;&gt;
+    &lt;bf:instanceTitle&gt;
+&nbsp;&nbsp;&nbsp;    &lt;bf:Title&gt;
+&nbsp;&nbsp;        &lt;bf:titleValue&gt; Paradise lost &lt;/bf:titleValue&gt;
+&nbsp;&nbsp;&nbsp;    &lt;/bf:Title&gt;
+    &lt;/bf:instanceTitle&gt;
+    &lt;bf:isbn&gt;0192833197&lt;/bf:isbn&gt;     
+    &lt;<strong>bf:instanceOf rdf:resource=”http://bibframe.examples.org/work2”/</strong>&gt;
+&lt;/bf:Instance&gt; </pre>
+</div>
+<p>Figure 2b. Instance to Work relationship: instanceOf. </p>
+<p class="backtotop"><a href="pdf/lovin-speech-jan23-2014.pdf">Back to Top</a></p>
+
+<h2 id="other" class="dot-top">3. Other Resource Relationships</h2>
+<p>This section  illustrates several other relationships that are specially defined in BIBFRAME.  Section 4 includes a list of all specific relationships included in the BIBFRAME  vocabulary as named properties.</p>
+<h3 id="works">3.1. Works, Expressions, Translation</h3>
+<p>Figures 3a-e illustrate  relationships among three BIBFRAME Works, an original and two expressions; the  expressions are translations. An Instance is shown for each Work .</p>
+<div class="msg-info">
+  <pre>&lt;bf:Work rdf:about=”http://bibframe.rda.examples.org/<strong>work1</strong>”&gt;
+   &lt;bf:workTitle&gt;
+       &lt;bf:Title&gt;
+ 	     &lt;bf:titleValue&gt;<strong>Freres Zemganno</strong>&lt;/bf:titleValue&gt;
+ 	     &lt;bf:titleAttribute&gt;<strong>french</strong>&lt;/bf:titleAttribute&gt;
+       &lt;/bf:Title&gt;
+   &lt;/bf:workTitle&gt;
+   &lt;bf:creator&gt;
+      &lt;bf:Authority&gt;
+         &lt;bf:authorizedAccessPoint&gt;Goncourt, Edmund de, 1822-1896&lt;/bf:authorizedAccessPoint&gt;
+      &lt;/bf:Authority&gt;
+   &lt;/bf:creator&gt;
+   <strong>&lt;bf:hasInstance rdf:resource=”http://bibframe.rda.examples.org/instance1”/&gt;
+</strong>   <strong>&lt;bf:hasExpression rdf:resource=”http://bibframe.rda.examples.org/work2”/&gt;
+</strong>   <strong>&lt;bf:hasExpression rdf:resource=”http://bibframe.rda.examples.org/work3”/&gt;</strong>
+&lt;/bf:Work&gt; </pre>
+</div>
+<p>Figure 3.1a: Original Work, has one Instance and relates to Two Expressions.</p>
+<div class="msg-info">
+  <pre>&lt;bf:Instance rdf:about=”http://bibframe.rda.examples.org/<strong>instance1</strong>”&gt;
+   &lt;bf:instanceTitle&gt;
+       &lt;bf:Title&gt;
+ 	     &lt;bf:titleValue&gt;<strong>Freres Zemganno</strong>&lt;/bf:titleValue&gt;
+       &lt;/bf:Title&gt;
+   &lt;/bf:instanceTitle&gt;
+   <strong>&lt;bf:instanceOf rdf:resource=”http://bibframe.rda.examples.org/work1”/&gt;
+</strong>&lt;/bf:Instance&gt; </pre>
+</div>
+<p>Figure 3.1b: Original Work, has one Instance and relates to Two Expressions.</p>
+<div class="msg-info">
+  <pre>&lt;bf:Work rdf:about=”http://bibframe.rda.examples.org/<strong>work2</strong>”&gt;
+   &lt;bf:workTitle&gt;
+       &lt;bf:Title&gt;
+ 	     &lt;bf:titleValue&gt;<strong>Freres Zemganno</strong>&lt;/bf:titleValue&gt;
+ 	     &lt;bf:titleAttribute&gt;<strong>english</strong>&lt;/bf:titleAttribute&gt;
+       &lt;/bf:Title&gt;
+   &lt;/bf:workTitle&gt;
+   &lt;bf:creator&gt;
+      &lt;bf:Authority&gt;
+         &lt;bf:authorizedAccessPoint&gt;Goncourt, Edmund de, 1822-1896&lt;/bf:authorizedAccessPoint&gt;
+      &lt;/bf:Authority&gt;
+   &lt;/bf:creator&gt;
+   <strong>&lt;bf:hasInstance rdf:resource=”http://bibframe.rda.examples.org/instance2”/&gt;
+</strong>   <strong>&lt;bf:hasExpression rdf:resource=”http://bibframe.rda.examples.org/work1”/&gt;
+</strong>   <strong>&lt;bf:hasExpression rdf:resource=”http://bibframe.rda.examples.org/work1”/&gt;</strong>
+&lt;/bf:Work&gt; </pre>
+</div>
+<p>Figure 3.1c: An expression  of the Original Work: English translation.</p>
+<div class="msg-info">
+  <pre>&lt;bf:Instance rdf:about=”http://bibframe.rda.examples.org/<strong>instance2</strong>”&gt;
+   &lt;bf:instanceTitle&gt;
+       &lt;bf:Title&gt;
+ 	     &lt;bf:titleValue&gt;<strong>Freres Zemganno</strong>&lt;/bf:titleValue&gt;
+       &lt;/bf:Title&gt;
+   &lt;/bf:instanceTitle&gt;
+   <strong>&lt;bf:instanceOf rdf:resource=”http://bibframe.rda.examples.org/work2”/&gt;
+</strong>&lt;/bf:Instance&gt; </pre>
+</div>
+<p>Figure 3.1d: An  Instance of that Expression.</p>
+<div class="msg-info">
+  <pre>&lt;bf:Work rdf:about=”http://bibframe.rda.examples.org/<strong>work3</strong>”&gt;
+   &lt;bf:workTitle&gt;
+       &lt;bf:Title&gt;
+ 	     &lt;bf:titleValue&gt;<strong>Freres Zemganno</strong>&lt;/bf:titleValue&gt;
+ 	     &lt;bf:titleAttribute&gt;<strong>italian</strong>&lt;/bf:titleAttribute&gt;
+       &lt;/bf:Title&gt;
+   &lt;/bf:workTitle&gt;
+   &lt;bf:creator&gt;
+      &lt;bf:Authority&gt;
+         &lt;bf:authorizedAccessPoint&gt;Goncourt, Edmund de, 1822-1896&lt;/bf:authorizedAccessPoint&gt;
+      &lt;/bf:Authority&gt;
+   &lt;/bf:creator&gt;
+   <strong>&lt;bf:hasInstance rdf:resource=”http://bibframe.rda.examples.org/instance3”/&gt;</strong>
+      <strong>&lt;bf:hasExpression rdf:resource=”http://bibframe.rda.examples.org/work1”/&gt;</strong>
+         <strong>&lt;bf:hasExpression rdf:resource=”http://bibframe.rda.examples.org/work1”/&gt;</strong>
+&lt;/bf:Work&gt; </pre>
+</div>
+<p>Figure 3.1e: Another  Expression of the Original Work: Italian Translation.</p>
+<div class="msg-info">
+  <pre>&lt;bf:Instance rdf:about=”http://bibframe.rda.examples.org/<strong>instance3</strong>”&gt;
+   &lt;bf:instanceTitle&gt;
+       &lt;bf:Title&gt;
+ 	     &lt;bf:titleValue&gt;<strong>I Fratelli Zemganno</strong>&lt;/bf:titleValue&gt;
+       &lt;/bf:Title&gt;
+   &lt;/bf:instanceTitle&gt;
+   <strong>&lt;bf:instanceOf rdf:resource=”http://bibframe.rda.examples.org/work3”/&gt;
+</strong>&lt;/bf:Instance&gt; </pre>
+</div>
+<p>Figure 3.1f: An Instance of the Second Expression.</p>
+<p class="backtotop"><a href="#skip_menu">Back to Top</a></p>
+<h3 id="equiv" class="dot-top"> 3.2. Equivalent Instances</h3>
+<p>Figures 3.2a-c  illustrate relationships among a BIBFRAME Work and two Instances. The two  Instances are equivalent in content but the original (1930) was re-titled in  the 1975 reissue.</p>
+<div class="msg-info">
+  <pre>&lt;bf:Work rdf:about=”http://bibframe.rda.examples.org/<strong>work4</strong>”&gt;
+   &lt;bf:workTitle&gt;
+       &lt;bf:Title&gt;
+ 	     &lt;bf:titleValue&gt;<strong>Venice</strong>&lt;/bf:titleValue&gt;
+       &lt;/bf:Title&gt;
+   &lt;/bf:workTitle&gt;
+   &lt;bf:creator&gt;
+       &lt;bf:Authority&gt;
+ 	     &lt;bf:authorizedAccessPoint&gt;<strong>Roth, Celil, 1899-1970</strong>&lt;/bf:authorizedAccessPoint&gt;
+       &lt;/bf:Authority&gt;
+    <strong>&lt;bf:hasInstance rdf:resource=”http://bibframe.rda.examples.org/instance4”/&gt;</strong><br />    <strong>&lt;bf:hasInstance rdf:resource=”http://bibframe.rda.examples.org/instance5”/&gt;</strong> <strong>
+</strong>&lt;/bf:Work&gt; </pre>
+</div>
+<p>Figure 3.2a: Work, has two Instances.</p>
+<div class="msg-info">
+  <pre>&lt;bf:Instance rdf:about=”http://bibframe.rda.examples.org/<strong>instance4</strong>”&gt;
+   &lt;bf:instanceTitle&gt;
+      &lt;bf:Title&gt;
+ 	     &lt;bf:titleValue&gt;<strong>Venice</strong>&lt;/bf:titleValue&gt;
+      &lt;/bf:Title&gt;
+   &lt;/bf:instanceTitle&gt;
+   &lt;bf:providerDate&gt;<strong>1930</strong>&lt;/bf:providerDate&gt;
+   <strong>&lt;bf:instanceOf rdf:resource=”http://bibframe.rda.examples.org/work4”/&gt;</strong><br />   <strong>&lt;bf:hasEquivalent rdf:resource=”http://bibframe.rda.examples.org/instance5”/&gt;</strong>
+&lt;/bf:Work&gt; </pre>
+</div>
+<p>Figure 3.2b: First Instance of the Work, equivalent to the second Instance.</p>
+<div class="msg-info">
+  <pre>&lt;bf:Instance rdf:about=”http://bibframe.rda.examples.org/<strong>instance5</strong>”&gt;
+   &lt;bf:instanceTitle&gt;
+       &lt;bf:Title&gt;
+ 	     &lt;bf:titleValue&gt;<strong>History of the Jews in Venice</strong>&lt;/bf:titleValue&gt;
+       &lt;/bf:Title&gt;
+   &lt;/bf:instanceTitle&gt;
+   &lt;bf: providerDate&gt;<strong>1975</strong>&lt;/bf:providerDate&gt;
+   <strong>&lt;bf:instanceOf rdf:resource=”http://bibframe.rda.examples.org/work4”/&gt;</strong>
+   <strong>&lt;bf:hasEquivalent rdf:resource=”http://bibframe.rda.examples.org/instance4”/&gt;</strong>
+&lt;/bf:Instance&gt; </pre>
+</div>
+<p>Figure 3.2c: Second Instance of the Work, equivalent to the first Instance.</p>
+<p class="backtotop"><a href="#skip_menu">Back to Top</a></p>
+<h2 id="external" class="dot-top">4. External Relationships</h2>
+<p>The relationships in the above examples (and those  summarized in the following section) are all expressed in terms of BIBFRAME  properties, i.e. properties from the BIBFRAME namespace.  However BIBFRAME relationships are not  limited to BIBFRAME properties. Any relationship where each of the subject resource  and object resource is either a BIBFRAME Work or a BIBFRAME Instance is a  BIBFRAME relationship, even if the relationship property is from a namespace  different from BIBRAME, provided that the definition of that property is not  constrained to prevent it from being used in this manner (i.e. domain and or  range excludes BIBFRAME Works and Instances).</p>
+<p>  As a hypothetical example, assume there is an ontology for  description of museum objects, with namespace <a href="http://www.museum.example.org/" class="external">http://www.museum.example.org/</a>  (prefix &ldquo;museum:&rdquo;). </p>
+<p>  Suppose BIBFRAME WorkA describes a statue, BIBFRAME WorkB describes another casting  of that  statue, and the museum: ontology defines the relationship property  museum:castingOf, whose domain and range both include bf:Work.</p>
+<p>  Then the following RDF triple is a BIBFRAME relationship:<br />
+  <strong>            bf:WorkB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;museum:castingOf&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bf:WorkA       </strong></p>
+<p class="backtotop"><a href="#skip_menu">Back to Top</a></p>
+<h2 id="relprop" class="dot-top">5. Relationships and Properties</h2>
+<h3 id="basic">5.1.	Basic Relationships</h3>
+<p>The following table shows, for the basic relationship types,  the BIBFRAME property representing that type, and its domain and range.</p>
+<table class="std">
+<thead>
+  <tr>
+    <th scope="col">BIBFRAME Relationship Type</th>
+    <th scope="col">Represented by Property</th>
+    <th scope="col">Domain</th>
+    <th scope="col">Range</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td scope="row">Work to Work</td>
+    <td>bf:relatedWork</td>
+    <td>bf:Work</td>
+    <td>bf:Work</td>
+  </tr>
+  <tr>
+    <td scope="row">Work to Instance </td>
+    <td>bf:hasInstance</td>
+    <td>bf:Work</td>
+    <td>bf:Instance</td>
+  </tr>
+  <tr>
+    <td scope="row">Instance to Work</td>
+    <td>bf:instanceOf</td>
+    <td>bf:Instance </td>
+    <td>bf:Work</td>
+  </tr>
+  <tr>
+    <td scope="row">Instance to Instance</td>
+    <td>bf:relatedInstance</td>
+    <td>bf:Instance</td>
+    <td>bf:Instance</td>
+  </tr>
+  <tr>
+    <td scope="row">unspecified</td>
+    <td>bf:relatedTo</td>
+    <td>unspecified </td>
+    <td>unspecified </td>
+  </tr>
+</tbody>
+</table>
+<p>The only Work to Instance  relationship (yet defined) is bf:hasInstance, and the only Instance to work  relationship (yet defined) is bf:instanceOf.  <br />
+  Every BIBFRAME  relationship property (the complete list is shown in the table below) is a  subproperty of either bf:relatedWork (for Work to Work) or bf:relatedInstance  (for Instance to Instance), with the exception of relationship properties where  the subject and/or object may be either a Work or Instance.</p>
+<p>  All relationship properties (including  bf:relatedWork and bf:relatedInstance) are subproperties of bf:relatedTo.</p>
+<h3 id="table">5.2.Table of Relationship Properties</h3>
+<p>The following table  lists all of the relationship properties currently defined in the BIBFRAME  vocabulary.</p>
+
+<table class="std full">
+<caption>General Relationships</caption>
+<thead>
+  <tr>
+    <th scope="col" width="15%">propertyName</th>
+    <th scope="col" width="15%">domain</th>
+    <th scope="col" width="15%">range</th>
+    <th scope="col" width="15%">Sub&nbsp;Property&nbsp;Of</th>
+    <th scope="col" width="40%">definition</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td scope="row">relatedTo</td>
+    <td>Work or Instance</td>
+    <td>Work or Instance</td>
+    <td>&nbsp;</td>
+    <td>Any relationship between a Work or Instance and another Work or Instance.</td>
+  </tr>
+  <tr>
+    <td scope="row">relatedWork</td>
+    <td>Work</td>
+    <td>Work</td>
+    <td>relatedTo</td>
+    <td>General work to work relationship.</td>
+  </tr>
+  <tr>
+    <td scope="row">relatedInstance</td>
+    <td>Instance</td>
+    <td>Instance</td>
+    <td>relatedTo</td>
+    <td>General instance to instance relationship.</td>
+  </tr>
+</tbody>
+</table>
+
+<table class="std full">
+<caption>Work to Instance</caption>
+<thead>
+  <tr>
+    <th scope="col" width="15%">propertyName</th>
+    <th scope="col" width="15%">domain</th>
+    <th scope="col" width="15%">range</th>
+    <th scope="col" width="15%">Sub&nbsp;Property&nbsp;Of</th>
+    <th scope="col" width="40%">definition</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td scope="row">hasInstance</td>
+    <td>Work</td>
+    <td>Instance</td>
+    <td>relatedTo</td>
+    <td>Work has a related Instance/manifestation.</td>
+  </tr>
+</tbody>
+</table>
+
+<table class="std full">
+<caption>Instance to Work</caption>
+<thead>
+  <tr>
+    <th scope="col" width="15%">propertyName</th>
+    <th scope="col" width="15%">domain</th>
+    <th scope="col" width="15%">range</th>
+    <th scope="col" width="15%">Sub&nbsp;Property&nbsp;Of</th>
+    <th scope="col" width="40%">definition</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td scope="row">instanceOf</td>
+    <td>Instance</td>
+    <td>Work</td>
+    <td>relatedTo</td>
+    <td>Work this resource instantiates or manifests.</td>
+  </tr>
+</tbody>
+</table>
+
+<table class="std full">
+<caption>Domain/Range Unspecified</caption>
+<thead>
+  <tr>
+    <th scope="col" width="15%">propertyName</th>
+    <th scope="col" width="15%">domain</th>
+    <th scope="col" width="15%">range</th>
+    <th scope="col" width="15%">Sub&nbsp;Property&nbsp;Of</th>
+    <th scope="col" width="40%">definition</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td scope="row">hasEquivalent</td>
+    <td>Unspecified</td>
+    <td>Unspecified</td>
+    <td>relatedTo</td>
+    <td>Instance embodies the same expression of a work as the resource being described.</td>
+  </tr>
+  <tr>
+    <td scope="row">hasDescription</td>
+    <td>Unspecified</td>
+    <td>Unspecified</td>
+    <td>relatedTo</td>
+    <td>Related resource that analyzes, comments on, critiques, evaluates, reviews, or otherwise describes the resource.</td>
+  </tr>
+  <tr>
+    <td scope="row">descriptionOf</td>
+    <td>Unspecified</td>
+    <td>Unspecified</td>
+    <td>relatedTo</td>
+    <td>Related resource that is analyzed, commented upon, critiqued, evaluated, reviewed, or otherwise described by the resource.</td>
+  </tr>
+  <tr>
+    <td scope="row">hasPart</td>
+    <td>Unspecified</td>
+    <td>Unspecified</td>
+    <td>relatedTo</td>
+    <td>Resource that is included either physically or logically contained in the described resource.</td>
+  </tr>
+  <tr>
+    <td scope="row">partOf</td>
+    <td>Unspecified</td>
+    <td>Unspecified</td>
+    <td>relatedTo</td>
+    <td>Resource in which the described resource is physically or logically included.</td>
+  </tr>
+  <tr>
+    <td scope="row">accompanies</td>
+    <td>Unspecified</td>
+    <td>Unspecified</td>
+    <td>relatedTo</td>
+    <td>Resource that adds to or is issued with the described resource.</td>
+  </tr>
+  <tr>
+    <td scope="row">accompaniedBy</td>
+    <td>Unspecified</td>
+    <td>Unspecified</td>
+    <td>relatedTo</td>
+    <td>Resource that has an accompanying resource which adds to it.</td>
+  </tr>
+  <tr>
+    <td scope="row">precededBy</td>
+    <td>Unspecified</td>
+    <td>Unspecified</td>
+    <td>relatedTo</td>
+    <td>Resource that precedes the resource being described (e.g., is earlier in time or before in narrative).</td>
+  </tr>
+  <tr>
+    <td scope="row">succeededBy</td>
+    <td>Unspecified</td>
+    <td>Unspecified</td>
+    <td>relatedTo</td>
+    <td>Resource that succeeds the resource being described (e.g., later in time or after in a narrative).</td>
+  </tr>
+  <tr>
+    <td scope="row">hasDerivative</td>
+    <td>Unspecified</td>
+    <td>Unspecified</td>
+    <td>relatedTo</td>
+    <td>Work has a modification for which it is the source.</td>
+  </tr>
+  <tr>
+    <td scope="row">derivativeOf</td>
+    <td>Unspecified</td>
+    <td>Unspecified</td>
+    <td>relatedTo</td>
+    <td>Work is a modification of a source work.</td>
+  </tr>
+</tbody>
+</table>
+
+<table class="std full">
+<caption>Work to Work</caption>
+<thead>
+  <tr>
+    <th scope="col" width="15%">propertyName</th>
+    <th scope="col" width="15%">domain</th>
+    <th scope="col" width="15%">range</th>
+    <th scope="col" width="15%">Sub&nbsp;Property&nbsp;Of</th>
+    <th scope="col" width="40%">definition</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td scope="row">absorbed</td>
+    <td>Work</td>
+    <td>Work</td>
+    <td>precededBy</td>
+    <td>Work that has been incorporated into another Work</td>
+  </tr>
+  <tr>
+    <td scope="row">absorbedInPart</td>
+    <td>Work</td>
+    <td>Work</td>
+    <td>precededBy</td>
+    <td>Work that has been partially incorporated into another work.</td>
+  </tr>
+  <tr>
+    <td scope="row">continues</td>
+    <td>Work</td>
+    <td>Work</td>
+    <td>precededBy</td>
+    <td>Work that is continued by the content of a later work under a new title.</td>
+  </tr>
+  <tr>
+    <td scope="row">continuesInPart</td>
+    <td>Work</td>
+    <td>Work</td>
+    <td>precededBy</td>
+    <td>Work that split into two or more separate works with new titles.</td>
+  </tr>
+  <tr>
+    <td scope="row">separatedFrom</td>
+    <td>Work</td>
+    <td>Work</td>
+    <td>precededBy</td>
+    <td>Work that spun off a part of its content to form a new work.</td>
+  </tr>
+  <tr>
+    <td scope="row">supersedes</td>
+    <td>Work</td>
+    <td>Work</td>
+    <td>precededBy</td>
+    <td>Earlier work whose content has been replaced by a later work, usually because the later work contains updated or new information.</td>
+  </tr>
+  <tr>
+    <td scope="row">supersedesInPart</td>
+    <td>Work</td>
+    <td>Work</td>
+    <td>precededBy</td>
+    <td>Earlier work whose content has been partially replaced by a later work, usually because the later work contains updated or new information.</td>
+  </tr>
+  <tr>
+    <td scope="row">unionOf</td>
+    <td>Work</td>
+    <td>Work</td>
+    <td>precededBy</td>
+    <td>One of two or more works which came together to form a new work.</td>
+  </tr>
+  <tr>
+    <td scope="row">absorbedBy</td>
+    <td>Work</td>
+    <td>Work</td>
+    <td>succededBy</td>
+    <td>Work that incorporates another work.</td>
+  </tr>
+  <tr>
+    <td scope="row">absorbedInPartBy</td>
+    <td>Work</td>
+    <td>Work</td>
+    <td>succededBy</td>
+    <td>Work that incorporates part of the content of another work.</td>
+  </tr>
+  <tr>
+    <td scope="row">continuedBy</td>
+    <td>Work</td>
+    <td>Work</td>
+    <td>succededBy</td>
+    <td>Work whose content continues an earlier work under a new title.</td>
+  </tr>
+  <tr>
+    <td scope="row">continuedInPartBy</td>
+    <td>Work</td>
+    <td>Work</td>
+    <td>succededBy</td>
+    <td>Work part of whose content separated from an earlier work to form a new work.</td>
+  </tr>
+  <tr>
+    <td>supersededBy</td>
+    <td>Work</td>
+    <td>Work</td>
+    <td>succededBy</td>
+    <td>Later Work used in place of an earlier work, usually because the later work contains updated or new information.</td>
+  </tr>
+  <tr>
+    <td scope="row">supersededInPartBy</td>
+    <td>Work</td>
+    <td>Work</td>
+    <td>succededBy</td>
+    <td>Later Work used in part in place of an earlier work, usually because the later work contains updated or new information.</td>
+  </tr>
+  <tr>
+    <td scope="row">mergedToForm</td>
+    <td>Work</td>
+    <td>Work</td>
+    <td>succededBy</td>
+    <td>One of two or more works that come together to form a new work.</td>
+  </tr>
+  <tr>
+    <td scope="row">splitInto</td>
+    <td>Work</td>
+    <td>Work</td>
+    <td>succededBy</td>
+    <td>One of two or more works resulting from the division of an earlier work into separate works.</td>
+  </tr>
+  <tr>
+    <td scope="row">subseries</td>
+    <td>Work</td>
+    <td>Work</td>
+    <td>hasPart</td>
+    <td>Work, which is part of another series, in which the part has been issued.</td>
+  </tr>
+  <tr>
+    <td scope="row">series</td>
+    <td>Work</td>
+    <td>Work</td>
+    <td>partOf</td>
+    <td>Work in which the part has     been issued; the title of the larger work appears on the part.</td>
+  </tr>
+  <tr>
+    <td scope="row">subseriesOf</td>
+    <td>Work</td>
+    <td>Work</td>
+    <td>partOf</td>
+    <td>Work in which the part consistently appears; the title of the larger work appears on all issues or parts of the subseries.</td>
+  </tr>
+  <tr>
+    <td scope="row">hasExpression</td>
+    <td>Work</td>
+    <td>Work</td>
+    <td>relatedTo</td>
+    <td>Work has a related expression.</td>
+  </tr>
+  <tr>
+    <td scope="row">expressionOf</td>
+    <td>Work</td>
+    <td>Work</td>
+    <td>relatedTo</td>
+    <td>Expression has a related work.</td>
+  </tr>
+  <tr>
+    <td scope="row">originalVersion</td>
+    <td>Work</td>
+    <td>Work</td>
+    <td>derivativeOf</td>
+    <td>Instance is the original version of which this resource is a reproduction.</td>
+  </tr>
+  <tr>
+    <td scope="row">otherEdition</td>
+    <td>Work</td>
+    <td>Work</td>
+    <td>derivativeOf</td>
+    <td>Resource has other available editions, for example simultaneously published language editions or reprints.</td>
+  </tr>
+  <tr>
+    <td scope="row">translation</td>
+    <td>Work</td>
+    <td>Work</td>
+    <td>derivativeOf</td>
+    <td>Work that translates the text of the source entity into a language different from that of the original.</td>
+  </tr>
+  <tr>
+    <td scope="row">translationOf</td>
+    <td>Work</td>
+    <td>Work</td>
+    <td>hasDerivative</td>
+    <td>Work that has been translated, i.e., the text expressed in a language different from that of the original work.</td>
+  </tr>
+  <tr>
+    <td scope="row">supplement</td>
+    <td>Work</td>
+    <td>Work</td>
+    <td>accompanied By</td>
+    <td>Work that updates or otherwise complements the predominant work.</td>
+  </tr>
+  <tr>
+    <td scope="row">Index</td>
+    <td>Work</td>
+    <td>Work</td>
+    <td>accompanied By</td>
+    <td>Work has an accompanying index</td>
+  </tr>
+  <tr>
+    <td scope="row">findingAid</td>
+    <td>Work</td>
+    <td>Work</td>
+    <td>accompanied By</td>
+    <td>Relationship is to a finding aid or similar control materials for archival, visual, and manuscript resources.</td>
+  </tr>
+  <tr>
+    <td scope="row">supplementTo</td>
+    <td>Work</td>
+    <td>Work</td>
+    <td>accompanies</td>
+    <td>Work that is updated or otherwise complemented by the augmenting work.</td>
+  </tr>
+  <tr>
+    <td scope="row">dataSource</td>
+    <td>Work</td>
+    <td>Work</td>
+    <td>relatedTo</td>
+    <td>Work that is a data source to which the described resource is related. It may contain information about other files, printed sources, or collection procedures.</td>
+  </tr>
+</tbody>
+</table>
+
+<table class="std full">
+<caption>Instance to Instance</caption>
+<thead>
+  <tr>
+    <th scope="col" width="15%">propertyName</th>
+    <th scope="col" width="15%">domain</th>
+    <th scope="col" width="15%">range</th>
+    <th scope="col" width="15%">Sub&nbsp;Property&nbsp;Of</th>
+    <th scope="col" width="40%">definition</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td scope="row">issuedWith</td>
+    <td>Instance</td>
+    <td>Instance</td>
+    <td>related Instance</td>
+    <td>Instance that is issued on the same carrier as the manifestation being described.</td>
+  </tr>
+  <tr>
+    <td scope="row">reproduction</td>
+    <td>Instance</td>
+    <td>Instance</td>
+    <td>hasEquivalent</td>
+    <td>Instance that reproduces another Instance embodying the same work.</td>
+  </tr>
+  <tr>
+    <td scope="row">otherPhysicalFormat</td>
+    <td>Instance</td>
+    <td>Instance</td>
+    <td>hasEquivalent</td>
+    <td>Resource that is manifested in another physical carrier.</td>
+  </tr>
+</tbody>
+</table>
+
+<p class="backtotop"><a href="#skip_menu">Back to Top</a></p>
+    </div>
+    <div class="clear"><!-- --></div>
+    </div><!-- end id:main_body -->
+  </div><!-- end id:content -->
+  <!--#include virtual="/cdn/html/locfoot.html"-->
+<!-- end id:container -->
+</body>
+</html>

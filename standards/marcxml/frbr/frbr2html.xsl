@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
-<xsl:stylesheet xmlns:frbr="http://www.loc.gov/MARC21/frbr" xmlns:mods="http://www.loc.gov/mods/" version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:stylesheet xmlns:frbr="http://lcnetdev.github.io/MARC21/frbr" xmlns:mods="http://lcnetdev.github.io/mods/" version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 	<xsl:output method="html"/>
 
-	<xsl:variable name="languages" select="document('http://www.loc.gov/standards/iso639-2/langcodes.xml')/languages"/>
+	<xsl:variable name="languages" select="document('http://lcnetdev.github.io/standards/iso639-2/langcodes.xml')/languages"/>
 
 	<xsl:template match="/frbr:frbr">
 

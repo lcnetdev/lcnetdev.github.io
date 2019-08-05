@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0"
 	xmlns:xlink="http://www.w3.org/1999/xlink" 
-	xmlns:mods="http://www.loc.gov/mods/v3"	
+	xmlns:mods="http://lcnetdev.github.io/mods/v3"	
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	exclude-result-prefixes="mods xlink" 
-	xmlns:marc="http://www.loc.gov/MARC21/slim">
+	xmlns:marc="http://lcnetdev.github.io/MARC21/slim">
 <!-- 
 	Upgraded to MODS 3.4 XSLT 1.0 - 2012/05/11
 	MODS v3 to MARC21Slim transformation - 2004/02/20 
 -->
 
-	<xsl:include href="http://www.loc.gov/marcxml/xslt/MARC21slimUtils.xsl"/>
+	<xsl:include href="http://lcnetdev.github.io/marcxml/xslt/MARC21slimUtils.xsl"/>
 	
 	<xsl:output method="xml" indent="yes" encoding="UTF-8"/>
 
@@ -19,7 +19,7 @@
 	</xsl:template>
 
 	<xsl:template match="mods:modsCollection">
-		<marc:collection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd">
+		<marc:collection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://lcnetdev.github.io/MARC21/slim http://lcnetdev.github.io/standards/marcxml/schema/MARC21slim.xsd">
 			<xsl:apply-templates/>
 		</marc:collection>
 	</xsl:template>

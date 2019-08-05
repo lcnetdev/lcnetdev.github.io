@@ -16,7 +16,7 @@
 	<dcterms:audience/>
 </dcTerms>
 <otherElements>
-<mods:genre    xmlns:mods="http://www.loc.gov/mods/v3"  schemaLocation="http://www.loc.gov/standards/mods/v3/mods-3-3.xsd">fiction</mods:genre>
+<mods:genre    xmlns:mods="http://lcnetdev.github.io/mods/v3"  schemaLocation="http://lcnetdev.github.io/standards/mods/v3/mods-3-3.xsd">fiction</mods:genre>
 <other:xyz xmlns:other="info:xxx">xxx</other:xyz>
 </otherElements>
 </dcx>

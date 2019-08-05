@@ -85,6 +85,6 @@
 	</xsl:template>
 </xsl:stylesheet><!-- Stylus Studio meta-information - (c)1998-2001 eXcelon Corp.
 <metaInformation>
-<scenarios ><scenario default="yes" name="Scenario1" userelativepaths="yes" url="file://C:\Documents and Settings\ckeith\Desktop\moa2example.xml" htmlbaseurl="" processortype="internal" commandline="" additionalpath="" additionalclasspath="" postprocessortype="none" postprocesscommandline="" postprocessadditionalpath="" postprocessgeneratedext=""/></scenarios><MapperInfo  srcSchemaPath="file://C:\Documents and Settings\ckeith\Desktop\MOA2.DTD" srcSchemaRoot="GDM" srcSchemaPathIsRelative="yes" destSchemaPath="http://www.loc.gov/standards/mods/mods.xsd" destSchemaRoot="mods" destSchemaPathIsRelative="yes" />
+<scenarios ><scenario default="yes" name="Scenario1" userelativepaths="yes" url="file://C:\Documents and Settings\ckeith\Desktop\moa2example.xml" htmlbaseurl="" processortype="internal" commandline="" additionalpath="" additionalclasspath="" postprocessortype="none" postprocesscommandline="" postprocessadditionalpath="" postprocessgeneratedext=""/></scenarios><MapperInfo  srcSchemaPath="file://C:\Documents and Settings\ckeith\Desktop\MOA2.DTD" srcSchemaRoot="GDM" srcSchemaPathIsRelative="yes" destSchemaPath="http://lcnetdev.github.io/standards/mods/mods.xsd" destSchemaRoot="mods" destSchemaPathIsRelative="yes" />
 </metaInformation>
 -->

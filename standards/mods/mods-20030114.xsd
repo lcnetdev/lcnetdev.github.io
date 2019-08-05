@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsd:schema targetNamespace="http://www.loc.gov/mods/" xmlns="http://www.loc.gov/mods/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/TR/xlink" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xsd:schema targetNamespace="http://lcnetdev.github.io/mods/" xmlns="http://lcnetdev.github.io/mods/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/TR/xlink" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xsd:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
-	<xsd:import namespace="http://www.w3.org/TR/xlink" schemaLocation="http://www.loc.gov/standards/mets/xlink.xsd"/>
+	<xsd:import namespace="http://www.w3.org/TR/xlink" schemaLocation="http://lcnetdev.github.io/standards/mets/xlink.xsd"/>
 	<!-- 
 	
 Version 1.93  January 14, 2003
@@ -110,7 +110,7 @@ Begin data type definitions for top level elements.
 			<xsd:annotation>
 				<xsd:documentation>  
 				Value is from the list at 
-				http:/www.loc.gov/marc/sourcecode/authorityfile</xsd:documentation>
+				http:/lcnetdev.github.io/marc/sourcecode/authorityfile</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 		<xsd:attribute name="displayLabel" type="xsd:string" use="optional"/>
@@ -207,7 +207,7 @@ If type attribute omitted, name is unstructured.</xsd:documentation>
 			<xsd:annotation>
 				<xsd:documentation>  
 				Value is from the list at 
-				http:/www.loc.gov/marc/sourcecode/authorityfile</xsd:documentation>
+				http:/lcnetdev.github.io/marc/sourcecode/authorityfile</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 		<xsd:attributeGroup ref="xlink:simpleLink">
@@ -458,7 +458,7 @@ The attributes, collection and manuscript, are associated with a specific instan
 				<xsd:attribute name="authority" use="optional">
 					<xsd:annotation>
 						<xsd:documentation>  
-Value of this attribute is from the list at http://www.loc.gov/marc/sourcecode/target.
+Value of this attribute is from the list at http://lcnetdev.github.io/marc/sourcecode/target.
 If the value of this attribute is "marc", the content should be one of the following:
 				"adolescent"
 				adult"
@@ -555,7 +555,7 @@ If the value of this attribute is "marc", the content should be one of the follo
 			<xsd:annotation>
 				<xsd:documentation>  
 Value is from the list at 
-http:/www.loc.gov/marc/sourcecode/subject</xsd:documentation>
+http:/lcnetdev.github.io/marc/sourcecode/subject</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 		<xsd:attributeGroup ref="language"/>
@@ -578,7 +578,7 @@ http:/www.loc.gov/marc/sourcecode/subject</xsd:documentation>
 					<xsd:annotation>
 						<xsd:documentation>  
 Value is from the list at 
-http:/www.loc.gov/marc/sourcecode/classification</xsd:documentation>
+http:/lcnetdev.github.io/marc/sourcecode/classification</xsd:documentation>
 					</xsd:annotation>
 				</xsd:attribute>
 				<xsd:attribute name="edition" use="optional">
@@ -716,7 +716,7 @@ Suggested values include (but are not limited to): "doi", "isbn", "isrc",  "ismn
 			<xsd:extension base="xsd:string">
 				<xsd:attribute name="authority" use="optional">
 					<xsd:annotation>
-						<xsd:documentation> value is from list at http:/www.loc.gov/marc/sourcecode/organizations   </xsd:documentation>
+						<xsd:documentation> value is from list at http:/lcnetdev.github.io/marc/sourcecode/organizations   </xsd:documentation>
 					</xsd:annotation>
 				</xsd:attribute>
 				<xsd:attribute name="displayLabel" use="optional">

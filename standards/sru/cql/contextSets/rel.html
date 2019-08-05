@@ -8,7 +8,7 @@
 @import url(../../css/sru-base.css);
 </style>
 <meta http-equiv="Content-Language" content="en-us">
-<link rel="shortcut icon" href="http://www.loc.gov:8081/standards/sru/images/favicon.ico">
+<link rel="shortcut icon" href="http://lcnetdev.github.io:8081/standards/sru/images/favicon.ico">
 <meta name="keywords" content="dc context set sru version 1.2 specifications sru search retrieval url cql zeerex standards library congress">
 <meta name="description" content="dc context set: SRU Version 1.2 Specifications. SRU is a standard XML-focused search protocol for Internet search queries, utilizing CQL (Contextual Query Language), a standard syntax for representing queries. Standards, The Library of Congress.">
 </head>
@@ -29,7 +29,7 @@
 <input type="hidden" name="rq" value="0">
 <input type="hidden" name="qc" value="">
 <table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="100"><a id="skip" href="#skip_menu">&nbsp;</a>
-  <div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../../index.html">SRU</a></div></td>
+  <div class="sitenav"><a href="http://lcnetdev.github.io/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://lcnetdev.github.io/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../../index.html">SRU</a></div></td>
 <td width="116"><select name="qp" tabindex="1">
 <option value="url:/sru" selected>SRU Web Pages</option>
 <option value="url:/standards url:/ead url:/marc">Standards Pages</option>
@@ -52,8 +52,8 @@
               <h1>Relevance Ranking Context Set version 1.1</h1>
               <em>Version 1.1, 2nd September 2009</em><br>
               <em>see also</em> <a href="http://web.archive.org/web/20130527131215/http://srw.cheshire3.org/contextSets/1.0/">version 1.0</a>
-              <p> The default ordering of a result set is left up to the server, including a lack of any explicit ordering.   			This is addressed in SRU for the most part through the use of the <a href="http://web.archive.org/web/20130527131215/http://www.loc.gov/standards/sru/sru1-1archive/search-retrieve-operation.html#sort">'sort' / 'sortKeys' parameter in SRU v1.1</a> and by the 'sortBy' keyword in <a href="http://web.archive.org/web/20130527131215/http://www.loc.gov/standards/sru/specs/cql.html#rules">SRU v1.2 queries</a>.     			However,for sophisticated relevance based ranking, different   algorithms are available, and specific methods might be requested to   combine the results of evaluating each operand or clause.   			This context set attempts to address this issue by defining relation   and boolean modifiers for the various known algorithms, and combinations   of their results.   			Several known algorithms have their documentation linked in the table   in <a href="http://web.archive.org/web/20130527131215/http://srw.cheshire3.org/contextSets/rel/#appendixA">Appendix A</a> below. </p>
-              <p> If the 'relevant' relation modifier from the <a href="http://web.archive.org/web/20130527131215/http://www.loc.gov/standards/sru/resources/cql-context-set-v1-2.html">cql context set</a> is given, but no named algorithm, then the server should continue to   use the basic semantics -- the server may decide which algorithm to use.     			It is also legal to include both cql.relevant along with an algorithm   from this set, in which case that algorithm should be used.   			Hence there is no need to include an 'any algorithm' relation   modifier in this set. </p>
+              <p> The default ordering of a result set is left up to the server, including a lack of any explicit ordering.   			This is addressed in SRU for the most part through the use of the <a href="http://web.archive.org/web/20130527131215/http://lcnetdev.github.io/standards/sru/sru1-1archive/search-retrieve-operation.html#sort">'sort' / 'sortKeys' parameter in SRU v1.1</a> and by the 'sortBy' keyword in <a href="http://web.archive.org/web/20130527131215/http://lcnetdev.github.io/standards/sru/specs/cql.html#rules">SRU v1.2 queries</a>.     			However,for sophisticated relevance based ranking, different   algorithms are available, and specific methods might be requested to   combine the results of evaluating each operand or clause.   			This context set attempts to address this issue by defining relation   and boolean modifiers for the various known algorithms, and combinations   of their results.   			Several known algorithms have their documentation linked in the table   in <a href="http://web.archive.org/web/20130527131215/http://srw.cheshire3.org/contextSets/rel/#appendixA">Appendix A</a> below. </p>
+              <p> If the 'relevant' relation modifier from the <a href="http://web.archive.org/web/20130527131215/http://lcnetdev.github.io/standards/sru/resources/cql-context-set-v1-2.html">cql context set</a> is given, but no named algorithm, then the server should continue to   use the basic semantics -- the server may decide which algorithm to use.     			It is also legal to include both cql.relevant along with an algorithm   from this set, in which case that algorithm should be used.   			Hence there is no need to include an 'any algorithm' relation   modifier in this set. </p>
               <p> Also, please note that, as with all context sets, these modifiers are   case insensitive.   			"rel.algorithm=CORI" and "rel.algorithm=cori" are to be treated the   same.   			This is especially true as most of the modifiers are acronyms so may   be entered in upper case into queries, even though they are listed in   lower case below. </p>
               <p> To return relevancy information attached to a record, please see the   record metadata extension. (To be written up, ala 'rec' context set) </p>
               <ul>
@@ -261,8 +261,8 @@
 </td></tr>
 
 </table>
-<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://www.loc.gov/">The 
-        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../../index.html">SRU</a></div>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://lcnetdev.github.io/">The 
+        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://lcnetdev.github.io/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../../index.html">SRU</a></div>
       <br>
   <span class="sitenav">
   <!-- #BeginDate format:Am1 -->December 16, 2015<!-- #EndDate -->

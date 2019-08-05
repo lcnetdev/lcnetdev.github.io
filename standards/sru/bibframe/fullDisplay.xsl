@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="http://www.loc.gov/standards/sru/bibframe/fullDisplay.xsl"?>
+<?xml-stylesheet type="text/xsl" href="http://lcnetdev.github.io/standards/sru/bibframe/fullDisplay.xsl"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:srw="http://www.loc.gov/zing/srw/"
+                xmlns:srw="http://lcnetdev.github.io/zing/srw/"
 		xmlns:sru="http://docs.oasis-open.org/ns/search-ws/sruResponse"
-                xmlns:dc="http://www.loc.gov/zing/srw/dcschema/v1.0/"
+                xmlns:dc="http://lcnetdev.github.io/zing/srw/dcschema/v1.0/"
                 xmlns:zr="http://explain.z3950.org/dtd/2.0/"
-                xmlns:diag="http://www.loc.gov/zing/srw/diagnostic/"
+                xmlns:diag="http://lcnetdev.github.io/zing/srw/diagnostic/"
                 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 		xmlns:bf="http://bibframe.org/vocab/"
                 version="1.0">

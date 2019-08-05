@@ -1,7 +1,7 @@
-<xsl:stylesheet xmlns="http://www.loc.gov/mods/v3" xmlns:marc="http://www.loc.gov/MARC21/slim"
+<xsl:stylesheet xmlns="http://lcnetdev.github.io/mods/v3" xmlns:marc="http://lcnetdev.github.io/MARC21/slim"
 	xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	exclude-result-prefixes="xlink marc" version="1.0">
-	<xsl:include href="http://www.loc.gov/standards/marcxml/xslt/MARC21slimUtils.xsl"/>
+	<xsl:include href="http://lcnetdev.github.io/standards/marcxml/xslt/MARC21slimUtils.xsl"/>
 	<xsl:output encoding="UTF-8" indent="yes" method="xml"/>
 
 <!-- Maintenance note: 
@@ -35,7 +35,7 @@ Revision 1.36 - If mss material (Ldr/06=d,p,f,t) map 008 dates and 260$c/$g date
 Revision 1.35 - Mapped appended detailed dates from 008/07-10 and 008/11-14 to dateIssued or DateCreated w/encoding="marc" 2010/01/12 tmee
 Revision 1.34 - Mapped 045b B.C. and C.E. date range info to iso8601-compliant dates in <subject><temporal> 2009/01/08 ntra
 Revision 1.33 - Mapped Ldr/06 "o" to <typeOfResource>kit 2009/11/16 tmee
-Revision 1.32 - Mapped specific note types from the MODS Note Type list <http://www.loc.gov/standards/mods/mods-notes.html> tmee 2009/11/17
+Revision 1.32 - Mapped specific note types from the MODS Note Type list <http://lcnetdev.github.io/standards/mods/mods-notes.html> tmee 2009/11/17
 Revision 1.31 - Mapped 540 to <accessCondition type="use and reproduction"> and 506 to <accessCondition type="restriction on access"> and delete mappings of 540 and 506 to <note>
 Revision 1.30 - Mapped 037c to <identifier displayLabel=""> 2009/11/13 tmee
 Revision 1.29 - Corrected schemaLocation to 3.3 2009/11/13 tmee
@@ -70,7 +70,7 @@ Revision 1.2 - Added Log Comment  2003/03/24 19:37:42  ckeith
 		<xsl:choose>
 			<xsl:when test="//marc:collection">
 				<modsCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-					xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-3.xsd">
+					xsi:schemaLocation="http://lcnetdev.github.io/mods/v3 http://lcnetdev.github.io/standards/mods/v3/mods-3-3.xsd">
 					<xsl:for-each select="//marc:collection/marc:record">
 						<mods version="3.3">
 							<xsl:call-template name="marcRecord"/>
@@ -80,7 +80,7 @@ Revision 1.2 - Added Log Comment  2003/03/24 19:37:42  ckeith
 			</xsl:when>
 			<xsl:otherwise>
 				<mods xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.3"
-					xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-3.xsd">
+					xsi:schemaLocation="http://lcnetdev.github.io/mods/v3 http://lcnetdev.github.io/standards/mods/v3/mods-3-3.xsd">
 					<xsl:for-each select="//marc:record">
 						<xsl:call-template name="marcRecord"/>
 					</xsl:for-each>

@@ -2,7 +2,7 @@
 
 <!-- Updated 03/20/2008 to fix template error:  J. Radebaugh -->
 
-<xsl:stylesheet version="1.0" xmlns:marc="http://www.loc.gov/MARC21/slim"
+<xsl:stylesheet version="1.0" xmlns:marc="http://lcnetdev.github.io/MARC21/slim"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" exclude-result-prefixes="marc">
 	<xsl:output indent="yes" encoding="UTF-8"/>
 

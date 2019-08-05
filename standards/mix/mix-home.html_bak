@@ -7,7 +7,7 @@
 <html>
 <head>
 <title>Metadata for Images in XML Standard (MIX)</title>
-<base href="http://www.loc.gov/standards/mix/mix-home.html">
+<base href="http://lcnetdev.github.io/standards/mix/mix-home.html">
 <meta name="keywords" content="mix image metadata object description schema web site library congress xml official site library congress">
 <meta name="description" content="The MIX schema ...">
 <META http-equiv="Content-Style-Type" content="text/css">
@@ -80,7 +80,7 @@
               File </a>- <a href="http://lcweb.loc.gov/marc/sourcecode/classification/classification.html">Classification</a> 
               - <a href="http://lcweb.loc.gov/marc/sourcecode/genre/genre.html"> 
               Genre</a> <br>
-              <a href="http://www.loc.gov/marc/sourcecode/relators/relators.html">Relators</a> 
+              <a href="http://lcnetdev.github.io/marc/sourcecode/relators/relators.html">Relators</a> 
               - <a href="http://lcweb.loc.gov/marc/sourcecode/subject/subject.html">Subject</a></td>
           </tr>
         </table>
@@ -92,7 +92,7 @@
           members of the MIX development community. The MIX list is operated by 
           the Library of Congress Network Development and MARC Standards Office. 
           Users may subscribe to this list by filling out the subscription form 
-          at the <a href="http://www.loc.gov/listarch/mix.html">MIX Listserv</a> 
+          at the <a href="http://lcnetdev.github.io/listarch/mix.html">MIX Listserv</a> 
           site.</p>
       </blockquote>
       <hr align="Left" width="100%" size="1" noshade>
@@ -101,7 +101,7 @@
       <HR noshade size="1">
       <ADDRESS> 
       <!--help desk email start -->
-      <img src="images/mix-icon.gif" width="125" height="54" align="right" alt="MIX Icon (Metadata for Images in XML)"><a href="http://www.loc.gov/help/help-desk.html">Library 
+      <img src="images/mix-icon.gif" width="125" height="54" align="right" alt="MIX Icon (Metadata for Images in XML)"><a href="http://lcnetdev.github.io/help/help-desk.html">Library 
       of Congress Help Desk</a> 
       <!--help desk email end -->
       <br>

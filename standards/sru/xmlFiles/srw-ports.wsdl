@@ -2,16 +2,16 @@
 <!-- ZiNG SRU/SRW WSDL Specification                   -->
 <!-- Version 1.1                                       -->
 <!-- 10 May 2004                                       -->
-<definitions xmlns:srw="http://www.loc.gov/zing/srw/" xmlns:srw-interfaces="http://www.loc.gov/zing/srw/interfaces/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xcql="http://www.loc.gov/zing/cql/xcql/" xmlns:diag="http://www.loc.gov/zing/srw/diagnostic/" xmlns:xsort="http://www.loc.gov/zing/srw/xsortkeys/" targetNamespace="http://www.loc.gov/zing/srw/interfaces/" name="SRW">
+<definitions xmlns:srw="http://lcnetdev.github.io/zing/srw/" xmlns:srw-interfaces="http://lcnetdev.github.io/zing/srw/interfaces/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xcql="http://lcnetdev.github.io/zing/cql/xcql/" xmlns:diag="http://lcnetdev.github.io/zing/srw/diagnostic/" xmlns:xsort="http://lcnetdev.github.io/zing/srw/xsortkeys/" targetNamespace="http://lcnetdev.github.io/zing/srw/interfaces/" name="SRW">
 <!--
   This violates WS-I but some SOAP toolkits may need this
   Uncomment if necessary
   
-  <import namespace="http://www.loc.gov/zing/srw/" location="srw-types.xsd"/>
+  <import namespace="http://lcnetdev.github.io/zing/srw/" location="srw-types.xsd"/>
 -->
   <types>
     <xsd:schema>
-      <xsd:import namespace="http://www.loc.gov/zing/srw/" schemaLocation="srw-types.xsd"/>
+      <xsd:import namespace="http://lcnetdev.github.io/zing/srw/" schemaLocation="srw-types.xsd"/>
     </xsd:schema>
   </types>
   <message name="SearchRetrieveRequestMessage">

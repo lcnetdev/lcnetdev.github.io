@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js">
+<head>
+<title>BIBFRAME Frequently Asked Questions (Bibliographic Framework Transition Initiative, Library of Congress)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="frequently asked questions, faqs, model document, bibframe, bibliographic framework, transition, initiative, marc, cataloging, library of congress" />
+<meta name="description" content="BIBFRAME Frequently Asked Questions (Bibliographic Framework Transition Initiative, Library of Congress)" />
+
+<link rel="dc.relation.isPartOf" href="http://lcnetdev.github.io/bibframe/" title="BIBFRAME - Bibliographic Framework Initiative (Library of Congress)" />
+<meta name="dc.subject" content="bibliographic framework" />
+<meta name="dc.subject" content="faqs" />
+<meta name="dc.subject" content="frequently asked questions" />
+<meta name="dc.subject" content="bibframe" />
+<meta name="dc.type" content="webpage" />
+<meta name="dc.identifier" content="http://lcnetdev.github.io/bibframe/faqs/index.html" />
+<meta name="dc.language" content="en" />
+
+<link type="text/css" media="screen" rel="stylesheet" href="../css/styles.css" />
+<link type="text/css" media="print" rel="stylesheet" href="/css/loc_print_v2.css" />
+<!--[if lte IE 7]><link type="text/css" media="screen" rel="stylesheet" href="/css/loc_lte_ie6.css" /><![endif]-->
+<!--#include virtual="/bibframe/include/share-tool.html"-->
+<script type="text/javascript" src="http://cdn.loc.gov/js/lib/modernizr-1.5.min.js"></script></head>
+<body>
+<a id="skip" href="#skip_menu">skip navigation</a>
+<div id="container">
+  <!--#include virtual="../include/branding.html"-->
+  <!--#include virtual="/cdn/html/lochead.html"-->
+  <div id="crumb_nav"><a href="http://lcnetdev.github.io">The Library of Congress</a> &gt; <a href="/bibframe/">BIBFRAME</a> &gt; Frequently Asked Questions</div>
+  <div id="content">
+    <!--#include virtual="../include/leftnav.html"-->
+    <div id="main_body">
+    	<!--#include virtual="../include/share-tool-bar.html"-->
+      <div id="page_head"><span style="width: 100%;"><a name="skip_menu"></a></span>
+        <h1>BIBFRAME Frequently Asked Questions<br />
+        </h1>
+      </div>
+      
+      <h2><span class="dot-top"><img src="../images/bibframe-logo-medium.gif" alt="bf:BIBFRAME" width="135" height="99" align="right" class="i_alignright border" /></span>Questions</h2>
+        <ol>
+          <li><a href="#q01">What is the Bibliographic Framework Initiative?</a></li>
+          <li><a href="#q02">What is the BIBFRAME Model and BIBFRAME Vocabulary?</a></li>
+          <li><a href="#q03">What is BIBFRAME 2.0?</a></li>
+          <li><a href="#q04">What are the general differences between MARC and BIBFRAME?</a></li>
+          <li><a href="#q05">Will RDA elements be part of the BIBFRAME vocabulary?</a></li>
+          <li><a href="#q06">How do I use bibliographic data using cataloging rules other than AACR2 or RDA in the context of BIBFRAME?</a></li>
+          <li><a href="#q07">Why a single namespace for the BIBFRAME vocabulary?</a></li>
+          <li><a href="#q08">How is the BIBFRAME Vocabulary and Documentation licensed?</a></li>
+          <li><a href="#q09">When should we move to BIBFRAME?</a></li>
+          <li><a href="#q10">Are my MARC records convertible into BIBFRAME?</a></li>
+          <li><a href="#q11">Can I get MARC records from BIBFRAME resources?</a></li>
+          <li><a href="#q12">How will users/systems/organizations exchange or transfer BIBFRAME resources?</a></li>
+          <li><a href="#q13">BIBFRAME seems to be concentrating on mapping MARC fields--isn't this a new format instead of repackaging an old one?</a></li>
+          <li><a href="#q14">How can I get involved in BIBFRAME?</a></li>
+      </ol>
+<h2>Answers </h2>
+<h3>About the Model</h3>
+<ol>
+  <li id="q01"><strong>What is the Bibliographic Framework Initiative?</strong><br />
+<p>BIBFRAME Initiative is the foundation for the future of bibliographic description that happens on the web and in the networked world. It is designed to integrate with and engage in the wider information community and still serve the very specific needs of libraries.  The BIBFRAME Initiative will bring new ways to:</p>
+<ul>
+ <li>Differentiate clearly between conceptual content and its physical/digital manifestation(s)</li> 
+ <li>Unambiguously identify information entities (e.g., agents)</li>
+ <li>Leverage and expose relationships between and among entities</li>
+</ul>
+<p>In a web-scale world, it is imperative to be able to cite library data in a way that differentiates the conceptual work (a title and author) from the physical details about that work's manifestation (page numbers, whether it has illustrations).  It is equally important to produce library data so that it clearly identifies entities involved in the creation of a resource (authors, publishers) and the concepts (subjects) associated with a resource.</p>
+<p>Although the BIBFRAME Initiative will instantiate a new way to represent and exchange bibliographic data – that is now provided by the Machine Readable Cataloging (MARC) format – its scope is broader.  As an initiative, it is investigating all aspects of bibliographic description, data creation, and data exchange.  In addition to replacing the MARC format, this includes accommodating different content models and cataloging rules, exploring new methods of data entry, and evaluating current exchange protocols.</p>
+<p class="backtotop"><a href="#skip_menu">Back to top</a></p></li>
+
+<li id="q02"><strong>What is the BIBFRAME Model and BIBFRAME Vocabulary?</strong><br />
+<p>The BIBFRAME Model is a conceptual/practical model that balances the needs of those recording detailed bibliographic description, the needs of those describing other cultural materials, and those who do not require such a detailed level of description.  There are three high-level classes, or entitities, in the <a href="../docs/bibframe2-model.html">BIBFRAME Model</a>:</p>
+
+<ul class="bullet">
+<li>BIBFRAME Work</li>
+<li>BIBFRAME Instance</li>
+<li>BIBFRAME Item</li>
+</ul>
+
+<p>BIBFRAME Work identifies the conceptual essence of something; a BIBFRAME Instance reflects the material embodiment of a Work. A  BIBFRAME Item  is an actual copy  (physical or electronic) of an Instance.   You can <a href="../docs/bibframe2-model.html">read more about the BIBFRAME Model here</a>.</p>
+<p>The BIBFRAME Vocabulary is the key to the description of resources.  Like the MARC format has a defined set of elements and attributes, the BIBFRAME Vocabulary has a defined set of classes and properties.  A class identifies a type of BIBFRAME resource (much like a MARC field might bundle a single concept); properties serve as a means to further describe a BIBFRAME resource (much like MARC subfields more specifically identify aspects of the concept).</p>
+<p class="backtotop"><a href="#skip_menu">Back to top</a></p></li>
+
+<li id="q03"><strong>What is BIBFRAME 2.0?</strong><br />
+When the BIBFRAME project was initiated in 2012, it was called simply BIBFRAME and supporting model, vocabulary, tools, analysis, and experimentation took place. Based on that experience, expert advice, community comment, and a Library of Congress pilot, it was concluded that the vocabulary required redevelopment. The BIBFRAME 2.0 vocabulary replaces the original one (now called the BIBFRAME 1.0 vocabulary). Tools and other supporting components will follow.
+  <p class="backtotop"><a href="#skip_menu">Back to top</a></p>
+</li>
+<li id="q04"><strong>What are the general differences between MARC and BIBFRAME?</strong><br />
+  <p>As a bibliographic description format, the MARC format focuses on catalog records that are independently understandable.  MARC aggregates information about the conceptual work and its physical carrier and uses strings for identifiers such as personal names, corporate name, subjects, etc. that have value outside the record itself.</p>
+  <p>Instead of bundling everything neatly as a “record” and potentially duplicating information across multiple records, the BIBFRAME Model relies heavily on relationships between resources (Work-to-Work relationships; Work-to-Instance relationships; Work-to-Agent relationships).  It manages this by using controlled identifiers for things (people, places, languages, etc).  MARC employs some of these ideas already (geographic codes, language codes) but BIBFRAME seeks to make these aspects the norm rather than the exception.  In short, the BIBFRAME Model is the library community’s formal entry point for becoming part of a much larger web of data, where the links between things are paramount.</p>
+  <p class="backtotop"><a href="#skip_menu">Back to top</a></p>
+</li>
+
+<li id="q05"><strong>Will RDA elements be part of the BIBFRAME vocabulary?</strong><br />
+  <p>Yes.  RDA is an important source of elements in the  vocabulary for BIBFRAME, even though it generally aims to be independent of any  particular set of cataloging rules. We also expect community extensions to emerge  which will accommodate additional elements.</p>
+  <p class="backtotop"><a href="#skip_menu">Back to top</a></p></li>
+
+<li id="q06">
+  <p><strong>How do I use bibliographic data using cataloging rules other than AACR2 or RDA in the context of BIBFRAME?</strong><br />
+    Work is planned to analyze  elements in other cataloging rule sets and reconcile or add them to the BIBFRAME  vocabulary as appropriate. This along with community extensions will enable broad  use of BIBFRAME.
+  </p>
+  <p class="backtotop"><a href="#skip_menu">Back to top</a></p></li>
+
+<li id="q07"><strong>Why a single namespace for the BIBFRAME vocabulary?</strong><br />
+<p>There are many benefits of  vocabulary reuse, but as with many things, there are costs as well that need to  be carefully considered.  Designing  systems that leverage multiple vocabularies managed by various stakeholders is  a tricky issue and one that requires careful consideration. There are many  reasons why namespaces/vocabularies &quot;drift&quot; over time (“not found”  errors being a worse case example) and all of these may have an affect on  systems. Business acquisitions, economic factors, organizational changes,  changing social interests, etc. are just a few reasons for causing such  change.  Thinking ahead to infrastructure  to support the next 40+ years of libraries, namespace persistence is a key  point to consider when dealing with how best to integrate and invest in vocabulary  terms outside of ones community.</p>
+<p class="backtotop"><a href="#skip_menu">Back to top</a></p></li>
+
+<li id="q08"><strong>How is the BIBFRAME Vocabulary and Documentation licensed?</strong><br />
+<p>Public domain/CC0.  BIBFRAME material and  components issued by the Library of Congress are in the public domain.  If one uses text from any of the documents it  is customary to make attribution, of course.</p>
+<p class="backtotop"><a href="#skip_menu">Back to top</a></p></li>
+</ol>
+
+<h3>Transition</h3>
+<ol start="9">
+<li id="q09"><strong>When should we move to BIBFRAME?</strong><br />
+<p>BIBFRAME is far from an environment that you could move to yet.  The model and its components are still in discussion and development -- a work in progress.  When it is more mature, vendors and suppliers will need time to adjust services to accommodate it.  And then we can expect a mixed environment for some time.</p>
+<p class="backtotop"><a href="#skip_menu">Back to top</a></p></li>
+
+<li id="q10"><strong>Are my MARC records convertible into BIBFRAME?</strong><br />
+<p>Yes.  For the BIBFRAME 1.0 vocabulary we provided a conversion tool and for 2.0 we will be providing specifications and downloadable software tool and services. In the future, other community-provided tools and services will help community members to transform and move their data from MARC to BIBFRAME.</p>
+<p class="backtotop"><a href="#skip_menu">Back to top</a></p></li>
+
+<li id="q11"><strong>Can I get MARC records from BIBFRAME resources?</strong><br />
+<p>Not at this time.  In the future, when descriptions begin to be exchanged in BIBFRAME, there will be utilities that provide transformation to MARC for organizations needing MARC for some or all of their internal systems.  Presently, we are focusing on the BIBFRAME model, needed vocabulary, and required exchange mechanisms.  Only after those elements have sufficiently stabilized would attention turn to a BIBFRAME-to-MARC transformation.</p>
+<p class="backtotop"><a href="#skip_menu">Back to top</a></p></li>
+
+<li id="q12"><strong>How will users/systems/organizations exchange or transfer BIBFRAME resources?</strong><br />
+<p>This is an active area of exploration at this time.  The widely used communications protocols will be adapted and new internet-based protocols will be hospitable to bibliographic data.</p>
+<p class="backtotop"><a href="#skip_menu">Back to top</a></p></li>
+
+<li id="q13"><strong>BIBFRAME seems to be concentrating on mapping MARC fields&mdash;isn't this a new format instead of repackaging an old one?</strong><br />
+<p>The mapping activity is grounded on the premise that the millions of existing MARC records need to be able to be transformed into BIBFRAME resources, but BIBFRAME as a "format" is very different from MARC.  This can be seen from the difficulty of the mapping.  One factor that brings the data together is the new library  cataloging rule set, <a href="http://www.rdatoolkit.org/" class="external">Resource Description and Access (RDA)</a>.  MARC has been adapted to carry RDA data, and BIBFRAME is being developed with RDA data as a prominent content type.  Both MARC and BIBFRAME  accommodate data recorded by other rules but the cataloging rules give them similarity.  The repackaging is not of MARC data but of cataloging content data.</p>
+<p class="backtotop"><a href="#skip_menu">Back to top</a></p></li>
+</ol>
+
+<h3>Early Testing and Feedback Process</h3>
+<!--
+<ol start="13">
+<li id="q13">
+  <p><strong>What is the BIBFRAME Implementation Testbed?</strong><br />
+    Following a year of development of a basic vocabulary with  the help of a small group of Early Experimenters (British Library, George  Washington University, Princeton University, Deutsche National Bibliothek,  National Library of Medicine, OCLC, and the Library of Congress), a <a href="/bibframe/implementation/testbed.html">BIBFRAME  Implementation Testbed</a> initiative has been launched.  Through 2014-2015, institutions with  resources and interest are encouraged to join the testbed group and share  experimental implementation experiences and software.  </p>
+<p class="backtotop"><a href="#skip_menu">Back to top</a></p></li> -->
+
+<ol start="14">
+<li id="q14"><strong>How can I get involved in BIBFRAME?</strong><br />
+<p>Read the documents at the <a href="/bibframe/">Bibliographic Framework Inititiative Web site</a> and join the <a href="http://listserv.loc.gov/cgi-bin/wa?SUBED1=bibframe&amp;A=1">BIBFRAME listserv</a>. As ideas are aired on the listserv, give feedback, respond to proposals, and make your requirements known.  If you have the facilities, write code and experiment.</p>
+<p class="backtotop"><a href="#skip_menu">Back to top</a></p></li>
+</ol>
+
+      <div class="clear"><!-- --></div>
+    </div><!-- end id:main_body -->
+  </div><!-- end id:content -->
+  <!--#include virtual="/cdn/html/locfoot.html"-->
+</div><!-- end id:container -->
+</body>
+</html>

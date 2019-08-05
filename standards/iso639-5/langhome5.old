@@ -13,9 +13,9 @@ Registration Authority - Library of Congress)</title>
 <!-- #EndEditable -->
 </HEAD>
 <body>
-<p>&nbsp;&nbsp;<a href="http://www.loc.gov/">Library
-    of Congress</a> &gt;&gt; <a href="http://www.loc.gov/standards/">Standards</a></p>
-<a href="http://www.loc.gov/standards/iso639-5/"><img src="images/iso639-5tl.gif" alt="ISO639-5" border="1" width="690" height="29" /></a>
+<p>&nbsp;&nbsp;<a href="http://lcnetdev.github.io/">Library
+    of Congress</a> &gt;&gt; <a href="http://lcnetdev.github.io/standards/">Standards</a></p>
+<a href="http://lcnetdev.github.io/standards/iso639-5/"><img src="images/iso639-5tl.gif" alt="ISO639-5" border="1" width="690" height="29" /></a>
 <table width="690" border="0" cellspacing="0" cellpadding="5">
   <tr>
     <td><!-- #BeginLibraryItem "/Library/iso639-5_menu.lbi" -->
@@ -39,9 +39,9 @@ Registration Authority - Library of Congress)</title>
         <li><a href="hier.php">Hierarchy</a> (an
           indication of which other language families or groups the current language
           family or group is a member of)</li>
-        <li><a href="http://www.loc.gov:8081/standards/iso639-5/annex.php">Annex A:</a> Groups and remainder groups in ISO 639-2 </li>
+        <li><a href="http://lcnetdev.github.io:8081/standards/iso639-5/annex.php">Annex A:</a> Groups and remainder groups in ISO 639-2 </li>
         <li><a href="changes.php">Changes
-            to ISO 639-5</a> by date of change: <img src="http://www.loc.gov/images/subscribe.gif" alt="Feed logo"/> (<a href="iso639-5.atom10.xml">Atom</a> | <a href="iso639-5.rss20.xml">RSS 2.0</a>)</li>
+            to ISO 639-5</a> by date of change: <img src="http://lcnetdev.github.io/images/subscribe.gif" alt="Feed logo"/> (<a href="iso639-5.atom10.xml">Atom</a> | <a href="iso639-5.rss20.xml">RSS 2.0</a>)</li>
         <li>Download: (<a href="iso639-5.skos.rdf">RDF/XML</a> | <a href="iso639-5.json">JSON</a> | <a href="iso639-5.tab.txt">Tab-delimited
             text</a> | <a href="iso639-5.pipe.txt">Vertical line-delimited text</a>)</li>
       </ul>
@@ -105,7 +105,7 @@ Registration Authority - Library of Congress)</title>
         <li>ISO&nbsp;639-1:2002, <em>Codes for the representation of names of  languages&nbsp;— Part&nbsp;1: Alpha-2 code</em></li>
         <li>ISO&nbsp;639-3:2007, <em>Codes for the  representation of names of languages&nbsp;— Part&nbsp;3: Alpha-3 code for  comprehensive coverage of languages</em></li>
         <li>ISO&nbsp;639-4: <em>Codes for the representation of names of  languages&nbsp;— Part&nbsp;4: Implementation guidelines and general principles  for language coding</em> (to be published) </li>
-        <li>ISO&nbsp;639-1  and ISO&nbsp;639-2 web site: <u><a href="http://www.loc.gov/standards/iso639-2/">http://www.loc.gov/standards/iso639-2/</a></u></li>
+        <li>ISO&nbsp;639-1  and ISO&nbsp;639-2 web site: <u><a href="http://lcnetdev.github.io/standards/iso639-2/">http://lcnetdev.github.io/standards/iso639-2/</a></u></li>
         <li>ISO&nbsp;639-3  web site: <u><a href="http://www.sil.org/iso639-3/">http://www.sil.org/iso639-3/</a></u></li>
         <li>Dalby,&nbsp;D. <em>The Linguasphere Register of the World's  Languages and Speech Communities</em>. Linguasphere Press, Hebron, Wales. First edition, 1999/2000</li>
         <li><em>Ethnologue. Languages of the World</em>. SIL International, Dallas, Texas,   USA. Fifteenth  edition, 2005. The content is also accessible at <u><a href="http://www.ethnologue.com/">http://www.ethnologue.com/</a></u></li>
@@ -129,10 +129,10 @@ Registration Authority - Library of Congress)</title>
       <hr />
       <!-- LC Footer -->
       <p class="menu"><a href="http://www.infoterm.info/standardization/iso_639_1_2002.php">ISO
-          639-1 Registration Authority Home</a> - <a href="http://www.loc.gov/standards/iso639-2/">ISO 639-2 Registration Authority Home</a><br />
+          639-1 Registration Authority Home</a> - <a href="http://lcnetdev.github.io/standards/iso639-2/">ISO 639-2 Registration Authority Home</a><br />
         <a href="http://www.sil.org/iso639-3/">ISO
-        639-3 Registration Authority Home</a> - <a href="http://www.sil.org/iso639-3/"></a><a href="http://www.sil.org/iso639-3/"> </a> <a href="http://www.loc.gov/standards/iso639-2/iso639jac.html">ISO 639 Joint Advisory Committee Home</a><br />
-        <a href="http://www.loc.gov/standards/">Other
+        639-3 Registration Authority Home</a> - <a href="http://www.sil.org/iso639-3/"></a><a href="http://www.sil.org/iso639-3/"> </a> <a href="http://lcnetdev.github.io/standards/iso639-2/iso639jac.html">ISO 639 Joint Advisory Committee Home</a><br />
+        <a href="http://lcnetdev.github.io/standards/">Other
         Standards Maintained by the Library</a></p>
       <!-- #EndEditable -->
       <!-- Navigation -->
@@ -147,10 +147,10 @@ Registration Authority - Library of Congress)</title>
       <table width="98%" border="0" cellspacing="0" cellpadding="0" align="center">
         <tr valign="bottom">
           <td width="50%">
-            <p><a href="http://www.loc.gov/">Library
-                of Congress</a> &gt;&gt; <a href="http://www.loc.gov/standards/">Standards</a></p>          </td>
+            <p><a href="http://lcnetdev.github.io/">Library
+                of Congress</a> &gt;&gt; <a href="http://lcnetdev.github.io/standards/">Standards</a></p>          </td>
           <td width="50%">
-            <p align="right"><a href="http://www.loc.gov/help/contact-general.html">Contact
+            <p align="right"><a href="http://lcnetdev.github.io/help/contact-general.html">Contact
                 Us</a><br />
               <!-- #BeginDate format:Am1 -->December 30, 2008<!-- #EndDate -->
             </p>          </td>

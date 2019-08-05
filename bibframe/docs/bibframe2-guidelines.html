@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<title>BIBFRAME 2.0 Guidelines: Expressing Characteristics of a BIBFRAME Resource, March 29, 2016 (BIBFRAME - Bibliographic Framework Initiative, Library of Congress)</title>
+<meta name="keywords" content="guidelines, bibframe, BIBFRAME 2.0, category view, bibliographic framework, transition, initiative, marc, cataloging, library of congress">
+<meta name="description" content="With the variety of systems and services available to librarians when creating descriptions of resources, this BIBFRAME guideline shows how the vocabulary can be used to express attributes of a resource, whether or not linked data friendly URIs are known and available. Below are 4 core (and likely) situations with techniques for handling them that are both mutually compatible and simple. The first three techniques can be efficiently queried with a single query. (BIBFRAME - Bibliographic Framework Initiative, Library of Congress)">
+
+<link rel="dc.relation.isPartOf" href="http://lcnetdev.github.io/bibframe/" title="BIBFRAME - Bibliographic Framework Initiative (Library of Congress)">
+<meta name="dc.subject" content="bibliographic framework">
+<meta name="dc.subject" content="BIBFRAME 2.0">
+<meta name="dc.subject" content="BIBFRAME Resource">
+<meta name="dc.subject" content="bibframe">
+<meta name="dc.type" content="web page">
+<meta name="dc.identifier" content="http://lcnetdev.github.io/bibframe/docs/bibframe2-guidelines.html">
+<meta name="dc.language" content="en">
+
+<link type="text/css" media="screen" rel="stylesheet" href="../css/styles.css">
+<link type="text/css" media="print" rel="stylesheet" href="/css/loc_print_v2.css">
+<!--[if lte IE 7]><link type="text/css" media="screen" rel="stylesheet" href="/css/loc_lte_ie6.css"><![endif]-->
+<!--#include virtual="/bibframe/include/share-tool.html"-->
+<script type="text/javascript" src="http://cdn.loc.gov/js/lib/modernizr-1.5.min.js"></script>
+</head>
+<body>
+<a id="skip" href="#skip_menu">skip navigation</a>
+<div id="container">
+  <!--#include virtual="../include/branding.html"-->
+  <!--#include virtual="/cdn/html/lochead.html"-->
+  <div id="crumb_nav"><a href="http://lcnetdev.github.io">The Library of Congress</a> &gt; <a href="/bibframe/">BIBFRAME</a> &gt; <a href="index.html">Model &amp; Vocabulary</a> &gt; BIBFRAME 2.0 URIs and Labels</div>
+  <div id="content">
+    <!--#include virtual="../include/leftnav.html"-->
+    <div id="main_body">
+    	<!--#include virtual="../include/share-tool-bar.html"-->
+      <div id="page_head"><span style="width: 100%;"><a name="skip_menu"></a></span>
+        <h1>BIBFRAME 2.0 URIs and Guidelines      </h1>
+      </div>
+      <p class="msg-notice" style="margin-bottom:10px;margin-top:0px;">With the variety of systems and services available to librarians when creating descriptions of resources,  this BIBFRAME guideline shows how the vocabulary can be used to express attributes of a resource, whether or not  linked data friendly URIs are  known and  available.  Below are 4 core (and likely) situations with techniques for handling them that are both mutually compatible and simple.  The first three techniques can be efficiently queried with a single query. </p>
+      <h3><em>Example used below to illustrate methods:</em></h3>
+      <p>        Many BIBRAME properties are used to  express various characteristics of a resource. For example, the base material  used for a publication (an Instance), is expressed by bf:baseMaterial, for  which corresponding class bf:BaseMaterial is also defined.  Suppose the base material is paper.  Then the object of bf:baseMaterial would be  the concept &ldquo;paper&rdquo; and a URI identifying that  concept would be supplied if available.</p>
+      <h2>Method 1:  URI only provided</h2>
+      <p>        Suppose<strong> http://bibframe.example.org/baseMaterial/paper</strong>  identifies the  concept &ldquo;paper&rdquo; .<br>
+        If resource  <strong>http://bibframe.example.org/instance/instanceY</strong>  has base material of paper, this might be  expressed simply as:</p>
+      <DIV class="msg-info" style="margin-bottom:15px;">
+      <pre style="font-weight:bold;">&lt;http://bibframe.example.org/instance/instanceY&gt; 
+         bf:baseMaterial   &lt;http://bibframe.example.org/baseMaterial/paper&gt; .</pre></DIV>
+      <h2>Method 2:  URI plus label</h2>
+      <p>        If we want to supply a label in  addition, this could be expressed as: </p>
+      <DIV class="msg-info" style="margin-bottom:15px;">
+        <pre style="font-weight:bold;">&lt;http://bibframe.example.org/instance/instanceY&gt; 
+         bf:baseMaterial   &lt;http://bibframe.example.org/baseMaterial/paper&gt; . 
+
+&lt;http://bibframe.example.org/baseMaterial/paper&gt; 
+         a			bf:BaseMaterial ;
+         rdfs:label		“paper”    .</pre></DIV>
+      <h2>Method 3:  No URI, label only  known</h2>
+      <p>Next, suppose there is no known URI for  paper, we can just state (via label) that the base material is paper.</p>
+<DIV class="msg-info" style="margin-bottom:15px;">
+      <pre style="font-weight:bold;">&lt;http://bibframe.example.org/instance/instanceY&gt;    bf:baseMaterial     [
+         a		    	 bf:BaseMaterial ;
+         rdfs:label		“paper”  ]  .</pre></DIV>
+
+      <p class="backtotop"><a href="#skip_menu">Back to Top</a></p>
+    </div>
+    <div class="clear"><!-- --></div>
+    </div><!-- end id:main_body -->
+  </div><!-- end id:content -->
+  <!--#include virtual="/cdn/html/locfoot.html"-->
+</div><!-- end id:container -->
+</body>
+</html>

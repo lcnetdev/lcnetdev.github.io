@@ -222,8 +222,8 @@ mptr and area elements for mapping MPEG21 DII Identifier values
 			agent/note
 		This will allow arbitrary new attributes to be added to this element to support local needs.  The original use case was to identify the type of the note
 -->
-<xsd:schema targetNamespace="http://www.loc.gov/METS/" xmlns="http://www.loc.gov/METS/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
-	<xsd:import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://www.loc.gov/standards/xlink/xlink.xsd"/>
+<xsd:schema targetNamespace="http://lcnetdev.github.io/METS/" xmlns="http://lcnetdev.github.io/METS/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://lcnetdev.github.io/standards/xlink/xlink.xsd"/>
 	
 	<xsd:element name="mets">
 		<xsd:annotation>

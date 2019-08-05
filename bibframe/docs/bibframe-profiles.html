@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<title>BIBFRAME Profiles: Introduction and Specification, Draft - 5 May 2014 (BIBFRAME - Bibliographic Framework Initiative, Library of Congress)</title>
+<meta name="keywords" content="bibframe, category view, bibliographic framework, transition, initiative, marc, cataloging, library of congress">
+<meta name="description" content="BIBFRAME Profiles: Introduction and Specification, Draft - 5 May 2014. This document introduces and defines BIBFRAME Profiles, and describes how they are created, maintained and used. It gives an overview of the purpose of BIBFRAME Profiles, describes how they can be used to support unique community's descriptive practices, and provides specific examples of how profiles can be constructed. (BIBFRAME - Bibliographic Framework Initiative, Library of Congress)">
+
+<link rel="dc.relation.isPartOf" href="http://lcnetdev.github.io/bibframe/" title="BIBFRAME - Bibliographic Framework Initiative (Library of Congress)">
+<meta name="dc.subject" content="bibliographic framework">
+<meta name="dc.subject" content="vocabulary">
+<meta name="dc.subject" content="profiles">
+<meta name="dc.subject" content="bibframe">
+<meta name="dc.type" content="web page">
+<meta name="dc.identifier" content="http://lcnetdev.github.io/bibframe/docs/bibframe-profiles.html">
+<meta name="dc.language" content="en">
+
+<link type="text/css" media="screen" rel="stylesheet" href="../css/styles.css">
+<link type="text/css" media="print" rel="stylesheet" href="/css/loc_print_v2.css">
+<!--[if lte IE 7]><link type="text/css" media="screen" rel="stylesheet" href="/css/loc_lte_ie6.css"><![endif]-->
+<!--#include virtual="/bibframe/include/share-tool.html"-->
+<script type="text/javascript" src="http://cdn.loc.gov/js/lib/modernizr-1.5.min.js"></script>
+<style>
+.msg-notice {
+   margin-bottom:15px;	
+}
+th {
+	text-align:right;
+	padding-right:10px;
+}
+</style>
+</head>
+<body>
+<a id="skip" href="#skip_menu">skip navigation</a>
+<div id="container">
+  <!--#include virtual="../include/branding.html"-->
+  <!--#include virtual="/cdn/html/lochead.html"-->
+  <div id="crumb_nav"><a href="http://lcnetdev.github.io">The Library of Congress</a> &gt; <a href="/bibframe/">BIBFRAME</a> &gt; <a href="index.html">Model &amp; Vocabulary</a> &gt; BIBFRAME Profiles: Introduction and Specification (Draft  &mdash; 5 May 2014)</div>
+  <div id="content">
+    <!--#include virtual="../include/leftnav.html"-->
+    <div id="main_body">
+    	<!--#include virtual="../include/share-tool-bar.html"-->
+      <div id="page_head"><span style="width: 100%;"><a name="skip_menu"></a></span>
+        <h1>BIBFRAME Profiles: Introduction and Specification<br>
+        <span>Draft — 5 May 2014</span></h1>
+      </div>
+      <p class="msg-info" style="margin-bottom:5px;">This document introduces and defines BIBFRAME Profiles, and describes how they are created, maintained and used. It gives an overview of the purpose of BIBFRAME Profiles, describes how they can be used to support unique community's descriptive practices, and provides specific examples of how profiles can be constructed. </p>
+      <p style="margin-bottom:5px;"><strong>Status of this Document</strong></p>
+        <ul class="bullet">
+          <li>Draft for public review (5 May 2014)</li>
+          <li>Please send general comments about this document to the listserv <a href="mailto:bibframe@loc.gov">bibframe@loc.gov</a> or via email to <a href="mailto:bfcomments@loc.gov">bfcomments@loc.gov</a>.</li>
+          <li>To the extent possible under law, the Library of Congress has waived all copyright and related or neighboring rights to this work.</li>
+      </ul>
+      <div class="box-anchor">
+        <h3>Table of Contents </h3>
+<ul class="anchor">
+  <li><a href="#intro"> Introduction</a></li>
+      <li><a href="#structure">Basic Structure</a></li>
+      <li><a href="#validation">Validation</a></li>
+      <li><a href="#serialization">Serialization</a></li>
+      <li><a href="#usage">Usage Scenarios</a></li>
+      <li><a href="#examples">Examples</a></li>
+      <li><a href="#grammar">Detailed Grammar</a></li>
+      <li><a href="#implementation">Implementation</a></li>
+      <li><a href="#history">History</a></li>
+      <li><a href="#credits">Credits</a></li>
+    </ul>
+</div>
+
+
+<h2 id="intro">1. Introduction</h2>
+<p>BIBFRAME is the result of the Bibliographic Framework Initiative. It is a   framework or metamodel for discovery and exchange of library and other memory   organization information using Web technology, publicly or privately. The   BIBFRAME metamodel is designed to be lightweight, flexible and able to   accommodate the declarative needs of both existing (RDA, DACS, VRA, etc..) and   yet-to-be-developed community vocabularies. To best accomodate these communities   the BIBFRAME RDF Schema is intentionally underspecified in terms of constraints   such as domain and range. This same flexibility comes at a cost; without a way   of constraining these vocabularies, authoring tools, for example, are unable to   provide guidance to content authors for specific vocabularies and derived   models. BIBFRAME Profiles provide such supplementary descriptions.</p>
+<p>A BIBFRAME Profile is a document, or set of documents, that puts a Profile   (e.g. local cataloging practices) into a broader context of functional   requirements, domain models, guidelines on syntax and usage, and possibly data   formats.</p>
+<p>This BIBFRAME Profile document describes an information model and reference   serialization to support a means for identifying and describing structural   constraints. A Profile defines a means in which a resource can be constrained to   enumerate the the properties that may be used to describe it, and the ways the   property values surrogate may be given.</p>
+<DIV class="msg-notice"><strong>Note: </strong>The concept of a value surrogate is derived   from DCMI, and represents a separation between the objects expressed to   exemplify statement patterns and actual, real-world values that might be used in   practice. These are not related to database theory surrogate keys, nor Unicode   encoding surrogates.</DIV>
+<p>A BIBFRAME Profile is primarily a means for an application, e.g. cataloging   tool, to guide a cataloger in the creation or modification of a BIBFRAME record.   But such Profiles can also be used in other ways such as a formal representation   of the constraints associated with a content description standard (e.g. RDA,   DACS, etc.) or agreed upon representation for interoperability. </p>
+<DIV class="msg-notice"><strong>Note: </strong>The notion of a BIBFRAME Record here conforms to one or more RDF assertions collected to satisfy a particular usage scenario, and should not be thought of in terms of files or documents. </DIV>
+
+  <p>A BIBFRAME Profile does not address the following:</p>
+  <UL>
+    <LI>Human-readable documentation and / or cataloging rules.</LI>
+    <LI>Definition of vocabulary terms.</LI>
+    <LI>Version management and / or governance of vocabulary terms.</LI>
+  </UL>
+  <p>A BIBFRAME Profile contains the formal syntactic constraints only, and will   need to be combined with human-readable information, semantic expression, usage   guidelines, etc. in order fully useful by a community. However, the design of   the BIBFRAME Profile information model is intended to facilitate the merging of   BIBFRAME information and external information of the above kinds. Therefore,   apart from the specifications outlined in this document, BIBFRAME Profiles are   owned and maintained by their community and are independent from BIBFRAME as a   whole. This independence is key to the ability to support multiple community   needs.</p>
+  <p class="backtotop"><a href="#skip_menu">Back to Top</a></p>
+<h2 id="structure" class="dot-top">2. Basic Structure</h2>
+<p>A BIBFRAME Profile is defined by a set of "resources templates," each of   which is further defined by an array of "property templates," used to describe   the possible metadata structures in a conforming record. "Value Constraints" can   be applied to properties and are defined as a means to define or constrain the   permissible values associated with properties associated with property   templates. </p>
+<p>While templates are used to express structures, constraints are used to limit   those structures. It is important to note that the constraints defined by   BIBFRAME Profiles do not replace or override the semantic constraints defined by   such standards as RDF Schema and OWL, but rather reflect a more narrowly focused   local cataloging practice or community patterns of use.</p>
+<p>The following is a breakdown of the particular characteristics associated   with the Profile and the corresponsing Resource, Property and Value Constraint   templates.</p>
+<H3>2.1. Profile</H3>
+<p>The following properties are assocated with a BIBFRAME Profile   structure which are designated by the "Profile" object or array. </p>
+<table width="75%" border="0">
+  <caption>
+    Identifier
+    </caption>
+  <tr>
+    <th width="100">Name</th>
+    <td>id</td>
+    </tr>
+  <tr>
+    <th>Summary</th>
+    <td>Unique identifier associated with the profile</td>
+    </tr>
+  <tr>
+    <th>Value</th>
+    <td>Text</td>
+    </tr>
+</table>
+<table width="75%" border="0">
+  <caption>
+  Title
+  </caption>
+  <tr>
+    <th width="100">Name</th>
+    <td>title</td>
+  </tr>
+  <tr>
+    <th>Summary</th>
+    <td>Textual title associated with the profile</td>
+  </tr>
+  <tr>
+    <th>Value</th>
+    <td>Text</td>
+  </tr>
+</table>
+<table width="75%" border="0">
+  <caption>
+    Description
+  </caption>
+  <tr>
+    <th width="100">Name</th>
+    <td>description</td>
+  </tr>
+  <tr>
+    <th>Summary</th>
+    <td>Textual description associated with the profile</td>
+  </tr>
+  <tr>
+    <th>Value</th>
+    <td>Text</td>
+  </tr>
+</table>
+<table width="75%" border="0">
+  <caption>
+    Date
+  </caption>
+  <tr>
+    <th width="100">Name</th>
+    <td>date</td>
+  </tr>
+  <tr>
+    <th>Summary</th>
+    <td>Date associated with the profile</td>
+  </tr>
+  <tr>
+    <th>Value</th>
+    <td>Text</td>
+  </tr>
+</table>
+<table width="75%" border="0">
+  <caption>
+  Contact
+  </caption>
+  <tr>
+    <th width="100">Name</th>
+    <td>contact</td>
+  </tr>
+  <tr>
+    <th>Summary</th>
+    <td>Contact information associated with the profile</td>
+  </tr>
+  <tr>
+    <th>Value</th>
+    <td>Text</td>
+  </tr>
+</table>
+<table width="75%" border="0">
+  <caption>
+  Remark
+  </caption>
+  <tr>
+    <th width="100">Name</th>
+    <td>remark</td>
+  </tr>
+  <tr>
+    <th>Summary</th>
+    <td>Comment or guiding statement intended to be presented as supplementary information in user display.</td>
+  </tr>
+  <tr>
+    <th>Value</th>
+    <td>Text</td>
+  </tr>
+</table>
+<table width="75%" border="0">
+  <caption>
+    Resource Templates
+  </caption>
+  <tr>
+    <th width="100">Name</th>
+    <td>resourceTemplates</td>
+  </tr>
+  <tr>
+    <th>Summary</th>
+    <td>An array representing one or more Resource Templates (<a href="#resource-template">see section 2.2</a> below).</td>
+  </tr>
+  <tr>
+    <th>Value</th>
+    <td>Array</td>
+  </tr>
+</table>
+
+<h3>Example</h3>
+<div class="msg-info">
+  <pre>{
+  "Profile": {
+       "id": "bfp:Monograph",
+       "title": "Monograph",
+       "description": "An example monograph profile reflecting the cataloging practices of 
+                       example public library",
+       "date": "2013-05-01",
+       "contact": "Example Public Library cataloging help desk, info@examplelib.org",
+       "resourceTemplates": [
+             { ... }
+       ]
+    }
+}</pre>
+</div>
+<p class="caption">Figure 2.1: BIBFRAME Profile.</p>
+<p class="backtotop"><a href="#skip_menu">Back to Top</a></p>
+<h3 id="resource-template">2.2. Resource Template</h3>
+<p>A Resource Template construct describes one of the various resources (Works, Instances, etc.) associated with a given Profile. </p>
+<table width="75%" border="0">
+  <caption>
+    Identifier
+    </caption>
+  <tr>
+    <th width="100">Name</th>
+    <td>id</td>
+  </tr>
+  <tr>
+    <th>Summary</th>
+    <td>Identifier associated with a resource template.</td>
+  </tr>
+  <tr>
+    <th>Value</th>
+    <td>Text</td>
+  </tr>
+  <tr>
+    <th>Default</th>
+    <td>None</td>
+  </tr>
+</table>
+<table width="75%" border="0">
+  <caption>
+    Resource Identifier
+  </caption>
+  <tr>
+    <th width="100">Name</th>
+    <td>resourceURI</td>
+  </tr>
+  <tr>
+    <th>Summary</th>
+    <td>URI of the RDF resource associated with the resource template.</td>
+  </tr>
+  <tr>
+    <th>Value</th>
+    <td>URI</td>
+  </tr>
+  <tr>
+    <th>Default</th>
+    <td>None</td>
+  </tr>
+</table>
+<table width="75%" border="0">
+  <caption>
+    Resource Label
+  </caption>
+  <tr>
+    <th width="100">Name</th>
+    <td>resourceLabel</td>
+  </tr>
+  <tr>
+    <th>Summary</th>
+    <td>Localized label associated with the resource.</td>
+  </tr>
+  <tr>
+    <th>Value</th>
+    <td>Text</td>
+  </tr>
+  <tr>
+    <th>Default</th>
+    <td>None</td>
+  </tr>
+</table>
+<table width="75%" border="0">
+  <caption>
+    Property Templates
+  </caption>
+  <tr>
+    <th width="100">Name</th>
+    <td>propertyTemplates</td>
+  </tr>
+  <tr>
+    <th>Summary</th>
+    <td>An array representing one or more Property Templates (<a href="#property-template">see section 2.3</a> below)</td>
+  </tr>
+  <tr>
+    <th>Value</th>
+    <td>Array</td>
+  </tr>
+</table>
+<table width="75%" border="0">
+  <caption>
+    Contact
+  </caption>
+  <tr>
+    <th width="100">Name</th>
+    <td>contact</td>
+  </tr>
+  <tr>
+    <th>Summary</th>
+    <td>Contact information associated with the profile</td>
+  </tr>
+  <tr>
+    <th>Value</th>
+    <td>Text</td>
+  </tr>
+</table>
+<table width="75%" border="0">
+  <caption>
+    Remark
+    </caption>
+  <tr>
+    <th width="100">Name</th>
+    <td>remark</td>
+  </tr>
+  <tr>
+    <th>Summary</th>
+    <td>Comment or guiding statement intended to be presented as supplementary   information in user display. A common use for this is to notify a user of code   lists or schemata associated with the expected value of this resource.</td>
+  </tr>
+  <tr>
+    <th>Value</th>
+    <td>Text</td>
+  </tr>
+</table>
+<h3>Examples</h3>
+<div class="msg-info">
+  <pre>...
+"resourceTemplate": [
+    {
+       "id": "bfp:Work:Book",
+       "resourceLabel": "Book",
+       "resourceURI": "http://bibframe.org/vocab/Text",
+       "propertyTemplates": [
+             { ... }
+       ]
+    }
+...</pre></div>
+<p class="caption">Figure 2.2a: Resource template for a "Book" which relates   it to the semantics of BIBFRAME's Book definition</p>
+<DIV class="msg-notice"><strong>Note:</strong> Strings such as "bfp:Work:Book" in this   document are not meant to be qualified names (QNames) in the XML namespaces   sense, as also used for RDF serializations. They are just a convenient   convention for expressing identifier strings, with no special meanings for the   colons.</DIV>
+<div class="msg-info">
+  <pre>...
+"resourceTemplate": [
+    {
+       "id": "bfp:MediaCategory",
+       "resourceLabel": "Media Category",
+       "resourceURI": "http://bibframe.org/vocab/mediaCategory",
+       "remark": &quot;Values derived from http://id.loc.gov/vocabulary/mediaTypes or
+                                      http://rdvocab.info/termList/RDAMediaType&quot;
+    }
+...</pre>
+</div>
+<p class="caption">Figure 2.2b: Resource template which has no properties,   and has a value space derived from a one of two enumeratied lists.</p>
+<p class="backtotop"><a href="pdf/lovin-speech-jan23-2014.pdf">Back to Top</a></p>
+
+<h3 id="property-template" class="dot-top">2.3. Property Template</a></h3>
+<p>A Property Template construct describes one of the various properties associated with a particular resource.</p>
+<table width="75%" border="0">
+  <caption>
+    Identifier
+    </caption>
+  <tr>
+    <th width="100">Name</th>
+    <td>propertyURI</td>
+  </tr>
+  <tr>
+    <th>Summary</th>
+    <td>URI of the RDF property being described.</td>
+  </tr>
+  <tr>
+    <th>Value</th>
+    <td>URI</td>
+  </tr>
+  <tr>
+    <th>Default</th>
+    <td>None</td>
+  </tr>
+</table>
+<table width="75%" border="0">
+  <caption>
+    Property Label
+  </caption>
+  <tr>
+    <th width="100">Name</th>
+    <td>propertyLabel</td>
+  </tr>
+  <tr>
+    <th>Summary</th>
+    <td>Preferred, human readable label associated with this property.</td>
+  </tr>
+  <tr>
+    <th>Value</th>
+    <td>Text</td>
+  </tr>
+  <tr>
+    <th>Default</th>
+    <td>None</td>
+  </tr>
+</table>
+<table width="75%" border="0">
+  <caption>
+    Mandatory
+  </caption>
+  <tr>
+    <th width="100">Name</th>
+    <td>mandatory</td>
+  </tr>
+  <tr>
+    <th>Summary</th>
+    <td>Indication that the property is mandatory.</td>
+  </tr>
+  <tr>
+    <th>Value</th>
+    <td>&quot;true&quot; or &quot;false&quot;</td>
+  </tr>
+  <tr>
+    <th>Default</th>
+    <td>false</td>
+  </tr>
+</table>
+<table width="75%" border="0">
+  <caption>
+    Repeatable
+  </caption>
+  <tr>
+    <th width="100">Name</th>
+    <td>repeatable</td>
+  </tr>
+  <tr>
+    <th>Summary</th>
+    <td>Indication that the property is repeatable.</td>
+  </tr>
+  <tr>
+    <th>Value</th>
+    <td>&quot;true&quot; or &quot;false&quot;</td>
+  </tr>
+  <tr>
+    <th>Default</th>
+    <td>true</td>
+  </tr>
+</table>
+
+<table width="75%" border="0">
+  <caption>
+    Type
+  </caption>
+  <tr>
+    <th width="100">Name</th>
+    <td>type</td>
+  </tr>
+  <tr>
+    <th>Summary</th>
+    <td>Type or value (literal / resource) that is allowed by this property.</td>
+  </tr>
+  <tr>
+    <th>Value</th>
+    <td>Text or URI</td>
+  </tr>
+  <tr>
+    <th>Default</th>
+    <td>literal</td>
+  </tr>
+</table>
+
+
+<table width="75%" border="0">
+  <caption>
+    Value Constraint
+</caption>
+  <tr>
+    <th width="100">Name</th>
+    <td>valueConstraint</td>
+  </tr>
+  <tr>
+    <th>Summary</th>
+    <td>Constraint associated with the value (<a href="#value-constraint">see sections 2.4 and 2.5</a> below).</td>
+  </tr>
+  <tr>
+    <th>Value</th>
+    <td>Sub-description</td>
+  </tr>
+</table>
+<table width="75%" border="0">
+  <caption>
+    Remark
+    </caption>
+  <tr>
+    <th width="100">Name</th>
+    <td>remark</td>
+  </tr>
+  <tr>
+    <th>Summary</th>
+    <td>Comment or guiding statement intended to be presented as supplementary   information in user display.</td>
+  </tr>
+  <tr>
+    <th>Value</th>
+    <td>Text</td>
+  </tr>
+</table>
+<h3>Examples</h3>
+<div class="msg-info">
+  <pre>...
+      "propertyTemplate": [
+         { ... },
+         {
+              "propertyURI": "http://bibframe.org/vocab/titleStatement",
+              "propertyLabel": "Title",
+              "mandatory": "true",
+              "type": &quot;literal&quot;
+         },
+         { ... }
+      ]
+...</pre>
+</div>
+<p class="caption">Figure 2.3a: A mandatory property whose value is a literal string.</p>
+<div class="msg-info">
+  <pre>...
+      "propertyTemplate": [
+         { ... },
+         {
+              "propertyURI": "http://bibframe.org/vocab/subject",
+              "propertyLabel": "Subject",
+              "type": &quot;resource",
+              "valueConstraint": {
+              ...
+              }
+         },
+         { ... }
+      ]
+...</pre>
+</div>
+<p class="caption">Figure 2.3b: An optional property whose value is a resource. </p>
+<p class="backtotop"><a href="pdf/lovin-speech-jan23-2014.pdf">Back to Top</a></p>
+<h3 id="value-constraint" class="dot-top">2.4. Value Constraint</a></h3>
+<p>A Value Constraint construct describes an expectations placed on the value of a property. The following are used for specifying expectations on literal values. </p>
+<table width="75%" border="0">
+  <caption>
+    Language
+  </caption>
+  <tr>
+    <th width="100">Name</th>
+    <td>valueLanguage</td>
+  </tr>
+  <tr>
+    <th>Summary</th>
+    <td>Language specified for a literal.</td>
+  </tr>
+  <tr>
+    <th>Value</th>
+    <td>Text</td>
+  </tr>
+  <tr>
+    <th>Default</th>
+    <td>None</td>
+  </tr>
+</table>
+<table width="75%" border="0">
+  <caption>
+    Language URI
+  </caption>
+  <tr>
+    <th width="100">Name</th>
+    <td>languageURI</td>
+  </tr>
+  <tr>
+    <th>Summary</th>
+    <td>URI associated with the language of the literal.</td>
+  </tr>
+  <tr>
+    <th>Value</th>
+    <td>URI</td>
+  </tr>
+  <tr>
+    <th>Default</th>
+    <td>None</td>
+  </tr>
+</table>
+<table width="75%" border="0">
+  <caption>
+    Language Label
+    </caption>
+  <tr>
+    <th width="100">Name</th>
+    <td>languageLabel</td>
+  </tr>
+  <tr>
+    <th>Summary</th>
+    <td>Preferred, human readable label associated with the language of the literal.</td>
+  </tr>
+  <tr>
+    <th>Value</th>
+    <td>Sub-description</td>
+  </tr>
+  <tr>
+    <th>Default</th>
+    <td>None</td>
+  </tr>
+</table>
+<table width="75%" border="0">
+  <caption>
+  Datatype
+  </caption>
+  <tr>
+    <th width="100">Name</th>
+    <td>valueDataType</td>
+  </tr>
+  <tr>
+    <th>Summary</th>
+    <td>Description specifying a datatype for a literal.</td>
+  </tr>
+  <tr>
+    <th>Value</th>
+    <td>Sub-description</td>
+  </tr>
+  <tr>
+    <th>Default</th>
+    <td>None</td>
+  </tr>
+</table>
+<table width="75%" border="0">
+  <caption>
+    Value Template Reference(s)
+  </caption>
+  <tr>
+    <th width="100">Name</th>
+    <td>valueTemplateRefs</td>
+  </tr>
+  <tr>
+    <th>Summary</th>
+    <td>An array of one or more resource template identifiers (see section 2.2 above) of the resource templates that define the expected value.</td>
+  </tr>
+  <tr>
+    <th>Value</th>
+    <td>URI</td>
+  </tr>
+  <tr>
+    <th>Default</th>
+    <td>None</td>
+  </tr>
+</table>
+<table width="75%" border="0">
+  <caption>
+    Use Values From
+  </caption>
+  <tr>
+    <th width="100">Name</th>
+    <td>useValuesFrom</td>
+  </tr>
+  <tr>
+    <th>Summary</th>
+    <td>An array of identifiers that identify value lists from which acceptable values should come. Scheme URIs are expected, but differing communities may develop differing solutions.</td>
+  </tr>
+  <tr>
+    <th>Value</th>
+    <td>URI</td>
+  </tr>
+  <tr>
+    <th>Default</th>
+    <td>None</td>
+  </tr>
+</table>
+<table width="75%" border="0">
+  <caption>
+    Editable
+  </caption>
+  <tr>
+    <th width="100">Name</th>
+    <td>editable</td>
+  </tr>
+  <tr>
+    <th>Summary</th>
+    <td>Whether the value provided for the property is meant to be modified by a   cataloguer. If not, the specified default value is in effect fixed.</td>
+  </tr>
+  <tr>
+    <th>Value</th>
+    <td>URI</td>
+  </tr>
+  <tr>
+    <th>Default</th>
+    <td>None</td>
+  </tr>
+</table>
+<table width="75%" border="0">
+  <caption>
+    Remark
+    </caption>
+  <tr>
+    <th width="100">Name</th>
+    <td>remark</td>
+  </tr>
+  <tr>
+    <th>Summary</th>
+    <td>Comment or guiding statement intended to be presented as supplementary   information in user display.</td>
+  </tr>
+  <tr>
+    <th>Value</th>
+    <td>Text</td>
+  </tr>
+</table>
+<h3>Examples</h3>
+<div class="msg-info">
+  <pre>...
+     "propertyTemplates": [
+         { ... },
+         {
+              "propertyURI": "http://bibframe.org/vocab/subject",
+              "propertyLabel": "Subject",
+              "type": &quot;resource",
+              "valueConstraint": {
+                   &quot;valueTemplateRefs&quot;: [ &quot;bfp:Agent:Person&quot;,
+                                          &quot;bfp:Agent:Organization&quot;,
+                                          &quot;bfp:Authority:Place&quot;
+                   ]
+              }
+         },
+         { ... }
+     ]
+...</pre>
+</div>
+<p class="caption">Figure 2.4a: An additional expectation on the BIBFRAME subject property that its value be a Person, Place or Organization. </p>
+<div class="msg-info">
+  <pre>...
+     "propertyTemplates": [
+         { ... },
+         {
+              "propertyURI": "http://bibframe.org/vocab/carrierCategory",
+              "propertyLabel": "Carrier Category",
+              "type": &quot;resource",
+              "valueConstraint": {
+                   &quot;remark&quot;: &quot;The fixed value of this property is of type bfp:CarrierCategory&quot;,
+                   &quot;editable&quot;: &quot;false&quot;,
+                   &quot;defaultURI&quot;: &quot;http://id.loc.gov/vocabulary/carriers/cr&quot;,
+              }
+         },
+         { ... }
+     ]
+...</pre>
+</div>
+<p class="caption">Figure 2.4b: An expression of a property with the expectation that its value be a resource, fixed at the given default value, which is of the given value type.  </p>
+<p class="backtotop"><a href="pdf/lovin-speech-jan23-2014.pdf">Back to Top</a></p>
+<h3 id="value-datatype" class="dot-top">2.5. Value DataType</a></h3>
+<p>A Value DataType construct describes a data type expectation on a literal value.</p>
+<table width="75%" border="0">
+  <caption>
+    DataType ID
+    </caption>
+  <tr>
+    <th width="100">Name</th>
+    <td>dataTypeURI</td>
+  </tr>
+  <tr>
+    <th>Summary</th>
+    <td>URI associated with the DataType</td>
+  </tr>
+  <tr>
+    <th>Value</th>
+    <td>URI</td>
+  </tr>
+  <tr>
+    <th>Default</th>
+    <td>None</td>
+  </tr>
+</table>
+<table width="75%" border="0">
+  <caption>
+    DataType Label
+    </caption>
+  <tr>
+    <th width="100">Name</th>
+    <td>dataTypeLabel</td>
+  </tr>
+  <tr>
+    <th>Summary</th>
+    <td>Preferred, human readable label associated with the DataType.</td>
+  </tr>
+  <tr>
+    <th>Value</th>
+    <td>Text</td>
+  </tr>
+  <tr>
+    <th>Default</th>
+    <td>None</td>
+  </tr>
+</table>
+<table width="75%" border="0">
+  <caption>
+    DataType Label Hint
+    </caption>
+  <tr>
+    <th width="100">Name</th>
+    <td>dataTypeLabelHint</td>
+  </tr>
+  <tr>
+    <th>Summary</th>
+    <td>Short, human readable label primarily for display purposes.</td>
+  </tr>
+  <tr>
+    <th>Value</th>
+    <td>Text</td>
+  </tr>
+  <tr>
+    <th>Default</th>
+    <td>None</td>
+  </tr>
+</table>
+<table width="75%" border="0">
+  <caption>
+    Remark
+    </caption>
+  <tr>
+    <th width="100">Name</th>
+    <td>remark</td>
+  </tr>
+  <tr>
+    <th>Summary</th>
+    <td>Comment or guiding statement intended to be presented as supplementary   information in user display.</td>
+  </tr>
+  <tr>
+    <th>Value</th>
+    <td>Text</td>
+  </tr>
+</table>
+<h3>Example</h3>
+<div class="msg-info">
+  <pre>...
+      "propertyTemplates": [
+         { ... },
+         {
+              "propertyURI": "http://bibframe.org/vocab/vra/beginDate",
+              "propertyLabel": "Begin Date",
+              "type": &quot;literal",
+              "valueConstraint": {
+                   &quot;valueDataType&quot;: {
+                       &quot;dataTypeURI&quot;: &quot;http://bibframe.org/vocab/proposed/ISO8601&quot;,
+                       &quot;dataTypeLabel&quot;: &quot;ISO 8601&quot;,
+                       &quot;dataTypeLabelHint&quot;: &quot;ISO&quot;
+                   }
+              }
+         },
+         { ... }
+      ]
+...</pre>
+</div>
+<p class="caption">Figure 2.5: This  example expresses that a date property is expected to have a literal conforming to a variation on the ISO 8601 date standard. </p>
+<p class="backtotop"><a href="#skip_menu">Back to Top</a></p>
+
+<h2 id="validation" class="dot-top">3. Validation</h2>
+<DIV class="msg-notice"><strong>Note:</strong> This section is very much a draft at present. Validation will be more seriously considered at a following stage. </DIV>
+
+  <p>In order to examine whether a particular set of instance data matches a   particular profile, the process of validation is defined as follows:</p>
+  <UL class="bullet">
+    <LI><strong>Binding of descriptions to resource templates:</strong> Each description is   bound to a Resource Template by evaluating the Resource Constraint of each   Resource Template against the described resource. Each description must be bound   to exactly one Resource Template. </LI>
+    <LI><strong>Binding of statements to property templates:</strong> Each statement, of each   description, is bound to a Property Template in the corresponding Resource   Template by evaluating the Property Constraint. Each statement must be bound to   exactly one Property Template. </LI>
+    <LI><strong>Evaluating datatyping constraints:</strong> Now that all metadata in the   description set has been bound to a template, all constraints can be verified.</LI>
+  </UL>
+  <p class="backtotop"><a href="#skip_menu">Back to Top</a></p>
+  
+
+<h2 id="serialization" class="dot-top">4. Serialization</h2>
+<p>The detailed grammar for a BIBFRAME Profile is defined in subsequent   sections, using a variant of Backaus-Naur Form (BNF). For simplicity and   consistency sake, an JSON serialization will be used in this document.</p>
+<DIV class="msg-notice"><strong>Note:</strong> We're considering a Turtle serialization as an alternative as it may be easier to understand and process by this community. Feedback on this point would be appreciated.  </DIV>
+<p class="backtotop"><a href="#skip_menu">Back to Top</a></p>
+  
+<h2 id="usage" class="dot-top">5. Usage Scenarios</h2>
+<p>The following section outlines a set of templating patterns that reflect common usage scenarios.</p>
+<h3>5.1.	Constraining the resource</h3>
+<p>The following BIBFRAME Profile matches descriptions with a BIBFRAME Person   resource.</p>
+<div class="msg-info">
+  <pre>{
+  "Profile": {
+      "id": "profile:bf:Agents",
+      "title": "BIBFRAME Agents",
+      "resourceTemplates": [
+          {
+		        &quot;id&quot;: &quot;profile:bf:Agent&quot;,
+				&quot;resourceURI&quot;: &quot;http://bibframe.org/vocab/Agent&quot;,
+             &quot;resourceLabel&quot;: &quot;Agent&quot;,
+             &quot;propertyTemplates&quot;: [
+                 {
+                    "propertyURI": "http://bibframe.org/vocab/hasAuthority",
+                    "propertyLabel": "Lookup",
+                    "type": &quot;resource",
+                    "valueConstraint": {
+                        &quot;repeatable&quot;: &quot;false&quot;,
+                        &quot;usesValuesFrom&quot;: [
+                             &quot;http://id.loc.gov/authorities/names&quot;,
+                        ]
+                    }
+                 },
+                 {
+                    "propertyURI": "http://bibframe.org/vocab/authorizedAccessPoint",
+                    "propertyLabel": "Authorized access point",
+                    "type": &quot;literal",
+                 }
+              ]
+           }
+       ]
+   } 
+}</pre>
+</div>
+<p class="caption" id="table">Figure 5.1: BIBFRAME Profile matching descriptions with a BIBFRAME Person resource.</p>
+<p class="backtotop"><a href="#skip_menu">Back to Top</a></p>
+<h3>5.2.Constraining the property</h3>
+<p>The following BIBFRAME  Profile adds a mandatory foaf:name property to the previous example.</p>
+<div class="msg-info">
+  <pre>{
+  "Profile": {
+      "id": "profile:bf:Agents",
+      "title": "BIBFRAME Agents",
+      "resourceTemplates": [
+          {
+		        &quot;id&quot;: &quot;profile:bf:Agent&quot;,
+				&quot;resourceURI&quot;: &quot;http://bibframe.org/vocab/Agent&quot;,
+             &quot;resourceLabel&quot;: &quot;Agent&quot;,
+             &quot;propertyTemplates&quot;: [
+                 {
+                    "propertyURI": "http://bibframe.org/vocab/hasAuthority",
+                    "propertyLabel": "Lookup",
+                    "type": &quot;resource",
+                    "valueConstraint": {
+                        &quot;repeatable&quot;: &quot;false&quot;,
+                        &quot;usesValuesFrom&quot;: [
+                             &quot;http://id.loc.gov/authorities/names&quot;
+                        ]
+                    }
+                 },
+                 {
+                    "propertyURI": "http://bibframe.org/vocab/authorizedAccessPoint",
+                    "propertyLabel": "Authorized access point",
+                    "type": &quot;literal"
+                 }
+                 <strong>{</strong>
+                    <strong>"propertyURI": "http://xmlns.com/foaf/0.1/name",</strong>
+                    <strong>"propertyLabel": "Name",</strong>
+                    <strong>"mandatory": &quot;true",</strong>
+                    <strong>"type": &quot;literal"</strong>
+                 <strong>}</strong>
+              ]
+           }
+       ]
+   } 
+}</pre>
+</div>
+<p class="caption" id="table2">Figure 5.2: Addition of a mandatory foaf:name property to the previous example.</p>
+<p class="backtotop"><a href="#skip_menu">Back to Top</a></p>
+<h3>5.3.Constraining the value (Resource)</h3>
+<p>The following BIBFRAME Profile expresses an expectation that the value be one of several possible resources. </p>
+<div class="msg-info">
+  <pre>...
+      "propertyTemplates": [
+         { ... },
+         {
+              "propertyURI": "http://bibframe.org/vocab/subject",
+              "propertyLabel": "Subject",
+              "type": &quot;resource",
+              <strong>"valueConstraint": {</strong>
+                   <strong>&quot;valueTemplateRefs&quot;: [ &quot;bfp:Agent:Person&quot;,</strong>
+                                          <strong>&quot;bfp:Agent:Organization&quot;,</strong>
+                                          <strong>&quot;bfp:Authority:Place&quot;</strong>										
+	                  <strong>]</strong>
+              <strong>}</strong>
+         },
+         { ... }
+      ]
+...</pre>
+</div>
+<p class="caption" id="table3">Figure 5.3: A BIBFRAME Profile expressing an expectation that the value be one of several possible resources.</p>
+<h3>5.4.Constraining the value (DataType)</h3>
+<p>The following BIBFRAME Profile expresses an expectation that the value be a literal with a particular data type (in this case ISO 8601 date). </p>
+<div class="msg-info">
+  <pre>...
+      "propertyTemplates": [
+         { ... },
+         {
+              "propertyURI": "http://bibframe.org/vocab/beginDate",
+              "propertyLabel": "Begin Date",
+              "type": &quot;literal",
+              <strong>"valueConstraint": {</strong>
+                   <strong>&quot;valueDataType&quot;: {
+</strong>                        <strong>&quot;dataTypeURI&quot;: &quot;http://bibframe.org/vocab/proposed/ISO8601&quot;,</strong>
+                        <strong>&quot;dataTypeLabel&quot;: &quot;ISO 8601&quot;,</strong>
+                        <strong>&quot;dataTypeLabelHint&quot;: &quot;ISO&quot;</strong>										
+	                  <strong>}</strong>
+              <strong>}</strong>
+         },
+         { ... }
+      ]
+...</pre>
+</div>
+<p class="caption" id="table4">Figure 5.4: A BIBFRAME Profile expresses an expectation that the value be a literal with a particular data type (ISO 8601 date). </p>
+<p class="backtotop"><a href="#skip_menu">Back to Top</a></p>
+<h3>5.5. Considerations</h3>
+<p>BIBFRAME Profiles do not require any particular level of expectations or constraints. Communities can deploy profiles using strict or relaxed mechanisms according to their needs. Overly strict constraints can reduce flexibility in applying and evolving vocabularies. Overly lax expectations can reduce levels of interoperability. </p>
+<p>It is up to each community to measure this tradeoff as needed. BIBFRAME Profiles do not override or replace the semantic constraints defined by RDF Schema or OWL (Web Ontology Language), but rather provide a means for a community to define the set of classes and properties that it requires. </p>
+<p class="backtotop"><a href="#skip_menu">Back to Top</a></p>
+<h2 class="dot-top" id="examples">6. Examples</h2>
+<p>The following sections provide examples of how communities of practice might   use BIBFRAME Profile to support various requirements.</p>
+
+  <H3>6.1. Default BIBFRAME Profile for simple editing interface.</H3>
+  <p>The following is an example of a default BIBFRAME Profile for simple editing   interface. Human readable labels for the display are extracted from the RDF   schema associated with the class identifiers.</p>
+  <div class="msg-info">
+    <pre>{
+  "Profile": {
+       "id": "bfp:Monograph:Book",
+       "title": "Monograph -- Book",
+       "description": "An example profile reflecting the cataloging practices of 
+                       example public library",
+       "date": "2014-05-01",
+       "contact": "Example Public Library cataloging help desk, info@examplelib.org",
+       "resourceTemplates": [
+          {
+             "id": "bfp:Work:Book",
+             "resourceLabel": "Book",
+             "resourceURI": "http://bibframe.org/vocab/Text",
+             "propertyTemplates": [
+                 {
+                    "propertyURI": "http://bibframe.org/vocab/title",
+                    "propertyLabel": "Title",
+                    "type": &quot;literal"
+                 },
+                 {
+                    "propertyURI": "http://bibframe.org/vocab/subject",
+                    "propertyLabel": "Subject",
+                    "type": &quot;resource",
+                    "valueConstraint": {
+                        &quot;valueTemplateRefs&quot;: [ &quot;bfp:Agent:Person&quot;,
+                                               &quot;bfp:Agent:Organization&quot;,
+                                               &quot;bfp:Authority:Place&quot;,											
+                                               &quot;bfp:Authority:ClassificationEntity&quot;,
+                                               &quot;bfp:Authority:Topic&quot;  ]
+                       }
+                 },
+                 {
+                    "propertyURI": "http://id.loc.gov/vocabulary/relators/aut",
+                    "propertyLabel": "Author&quot;,
+                    "type": &quot;resource",
+                    &quot;repeatable&quot;: &quot;true&quot;,
+                    "valueConstraint": {
+                        &quot;valueTemplateRefs&quot;: [ &quot;bfp:Agent:Person&quot;,
+                                               &quot;bfp:Agent:Organization&quot;,
+                                               &quot;bfp:Agent:Meeting&quot;  ]
+                    }
+                 }
+             ]
+         }
+      ]
+   }
+}</pre>
+  </div>
+  <p class="caption">Figure 6.1: Default BIBFRAME Profile  </p>
+  <p class="backtotop"><a href="#skip_menu">Back to Top</a>  </p>
+  <h3>6.2. RDA as a BIBFRAME Profile</h3>
+  <p>The following image reflects at a conceptual level how BIBFRAME Profiles may be used to express high level RDA's notion of Work, Expression, Instance and Manifestation as BIBFRAME classes.</p>
+  <p><img src="images/wemi-bibframe-profile-small.png" width="700" height="518"  alt=""/></p>
+
+  <p class="backtotop"><a href="#skip_menu">Back to Top</a>  </p>
+  <h3>6.3. VRA as a BIBFRAME Profile</h3>
+  <p>The following example fragment reflects VRA projected as BIBFRAME Profile.   Additional catalog-friendly labels have been added to the resources and   properties defined as a way of expressing VRA in a cataloging interface.</p>
+  <div class="msg-info">
+    <pre>{
+  "Profile": {
+       "id": "bfp:VRA",
+       "title": "VRA BIBFRAME Profile",
+       "description": "The following profile is a draft attempt at reflecting VRA core semantics<br>                       in the BIBFRAME / RDA model",
+       "date": "2014-10-31",
+       "contact": "Eric Miller, em@zepheira.com",
+       "resourceTemplates": [
+          {
+             "id": "bfp:work",
+             "resourceLabel": "Work",
+             "resourceURI": "http://bibframe.org/vocab/Work",
+             "propertyTemplates": [
+                 {
+                    "propertyURI": "http://bibframe.org/vocab/title",
+                    "propertyLabel": "Title"
+                 },
+                 {
+                    "propertyURI": "http://bibframe.org/vocab/alternativeTitle",
+                    "propertyLabel": "Alternative Title"
+                 },
+                 {
+                    "propertyURI": "http://id.loc.gov/vocabulary/relators/arc",
+                    "propertyLabel": "A:Architect&quot;,
+                    &quot;repeatable&quot;: &quot;true&quot;,
+                    "type": &quot;resource",
+                    "valueConstraint": {
+                        &quot;valueTemplateRefs&quot;: [ &quot;bfp:ULAN:Agent&quot; ]
+                       }
+                 },
+                 {
+                    "propertyURI": "http://id.loc.gov/vocabulary/relators/art",
+                    "propertyLabel": "A:Painter&quot;,
+                    &quot;repeatable&quot;: &quot;true&quot;,
+                    "type": &quot;resource",
+                    "valueConstraint": {
+                        &quot;valueTemplateRefs&quot;: [ &quot;bfp:ULAN:Agent&quot; ]
+                    }
+                 },
+                 {
+                    "propertyURI": "http://id.loc.gov/vocabulary/relators/scl",
+                    "propertyLabel": "A:Carver&quot;,
+                    &quot;repeatable&quot;: &quot;true&quot;,
+                    "type": &quot;resource",
+                    "valueConstraint": {
+                        &quot;valueTemplateRefs&quot;: [ &quot;bfp:ULAN:Agent&quot; ]
+                    }
+                 },
+                 {
+                    "propertyURI": "http://bibframe.org/vocabulary/vra/culturalContext",
+                    "propertyLabel": "Language&quot;,
+                    &quot;repeatable&quot;: &quot;true&quot;,
+                    "type": &quot;resource",
+                    "valueConstraint": {
+                        &quot;valueTemplateRefs&quot;: [ &quot;bp:language&quot; ]
+                    }
+                 },
+                 {
+                    "propertyURI": "http://bibframe.org/vocabulary/vra/beginDate",
+                    "propertyLabel": "Begin Date&quot;,
+                    &quot;type&quot;: &quot;literal&quot;,
+                    "valueConstraint": {
+                        &quot;valueDataType&quot;: {
+                           &quot;resourceURI&quot;: &quot;http://bibframe.org/vocab/proposed/ISO8601&quot;,
+                           &quot;valueLabel&quot;: &quot;ISO 8601&quot;,
+                           &quot;valueLabelHint&quot;: &quot;ISO&quot;
+                        }
+                    }
+                 },
+                 {
+                    "propertyURI": "http://bibframe.org/vocabulary/vra/consecratedDate",
+                    "propertyLabel": "Consecrated Date&quot;,
+                    &quot;repeatable&quot;: &quot;literal&quot;,
+                    "valueConstraint": {
+                        &quot;valueDataType&quot;: {
+                           &quot;resourceURI&quot;: &quot;http://bibframe.org/vocab/proposed/ISO8601&quot;,
+                           &quot;valueLabel&quot;: &quot;ISO 8601&quot;,
+                           &quot;valueLabelHint&quot;: &quot;ISO&quot;
+                        }
+                    }
+                 },
+                 {
+                    "propertyURI": "http://bibframe.org/vocab/description",
+                    "propertyLabel": "Description",
+                    &quot;type&quot;: &quot;literal&quot;
+                 },
+                 {
+                    "propertyURI": "http://bibframe.org/vocab/vra/inscription",
+                    "propertyLabel": "Inscription",
+                    &quot;type&quot;: &quot;literal&quot;
+                 },
+                 {
+                    "propertyURI": "http://bibframe.org/vocab/vra/location",
+                    "propertyLabel": "Location&quot;,
+                    &quot;repeatable&quot;: &quot;true&quot;,
+                    &quot;type&quot;: &quot;resource&quot;,
+                    "valueConstraint": {
+                        &quot;valueTemplateRefs&quot;: [&quot;bfp:TGN:Place&quot;]
+                    }
+                 },
+                 {
+                    "propertyURI": "http://bibframe.org/vocab/vra/material",
+                    "propertyLabel": "Material&quot;,
+                    &quot;repeatable&quot;: &quot;true&quot;,
+                    &quot;type&quot;: &quot;resource&quot;,
+                    "valueConstraint": {
+                        &quot;valueTemplateRefs&quot;: [&quot;bfp:AAT:Authority&quot;]
+                    }
+                 },
+                 {
+                    "propertyURI": "http://bibframe.org/vocab/vra/measurement",
+                    "propertyLabel": "Measurement",
+                    &quot;type&quot;: &quot;literal&quot;
+                 },
+                 {
+                    "propertyURI": "http://bibframe.org/vocab/relatedTo",
+                    "propertyLabel": "Relation&quot;,
+                    &quot;repeatable&quot;: &quot;true&quot;,
+                    &quot;type&quot;: &quot;resource&quot;,
+                    "valueConstraint": {
+                        &quot;valueTemplateRefs&quot;: [&quot;bf:work&quot;]
+                    }
+                 },
+                 {
+                    "propertyURI": "http://bibframe.org/vocab/vra/rights",
+                    "propertyLabel": "Rights&quot;,
+                    &quot;type&quot;: &quot;literal&quot;
+                 },
+                 {
+                    "propertyURI": "http://bibframe.org/vocab/vra/source",
+                    "propertyLabel": "Source&quot;,
+                    &quot;repeatable&quot;: &quot;true&quot;,
+                    &quot;type&quot;: &quot;resource&quot;,
+                    "valueConstraint": {
+                        &quot;valueTemplateRefs&quot;: [&quot;bfp:WebResource&quot;]
+                    }
+                 },
+                 {
+                    "propertyURI": "http://bibframe.org/vocab/vra/stateEdition",
+                    "propertyLabel": "State Edition&quot;
+                 },
+                 {
+                    "propertyURI": "http://bibframe.org/vocab/vra/stylePeriod",
+                    "propertyLabel": "Style / Period&quot;,
+                    &quot;repeatable&quot;: &quot;true&quot;,
+                    &quot;type&quot;: &quot;resource&quot;,
+                    "valueConstraint": {
+                        &quot;valueTemplateRefs&quot;: [&quot;bfp:AAT:Period&quot;]
+                    }
+                 },
+                 {
+                    "propertyURI": "http://bibframe.org/vocab/subject",
+                    "propertyLabel": "Subject&quot;,
+                    &quot;repeatable&quot;: &quot;true&quot;,
+                    &quot;type&quot;: &quot;resource&quot;,
+                    "valueConstraint": {
+                        &quot;valueTemplateRefs&quot;: [&quot;LCSAF:Topic&quot;]
+                    }
+                 },
+                 {
+                    "propertyURI": "http://bibframe.org/vocab/vra/technique",
+                    "propertyLabel": "Technique&quot;,
+                    &quot;repeatable&quot;: &quot;true&quot;,
+                    &quot;type&quot;: &quot;resource&quot;,
+                    "valueConstraint": {
+                        &quot;valueTemplateRefs&quot;: [&quot;bfp:AAT:Technique&quot;]
+                    }
+                 },
+                 {
+                    "propertyURI": "http://bibframe.org/vocab/vra/testref",
+                    "propertyLabel": "Reference&quot;
+                 },
+                 {
+                    "propertyURI": "http://bibframe.org/vocab/vra/workType",
+                    "propertyLabel": "Work Type&quot;,
+                    &quot;repeatable&quot;: &quot;true&quot;,
+                    &quot;type&quot;: &quot;resource&quot;,
+                    "valueConstraint": {
+                        &quot;valueTemplateRefs&quot;: [&quot;bfp:AAT:WorkType&quot;]
+                    }
+                 }
+             ]
+          },
+          {
+             "id": "bfp:depicts",
+             "resourceLabel": "Image",
+             "resourceURI": "http://bibframe.org/vocab/Image",
+             "propertyTemplates": [
+                 {
+                    "propertyURI": "http://bibframe.org/vocab/width",
+                    "propertyLabel": "Width",
+                    "type": "literal",
+                 },
+                 {
+                    "propertyURI": "http://bibframe.org/vocab/height",
+                    "propertyLabel": "Height",
+                    "type": "literal",
+                 }
+                    ]
+          },
+          {
+             "id": "ULAN:Agent",
+             "resourceLabel": "Agent",
+             "resourceURI": "http://bibframe.org/vocab/rda/Agent",
+             "propertyTemplates": [
+                 {
+                    "propertyURI": "http://bibframe.org/vocab/label",
+                    "propertyLabel": "Label",
+                    "type": "literal"
+                 }
+              ]
+          },
+          {
+             "id": "bfp:AAT:Authority",
+             "resourceLabel": "Authority",
+             "resourceURI": "http://bibframe.org/vocab/rda/Authority",
+             "propertyTemplates": [
+                 {
+                    "propertyURI": "http://bibframe.org/vocab/label",
+                    "propertyLabel": "Label",
+                    "type": "literal"
+                 }
+              ]
+          },
+          {
+             "id": "bfp:AAT:Period",
+             "resourceLabel": "Period",
+             "resourceURI": "http://bibframe.org/vocab/rda/Period",
+             "propertyTemplates": [
+                 {
+                    "propertyURI": "http://bibframe.org/vocab/label",
+                    "propertyLabel": "Label",
+                    "type": "literal"
+                 }
+              ]
+           },
+          {
+             "id": "bfp:AAT:Technique",
+             "resourceLabel": "Technique",
+             "resourceURI": "http://bibframe.org/vocab/rda/Technique",
+             "propertyTemplates": [
+                 {
+                    "propertyURI": "http://bibframe.org/vocab/label",
+                    "propertyLabel": "Label",
+                    "type": "literal"
+                 }
+              ]
+          },
+          {
+             "id": "bfp:AAT:WorkType",
+             "resourceLabel": "Type of Work",
+             "resourceURI": "http://bibframe.org/vocab/rda/WorkType",
+             "propertyTemplates": [
+                 {
+                    "propertyURI": "http://bibframe.org/vocab/label",
+                    "propertyLabel": "Label",
+                    "type": "literal"
+                 }
+              ]
+          },
+          {
+             "id": "bfp:TGN:Place",
+             "resourceLabel": "Place",
+             "resourceURI": "http://bibframe.org/vocab/rda/Place",
+             "propertyTemplates": [
+                 {
+                    "propertyURI": "http://bibframe.org/vocab/label",
+                    "propertyLabel": "Label",
+                    "type": "literal"
+                 }
+              ]
+           },
+          {
+             "id": "bp:language",
+             "resourceURI": "http://bibframe.org/vocab/LanguageEntity",
+             "resourceLabel": "Language",
+             "propertyTemplates": [
+                 {
+                    "mandatory": "true",
+                    "propertyURI": "http://bibframe.org/vocab/label",
+                                                &quot;propertyLabel&quot;: &quot;Label&quot;,
+                    "type": "literal"
+                 }
+              ]
+                 }
+      ]
+   }
+}</pre>
+  </div>
+  <p class="caption">Figure 6.3: VRA as a BIBFRAME Profile.</p>
+  <p class="backtotop"><a href="#skip_menu">Back to Top</a>  </p>
+  <h2 class="dot-top" id="grammar">8. Detailed Grammar of Profile</h2>
+  <p>The syntax descriptions in this section use the Extended Backus-Naur Form   notation to describe the essential BIBFRAME Profile syntax elements. The EBNF   here is condensed for human readability. The requirement that the property and   type names in end-tags exactly match the names in the corresponding start-tags   is implied by the XML rules. All syntactic flexibilities of JSON are also   implicitly included; e.g. whitespace rules, quoting using either single quote   (') or double quote (&amp;quote;), character escaping, case sensitivity, and   language tagging.</p>
+  <pre>Profile ::= id | title | description | date | contact | remark | resourceTemplates* 
+resourceTemplates ::= id | resourceURI | resourceLabel | remark | propertyTemplates* 
+propertyTemplates ::= propertyURI | propertyLabel | mandatory? | repeatable? | type |
+                      valueConstraint | remark 
+valueContraint ::= valueLanguage | languageURI | languageLabel | valueDataType | valueTemplateRefs |
+                      editable | defaultURI | remark 
+valueDataType ::= dataTypeURI | dataTypeLabel | dataTypeLabelHint | remark 
+valueTemplateRefs ::= editable | defaultURI | defaultLabel 
+mandatory ::= "true" | "false" 
+repeatable ::= "true" | "false" 
+editable ::= "true" | "false"
+id ::= URI 
+resourceURI ::= URI 
+propertyURI ::= URI 
+languageURI ::= URI 
+dataTypeURI ::= URI 
+valueTemplateRefs ::= URI 
+defaultURI ::= URI 
+type ::= literal | resource 
+literal ::= valueLanguage | langaugeURI | languageLabel | valueDataType 
+resource ::= valueTemplateRefs | editable | defaultURI </pre>
+
+  <h2 class="dot-top" id="implmentation">8. Implementation </h2>
+
+    <p>To date, cataloging input tools required advance knowledge of the potential   input fields and function. Implementing BIBFRAME Profiles specific to   communities creates an environment that is organic and able to grow/evolve   outside of the cataloging tool. As BIBFRAME Profiles contain the description,   statements and constraints specific to a community, it carries the necessary   descriptions for the community. The cataloging tool may be agnostic the   community and simply pull in the BIBFRAME Profile needed for the cataloging   exercise. By pointing at the BIBFRAME Profile, the tool is always presenting the   most recent version of the BIBFRAME Profile to the user and is able to switch   between BIBFRAME Profile without changing the fundamental code of the tool   itself.  </p>
+    <p class="backtotop"><a href="#skip_menu">Back to Top</a>    </p>
+    <h2 class="dot-top" id="history">9. History and Relationship to Other Efforts</h2>
+           <p>BIBFRAME Profiles were designed / based / influenced by various discussions   related to how best to loosely "package" RDF vocabularies to allow for defining   vocabulary profiles reflecting best practices. Many of these design decisions   were based on early experience / experimentation building the OCLC CORC   (Cooperative Online Resource Cataloging) toolkit, along with various discussions   that resulted in early Dublin Core specifications including DCMI's "Application   profiles" and "Description Set Profiles". BIBFRAME Profiles in particular mirror   some of the development of the DCMI Description Set Profiles, but differs in the   alignment with RDF rather than DCAM and in minimizing the contraint capability   that does not create conflicts with RDF Schema and / or OWL. Various W3C   discussions, along with further Zepheira implementation related to implementing   RDF editing platforms have also contributed to this design.</p>
+           <p class="backtotop"><a href="#skip_menu">Back to Top</a></p>
+          <h2 class="dot-top" id="credits">10. Credits</h2>
+          <p>This document was drafted by the Zepheira team of Eric Miller, Vicki Mueller, Uche Ogbuji, and Mark Baker; with additional editing by Kevin Ford, Library of Congress.</p>
+      <p>This document is a component of the Bibliographic Framework Initiative project.   For more information, see <A href="http://lcnetdev.github.io/bibframe/">lcnetdev.github.io/bibframe</A>.</p>
+      <p class="backtotop"><a href="#skip_menu">Back to Top</a></p>
+    </div>
+    <div class="clear"><!-- --></div>
+    </div><!-- end id:main_body -->
+  </div><!-- end id:content -->
+  <!--#include virtual="/cdn/html/locfoot.html"-->
+</div><!-- end id:container -->
+</body>
+</html>

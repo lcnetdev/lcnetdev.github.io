@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js">
+<head>
+<title>BIBFRAME Tools and Downloads (BIBFRAME - Bibliographic Framework Initiative, Library of Congress)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="vocabulary, working documents, bibframe, bibliographic framework, transition, initiative, marc, cataloging, library of congress" />
+<meta name="description" content="As tools and demonstrations become available, they will be shared here. Currently available are the BIBFRAME Profile Editor, BIBFRAME Catalog, BIBFRAME Editor, Comparison and Transformation Services, and an RDF download of the full Vocabulary." />
+
+<link rel="dc.relation.isPartOf" href="http://lcnetdev.github.io/bibframe/" title="BIBFRAME - Bibliographic Framework Initiative (Library of Congress)" />
+<meta name="dc.subject" content="bibliographic framework" />
+<meta name="dc.subject" content="bibframe tools" />
+<meta name="dc.subject" content="bibframe" />
+<meta name="dc.subject" content="downloads" />
+<meta name="dc.type" content="webpage" />
+<meta name="dc.identifier" content="http://lcnetdev.github.io/bibframe/tools/index.html" />
+<meta name="dc.language" content="en" />
+
+<link type="text/css" media="screen" rel="stylesheet" href="../css/styles.css" />
+<link type="text/css" media="print" rel="stylesheet" href="/css/loc_print_v2.css" />
+<!--[if lte IE 7]><link type="text/css" media="screen" rel="stylesheet" href="/css/loc_lte_ie6.css" /><![endif]-->
+<!--#include virtual="/bibframe/include/share-tool.html"-->
+<script type="text/javascript" src="http://cdn.loc.gov/js/lib/modernizr-1.5.min.js"></script></head>
+<body>
+<a id="skip" href="#skip_menu">skip navigation</a>
+<div id="container">
+  <!--#include virtual="../include/branding.html"-->
+  <!--#include virtual="/cdn/html/lochead.html"-->
+  <div id="crumb_nav"><a href="http://lcnetdev.github.io">The Library of Congress</a> &gt; <a href="/bibframe/">BIBFRAME</a> &gt; Tools &amp; Downloads</div>
+  <div id="content">
+    <!--#include virtual="../include/leftnav.html"-->
+    <div id="main_body">
+    	<!--#include virtual="../include/share-tool-bar.html"-->
+      <div id="page_head"><span style="width: 100%;"><a name="skip_menu"></a></span>
+        <h1>BIBFRAME Tools &amp; Downloads</h1>
+      </div>
+      <p>As tools and demonstrations become available, they will be  shared. The following are currently available:</p>
+<h2 class="dot-top"> Profile Tool</h2>
+<ul class="std">
+  <li><a href="https://github.com/lcnetdev/profile-edit">BIBFRAME Profile Editor</a>  (Download)<br />
+    This software is designed to  enable the configuration of profiles based on the profile specification <a href="http://lcnetdev.github.io/bibframe/docs/bibframe-profiles.html">BIBFRAME Profiles: Introduction and Specification </a>. The resulting RDF profile may be used to  create templates in BIBFRAME editors. It  was written under contract to the Library of Congress by <em>Smart Software  Solutions, Inc.</em> This software is open  source and may be freely downloaded and used.</li>
+</ul>
+<h2 class="dot-top">Search Tools</h2>
+      <ul class="std">
+        <li><a href="https://github.com/jermnelson/bibframe-catalog/">BIBFRAME</a> Catalog (Download)<br />
+        The BIBFRAME Catalog is a search  system for experimenting with BIBFRAME data, written under contract to the  Library of Congress by Aaron Schmidt and Jeremy Nelsen of <a href="http://weareinflux.com"><em>Influx Library User Experience</em></a>. The software  is a proof of concept with a working demo at <a href="http://bibcat.org">http://bibcat.org</a>.  The solution is still being developed by Influx and new versions will be  uploaded to github over the next few months. This software is open source and may  be feely downloaded and used. The application follows a &ldquo;pull platform&rdquo;  approach with django-based UI, an open-source middleware project called a  Semantic Server, which provides a Rest APIs to a digital repository (Fedora  4.x), search server (Elasticsearch) and triplestore (Fuseki) that allows for  CRUD management of RDF resources.</li>
+        <li><a href="http://www.indexdata.com/mp-xquery">Metaproxy-XQuery</a> (Download)<br />
+        MP-XQuery is a tool that converts  MARCXML records, retrieved via SRU/Z39.50,&nbsp;to BIBFRAME.  It&nbsp;is a Metaproxy module which uses <a href="https://github.com/lcnetdev/marc2bibframe">MARCXML to BIBFRAME  Transformation</a> code to convert (via XQuery) the MARCXML records&nbsp;to  BIBFRAME, on the fly as part of&nbsp;retrieval.  MP-XQuery uses the Zorba query&nbsp;processor.&nbsp;  The SRU request parameter &ldquo;recordSchema=bibframe&rdquo; must be included in the SRU  request to obtain BIBFRAME output.  This  module was developed by <em><a href="http://www.indexdata.com">IndexData</a></em> under  contract to the Library of Congress, and is available open source for download.  </li>
+        <li><a href="http://www.indexdata.com/mp-sparql">Metaproxy-SPARQL</a> (Download)<br />
+        MP-SPARQL&nbsp;is a Metaproxy  module that converts SRU/Z39.50 queries to SPARQL in order to search triplestore backends  such as Virtuoso, 4Store, etc.  By adding  the cql2rpn + sru_z3950 filters in front, the system can offer SRU&nbsp;access  and return BIBFRAME output.&nbsp; This module was developed by <a href="http://www.indexdata.com"><em>IndexData</em></a> under contract to the Library of  Congress and is available for open source for download.   </li>
+      </ul>
+      <h2 class="dot-top">BIBFRAME Editor (BFE)</h2>
+      <p>For input of data  directly into BIBFRAME, try out the demo or download and experiment</p>
+<ul class="std">
+  <li><a href="http://bibframe.org/tools/editor/">BIBFRAME Editor</a> (Demonstration       site)<br />
+    This site is for demonstration  purposes. It enables recording of a description using the BIBFRAME vocabulary  but at this time does not store the input. For more information, see <a href="http://lcnetdev.github.io/bibframe/implementation/bfe-howtouse.html">Using  the BIBFRAME Editor (BFE)</a>.</li>
+  <li><a href="https://github.com/lcnetdev/bfe/">BIBFRAME Editor</a>  (Download)<br />
+    This  link is to the freely downloadable (open source) software for the Editor via  Github. Please read the documentation for the Editor before attempting to  experiment with the software.</li>
+  </ul>
+<h2 class="dot-top">MARC to  BIBFRAME Transformation Tools</h2>
+<p>There are two  tools designed to help evaluate MARC Bibliographic data in the BIFRAME model.  The transformation software that powers these tools is also available for  download.</p>
+<ul class="std">
+  <li><a href="http://bibframe.org/tools/compare/">Comparison Service</a> (Demonstration site) - <em>compares       a MARCXML record and its BIBFRAME representation</em><br />
+    Enter the bibliographic identifier (MARC BIB  field 001) of a Library of Congress MARC record to view a before and after  presentation of a MARC record from the Library of Congress's database as  BIBFRAME resources.</li>
+  <li><a href="http://bibframe.org/tools/transform/start">Transformation Service</a> (Demonstration site) - <em>transforms submitted MARCXML records to BIBFRAME data</em><br />
+    Submit your own MARC Bibliographic records (as  MARC/XML) and view them as BIBFRAME resources in Exhibit. The resulting data  are also available for download.</li>
+  <li><a href="https://github.com/lcnetdev/marc2bibframe">MARCXML to BIBFRAME       Transformation software</a>  (Download)<br />
+    The  transformation software that powers the above services and other tools is also  available for download.</li>
+</ul>
+<h2 class="dot-top">BIBFRAME Vocabulary Tables</h2>
+<ul type="disc" class="std">
+  <li><a href="http://bibframe.org/vocab.rdf">BIBFRAME Vocabulary in RDF</a>        (Download)    </li>
+</ul>
+    </div>
+
+      <div class="clear"><!-- --></div>
+    </div><!-- end id:main_body -->
+  </div><!-- end id:content -->
+  <!--#include virtual="/cdn/html/locfoot.html"-->
+<!-- end id:container -->
+</body>
+</html>

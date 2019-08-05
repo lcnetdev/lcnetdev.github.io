@@ -10,7 +10,7 @@
 @import url(../../css/sru-base.css);
 </style>
 <meta http-equiv="Content-Language" content="en-us">
-<link rel="shortcut icon" href="http://www.loc.gov:8081/standards/sru/images/favicon.ico">
+<link rel="shortcut icon" href="http://lcnetdev.github.io:8081/standards/sru/images/favicon.ico">
 <!-- InstanceBeginEditable name="head" -->
 <meta name="keywords" content="marc context set sru version 1.2 specifications sru search retrieval url cql zeerex standards library congress">
 <meta name="description" content="MARC Context Set. SRU is a standard XML-focused search protocol for Internet search queries, utilizing CQL (Contextual Query Language), a standard syntax for representing queries. Standards, The Library of Congress.">
@@ -33,7 +33,7 @@
 <input type="hidden" name="rq" value="0">
 <input type="hidden" name="qc" value="">
 <table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
-  <div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../../index.html">SRU</a></div></td>
+  <div class="sitenav"><a href="http://lcnetdev.github.io/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://lcnetdev.github.io/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../../index.html">SRU</a></div></td>
 <td width="116"><select name="qp" tabindex="1">
 <option value="url:/sru" selected>SRU Web Pages</option>
 <option value="url:/standards url:/ead url:/marc">Standards Pages</option>
@@ -54,7 +54,7 @@
       <h2>Version 1.0<br>
       July 22, 2009 </h2>
       <p>The <em>bib context set</em> defines bibliographic indexes and modifiers. </p>
-      <p>The indexes and modifiers are based on <a href="http://www.loc.gov/mods">MODS</a>, i.e. MODS is used for reference semantics; this does not
+      <p>The indexes and modifiers are based on <a href="http://lcnetdev.github.io/mods">MODS</a>, i.e. MODS is used for reference semantics; this does not
         presume that the data being searched is MODS.</p>
       <ul>
         <li><strong> URI for this context set</strong>: <span class="selected">info:srw/cql-context-set/1/bib-v1</span></li>
@@ -62,7 +62,7 @@
       </ul>
       <p><span class="selected"><a href="#indexes"></a></span><a href="#indexes">Indexes 
         </a> | <a href="#relations">Relations</a> | <a href="#relmods">Relation Modifiers</a> | <a href="#relquals">Relation Qualifiers</a> | <a href="#boolmods">Boolean Modifiers</a> | <a href="#summary">Summary Table</a> | <a href="#examples">Examples</a> </p>
-      <p>See also the <a href="http://www.loc.gov/standards/sru/resources/cql-bibliographic-profile.html">CQL Profile for Bibliographic Searching</a></p>
+      <p>See also the <a href="http://lcnetdev.github.io/standards/sru/resources/cql-bibliographic-profile.html">CQL Profile for Bibliographic Searching</a></p>
       <hr/>
       <h2><a name="indexes"></a>Indexes</h2>
       <h3><strong>Title Indexes </strong></h3>
@@ -143,7 +143,7 @@
       <ul><li>bib.date</li>
         <li> bib.nameAuthority</li>
         <li>bib.role</li>
-        <li>bib.roleAuthority (<strong>default</strong> <a href="http://www.loc.gov/marc/sourcecode/relator/relatorlist.html">marcrelator</a>)</li>
+        <li>bib.roleAuthority (<strong>default</strong> <a href="http://lcnetdev.github.io/marc/sourcecode/relator/relatorlist.html">marcrelator</a>)</li>
       </ul>
       <h3><br>
       Modifiers for subject indexes </h3>
@@ -188,7 +188,7 @@
                     </ul>
                   </ul>
                   <p>For these values, the actual  parameter value used may be the URI or it may be the term itself. The rule is  that whenever the parameter value does not take the form of a URI, then it is  assumed to be prefixed by the string &lsquo;info:srw/resultCountPrecision/1/&rsquo;.&nbsp;&nbsp; <br>
-                    In these URIs,&nbsp; the path component &lsquo;1&rsquo; is the authority  component; &lsquo;1&rsquo; refers to the SRU Maintenance Agency.&nbsp; Other authorities will be registered upon  request. See&nbsp; <a href="http://www.loc.gov/standards/sru/resources/infoURI.html">http://www.loc.gov/standards/sru/resources/infoURI.html</a> for details.&nbsp; In this manner additional  values may be defined. The &lsquo;info&rsquo; URI mechanism is not intended to preclude use  of other types of URIs to represent values of this parameter.                  </p>
+                    In these URIs,&nbsp; the path component &lsquo;1&rsquo; is the authority  component; &lsquo;1&rsquo; refers to the SRU Maintenance Agency.&nbsp; Other authorities will be registered upon  request. See&nbsp; <a href="http://lcnetdev.github.io/standards/sru/resources/infoURI.html">http://lcnetdev.github.io/standards/sru/resources/infoURI.html</a> for details.&nbsp; In this manner additional  values may be defined. The &lsquo;info&rsquo; URI mechanism is not intended to preclude use  of other types of URIs to represent values of this parameter.                  </p>
             </li>
           </ul>
         </li>
@@ -200,7 +200,7 @@
           <strong>Values:</strong><br>
           <ul>
               <li>w3cdtf (see <a href="http://www.w3.org/TR/NOTE-datetime">http://www.w3.org/TR/NOTE-datetime</a>).</li>
-              <li>edtf (see <a href="http://www.loc.gov/standards/datetime/">http://www.loc.gov/standards/datetime/</a>). 
+              <li>edtf (see <a href="http://lcnetdev.github.io/standards/datetime/">http://lcnetdev.github.io/standards/datetime/</a>). 
                 This is the default value. </li>
           </ul>
         </li>
@@ -236,7 +236,7 @@
           <br>
           <strong>Values:</strong><br>
           <ul>
-              <li>modsAudience (See  <a href="http://www.loc.gov/marc/sourcecode/target/targetlist.html">http://www.loc.gov/marc/sourcecode/target/targetlist.html</a>). This is the default value. </li>
+              <li>modsAudience (See  <a href="http://lcnetdev.github.io/marc/sourcecode/target/targetlist.html">http://lcnetdev.github.io/marc/sourcecode/target/targetlist.html</a>). This is the default value. </li>
           </ul>
         </li>
       </ul>
@@ -267,7 +267,7 @@
         <li>marcCC (country code)</li>
         <li>marcCN          (country name)</li>
       </ul>
-      <p>See <a href="http://www.loc.gov/marc/countries/">http://www.loc.gov/marc/countries/</a></p>
+      <p>See <a href="http://lcnetdev.github.io/marc/countries/">http://lcnetdev.github.io/marc/countries/</a></p>
       <h3>Modifiers for language indexes</h3>
       <em>Note that this context set does not define indexes for language. These modifiers may be used for example with dc.language.</em>
       <ul>
@@ -321,7 +321,7 @@
             <li> bib.nameAuthority</li>
             <li>bib.role</li>
             <li>bib.roleAuthority<br>
-              default <a href="http://www.loc.gov/marc/sourcecode/relator/relatorlist.html">marcrelator</a></li>
+              default <a href="http://lcnetdev.github.io/marc/sourcecode/relator/relatorlist.html">marcrelator</a></li>
           </ul></td>
         </tr>
         <tr>
@@ -446,14 +446,14 @@
         </tr>
       </table>
       <h2><a name="examples"> </a>Examples</h2>
-      <p>For detailed examples see the <a href="http://www.loc.gov/standards/sru/resources/cql-bibliographic-profile.html">Bibliographic Profile for CQL</a>. </p>
+      <p>For detailed examples see the <a href="http://lcnetdev.github.io/standards/sru/resources/cql-bibliographic-profile.html">Bibliographic Profile for CQL</a>. </p>
       <!-- InstanceEndEditable -->
       <div id="breadcrumbs-bottom"><a href="../../index.html">sru home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="breadcrumb-bottom" --><a href="../../resources/index.html">resources</a>&nbsp;&raquo; bib
           context set <!-- InstanceEndEditable --></div>
 </td></tr>
 </table>
-<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://www.loc.gov/">The 
-        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../../index.html">SRU</a></div>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://lcnetdev.github.io/">The 
+        Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://lcnetdev.github.io/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="../../index.html">SRU</a></div>
       <br>
   <span class="sitenav">
   <!-- #BeginDate format:Am1 -->July 22, 2009<!-- #EndDate -->

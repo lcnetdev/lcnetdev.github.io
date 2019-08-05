@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" class="no-js">
+<head>
+<title>Parts: Topics and Issues (BIBFRAME - Bibliographic Framework Initiative, Library of Congress)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="authorities, topics, issues, listserv, bibframe, bibliographic framework, transition, initiative, marc, cataloging, library of congress" />
+<meta name="description" content="Authorities: Topics and Issues (BIBFRAME - Bibliographic Framework Initiative, Library of Congress). On the BIBFRAME listserv there is interesting an valuable discussion on a wide variety of BIBFRAME topics. BIBFRAME Topics and Issues attempts to break down the discussion into a descrete list of topics, to describe the issues pertaining to each topic, and to record conclusions, agreements, and remaining areas of disagreement. Each topic entry will remain open and when there are new issues, conclusions, or areas of agreement or disagreement to report, the entry will be updated." />
+
+<link rel="dc.relation.isPartOf" href="http://lcnetdev.github.io/bibframe/" title="BIBFRAME - Bibliographic Framework Initiative (Library of Congress)" />
+<meta name="dc.subject" content="bibliographic framework" />
+<meta name="dc.subject" content="BIBFRAME" />
+<meta name="dc.subject" content="topics and issues" />
+<meta name="dc.subject" content="authorities" />
+<meta name="dc.type" content="webpage" />
+<meta name="dc.identifier" content="http://lcnetdev.github.io/bibframe/topics/authorities.html" />
+<meta name="dc.language" content="en" />
+
+<link type="text/css" media="screen" rel="stylesheet" href="../css/styles.css" />
+<link type="text/css" media="print" rel="stylesheet" href="/css/loc_print_v2.css" />
+<!--[if lte IE 7]><link type="text/css" media="screen" rel="stylesheet" href="/css/loc_lte_ie6.css" /><![endif]-->
+<!--#include virtual="/bibframe/include/share-tool.html"-->
+<script type="text/javascript" src="http://cdn.loc.gov/js/lib/modernizr-1.5.min.js"></script></head>
+<body>
+<a id="skip" href="#skip_menu">skip navigation</a>
+<div id="container">
+  <!--#include virtual="../include/branding.html"-->
+  <!--#include virtual="/cdn/html/lochead.html"-->
+  <div id="crumb_nav"><a href="http://lcnetdev.github.io">The Library of Congress</a> &gt; <a href="/bibframe/">BIBFRAME</a> &gt; <a href="index.html">Topics and Issues</a> &gt; Language of Part</div>
+  <div id="content">
+    <!--#include virtual="../include/leftnav.html"-->
+    <div id="main_body">
+    	<!--#include virtual="../include/share-tool-bar.html"-->
+            <div id="page_head"><span style="width: 100%;"><a name="skip_menu"></a></span>
+        <h1>Parts<br />
+          <span>BIBFRAME Topics and Issues</span></h1>
+      </div>
+ <div id="main_nav"><a href="index.html" class="ar-back">Back to Topics and Issues Home</a></div>
+      <p>A BIBFRAME Work or Instance might have  various parts, for example an abstract or libretto. While each of these various parts is a component of the Work or Instance, it may be distinguishable as a resource itself, and as such we may be able to make statements specifically about that part. </p>
+      <p>For example a book written in English might have an abstract written in French. BIBFRAME currently handles this by allowing  the property bf:language to indicate what part of the Work the language applies  to: property bf:languageOfPart is a property of bf:Language.  (Its value is a string, for example &lsquo;abstract'.)   It is suggested that this be treated instead by using properties hasPart and isPartOf, as illustrated in the following example.</p>
+      <table width="700" border="0" align="center">
+        <tr>
+          <td bgcolor="#FCFED8"><p><strong>Example 1.</strong></p>
+            <p>&lt;http://bibframe.example.con/works/books/goldfinch&gt; a  bf:Work ;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bf:title &quot;The Goldfinch&quot; ;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bf:language  &lt;http://id.loc.gov/vocabulary/iso639-1/en&gt;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bf:hasPart&nbsp;&lt;http://bibframe.example.con/workParts/abstracts/goldfinch&gt; . </p>
+            <p>&lt;http://bibframe.example.con/workParts/abstracts/goldfinch&gt;  a&nbsp;bf:Work ; <br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bf:title &quot;The Goldfinch - Abstract&quot; ;<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bf:isPartOf &nbsp;&lt; http://bibframe.example.con/works/books/goldfinch &gt;. <br />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bf:language  &lt;http://id.loc.gov/vocabulary/iso639-1/fr&gt;  .</p></td>
+        </tr>
+      </table>
+      <p>Other examples where a statement applies to a specific part of a resource:</p>
+      <ul>
+        <li>A resource might have a section of photographs. The intended audience (bf:intendedAudience) for these photographs might be &quot;general public&quot;. However this intended audience designation applies only to the photographs and not the resource at large. </li>
+        <li>A motion picture may have, as a part, a negative (or internegative) for which the extent (bf:extent) is to be described, for example &quot;1 reel of 1 (37 ft.)&quot;. The extent applies only to the negative. </li></ul>
+      <p>Questions:</p>
+      <ol>
+        <li>In Example 1, the abstract is represented as a Work. Should it be represented as such or should a class bf:Part be defined?</li>
+        <li>In this example the type of part - abstract - is discernable only because it is included in the title, and it is most likely not machine discernible. Is this sufficient? If class bf:Part is defined (as suggested in question 1) should subclasses be defined for various part types?</li>
+        <li>Although many parts can be represented as a separate resource (an abstract, table of contents, libretto), there are some parts that cannot, for example sung (or spoken) text, subtitles, and captions. Is it necessary to address these, and if so, how?</li>
+      </ol>
+      <p><strong>Last Updated: </strong>
+      <!-- #BeginDate format:Am1 -->October 17, 2014<!-- #EndDate --></p>
+      <div class="clear"><!-- --></div>
+    </div><!-- end id:main_body -->
+  </div><!-- end id:content -->
+  <!--#include virtual="/cdn/html/locfoot.html"-->
+</div><!-- end id:container -->
+</body>
+</html>

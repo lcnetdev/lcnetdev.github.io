@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://purl.org/dc/elements/1.1/" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" exclude-result-prefixes="marc">
-	<xsl:import href="http://www.loc.gov/standards/marcxml/xslt/MARC21slimUtils.xsl"/>
+<xsl:stylesheet version="1.0" xmlns:marc="http://lcnetdev.github.io/MARC21/slim" xmlns:srw_dc="info:srw/schema/1/dc-schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://purl.org/dc/elements/1.1/" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" exclude-result-prefixes="marc">
+	<xsl:import href="http://lcnetdev.github.io/standards/marcxml/xslt/MARC21slimUtils.xsl"/>
 	<xsl:output method="xml" indent="yes" encoding="UTF-8"/>
 	<!-- modification log 
                JR 08/21/2007:   Fixed a couple of Dublin Core Links
@@ -15,7 +15,7 @@
 -->
 	<xsl:template match="/">
 		<xsl:if test="marc:collection">
-			<srw_dc:dcCollection xmlns:srw_dc="info:srw/schema/1/dc-schema" xsi:schemaLocation="info:srw/schema/1/dc-schema http://www.loc.gov/standards/sru/resources/dc-schema.xsd ">
+			<srw_dc:dcCollection xmlns:srw_dc="info:srw/schema/1/dc-schema" xsi:schemaLocation="info:srw/schema/1/dc-schema http://lcnetdev.github.io/standards/sru/resources/dc-schema.xsd ">
 				<xsl:for-each select="marc:collection">
 					<xsl:for-each select="marc:record">
 						<srw_dc:dc>
@@ -26,7 +26,7 @@
 			</srw_dc:dcCollection>
 		</xsl:if>
 		<xsl:if test="marc:record">
-			<srw_dc:dc xmlns:srw_dc="info:srw/schema/1/dc-schema" xsi:schemaLocation="info:srw/schema/1/dc-schema http://www.loc.gov/standards/sru/resources/dc-schema.xsd">
+			<srw_dc:dc xmlns:srw_dc="info:srw/schema/1/dc-schema" xsi:schemaLocation="info:srw/schema/1/dc-schema http://lcnetdev.github.io/standards/sru/resources/dc-schema.xsd">
 				<xsl:apply-templates select="marc:record"/>
 			</srw_dc:dc>
 		</xsl:if>

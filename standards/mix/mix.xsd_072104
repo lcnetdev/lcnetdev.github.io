@@ -5,7 +5,7 @@
 
 <!--  4/06/04 added image/x-mrsid-image to list of allowable mime types -->
 
-<xsd:schema targetNamespace="http://www.loc.gov/mix/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.loc.gov/mix/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="0.2">
+<xsd:schema targetNamespace="http://lcnetdev.github.io/mix/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://lcnetdev.github.io/mix/" elementFormDefault="qualified" attributeFormDefault="unqualified" version="0.2">
 	<xsd:element name="mix">
 		<xsd:annotation>
 			<xsd:documentation>NISO Data Dictionary: Technical Metadata for Digital Still Images</xsd:documentation>

@@ -4,7 +4,7 @@
 <xsl:namespace-alias stylesheet-prefix="outputxsl" result-prefix="xsl"/>
 
 <xsl:template match="MarcFields">
-	<outputxsl:stylesheet version="1.0" xmlns="http://www.loc.gov/MARC" xmlns:xsi="http://www.w3.org/1999/XSL/Transform">
+	<outputxsl:stylesheet version="1.0" xmlns="http://lcnetdev.github.io/MARC" xmlns:xsi="http://www.w3.org/1999/XSL/Transform">
 		<xsl:apply-templates select="Field"/>
 	</outputxsl:stylesheet>
 </xsl:template>

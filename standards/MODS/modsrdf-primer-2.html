@@ -29,19 +29,19 @@
 <body link="#000099" vlink="#0066CC" bgcolor="#FFFFFF">
 <table class="layout2">
   <tr>
-    <td class="top-breadcrumbs"><a id="skip" href="#skip_menu">&nbsp;</a><a href="http://www.loc.gov/">The Library of Congress</a> &raquo; <a href="http://www.loc.gov/standards/">Standards</a> &raquo; <a href="http://www.loc.gov/mods/">MODS Official Web Site</a></td>
+    <td class="top-breadcrumbs"><a id="skip" href="#skip_menu">&nbsp;</a><a href="http://lcnetdev.github.io/">The Library of Congress</a> &raquo; <a href="http://lcnetdev.github.io/standards/">Standards</a> &raquo; <a href="http://lcnetdev.github.io/mods/">MODS Official Web Site</a></td>
   </tr>
   <tr>
-    <td><a href="http://www.loc.gov/standards/mods/"><img src="images/mods-bar-760.gif" alt="Metadata Object Description Schema: Official Web Site" width="760" height="41" border="0"></a></td>
+    <td><a href="http://lcnetdev.github.io/standards/mods/"><img src="images/mods-bar-760.gif" alt="Metadata Object Description Schema: Official Web Site" width="760" height="41" border="0"></a></td>
   </tr>
   <tr>
-    <td><a href="http://www.loc.gov/standards/mods/">HOME</a> &gt;&gt; <!-- InstanceBeginEditable name="topbreadcrumb" -->MODS RDF Primer Part 2 <!-- InstanceEndEditable --><a name="skip_menu"></a><!-- InstanceBeginEditable name="content" -->
+    <td><a href="http://lcnetdev.github.io/standards/mods/">HOME</a> &gt;&gt; <!-- InstanceBeginEditable name="topbreadcrumb" -->MODS RDF Primer Part 2 <!-- InstanceEndEditable --><a name="skip_menu"></a><!-- InstanceBeginEditable name="content" -->
 
           <h2 align="center"><strong>MODS RDF Ontology:</strong></h2>
           <h1 align="center"> <strong>Primer</strong> Part 2: MODS XML to RDF Conversion </h1>
 <hr/>
 <p><strong>Abstract </strong></p>
-<p>This is a companion document to <a href="http://www.loc.gov/mods/modsrdf-primer.html"><strong><em>MODS  RDF Ontology: Primer</em></strong>.</a>   It  describes how a MODS XML record  is transformed into  RDF/XML according to the MODS RDF ontology. </p>
+<p>This is a companion document to <a href="http://lcnetdev.github.io/mods/modsrdf-primer.html"><strong><em>MODS  RDF Ontology: Primer</em></strong>.</a>   It  describes how a MODS XML record  is transformed into  RDF/XML according to the MODS RDF ontology. </p>
 <hr/>
 <h2>Contents</h2>
 <p><a href="#intro">Introduction</a></p>
@@ -68,16 +68,16 @@
 <HR/>
 <h2><a name="intro"></a>Introduction</h2>
 <p>The document <strong><em>MODS RDF Ontology:  Primer</em></strong> describes MODS RDF, an RDF ontology for MODS, which may be used  to create born-RDF MODS, or it may be used to create an RDF description  corresponding to an existing MODS XML record.   This document addresses the   latter.   <br>
-  The description below assumes that  there is a MODS XML record, and describes how that record is transformed into a  MODS RDF description (with XML serialization) according to the MODS RDF  ontology.  A stylesheet for this  transformation is avalable at <u><a href="http://www.loc.gov/mods/modsrdf/modsrdf.xsl">http://www.loc.gov/mods/modsrdf/modsrdf.xsl </a></u></p>
+  The description below assumes that  there is a MODS XML record, and describes how that record is transformed into a  MODS RDF description (with XML serialization) according to the MODS RDF  ontology.  A stylesheet for this  transformation is avalable at <u><a href="http://lcnetdev.github.io/mods/modsrdf/modsrdf.xsl">http://lcnetdev.github.io/mods/modsrdf/modsrdf.xsl </a></u></p>
 <p>Examples of MODS  XML records and their corresponding RDF descriptions are at:<br>
-  <a href="http://www.loc.gov/standards/mods/modsrdf/examples/">http://www.loc.gov/standards/mods/modsrdf/examples/</a></p>
+  <a href="http://lcnetdev.github.io/standards/mods/modsrdf/examples/">http://lcnetdev.github.io/standards/mods/modsrdf/examples/</a></p>
 <hr/>
 <h2>  <a name="topLevelTriple"></a>Top Level Triple</h2>
 <p>The top level RDF triple for a MODS RDF description is of  the form:</p>
 <h4>  {MODS resource}    is-a    #ModsResource</h4>
 <p>Where {MODS resource} is the resource  described.  #ModsResource is a blank node  and becomes the subject for subsequent triples corresponding to top-level MODS  elements.  <br>
   {MODS resource}  is of  the form:<br>
-      <a href="http://www.loc.gov/mods/rdf/v1#{someIdentifier}">http://www.loc.gov/mods/rdf/v1#{someIdentifier}</a> <br>
+      <a href="http://lcnetdev.github.io/mods/rdf/v1#{someIdentifier}">http://lcnetdev.github.io/mods/rdf/v1#{someIdentifier}</a> <br>
   The MODS XML to RDF stylesheet assigns a value to {someIdentifier} as  follows:</p>
 <ul>
   <li><span dir="LTR">If the XML record includes an  identifier with type ‘modsRDFIdentifier’, the value of that identifier is used.</span></li>
@@ -90,11 +90,11 @@
   </tr>
 </table>
 <p>  then the top-level triple will be:<br>
-  <a href="http://www.loc.gov/mods/rdf/v1#xyz">http://www.loc.gov/mods/rdf/v1#xyz</a> is-a    #ModsResource<br>
+  <a href="http://lcnetdev.github.io/mods/rdf/v1#xyz">http://lcnetdev.github.io/mods/rdf/v1#xyz</a> is-a    #ModsResource<br>
   In XML:<br>
-  &lt;modsrdf:ModsResource  rdf:about=&quot;http://www.loc.gov/mods/rdf/v1#MODS123456&quot;&gt; <br>
+  &lt;modsrdf:ModsResource  rdf:about=&quot;http://lcnetdev.github.io/mods/rdf/v1#MODS123456&quot;&gt; <br>
   if the record does not include an identifier with type=’modsRDFIdentifier’  then the top-level triple will be:<br>
-  <a href="http://www.loc.gov/mods/rdf/v1#123456">http://www.loc.gov/mods/rdf/v1#123456</a>  is-a     #ModsResource<br>
+  <a href="http://lcnetdev.github.io/mods/rdf/v1#123456">http://lcnetdev.github.io/mods/rdf/v1#123456</a>  is-a     #ModsResource<br>
   A user of the stylesheet wishing to ensure that a meaningful  identifier will be used for this triple should insert an identifier with type=’modsRDFIdentifier’  into the record.</p>
 <hr/><h1>Treatment of MODS Top-level Elements </h1><hr/>
 <h3><a name="abstract"></a>MODS &lt;abstract&gt; </h3>
@@ -111,7 +111,7 @@
 <table width="499" border="1" align="center" bgcolor="#CCCCCC">
   <tr>
     <td width="489" height="45"><p class="style1">&lt;rdf:RDF&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;modsrdf:ModsResource  rdf:about=&quot;http://www.loc.gov/mods/rdf/v1#MODS123456&quot;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;modsrdf:ModsResource  rdf:about=&quot;http://lcnetdev.github.io/mods/rdf/v1#MODS123456&quot;&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;modsrdf:abstract&gt; based on a novel by <em>a man named Lear</em>&lt;/modsrdf:abstract&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/modsrdf:ModsResource&gt;<br>
 &lt;/rdf:RDF&gt;</p></td>
@@ -166,8 +166,8 @@
 <table width="529" border="1" align="center" bgcolor="#CCCCCC">
   <tr>
     <td width="519" height="69"><p class="style1">        &lt;modsrdf:genre&gt;<br>
-               &lt;GenreForm  xmlns=&quot;http://www.loc.gov/mads/rdf/v1#&quot;&gt;<br>
-                     &lt;rdf:type rdf:resource=&quot;http://www.loc.gov/mads/rdf/v1#GenreForm&quot;/&gt;<br>
+               &lt;GenreForm  xmlns=&quot;http://lcnetdev.github.io/mads/rdf/v1#&quot;&gt;<br>
+                     &lt;rdf:type rdf:resource=&quot;http://lcnetdev.github.io/mads/rdf/v1#GenreForm&quot;/&gt;<br>
                       &lt;rdfs:label&gt;television&lt;/rdfs:label&gt;<br>
                        &lt;elementList  rdf:parseType=&quot;Collection&quot;&gt;<br>
                                  &lt;GenreFormElement&gt;<br>
@@ -259,7 +259,7 @@
 <p>This  results in the following RDF: </p>
 <table width="549" border="1" align="center" bgcolor="#CCCCCC">
   <tr>
-    <td width="539" height="45"><p class="style1">&lt;locationOfResource  xmlns=&quot;http://www.loc.gov/mods/rdf/v1#&quot;&gt;<br>
+    <td width="539" height="45"><p class="style1">&lt;locationOfResource  xmlns=&quot;http://lcnetdev.github.io/mods/rdf/v1#&quot;&gt;<br>
        &lt;Location&gt;<br>
             &lt;locationPhysicalLocation&gt;MnRM&lt;/locationPhysicalLocation&gt;<br>
             &lt;locationCopy&gt;<br>
@@ -288,8 +288,8 @@
 <p>Results in the following RDF: </p>
 <table width="549" border="1" align="center" bgcolor="#CCCCCC">
   <tr>
-    <td width="539" height="45"><p class="style1">  &lt;name  xmlns=&quot;http://www.loc.gov/mods/rdf/v1#&quot;&gt;<br>
-       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;PersonalName  xmlns=&quot;http://www.loc.gov/mads/rdf/v1#&quot;  rdf:about=&quot;idname178227440&quot;&gt;<br>
+    <td width="539" height="45"><p class="style1">  &lt;name  xmlns=&quot;http://lcnetdev.github.io/mods/rdf/v1#&quot;&gt;<br>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;PersonalName  xmlns=&quot;http://lcnetdev.github.io/mads/rdf/v1#&quot;  rdf:about=&quot;idname178227440&quot;&gt;<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label  xmlns=&quot;http://www.w3.org/2000/01/rdf-schema#&quot;&gt;    Walt   Whitman  1819-1892  &lt;/label&gt;<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;elementList rdf:parseType=&quot;Collection&quot;&gt;<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;FamilyNameElement&gt;<br>
@@ -317,8 +317,8 @@
 <p>Results in the following RDF: </p>
 <table width="549" border="1" align="center" bgcolor="#CCCCCC">
   <tr>
-    <td width="539" height="45"><p class="style1">&lt;name xmlns=&quot;http://www.loc.gov/mods/rdf/v1#&quot;&gt;<br>
-&nbsp;&nbsp;&nbsp;&lt;PersonalName xmlns=&quot;http://www.loc.gov/mads/rdf/v1#&quot; rdf:about=&quot;idname130712944&quot;&gt;<br>
+    <td width="539" height="45"><p class="style1">&lt;name xmlns=&quot;http://lcnetdev.github.io/mods/rdf/v1#&quot;&gt;<br>
+&nbsp;&nbsp;&nbsp;&lt;PersonalName xmlns=&quot;http://lcnetdev.github.io/mads/rdf/v1#&quot; rdf:about=&quot;idname130712944&quot;&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label xmlns=&quot;http://www.w3.org/2000/01/rdf-schema#&quot;&gt;Walt Whitman 1819-1892 &lt;/label&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;elementList rdf:parseType=&quot;Collection&quot;&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;FullNameElement&gt;<br>
@@ -343,8 +343,8 @@
 <p>Results in the following RDF: </p>
 <table width="549" border="1" align="center" bgcolor="#CCCCCC">
   <tr>
-    <td width="539" height="45"><p class="style1">&lt;name  xmlns=&quot;http://www.loc.gov/mods/rdf/v1#&quot;&gt;<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&lt;PersonalName  xmlns=&quot;http://www.loc.gov/mads/rdf/v1#&quot;  rdf:about=&quot;idname103263352&quot;&gt;<br>
+    <td width="539" height="45"><p class="style1">&lt;name  xmlns=&quot;http://lcnetdev.github.io/mods/rdf/v1#&quot;&gt;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;PersonalName  xmlns=&quot;http://lcnetdev.github.io/mads/rdf/v1#&quot;  rdf:about=&quot;idname103263352&quot;&gt;<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label  xmlns=&quot;http://www.w3.org/2000/01/rdf-schema#&quot;&gt;Epstein, Daniel  Mark.  &lt;/label&gt;<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;elementList  rdf:parseType=&quot;Collection&quot;&gt;<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;FullNameElement&gt;<br>
@@ -375,8 +375,8 @@
 <p>Results in the following RDF: </p>
 <table width="549" border="1" align="center" bgcolor="#CCCCCC">
   <tr>
-    <td width="539" height="45"><p class="style1">&lt;name  xmlns=&quot;http://www.loc.gov/mods/rdf/v1#&quot;&gt;<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&lt;PersonalName  xmlns=&quot;http://www.loc.gov/mads/rdf/v1#&quot; rdf:about=&quot;idname179930232&quot;&gt;<br>
+    <td width="539" height="45"><p class="style1">&lt;name  xmlns=&quot;http://lcnetdev.github.io/mods/rdf/v1#&quot;&gt;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&lt;PersonalName  xmlns=&quot;http://lcnetdev.github.io/mads/rdf/v1#&quot; rdf:about=&quot;idname179930232&quot;&gt;<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label  xmlns=&quot;http://www.w3.org/2000/01/rdf-schema#&quot;&gt;Epstein, Daniel  Mark.   &lt;/label&gt;<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;elementList  rdf:parseType=&quot;Collection&quot;&gt;<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;FullNameElement&gt;<br>
@@ -440,8 +440,8 @@
 <p> Results in the following RDF:</p>
 <table width="529" border="1" align="center" bgcolor="#CCCCCC">
   <tr>
-    <td width="519" height="69"><p> <span class="style1">&lt;placeOfOrigin  xmlns=&quot;http://www.loc.gov/mods/rdf/v1#&quot;&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Geographic  xmlns=&quot;http://www.loc.gov/mads/rdf/v1#&quot;&gt;<br>
+    <td width="519" height="69"><p> <span class="style1">&lt;placeOfOrigin  xmlns=&quot;http://lcnetdev.github.io/mods/rdf/v1#&quot;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Geographic  xmlns=&quot;http://lcnetdev.github.io/mads/rdf/v1#&quot;&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label  xmlns=&quot;http://www.w3.org/2000/01/rdf-schema#&quot;&gt;Lincoln, Neb&lt;/label&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;elementList  rdf:parseType=&quot;Collection&quot;&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;GeographicElement&gt;<br>
@@ -490,15 +490,15 @@
 <table width="529" border="1" align="center" bgcolor="#CCCCCC">
   <tr>
     <td width="519" height="69"><p class="style1">&lt;!--**********edition--&gt;<br>
-&lt;edition  xmlns=&quot;http://www.loc.gov/mods/rdf/v1#&quot;&gt;morning  edition&lt;/edition&gt;</p>
+&lt;edition  xmlns=&quot;http://lcnetdev.github.io/mods/rdf/v1#&quot;&gt;morning  edition&lt;/edition&gt;</p>
       <p class="style1">&lt;!--**********frequency--&gt;<br>
-&lt;frequency  xmlns=&quot;http://www.loc.gov/mods/rdf/v1#&quot;&gt;c sharp&lt;/frequency&gt;</p>
+&lt;frequency  xmlns=&quot;http://lcnetdev.github.io/mods/rdf/v1#&quot;&gt;c sharp&lt;/frequency&gt;</p>
       <p class="style1">&lt;!--<br>
           <br>
         *******  publisher<br>
         --&gt;<br>
-&lt;publisher  xmlns=&quot;http://www.loc.gov/mods/rdf/v1#&quot;&gt;<br>
-&nbsp;&nbsp;&nbsp;&lt;CorporateName  xmlns=&quot;http://www.loc.gov/mads/rdf/v1#&quot;&gt;<br>
+&lt;publisher  xmlns=&quot;http://lcnetdev.github.io/mods/rdf/v1#&quot;&gt;<br>
+&nbsp;&nbsp;&nbsp;&lt;CorporateName  xmlns=&quot;http://lcnetdev.github.io/mads/rdf/v1#&quot;&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label  xmlns=&quot;http://www.w3.org/2000/01/rdf-schema#&quot;&gt;Maxwell Edison&lt;/label&gt;&nbsp;&nbsp;&nbsp;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;elementList  rdf:parseType=&quot;Collection&quot;&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;FullNameElement&gt;<br>
@@ -532,7 +532,7 @@
 <p> Results in the following RDF:</p>
 <table width="529" border="1" align="center" bgcolor="#CCCCCC">
   <tr>
-    <td width="519" height="69"><p class="style1">&lt;part  xmlns=&quot;http://www.loc.gov/mods/rdf/v1#&quot;&gt;<br>
+    <td width="519" height="69"><p class="style1">&lt;part  xmlns=&quot;http://lcnetdev.github.io/mods/rdf/v1#&quot;&gt;<br>
       &nbsp;&nbsp;&nbsp;&lt;Part&gt;<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;partOrder&gt;4&lt;/partOrder&gt;<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;partLevel&gt;v.2,  no. 3&lt;/partLevel&gt;<br>
@@ -568,12 +568,12 @@
 <p> Results in the following RDF:</p>
 <table width="529" border="1" align="center" bgcolor="#CCCCCC">
   <tr>
-    <td width="519" height="69"><p class="style1">&lt;physicalForm  xmlns=&quot;http://www.loc.gov/mods/rdf/v1#&quot;&gt;oil  paint&lt;/physicalForm&gt;<br>
-  &lt;physicalForm xmlns=&quot;http://www.loc.gov/mods/rdf/v1#&quot;&gt;painting&lt;/physicalForm&gt;<br>
-  &lt;reformattingQuality  xmlns=&quot;http://www.loc.gov/mods/rdf/v1#&quot;&gt;access&lt;/reformattingQuality&gt;<br>
-  &lt;mediaType  xmlns=&quot;http://www.loc.gov/mods/rdf/v1#&quot;&gt;image/jpeg&lt;/mediaType&gt;<br>
-  &lt;physicalExtent  xmlns=&quot;http://www.loc.gov/mods/rdf/v1#&quot;&gt;1 painting&lt;/physicalExtent&gt;<br>
-  &lt;digitalOrigin  xmlns=&quot;http://www.loc.gov/mods/rdf/v1#&quot;&gt;born  digital&lt;/digitalOrigin&gt;<br>
+    <td width="519" height="69"><p class="style1">&lt;physicalForm  xmlns=&quot;http://lcnetdev.github.io/mods/rdf/v1#&quot;&gt;oil  paint&lt;/physicalForm&gt;<br>
+  &lt;physicalForm xmlns=&quot;http://lcnetdev.github.io/mods/rdf/v1#&quot;&gt;painting&lt;/physicalForm&gt;<br>
+  &lt;reformattingQuality  xmlns=&quot;http://lcnetdev.github.io/mods/rdf/v1#&quot;&gt;access&lt;/reformattingQuality&gt;<br>
+  &lt;mediaType  xmlns=&quot;http://lcnetdev.github.io/mods/rdf/v1#&quot;&gt;image/jpeg&lt;/mediaType&gt;<br>
+  &lt;physicalExtent  xmlns=&quot;http://lcnetdev.github.io/mods/rdf/v1#&quot;&gt;1 painting&lt;/physicalExtent&gt;<br>
+  &lt;digitalOrigin  xmlns=&quot;http://lcnetdev.github.io/mods/rdf/v1#&quot;&gt;born  digital&lt;/digitalOrigin&gt;<br>
       &lt;!--  note - Physical Description--&gt;<br>
   &lt;modsrdf:noteGroup&gt;<br>
       &lt;modsrdf:NoteGroup&gt;<br>
@@ -604,7 +604,7 @@
 <p> Results in the following RDF:</p>
 <table width="529" border="1" align="center" bgcolor="#CCCCCC">
   <tr>
-    <td width="519" height="69"><p class="style1">&lt;hasAdministrativeMedatata  xmlns=&quot;http://www.loc.gov/mods/rdf/v1#&quot;&gt;<br>
+    <td width="519" height="69"><p class="style1">&lt;hasAdministrativeMedatata  xmlns=&quot;http://lcnetdev.github.io/mods/rdf/v1#&quot;&gt;<br>
       &nbsp;&nbsp;&nbsp;&lt;AdministrativeMedatata  xmlns=&quot;http://id.loc.gov/ontologies/RecordInfo#&quot;&gt;<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;recordCreationDate&gt;030211&lt;/recordCreationDate&gt;<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;recordCreationDate rdf:datatype=&quot;xs:string&quot; &gt;October  8, 2002&lt;/recordCreationDate&gt;<br>
@@ -634,9 +634,9 @@
 <table width="652" border="1" align="center" bgcolor="#CCCCCC">
   <tr>
     <td width="642" height="69"><p class="style1">&lt;relatedSeries&gt;<br>
-      &nbsp;&nbsp;&nbsp;&lt;ModsResource  rdf:about=&quot;http://www.loc.gov/mods/rdf/v1#MODS123456&quot;&gt;<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;principalTitle  xmlns=&quot;http://www.loc.gov/mods/rdf/v1#&quot;&gt;<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Title  xmlns=&quot;http://www.loc.gov/mads/rdf/v1#&quot;&gt;<br>
+      &nbsp;&nbsp;&nbsp;&lt;ModsResource  rdf:about=&quot;http://lcnetdev.github.io/mods/rdf/v1#MODS123456&quot;&gt;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;principalTitle  xmlns=&quot;http://lcnetdev.github.io/mods/rdf/v1#&quot;&gt;<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Title  xmlns=&quot;http://lcnetdev.github.io/mads/rdf/v1#&quot;&gt;<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;rdfs:label&gt;Background  paper (United States.  Congress. Office of Technology Assessment)&lt;/rdfs:label&gt;<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;elementList  rdf:parseType=&quot;Collection&quot;&gt;&nbsp;&nbsp;&nbsp;&nbsp;<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;mainTitleElement&gt;<br>
@@ -664,7 +664,7 @@
 <table width="652" border="1" align="center" bgcolor="#CCCCCC">
   <tr>
     <td width="642" height="69"><p class="style1"> &lt;subjectTopic&gt;<br>
-      &nbsp;&nbsp;&nbsp;&lt;topic  xmlns=&quot;http://www.loc.gov/mads/rdf/v1#&quot;&gt;<br>
+      &nbsp;&nbsp;&nbsp;&lt;topic  xmlns=&quot;http://lcnetdev.github.io/mads/rdf/v1#&quot;&gt;<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;rdfs:label&gt;  Politics and government &lt;/lrdfs:abel&gt;<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;elementList  rdf:parseType=&quot;Collection&quot;&gt;<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;topicElement&gt;<br>
@@ -690,7 +690,7 @@
 <table width="652" border="1" align="center" bgcolor="#CCCCCC">
   <tr>
     <td width="642" height="69"><p class="style1">&lt;subjectComplex&gt;<br>
-&nbsp;&nbsp;&nbsp;&lt;ComplexSubject  xmlns=&quot;http://www.loc.gov/mads/rdf/v1#&quot;&gt;<br>
+&nbsp;&nbsp;&nbsp;&lt;ComplexSubject  xmlns=&quot;http://lcnetdev.github.io/mads/rdf/v1#&quot;&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;rdfs:label&gt;Public  libraries. United States.  Book lists. &lt;/rdfs:label&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;componentList  rdf:parseType=&quot;Collection&quot;&gt;</p>
       <p class="style1">&lt;!-- --&gt; <br>
@@ -768,7 +768,7 @@
 <table width="578" border="1" align="center" bgcolor="#CCCCCC">
   <tr>
     <td width="568" height="45"><p class="style1">&lt;titlePrincipal&gt;<br>
-   &lt;Title  xmlns=&quot;http://www.loc.gov/mads/rdf/v1#&quot;&gt;<br>
+   &lt;Title  xmlns=&quot;http://lcnetdev.github.io/mads/rdf/v1#&quot;&gt;<br>
          &lt;rdfs:label&gt;<br>
              David  O. Selznick's production of Margaret Mitchell's Gone  with the wind: original motion picture soundtrack<br>
          &lt;/rdfs:label&gt;<br>
@@ -784,7 +784,7 @@
 &lt;/titlePrincipal&gt;<br>
                                 &lt;!-- *******uniform  title  --&gt;<br>
 &lt;titleUniform&gt;<br>
-    &lt;Title  xmlns=&quot;http://www.loc.gov/mads/rdf/v1#&quot;&gt;<br>
+    &lt;Title  xmlns=&quot;http://lcnetdev.github.io/mads/rdf/v1#&quot;&gt;<br>
          &lt;label  xmlns=&quot;http://www.w3.org/2000/01/rdf-schema#&quot;&gt;Gone with the  wind&lt;/label&gt;<br>
          &lt;elementList  rdf:parseType=&quot;Collection&quot;&gt;<br>
                  &lt;mainTitleElement&gt;<br>
@@ -810,8 +810,8 @@
 <p>Results in  a  NameTitle. The Name is described first, followed by the NameTitle which  included the Name previously described by reference.</p>
 <table width="497" border="1" align="center" bgcolor="#CCCCCC">
   <tr>
-    <td width="487" height="45"><p class="style1">&lt;namePrincipal  xmlns=&quot;http://www.loc.gov/mods/rdf/v1#&quot;&gt;<br>
-       &nbsp;&nbsp;&nbsp;&lt;PersonalName  xmlns=&quot;http://www.loc.gov/mads/rdf/v1#&quot;  rdf:about=&quot;idroot186728552&quot;&gt;<br>
+    <td width="487" height="45"><p class="style1">&lt;namePrincipal  xmlns=&quot;http://lcnetdev.github.io/mods/rdf/v1#&quot;&gt;<br>
+       &nbsp;&nbsp;&nbsp;&lt;PersonalName  xmlns=&quot;http://lcnetdev.github.io/mads/rdf/v1#&quot;  rdf:about=&quot;idroot186728552&quot;&gt;<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;label  xmlns=&quot;http://www.w3.org/2000/01/rdf-schema#&quot;&gt;Steiner, Max        1888-1971  &lt;/label&gt;<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;elementList  rdf:parseType=&quot;Collection&quot;&gt;<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;FullNameElement&gt;<br>
@@ -824,7 +824,7 @@
       &nbsp;&nbsp;&nbsp;&lt;/PersonalName&gt;<br>
   &lt;/namePrincipal&gt;<br>                 &lt;!--                         *******uniform title--&gt;<br>
 &lt;titleUniform&gt;<br>
-&nbsp;&nbsp;&nbsp;&lt;NameTitle  xmlns=&quot;http://www.loc.gov/mads/rdf/v1#&quot;&gt;<br>
+&nbsp;&nbsp;&nbsp;&lt;NameTitle  xmlns=&quot;http://lcnetdev.github.io/mads/rdf/v1#&quot;&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;rdfs:label&gt;Steiner,  Max        1888-1971   -- Gone with the wind&lt;/rdfs:label&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;componentList  rdf:parseType=&quot;Collection&quot;&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Name  rdf:about=&quot;idroot186728552&quot; /&gt;<br>
@@ -856,7 +856,7 @@
 <table width="574" border="1" align="center" bgcolor="#CCCCCC">
   <tr>
     <td width="564" height="45"><p class="style1">&lt;/titlePrincipal&gt;&nbsp;<br>
-      &nbsp;&nbsp;&nbsp;&lt;Title  xmlns=&quot;http://www.loc.gov/mads/rdf/v1#&quot;&gt;<br>
+      &nbsp;&nbsp;&nbsp;&lt;Title  xmlns=&quot;http://lcnetdev.github.io/mads/rdf/v1#&quot;&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;rdfs:label&gt;David  O. Selznick's production of Margaret Mitchell's Gone with the wind&lt;/rdfs:label&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;elementList  rdf:parseType=&quot;Collection&quot;&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;mainTitleElement&gt;<br>
@@ -864,7 +864,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/mainTitleElement&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/elementList&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;abbreviatedVariant&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Title  xmlns=&quot;http://www.loc.gov/mads/rdf/v1#&quot;&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Title  xmlns=&quot;http://lcnetdev.github.io/mads/rdf/v1#&quot;&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;variantLabel&gt;Margaret  Mitchell's Gone with the wind&lt;/variantLabel&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;elementList  rdf:parseType=&quot;Collection&quot;&gt;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;mainTitleElement&gt;<br>
@@ -894,7 +894,7 @@
 <table width="574" border="1" align="center" bgcolor="#CCCCCC">
   <tr>
     <td width="564" height="45"><p class="style1">&lt;titlePrincipal&gt;<br>
-      &nbsp;&nbsp;&nbsp;&lt;Title  xmlns=&quot;http://www.loc.gov/mads/rdf/v1#&quot;&gt;<br>
+      &nbsp;&nbsp;&nbsp;&lt;Title  xmlns=&quot;http://lcnetdev.github.io/mads/rdf/v1#&quot;&gt;<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;rdfs:label&gt;The  Legend of Zelda: Twilight Princess - Part  3:  Forest Temple  Walkthrough&lt;/rdfs:label&gt;<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;elementList  rdf:parseType=&quot;Collection&quot;&gt;<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;nonSortElement&gt;<br>
@@ -924,14 +924,14 @@
 </td>
 </tr>
 <tr>
-<td><a href="http://www.loc.gov/standards/mods/">HOME</a> &gt;&gt; <!-- InstanceBeginEditable name="bottombreadcrumb" --><!-- InstanceEndEditable -->
+<td><a href="http://lcnetdev.github.io/standards/mods/">HOME</a> &gt;&gt; <!-- InstanceBeginEditable name="bottombreadcrumb" --><!-- InstanceEndEditable -->
   <p><strong>Questions and comments:<br>
   </strong>
               <a href="mailto:ndmso@loc.gov">Contact Us</a> (
               <!-- #BeginDate format:Am1 -->July 26, 2012<!-- #EndDate -->
       )
       <br>
-      <a href="http://www.loc.gov/homepage/legal.html">Legal</a> | <a href="http://www.loc.gov/global/disclaim.html">External Link Disclaimer</a></p></td>
+      <a href="http://lcnetdev.github.io/homepage/legal.html">Legal</a> | <a href="http://lcnetdev.github.io/global/disclaim.html">External Link Disclaimer</a></p></td>
   </tr>
 </table>
 </body>

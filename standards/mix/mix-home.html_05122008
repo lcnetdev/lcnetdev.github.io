@@ -4,7 +4,7 @@
 <html>
 <head>
 <title>Metadata for Images in XML Standard (MIX)</title>
-<base href="http://www.loc.gov/standards/mix/mix-home.html">
+<base href="http://lcnetdev.github.io/standards/mix/mix-home.html">
 <meta name="keywords" content="mix image metadata object description schema web site library congress xml official site library congress">
 <meta name="description" content="The MIX schema ...">
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
@@ -13,8 +13,8 @@
 <body link="#993300" vlink="#CC6600" bgcolor="#FFFFFF" alink="#CC0000">
 <table width=600 cellpadding=4 cellspacing=0 border=0 align=center>
   <tr valign="top">
-    <td height="25" colspan="2"><a href="#content" name="top"><img src="images/spacer-gray.gif" alt="Skip Navigation Links" width="1" height="1" border="0"></a> <a href="http://www.loc.gov/" class="white">The
-        Library of Congress</a> <span class="white-text">&gt;&gt;</span> <a href="http://www.loc.gov/standards/">Standards</a> &gt;&gt; MIX</td>
+    <td height="25" colspan="2"><a href="#content" name="top"><img src="images/spacer-gray.gif" alt="Skip Navigation Links" width="1" height="1" border="0"></a> <a href="http://lcnetdev.github.io/" class="white">The
+        Library of Congress</a> <span class="white-text">&gt;&gt;</span> <a href="http://lcnetdev.github.io/standards/">Standards</a> &gt;&gt; MIX</td>
   </tr>
   <tr>
     <td><img src="images/mix-title.gif" width="600" height="75" alt="Metadata for Images in XML (MIX) Library  of Congress"></td>
@@ -56,7 +56,7 @@
     <td>
       <h2>MIX Schema &amp; Documentation</h2>
       <ul>
-	  <li> <a href="http://www.loc.gov/standards/mix/mix10/mix10.xsd">MIX Schema
+	  <li> <a href="http://lcnetdev.github.io/standards/mix/mix10/mix10.xsd">MIX Schema
             Version 1.0 (current version)</a> </li>
         <li> <a href="http://www.niso.org/kst/reports/standards?step=2&gid=None&project_key=b897b0cf3e2ee526252d9f830207b3cc9f3b6c2c">Data
             Dictionary - Technical Metadata for Digital Still Images (ANSI/NISO
@@ -110,7 +110,7 @@ You are fully responsible for everything that you post and will follow the gener
       <HR noshade size="1">
       <ADDRESS>
       <!--help desk email start -->
-      <img src="images/mix-icon.gif" width="125" height="54" align="right" alt="MIX Icon (Metadata for Images in XML)"><a href="http://www.loc.gov/help/help-desk.html">Library
+      <img src="images/mix-icon.gif" width="125" height="54" align="right" alt="MIX Icon (Metadata for Images in XML)"><a href="http://lcnetdev.github.io/help/help-desk.html">Library
       of Congress Help Desk</a>
       <!--help desk email end -->
       <br>

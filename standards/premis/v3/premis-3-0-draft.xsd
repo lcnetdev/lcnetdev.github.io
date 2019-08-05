@@ -43,7 +43,7 @@ Changes in version 3.0:
      These were previously environmentPurpose and environmentCharacteristic 
       under environment, which is removed.
 12. compositionLevel:Was nonNegativeInteger.  Now value "unknown" may be supplied. 
-13. namespace changed from info:lc/xmlns/premis-v2   to  http://www.loc.gov/premis/v3
+13. namespace changed from info:lc/xmlns/premis-v2   to  http://lcnetdev.github.io/premis/v3
 14. edtf definition changed so that it is equivalent to xs:string 
     (regular expressions removed).
 15. Reference to XLink namespace and schema, and XLink attributeGroup removed. 
@@ -52,8 +52,8 @@ Changes in version 3.0:
 -->
 <xs:schema 
 	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-	xmlns="http://www.loc.gov/premis/v3" 
-	targetNamespace="http://www.loc.gov/premis/v3" 
+	xmlns="http://lcnetdev.github.io/premis/v3" 
+	targetNamespace="http://lcnetdev.github.io/premis/v3" 
 	elementFormDefault="qualified" 
 	attributeFormDefault="unqualified">
 	<!--   		

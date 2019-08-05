@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8" />
+<title>BIBFRAME 2.0 RDF Conventions, March 29, 2016 (BIBFRAME - Bibliographic Framework Initiative, Library of Congress)</title>
+<meta name="keywords" content="RDF, RDF conventions, bibframe, BIBFRAME 2.0, category view, bibliographic framework, transition, initiative, marc, cataloging, library of congress">
+<meta name="description" content="The following lists some of the RDF conventions used in developing the BIBFRAME 2.0 vocabulary. It is not an exhaustive list but tries to cover the most important conventions. (BIBFRAME - Bibliographic Framework Initiative, Library of Congress)">
+
+<link rel="dc.relation.isPartOf" href="http://lcnetdev.github.io/bibframe/" title="BIBFRAME - Bibliographic Framework Initiative (Library of Congress)">
+<meta name="dc.subject" content="bibliographic framework">
+<meta name="dc.subject" content="BIBFRAME 2.0">
+<meta name="dc.subject" content="BIBFRAME RDF Conventions">
+<meta name="dc.subject" content="bibframe">
+<meta name="dc.type" content="web page">
+<meta name="dc.identifier" content="http://lcnetdev.github.io/bibframe/docs/bibframe2-rdf-conventions.html">
+<meta name="dc.language" content="en">
+
+<link type="text/css" media="screen" rel="stylesheet" href="../css/styles.css">
+<link type="text/css" media="print" rel="stylesheet" href="/css/loc_print_v2.css">
+<!--[if lte IE 7]><link type="text/css" media="screen" rel="stylesheet" href="/css/loc_lte_ie6.css"><![endif]-->
+<!--#include virtual="/bibframe/include/share-tool.html"-->
+<script type="text/javascript" src="http://cdn.loc.gov/js/lib/modernizr-1.5.min.js"></script>
+</head>
+<body>
+<a id="skip" href="#skip_menu">skip navigation</a>
+<div id="container">
+  <!--#include virtual="../include/branding.html"-->
+  <!--#include virtual="/cdn/html/lochead.html"-->
+  <div id="crumb_nav"><a href="http://lcnetdev.github.io">The Library of Congress</a> &gt; <a href="/bibframe/">BIBFRAME</a> &gt; <a href="index.html">Model &amp; Vocabulary</a> &gt; BIBFRAME 2.0 RDF Conventions</div>
+  <div id="content">
+    <!--#include virtual="../include/leftnav.html"-->
+    <div id="main_body">
+    	<!--#include virtual="../include/share-tool-bar.html"-->
+      <div id="page_head"><span style="width: 100%;"><a name="skip_menu"></a></span>
+        <h1>BIBFRAME 2.0 RDF Conventions      </h1>
+      </div>
+      <p class="msg-notice" style="margin-bottom:10px;margin-top:0px;">The following lists some of the RDF conventions used in developing the BIBFRAME 2.0 vocabulary. It is not an exhaustive list but tries to cover the most important conventions.      </p>
+      <h2>1)  Datatype and Object Property </h2>
+      <h3>Any given BIBFRAME property  is either a datatype property or an object property. </h3>
+      <blockquote>
+        <p>        A <em>datatype property</em> is one whose object is always a literal.  An example is bf:version.</p>
+        <pre style="font-weight:bold;">        &lt;http://bibframe.example.org/work/workX&gt;     bf:version   &ldquo;final cut&rdquo; .</pre>
+        <p>        The object of any triple with property bf:version is always a literal  (string) as in this example, and therefore the property is a datatype property.</p>
+        <p>An <em>object property</em> is one whose object is always a resource (and  in particular a resource identified by a URI, or by a node-id in the case of a  blank node).  An example is  bf:instanceOf.</p>
+        <pre style="font-weight:bold;">        &lt;http://bibframe.example.org/instance/instanceY&gt;    bf:instanceOf 
+                                     &lt;http://bibframe.example.org/work/workX&gt;  .</pre>
+        <p>In BIBFRAME every  property is one or the other: for any given BIBFRAME property, the object  should not be a literal in one triple and a resource in another. The object  should always be a literal, or it should always be a resource. The motivation  for this rule is the added complexity which would be imposed on a system,  consuming BIBFRAME, if it needed to be prepared to receive both types of  objects for a given property.      </p>
+      </blockquote>
+      <h2>2) URIs and  Labels </h2>
+      <h3>When referencing a resource, provide the URI,  label, or both. </h3>
+      <blockquote>
+        <p>        BIBFRAME defines many properties  to be object properties with the intention that either the resource, or a label  in lieu of the resource, or both, can be supplied.  BIBFRAME and RDF syntax enable the inclusion  of these reference methods.  If the link  is not known then only the label might be supplied, and if only the link is  known it can be supplied. By supplying both the link and label, the label may  be displayed to a user, who may then decide to follow the link for additional  information about the resource, or may decide that the label is sufficient  information and that it is not necessary to follow the link, and retrieval will  thus be avoided.      </p>
+      </blockquote>
+      <h2>3)  URIs and Blank Nodes</h2>
+      <h3>BIBFRAME takes no position on the issue of URI  vs. blank node. </h3>
+      <blockquote>
+        <p>        While it is recognized  that URIs are linked-data friendly and blank nodes are not, both are acceptable  in BIBFRAME and the choice is an implementation decision. </p>
+      </blockquote>
+      <h2>4)  Classes and  Types</h2>
+      <h3>Classes are  generally used to indicate type.</h3>
+      <blockquote>
+        <p>        There are several  categories of BIBFRAME resource that have types.  Identifiers, for example, have types such as  ISBN, ISSN, LCCN, etc.; varient titles have types such as abbreviated title, etc.<br>
+          In BIBFRAME 2.0, there is a single identifier property,  bf:identifiedBy, and different classes defined for the different identifier  types: bf:Isbn, bf:Lccn, and so on. </p>
+        <p>        Some advantages of representing type as class  rather than property are:</p>
+        <ul class="bullet">
+          <li><strong>Reusability</strong>.   Consider identifiers for example. For every identifier expressed in  BIBFRAME, a bf:Identifier resource is created.   If it is created as a linked data resource (assigned a URI) then it may  be accessed and reused outside of BIBFRAME. Allowing the class to reflect the  identifier source means that the source will be known when it is used as such.  If the source is conveyed only by the BIBFRAME property then that source will  be known only when accessed in the BIBFRAME context.</li>
+          <li><strong>Query Efficiency</strong>. Expressing types as classes often makes the  data more easily queried. &ldquo;Find things of type X&rdquo;, for example, is simpler when  X is a class rather than a property.</li>
+          <li><strong>Graceful degradation</strong>.  Suppose a new note type  is created, in some external namespace (ex:).   If the new type were to be expressed by property, that might look like:</li>
+        </ul>
+        <pre style="font-weight:bold;">        ex:typeOfNote              &ldquo;note  content&rdquo;
+</pre>
+        <blockquote>
+          <p>          On the other hand if the type is expressed by class it might look like:<br>
+          </p>
+        </blockquote>
+        <pre style="font-weight:bold;">
+        bf:note   [        a              ex:typeOfNote    ;
+                           rdfs:label    &ldquo;note content&rdquo; ]</pre>
+        <blockquote><p>If the receiving system  does not recognize the namespace &ldquo;ex&rdquo;, then in the first case, the statement  will not make any sense at all.  In the  second case, the system will at least be able to recognize that it is a note  (even though it may not understand the note type).</p>
+        </blockquote>
+      </blockquote>
+      <h2>5)  Reciprocal Properties</h2>
+      <h3>For any given BIBFRAME  property, a reciprocal property should be defined, if appropriate.</h3>
+      <blockquote>
+        <p>        This guideline recommends  only that reciprocal properties be <em>defined, </em>not that they necessarily be<em> used.  </em>Thus for example, if a Work  points to one of its Instances (via bf:hasInstance)<em>, </em>BIBFRAME takes no position on whether that Instance should point  back to the Work (via bf:instanceOf); that would be an implementation  decision.  The guideline merely recommends  that the reciprocal property be defined, when logical, so that it may be used,  if desired.</p>
+      </blockquote>
+      <h2> 6) Metadata about the Description </h2>
+      <h3>Do not represent metadata  about a description of a resource as a property of the resource itself. </h3>
+      <blockquote>
+        <p>        For  any BIBFRAME statement or description, there may be metadata which pertains to  that statement or description, rather than to the resource which is the subject  of the statement/description: rules used, metadata creation date or date last  revised, etc.  Suppose for example the  resource is a BIBFRAME Work. An RDF description of that Work might include bf:creationDate,  intended to convey the date the description was created, rather than the date  that the Work was created, and it should be clearly distinguished from statements  describing the Work.</p>
+      </blockquote>
+      <h2>7)   Proliferation of Properties</h2>
+      <h3>Avoid proliferation of  properties by defining a single general property when multiple potential  properties have the same meaning.</h3>
+      <h2 style="margin-top:15px;">8)  rdfs: and rdf: Properties </h2>
+      <h3>Use rdf:value and rdfs:label  as appropriate when supplying the value of a resource. </h3>
+      <h2 style="margin-top:15px;">9)  Formal constraints</h2>
+      <h3>Explicit domains and ranges for a property are  generally not specified.</h3>
+      <blockquote>
+        <p>        BIBFRAME practice in  general is to not define a domain or range for a property. There are some  obvious exceptions, for example, for property bf:hasInstance, the domain is  Work and the range is Instance, because clearly, these constraints are  appropriate. But in general, explicitly defined domains and ranges can have  unintended, over-constraining effects.</p>
+        <p>          When defining a property,  the class of resources expected to be subjects of that property, as well as the  class of expected values of that property, should be well-document -- what the  domain and range of the property would likely be if the domain and range were  formally specified.  Thus for  documentation purposes, properties are noted as &ldquo;property of&rdquo; and have &ldquo;expected  value&rdquo; to express the usual domain and range, but these are not intended as  domains and ranges to be enforced. </p>
+      </blockquote>
+      <h2>10)  Naming Properties and Classes</h2>
+      <h3>Class names are nouns  and property names suggest verbs.</h3>
+      <blockquote>
+        <p>        A Class name should  always be a noun.  A property name should  suggest a verb.  It need not actually be  a verb, for example, the (hypothetical) property &ldquo;age&rdquo; might indicate the age  of a person.  In this case the prefix  &ldquo;has&rdquo; is implied, so the meaning would be as if the name were hasAge.  </p>
+      </blockquote>
+
+
+      <p class="backtotop"><a href="#skip_menu">Back to Top</a></p>
+    </div>
+    <div class="clear"><!-- --></div>
+    </div><!-- end id:main_body -->
+  </div><!-- end id:content -->
+  <!--#include virtual="/cdn/html/locfoot.html"-->
+</div><!-- end id:container -->
+</body>
+</html>

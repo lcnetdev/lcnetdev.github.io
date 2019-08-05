@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<title>BIBFRAME Authorities Draft Specification - 28 April 2014 (BIBFRAME - Bibliographic Framework Initiative, Library of Congress)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="keywords" content="bibframe, category view, bibliographic framework, transition, initiative, marc, cataloging, library of congress">
+<meta name="description" content="BIBFRAME Authorities Draft Specification - 28 April 2014. A BIBFRAME Authority is a resource representing a person, family, organization, jurisdiction, meeting, place, topic, or temporal expression associated with a BIBFRAME Work, Instance, or Annotation. BIBFRAME Authorities are not designed to replace or compete with existing authorities but rather to provide a common abstraction layer, or wrapper, around them.(BIBFRAME - Bibliographic Framework Initiative, Library of Congress)">
+
+<link rel="dc.relation.isPartOf" href="http://lcnetdev.github.io/bibframe/" title="BIBFRAME - Bibliographic Framework Initiative (Library of Congress)">
+<meta name="dc.subject" content="bibliographic framework">
+<meta name="dc.subject" content="vocabulary">
+<meta name="dc.subject" content="authorities">
+<meta name="dc.subject" content="bibframe">
+<meta name="dc.type" content="webpage">
+<meta name="dc.identifier" content="http://lcnetdev.github.io/bibframe/docs/bibframe-authorities.html">
+<meta name="dc.language" content="en">
+
+<link type="text/css" media="screen" rel="stylesheet" href="../css/styles.css">
+<link type="text/css" media="print" rel="stylesheet" href="/css/loc_print_v2.css">
+<!--[if lte IE 7]><link type="text/css" media="screen" rel="stylesheet" href="/css/loc_lte_ie6.css"><![endif]-->
+<!--#include virtual="/bibframe/include/share-tool.html"-->
+<script type="text/javascript" src="http://cdn.loc.gov/js/lib/modernizr-1.5.min.js"></script></head>
+<body>
+<a id="skip" href="#skip_menu">skip navigation</a>
+<div id="container">
+  <!--#include virtual="../include/branding.html"-->
+  <!--#include virtual="/cdn/html/lochead.html"-->
+  <div id="crumb_nav"><a href="http://lcnetdev.github.io">The Library of Congress</a> &gt; <a href="/bibframe/">BIBFRAME</a> &gt; <a href="index.html">Model &amp; Vocabulary</a> &gt; BIBFRAME Authorities Draft Specification &mdash; 28 April 2014</div>
+  <div id="content">
+    <!--#include virtual="../include/leftnav.html"-->
+    <div id="main_body">
+    	<!--#include virtual="../include/share-tool-bar.html"-->
+      <div id="page_head"><span style="width: 100%;"><a name="skip_menu"></a></span>
+        <h1>BIBFRAME Authorities<br>
+        <span>Draft Specification (28 April 2014)</span></h1>
+      </div>
+      <dl>
+        <dt>This version:</dt>
+        <dd><a href="http://lcnetdev.github.io/bibframe/docs/bibframe-authorities.html">http://lcnetdev.github.io/bibframe/docs/bibframe-authorities.html</a></dd>
+      </dl>
+      <p class="dot-top" style="margin-bottom:5px;"><strong>Status of this Document</strong></p>
+        <ul class="bullet">
+          <li>Draft for public review (28 April 2014)</li>
+          <li>Please send general comments about this document to the listserv <a href="mailto:bibframe@loc.gov">bibframe@loc.gov</a> or via email to <a href="mailto:bfcomments@loc.gov">bfcomments@loc.gov</a>.</li>
+          <li>To the extent possible under law, the Library of Congress has waived all copyright and related or neighboring rights to this work.</li>
+      </ul>
+        <p><strong>Changes in this version</strong> (28 April 2014)</p>
+        <ul>
+          <li>An example of a BIBFRAME Authority represented as a reusable resource is provided (figure 1A). In the previous draft all BIBFRAME Authorities were represented as blank nodes. </li>
+          <li>New section 4.2 &quot;Role Expressed as  String.&quot;</li>
+        </ul>
+        <div class="box-anchor">
+        <h3>Table of Contents </h3>
+<ul class="anchor">
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#examples">Examples</a></li>
+      <li><a href="#spec"> BIBFRAME Authority Specification</a></li>
+      <li><a href="#roles">Representing Roles</a><br>
+        - <a href="#propertyroles">Role Expressed as Property</a><br>
+        - <a href="#stringroles">Role Expressed as String</a></li>
+      <li><a href="#subjects">Subjects</a></li>
+    </ul>
+</div>
+
+
+      <h2 id="intro">1. Introduction</h2>
+<p>A <strong>BIBFRAME  Authority</strong> is a resource representing a person, family, organization, jurisdiction,  meeting, place, topic, or temporal expression associated with a BIBFRAME Work,  Instance, or Annotation.</p>
+<p>  BIBFRAME Authorities  are not designed to replace or compete with existing authorities but rather to provide  a common abstraction layer, or wrapper, around them.   Thus “BIBFRAME Authority” is distinguished  from “authority” and the latter term (no qualifying “BIBFRAME”, and lower-case  ‘a’) is used in this specification to refer to an existing authority, not to a  BIBFRAME Authority.</p>
+<p>  For discussion of  the approach taken by this specification see BIBFRAME discussion paper <a href="http://bibframe.org/documentation/bibframe-authority/" class="external">On BIBFRAME Authority</a>.<br>
+</p>
+<h2 id="examples" class="dot-top">2. Examples</h2>
+<p>        The following example shows a BIBFRAME Work, with a  title and a link to a creator.  The creator  is expressed as a BIBFRAME Authority, shown in the second half of the  example.   </p>
+<div class="msg-info">
+  <pre>&lt;bf:Work&gt;
+    &lt;bf:title&gt;Collage&lt;/bf:title&gt;
+    &lt;bf:creator rdf:nodeID=”bnode-x24z100”/&gt;
+&lt;/bf:Work&gt;
+<strong>&lt;!-- BIBFRAME Authority --&gt;</strong>
+<strong>&lt;bf:Person rdf:nodeID=”bnode-x24z100”&gt;</strong>
+    <strong>&lt;bf:authorizedAccessPoint&gt;Bartolozzi, Bruno&lt;/bf:authorizedAccessPoint&gt;</strong>
+    <strong>&lt;bf:hasAuthority rdf:resource=”http://id.loc.gov/authorities/names/n80103954”/&gt;</strong>
+<strong>&lt;/bf:Person&gt;</strong></pre></div>
+<p class="caption">Figure 1: BIBFRAME Work with link to creator expressed as  BIBFRAME Authority.</p>
+<p>The BIBFRAME Authority in this case is of class bf:Person,  which is a subclass of bf:Authority,  It includes  an “authorizedAccessPoint” (which we refer to as an AAP) and a link to an  external (actual) authority.  The AAP is  supplied for the benefit of the user who is unable to follow the link to the external  authority, or who is happy to get just the AAP.   The external link is supplied for the benefit of the user who wants more  than just the AAP and who is able to follow the link.</p>
+<p>In the above example the BIBFRAME Authority is a blank node. Figure 1A is the same as figure 1 except that the BIBFRAME Authority takes the form of a re-usable resource. It is an implementation decision whether to represent a BIBFRAME Authority as a blank node or re-usable resource. All remaining examples (beyond Figure 1A) use blank nodes. </p>
+<div class="msg-info">
+  <pre>&lt;bf:Work&gt;
+    &lt;bf:title&gt;Collage&lt;/bf:title&gt;
+    &lt;bf:creator rdf:resource=”http://www.example.bibframe.org/authority/bartolozzi/”/&gt;
+&lt;/bf:Work&gt;
+<strong>&lt;!-- BIBFRAME Authority --&gt;</strong>
+<strong>&lt;bf:Person rdf:about=”http://www.example.bibframe.org/authority/bartolozzi/”&gt;</strong>
+    <strong>&lt;bf:authorizedAccessPoint&gt;Bartolozzi, Bruno&lt;/bf:authorizedAccessPoint&gt;</strong>
+    <strong>&lt;bf:hasAuthority rdf:resource=”http://id.loc.gov/authorities/names/n80103954”/&gt;</strong>
+<strong>&lt;/bf:Person&gt;</strong></pre>
+</div>
+<p class="caption">Figure 1A: Same example as previous except BIBFRAME Authority is a re-usable resource rather than blank node.</p>
+<p>The external authority in this example is a NAF authority;  however any legitimate authority may be used instead, for example VIAF.<br>
+  In fact, multiple links to external authorities are  permitted, as shown in the following example. Multiple external  authorities might be supplied to increase the likelihood that a user will be  able to follow at least one. In the example, both a NAF and VIAF authority  are supplied, by properties bf:hasAuthority and bf:referenceAuthority  respectively.  We refer to these  informally as a “primary authority” and a “reference authority” </p>
+<p>The presence of a primary authority indicates that the  AAP, if supplied, is derived from that authority.   For a reference authority, no such guarantee is implied (a reference  authority might have a different heading than the primary authority).  A BIBFRAME Authority should have at most one primary  authority and may include any number of reference authorities. </p>
+<div class="msg-info">
+  <pre>&lt;!— BIBFRAME Authority  --&gt;
+&lt;bf:Person&gt;
+    &lt;bf:authorizedAccessPoint&gt;Cutright, Paul Russell, 1897-&lt;/bf:authorizedAccessPoint&gt;
+    <strong>&lt;bf:hasAuthority rdf:resource=http://id.loc.gov/authorities/names/n80022903”/&gt;</strong>
+    <strong>&lt;bf:referenceAuthority rdf:resource=”http://viaf.org/viaf/91312848/”/&gt; </strong>     
+&lt;/bf:Person&gt; </pre>
+</div>
+<p class="caption">Figure 2: Multiple Links to external authorities.  </p>
+<p>A BIBFRAME Authority need not include any links at  all. Instead, it might supply authority information inline:</p>
+<div class="msg-info" style="color:#green;">
+  <pre>&lt;!— BIBFRAME Authority  --&gt;
+&lt;bf:Person&gt;
+    &lt;bf:authorizedAccessPoint&gt;Cutright, Paul Russell, 1897-&lt;/bf:authorizedAccessPoint&gt;
+    &lt;bf:hasAuthority&gt;
+&lt;!-- --&gt;
+<strong>&lt;madsrdf:PersonalName&gt;</strong>
+    <strong>&lt;madsrdf:authoritativeLabel&gt;Cutright, Paul Russell, 1897-&lt;/madsrdf:authoritativeLabel&gt;</strong>
+    <strong>&lt;madsrdf:elementList rdf:parseType=&quot;Collection&quot;&gt;</strong>
+       <strong>&lt;madsrdf:FullNameElement&gt;</strong>
+ 	        <strong>&lt;madsrdf:elementValue&gt;Cutright, Paul Russell,&lt;/madsrdf:elementValue&gt;</strong>
+       <strong>&lt;/madsrdf:FullNameElement&gt;</strong>
+       <strong>&lt;madsrdf:DateNameElement&gt;</strong>
+ 	        <strong>&lt;madsrdf:elementValue&gt;1897-&lt;/madsrdf:elementValue&gt;</strong>
+       <strong>&lt;/madsrdf:DateNameElement&gt;</strong>
+    <strong>&lt;/madsrdf:elementList&gt;</strong>
+<strong>&lt;/madsrdf:PersonalName&gt;</strong>
+&lt;!-- --&gt;
+    &lt;/bf:hasAuthority&gt;
+&lt;/bf:Person&gt; </pre>
+</div>
+<p class="caption">Figure  3: Authority Information Inline. </p>
+<p>In the above example, information is supplied according to a  legitimate authority ontology using the namespace for that ontology. In this  case it is MADS, but it could be another ontology.</p>
+<p>  A BIBFRAME Authority need not include an authority  (primary or reference):</p>
+<div class="msg-info">
+  <pre>&lt;!— BIBFRAME Authority  --&gt;
+&lt;bf:Person&gt;             
+    <strong>&lt;bf:authorizedAccessPoint&gt;  Cutright, Paul Russell, 1897-&lt;/bf:authorizedAccessPoint&gt;</strong>
+&lt;/bf:Person&gt;</pre></div>
+<p class="caption">Figure  4: BIBFRAME Authority consisting  of AAP alone.</p>
+<p>In Figure 4, an AAP is provided, as a hint that this is what  the authorized heading would be if there were an authority given.   If the supplier of the BIBFRAME Authority is  not  confident of that, a bf:label may be supplied instead, as shown in the  next example.  We refer to a bf:label  informally as a “label”:</p>
+<div class="msg-info">
+  <pre>&lt;!— BIBFRAME Authority  --&gt;
+&lt;bf:Person&gt;
+    <strong>&lt;bf:label&gt;Paul Russell Cutright&lt;/bf:label&gt;</strong>
+&lt;/bf:Person&gt; </pre>
+</div>
+<p class="caption">Figure  5: BIBFRAME Authority consisting  of label alone. </p>
+<p class="backtotop"><a href="pdf/lovin-speech-jan23-2014.pdf">Back to Top</a></p>
+<h2 id="spec" class="dot-top">3. BIBFRAME Authority Specification</h2>
+<p>A BIBFRAME Authority is an RDF structure of  class  bf:Authority (or a  subclass of bf:Authority, e.g. bf:Person, etc.)  which includes:</p>
+<ul type="disc" class="bullet">
+  <li><strong>An AAP or Label</strong>. It should include one or       the   other, and may include both, but not more than one of either. If both         are supplied, their values should be identical.  If a primary   authority is supplied, then       an AAP should be supplied.</li>
+  <li><strong>A primary authority.</strong>  (Via property bf:hasAuthority.) Optional,       non-repeatable.</li>
+  <li><strong>A reference authority.</strong>  (Via property bf:referenceAuthority.) Optional,       repeatable</li>
+</ul>
+<p><em>Note:  <strong>the  “Direct Approach”</strong> (suggested in an earlier BIBFRAME paper, and illustrated  in the following example) <strong>is expressly excluded</strong> as a possible form for a  BIBFRAME Authority. </em></p>
+<div class="msg-info">
+  <pre>&lt;bf:Work&gt;
+    &lt;bf:title&gt;Florida Mobile Home Act&lt;/bf:title&gt;
+    <strong>&lt;bf:creator rdf:resource=&quot;http://id.loc.gov/authorities/names/n79053995&quot;/&gt;</strong>
+&lt;/bf:Work&gt;</pre></div>
+<p class="caption">Figure 6: “Direct  Approach” &ndash; <strong> NOT</strong> a valid form of BIBFRAME  Authority.</p>
+<p class="backtotop"><a href="#skip_menu">Back to Top</a></p>
+<h2 id="roles" class="dot-top">4.	Representing Roles </h2>
+<p>The  BIBFRAME class bf:Authority  has subclasses  bf:Agent, bf:Place, bf:Temporal,  and bf:Topic. Thus an Authority can express an agent, place, temporal  expression, or topic.</p>
+<p>  bf:Agent has subclasses bf:Person, bf:Family,  bf:Organization, bf:Jurisdiction and  bf:Meeting, thus an agent is a person, family, organization, jurisdiction, or  meeting. An agent may be associated with a BIBFRAME Resource via a role, such  as “creator” or “illustrator”. This section focuses on agents and their roles.    </p>
+<p>A role is best expressed as a property (e.g. bf:creator) if there is a known property for the role. In cases where there is no known property to express a role, it may be expressed via string, using a bf:Relator construct. These two mechanisms are described in the following two subsections. </p>
+<h3 id="propertyroles" class="dot-top">4.1	Role Expressed as Property</h3>
+<p>Consider for example the aforementioned two roles, creator  and illustrator. There is a fairly significant difference in the way that they  are treated in BIBFRAME:  There is a  property bf:creator, but no property bf:illustrator.  So, to indicate that a person is a creator is  far simpler than to indicate that that person assumes a more specific role such  as illustrator. </p>
+<p>  The role of creator is illustrated in Figure 1, where a  BIBFRAME Work includes the property bf:creator, whose object is a BIBFRAME  Authority.  </p>
+<p>  There are two such general role properties in BIBFRAME,  bf:contributor and bf:creator.  The number  of more specific potential roles is essentially unlimited, and these cannot  possibly be represented by BIBFRAME properties; instead, many are represented by  controlled codes or terms within external vocabularies, which we refer to as  “role vocabularies.” An example is <a href="http://id.loc.gov/vocabulary/relators">http://id.loc.gov/vocabulary/relators</a>.  Entries within a role vocabulary can be treated as properties.</p>
+<p>  In the following example the role of illustrator is  expressed by the property relators:ill  whose object is  a BIBFRAME Authority (bf:Person). 
+  The prefix ‘relators:’ represents the namespace URI <a href="http://id.loc.gov/vocabulary/relators">http://id.loc.gov/vocabulary/relators</a>,  and so relators:ill becomes <a href="http://id.loc.gov/vocabulary/relators/ill">http://id.loc.gov/vocabulary/relators/ill</a> which is the id.loc.gov relator code for the  term ‘Illustrator’.      </p>
+<div class="msg-info">
+  <pre>
+&lt;bf:Work xmlns:relators=&quot;http://id.loc.gov/vocabulary/relators&quot;&gt;
+    &lt;bf:title&gt;Mogie: the heart of the house&lt;/bf:title&gt;
+    <strong>&lt;relators:ill rdf:nodeID=”bnode-x31p54”/&gt;</strong>
+&lt;/bf:Work&gt;
+&lt;!-- BIBFRAME Authority--&gt;
+&lt;bf:Person rdf:nodeID=”bnode-x31p54”&gt;
+   &lt;bf:authorizedAccessPoint&gt;Rosenthall, Marc, 1949-&lt;/bf:authorizedAccessPoint&gt;
+   &lt;bf:hasAuthority rdf:resource=&quot;http://id.loc.gov/authorities/names/n92008281&quot;/&gt;
+&lt;/bf:Person&gt;</pre>
+</div>
+<p class="caption">Figure 7: Role Expressed  by a Vocabulary Code.</p>
+<h3 id="stringroles" class="dot-top">4.2	Role Expressed as String</h3>
+<p>Suppose a cataloger creating a Work description wants to indicate the role &quot;original author&quot;. If there is a vocabulary with a term representing this role, the cataloger is not aware of it. </p>
+<p>In this scenario the property bf:relator is used. Its object is a BIBFRAME Relator - a structure of class bf:Relator - which relates an authority with a role. It has property  bf:relatorRole, which expresses the role as a literal, and also uses the property bf:agent to link to the BIBFRAME authority that the role applies to. This is illustrated in the following example. </p>
+<div class="msg-info">
+  <pre>&lt;bf:Work  xmlns:relators=&quot;http://id.loc.gov/vocabulary/relators&quot;&gt;
+&lt;rdf:type rdf:resource=&quot;http://bibframe.org/vocab/MovingImage&quot;/&gt;
+	&lt;bf:title&gt;Inkheart&lt;/bf:title&gt;
+	<strong>&lt;bf:relator  rdf:nodeID=&rdquo;bnode-q90w87&rdquo;/&gt;</strong><br>&lt;/bf:Work&gt;<br>  &lt;!—<br>    BIBFRAME Relator--&gt;<br><strong>&lt;bf:Relator  rdf:nodeID=&rdquo;bnode-q90w87&rdquo;&gt;<br>    &lt;bf:relatorRole&gt;original author&lt;/bf:relatorRole&gt;<br>    &lt;bf:agent rdf:nodeID=&quot;bnode-y65v32&quot;/&gt;<br>&lt;/bf:Relator&gt;</strong>
+&lt;!—<br>    BIBFRAME Authority--&gt;<br>&lt;bf:Person rdf:nodeID=&rdquo;bnode-y65v32&rdquo;&gt;
+   &lt;bf:authorizedAccessPoint&gt;Funke, Cornelia Caroline&lt;/bf:authorizedAccessPoint&gt;
+   &lt;bf:hasAuthority  rdf:resource=&quot;<a href="http://id.loc.gov/authorities/names/nr99039757">http://id.loc.gov/authorities/names/nr99039757</a>&quot;/&gt;
+&lt;/bf:Person&gt;</pre>
+</div>
+<p class="caption">Figure 8: Role Expressed  by a literal, using a BIBFRAME Relator.</p>
+<p class="backtotop"><a href="#skip_menu">Back to Top</a></p>
+<h2 id="subjects" class="dot-top">5. Subjects</h2>
+<p>BIBFRAME subjects are expressed by property bf:subject which  has as its object either a BIBFRAME Authority or Work.  Thus the object  is one of: bf:Agent:, bf:Place, bf:Temporal,  bf:Topic, and bf:Work.   All of these  classes are subclasses of bf:Authority with the exception of bf:Work, which is  included so that a Work may have as its subject another Work.</p>
+<p>  In the following example a Work has a title and a subject,  in this case a Topic. The Topic is an  Authority.  </p>
+<div class="msg-info">
+  <pre>
+&lt;bf:Work rdf:about=”http://bibframe/work/w72x43”&gt;
+    &lt;bf:title&gt;History of the Peloponnesian War&lt;/bf:title&gt;
+    &lt;bf:subject rdf:nodeID=”bnode-t24x38”/&gt;
+&lt;/bf:Work&gt;
+&lt;!-- BIBFRAME Authority--&gt;
+<strong>&lt;bf:Topic rdf:nodeID=”bnode-t24x38”&gt;</strong>
+    <strong>&lt;bf:label&gt;Greece--History--Peloponnesian  War, 431-404 B.C.&lt;/bf:label&gt;</strong>
+<strong>&lt;/bf:Topic&gt;</strong></pre>
+</div>
+<p class="caption">Figure 9: Subject Authority  (Topic).</p>
+<p>In the following example, the Work is an analysis of the  above Work (Figure 9) and includes that Work as a subject. </p>
+<div class="msg-info">
+  <pre>&lt;bf:Work&gt;
+    &lt;bf:title&gt;Analysis of Thucydides History of the Peloponnesian War&lt;/bf:title&gt;
+    <strong>&lt;bf:subject rdf:resource=”http://bibframe/work/w72x43”/&gt;</strong>
+&lt;/bf:Work&gt;</pre>
+</div>
+<p class="caption">Figure 10: Work has a subject which is another Work.</p>
+<p>In the following example, the Work has a subject, which is a  place, represented by a Place Authority. </p>
+<div class="msg-info" style="color:#green;">
+  <pre>
+&lt;bf:Work&gt;
+    &lt;bf:title&gt;Gunmen of Winslow&lt;/bf:title&gt;
+    &lt;bf:subject rdf:resource=&quot;bnode-p622k123&quot;/&gt;
+&lt;/bf:Work&gt;
+&lt;!-- BIBFRAME Authority--&gt;
+<strong>&lt;bf:Place rdf:nodeID=&quot;bnode-p622k123&quot;&gt;</strong>
+    <strong>&lt;bf:authorizedAccessPoint&gt;Winslow (Ark.)&lt;/bf: authorizedAccessPoint&gt;</strong>
+    <strong>&lt;bf:hasAuthority rdf:resource=&quot;http://id.loc.gov/authorities/names/n88198885&quot;/&gt;</strong>
+<strong>&lt;/bf:Place&gt;</strong></pre>
+</div>
+<p class="caption">Figure 11: Subject  Authority &ndash; Place.</p>
+<p class="backtotop"><a href="#skip_menu">Back to Top</a></p>
+    </div>
+    <div class="clear"><!-- --></div>
+    </div><!-- end id:main_body -->
+  </div><!-- end id:content -->
+  <!--#include virtual="/cdn/html/locfoot.html"-->
+</div><!-- end id:container -->
+</body>
+</html>
