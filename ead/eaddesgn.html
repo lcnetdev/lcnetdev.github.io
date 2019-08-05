@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/ead-subpage.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<TITLE>Design Principles for Enhancements to EAD December 2002 (EAD Official Site, Library of Congress)</TITLE>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<META name="keywords" content="design principles enhacement encoded archival description dtd development ead 2002 DTD library congress society american archivists">
+<META name="description" content="These statements are intended as guiding principles to be used in formulating future enhancements to the EAD DTD. They were developed as part of the project that led to the EAD 2002 DTD made public in late 2002. These principles support the objective of facilitating the widest possible use of EAD. When considering the submission of suggestions for possible change to the EAD DTD, the EAD Working Group will apply the following guidelines. Suggestions are not being actively solicited at this time, but prior to the next update to the EAD DTD, an online suggestions form will be made available, as was done prior to the most recent update cycle.">
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link type="text/css" media="print" href="ead-print.css" rel="stylesheet">
+<style type="text/css" media="screen">
+@import url(ead-base.css);
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<form action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" name="seek1" method="get">
+<input type="hidden" name="col" value="loc">
+<input type="hidden" name="sc" value="0">
+<input type="hidden" name="ws" value="0">
+<input type="hidden" name="la" value="en">
+<input type="hidden" name="qm" value="0">
+<input type="hidden" name="st" value="1">
+<input type="hidden" name="nh" value="10">
+<input type="hidden" name="lk" value="1">
+<input type="hidden" name="rf" value="0">
+<input type="hidden" name="oq" value="">
+<input type="hidden" name="si" value="0">
+<input type="hidden" name="rq" value="0">
+<input type="hidden" name="qc" value="">
+<table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
+  <div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="index.html">EAD</a></div></td>
+<td width="116"><select name="qp" tabindex="1">
+<option value="url:/ead" selected>EAD Official Site Pages</option>
+<option value="url:/standards url:/ead url:/marc">Standards Pages</option>
+<option value="">All Library Pages</option>
+</select></td><td width="117" align="right"><input type="text" name="qt" id="keyword" size="18" value="" tabindex="2"></td>
+<td width="67" align="right"><input name="search_button" type="image" id="search_button" tabindex="3" value="SEARCH" src="images/ead-search.gif" alt="search"></td>
+</tr></table></form>
+<table align="center" class="layout" cellpadding="0" cellspacing="0"><tr><td>
+<div id="graphic"><a href="index.html"><img src="images/ead-title.gif" alt="EAD (Encoded Archival Description ; Version 2002 Official Site)" width="600" height="50" border="0"></a></div>
+<div class="goldtop"></div>
+<div id="breadcrumbs"><a href="index.html">home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="top breadcrumb" -->design
+    principles<!-- InstanceEndEditable --></div>
+<div class="space"></div>
+<div class="clear"></div>
+<!-- InstanceBeginEditable name="page_content" -->
+<div class="box">
+  <P>These statements are intended as guiding principles to be used
+    in formulating future enhancements to the EAD DTD. They were developed as
+    part of the project that led to the EAD 2002 DTD made public in late 2002. These
+    principles support the objective of facilitating the widest possible use
+    of EAD. When considering the submission of suggestions for possible change
+    to the EAD DTD, the EAD Working Group will apply the following guidelines.
+    Suggestions are not being actively solicited at this time, but prior to the
+    next update to the EAD DTD, an online suggestions form will be made available,
+    as was done prior to the most recent update cycle.</P>
+  </div>
+<h1><a name="skip_menu"></a>Design Principles</h1>
+<h2>For Enhancements to EAD (December
+      2002)</h2>
+<ol>
+  <li>A goal of EAD is to make archival resources from many institutions accessible
+    to users. To achieve this goal, EAD must accommodate a wide range of internationally
+    divergent descriptive practices. The standard must be responsive to clearly
+    articulated needs across the range of institutional or media-specific archival
+    contexts.</li>
+  <li>EAD element and attribute names must be as universal as possible in both
+    language and application to accommodate international interchange. At the
+    same time, it is important to provide mechanisms to meet specific language
+    or media output needs.</li>
+  <li>EAD addresses information about archival resources that is shared publicly.
+    It is not a system for collections management activities such as the transfer
+    of ownership, conservation, exhibition, use, storage or technical processing
+    of materials.</li>
+  <li>EAD is a data structure and not a data content standard. It does not prescribe
+    how one formulates the data that appears in any given data element - that
+    is the role of external national or international data content standards.
+    The <em>EAD Tag Library</em> illustrates the type of data that is intended
+    to be included in an element to the extent necessary to correlate that element
+    to a descriptive area in a particular content standard. At the same time,
+    care must be taken to ensure compatibility with such external standards.</li>
+  <li>EAD is also a data communication format based on SGML/XML syntax. In some
+    environments, archival description will be created and maintained using technologies
+    such as relational or object-oriented databases, and EAD will be used principally
+    as a transfer mechanism. In other situations, archives will manage descriptive
+    data directly in SGML/XML-based systems. EAD must accommodate both environments.</li>
+  <li>EAD focuses on the structural content of archival description, not on its
+    presentation. However, the standard must provide sufficient mechanisms to
+    support output in a variety of formats. These may include traditional forms
+    of finding aids such as registers, inventories, and lists of various sorts,
+    as well as new output forms for both web display and print.</li>
+  <li>The EAD DTD specifies an order and grouping of elements to a limited degree.
+    These are the internal structures of the DTD. For most output mechanisms
+    using current technology, the order of elements within an EAD instance is
+    irrelevant to the output of that data. Changes, as opposed to additions,
+    to the structure will not be made simply to facilitate some output sequence
+    or product.</li>
+  <li>Continuity of structure and content is an important factor in ensuring
+    the acceptance and continued application of EAD. While the technological
+    environment for EAD is complex and challenging to many institutions, the
+    goals of EAD will be best served if technical barriers to its use are minimized.
+    Changes to the DTD need to be as technically transparent as possible. In
+    general terms this means a preference for adding rather than replacing elements
+    and for ensuring that new versions of EAD are backward-compatible.</li>
+</ol>
+<h2>&nbsp;</h2>
+<!-- InstanceEndEditable -->
+<div id="breadcrumbs-bottom"><a href="index.html">home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="bottom breadcrumb" -->design
+    principles<!-- InstanceEndEditable --></div>
+</td>
+</tr>
+
+</table>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://www.loc.gov/">The
+          Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<span class="selected">EAD</span></div>
+      <br>
+  <span class="sitenav">
+  <!-- #BeginDate format:Am1 -->June 5, 2006<!-- #EndDate -->
+  </span></td>
+<td align="right"><div class="contactus"><a href="mailto:ndmso@loc.gov">Contact Us</a></div></td>
+</tr></table>
+</body>
+<!-- InstanceEnd --></html>

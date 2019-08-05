@@ -1,0 +1,217 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- InstanceBegin template="Templates/ead-subpage.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<TITLE>EAD DTD Version 2002 (EAD Official Site,Library of Congress)</TITLE>
+<!-- InstanceEndEditable --><!-- InstanceBeginEditable name="head" -->
+<META name="keywords" content="encoded archival description dtd development ead 2002 DTD library congress society american archivists">
+<META name="description" content="This document provides a history of the
+development of the Encoded Archival Description DTD, from its beginnings as a University of
+California, Berkeley project to its current 2002 release as a developing international standard for
+finding aids. The DTD was developed by the archival community. The standard is maintained
+by the Library of Congress.">
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link type="text/css" media="print" href="ead-print.css" rel="stylesheet">
+<style type="text/css" media="screen">
+@import url(ead-base.css);
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body bgcolor="#FFFFFF" text="#000000">
+<form action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" name="seek1" method="get">
+  <input type="hidden" name="col" value="loc">
+  <input type="hidden" name="sc" value="0">
+  <input type="hidden" name="ws" value="0">
+  <input type="hidden" name="la" value="en">
+  <input type="hidden" name="qm" value="0">
+  <input type="hidden" name="st" value="1">
+  <input type="hidden" name="nh" value="10">
+  <input type="hidden" name="lk" value="1">
+  <input type="hidden" name="rf" value="0">
+  <input type="hidden" name="oq" value="">
+  <input type="hidden" name="si" value="0">
+  <input type="hidden" name="rq" value="0">
+  <input type="hidden" name="qc" value="">
+  <table align="center" class="header" cellpadding="0" cellspacing="0" border="0">
+    <tr>
+      <td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
+        <div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="index.html">EAD</a></div>
+      </td>
+      <td width="116"><select name="qp" tabindex="1">
+          <option value="url:/ead" selected>EAD Official Site Pages</option>
+          <option value="url:/standards url:/ead url:/marc">Standards Pages</option>
+          <option value="">All Library Pages</option>
+        </select>
+      </td>
+      <td width="117" align="right"><input type="text" name="qt" id="keyword" size="18" value="" tabindex="2">
+      </td>
+      <td width="67" align="right"><input name="search_button" type="image" id="search_button" tabindex="3" value="SEARCH" src="images/ead-search.gif" alt="search">
+      </td>
+    </tr>
+  </table>
+</form>
+<table align="center" class="layout" cellpadding="0" cellspacing="0">
+  <tr>
+    <td>
+      <div id="graphic"><a href="index.html"><img src="images/ead-title.gif" alt="EAD (Encoded Archival Description ; Version 2002 Official Site)" width="600" height="50" border="0"></a></div>
+      <div class="goldtop"></div>
+      <div id="breadcrumbs"><a href="index.html">home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="top breadcrumb" -->ead
+          dtd<!-- InstanceEndEditable --></div>
+      <div class="space"></div>
+      <div class="clear"></div>
+      <!-- InstanceBeginEditable name="page_content" -->
+      <h1><a name="skip_menu"></a>EAD DTD Version 2002</h1>
+      <p>This page contains instructions for downloading Version 2002 of the
+        Document Type Definition (DTD) for the Encoded Archival Description,
+        an implementation of ISO 8879, SGML (Standard Generalized Markup Language)/XML
+        (eXtensible Markup Language). Version 2002 of the EAD DTD was finalized
+        in December 2002. It supersedes version 1.0, released in August 1998.
+        It also contains links to related files. The 2002 version is the second
+        production release of the EAD DTD. It incorporates a small number of
+        newly-defined elements, deprecates eight previously used elements, and
+        modifies the structure (content model) for a few elements to allow the
+        inclusion of other valid EAD elements at different levels within a finding
+        aid. The changes and additions were suggested as a result of experience
+        with the first (1998) production release of the test version of the EAD
+        DTD. During the four years that Version 1.0 was in use, hundreds of archives
+        experimented with use of the EAD DTD for a range of finding aid encoding
+        projects. Their input was important for deciding upon which changes and
+        additions were essencial in the 2002 release.</p>
+      <p>Version 2002 of the EAD DTD is designed to function as both an SGML
+        and XML DTD. It conforms to all SGML/XML (ISO 8879) specifications. It
+        has been thoroughly tested using a wide variety of existing SGML/XML
+        software. To be used as an XML DTD, "switches" have been included in
+        the DTD for turning off features used only in SGML applications, and
+        turning on features used in XML applications. Instructions for using
+        these "switches" are contained in the DTD itself. Please keep in mind,
+        downloading the EAD DTD and related files is <i>not</i> all you will
+        need to do to begin using it. Most SGML and XML authoring software requires
+        more than simply loading a new DTD to make them work since there are
+        often proprietary features and add-ons to contend with. You will most
+        likely need to consult manuals or user guides on your SGML/XML software
+        after getting a copy of the EAD DTD and related files themselves.</p>
+      <p>Standard Generalized Markup Language (SGML), as applied in this DTD
+        and related files, has revolutionized the world of finding aids by providing
+        a single standardized encoding through which archival descriptions can
+        be exchanged and used. It may also simplify the process of creating machine-readable
+        finding aids in the future as the use of XML tools becomes more widespread
+        and better understood.</p>
+      <p>As you begin to implement this version of the EAD DTD, keep in mind
+        that it is the product of a lengthy development effort during which many
+        options and models were considered. It may not reflect the exact structure
+        of the finding aids that you currently produce, but it should provide
+        elements into which you can fit the information you currently capture.</p>
+      <p>The EAD DTD was designed to be somewhat prescriptive, providing and
+        in some cases requiring that finding aids be structured in a particular
+        way. This will occasionally result in differences between the structure
+        of an encoded archival description and existing printed finding aids
+        when they are used as the source for content.</p>
+      <h3><a name="whattodo"></a>What You Need To Do:</h3>
+      <p>To start creating your own Encoded Archival Descriptions, you will need
+        various files and support documents. Most are available to you electronically
+        via FTP (File Transfer Protocol) from an anonymous file server. The EAD
+        Tag Library is currently available as both a print and <a href="http://www.loc.gov/ead/tglib/index.html">Web
+        version</a>. Due to the length of the EAD Tag Library, we recommend you
+        purchase a copy of the printed document which is available from the <a
+href="http://www.archivists.org/catalog/pubDetail.asp?objectID=235">Society of
+        American Archivists</a>. It should greatly facilitate your use of the
+        EAD DTD.
+      <p><strong>The entire suite of files can be downloaded as a self-extracting
+          compressed ("zip") file</strong>. Once transferred, run the file from
+          Windows to extract the components onto your hard drive.</p>
+      <p>COMPRESSED FILE:</p>
+      <ul>
+        <li><a href="ftp://ftp.loc.gov/pub/ead/ead2002.exe">ead2002.exe</a> (self-extracting
+          archive)</li>
+      </ul>
+      <i>or</i>
+      <ul>
+        <li><a href="ead2002.zip">ead2002.zip</a> (zip file)</li>
+      </ul>
+      <p>Alternately, you can FTP download the EAD DTD and other machine-readable
+        documents. All you need is access to the Internet and electronic transfer
+        software (FTP). The host domain of LC's FTP server is: ftp.loc.gov</p>
+      <ol>
+        Once an FTP session is initiated, you will be prompted for a name. You
+          should enter:
+        <li>anonymous
+        <li>When you are prompted for a password, enter your Internet address,
+          or name.
+        <li>At the FTP> prompt, change to the EAD subdirectory by entering the
+          command:
+        <li>cd pub/ead <br>
+          NOTE: The character between the subdirectory names is a forward slash!
+        <li>Entering the command "dir" will return to you a list of the files
+          available in the EAD subdirectory.
+      </ol>
+      <p>The files you should transfer using the "get" command are listed below.
+        The "get" command should copy a file to the default directory on the
+        machine you are using locally. Most of the files should be transferred
+        as ASCII files, which is the default transfer mode for most FTP applications.
+        Some of these files will need to be transferred in BINARY mode. To change
+        to binary mode during an FTP session, enter the command "bin". The command "asc" can
+        be used to return to ASCII mode. NOTE: For some FTP applications, the
+        transfer mode is automatically set based on the file extension found
+        during transfer.</p>
+      <p>Additionally the following files can be downloaded from Internet Explorer
+        or Mozilla by right-clicking on the link and selecting "Save Target As," or
+        in Netscape by holding the "shift" key and clicking on the link.</p>
+      <ul>
+        FILES:
+        <li><a href="ftp://ftp.loc.gov/pub/ead/ead.dtd">ead.dtd</a> </li>
+        <li><a href="ftp://ftp.loc.gov/pub/ead/eadsgml.dcl">eadsgml.dcl</a> </li>
+        <li><a href="ftp://ftp.loc.gov/pub/ead/eadcatalog.xml">eadcatalog.xml</a> </li>
+        <li><a href="ftp://ftp.loc.gov/pub/ead/eadcatalog">eadcatalog</a> </li>
+        <li><a href="ftp://ftp.loc.gov/pub/ead/eadlocal.ent">eadlocal.ent</a></li>
+        <li><a href="ftp://ftp.loc.gov/pub/ead/iso-cyr1.ent">iso-cyr1.ent</a></li>
+        <li><a href="ftp://ftp.loc.gov/pub/ead/iso-cyr2.ent">iso-cyr2.ent</a> </li>
+        <li><a href="ftp://ftp.loc.gov/pub/ead/iso-dia.ent">iso-dia.ent</a> </li>
+        <li><a href="ftp://ftp.loc.gov/pub/ead/iso-grk1.ent">iso-grk1.ent</a> </li>
+        <li><a href="ftp://ftp.loc.gov/pub/ead/iso-grk2.ent">iso-grk2.ent</a> </li>
+        <li><a href="ftp://ftp.loc.gov/pub/ead/iso-grk3.ent">iso-grk3.ent</a> </li>
+        <li><a href="ftp://ftp.loc.gov/pub/ead/iso-grk4.ent">iso-grk4.ent</a> </li>
+        <li><a href="ftp://ftp.loc.gov/pub/ead/iso-lat1.ent">iso-lat1.ent</a> </li>
+        <li><a href="ftp://ftp.loc.gov/pub/ead/iso-lat2.ent">iso-lat2.ent</a> </li>
+        <li><a href="ftp://ftp.loc.gov/pub/ead/iso-num.ent">iso-num.ent</a> </li>
+        <li><a href="ftp://ftp.loc.gov/pub/ead/iso-pub.ent">iso-pub.ent</a> </li>
+        <li><a href="ftp://ftp.loc.gov/pub/ead/iso-tech.ent">iso-tech.ent</a> </li>
+      </ul>
+      <p>If you do not have access to FTP or are not able to download the files,
+        you may request a diskette containing these files by contacting the Library
+        of Congress, <a href=
+"http://www.loc.gov/marc/ndmso.html">Network Development and MARC Standards Office
+        (NDMSO)</a>, who will be acting as the maintenance agency for this standard. </p>
+      <p>We encourage you to join the large number of users of the EAD DTD if
+        you are not already among that growing group. We also look forward to
+        getting feedback from you as you make use of Encoded Archival Description
+        for the first time. The EAD DTD is not set in stone but will be enhanced
+        in the future based on the experiences of its users. If you know of anyone
+        else interested in this effort, encourage them to download the above
+        EAD DTD files and subscribe to the <a href="eadlist.html">EAD electronic
+        forum</a>.</p>
+      <hr class="dashed">
+      <!-- InstanceEndEditable -->
+      <div id="breadcrumbs-bottom"><a href="index.html">home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="bottom breadcrumb" -->ead
+          dtd<!-- InstanceEndEditable --></div>
+    </td>
+  </tr>
+</table>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top">
+    <td><div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<span class="selected">EAD</span></div>
+      <br>
+      <span class="sitenav">
+      <!-- #BeginDate format:Am1 -->June 5, 2006<!-- #EndDate -->
+      </span></td>
+    <td align="right"><div class="contactus"><a href="mailto:ndmso@loc.gov">Contact
+          Us</a></div>
+    </td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd -->
+</html>

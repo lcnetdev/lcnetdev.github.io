@@ -1,0 +1,317 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	background: #f6f6f6;
+	font: 90% verdana, helvetica, sans-serif;
+	text-align: center;
+}
+table.header {
+	width: 765px;
+	text-align: left;
+	height: auto;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 0px;
+}
+table.footer {
+	width: 765px;
+	text-align: left;
+	height: auto;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 0px;
+}
+table.layout {
+	width: 765px;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #fff;
+	border: 1px solid #999;
+	color:#333;
+	text-align: left;
+}
+table table {
+	margin-left: 10px;
+	font:80%/140% verdana, helvetica, sans-serif;
+}
+table pre {
+	margin-left: 10px;
+	font:80%/140% verdana, helvetica, sans-serif;
+}
+form {
+	margin-bottom: 0;
+}
+ul {
+	margin-top: 6px;
+	margin-bottom: 2px;
+	list-style-image: url(images/bullet.gif);
+	margin-left: 10px;
+	padding-left: 20px;
+}
+ol {
+	margin-top: 6px;
+	margin-bottom: 2px;
+	margin-left: 10px;
+	padding-left: 20px;
+}
+ol li {
+	font: 80%/130% verdana, helvetica, sans-serif;
+	line-height: 20px;
+}
+ul li {
+	font: 90%/130% verdana, helvetica, sans-serif;
+	line-height: 20px;
+}
+li.news {
+	padding-left: -20px;
+	font: 80%/130% verdana, helvetica, sans-serif;
+}
+ul ul {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	list-style-image: url(images/bullet.gif);
+	margin-left: 25px;
+	padding-left: 0px;
+}
+.sitenav {
+	float: left;
+	text-align: left;
+	font: 70% verdana, helvetica, sans-serif;
+}
+.contactus {
+	float: right;
+	text-align: right;
+	font: 70% verdana, helvetica, sans-serif;
+}
+#graphic {
+	background: #478D24;
+}
+#official {
+	float: right;
+	clear: both;
+	font: 75% verdana, helvetica, sans-serif;
+	font-weight: bold;
+	color: #66CC33;
+	margin-bottom: 10px;
+	margin-top: 0px;
+}
+#breadcrumbs {
+	float: left;
+	margin-left: 5px;
+	font: 75% verdana, helvetica, sans-serif;
+	font-weight: bold;
+	color: #66CC33;
+	margin-top: 0px;
+}
+#breadcrumbs-bottom {
+	float: left;
+	margin-left: 5px;
+	font: bold 75% verdana, helvetica, sans-serif;
+	color: #66CC33;
+	margin-top: 10px;
+	padding-top: 5px;
+	margin-bottom: 5px;
+	padding-bottom: 5px;
+}
+#sitesearch {
+	float: right;
+	width: auto;
+}
+h1 {
+	clear: left;
+	margin-left: 10px;
+	padding-top: 5px;
+	margin-top: 5px;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	font: bold 130%/150% Verdana, Arial, Helvetica, sans-serif;
+	color: #478D24;
+}
+h1.homepage {
+	clear: none;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+h2 {
+	font: bold 110%/140% Arial, Helvetica, sans-serif;
+	color: #74b255;
+	margin-left: 10px;
+	margin-top: 5px;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	padding:0px;
+}
+h2.homepage {
+	font: bold 100%/105% Georgia, "Times New Roman", Times, serif;
+	color: #000000;
+	margin-left: 0px;
+	margin-top: 0px;
+	padding:0px;
+}
+h3 {
+	font: bold 100%/110% Arial, Helvetica, sans-serif;
+	color: #666666;
+	background: #fffcc9;
+	margin-left: 10px;
+	margin-top: 5px;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	padding:0px;
+}
+h4 {
+	font: bold 90%/95% verdana, helvetica, sans-serif;
+	color: #333;
+	margin:0px;
+	padding:0px;
+}
+h5 {
+	font: bold 80%/85% verdana, helvetica, sans-serif;
+	color: #333;
+	margin:0px;
+	padding:0px;
+}
+h6 {
+	font: bold 90%/95% verdana, helvetica, sans-serif;
+	color: #333;
+	margin:0px;
+	padding:0px;
+}
+p {
+	font:80%/140% verdana, helvetica, sans-serif;
+	text-align: left;
+	margin: 0px;
+	padding: 10px 10px 10px 10px;
+}
+p.homeblurb {
+	font: 70%/140% verdana, helvetica, sans-serif;
+	text-align: left;
+	margin: 0px;
+	padding: 10px 10px 10px 10px;
+}
+a {
+	color: #036;
+	font-family: verdana, helvetica, sans-serif;
+	text-decoration: underline;
+}
+a:link {
+	color: #438E1D;
+	text-decoration: underline;
+}
+a:visited {
+	color: #438E1D;
+	text-decoration: underline;
+}
+a:hover {
+	color: #438E1D;
+	text-decoration: underline;
+	background: #FFFEA8;
+}
+a.menu {
+	color: #036;
+	font-family: verdana, helvetica, sans-serif;
+	font-weight:600;
+	text-decoration: underline;
+}
+a.menu:link {
+	color: #036;
+	text-decoration: underline;
+}
+a.menu:visited {
+	color: #036;
+	text-decoration: underline;
+}
+a.menu:hover {
+	color: #333;
+	text-decoration: underline;
+	background: #DDE6EB;
+}
+a#skip {
+	position: absolute;
+	top:-100px;
+}
+.command-text {
+	font-family: "Courier New", Courier, mono;
+	font-size: 100%;
+	font-weight: bold;
+	color: #666;
+}
+.box {
+	float: right;
+	width: 35%;
+	border: 2px dashed #FFFC00;
+	margin-left: 15px;
+	margin-right: 10px;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	padding: 10px;
+	background-color: #FEFEF6;
+}
+
+hr.dashed {
+	border: none 0; 
+	border-top: 2px dashed #9AE773;/*the border*/
+	width: 100%;
+	height: 2px;/*whatever the total width of the border-top and border-bottom equal*/
+} 
+div.goldtop {
+	background: #FFFC00;
+	height: 10px;
+	width: 100%;
+	line-height: 1px;
+    font-size: 1px;/*these two lines override a default in IE*/
+}
+div.space {
+	height: 15px;
+	width: 100%;
+	line-height: 1px;
+    font-size: 1px;/*these two lines override a default in IE*/
+}
+div.clear {
+	clear: both;
+}
+div.gold {
+	background: #FFFC00;
+	height: 4px;
+	width: 100%;
+	line-height: 1px;
+    font-size: 1px;/*these two lines override a default in IE*/
+} 
+div.green {
+	background: #9AE773;
+	height: 8px;
+	width: 100%;
+	line-height: 1px;
+    font-size: 1px;/*these two lines override a default in IE*/
+} 
+div.clear {
+	clear: both;
+}
+.pdf {
+	font: 70% verdana, helvetica, sans-serif;
+}
+.selected {
+	font: verdana, helvetica, sans-serif;
+	color: #4B9626;
+	font-weight:600;
+}
+p.home-indent {
+	margin-left: 1.5em;
+	margin-right: 1.5em;
+	font: 90% verdana, helvetica, sans-serif;
+}
+.center {
+	text-align: center;
+}
+
+.redtext
+{color: #cc0000;}

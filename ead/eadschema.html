@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/ead-subpage.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<TITLE>EAD 2002 Schema (EAD Official Site, Library of Congress)</TITLE>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<META name="keywords" content="encoded archival description dtd development ead 2002 schema rng xsd library congress society american archivists dan pitti chair">
+<META name="description" content="EAD 2002 Schema (EAD Official Site, Library of Congress and the Society of American Archivists) This document provides access to the EAD 2002 schema.">
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link type="text/css" media="print" href="ead-print.css" rel="stylesheet">
+<style type="text/css" media="screen">
+@import url(ead-base.css);
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000">
+<form action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" name="seek1" method="get">
+<input type="hidden" name="col" value="loc">
+<input type="hidden" name="sc" value="0">
+<input type="hidden" name="ws" value="0">
+<input type="hidden" name="la" value="en">
+<input type="hidden" name="qm" value="0">
+<input type="hidden" name="st" value="1">
+<input type="hidden" name="nh" value="10">
+<input type="hidden" name="lk" value="1">
+<input type="hidden" name="rf" value="0">
+<input type="hidden" name="oq" value="">
+<input type="hidden" name="si" value="0">
+<input type="hidden" name="rq" value="0">
+<input type="hidden" name="qc" value="">
+<table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
+  <div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<a href="index.html">EAD</a></div></td>
+<td width="116"><select name="qp" tabindex="1">
+<option value="url:/ead" selected>EAD Official Site Pages</option>
+<option value="url:/standards url:/ead url:/marc">Standards Pages</option>
+<option value="">All Library Pages</option>
+</select></td><td width="117" align="right"><input type="text" name="qt" id="keyword" size="18" value="" tabindex="2"></td>
+<td width="67" align="right"><input name="search_button" type="image" id="search_button" tabindex="3" value="SEARCH" src="images/ead-search.gif" alt="search"></td>
+</tr></table></form>
+<table align="center" class="layout" cellpadding="0" cellspacing="0"><tr><td>
+<div id="graphic"><a href="index.html"><img src="images/ead-title.gif" alt="EAD (Encoded Archival Description ; Version 2002 Official Site)" width="600" height="50" border="0"></a></div>
+<div class="goldtop"></div>
+<div id="breadcrumbs"><a href="index.html">home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="top breadcrumb" -->ead
+    2002 schema<!-- InstanceEndEditable --></div>
+<div class="space"></div>
+<div class="clear"></div>
+<!-- InstanceBeginEditable name="page_content" -->
+<h1><a name="skip_menu"></a>EAD 2002 Schema</h1><br />
+<p><strong> The EAD Schema Working Group (SAA/EADWG) is pleased to announce the release
+  of the EAD 2002 Schema. </strong></p>
+<p>The EAD 2002 Schema is available in two syntaxes: Relax NG Schema (RNG) and
+  W3C Schema (XSD).</p>
+  <p><a href="ead.rng">RNG EAD</a></p>
+<p> <a href="ead.xsd">XSD EAD</a><br>
+
+<p>&nbsp;</p>
+  <h2>Note: Comments, questions, and error reports should be sent to the
+    EAD listserv with the subject line: Schema Comment</h2>
+  <p><h3>&nbsp;&nbsp;&nbsp;Listserv address: EAD@LOC.GOV</h3></p> 
+  <p>The
+    RNG version is the maintenance and therefore authoritative version. The XSD
+    version is derived from the RNG using Trang, with minor manual editing subsequent
+    editing.</p> 
+  <h2>EAD DTD / SCHEMA RELATIONSHIP</h2> 
+  <p>With one exception (XLink elements
+    and attributes), the EAD Schema is a subset of the EAD 2002 DTD.</p> 
+  <p>The Xlink
+    compatible elements and attributes in the DTD have been made compliant by
+    implementing XML Namespace. As a result, DTD compliant instances containing
+    ANY of the XLink tags and attributes will not validate against the Schema.
+    These instances must be converted into XLink compliant tags and attributes.
+    The EAD Schema WG has provided an Alpha XSLT for this conversion. A parameter
+on line 51 allows the user to specify whether the resulting schema should
+have RNG or W3C addressing information:</p>
+  <p>&nbsp;&nbsp;&nbsp;<a href="dtd2schema.xsl">dtd2schema.xsl</a></p>
+  <p>&nbsp;&nbsp;&nbsp;<a href="XSLTbasics.pdf">Instructions for Using dtd2schema.xsl</a> (PDF file, 2 p.)</p>
+  <p>The following elements and
+    their XLink-specific attributes are impacted by this change:</p> <p>&nbsp;&nbsp;&nbsp;arc archref<br>
+    &nbsp;&nbsp;&nbsp;bibref<br> 
+    &nbsp;&nbsp;&nbsp;dao daogrp daoloc<br> 
+    &nbsp;&nbsp;&nbsp;extptr extptrloc extref extrefloc<br> 
+    &nbsp;&nbsp;&nbsp;linkgrp<br> 
+    &nbsp;&nbsp;&nbsp;ptr ptrloc<br>
+    &nbsp;&nbsp;&nbsp;ref refloc resource<br> 
+    &nbsp;&nbsp;&nbsp;title</p> <p>For example, the following DTD compliant tag:</p><p>    &nbsp;&lt;extptr<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;linktype="simple"<br>    
+    &nbsp;&nbsp;&nbsp;&nbsp;href="myimage.jpg"<br>     
+    &nbsp;&nbsp;&nbsp;&nbsp;show="embed"<br>     
+    &nbsp;&nbsp;&nbsp;&nbsp;actuate="onload"/&gt;<br></p>    
+    <p>Must
+      be converted to the following:</p><p>    &nbsp;&lt;extptr<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;xlink:type="simple"<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;xlink:href="myimage.jpg"<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;xlink:show="embed"<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;xlink:actuate="onLoad"/&gt;</p>
+      <p>Do
+      note also that while RNG does support external entities, XSD does not.
+      Thus @entityref must be resolved and converted to @xlink:href on XLink "locator" tags.
+      Do note also that @xlink:href is a required attribute on XLink "locator" tags,
+      and thus using RNG will require the presence of this attribute on the relevant
+      tags.</p> <p>With the exception of the XLink tags and attributes, a Schema valid
+      instance will be a DTD valid instance. However, because of the imposition
+      of datatype contraints on specific attribute values, a DTD valid instance
+      may not be Schema valid.</p> <p>The following attributes are impacted by the imposition
+      of datatype constraints:</p><p> &nbsp;&nbsp;&nbsp;@normal on &lt;unitdate&gt; and &lt;date&gt;: constrained
+      to date and date range subset of ISO 8601<br /> 
+      &nbsp;&nbsp;&nbsp;@repositorycode: constrained to
+      ISO 15511 (ISIL)<br /> 
+      &nbsp;&nbsp;&nbsp;@mainagencycode: constrained to ISO 15511 (ISIL)<br /> 
+      &nbsp;&nbsp;&nbsp;@langcode:
+      constrained to ISO 639-2 alpha-3 code list<br /> 
+      &nbsp;&nbsp;&nbsp;@scriptcode: constrained to ISO
+      15924 code list<br /> 
+      &nbsp;&nbsp;&nbsp;@countrycode: constrained to ISO 3166-1 alpha-2 code list</p>
+	  <p><a href="dtdtoschemachanges.pdf">Document: Switching from EAD DTD to XSD</a></p>
+      <h2>SCHEMA NOTES</h2> 
+      <p>In preliminary testing, many of the attribute values intended by encoders
+      to be compliant with each relevant ISO standard were found to be incorrect.
+      Thus scriptcode="latn" for
+      the Latin script is incorrect. The correct code for the Latin script is "Latn".
+      The case of the character matters!!</p><h3>Attribute validations errors indicate
+      that the attribute value does not conform to the ruling ISO standard.</h3><br /><hr/>
+      <p>Publisher: Society of American Archivists and the Library of Congress</p>
+      <p>Funding: National Historical Publications and Records Commission</p><p>Editors
+      (SAA/EADWG/EAD Schema Working Group):</p>
+      <p>Francoise Bourdon (Biblioth&egrave;que
+      nationale de France)<br />Terry Catapano (Columbia University)<br />Jerry
+      McDonough (University of Illinois)<br />Lee Mandell (New York University)<br />Chris
+      Prom (University of Illinois)<br />Stephen Yearl (Yale University)<br />Daniel
+      Pitti (University of Virginia), Chair
+      
+      
+
+
+
+
+  
+
+
+    
+      </p>
+      <hr class="dashed">
+<!-- InstanceEndEditable -->
+<div id="breadcrumbs-bottom"><a href="index.html">home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="bottom breadcrumb" -->ead
+    2002 schema<!-- InstanceEndEditable --></div>
+</td>
+</tr>
+
+</table>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://www.loc.gov/">The
+          Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a>&nbsp;&raquo;&nbsp;<span class="selected">EAD</span></div>
+      <br>
+  <span class="sitenav">
+  <!-- #BeginDate format:Am1 -->July 17, 2012<!-- #EndDate -->
+  </span></td>
+<td align="right"><div class="contactus"><a href="mailto:ndmso@loc.gov">Contact Us</a></div></td>
+</tr></table>
+</body>
+<!-- InstanceEnd --></html>
