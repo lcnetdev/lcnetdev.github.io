@@ -1,0 +1,626 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/mets-template.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<!-- InstanceBeginEditable name="doctitle" --><!-- InstanceEndEditable --><!-- InstanceBeginEditable name="head" -->
+	    <title>METS: introducci&oacute;n y tutorial: sitio web oficial Metadata
+		Encoding and Transmission Standard (METS)</title>
+    <!-- <BASE HREF="http://lcnetdev.github.io/standards/mets/METSOverview_spa.html"> -->
+	 <META NAME="keywords"
+	  CONTENT="mets en espa&ntilde;ol metadata encoding transmission standard web site library congress xml schema">
+	 <META NAME="description"
+	  CONTENT="METS: introducci&oacute;n y tutorial: sitio web oficial Metadata
+		Encoding and Transmission Standard Official Web Site.  
+The METS schema is a standard for encoding descriptive, administrative, and structural metadata regarding objects within a digital library, expressed using the XML schema language of the World Wide Web Consortium. 
+The standard is maintained in the Network Development and MARC Standards Office of the Library of Congress, and is being developed as an initiative of the Digital Library Federation.">
+<!-- InstanceEndEditable -->
+<META http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="mets-redesign.css" rel="stylesheet" type="text/css">
+</head>
+<body text="#333333" link="#336666" vlink="#666666" alink="#669966" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<div style="border:solid #666666 1px; width:760px; margin-left: auto; margin-right: auto;">
+      <!-- 760 wide table for header -->
+      <table width="760" cellpadding="0" cellspacing="0" border="0" align="center">
+        <tr valign="top">
+          <td height="25" colspan="2"><a href="#content" name="top"><img src="images/spacer-gray.gif" alt="Skip Navigation Links" width="1" height="1" border="0"></a> <a href="http://lcnetdev.github.io/" class="white">The
+              Library of Congress</a> <span class="white-text">&gt;&gt;</span> <a href="http://lcnetdev.github.io/standards/">Standards</a></td>
+        </tr>
+        <tr>
+          <td> <img src="images/spacer-green.gif" alt="" width="400" height="1"></td>
+          <td valign="bottom"> <img src="images/spacer-green.gif" alt="" width="360" height="1"></td>
+        </tr>
+        <!-- title graphic -->
+        <tr>
+          <td colspan="2" background="images/spacer-green.gif"><img height=75 
+      alt="Metadata Encoding and Transmission Standard (METS) Official Web Site" 
+      src="images/mets-bar-new.gif"></td>
+        </tr>
+        <!-- spacer row -->
+        <tr>
+          <td> <img src="images/spacer-green.gif" alt="" width="400" height="1"></td>
+          <td valign="bottom"> <img src="images/spacer-green.gif" alt="" width="360" height="1"></td>
+        </tr>
+        <!-- navigation breadcrumbs and search box -->
+        <tr>
+          <td background="images/spacer-gray.gif" bgcolor="#eeeeee">
+            <p class="menu">&nbsp; <a href="mets-home.html">Home</a> &gt;&gt; <!-- InstanceBeginEditable name="topbreadcrumb" --><A
+						HREF="mets-news.html">News &amp; Announcments</A><!-- InstanceEndEditable --></p>
+          </td>
+          <td align="right" background="images/spacer-gray.gif" bgcolor="#eeeeee">
+		  <form style="margin-bottom:0;" action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" name="seek1" method="get">
+		  <input type="hidden" name="col" value="loc">
+<input type="hidden" name="sc" value="0">
+<input type="hidden" name="ws" value="0">
+<input type="hidden" name="la" value="en">
+<input type="hidden" name="qm" value="0">
+<input type="hidden" name="st" value="1">
+<input type="hidden" name="nh" value="10">
+<input type="hidden" name="lk" value="1">
+<input type="hidden" name="rf" value="0">
+<input type="hidden" name="oq" value="">
+<input type="hidden" name="si" value="0">
+<input type="hidden" name="rq" value="0">
+<input type="hidden" name="qc" value="">
+
+            <table cellpadding="4" cellspacing="0" border="0">
+        <tr>
+          <td><select name="qp" tabindex="1">
+            <option value="url:/standards/mets" selected>METS Pages</option>
+            <option value="url:/standards url:/ead url:/marc">Standards Pages</option>
+            <option value="">All Library Pages</option>
+          </select></td>
+          <td><span class="drop-box">
+          <input type="text" name="qt" id="keyword" size="18" value="" tabindex="2">
+          </span></td>
+          <td align="left">
+		  <input name="search_button" type="image" id="search_button" tabindex="3" value="SEARCH" src="images/search.gif" alt="search"></td>
+        </tr>
+      </table>
+    </form></td>
+        </tr>
+        <!-- spacer row -->
+        <tr>
+          <td><img src="images/spacer-green.gif" alt="" width="400" height="1"></td>
+          <td valign="bottom"><img src="images/spacer-green.gif" alt="" width="360" height="1"></td>
+        </tr>
+      </table>
+      <!-- START of 730 wide table for page content -->
+      <a name="content"></a>
+      <table width="760" border="0" cellspacing="0" cellpadding="8" align="center">
+        <tr>
+          <td valign="top"><!-- InstanceBeginEditable name="content" -->
+					 <H1>METS: introducci&oacute;n y tutorial</H1> 
+					 <H2>Introducci&oacute;n</H2> 
+					 <P>La gesti&oacute;n de una biblioteca de objetos digitales
+						requiere la gesti&oacute;n de metadatos sobre esos objetos. Los metadatos
+						necesarios para gestionar y usar con &eacute;xito objetos digitales son
+						m&aacute;s cmplejos que los que se emplean para gestionar colecciones de
+						documentos impresos y materiales con soporte f&iacute;sico. Una biblioteca
+						puede registrar metadatos descriptivos sobre un libro de su colecci&oacute;n,
+						pero el libro nunca se disolver&aacute; en una serie de p&aacute;ginas
+						independientes, desconectadas, si la biblioteca no registra los metadatos
+						estructurales relativos a la organizaci&oacute;n del libro; tampoco los
+						usuarios se ver&aacute;n incapacitados para valorar la obra si la biblioteca no
+						registra que el libro se produjo usando una prensa offset de un tipo
+						determinado. Sin embargo, esto mismo no podr&iacute;a afirmarse para la
+						versi&oacute;n digital de ese mismo libro. Sin metadatos estructurales, las
+						im&aacute;genes y los archivos de texto que conforman el objeto digital tienen
+						poca utilidad, y sin los metadatos t&eacute;cnicos relativos al proceso de
+						digitalizaci&oacute;n los usuarios no pueden evaluar en qu&eacute; medida la
+						obra digital es un fiel reflejo del original impreso. Para la gesti&oacute;n
+						interna, la biblioteca debe conocer los metadatos t&eacute;cnicos para poder
+						refrescar y migrar regularmente los contenidos y asegurar la
+						preservaci&oacute;n de estos valiosos recursos.</P> 
+					 <P>El proyecto <A
+						HREF="http://sunsite.berkeley.edu/MOA2/">Making of America II</A> (MOA2)
+						trat&oacute; de afrontar estos problemas y propuso un formato de
+						codificaci&oacute;n de metadatos descriptivos, administrativos y estructurales
+						para obras textuales y basadas en im&aacute;genes. METS, una iniciativa de la
+						<A HREF="http://www.diglib.org/">Digital Library Federation</A>, se
+						desarroll&oacute; a partir del trabajo de MOA2, y ofrece un formato basado en
+						XML para codificar los metadatos necesarios para la gesti&oacute;n de objetos
+						digitales y para su intercambio entre repositorios (o entre repositorios y sus
+						usuarios). Dependiendo de c&oacute;mo se aplique, un documento METS
+						podr&iacute;a usarse como un Submission Information Package (SIP), Archival
+						Information Package (AIP), o Dissemination Information Package (DIP) dentro del
+						modelo de referencia
+						<A HREF="http://ssdoo.gsfc.nasa.gov/nost/isoas/ref_model.html">Open Archival
+						Information System (OAIS).</A></P> 
+					 <P>Un documento METS consta de siete secciones:</P> 
+					 <OL> 
+						<LI> 
+						  <P><A HREF="#MHead"><B>Cabecera METS</B></A> - contiene
+							 metadatos que describen el propio documento METS, e incluye datos como su
+							 creador, editor, etc. </P> </LI> 
+						<LI> 
+						  <P><A HREF="#descMD"><B>Metadatos Descriptivos</B></A> -
+							 Esta secci&oacute;n puede: a) apuntar a metadatos descriptivos externos al
+							 documento METS (por ejemplo, un registro MARC en un OPAC o un documento EAD
+							 disponible en un servidor web); b) contener internamente los metadatos
+							 descriptivos, o c) combinar ambas aproximaciones. En la secci&oacute;n
+							 Metadatos Descriptivos se pueden incluir m&uacute;ltiples metadatos
+							 descriptivos, tanto internos como externos.</P> </LI> 
+						<LI> 
+						  <P><A HREF="#admMD"><B>Metadatos Administrativos</B></A> -
+							 ofrece informaci&oacute;n sobre c&oacute;mo se crearon y almacenaron los
+							 archivos que conforman el objeto digital, derechos de propiedad intelectual,
+							 metadatos sobre el objeto original a partir del cual se obtuvo la
+							 representaci&oacute;n digital, e informaci&oacute;n sobre la procedencia de los
+							 archivos que conforman el objeto digital (es decir, relaciones entre copias
+							 maestras y derivadas, migraciones y transformaciones). Al igual que sucede con
+							 los metadatos descriptivos, los metadatos administrativos pueden ser externos o
+							 codificarse dentro del propio documento METS.</P> </LI> 
+						<LI> 
+						  <P><A HREF="#filegrp"><B>Secci&oacute;n Archivo</B></A> -
+							 lista todos los archivos con contenidos que forman parte del objeto digital.
+							 Los archivos pueden agruparse en elementos &lt;fileGrp&gt;, uno para cada una
+							 de las distintas versiones del objeto.</P> </LI> 
+						<LI> 
+						  <P><A HREF="#structmap"><B>Mapa Estructural</B></A> - es la
+							 parte principal de un documento METS. Recoge la estructura jer&aacute;rquica
+							 del objeto digital, y enlaza sus secciones con los archivos de contenido y los
+							 metadatos correspondientes a cada una de ellas. </P> </LI> 
+						<LI> 
+						  <P><A HREF="#structlink"><B>Enlaces Estructurales</B></A> -
+							 permite registrar la existencia de hiperenlaces entre las secciones del mapa
+							 estructural. Tiene gran valor cuando se usa METS para archivar sitios web. </P>
+					   </LI> 
+						<LI> 
+						  <P><A HREF="#behavior"><B>Comportamientos</B></A> - se
+							 puede usar para vincular comportamientos ejecutables con los contenidos del
+							 documento METS. Cada comportamiento tiene una definici&oacute;n de interfaz y
+							 un "mecanismo" que identifica un m&oacute;dulo de c&oacute;digo ejecutable que
+							 implementa y ejecuta el comportamiento definido de forma abstracta por la
+							 interfaz.</P> </LI> 
+					 </OL> 
+					 <P>Los siguientes apartados recogen una explicaci&oacute;n
+						m&aacute;s detallada de cada una de estas secciones y sus interrelaciones.</P> 
+					 <H2><A NAME="MHead">Cabecera METS</A></H2> 
+					 <P>El elemento Cabecera METS (METS Header) permite registrar -
+						dentro del propio documento METS - unos m&iacute;nimos metadatos descriptivos
+						sobre el propio documento METS. Estos metadatos incluyen la fecha de
+						creaci&oacute;n del documento METS, fecha de &uacute;ltima modificaci&oacute;n
+						y estado. Tambi&eacute;n se puede registrar el nombre de uno o m&aacute;s
+						agentes que han desempe&ntilde;ado alguna funci&oacute;n en el ciclo de vida
+						del documento METS, especificar dicha funci&oacute;n y a&ntilde;adir una breve
+						nota sobre estas actividades. Finalmente, se puede registrar una variedad de
+						identificadores alternativos para el documento METS adicionales al
+						identificador principal que se registrar&aacute; en el atributo OBJID del
+						elemento ra&iacute;z METS.&#160; El siguiente fragmento recoge un ejemplo de
+						Cabecera METS:<BR> </P> 
+					 <PRE>      &lt;metsHdr CREATEDATE="2003-07-04T15:00:00" RECORDSTATUS="Complete"&gt;
+	&lt;agent ROLE="CREATOR" TYPE="INDIVIDUAL"&gt;
+	  &lt;name&gt;Jerome McDonough&lt;/name&gt;
+	&lt;/agent&gt;
+	&lt;agent ROLE="ARCHIVIST" TYPE="INDIVIDUAL"&gt;
+	  &lt;name&gt;Ann Butler&lt;/name&gt;
+	&lt;/agent&gt;
+      &lt;/metsHdr&gt;
+
+            </PRE> 
+					 <P>En este ejemplo el elemento &lt;metsHdr&gt; contiene dos
+						atributos: CREATEDATE y RECORDSTATUS. Indican respectivamente la fecha y hora
+						en que se cre&oacute; el documento METS y su estado. Se listan dos agentes que
+						han trabajado en este documento: la persona responsable de su creaci&oacute;n y
+						un archivero responsable del material original. Los atributos ROLE y TYPE del
+						elemento &lt;agent&gt; toman sus valores de vocabularios controlados.&#160; Los
+						valores permitidos para el atributo ROLE son: "ARCHIVIST," "CREATOR,"
+						"CUSTODIAN," "DISSEMINATOR," "EDITOR," "IPOWNER" y "OTHER."&#160; Los valores
+						permitidos para el atributo TYPE son: "INDIVIDUAL," "ORGANIZATION" y "OTHER."				  </P> 
+					 <H2><A NAME="descMD">Metadatos Descriptivos</A></H2> 
+					 <P>La secci&oacute;n Metadatos Descriptivos consiste en uno o
+						m&aacute;s elementos &lt;dmdSec&gt; (Descriptive Metadata Section). Cada
+						elemento &lt;dmdSec&gt; puede: a) contener un puntero a metadatos externos
+						(elemento &lt;mdRef&gt;); b) contener metadatos internamente (dentro de un
+						elemento &lt;mdWrap&gt;), o c) combinar estas dos opciones.</P> 
+					 <P><B>Metadatos descriptivos externos (mdRef):</B> un elemento
+						mdRef recoge una URI en la que se pueden recuperar metadatos externos. Por
+						ejemplo, la siguiente referencia apunta a un instrumento de descripci&oacute;n
+						externo para un objeto digital: </P> 
+					 <PRE>      &lt;dmdSec ID="dmd001"&gt;
+          &lt;mdRef LOCTYPE="URN" MIMETYPE="application/xml" MDTYPE="EAD" 
+          LABEL="Berol Collection Finding Aid"&gt;urn:x-nyu:fales1735&lt;/mdRef&gt;
+      &lt;/dmdSec&gt;
+            </PRE> 
+					 <P>El elemento &lt;mdRef&gt; de este &lt;dmdSec&gt; contiene
+						cuatro atributos. El atributo LOCTYPE especifica el tipo de localizador que se
+						usa; los valores aceptados para LOCTYPE son: 'URN,' 'URL,' 'PURL,' 'HANDLE,'
+						'DOI,' y 'OTHER.' El atributo MIMETYPE especifica el tipo MIME de los metadatos
+						descriptivos externos, y MDTYPE a qu&eacute; tipo de metadatos se hace
+						referencia. Los valores aceptados para MDTYPE incluyen MARC, MODS, EAD, VRA
+						(VRA Core), DC (Dublin Core), NISOIMG (NISO Technical Metadata for Digital
+						Still Images), LC-AV (Library of Congress Audiovisual Metadata) , TEIHDR (TEI
+						Header), DDI (Data Documentation Initiative), FGDC (Federal Geographic Data
+						Committee Metadata Standard [FGDC-STD-001-1998] ), y OTHER. LABEL ofrece un
+						mecanismo para describir estos metadatos para aquellas personas que vean el
+						documento METS. </P> 
+					 <P><B>Metadatos descriptivos internos (mdWrap):</B> el elemento
+						mdWrap contiene los metadatos dentro del propio documento METS. Estos metadatos
+						podr&aacute;n ser: 1. metadatos codificados en XML, en cuyo caso se
+						indicar&aacute; que pertenecen a un espacio de nombres distinto de METS, o 2.
+						metadatos en cualquier otro formato binario o textual (no XML), siempre que los
+						metadatos se codifiquen en Base64 y se escriban dentro de un elemento
+						&lt;binData&gt; contenido dentro del elemento mdWrap. Los siguientes ejemplos
+						muestran el uso del elemento mdWrap:</P> 
+					 <PRE>
+      &lt;dmdSec ID="dmd002"&gt;
+	&lt;mdWrap MIMETYPE="text/xml" MDTYPE="DC" LABEL="Dublin Core Metadata"&gt;
+	  &lt;xmlData&gt;
+	    &lt;dc:title&gt;Alice's Adventures in Wonderland&lt;/dc:title&gt;
+	    &lt;dc:creator&gt;Lewis Carroll&lt;/dc:creator&gt;
+	    &lt;dc:date&gt;between 1872 and 1890&lt;/dc:date&gt;
+	    &lt;dc:publisher&gt;McCloughlin Brothers&lt;/dc:publisher&gt;
+	    &lt;dc:type&gt;text&lt;/dc:type&gt;
+	  &lt;/xmlData&gt;
+	&lt;/mdWrap&gt;
+      &lt;/dmdSec&gt;
+            </PRE> 
+					 <PRE>      &lt;dmdSec ID="dmd003"&gt;
+	&lt;mdWrap MIMETYPE="application/marc" MDTYPE="MARC" LABEL="OPAC Record"&gt;
+	  &lt;binData&gt;MDI0ODdjam0gIDIyMDA1ODkgYSA0NU0wMDAxMDA...(etc.)
+	  &lt;/binData&gt;
+	&lt;/mdWrap&gt;
+      &lt;/dmdSec&gt;
+            </PRE> 
+					 <P>Debemos se&ntilde;alar que todos los elementos
+						&lt;dmdSec&gt; deben contar con un atributo ID. Este atributo asigna un
+						identificador interno, &uacute;nico en el documento, a cada elemento
+						&lt;dmdSec&gt;. Este identificador podr&aacute; usarse en el mapa estructural
+						para enlazar una divisi&oacute;n particular de la jerarqu&iacute;a del
+						documento con un elemento &lt;dmdSec&gt; espec&iacute;fico. Esto permite
+						enlazar metadatos descriptivos con secciones espec&iacute;ficas del objeto
+						digital.</P> 
+					 <H2><A NAME="admMD">Metadatos Administrativos</A></H2> 
+					 <P>Los elementos &lt;amdSec&gt; contienen los metadatos
+						administrativos correspondientes a los archivos que conforman el objeto
+						digital, y tambi&eacute;n los del material original a partir del cual se
+						cre&oacute; la representaci&oacute;n digital. En los documentos METS hay cuatro
+						tipos de metadatos administrativos: 1. Metadatos t&eacute;cnicos
+						(informaci&oacute;n relativa a la creaci&oacute;n del archivo, su formato y
+						caracter&iacute;sticas de uso), 2. Metadatos sobre derechos de propiedad
+						intelectual (copyright e informaci&oacute;n sobre licencias), 3. Metadatos
+						sobre el origen (metadatos descriptivos y administrativos sobre el documento
+						origen a partir del cual se ha generado el objeto digital), y 4. Metadatos
+						sobre la procedencia digital (informaci&oacute;n sobre la relaci&oacute;n entre
+						el documento original y su representaci&oacute;n digital, incluyendo la
+						relaci&oacute;n entre copias maestras y derivadas, migraciones y
+						transformaciones realizadas sobre los archivos desde su digitalizaci&oacute;n
+						inicial).&#160; Cada uno de estos cuatro tipos de metadatos administrativos
+						tienen un elemento propio dentro de la secci&oacute;n &lt;amdSec&gt;:
+						&lt;techMD&gt;, &lt;rightsMD&gt;, &lt;sourceMD&gt;, y
+						&lt;digiprovMD&gt;.&#160;Todos pueden repetirse. </P> 
+					 <P>Los elementos &lt;techMD&gt;, &lt;rightsMD&gt;,
+						&lt;sourceMD&gt; y &lt;digiprovMD&gt; tienen el mismo modelo de contenido que
+						&lt;dmdSec&gt;: pueden contener un elemento &lt;mdRef&gt; para apuntar a
+						metadatos administrativos externos, un elemento &lt;mdWrap&gt; para incorporar
+						metadatos administrativos dentro del propio documento METS, o combinar ambas
+						opciones. Un documento METS puede incorporar m&uacute;ltiples instancias de
+						estos elementos. y todos ellos deben contar con un atributo ID de forma que
+						otros elementos del documento METS (como las divisiones del mapa estructural o
+						los elementos &lt;file&gt;) puedan hacerles referencia. Por ejemplo,
+						podr&iacute;amos tener un elemento &lt;techMD&gt; con los metadatos
+						t&eacute;cnicos para un archivo:</P> 
+					 <PRE>      &lt;techMD ID="AMD001"&gt;
+	&lt;mdWrap MIMETYPE="text/xml" MDTYPE="NISOIMG" LABEL="NISO Img. Data"&gt;
+	  &lt;xmlData&gt;
+	    &lt;niso:MIMEtype&gt;image/tiff&lt;/niso:MIMEtype&gt;
+	    &lt;niso:Compression&gt;LZW&lt;/niso:Compression&gt;
+	    &lt;niso:PhotometricInterpretation&gt;8&lt;/niso:PhotometricInterpretation&gt;
+	    &lt;niso:Orientation&gt;1&lt;/niso:Orientation&gt;
+	    &lt;niso:ScanningAgency&gt;NYU Press&lt;/niso:ScanningAgency&gt;
+	  &lt;/xmlData&gt;
+	&lt;/mdWrap&gt;
+      &lt;/techMD&gt;
+            </PRE> 
+					 <P>Y un elemento &lt;file&gt; dentro de un elemento
+						&lt;fileGrp&gt; en el que se apuntase a esos metadatos administrativos mediante
+						un atributo ADMID:</P> 
+					 <PRE>      &lt;file ID="FILE001" ADMID="AMD001"&gt;
+	&lt;FLocat LOCTYPE="URL"&gt;http://dlib.nyu.edu/press/testimg.tif&lt;/FLocat&gt;
+      &lt;/file&gt;
+            </PRE> 
+					 <H2><A NAME="filegrp">Secci&oacute;n Archivo</A></H2> 
+					 <P>La secci&oacute;n archivo (&lt;fileSec&gt;) contiene uno o
+						m&aacute;s elementos &lt;fileGrp&gt;. Estos agrupan archivos relacionados entre
+						s&iacute;. Un &lt;fileGrp&gt; re&uacute;ne todos los archivos que conforman una
+						misma versi&oacute;n electr&oacute;nica del objeto digital. Por ejemplo, puede
+						haber elementos &lt;fileGrp&gt; para las miniaturas, las copias maestras (alta
+						resoluci&oacute;n) de las im&aacute;genes, la versi&oacute;n en pdf , la
+						versi&oacute;n codificadas en TEI, etc.</P> 
+					 <P>El siguiente ejemplo muestra una secci&oacute;n Archivo para
+						un registro sonoro del que hay tres versiones: una transcripci&oacute;n
+						codificada en TEI, una copia maestra audio en formato WAV y una versi&oacute;n
+						audio derivada de la anterior en formato MP3:</P> 
+					 <PRE>      &lt;fileSec&gt;
+	&lt;fileGrp ID="VERS1"&gt;
+	  &lt;file ID="FILE001" MIMETYPE="application/xml" SIZE="257537" CREATED="2001-06-10"&gt;
+	    &lt;FLocat LOCTYPE="URL"&gt;http://dlib.nyu.edu/tamwag/beame.xml&lt;/FLocat&gt;
+	  &lt;/file&gt;
+	&lt;/fileGrp&gt;
+	&lt;fileGrp ID="VERS2"&gt;
+	  &lt;file ID="FILE002" MIMETYPE="audio/wav" SIZE="64232836"
+	    CREATED="2001-05-17" GROUPID="AUDIO1"&gt;
+	    &lt;FLocat LOCTYPE="URL"&gt;http://dlib.nyu.edu/tamwag/beame.wav&lt;/FLocat&gt;
+	  &lt;/file&gt;
+	&lt;/fileGrp&gt;
+	&lt;fileGrp ID="VERS3" VERSDATE="2001-05-18"&gt;
+	  &lt;file ID="FILE003" MIMETYPE="audio/mpeg" SIZE="8238866"
+	    CREATED="2001-05-18" GROUPID="AUDIO1"&gt;
+	    &lt;FLocat LOCTYPE="URL"&gt;http://dlib.nyu.edu/tamwag/beame.mp3&lt;/FLocat&gt;
+	  &lt;/file&gt;
+	&lt;/fileGrp&gt;
+      &lt;/fileSec&gt;
+            </PRE> 
+					 <P>En este caso, &lt;fileSec&gt; contiene tres elementos
+						&lt;fileGrp&gt;, uno para cada versi&oacute;n del objeto. El primero es una
+						transcripci&oacute;n codificada en XML, el segundo es una versi&oacute;n audio
+						en formato WAV, y el tercero una versi&oacute;n audio en formato MP3. Aunque en
+						este ejemplo puede no parecer necesario utilizar elementos &lt;fileGrp&gt; para
+						las distintas versiones del objeto, &lt;fileGrp&gt; ser&iacute;a mucho
+						m&aacute;s &uacute;til si el objeto consistiese en un gran n&uacute;mero de
+						im&aacute;genes escaneadas, o si cada versi&oacute;n del objeto constase de un
+						mayor n&uacute;mero de archivos. En estos casos, ser capaz de agrupar los
+						elementos &lt;file&gt; en distintos &lt;fileGrp&gt; facilita la
+						identificaci&oacute;n de los archivos que pertenecen a cada versi&oacute;n.</P>
+					 
+					 <P>En el ejemplo anterior se puede apreciar la presencia de
+						atributos GROUPID con id&eacute;nticos valores en los elementos &lt;file&gt;
+						correspondientes a los archivos de audio; esto indica que esos dos archivos
+						recogen la misma informaci&oacute;n, aunque forman parte de distintas versiones
+						(tambi&eacute;n se puede usar GROUPID para indicar equivalencias entre archivos
+						de imagen en objetos digitales que contengan varias p&aacute;ginas
+						escaneadas).</P> 
+					 <P>Podemos ver igualmente que todos los elementos &lt;file&gt;
+						tienen un &uacute;nico atributo ID. Este atributo da un identificador
+						&uacute;nico a cada archivo, para poder hacerles referencia desde otras
+						secciones del documento. Estas referencias se describen en la secci&oacute;n
+						correspondiente al Mapa Estructural. </P> 
+					 <P>Debemos mencionar que los elementos &lt;file&gt; pueden
+						incluir un elemento &lt;FContent&gt; en lugar de un elemento &lt;FLocat&gt;.
+						Los elementos &lt;FContent&gt; se usan para incorporar los contenidos dentro
+						del propio documento METS; de hacerse as&iacute;, los contenidos del archivo
+						pueden ser datos en formato XML o datos codificados en Base64. La
+						inclusi&oacute;n de archivos empotrados no es algo que se haga frecuentemente
+						en documentos METS creados para mostrar objetos digitales a los usuarios, pero
+						puede ser interesante para intercambiar objetos digitales entre repositorios o
+						para archivar objetos digitales (almacenamiento off-site).</P> 
+					 <H2><A NAME="structmap">Mapa Estructural</A></H2> 
+					 <P>La secci&oacute;n Mapa Estructural de un documento METS
+						define una estructura jer&aacute;rquica que puede presentarse a los usuarios
+						para navegar a trav&eacute;s del objeto digital. El elemento &lt;structMap&gt;
+						establece esta jerarqu&iacute;a como una serie de elementos &lt;div&gt;
+						anidados. Cada &lt;div&gt; cuenta con atributos que especifican de qu&eacute;
+						tipo de divisi&oacute;n se trata; tambi&eacute;n puede contener
+						m&uacute;ltiples punteros METS (&lt;mptr&gt;) y punteros a archivos
+						(&lt;fptr&gt;) para identificar los contenidos correspondientes a esa
+						secci&oacute;n. Los punteros METS apuntan a documentos METS aparte que
+						contienen la informaci&oacute;n sobre los archivos relevantes para la
+						secci&oacute;n &lt;div&gt;. Son &uacute;tiles cuando se codifican grandes
+						colecciones de materiales (por ejemplo, una revista completa) y se quiere
+						mantener el tama&ntilde;o de cada documento METS relativamente peque&ntilde;o.
+						Los punteros a archivos indican qu&eacute; archivos (o en ciertos casos,
+						qu&eacute; grupos de archivos o partes de un archivo) previamente declarados en
+						la secci&oacute;n &lt;fileSec&gt; del documento METS se corresponden con la
+						secci&oacute;n representada por el elemento &lt;div&gt;.</P> 
+					 <P>A continuaci&oacute;n se muestra un ejemplo de mapa
+						estructural: </P> 
+					 <PRE>      &lt;structMap TYPE="logical"&gt;
+	&lt;div ID="div1" LABEL="Oral History: Mayor Abraham Beame"
+	  TYPE="oral history"&gt;
+	  &lt;div ID="div1.1" LABEL="Interviewer Introduction"
+	    ORDER="1"&gt;
+	&lt;fptr FILEID="FILE001"&gt;
+	  &lt;area FILEID="FILE001" BEGIN="INTVWBG" END="INTVWND"
+	    BETYPE="IDREF" /&gt;
+	&lt;/fptr&gt;
+	&lt;fptr FILEID="FILE002"&gt;
+	  &lt;area FILEID="FILE002" BEGIN="00:00:00" END="00:01:47"
+	    BETYPE="TIME" /&gt;
+	&lt;/fptr&gt;
+	&lt;fptr FILEID="FILE003"&gt;
+	  &lt;area FILEID="FILE003" BEGIN="00:00:00" END="00:01:47"
+	    BETYPE="TIME" /&gt;
+	&lt;/fptr&gt;
+      &lt;/div&gt;
+	&lt;div ID="div1.2" LABEL="Family History" ORDER="2"&gt;
+	&lt;fptr FILEID="FILE001"&gt;
+	  &lt;area FILEID="FILE001" BEGIN="FHBG" END="FHND"
+	    BETYPE="IDREF" /&gt;
+	&lt;/fptr&gt;
+	&lt;fptr FILEID="FILE002"&gt;
+	  &lt;area FILEID="FILE002" BEGIN="00:01:48"END="00:06:17"
+	    BETYPE="TIME" /&gt;
+	&lt;/fptr&gt;
+	&lt;fptr FILEID="FILE003"&gt;
+	  &lt;area FILEID="FILE003" BEGIN="00:01:48" END="00:06:17"
+	    BETYPE="TIME" /&gt;
+	&lt;/fptr&gt;
+      &lt;/div&gt;
+	&lt;div ID="div1.3" LABEL="Introduction to Teachers' Union"
+	  ORDER="3"&gt;
+	&lt;fptr FILEID="FILE001"&gt;
+	  &lt;area FILEID="FILE001" BEGIN="TUBG" END="TUND"
+	    BETYPE="IDREF" /&gt;
+	&lt;/fptr&gt;
+	&lt;fptr FILEID="FILE002"&gt;
+	  &lt;area FILEID="FILE002" BEGIN="00:06:18" END="00:10:03"
+	    BETYPE="TIME" /&gt;
+	&lt;/fptr&gt;
+	&lt;fptr FILEID="FILE003"&gt;
+	  &lt;area FILEID="FILE003" BEGIN="00:06:18" END="00:10:03"
+	    BETYPE="TIME" /&gt;
+	&lt;/fptr&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/structMap&gt;&#160;
+            </PRE> 
+					 <P>Este mapa estructural se corresponde con un registro sonoro
+						(una entrevista al Alcalde Abraham Beame de la ciudad de Nueva York) e incluye
+						tres subsecciones: una introducci&oacute;n por parte del entrevistador, la
+						historia familiar por parte del Alcalde Beame, y una discusi&oacute;n de
+						c&oacute;mo lleg&oacute; a participar en el sindicato de maestros de Nueva
+						York. Cada una de estas subsecciones o divisiones est&aacute; enlazada con tres
+						archivos (los mismos que usamos en el ejemplo anterior): una
+						transcripci&oacute;n XML, un archivo audio maestro y uno correspondiente a una
+						versi&oacute;n derivada. El elemento hijo &lt;area&gt; se usa en cada
+						&lt;fptr&gt; para indicar que la divisi&oacute;n se corresponde
+						&uacute;nicamente con una parte del archivo al que se hace referencia, y con
+						&eacute;l se identifica la parte exacta del archivo. Por ejemplo, la primera
+						divisi&oacute;n (la introducci&oacute;n por parte del entrevistador)
+						est&aacute; enlazada a un fragmento del archivo con la transcripci&oacute;n XML
+						(FILE001) que se encuentra entre las dos etiquetas del archivo cuyos atributos
+						ID recogen los valores "INTVWBG" y "INTVWND". Tambi&eacute;n est&aacute;
+						enlazado a los dos archivos de audio; en esos casos, en lugar de especificar
+						valores del atributo ID para acotar el fragmento, su inicio y fin se indica en
+						forma de tiempo HH:MM:SS. As&iacute;, la introducci&oacute;n del entrevistador
+						se puede encontrar en los archivos de audio en los fragmentos que comienzan en
+						el instante 00:00:00 y que tienen una duraci&oacute;n de 00:01:47.</P> 
+					 <H2><A NAME="structlink">Enlaces Estructurales</A></H2> 
+					 <P>La secci&oacute;n Enlaces Estructurales es la m&aacute;s
+						sencilla de todas las secciones METS, y contiene un &uacute;nico elemento
+						&lt;smLink&gt; (que puede repetirse).&#160; La secci&oacute;n tiene como
+						finalidad registrar la presencia de hiperenlaces entre las distintas partes del
+						mapa estructural, codficadas mediante elementos &lt;div&gt;.&#160; Es
+						&uacute;til si se quiere usar METS para archivar sitios web y mantener un
+						registro de su estructura hipertextual a parte de la que se establecen mediante
+						los hiperenlaces de las propias p&aacute;ginas HTML.</P> 
+					 <P>Como ejemplo, veamos un documento METS para una
+						p&aacute;gina web que contiene una imagen que sirve de origen de un enlace a
+						otra p&aacute;gina. El elemento &lt;structMap&gt; contendr&iacute;a
+						probablemente &lt;divs&gt; como los siguientes para las dos p&aacute;ginas:</P>
+					 
+					 <PRE>    &lt;div ID="P1" TYPE="page" LABEL="Page 1"&gt;
+      &lt;fptr FILEID="HTMLF1"/&gt;
+	&lt;div ID="IMG1" TYPE="image" LABEL="Image Hyperlink to
+	  Page 2"&gt;
+	&lt;fptr FILEID="JPGF1"/&gt;
+    &lt;/div&gt;
+
+    &lt;div ID="P2" TYPE="page" LABEL="Page 2"&gt;
+      &lt;fptr FILEID="HTMLF2"/&gt;
+    &lt;/div&gt;
+            </PRE> 
+					 <P>Si se quisiese indicar que el archivo de imagen est&aacute;
+						enlazado al archivo HTML de la segunda p&aacute;gina &lt;div&gt;,
+						tendr&iacute;amos un elemento &lt;smLink&gt; dentro de la secci&oacute;n
+						&lt;structLink&gt; como la siguiente:</P> 
+					 <PRE>      &lt;smLink from="IMG1" to="P2" xlink:title="Hyperlink from 
+      JPEG Image on Page 1 to Page 2" xlink:show="new"
+      xlink:actuate="onRequest" /&gt;
+            </PRE> 
+					 <P>El elemento &lt;smLink&gt; anterior usa la sintaxis XLink
+						ligeramente modificada; todos los atributos XLink se utilizan, pero los
+						atributos "to" y "from" se declaran de tipo IDREF en lugar de NMTOKEN, como se
+						hace en la especificaci&oacute;n original XLink.&#160; Esto permite indicar la
+						presencia de enlaces entre cualquier par de divisiones del mapa estructural, y
+						tambi&eacute;n usar herramientas de procesamiento XML para confirmar que las
+						dos divisiones existen realmente.</P> 
+					 <H2><A NAME="behavior">Secci&oacute;n Comportamiento</A></H2> 
+					 <P>Una secci&oacute;n Comportamiento (behavior) puede usarse
+						para asociar comportamientos ejecutables al contenido de un documento METS. Una
+						secci&oacute;n Comportamiento contiene uno o m&aacute;s elementos
+						&lt;behavior&gt;, y cada uno de ellos tiene un elemento de definici&oacute;n de
+						interfaz. Un &lt;behavior&gt; tambi&eacute;n tiene un elemento
+						&lt;mechanism&gt; que apunta a un m&oacute;dulo de c&oacute;digo ejecutable que
+						implementa el comportamiento definido de forma abstracta por la
+						definici&oacute;n de la interfaz.</P> 
+					 <P>Los comportamientos de objetos digitales pueden
+						implementarse como enlaces a servicios web distribuidos, como en el siguiente
+						ejemplo del proyecto Mellon <A HREF="http://www.fedora.info/">Fedora</A>.</P> 
+					 <PRE>         &lt;METS:behavior ID="DISS1.1" STRUCTID="S1.1" BTYPE="uva-bdef:stdImage"
+	  CREATED="2002-05-25T08:32:00" LABEL="UVA Std Image Disseminator"
+	  GROUPID="DISS1" ADMID="AUDREC1"&gt;
+           &lt;METS:interfaceDef LABEL="UVA Standard Image Behavior Definition"
+	    LOCTYPE="URN" xlink:href="uva-bdef:stdImage"/&gt;
+           &lt;METS:mechanism LABEL="A NEW AND IMPROVED Image Mechanism"
+  	    LOCTYPE="URN" xlink:href="uva-bmech:BETTER-imageMech"/&gt;
+         &lt;/METS:behavior&gt;
+            </PRE> 
+					 <P>V&eacute;ase adem&aacute;s:</P> 
+					 <UL> 
+						<LI> 
+						  <P><A
+							 HREF="http://www.fedora.info/documents/master-spec-12.20.02.pdf">Fedora:
+							 especificaci&oacute;n t&eacute;cnica</A> (pdf)</P> </LI> 
+						<LI> 
+						  <P><A
+							 HREF="http://www.fedora.info/documents/obj-image-userinput-archdraw.xml">Objeto
+							 digital (ejemplo)</A> (codificado en METS)</P> </LI> 
+						<LI> 
+						  <P><A
+							 HREF="http://www.fedora.info/documents/bdef-image-userinput.xml">Objeto de
+							 definici&oacute;n de comportamiento (ejemplo)</A> (codificado en METS)</P>
+					   </LI> 
+						<LI> 
+						  <P><A
+							 HREF="http://www.fedora.info/documents/bmech-image-userinput-mrsid.xml">Objeto
+							 de mecanismo de comportamiento (ejemplo)</A> (codificado en METS)</P> </LI> 
+					 </UL> 
+					 <H2>Conclusi&oacute;n</H2> 
+					 <P>El esquema METS ofrece un medio flexible para codificar
+						metadatos descriptivos, administrativos y estructurales para un objeto digital,
+						y expresar las complejas relaciones entre estos tipos de metadatos. Ofrece un
+						est&aacute;ndar &uacute;til para el intercambio de objetos digitales entre
+						repositorios. Adem&aacute;s, METS permite asociar objetos digitales con
+						comportamientos o servicios. Los p&aacute;rrafos anteriores destacan las
+						principales caracter&iacute;sticas del esquema, pero se recomienda un examen
+						m&aacute;s detallado del esquema y de su documentaci&oacute;n para comprender
+						todas sus posibilidades.</P><BR />
+						<P>Traducido por el profesor <a href="mailto:reito@bib.uc3m.es">Ricardo Eito Brun</a>, Ciencias de Bibliotecologia e Information de la Universidad Carlos III de Madrid, España.</P>
+					
+						<BR />
+          <!-- InstanceEndEditable --></td>
+        </tr>
+      </table>
+      <!-- END of 730 wide table for page content -->
+      <!-- bottom section (jump to top, navigation breadcrumbs and footer - valign equals bottom -->
+    </td>
+  </tr>
+  <tr>
+    <td valign="bottom">
+      <!-- START of 760 wide table for bottom stuff -->
+      <table width="760" cellpadding="0" cellspacing="0" border="0" align="center">
+        <tr>
+          <td height="35" colspan="2">&nbsp; <a href="#top"><img src="images/up-button.gif" alt="Top of Page" width="24" height="24" border="0"></a> <a href="#top">Top
+              of Page</a></td>
+        </tr>
+        <tr>
+          <td> <img src="images/spacer-green.gif" alt="" width="400" height="1"></td>
+          <td> <img src="images/spacer-green.gif" alt="" width="360" height="1"></td>
+        </tr>
+        <!-- navigation breadcrumbs and search box -->
+        <tr>
+          <td background="images/spacer-gray.gif" bgcolor="#eeeeee">
+            <p class="menu">&nbsp; <a href="http://lcnetdev.github.io/folklife/">Home</a> &gt;&gt; <!-- InstanceBeginEditable name="bottombreadcrumb" --><A
+						HREF="mets-news.html">News &amp; Announcments</A><!-- InstanceEndEditable --></p>
+          </td>
+          <td align="right" background="images/spacer-gray.gif" bgcolor="#eeeeee">&nbsp;</td>
+        </tr>
+        <!-- spacer row -->
+        <tr>
+          <td><img src="images/spacer-green.gif" alt="" width="400" height="1"></td>
+          <td><img src="images/spacer-green.gif" alt="" width="360" height="1"></td>
+        </tr>
+        <!-- footer -->
+        <tr>
+          <td colspan="2">
+            <table width="760" cellpadding="0" cellspacing="0" border="0">
+              <tr>
+                <td width="37%" height="40" valign="bottom">&nbsp; <a href="http://lcnetdev.github.io/" class="white">The
+                    Library of Congress</a> <span class="white-text">&gt;&gt;</span> <a href="http://lcnetdev.github.io/standards/">Standards</a><br>
+                  <span class="white-text">&nbsp;
+                  <!-- #BeginDate format:Am1 -->February 9, 2016<!-- #EndDate -->
+                  </span></td>
+                <td width="38%" align="center" height="40" valign="bottom"><p><a href="http://lcnetdev.github.io/homepage/legal.html">Legal</a> | <a href="http://lcnetdev.github.io/global/disclaim.html">External Link Disclaimer</a></p></td>
+                <td width="25%" height="40" align="right" valign="bottom"><p><a href="http://lcnetdev.github.io/help/help-desk.html" class="white">Contact
+                    Us</a>&nbsp;</p></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- END of 760 wide table for bottom stuff -->
+</div>
+<br>
+</body>
+<!-- InstanceEnd --></html>

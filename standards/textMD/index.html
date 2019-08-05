@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Language" content="en-us"/>
+        <meta name="keywords" content="text technical preservation metadata maintenance activity official schema implementation governance implementor encoding character byte font markup"/>
+        <meta name="description" content="textMD is a XML Schema maintained by the Library of Congress that details technical metadata for text-based digital objects. It allows for detailing properties such as encoding information (quality, platform, software, agent), character information (character set and size, byte order and size, line terminators), languages, fonts, markup information, processing and textual notes, technical requirements for printing and viewing, and page ordering and sequencing."/>
+        <link rel="shortcut icon" type="image/x-icon" href="/images/fav.ico"/>
+        <title>Technical Metadata for Text (textMD) Official Web Site (Standards, Library of Congress)</title>
+        <style type="text/css" media="screen">@import "/standards/textMD/textMD.css";</style>
+        <!-- <link rel="alternate" type="application/rss+xml" title="RSS" href="textMD.rss" /> -->
+        <script type="text/javascript" src="/standards/textMD/textMD.js"> <!-- whitespace --> </script>
+    </head>
+    <body id="top" onload="javascript:inputDate();">
+        <form style="margin: auto;" action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" id="seek1" method="get">
+            <div>
+                <input type="hidden" name="col" value="loc"/>
+                <input type="hidden" name="sc" value="0"/>
+                <input type="hidden" name="ws" value="0"/>
+                <input type="hidden" name="la" value="en"/>
+                <input type="hidden" name="qm" value="0"/>
+                <input type="hidden" name="st" value="1"/>
+                <input type="hidden" name="nh" value="10"/>
+                <input type="hidden" name="lk" value="1"/>
+                <input type="hidden" name="rf" value="0"/>
+                <input type="hidden" name="oq" value=""/>
+                <input type="hidden" name="si" value="0"/>
+                <input type="hidden" name="rq" value="0"/>
+                <input type="hidden" name="qc" value=""/>                
+                <div class="lcSitenav">
+                    <a id="skip" href="#skip_menu"><!-- skip to content--></a>
+                    <span class="lcLinks">
+                        <a href="/">The Library of Congress</a>
+                        <span class="rdquo"> » </span>
+                        <a href="/standards/">Standards</a>
+                        <span class="rdquo"> » </span>
+                        <span>textMD</span>
+                    </span>
+                </div>
+                <div id="lcSearch">
+                    <span class="hide-alt">Search LC: </span>
+                    <span id="groupWidgetsForIE">
+                        <select name="qp" tabindex="1">
+                            <option value="url:/standards/textMD" selected="selected">textMD Pages</option>
+                            <option value="url:/standards url:/ead url:/marc">Standards Pages</option>                    
+                            <option value="">All Library Pages</option>
+                        </select>
+                        <input type="text" name="qt" id="lcSearchInputQuery" size="18" value="Enter keyword" tabindex="2" onfocus="javascript:inputText('remove');" onblur="javascript:inputText('add')"/>
+                        <input type="submit" id="lcSearchButton" name="search_button" tabindex="3" value="search" alt="search" title="search"/>
+                    </span>
+                </div>
+            </div>
+        </form>
+        <div class="arrow-hr" title="textMD: Technical Metadata for Text, Official Web Site at The Library of Congress">
+            <h2 class="hide-alt">textMD: Technical Metadata for Text</h2>
+        </div>
+        <div id="image" title="textMD: Technical Metadata for Text, Official Web Site at The Library of Congress">
+            <h2 class="hide-alt">Official Web Site at The Library of Congress</h2>
+        </div>
+    	<div id="wrapper">
+        	<div id="navbar">
+                <h3 class="navHeads">implement textMD:</h3>
+                <ul>
+                    <li class="navlist currentLink">home</li>
+                    <li class="navlist"><a href="/standards/textMD/elementSet/index.html">element set</a></li>
+                    <li class="navlist"><a href="/standards/textMD/textMD.xsd">official schema (v2.2)</a></li>
+                    <li class="navlist"><a href="/standards/textMD/textMD-v3.01a.xsd">updated schema (v3.01 alpha)</a></li>
+                    <li class="navlist"><a href="/standards/textMD/example.textMD.xml">sample instance (standalone)</a></li>
+                </ul>
+        	    <h3 class="navHeads">tools:</h3>
+        	    <ul>
+        	        <li class="navlist"><a href="/global/disclaimer.php?url=http://hul.harvard.edu/jhove/">JHOVE</a> <a href="/global/disclaimer.php?url=http://hul.harvard.edu/jhove/ascii-hul.html">ASCII</a> &amp; <a href="/global/disclaimer.php?url=http://hul.harvard.edu/jhove/utf8-hul.html">UTF-8</a> modules</li>
+        	    </ul>
+        	    <h3 class="navHeads">textMD listserv:</h3>        
+        	    <ul>
+        	        <li class="navlist"><a href="http://listserv.loc.gov/cgi-bin/wa?SUBED1=textmd&amp;A=1">subscribe/unsubscribe</a></li>
+        	        <li class="navlist"><a href="http://listserv.loc.gov/archives/textmd.html">archives</a></li>
+        	    </ul>  
+        	    <h3 class="navHeads">related standards:</h3>
+        	    <ul>
+        	        <li class="navlist"><a href="/standards/mets/">METS</a></li>
+        	        <li class="navlist"><a href="/standards/premis/">PREMIS</a></li>
+        	    </ul>
+            </div>
+            <div id="mainbody">
+                <h3 id="skip_menu" class="subject">About textMD</h3>
+                <p>textMD is a XML Schema that details technical metadata for text-based digital objects.  It most commonly serves as an extension schema used within the <a href="/standards/mets/">Metadata Encoding and Transmission Schema</a> (METS) <a href="/standards/mets/METSOverview.v2.html#admMD">administrative metadata section</a>.  However, it could also exist as a standalone document.  textMD can be used within the <a href="/standards/premis/">PREMIS</a> element &lt;objectCharacteristicsExtension&gt;, as an extension for format-specific metadata within the PREMIS preservation metadata XML Schema versions 2.0 and 2.1.</p>
+                <p>The textMD schema allows for detailing properties such as:</p>
+                <ul>
+                    <li>encoding information (quality, platform, software, agent)</li>
+                    <li>character information (character set and size, byte order and size, line terminators)</li>
+                    <li>languages</li>
+                    <li>fonts</li>
+                    <li>markup information</li>
+                    <li>processing and textual notes</li>
+                    <li>technical requirements for printing and viewing</li>
+                    <li>page ordering and sequencing</li>
+                </ul>    
+                <p>The Library of Congress Network Development and MARC Standards Office (LoC) serves as the maintenance agency for textMD, although the majority of the qualitative work on the schema will come from the larger METS community and textMD implementers external to LoC.</p>
+                <span class="backToTop"><a href="#mainbody">↑ Back to top ↑</a></span>
+                <h3 class="subject">News</h3>
+                <p>textMD was originally created by the <a href="/global/disclaimer.php?url=http://library.nyu.edu/diglib/">New York University Digital Library Team</a> (NYU), and had been maintained by NYU through the current version (2.2).  In October 2007, LoC assumed maintenance of textMD.  This has entailed creating a listserv for fostering discussion, authoring this official web site, as well as working on updates to the textMD schema that will offer new elements.</p>
+            </div>
+    	</div>
+        <div id="footer">
+            <div class="lcSitenav">
+                <span class="lcLinks">
+                    <a href="/">The Library of Congress</a>
+                    <span class="rdquo"> » </span>
+                    <a href="/standards/">Standards</a>
+                    <span class="rdquo"> » </span>
+                    <span>textMD</span>
+                </span>
+            </div>
+            <div class="ndmsoContact">
+                <a href="mailto:ndmso@loc.gov">Contact Us</a>
+            </div>
+            <div id="lcDate"> <!-- whitespace placeholder  --> </div>
+        </div>
+    </body>
+</html>
