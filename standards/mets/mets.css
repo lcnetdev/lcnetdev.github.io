@@ -1,0 +1,24 @@
+BODY {
+	BACKGROUND: #ffffff; COLOR: black; FONT-FAMILY: "Times New Roman", Times, serif
+}
+UL {
+	LIST-STYLE-TYPE: circle
+}
+UL UL {
+	LIST-STYLE-TYPE: disc
+}
+UL UL UL {
+	LIST-STYLE-TYPE: circle
+}
+H2 {
+	FONT-WEIGHT: bolder; FONT-SIZE: 15pt; COLOR: #336666; FONT-STYLE: normal; FONT-FAMILY: Georgia, "Times New Roman", Times, serif
+}
+.box-desc {
+	FONT-SIZE: 10pt; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+H1 {
+	FONT-WEIGHT: bold; FONT-SIZE: 18pt; COLOR: #339966; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-ALIGN: center
+}
+.menu {
+	FONT-SIZE: 10pt; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-ALIGN: center
+}
