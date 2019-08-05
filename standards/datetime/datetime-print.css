@@ -1,0 +1,273 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	background: #ffffff;
+	font: 11pt verdana, helvetica, sans-serif;
+	text-align: center;
+}
+table.header {
+	width: 100%;
+	text-align: left;
+	height: auto;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 0px;
+	margin-bottom: 5px;
+	padding: 0px;
+}
+table.footer {
+	width: 100%;
+	text-align: left;
+	height: auto;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 0px;
+}
+table.layout {
+	width: 100%;
+	background-color: #fff;
+	border: none;
+	color:#333;
+	text-align: left;
+}
+form {
+	display: none;
+}
+#graphic {
+	background: #CCD6DB;
+}
+h1 {
+	font: bold 14pt Georgia, "Times New Roman", Times, serif;
+	margin: 0px;
+	color: #CB9C4E;
+}
+h2 {
+	font: bold 12pt Georgia, "Times New Roman", Times, serif;
+	color: #333;
+	margin-bottom: 7px;
+	padding: 0px;
+	background: transparent;
+}
+h3 {
+	font: bold 11pt Georgia, "Times New Roman", Times, serif;
+	color: #333;
+	margin:0px;
+	padding:0px;
+}
+h4 {
+	font: bold 11pt verdana, helvetica, sans-serif;
+	color: #333;
+	margin:0px;
+	padding:0px;
+}
+h5 {
+	font: bold 10pt verdana, helvetica, sans-serif;
+	color: #333;
+	margin:0px;
+	padding:0px;
+}
+h6 {
+	font: bold 9pt verdana, helvetica, sans-serif;
+	color: #333;
+	margin:0px;
+	padding:0px;
+}
+p {
+	font: 12pt verdana, helvetica, sans-serif;
+	margin: 0px;
+	text-align: left;
+	padding: 0px;
+}
+ul {
+	margin-top: 2px;
+	margin-bottom: 10px;
+	margin-left: 20px;
+	padding-left: 0;
+	border: 0;
+}
+li {
+	padding-left: -20px;
+	font: 10pt verdana, helvetica, sans-serif;
+	margin-bottom: 15px;
+}
+ul ul {
+	margin-top: 2px;
+	margin-bottom: 2px;
+	margin-left: 20px;
+	padding-left: 0px;
+	border: 0;
+}
+a#skip {
+	position: absolute;
+	top:-100px;
+}
+a {
+	color: #036;
+	font-family: verdana, helvetica, sans-serif;
+	text-decoration: underline;
+}
+a:link {
+	color: #036;
+	text-decoration: underline;
+}
+a:visited {
+	color: #036;
+	text-decoration: underline;
+}
+a:hover {
+	color: #333;
+	text-decoration: underline;
+	background: #DDE6EB;
+}
+a.menu {
+	color: #036;
+	font-family: verdana, helvetica, sans-serif;
+	font-weight:600;
+	text-decoration: underline;
+}
+a.menu:link {
+	color: #036;
+	text-decoration: underline;
+}
+a.menu:visited {
+	color: #036;
+	text-decoration: underline;
+}
+a.menu:hover {
+	color: #333;
+	text-decoration: underline;
+	background: #DDE6EB;
+}
+img {
+	border: 0px solid #333;
+}
+.sitenav {
+	display: none;
+}
+.contactus {
+	float: right;
+	text-align: right;
+	font: 70% verdana, helvetica, sans-serif;
+}
+#graphic {
+	background: #6E818B;
+}
+#graphicbar {
+	background: #CB9C4E;
+}
+#official {
+	display: none;
+}
+#sitesearch {
+	display: none;
+}
+a#skip {
+	position: absolute;
+	top:-100px;
+}
+p, td {
+	font: 90%/130% verdana, helvetica, sans-serif;
+	text-align: left;
+	margin: 0px;
+	padding: 10px 10px 10px 10px;
+}
+p.homeblurb {
+	font: 90%/130% verdana, helvetica, sans-serif;
+	text-align: left;
+	margin: 0px;
+	padding: 10px 10px 10px 10px;
+}
+a {
+	color: #036;
+	font-family: verdana, helvetica, sans-serif;
+	font-weight:600;
+	text-decoration: underline;
+}
+a:link {
+	color: #036;
+	text-decoration: underline;
+}
+a:visited {
+	color: #036;
+	text-decoration: underline;
+}
+a:hover {
+	color: #333;
+	text-decoration: underline;
+	background: #DDE6EB;
+}
+a#skip {
+	position: absolute;
+	top:-100px;
+}
+.command-text {
+	font-family: "Courier New", Courier, mono;
+	font-size: 100%;
+	font-weight: bold;
+	color: #666;
+}
+.box {
+	float: right;
+	width: 35%;
+	border: thin dashed #6E818B;
+	margin: 5px;
+	padding: 10px;
+	background-color: #EAEFF2;
+}
+hr.dashed {
+	border: none 0; 
+	border-top: 2px dashed #6E818B;/*the border*/
+	width: 100%;
+	height: 2px;/*whatever the total width of the border-top and border-bottom equal*/
+} 
+hr.gold {
+	border: none 0; 
+	border-top: 2px solid #CB9C4E;
+	border-bottom: 2px solid #CB9C4E;
+	margin-top: -7px;
+	margin-bottom: -6px;
+	padding-top: 0;
+	padding-bottom: 0;
+	width: 100%;
+	height: 4px;/*whatever the total width of the border-top and border-bottom equal*/
+} 
+.selected {
+	font: verdana, helvetica, sans-serif;
+	color: #036;
+	font-weight:600;
+}
+#breadcrumb-top {
+	display: none;
+}
+#breadcrumb-bottom {
+	display: none;
+}
+#content {
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+#gold-top {
+	background: #CB9C4E;
+	height: 4px;
+	width: 100%;
+	line-height: 1px;
+    font-size: 1px;/*these two lines override a default in IE*/
+} 
+#gold-bottom {
+	background: #CB9C4E;
+	clear: left;
+	height: 4px;
+	width: 100%;
+	line-height: 1px;
+    font-size: 1px;/*these two lines override a default in IE*/
+}
+#white-bottom {
+	background: #FFFFFF;
+	clear: left;
+	height: 4px;
+	width: 100%;
+	line-height: 1px;
+    font-size: 1px;/*these two lines override a default in IE*/
+} 

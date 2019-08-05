@@ -1,0 +1,295 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	background: #fff;
+	font: 90% verdana, helvetica, sans-serif;
+	text-align: center;
+}
+table.header {
+	width: 765px;
+	text-align: left;
+	height: auto;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 0px;
+}
+table.footer {
+	width: 765px;
+	text-align: left;
+	height: auto;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 0px;
+}
+table.layout {
+	width: 765px;
+	background-color: #fff;
+	border: 1px solid #999;
+	color:#333;
+	text-align: left;
+}
+form {
+	margin-bottom: 0;
+}
+ul {
+	margin-top: 2px;
+	margin-bottom: 2px;
+	list-style-image: url(images/arrow-bullet.gif);
+	margin-left: 25px;
+	padding-left: 0px;
+}
+li {
+	padding-left: -20px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+/*	replace this font with the associated font from print style sheet	
+	font:80%/130% verdana, helvetica, sans-serif; */
+	font: 10pt verdana, helvetica, sans-serif;
+}
+li p {
+	padding-left: -20px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+/*	replace this font with the associated font from print style sheet	
+	font:80%/130% verdana, helvetica, sans-serif; */
+	font: 10pt verdana, helvetica, sans-serif;
+}
+
+li.news {
+	padding-left: -20px;
+/*	replace this font with the associated font from print style sheet	
+	font:80%/130% verdana, helvetica, sans-serif; */
+	font: 10pt verdana, helvetica, sans-serif;
+}
+ul ul {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	list-style-image: url(images/arrow-bullet2.gif);
+	margin-left: 25px;
+	padding-left: 0px;
+}
+.sitenav {
+	float: left;
+	text-align: left;
+/*	font: 70% verdana, helvetica, sans-serif; */
+	font: 75% verdana, helvetica, sans-serif;
+}
+.contactus {
+	float: right;
+	text-align: right;
+/*	replace this font with the associated font from print style sheet	
+	font: 70% verdana, helvetica, sans-serif;*/
+	font: 10pt verdana, helvetica, sans-serif;
+}
+#graphic {
+	background: #dad8c8;
+}
+#official {
+	text-align: right;
+	font: 75% verdana, helvetica, sans-serif;
+	font-weight: bold;
+	color: #6E818B;
+	margin-bottom: 10px;
+	margin-top: 0px;
+}
+#sitesearch {
+	float: right;
+	width: auto;
+}
+h1 {
+	margin: 0px;
+	margin-left: 10px;
+	font: bold 120%/120% Arial, Helvetica, sans-serif;
+	color: #7b8cc6;
+}
+h2 {
+	font: bold 110%/110% Arial, Helvetica, sans-serif;
+	color: #817a41;
+	margin: 7px 0px 3px 10px;
+	padding: 0px;
+}
+h2.inbox {
+	font: bold 110%/110% Arial, Helvetica, sans-serif;
+	color: #817a41;
+	margin: 0px 0px 0px 0px;
+	padding: 0px;
+}
+h3 {
+	font: bold 90%/95% Georgia, "Times New Roman", Times, serif;
+	color: #333;
+	margin: 7px 0px 3px 10px;
+	padding: 0px;
+}
+h4 {
+	font: bold 90%/95% verdana, helvetica, sans-serif;
+	color: #333;
+	margin: 7px 0px 3px 10px;
+	padding:0px;
+}
+h5 {
+	font: bold 80%/85% verdana, helvetica, sans-serif;
+	color: #333;
+	margin:0px;
+	padding:0px;
+}
+h6 {
+	font: bold 90%/95% verdana, helvetica, sans-serif;
+	color: #333;
+	margin:0px;
+	padding:0px;
+}
+p {
+	font: 10pt verdana, helvetica, sans-serif;
+/*	font:80%/130% verdana, helvetica, sans-serif;  */
+	text-align: left;
+	margin: 0px;
+	padding: 10px 10px 10px 10px;
+}
+p.homeblurb {
+	font: 75%/150% verdana, helvetica, sans-serif;
+	text-align: left;
+	margin: 0px;
+	padding: 10px 10px 10px 10px;
+}
+a {
+	color: #036;
+	font-family: verdana, helvetica, sans-serif;
+	text-decoration: underline;
+}
+a:link {
+	color: #036;
+	text-decoration: underline;
+}
+a:visited {
+	color: #036;
+	text-decoration: underline;
+}
+a:hover {
+	color: #333;
+	text-decoration: underline;
+	background: #DDE6EB;
+}
+a.menu {
+	color: #036;
+	font-family: verdana, helvetica, sans-serif;
+	font-weight:600;
+	text-decoration: underline;
+}
+a.menu:link {
+	color: #036;
+	text-decoration: underline;
+}
+a.menu:visited {
+	color: #036;
+	text-decoration: underline;
+}
+a.menu:hover {
+	color: #333;
+	text-decoration: underline;
+	background: #DDE6EB;
+}
+a#skip {
+	position: absolute;
+	top:-100px;
+}
+.command-text {
+	font-family: "Courier New", Courier, mono;
+	font-size: 100%;
+	font-weight: bold;
+	color: #666;
+}
+.box {
+	float: right;
+	width: 35%;
+	border: 1px dotted #dad8c8;
+	margin-left: 15px;
+	margin-right: 10px;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	padding: 10px;
+	background-color: #efefef;
+}
+.full-box {
+	width: 95%;
+	border: 1px dotted #dad8c8;
+	margin: 10px;
+	padding: 10px;
+	background-color: #efefef;
+}
+hr.dashed {
+	border: none 0; 
+	border-top: 2px dashed #6E818B;/*the border*/
+	width: 100%;
+	height: 2px;/*whatever the total width of the border-top and border-bottom equal*/
+} 
+#gold-top {
+	background: #4270ad;
+	height: 2px;
+	width: 100%;
+	line-height: 1px;
+    font-size: 1px;/*these two lines override a default in IE*/
+} 
+#gold-bottom {
+	background: #4270ad;
+	clear: left;
+	height: 2px;
+	width: 100%;
+	line-height: 1px;
+    font-size: 1px;/*these two lines override a default in IE*/
+}
+#white-bottom {
+	background: #FFFFFF;
+	clear: left;
+	height: 4px;
+	width: 100%;
+	line-height: 1px;
+    font-size: 1px;/*these two lines override a default in IE*/
+} 
+div.gray {
+	background: #dad8c8;
+	height: 8px;
+	width: 100%;
+	line-height: 1px;
+    font-size: 1px;/*these two lines override a default in IE*/
+} 
+.pdf {
+	font: 75% verdana, helvetica, sans-serif;
+}
+.selected {
+	font: verdana, helvetica, sans-serif;
+	color: #036;
+	font-weight:600;
+}
+.redtext {
+	color: #900;
+}
+#breadcrumb-top {
+	float: left;
+	margin-top: 0px;
+	font: 75% verdana, helvetica, sans-serif;
+
+/*	font: 70% verdana, helvetica, sans-serif; */
+}
+#breadcrumb-bottom {
+	clear: both;
+	float: left;
+	margin-top: 0px;
+	padding-bottom: 0px;
+	font: 75% verdana, helvetica, sans-serif;
+
+/*	font: 70% verdana, helvetica, sans-serif; */
+}
+#content {
+	margin-top: 10px;
+	margin-bottom: 20px;
+}.row {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.redtext  {
+	color:#990000;
+	font-weight: bold;
+	}

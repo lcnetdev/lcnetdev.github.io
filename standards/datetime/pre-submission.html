@@ -1,0 +1,1041 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html   PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en-US" xml:lang="en-US"  xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Extended Date/Time Format (EDTF) 1.0 Submission</title>
+<style type="text/css">
+ table { width: 100%; }
+ th, td { border: 1px solid black; padding: 0.5ex; }
+ th { text-align: left; }
+ div.body th { text-align: left; background: #ccc; }
+ pre { background: #ccc; padding: 1ex;}
+ dl.properties dt { font-family: monospace; font-weight: normal;}
+ dl.definitions dt { font-weight: normal;}
+ div.toc ul { list-style-type: none; }
+ p.caption, caption { text-align: left; font-weight: bold; }
+ div.graph, div.graph p.caption { text-align: center}
+ .c1 { color: #a52a2a; }
+ .c2 { color: red }
+</style>
+<link rel="stylesheet" type="text/css" href="http://www.w3.org/StyleSheets/TR/W3C-Member-SUBM"/>
+<!-- base href="http://www.w3.org/Submission/WS-MetadataExchange/" -->
+<style type="text/css">
+<!--
+.style4 {font-style: italic}
+-->
+</style>
+</head>
+
+<body>
+
+
+<div class="head"> <a href="http://lcnetdev.github.io/standards/datetime/edtc.html">home</a>
+  <h3>Extended Date/Time Format (EDTF) 1.0 </h3>
+<h2 id="W3C-doctype"> Draft Submission </h2>
+<h2>13 January  2012 </h2>
+<div class="body">
+<table width="50" border="2">
+  <tr>
+    <td width="97%" bgcolor="#0066FF" style="background-color:#CCFFCC"><h1><strong>This draft specification is superseded.  </strong></h1><strong>See</strong> <a href="http://lcnetdev.github.io/standards/datetime/edtf.html">EDTF Spec</a>
+      <p>.</p></td>
+    <td width="3%">&nbsp;</td>
+    </tr>
+</table> 
+</div>
+<p>&nbsp;</p>
+<hr />
+</div>
+
+
+<h2 id="abstract">Abstract</h2>
+<p>This specification defines features to be supported in a date/time string, features considered useful for a wide variety of applications. It takes the form of a profile of / extension to ISO 8601, the International Standard  for the representation of dates and times. ISO 8601 describes a large number of date/time formats.  On one hand some of these formats are redundant and/or not very useful; to reduce the scope for error and the complexity of  software, it seems worthwhile to restrict the supported formats to a smaller  set. On the other hand, there are a number of date and time format conventions in common use that are not included in ISO 8601; it seems worthwhile to normalize these. </p>
+<h2 id="status">Table of Contents</h2>
+<div class="toc">
+  <ol>
+  <li><a href="#introduction">Introduction</a> </li>
+  <li><a href="#notation">Notation</a></li>
+  <li><a href="#compliance">Compliance</a></li>
+  <li><a href="#definitions">Definitions</a></li>
+  <li><a href="#features">Features</a><br />
+   5.1 <a href="#level0">Level 0 Features</a> <br />
+     5.1.1 <a href="#date">Date</a><br />
+     5.1.2 <a href="#datetime">Date and Time</a><br />
+    5.1.3 <a href="#interval">Interval</a><br />
+  5.2 <a href="#level1">Level 1 Features</a> <br />
+   5.2.1 <a href="#uncertain">Uncertain/Approximate</a> <br />
+   5.2.2 <a href="#unspecified">Unspecified</a><br />
+   5.2.3.  <a href="#extendedintervall1">Extended Interval (L1)</a><br />
+   5.2.4 <a href="#yearexceedingfourdigitsl1">Year Exceeding  Four Digits (L1) </a><br />
+   5.2.5 <a href="#season">Season</a> <br />
+   5.3<a href="#level2"> Level 2 Features</a> <br />
+   5.3.1 <a href="#partialuncertainapproximate">Partial Uncertain/Approximate</a> <br />
+   5.3.2<a href="#partialunspecified"> Partial Unspecified</a><br />
+   5.3.3 <a href="#oneofaset">One of a Set </a><br />
+   5.3.4 <a href="#multipledates">Multiple Dates</a> <br />
+   5.3.5. <a href="#maskedprecision">Masked Precision</a><br />
+   5.3.6<a href="#extendedintervall2"> Extended Interval (L2 )</a>
+   <br />
+   5.3.7 <a href="#yearexceedingfourdigitsexponentialform">Year Exceeding  Four Digits - Exponential Form</a><br />
+  5.3.8 <a href="#seasonqualified">Season - Qualified</a> </li>
+  <li><a href="#sort">Sort Order</a></li>
+  <li><a href="#table">Table of features</a> </li>
+  <li><a href="#bnf">BNF</a> </li>
+  <li><a href="#acknowledgements">Acknowledgements</a></li>
+  <li><a href="#references">References</a></li>
+  </ol>
+<p>Annex A. (Non Normative) <a href="#future">Possible Future Features</a></p>
+</div>
+<div class="body">
+<h2 id="composable-architecture">1. Introduction<a name="introduction" id="introduction"></a></h2>
+<p>Basic date and time formats are specified in ISO 8601 [<a href="#ISO8601">ISO8601</a>] (Hereafter, &quot;8601&quot;.). But 8601 is not sufficiently expressive to support various semantic qualifiers and concepts than many applications find useful. For example, although 8601 can express the concept &quot;the year 1984&quot;, it cannot express &quot;approximately the year 1984&quot;, or &quot;we think the year is 1984 but we're not certain&quot;. As another example, 8601 can express an interval, for example &quot;the period of time beginning sometime during 1960 and ending sometime during 1969&quot; but it cannot express &quot;the date is a year, and it is some year between 1960 and 1969&quot;. These as well as various other concepts are currently represented according to various ad hoc conventions, and this specification aims to provide a standard syntax for their representation. </p>
+<p>On the other hand,  8601 is a complex specification that describes a large number of date/time formats, and in many cases provides multiple options for a given format.  Thus a second aim of this specification is to restrict the supported formats to a smaller  set. This specification  therefore  profiles 8601 in the sense that it discards many redundant or less-useful features. It is not, however, strictly a profile of 8601; It also extends 8601, that is, it includes features that are not in 8601.  </p>
+<p>This specification therefore prescribes certain 8601 features as well as features that are extensions of 8601. The specification defines three levels:</p>
+<ul>
+  <li>Level 0: Features supported by  8601</li>
+  <li>Level 1: Level 0 plus level 1 extensions</li>
+  <li>Level 2: Level 1 plus level 2 extensions </li>
+</ul>
+<p>Level 0 may be considered a profile of 8601. Features in levels 1 and 2 are not currently supported by 8601. </p>
+<p>There is a W3C Note, <em>Date and Time formats</em> [<a href="#w3cdtf">W3CDTF</a>] which similarly aims to provide a specification that simplifies 8601. That note was written in 1997 and has not been updated. This specification is intended to be compatible with that note. </p>
+<h2 id="requirements">2. Notation</h2>
+<p>The keywords &quot;MUST&quot;, &quot;MUST NOT&quot;, &quot;REQUIRED&quot;,
+&quot;SHALL&quot;, &quot;SHALL NOT&quot;, &quot;SHOULD&quot;, &quot;SHOULD NOT&quot;, &quot;RECOMMENDED&quot;, &quot;MAY&quot;,
+and &quot;OPTIONAL&quot; in this document are to be interpreted as described
+in RFC 2119 [<a href="#RFC2119"><span class="Internetlink">RFC
+2119</span></a>].</p>
+<h2>3. Compliance<a name="compliance" id="compliance"></a></h2>
+<p>An implementation of this specification MUST support Level 0, and MUST state which (if either) additional level (1 or 2) is supported.</p>
+<h3>4. Definitions<a name="definitions" id="definitions"></a> </h3>
+<p><strong>Approximate</strong>: An estimate whose value is 
+asserted to be  possibly correct, and if not, close to correct. (Where 'close 
+to correct' means &quot;close enough, 
+for the application&quot;.) </p>
+<p><strong>Date</strong>: A year; year and month; or year, month, and day. </p>
+<p><strong>Date String</strong>: A finite sequence of characters representing a date as prescribed by this specification.</p>
+<p><strong>Date/Time String</strong>: A finite sequence of characters representing date and time, as prescribed by this specification.</p>
+<p><strong>Interval</strong>. An interval, as represented by a start and end date, is a period of time beginning sometime during the start date and ending sometime during the end date. </p>
+<p><strong>Interval string: </strong>A string representing  the start and end date of an interval.</p>
+<p><strong>Precision</strong>: When a date string is cited, for purposes of indicating when an event occurred (or will occur), the precision of that date string is its measure of accuracy expressed as a date/time unit, e.g &quot;year precision&quot;. For example, if an event is known to have occurred in 1984, then '1984', cited as the date when the event occurred, is said to have &quot;year&quot; precision. If an event is know to have occurred in December of 1984, then that date has &quot;month&quot; precision. If an event is know to have occurred  December 12, 1984, then that date has &quot;day&quot; precision. </p>
+<p><strong>Uncertain</strong>: A date or date/time is considered &quot;uncertain&quot; when the process 
+  by which it is constructed (e.g. a user or some machine process extracting
+  or converting data or metadata) determines  algorithmically or based on rules of operation, that its 
+  source is dubious. </p>
+<p><strong>Unspecified</strong>: The value is unstated. It could 
+be because the date (or  part of the date) has not (yet) been assigned (it might
+ be  assigned in the future), or because it is classified, or unknown, 
+or for any other reason.</p>
+<h2>5. Features<a name="features" id="features"></a></h2>
+<h3>5.1 Level 0 Features  <a name="level0" id="level0"></a></h3>
+<h4>5.1.1 Date<a name="date" id="date"></a></h4>
+<p>A date string represents one of the following: </p>
+<ol>
+  <li>year, month, and day (e.g. 2001-02-03)<br />
+  </li>
+  <li>year and month (e.g. 2008-12 )<br />
+  </li>
+  <li>year (e.g. 2008)<br />
+  </li>
+</ol>
+<p>For 1 and 2, these MUST take 8601  extended form only, i.e. with hyphens.</p>
+<p>Year MUST be four digits. (Years longer than four digits are covered in levels 1 and 2.)</p>
+<p>A year may be positive, negative, or year zero. (This specification assumes astronomical numbering, which includes the year zero. ) </p>
+<h4>5.1.2 Date and Time<a name="datetime" id="datetime"></a></h4>
+<p>A date/time string MUST be composed according to one of three representations as illustrated in the following three examples: </p>
+<ul>
+  <li>2001-02-03T09:30:01</li>
+  <li>2004-01-01T10:10:10Z</li>
+  <li>2004-01-01T10:10:10+05:00</li>
+  </ul>
+<p>Note: 'T' separating date and time must be upper case. </p>
+<p>The date/time string MUST use 8601  extended form, i.e. date with hyphen, time  with colon. Zone-offset may be omitted or included. &nbsp;8601  
+  extended format time zone designation consists of either a  
+  'Z' to indicate UTC, or a '+' or  '-' to indicate &quot;ahead of UTC&quot; or 
+  &quot;behind&nbsp;UTC&quot;, followed by a 2-digit hour, followed optionally by a 
+  colon
+  and the  2-digit minutes.</p>
+<h4>5.1.3 Interval<a name="interval" id="interval"></a></h4>
+<p>An interval, as represented by a start date and an end date, is a period of time beginning sometime during the start date and ending sometime during the end date. The actual instant at which the interval begins or ends can be narrowed down only to the precision of the start or end date. </p>
+<p>The start and end dates are both as prescribed in 5.1.1.
+  Either endpoint 
+  may be a year, year-month, or year-month-day. The end endpoint must be 
+  later than or equal to the start endpoint. </p>
+<p>An interval string is a start date and an end date, separated by a&nbsp;forward  slash. </p>
+<p>Examples</p>
+<ul>
+  <li>1964/2008 <br />
+      <em>An interval with year precision, beginning sometime in 1964 and ending sometime in 2008. </em></li>
+  <li>2004-06/2006-08 <br />
+      <em> An interval with month precision, beginning sometime in June 2004 and ending sometime in August of 2006. </em></li>
+  <li> 2004-02-01/2005-02-08 <br />
+      <em> An interval with day precision, beginning sometime on February 1, 2004 and ending sometime on February 8, 2005. </em></li>
+  <li> 2004-02-01/2005-02 <br />
+      <em> An interval beginning sometime on February 1, 2004 
+        and ending sometime in February  2005. The precision of the interval is 
+        not defined; the start endpoint has day precision and the end endpoint 
+        has month precision. </em></li>
+  <li>2004-02-01/2005 <br />
+      <em> An interval beginning sometime on February 1, 2004 
+        and ending sometime in 2005. The start endpoint has day precision and 
+        the end endpoint has year precision. </em></li>
+  <li>2005/2006-02 <br />
+      <em> An interval beginning sometime in  2005 and ending sometime in February 2006. </em></li>
+</ul>
+<h3>5.2 Level 1 Features <a name="level1" id="level1"></a></h3>
+<h4>5.2.1 Uncertain/Approximate <a name="uncertain" id="uncertain"></a></h4>
+<p>The characters '?' and '~' are used to mean &quot;uncertain&quot; and 
+&quot;approximate&quot; respectively, and in combination, i.e. '?~', to mean 
+&quot;uncertain&quot; as well as  &quot;approximate&quot;. These characters may occur only at the end of the date string and apply to the entire date. (To qualify part of 
+    the date, see level 2.) </p>
+<p>Examples</p>
+<ul>
+  <li>1984?<br />
+      <em>uncertain: possibly the year        1984, but not definitely</em></li>
+  <li><em>2004-06?</em></li>
+  <li><em>2004-06-11?</em></li>
+  <li>1984~<br />
+      <em>&quot;approximately&quot; the        year 1984</em></li>
+  <li>1984?~<br />
+      <em>the year is approximately 1984 and even that is uncertain</em></li>
+</ul>
+<h4>5.2.2 Unspecified<a name="unspecified" id="unspecified"></a></h4>
+<p>The character 'u' may be used in place of&nbsp;a digit to indicate that the value of that digit is unspecified. It may be substituted for each of multiple digits, however for level 1, only the right-most one or two digits may be replaced, for 
+  the following cases: </p>
+<ol>
+  <li>A year with one or two (rightmost) unspecified digits.</li>
+  <li>Year specified  but month unspecified.&nbsp;</li>
+  <li> Year and month specified, day unspecified.</li>
+  <li> Year specified, day and month unspecified.</li>
+  </ol>
+<p>Examples</p>
+<ul>
+  <li>199u<br />
+      <em>some unspecified year in the 1990s.</em></li>
+  <li>19uu<br />
+      <em>some unspecified year in the 1900s.</em></li>
+  <li>1999-uu<br />
+      <em>some month in 1999</em></li>
+  <li>1999-01-uu<br />
+      <em>some day in January 1999 </em></li>
+  <li>1999-uu-uu<br />
+      <em>some day in 1999 </em></li>
+  </ul>
+<p>For some applications, &quot;u&quot; is used as a placeholder, whose value might be filled in later. Precision for a date whose string includes the 'u' syntax assumes that the unspecified portion will eventually be supplied. Thus 199u and 19uu have year precision, 1999-uu has month precision, and 1999-01-uu and 1999-uu-uu have day precision. </p>
+<h4>5.2.3. <strong> Extended Interval </strong>(<strong>L1</strong>)<a name="extendedintervall1" id="extendedintervall1"></a></h4>
+<p>As noted in 5.1.3, an &nbsp;interval string is  a start date and an end date, separated by a&nbsp;forward  slash. </p>
+<p>For level 1:</p>
+<ul>
+  <li>'unknown' may be used for the start or end date when it is unknown. </li>
+  <li>'open' may be used when no end  date is specified, either because there is none or for any other reason.</li>
+  <li>A modifier, may appear at the end
+  of the date to indicate &quot;uncertain&quot; and/or &quot;approximate&quot; as described in 5.2.1.</li>
+  </ul>
+<p>Examples</p>
+<ul>
+  <li>2004-06-01/unknown<br />
+    <em>beginning  June 1, 2004, end unknown </em></li>
+  <li>2004-01-01/open<br />
+      <em>beginning January 1 2004 with no  end date</em></li>
+  <li>1984~/2004<em>-06<br />
+    interval beginning approximately 1984 and ending June 2004</em> </li>
+  <li>1984/2004<em>-06~<br />
+    interval beginning 1984 and ending approximately June 2004</em></li>
+  <li>1984?/2004?~<br />
+      <em>interval whose beginning is uncertain but thought to be 1984, and whose end is uncertain and approximate but thought to be 2004</em></li>
+  </ul>
+<h4>5.2.4 Year Exceeding  Four Digits (L1) <a name="yearexceedingfourdigitsl1" id="yearexceedingfourdigitsl1"></a></h4>
+<p>'y' may be used at the beginning of the date string to signify that the date is a year, when (and only when) the year exceeds four digits, i.e. for  years later than 9999 or earlier than -9999. (An 
+alternative, exponential form, with optional precision, is allowed in 
+level 2.) </p>
+<p>Examples</p>
+<ul>
+  <li>y170000002 <br />
+      <em>the year 170000002</em></li>
+  <li>y-170000002 <br />
+      <em>the year -170000002</em></li>
+  </ul>
+<h4>5.2.5 Season <a name="season" id="season"></a></h4>
+<p>The values 21, 22, 23, 24 may be used used to signify ' Spring', 'Summer', 'Autumn', 'Winter', respectively, in place of a month value (01 through 12) for  a year-and-month format string.</p>
+<p>Example</p>
+<ul>
+  <li>2001-21 <br />
+      <em>Spring, 2001</em></li>
+  </ul>
+<h3>5.3 Level 2 Features <a name="level2" id="level2"></a></h3>
+<h4>5.3.1 Partial Uncertain/Approximate <a name="partialuncertainapproximate" id="partialuncertainapproximate"></a></h4>
+<p>The use of the characters '?' and '~' are described in 5.2.1. For level 1 these characters may occur only at the end of the date string and apply to the entire date. For level 2 they may be used to qualify part of 
+  the date as follows: </p>
+<ul>
+  <li>The characters '?' and '~' apply to the  entire portion of the date-string to their left, unless:
+    <ul>
+      <li> immediately preceded by a right parenthesis, in which case 
+        they apply to the portion of the string delimited by that right 
+        parenthesis and its corresponding left parentheses; or</li>
+      <li>another component of the string to the left is delimited by 
+    parentheses, in which case it applies to the portion to the right of 
+    that component. </li>
+      </ul>
+  </li>
+  <li>'?' and '~' apply to a year, month, day, year-month, month-day,
+  or year-month-day only. They may not  be applied to incomplete parts of any 
+  of these (thus for example '2004-04-(1)?1' is not valid). </li>
+  <li>For year-month, month may instead be &quot;season&quot; (i.e. 21, 22,
+  23, or 24) however, in that case the entire year-season 
+  combination is qualified; neither may be qualified individually. </li>
+  </ul>
+<p>Examples</p>
+<ul>
+  <li>2004?-06-11<br />
+      <em>uncertain year; month, day known</em> </li>
+  <li>2004-06~-11<br />
+      <em>year and month are approximate; day known</em> </li>
+  <li>2004-(06)?-11<br />
+      <em>uncertain month, year and day known</em> </li>
+  <li>2004-06-(11)~<br />
+      <em>day is approximate; year, month known</em> </li>
+  <li>2004-(06)?~<br />
+      <em>Year known, month within year is approximate and uncertain</em> </li>
+  <li>2004-(06-11)?<br />
+      <em>Year known, month and day uncertain</em> </li>
+  <li>2004?-06-(11)~<br />
+      <em>Year uncertain, month known, day approximate </em> </li>
+  <li>(2004-(06)~)?<br />
+      <em>Year uncertain and month is both uncertain and approximate</em> </li>
+  <li>2004?-(06)?~<br />
+      <em>This has the same meaning as the previous example. </em> </li>
+  <li>(2004)?-06-04~<br />
+      <em>Year uncertain, month and day approximate.</em> </li>
+  <li>(2011)-06-04~ <br />
+      <em>Year known, month and day approximate.</em> <br />
+  </li>
+  <li>2011-(06-04)~ <br />
+  <em>This has the same meaning as the previous example.</em><br />
+  </li>
+  <li>2011-23~<br />
+      <em>Approximate season (around Autumn 2011)</em> </li>
+  </ul>
+<h4>5.3.2 Partial Unspecified<a name="partialunspecified" id="partialunspecified"></a></h4>
+<p> however for level 1, only the right-most one or two digits may be replaced, for 
+  the following cases: </p>
+<p>As noted in 5.2.2, the character 'u' may be used in place of&nbsp;a digit to indicate that the value of that digit is unspecified; It may be substituted for each of multiple digits. For
+ level 1 it may be used only for one or more right-most characters. For 
+level 2 it may be used for any character in the string. </p>
+<p>Examples</p>
+<ul>
+  <li>156u-12-25<br />
+      <em>December 25 sometime during the 1560s</em> </li>
+  <li>15uu-12-25<br />
+      <em>December 25 sometime during the 1500s</em> </li>
+  <li>15uu-12-uu<br />
+      <em>Some day in December in some year during the 1500s</em><br />
+  </li>
+  <li>1560-uu-25<br />
+      <em>The 25th day of some month in year 1560. </em></li>
+  </ul>
+<h4>5.3.3 One of a Set <a name="oneofaset" id="oneofaset"></a></h4>
+<em><a name="spacesRemoved" id="spacesRemoved"></a>(Note: Corrections applied March 18, 2014</em>
+<ul class="style4">
+  <li>    Spaces were removed from the EDTF string examples in 5.3.3 and 5.3.4 .</li>
+  <li>The text    'Double-dot at the beginning or end of the list means &quot;before&quot; 
+      or &quot;after&quot; respectively' changed to  'Double-dot at the beginning or end of the list means &quot;on or before&quot; 
+    or &quot;on or after&quot; respectively' )  </li>
+</ul>
+<p>Square brackets wrap a single-choice list. A list is represented using  commas and double-dots where a 
+  double-dot indicates all the values between the two values it separates,
+  inclusive. Double-dot at the beginning or end of the list means &quot;on or before&quot; 
+  or &quot;on or after&quot; respectively; see the second, third, and fourth example below. Different elements of a list may have different precisions, as in the fifth example. </p>
+<p>Examples</p>
+<ul>
+  <li>[1667,1668,1670..1672] <br />
+      <em>One of the years 1667, 1668, 1670, 1671, 1672 </em></li>
+  <li>[..1760-12-03] <br />
+      <em> December 3, 1760; or some earlier date </em></li>
+  <li>[1760-12..] <br />
+      <em> December 1760, or some later month </em></li>
+  <li>[1760-01,1760-02,1760-12..] <br />
+      <em>January or February of 1760 or December 1760</em> or some later month</li>
+  <li>[1667,1760-12]<br />
+      <em>Either the year 1667 or the month December of 1760. </em></li>
+</ul>
+<h4>5.3.4 Multiple Dates <a name="multipledates" id="multipledates"></a></h4>
+<p>Curly braces may be used to wrap an inclusive list (all members included). For consecutive dates,  this means the discrete set and not an 
+  interval. Thus {1960,1961,1962,1963} does not mean &quot;the  (continuous) 
+  interval 1960 through 1963&quot;. {1960,1961,1962,1963} might be used to 
+  indicate the years of publication of a book - it was published in each 
+  of 1960, 1961, 1962, and 1963.  Different elements of a list may have different precisions, as in the second example. </p>
+<p>Examples</p>
+<ul>
+  <li>{1667,1668,1670..1672} <br />
+      <em>All  of the years 1667, 1668, 1670, 1671, 1672 </em></li>
+  <li>{1960,1961-12}<br />
+      <em>The year 1960 and the month December of 1961. </em></li>
+</ul>
+<h4>5.3.5. Masked Precision<a name="maskedprecision" id="maskedprecision"></a></h4>
+<p>In  a four-digit date string, 'x' may replace the last digit, or 'xx' the last two digits. </p>
+<p>Examples</p>
+<ul>
+  <li>196x <br />
+      <em>A date during the 1960</em>s</li>
+  <li>19xx <br />
+      <em>A date during the 1900s </em></li>
+</ul>
+<p>'196x' and '19xx ' have decade precision and century precision respectively. </p>
+<p>Note the difference in semantics between 'x' and 'u'.  '196x' has decade precision while '196u' has year precision. Both represent an unspecified year during the
+  1960s, but for 196x the year is not supplied because it is known only with 
+  decade precision. In contrast, for 196u the year is not supplied for reasons that are not
+  specified but there is some expectation (though no guarantee) that the 
+  year may be supplied later; for 196x there is no such expectation.</p>
+<p>5.3.6 <strong>Extended Interval</strong> (<strong>L2 </strong>) <a name="extendedintervall2" id="extendedintervall2"></a></p>
+<p>The Level 2 Extended Interval feature extends Level 1 by allowing 
+portions of a date to be designated as approximate, uncertain, or 
+unspecified. </p>
+  <p>Examples</p>
+  <ul>
+    <li>2004-06-(01)~/2004-06-(20)~<br />
+        <em>An interval in June 2004 beginning approximately the first and ending approximately the 20th.</em></li>
+    <li> 2004-06-uu/2004-07-03<br />
+        <em>The interval  began on an unspecified  day in June 2004 and ended July 3.</em></li>
+  </ul>
+  <p>5.3.7 Year Exceeding  Four Digits - Exponential Form <a name="yearexceedingfourdigitsexponentialform" id="yearexceedingfourdigitsexponentialform"></a></p>
+  <p>5.2.4 prescribes that 'y' may be used in Level 1 at the beginning of the date string when the date is a year exceeding four digits. In level 2 an 
+alternative, exponential form, with optional precision, is allowed. The rules are as follows: </p>
+  <ul>
+    <li>'e' is used to mean &quot;times 10 to the power of&quot; thus 17e8 means
+      &quot;17 times 10 to the eighth power&quot;. </li>
+    <li>The values before and after 'e' are 
+      integers. </li>
+    <li>'y' at the beginning of the string indicates &quot;year&quot;.</li>
+    <li>Optionally a 'p' followed by an integer, at the end of the 
+      string, indicates precision in terms of the number of significant digits.</li>
+  </ul>
+  <p>Examples</p>
+  <ul>
+    <li>y17e7 <br />
+        <em>the year 170000000</em></li>
+    <li>y-17e7 <br />
+        <em>the year -170000000</em></li>
+    <li> y17101e4p3 <br />
+        <em>Some year between 171000000 and  171999999, estimated to be 171010000</em> <em>('p3' indicates a precision of 3 significant digits.)</em></li>
+  </ul>
+  <p>5.3.8 Season - Qualified <a name="seasonqualified" id="seasonqualified"></a></p>
+  <p>When season is immediately followed by '^' then a qualifier follows the ^.</p>
+  <p>Example</p>
+  <ul>
+    <li>2001-21^southernHemisphere</li>
+  </ul>
+  <p>However, this specification does not define a vocabulary for seasonal qualifiers (the example above is hypothetical). Communities are encouraged to develop seasonal vocabularies. There is further discussion of this in Annex A. </p>
+  <h2>6. Sort Order<a name="sort" id="sort"></a></h2>
+  <p>When years, months,
+    and seasons are mixed together in a list to be sorted, this 
+    specification does not address the sort order, that is, whether (for example) 2000 is  before or 
+    after 2000-01, 2000-10, 2000-12, 2000-21, etc. An application may adopt 
+    whatever sorting algorithm fits its purpose, thus the value '2000', for 
+    purposes of  sorting, could be considered to be before 2000-01-01, or 
+    after 2000-12-31, or before or after 2000-24, etc.<br />
+    <br />
+    Seasons should sort as Spring &lt; Summer &lt;&nbsp;Autumn &lt; 
+    Winter (e.g.  &quot;2011-21&quot; should&nbsp;sort before  &quot;2011-23&quot;), but 
+    applications may choose to sort &quot;2011-21&quot;&nbsp;and  &quot;2011-10&quot; either 
+    way, or consider them incomparable.</p>
+  <h2>7. Table of Features <a name="table" id="table"></a></h2>
+  <p>The following table summarized the features listed in section 5. </p>
+  <table width="893" border="1">
+    <tbody>
+        <tr>
+        <td colspan="2" style="background-color: #6699FF; text-align:center"><strong>Level  0. ISO 8601 Features
+        </strong></td>
+      </tr>
+      <tr style="background-color:#CCCCCC; text-align:center ">
+        <td>Feature</td>
+        <td>
+        Examples</td>
+      </tr>
+   <tr>
+        <td style="background-color:#CCFFCC">Date </td>
+        <td><ul>
+            <li>2001-02-03<br />
+              year, month, day</li>
+          <li>2008-12 <br />
+                <em>year, month</em> </li>
+          <li>2008<br />
+                <em>year</em></li>
+          <li>-0999<br />
+              <em>a negative year </em></li>
+          <li>0000<br />
+          year zero </li>
+        </ul>        </td>
+      </tr>
+      <tr>
+        <td style="background-color:#CCFFCC">Date and Time </td>
+        <td> <ul>
+            <li>2001-02-03T09:30:01</li>
+          <li>2004-01-01T10:10:10Z</li>
+          <li>2004-01-01T10:10:10+05:00</li>
+        </ul></td>
+      </tr>
+      <tr>
+        <td style="background-color:#CCFFCC">Interval (start/end) </td>
+        <td><ul>
+          <li>1964/2008 <br />
+              <em>An interval beginning sometime in 1964 and ending sometime in 2008. Year precision. </em></li>
+          <li>2004-06/2006-08 <br />
+              <em> An interval beginning sometime in June 2004 and ending sometime in August of 2006. Month precision. </em></li>
+          <li> 2004-02-01/2005-02-08 <br />
+              <em> An interval beginning sometime on February 1, 2004 and ending sometime on February 8, 2005. Day precision.</em></li>
+          <li> 2004-02-01/2005-02 <br />
+              <em> An interval beginning sometime on February 1, 2004 
+                and ending sometime in February  2005. The precision of the interval is 
+                not defined; the start endpoint has day precision and the end endpoint 
+                has month precision. </em></li>
+          <li>2004-02-01/2005 <br />
+              <em> An interval beginning sometime on February 1, 2004 
+                and ending sometime in 2005. The start endpoint has day precision and 
+                the end endpoint has year precision. </em></li>
+          <li>2005/2006-02 <br />
+              <em> An interval beginning sometime in  2005 and ending sometime in February 2006. </em></li>
+        </ul>        </td>
+      </tr>
+    </tbody>
+    <tbody>
+     <tr>
+        <td colspan="2" style="background-color: #6699FF; text-align: center"><strong>Level 1 Extensions 
+        </strong></td>
+      </tr>
+      <tr style= "background-color: #CCCCCC; text-align:center">
+        <td>Feature</td>
+        <td>
+        Examples</td>
+      </tr>
+      <tr>    <td style="background-color:#CCFFCC">Uncertain/Approximate </td>
+        <td><ul>
+            <li>1984?<br />
+                <em>uncertain: possibly the year        1984, but not definitely</em></li>
+          <li><em>2004-06?</em></li>
+          <li><em>2004-06-11?</em></li>
+          <li>1984~<br />
+                <em>&quot;approximately&quot; the        year 1984</em></li>
+          <li>1984?~<br />
+                <em>the year is approximately 1984 and even that is uncertain</em><br />
+            </li>
+        </ul></td>
+      </tr>
+      <tr>
+        <td style="background-color:#CCFFCC">Unspecified</td>
+        <td><ul>
+            <li>199u<br />
+                <em>some unspecified year in the 1990s.</em></li>
+          <li>19uu<br />
+                <em>some unspecified year in the 1900s.</em></li>
+          <li>1999-uu<br />
+                <em>some month in 1999</em></li>
+          <li>1999-01-uu<br />
+                <em>some day in January 1999 </em></li>
+          <li>1999-uu-uu<br />
+                <em>some day in 1999 </em></li>
+        </ul></td>
+      </tr>
+      <tr>
+        <td style="background-color:#CCFFCC">L1 Extended Interval </td>
+        <td><ul>
+            <li>unknown/2006<br />
+                <em>beginning unknown, end 2006 </em></li>
+          <li>2004-06-01/unknown<br />
+                <em>beginning  June 1, 2004, end unknown </em></li>
+          <li>2004-01-01/open<br />
+                <em>beginning January 1 2004 with no  end date</em></li>
+          <li>1984~/2004<em>-06<br />
+            interval beginning approximately 1984 and ending June 2004</em> </li>
+          <li>1984/2004<em>-06~<br />
+            interval beginning 1984 and ending approximately June 2004</em></li>
+          <li>1984~/2004~</li>
+          <li>1984?/2004?~<br />
+                <em>interval whose beginning is uncertain but thought to be 1984, and whose end is uncertain and approximate but thought to be 2004</em> </li>
+          <li>1984-06?/2004-08?</li>
+          <li>1984-06-02?/2004-08-08~</li>
+          <li>1984-06-02?/unknown</li>
+        </ul></td>
+      </tr>
+      <tr>
+        <td style="background-color:#CCFFCC">Year Exceeding  Four Digits</td>
+        <td><ul>
+            <li>y170000002 <br />
+                <em>the year 170000002</em></li>
+          <li>y-170000002 <br />
+                <em>the year -170000002</em></li>
+        </ul></td>
+      </tr>
+      <tr>
+        <td style="background-color:#CCFFCC">Season</td>
+        <td><ul>
+            <li>2001-21 <br />
+                <em>Spring, 2001</em></li>
+            <li>2003-22 <br />
+                <em>Summer, 2003 </em></li>
+            <li>2000-23 <br />
+                <em>Autumn, 2000 </em></li>
+            <li>2010-24 <br />
+                <em>Winter, 2010 </em></li>
+            </ul></td>
+      </tr>
+    </tbody>
+  </table>
+  <table width="889" border="1">
+    <tbody>
+      <tr>
+        <td colspan="2" style="background-color: #6699FF; text-align: center"><strong>Level 2 Extensions</strong></td>
+      </tr>
+      <tr style= "background-color:#CCCCCC; text-align:center">
+        <td>Feature</td>
+        <td>
+        Examples</td>
+      </tr>
+      <tr>
+        <td style="background-color:#CCFFCC">Partial Uncertain/ Approximate</td>
+        <td><ul>
+            <li>2004?-06-11<br />
+                <em>uncertain year; month, day known</em> </li>
+          <li>2004-06~-11<br />
+                <em>year and month are approximate; day known</em> </li>
+          <li>2004-(06)?-11<br />
+                <em>uncertain month, year and day known</em> </li>
+          <li>2004-06-(11)~<br />
+                <em>day is approximate; year, month known</em> </li>
+          <li>2004-(06)?~<br />
+                <em>Year known, month within year is approximate and uncertain</em> </li>
+          <li>2004-(06-11)?<br />
+                <em>Year known, month and day uncertain</em> </li>
+          <li>2004?-06-(11)~<br />
+                <em>Year uncertain, month known, day approximate </em> </li>
+          <li>(2004-(06)~)?<br />
+                <em>Year uncertain and month is both uncertain and approximate</em> </li>
+          <li>2004?-(06)?~<br />
+                <em>This has the same meaning as the previous example. </em> </li>
+          <li>(2004)?-06-04~<br />
+                <em>Year uncertain, month and day approximate.</em> </li>
+          <li>(2011)-06-04~ <br />
+                <em>Year known, month and day approximate. Note that this has the same meaning as the following. </em> </li>
+          <li>2011-(06-04)~ <br />
+                <em>Year known, month and day approximate.</em> </li>
+          <li>2011-23~<br />
+                <em>Approximate season (around Autumn 2011)</em> </li>
+        </ul></td>
+      </tr>
+      <tr>
+
+        <td style="background-color:#CCFFCC">Partial Unspecified </td>
+        <td><ul>
+          <li>156u-12-25<br />
+                <em>December 25 sometime during the 1560s</em> </li>
+          <li>15uu-12-25<br />
+                <em>December 25 sometime during the 1500s</em> </li>
+          <li>15uu-12-uu<br />
+            </li>
+          <li>1560-uu-25<br />
+                <em>Year and day of month specified, month unspecified</em> </li>
+        </ul></td>
+      </tr>
+      <tr>
+        <td style="background-color:#CCFFCC">One of a Set </td>
+        <td><ul>
+            <li>[1667,1668, 1670..1672] <br />
+                <em>One of the years 1667, 1668, 1670, 1671, 1672 </em></li>
+          <li>[..1760-12-03] <br />
+                <em> December 3, 1760 or some earlier date </em></li>
+          <li>[1760-12..] <br />
+                <em> December 1760 or some later month </em></li>
+          <li>[1760-01, 1760-02, 1760-12..] <br />
+                <em>January or February of 1760 or December 1760</em> or some later month</li>
+          <li>[1667, 1760-12]<br />
+                <em>Either the year 1667 or the month December of 1760. </em></li>
+        </ul></td>
+      </tr>
+      <tr>
+        <td style="background-color:#CCFFCC">Multiple Dates </td>
+        <td><ul>
+            <li>{1667,1668, 1670..1672} <br />
+                <em>All  of the years 1667, 1668, 1670, 1671, 1672 </em></li>
+          <li>{1960, 1961-12}<br />
+                <em>The year 1960 and the month December of 1961. </em></li>
+        </ul></td>
+      </tr>
+      <tr>
+        <td style="background-color:#CCFFCC">Masked Precision </td>
+        <td><ul>
+            <li>196x <br />
+                <em>A date during the 1960</em>s</li>
+          <li>19xx <br />
+                <em>A date during the 1900s </em></li>
+        </ul></td>
+      </tr>
+      <tr>
+        <td style="background-color:#CCFFCC"> L2 Extended Interval</td>
+        <td><ul>
+            <li>2004-06-(01)~/2004-06-(20)~<br />
+                <em>An interval in June 2004 beginning approximately the first and ending approximately the 20th.</em></li>
+          <li> 2004-06-uu/2004-07-03<br />
+                <em>The interval  began on an unspecified  day in June 2004.</em><br />
+            </li>
+        </ul></td>
+      </tr>
+      <tr>
+        <td style="background-color:#CCFFCC">Year Requiring More than Four Digits - Exponential Form </td>
+        <td><ul>
+            <li>y17e7 <br />
+                <em>the year 170000000</em></li>
+          <li>y-17e7 <br />
+                <em>the year -170000000</em></li>
+          <li> y17101e4p3 <br />
+                <em>Some year between 171000000 and  171999999, estimated to be 171010000</em> <em>('p3' indicates a precision of 3 significant digits.)</em> </li>
+        </ul></td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <h2>8. BNF <a name="bnf" id="bnf"></a> </h2>
+  <p>This BNF (Backus–Naur Form) description specifies the syntax for the dateTime string. It is presented in three levels. </p>
+  <ul>
+    <li>Level 0: features that are 8601 conformant</li>
+    <li>Level 1: first-level extensions</li>
+    <li>Level 2: second-level extensions </li>
+  </ul>
+  <hr/>
+  <strong>BNF Syntax used  </strong>
+  <p>The syntax used in this BNF description is: </p>
+  <ul>
+    <li><strong>=</strong> used for assignment </li>
+    <li><strong>|</strong> used for <strong>or</strong> </li>
+    <li><strong>?</strong>&nbsp;&nbsp;&nbsp; used for &nbsp;<strong>zero or one</strong> </li>
+    <li> *&nbsp; used for &nbsp;zero or more</li>
+    <li> + &nbsp;used for one or more</li>
+    <li>Surrounding <strong>parentheses</strong> used for <strong>grouping</strong>, thus
+      <ul>
+          <li> ( x | y)+ <br />
+            means &quot;one or more of x and y&quot; </li>
+        <li>(A  B) | C <br />
+          means either A followed by B, or C (parentheses used to determine how &quot;or&quot; is evaluated) </li>
+      </ul>
+    </li>
+    <li>newline also used for <strong>grouping </strong>to reduce use of parentheses; thus<br />
+      A = B C <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;  | D<br />
+      <br />
+      means<br />
+      <br />
+      A = (B C) | D</li>
+    <li>(*...*) used for <strong>comment</strong> e.g (* this is a comment *)</li>
+  </ul>
+  <hr/>
+  <strong>BNF Description</strong> 
+<p>dateTimeString = &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;level0Expression <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | level1Expression <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | level2Expression </p>
+  <p>(* ************************** Level 0 *************************** *)</p>
+  <p>level0Expression =<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;date <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | dateAndTime <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | L0Interval <br />
+  <br />
+  </p>
+  <p>(* ** date ** *)</p>
+  <p>date = &nbsp;year |  yearMonth | yearMonthDay</p>
+  <p>(* ** dateAndTime ** *)</p>
+  <p>dateAndTime = date &quot;T&quot; time<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; time =  baseTime zoneOffset?<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; baseTime  =  hour &quot;:&quot; minute &quot;:&quot; second | &quot;24:00:00&quot; <br />
+  &nbsp;&nbsp;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(*  Zone  *)</p>
+  <p>&nbsp; zoneOffset =  &quot;Z&quot; <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| (&quot;+&quot; | &quot;-&quot;) <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(zoneOffsetHour (&quot;:&quot; minute)?<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| &quot;14:00&quot; <br />
+  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| &quot;00:&quot; oneThru59 ) <br />
+  <br />
+    zoneOffsetHour = oneThru13 </p>
+  <p>(* ** level 0 interval ** *)</p>
+  <p>L0Interval = date &quot;/&quot; date</p>
+  <p>(* ** Definition for year ** *)</p>
+  <p>year = positiveYear | negativeYear | &quot;0000&quot;</p>
+  <p>positiveYear = <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;positiveDigit digit digit digit <br />
+  &nbsp;&nbsp;&nbsp;&nbsp; | digit positiveDigit  digit digit<br />
+  &nbsp;&nbsp;&nbsp;&nbsp; | digit digit positiveDigit  digit<br />
+  &nbsp;&nbsp;&nbsp;&nbsp; | digit digit  digit positiveDigit</p>
+  <p>negativeYear = &quot;-&quot; positiveYear</p>
+  <p><br />
+    (* ** Other Auxiliary Assignments for Level 0 ** *)</p>
+  <p><br />
+    year = digit digit digit digit<br />
+    month = oneThru12<br />
+    monthDay =&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  (&quot;01&quot; |&quot;03&quot; |&quot;05&quot; |&quot;07&quot;  |&quot;08&quot; |&quot;10&quot; |&quot;12&quot;) &quot;-&quot; oneThru31<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |  (&quot;04&quot; |&quot;06&quot; |&quot;09&quot; |&quot;11&quot;) &quot;-&quot;  oneThru30<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |  &quot;02-&quot; oneThru29<br />
+    yearMonth = year &quot;-&quot; month<br />
+    yearMonthDay =&nbsp;&nbsp;  year &quot;-&quot; monthDay<br />
+    hour = zeroThru23<br />
+    minute = zeroThru59<br />
+    second =&nbsp;  zeroThru59</p>
+  <p>oneThru12 = &quot;01&quot; | &quot;02&quot; | &quot;03&quot; | &quot;04&quot; | &quot;05&quot; | &quot;06&quot; | &quot;07&quot; | &quot;08&quot; | &quot;09&quot; | &quot;10&quot; | &quot;11&quot;  | &quot;12&quot;<br />
+    oneThru13 = oneThru12 | &quot;13&quot;<br />
+    oneThru23 = oneThru13  | &quot;14&quot; | &quot;15&quot; | &quot;16&quot; | &quot;17&quot; | &quot;18&quot; | &quot;19&quot; | &quot;20&quot; | &quot;21&quot; | &quot;22&quot; | &quot;23&quot;<br />
+    zeroThru23 =&nbsp;  &quot;00&quot; | oneThru23<br />
+    oneThru29 = oneThru23 | &quot;24&quot; | &quot;25&quot; | &quot;26&quot; | &quot;27&quot; | &quot;28&quot; | &quot;29&quot;<br />
+    oneThru30 = oneThru29   | &quot;30&quot;<br />
+    oneThru31 = oneThru30 | &quot;31&quot;<br />
+    oneThru59 = oneThru31 |   &quot;32&quot; |   &quot;33&quot;| &quot;34&quot;| &quot;35&quot;| &quot;36&quot;| &quot;37&quot;| &quot;38&quot;| &quot;39&quot;| &quot;40&quot;| &quot;41&quot;| &quot;42&quot; | &quot;43&quot;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| &quot;44&quot;| &quot;45&quot;| &quot;46&quot; | &quot;47&quot;| &quot;48&quot;| &quot;49&quot; |&quot;50&quot;|&quot;51&quot;|&quot;52&quot;|&quot;53&quot;|&quot;54&quot;|&quot;55&quot;|&quot;56&quot;|&quot;57&quot;|&quot;58&quot;|&quot;59&quot;<br />
+    zeroThru59 = &quot;00&quot; | oneThru59 <br />
+  <br />
+    digit = positiveDigit | &quot;0&quot;<br />
+    positiveDigit = &quot;1&quot; | &quot;2&quot; | &quot;3&quot; | &quot;4&quot; | &quot;5&quot; | &quot;6&quot; | &quot;7&quot; | &quot;8&quot; | &quot;9&quot;</p>
+  <p>day = oneThru31 <br />
+  </p>
+  <p></p>
+  <p>(* ************************** Level 1 *************************** *)</p>
+  <p>level1Expression = &nbsp;uncertainOrApproxDate&nbsp;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | unspecified <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |  L1Interval <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| longYearSimple<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| season <br />
+  </p>
+  <p>(* *** uncertainOrApproxDate  *** *)</p>
+  <p>uncertainOrApproxDate =&nbsp;  date  UASymbol <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+  <p>(* *** unspecified  *** *)</p>
+  <p>unspecified = &nbsp;&nbsp;&nbsp;yearWithOneOrTwoUnspecifedDigits<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| monthUnspecified <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| dayUnspecified <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| dayAndMonthUnspecified <br />
+  <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; yearWithOneOrTwoUnspecifedDigits = digit digit (digit|'u') 'u'<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; monthUnspecified = year &quot;-uu' <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dayUnspecified  = yearMonth &quot;-uu' <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dayAndMonthUnspecified = year &quot;-uu-uu'</p>
+  <p>&nbsp;</p>
+  <p>(* *** L1Interval *** *)</p>
+  <p>L1interval = L1Start &quot;/&quot; L1End</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;L1Start = ( dateOrSeason   UASymbol?) | &quot;unknown&quot; <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;L1End &nbsp;&nbsp;= L1Start | &quot;open&quot; </p>
+  <p>&nbsp;</p>
+  <p>(* *** Long Year - Simple Form *** *)</p>
+  <p>longYearSimple = &quot;y&quot; &quot;-&quot;? positiveDigit digit digit digit digit+ </p>
+  <p>&nbsp;</p>
+  <p>(* *** Season (unqualified) *** *)</p>
+  <p>season = year &quot;-&quot; seasonNumber </p>
+  <p>&nbsp;</p>
+  <p>(* ** Auxiliary Assignments for Level 1 ** *)<br />
+      <br />
+    UASymbol = (&quot;?&quot; | &quot;~&quot; |  &quot;?~&quot;)<br />
+    seasonNumber = &quot;21&quot; | &quot;22&quot; | &quot;23&quot; | &quot;24&quot;<br />
+    dateOrSeason = date | season</p>
+  <p>(* ************************** Level 2 *************************** *)</p>
+  <p>level2Expression = &nbsp;&nbsp;internalUncertainOrApproximate<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | internalUnspecified <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | choiceList<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|inclusiveList <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|maskedPrecision<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | L2Interval <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |longYearScientific<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |seasonQualified <br />
+  </p>
+  <p>(* ** Internal Uncertain or Approximate** *)</p>
+  <p>internalUncertainOrApproximate =&nbsp; IUABase | &quot;(&quot; IUABase &quot;)&quot; UASymbol </p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;IUABase =&nbsp;&nbsp;  &nbsp;year UASymbol &quot;-&quot; month  (&quot;-(&quot; day &quot;)&quot; UASymbol)?<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | year UASymbol &quot;-&quot; monthDay UASymbol?<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | year UASymbol? &quot;-(&quot; month &quot;)&quot; UASymbol (&quot;-(&quot;  day &quot;)&quot; UASymbol)?&nbsp;&nbsp; <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | year UASymbol?  &quot;-(&quot; month &quot;)&quot; UASymbol ( &quot;-&quot; day )?<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | yearMonth UASymbol &quot;-(&quot;  day &quot;)&quot; UASymbol<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | yearMonth UASymbol &quot;-&quot;  day<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | yearMonth &quot;-(&quot;  day &quot;)&quot; UASymbol<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | year &quot;-(&quot;  monthDay &quot;)&quot; UASymbol<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| season UASymbol <br />
+  </p>
+  <p>&nbsp;</p>
+  <p>(* ** Internal Unspecified** *)</p>
+  <p>internalUnspecified = <br />
+  &nbsp;&nbsp;&nbsp;&nbsp; yearWithU<br />
+  &nbsp;&nbsp; | yearMonthWithU<br />
+  &nbsp;&nbsp; |  yearMonthDayWithU<br />
+  &nbsp;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yearWithU = <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &quot;u&quot; digitOrU digitOrU digitOrU <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |  digitOrU&nbsp; &quot;u&quot; digitOrU digitOrU<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |  digitOrU&nbsp; digitOrU &quot;u&quot; digitOrU<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |  digitOrU&nbsp; digitOrU digitOrU &quot;u&quot;<br />
+  &nbsp;</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yearMonthWithU = <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  (year | yearWithU) &quot;-&quot; monthWithU <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |  yearWithU &quot;-&quot; month </p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yearMonthDayWithU  = <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;(yearWithU | year) &quot;-&quot; monthDayWithU <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | yearWithU &quot;-&quot; monthDay</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp; monthDayWithU= <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;(month | monthWithU)  &quot;-&quot; dayWithU<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |  monthWithU &quot;-&quot; day</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp; monthWithU =  oneThru12 | &quot;0u&quot; | &quot;1u&quot; | (&quot;u&quot; digitOrU)</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp; dayWithU =<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;oneThru31 &nbsp;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;| &quot;u&quot; dugitOrU<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | oneThru3  &quot;u&quot;</p>
+  <p>&nbsp;digitOrU =  positiveDigitOrU | &quot;0&quot;<br />
+  &nbsp;positiveDigitOrU =  positiveDigit | &quot;u&quot;<br />
+  &nbsp;oneThru3 =  &quot;1&quot; | &quot;2&quot; | &quot;3&quot;</p>
+  <p>&nbsp;</p>
+  <p>(* ** Inclusive list and choice list** *) </p>
+  <p>&nbsp;&nbsp;&nbsp;choiceList =&nbsp;&nbsp; &quot;[&quot; listContent &quot;]&quot;<br />
+  &nbsp;&nbsp;&nbsp;inclusiveList  = &quot;{&quot; listContent &quot;}&quot;<br />
+  <br />
+  <br />
+    listContent = earlier (&quot;,&quot; listElement)* <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |  (earlier &quot;,&quot;)? (listElement &quot;,&quot;)* later <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| listElement  (&quot;,&quot; listElement)+ <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | consecutives</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;listElement =&nbsp;&nbsp;&nbsp;   date<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | dateWithInternalUncertainty <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| uncertainOrApproxDate<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;| unspecified &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | consecutives</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  earlier =&nbsp; &quot;..&quot; date<br />
+  &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;later = date  &quot;..&quot;<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;consecutives =  yearMonthDay &quot;..&quot; yearMonthDay <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| yearMonth  &quot;..&quot; yearMonth <br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| year &quot;..&quot; year </p>
+  <p>&nbsp;</p>
+  <p>(* ** Masked precision ** *)</p>
+  <p>maskedPrecision = &nbsp;digit digit ((digit &quot;x&quot;) | &quot;xx&quot; )<br />
+  </p>
+  <p>&nbsp;</p>
+  <p>(* ** L2Interval ** *)</p>
+  <p>L2Interval = &nbsp;&nbsp;&nbsp;dateOrSeason &quot;/&quot; dateWithInternalUncertainty<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|dateWithInternalUncertainty&nbsp;&quot;/&quot;dateOrSeason<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|dateWithInternalUncertainty&nbsp;&quot;/&quot; dateWithInternalUncertainty</p>
+  <p><br />(* ** Long Year - Scientific Form ** *)</p>
+  <p>longYearScientific = &quot;y&quot; &quot;-&quot;? positiveInteger &quot;e&quot; positiveInteger (&quot;p&quot; positiveInteger)?</p>
+  <p>positiveInteger = positiveDigit digit* </p>
+  <p></p>
+  <p>(* ** SeasonQualified ** *)</p>
+  <p>seasonQualified = season &quot;^&quot; seasonQualifier </p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seasonQualifier = qualifyingString </p>
+  <p>&nbsp;</p>
+  <p>(* ** Auxiliary Assignments for Level 2 ** *)</p>
+  <p>&nbsp;dateWithInternalUncertainty =<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  internalUncertainOrApproximate<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | internalUnspecified </p>
+  <p>qualifyingString = A<em>ny sequence of characters that does not include  whitespace.</em></p> <hr/>
+  <h2>9. Acknowledgements<a name="acknowledgements" id="acknowledgements"></a></h2>
+<p>This specification has been developed as a
+result of the work of many individuals, including:</p>
+<p>  Gerry Ashton, unaffiliated engineer<br />
+  Syd Bauman, Brown University<br />
+  Karin Bredenberg, National Archives of Sweden<br />
+  Bruce D'Arcus, Miami University<br />
+  Ray Denenberg, Library of Congress<br />
+  Larry E. Dixson, Library of Congress<br />
+  Rebecca Guenther, Library of Congress<br />
+  John Hostage, Harvard Law School<br />
+  Andrew Houghton, OCLC
+  <br />
+  Kathryn Lybarger, University of Kentucky<br />
+  Bert Lyons, Library of Congress<br />
+  Andy Mabbett<br />
+  Sally Hart McCallum, Library of Congress<br />
+  Betsy McKelvey, Boston College<br />
+  Neil McNaughton, Oil Information Technology Journal<br />
+  Tracy Neckar Meehleib, Library of Congress<br />
+  Clay Redding, Library of Congress<br />
+  Dave Reser, Library of Congress<br />
+  Saašha Metsärantala,   Umeå University, Sweden<br />
+  C. M. Sperberg-McQueen, Black Mesa Technologies<br />
+  Jakob Voss, Gemeinsamer Bibliotheksverbund<br />
+  Edward C. Zimmermann, Basis Systeme netzwerk</p>
+<h2 id="references">10. <a href="#references">References</a></h2>
+<dl>
+<dt id="RFC2119">[RFC 2119]</dt>
+<dd>S. Bradner, &quot;Key words for use in RFCs to
+Indicate Requirement Levels,&quot; RFC 2119, Harvard University, March
+1997. (See <a href="http://www.ietf.org/rfc/rfc2119.txt"><span class="Internetlink">http://www.ietf.org/rfc/rfc2119.txt</span></a>.)</dd>
+<dt id="ISO8601">[ISO 8601]</dt>
+<dd> Data elements and interchange
+  formats — Information interchange — 
+  Representation of dates and times<br />
+  <a href="http://dotat.at/tmp/ISO_8601-2004_E.pdf">http://dotat.at/tmp/ISO_8601-2004_E.pdf</a></dd>
+<dt id="w3cdtf">[W3CDTF]</dt>
+<dd> Data and Time Formats  <br />
+  <a href="http://www.w3.org/TR/NOTE-datetime">http://www.w3.org/TR/NOTE-datetime</a></dd>
+</dl>
+
+<h1>Annex A. (Non Normative) Possible Future Features<a name="future" id="future"></a></h1>
+<p>Some of the features discussed during the development of this draft specification were not sufficiently well-developed to include. These are sumarized briefly here so that they will not be forgotten and so that they may be considered in a future version. </p>
+<strong>Reliability </strong>
+<p>The character '?' means &quot;uncertain&quot;. Some developers are satisfied to
+  simply assert that a value is &quot;uncertain&quot; while others want to attach a
+  level of reliability. One suggestion is to adopt a simple list of 
+  qualifiers, for example ..... </p>
+<p> a) Known to be correct (observed, documented  etc.) <br />
+  b) Likely correct ( probability &gt; 50%) <br />
+  c) Possibly correct (Might be but not likely) <br />
+  d) Likely incorrect (The date is expected to be wrong) <br />
+  e) Certainty unknown </p>
+<p>...... and to append the '?' with one of these letters, a, b, c, d, e. </p>
+<p>The default (whenever '?' is not followed by one of these letters) would be &quot;unstated reliability &quot;.</p>
+<p>This proposal may suffer from oversimplification and lack of 
+  extensibility; for example, someone may want to represent &quot;almost 
+  certaintly  correct (probability near but not 100%)&quot;. On the other hand, it may meet
+  the majority of needs, and it does have the advantage of extreme 
+  simplicity. </p>
+<p>There are two broad approches. One is to declare this  model to be 
+  explicitly non-extensible and define a closed controlled  vocabulary, 
+  which may be as simple as the one suggested above, or it may be richer. 
+  The other would be a model based on an extensible vocabulary, either 
+  centralized (i.e. a registry), or decentralized with reliability levels 
+  represented by URIs.</p>
+<strong>Precision </strong>
+<p>Somewhat analogous to &quot;reliability&quot; (above), the  character '~' 
+  indicates &quot;approximate&quot;. Some developers are satisfied to simply assert 
+  that a value is &quot;approximate&quot; while others want to attach a level of 
+  precision. This could perhaps be done in a manner similar to the 
+  suggestion for &quot;reliability&quot;. </p>
+<strong>Volatile/dynamic/contextual dates</strong>
+<p>Representing dates such as &quot;today&quot;, &quot;now&quot;, &quot;yesterday&quot;, &quot;past two weeks&quot;, &quot;last month&quot;, &quot;next&nbsp;year&quot;. etc...&nbsp;&nbsp;</p>
+<a name="seasonQualifier" id="seasonQualifier"></a><strong>Season Qualifier</strong>
+<p>No seasonal qualifiers have yet been developed. 21, 22, 23, 24 are used to mean Spring, Summer, 
+  Autumn, Winter, respectively, in place of month, for example, '2001-21' 
+  for <em>Spring, 2001</em>. When the season is immediately followed by 
+  '^' then a qualifier follows the ^. For example, in the expression 
+  '2001-21^xxx, &quot;xxx&quot; is the qualifier. But no such qualifiers have  been developed.</p>
+<p>A qualifier might indicate hemisphere - north or south. There are 
+  also competing semantics for seasonal names: Meteorological, 
+  Astronomical, Cultural, Historical... For example, on February 1 it is 
+  Spring in Ireland but Winter in England (where  March 1   traditionally 
+  marks the start of Spring). Universities have varying semantics: At the 
+  University of  California, for example, Spring starts on March 28. Some 
+  campuses on the  semester system use Fall and Spring to denote the two 
+  semesters but others use  Winter and Summer (common in Germany). </p>
+<p>There is also the possibility of inserting a geographic qualifier. And there is  discussion about interpreting 21, 22, 23, 24 as quarter
+  rather than season, and also distinguishing calendar from fiscal 
+  quarter. </p>
+<strong>Alternative definitions of year, month, day.</strong>
+<ul>
+  <li>Solar year</li>
+  <li>Lunar month</li>
+  <li>alternative start of day <em> (e.g. day begins at sunset as opposed to midnight</em>)<br />
+      <br />
+  </li>
+</ul>
+<strong>Holidays with no fixed (or unspecified) date </strong>e.g.
+<ul>
+  <li>Easter, 2009 </li>
+  <li>Passover, 2009 </li>
+  <li>Western Easter, 2009</li>
+  <li>Eastern Easter, 2009</li>
+</ul>
+<strong>Named Periods of Duration</strong>
+<p>e.g.</p>
+<ul>
+  <li>Millennium</li>
+  <li>Century</li>
+  <li> Week</li>
+  <li> Day</li>
+  </ul>
+  <hr/>
+</div>
+</body></html>

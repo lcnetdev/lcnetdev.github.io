@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+<pre><code>&lt;http://bibframe.example.org/work/7140021&gt; 
+   a                  bf:Work , bf:Text ;
+   
+    bf:language     &lt;http://id.loc.gov/vocabulary/languages/ger&gt; ;
+   
+    bf:classification [            a                           bf:ClassificationLcc ;
+                                   bf:source                   &lt;http://id.loc.gov/vocabulary/organizations/dlc&gt; ;
+                                   bf:classificationPortion    “PT3874” ;
+                                   bf:itemPortion              “.N8” ] ;
+   
+   
+   
+    bf:title         [rdfs:label “Fifty Eight.”] ;
+    bf:hasInstance    &lt;http://bibframe.example.org/instance/7140021&gt; .
+    
+   
+       
+&lt;http://bibframe.example.org/instance/7140021&gt; 
+   
+    bf:instanceOf        &lt;http://bibframe.example.org/work/7140021&gt;  ; 
+    bf:title             [rdfs:label “Fifty-eight.”] ;
+   
+   
+    bf:title [                              a                 bf:Title, bf:VariantTitle ;
+                                            rdfs:label        "Nullachtundfünfzig" ] ;
+      
+    bf:provisionActivity [                  a                bf:Publication ;
+                                            bf:place         [rdfs:label "Glarus"] ;    
+                                            bf:date         "1973" ] ;
+
+    bf:agent                          [rdfs:label "Wiggistr. 1,]) Lapsus(-Verlag"] ;
+
+    bf:provisionActivityStatement     "(Glarus, [Wiggistr. 1,]) Lapsus(-Verlag, [1973])" ; 
+
+    bf:hasItem             &lt;http://bibframe.example.org/item/19033721&gt; . 
+
+
+
+
+
+&lt;http://bibframe.example.org/item/19033721&gt;
+    a                     bf:Item ;
+    bf:itemOf             &lt;http://bibframe.example.org/instance/19033721&gt;;
+
+
+    bf:shelfmark  [                         a                     bf:ShelfMarkLcc ;
+                                            rdfs:label            "PT3874.N8" ;
+                                            bf:source             &lt;http://id.loc.gov/vocabulary/organizations/dlc&gt; ] .
+
+
+</code></pre></body>
+</html>
