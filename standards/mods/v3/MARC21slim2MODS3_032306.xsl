@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns="http://lcnetdev.github.io/mods/v3" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:marc="http://lcnetdev.github.io/MARC21/slim" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" exclude-result-prefixes="xlink marc">
-	<xsl:include href="http://lcnetdev.github.io/marcxml/xslt/MARC21slimUtils.xsl"/>
+<xsl:stylesheet version="1.0" xmlns="http://www.loc.gov/mods/v3" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" exclude-result-prefixes="xlink marc">
+	<xsl:include href="http://www.loc.gov/marcxml/xslt/MARC21slimUtils.xsl"/>
 	<xsl:output method="xml" indent="yes" encoding="UTF-8"/>
 
 <!--
@@ -26,7 +26,7 @@ Added Log Comment
 	<xsl:template match="/">
 		<xsl:choose>
 			<xsl:when test="marc:collection">
-				<modsCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://lcnetdev.github.io/mods/v3 http://lcnetdev.github.io/standards/mods/v3/mods-3-0.xsd">
+				<modsCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-0.xsd">
 					<xsl:for-each select="marc:collection/marc:record">
 						<mods version="3.0">
 							<xsl:call-template name="marcRecord"/>
@@ -35,7 +35,7 @@ Added Log Comment
 				</modsCollection>
 			</xsl:when>
 			<xsl:otherwise>
-				<mods version="3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://lcnetdev.github.io/mods/v3 http://lcnetdev.github.io/standards/mods/v3/mods-3-0.xsd">
+				<mods version="3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-0.xsd">
 					<xsl:for-each select="marc:record">
 						<xsl:call-template name="marcRecord"/>
 					</xsl:for-each>

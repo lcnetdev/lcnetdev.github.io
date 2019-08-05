@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet version="2.0"
 	xmlns:xlink="http://www.w3.org/1999/xlink" 
-	xmlns:mods="http://lcnetdev.github.io/mods/v3"
+	xmlns:mods="http://www.loc.gov/mods/v3"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	exclude-result-prefixes="mods xlink" >
 	<xsl:output method="html" indent="yes"/>
@@ -10,7 +10,7 @@
 		Outputs all mods elements in a definition list with element names, attribute names and values. 
 	-->
 
-	<xsl:variable name="dictionary" select="document('http://lcnetdev.github.io/standards/mods/modsDictionary.xml')/dictionary"/>
+	<xsl:variable name="dictionary" select="document('http://www.loc.gov/standards/mods/modsDictionary.xml')/dictionary"/>
 
 	<xsl:template match="/">
 		<html>

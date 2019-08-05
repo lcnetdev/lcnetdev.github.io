@@ -1,10 +1,10 @@
-<mix xmlns="http://lcnetdev.github.io/mix/v10"
-     xsi:schemaLocation="http://lcnetdev.github.io/standards/mix/mix10/mix10.xsd"
+<mix xmlns="http://www.loc.gov/mix/v10"
+     xsi:schemaLocation="http://www.loc.gov/standards/mix/mix10/mix10.xsd"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 
 >
 
-  <!--      xsi:schemaLocation="http://lcnetdev.github.io/mix/v10 mix10.xsd"
+  <!--      xsi:schemaLocation="http://www.loc.gov/mix/v10 mix10.xsd"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" -->
 
 

@@ -1,12 +1,12 @@
 <?xml version="1.0" ?>
 
 <!-- Revised to correct error on line 301 (07/02/2007/jer) -->
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns="http://lcnetdev.github.io/MARC21/slim">
-	<xsl:include href="http://lcnetdev.github.io/standards/marcxml/xslt/MARC21slimUtils.xsl"/>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns="http://www.loc.gov/MARC21/slim">
+	<xsl:include href="http://www.loc.gov/standards/marcxml/xslt/MARC21slimUtils.xsl"/>
 	<xsl:output indent="yes"/>
 	
 	<xsl:template match="/ONIXmessage">
-	<collection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://lcnetdev.github.io/MARC21/slim http://lcnetdev.github.io/standards/marcxml/schema/MARC21slim.xsd" >
+	<collection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/MARC21/slim http://www.loc.gov/standards/marcxml/schema/MARC21slim.xsd" >
 		<xsl:apply-templates select="product"/>
 	</collection>
 	</xsl:template>

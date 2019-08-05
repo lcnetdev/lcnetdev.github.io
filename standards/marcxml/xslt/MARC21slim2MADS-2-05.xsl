@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:mads="http://lcnetdev.github.io/mads/v2"
-	xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:marc="http://lcnetdev.github.io/MARC21/slim"
+<xsl:stylesheet version="1.0" xmlns:mads="http://www.loc.gov/mads/v2"
+	xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:marc="http://www.loc.gov/MARC21/slim"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" exclude-result-prefixes="marc">
 
-	<xsl:include href="http://lcnetdev.github.io/marcxml/xslt/MARC21slimUtils.xsl"/>
+	<xsl:include href="http://www.loc.gov/marcxml/xslt/MARC21slimUtils.xsl"/>
 	<xsl:output method="xml" indent="yes" encoding="UTF-8"/>
 	<xsl:strip-space elements="*"/>
 
@@ -47,7 +47,7 @@
 		<xsl:choose>
 			<xsl:when test="descendant-or-self::marc:collection">
 				<mads:madsCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-					xsi:schemaLocation="http://lcnetdev.github.io/mads/v2 http://lcnetdev.github.io/standards/mads/v2/mads-2-0.xsd">
+					xsi:schemaLocation="http://www.loc.gov/mads/v2 http://www.loc.gov/standards/mads/v2/mads-2-0.xsd">
 					<xsl:for-each select="descendant-or-self::marc:collection/marc:record">
 						<mads:mads version="2.0">
 							<xsl:call-template name="marcRecord"/>
@@ -57,7 +57,7 @@
 			</xsl:when>
 			<xsl:otherwise>
 				<mads:mads version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-					xsi:schemaLocation="http://lcnetdev.github.io/mads/v2 http://lcnetdev.github.io/standards/mads/mads-2-0.xsd">
+					xsi:schemaLocation="http://www.loc.gov/mads/v2 http://www.loc.gov/standards/mads/mads-2-0.xsd">
 					<xsl:for-each select="descendant-or-self::marc:record">
 						<xsl:call-template name="marcRecord"/>
 					</xsl:for-each>

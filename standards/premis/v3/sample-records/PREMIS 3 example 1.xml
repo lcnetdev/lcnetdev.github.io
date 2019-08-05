@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<premis:premis xmlns:premis="http://lcnetdev.github.io/premis/v3" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://lcnetdev.github.io/premis/v3 https://lcnetdev.github.io/standards/premis/premis.xsd" version="3.0">
+<premis:premis xmlns:premis="http://www.loc.gov/premis/v3" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/premis/v3 https://www.loc.gov/standards/premis/premis.xsd" version="3.0">
   <premis:object xsi:type="premis:file">
     <premis:objectIdentifier>
       <premis:objectIdentifierType>local</premis:objectIdentifierType>

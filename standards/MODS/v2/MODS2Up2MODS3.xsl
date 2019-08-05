@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xlink="http://www.w3.org/TR/xlink" 
 xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://lcnetdev.github.io/mods/v3">
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.loc.gov/mods/v3">
 	<xsl:output method="xml" indent="yes" encoding="UTF-8"/>
 	<!-- MODS version 2 to MODS version 3 Conversion Stylesheet
 		Trail 9/2003

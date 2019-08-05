@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:mods="http://lcnetdev.github.io/mods/v3" exclude-result-prefixes="mods"
+	xmlns:mods="http://www.loc.gov/mods/v3" exclude-result-prefixes="mods"
 	xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:srw_dc="info:srw/schema/1/dc-schema"
 	xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
 	<!-- 
 This stylesheet transforms MODS version 3.2 records and collections of records to simple Dublin Core (DC) records, 
-based on the Library of Congress' MODS to simple DC mapping <http://lcnetdev.github.io/standards/mods/mods-dcsimple.html> 
+based on the Library of Congress' MODS to simple DC mapping <http://www.loc.gov/standards/mods/mods-dcsimple.html> 
 		
 The stylesheet will transform a collection of MODS 3.2 records into simple Dublin Core (DC)
-as expressed by the SRU DC schema <http://lcnetdev.github.io/standards/sru/dc-schema.xsd>
+as expressed by the SRU DC schema <http://www.loc.gov/standards/sru/dc-schema.xsd>
 
 The stylesheet will transform a single MODS 3.2 record into simple Dublin Core (DC)
 as expressed by the OAI DC schema <http://www.openarchives.org/OAI/2.0/oai_dc.xsd>
@@ -45,11 +45,11 @@ Version 1.0	2007-05-04 <tmee@loc.gov>
 		<xsl:choose>
 			<xsl:when test="//mods:modsCollection">
 				<srw_dc:dcCollection
-					xsi:schemaLocation="info:srw/schema/1/dc-schema http://lcnetdev.github.io/standards/sru/dc-schema.xsd">
+					xsi:schemaLocation="info:srw/schema/1/dc-schema http://www.loc.gov/standards/sru/dc-schema.xsd">
 					<xsl:apply-templates/>
 					<xsl:for-each select="mods:modsCollection/mods:mods">
 						<srw_dc:dc
-							xsi:schemaLocation="info:srw/schema/1/dc-schema http://lcnetdev.github.io/standards/sru/dc-schema.xsd">
+							xsi:schemaLocation="info:srw/schema/1/dc-schema http://www.loc.gov/standards/sru/dc-schema.xsd">
 							<xsl:apply-templates/>
 						</srw_dc:dc>
 					</xsl:for-each>

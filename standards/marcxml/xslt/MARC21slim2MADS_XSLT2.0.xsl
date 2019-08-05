@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="2.0" 
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:mads="http://lcnetdev.github.io/mads/v2" 
+	xmlns:mads="http://www.loc.gov/mads/v2" 
 	xmlns:local="http://www.loc.org/namespace"
 	xmlns:xlink="http://www.w3.org/1999/xlink"
-	xmlns:marc="http://lcnetdev.github.io/MARC21/slim"
+	xmlns:marc="http://www.loc.gov/MARC21/slim"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" exclude-result-prefixes="marc">
 
-	<xsl:include href="http://lcnetdev.github.io/marcxml/xslt/MARC21slimUtils.xsl"/>
+	<xsl:include href="http://www.loc.gov/marcxml/xslt/MARC21slimUtils.xsl"/>
 	<xsl:output method="xml" indent="yes" encoding="UTF-8"/>
 	<xsl:strip-space elements="*"/>
 
@@ -227,7 +227,7 @@
 	
 	<xsl:template match="marc:collection">
 		<mads:madsCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-			xsi:schemaLocation="http://lcnetdev.github.io/mads/v2 http://lcnetdev.github.io/standards/mads/v2/mads-2-0.xsd">
+			xsi:schemaLocation="http://www.loc.gov/mads/v2 http://www.loc.gov/standards/mads/v2/mads-2-0.xsd">
 			<xsl:apply-templates select="marc:record"/>
 		</mads:madsCollection>
 	</xsl:template>
@@ -241,7 +241,7 @@
 			<!-- Adds appropriate namespaces and schema declaration if root is marc:record -->
 			<xsl:if test="/marc:record">
 				<xsl:namespace name="xsi">http://www.w3.org/2001/XMLSchema-instance</xsl:namespace>
-				<xsl:attribute name="xsi:schemaLocation">http://lcnetdev.github.io/mads/v2 http://lcnetdev.github.io/standards/mads/v2/mads-2-0.xsd</xsl:attribute>
+				<xsl:attribute name="xsi:schemaLocation">http://www.loc.gov/mads/v2 http://www.loc.gov/standards/mads/v2/mads-2-0.xsd</xsl:attribute>
 			</xsl:if>
 			
 			<!-- Build authority element -->

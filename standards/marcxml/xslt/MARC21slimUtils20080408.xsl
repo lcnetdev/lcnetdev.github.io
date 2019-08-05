@@ -1,5 +1,5 @@
 <?xml version='1.0'?>
-<xsl:stylesheet version="1.0" xmlns:marc="http://lcnetdev.github.io/MARC21/slim" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:stylesheet version="1.0" xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 <!-- 8/19/04: ntra added "marc:" prefix to datafield element -->
 <!-- 12/14/07: ntra added url encoding template -->
 

@@ -4,10 +4,10 @@
 	xmlns:xlink="http://www.w3.org/TR/xlink"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://lcnetdev.github.io/mods/ http://lcnetdev.github.io/standards/mods/mods.xsd">
+	xsi:schemaLocation="http://www.loc.gov/mods/ http://www.loc.gov/standards/mods/mods.xsd">
 	<xsl:output method="xml" indent="yes" encoding="UTF-8"/>
 	<!-- mods 2 to 3 conversion stylesheet
-	xmlns="http://lcnetdev.github.io/mods"
+	xmlns="http://www.loc.gov/mods"
 		trail 9/2003
 		needs these changes:
 		1: add v3 attribute to mods element
@@ -25,9 +25,9 @@
 			<xsl:when test="modsCollection">
 				<xsl:for-each select="modsCollection">
 					<modsCollection xmlns:xlink="http://www.w3.org/1999/xlink"
-			 			xmlns="http://lcnetdev.github.io/mods/v3"
+			 			xmlns="http://www.loc.gov/mods/v3"
 						xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-						xsi:schemaLocation="http://lcnetdev.github.io/mods/v3 http://lcnetdev.github.io/standards/mods/v3/mods-3-0.xsd">
+						xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-0.xsd">
 						<xsl:for-each select="mods">
 							<mods version="3.0">
 								<xsl:apply-templates/>
@@ -40,9 +40,9 @@
 				<xsl:for-each select="mods">
 					<mods version="3.0" 
 					  xmlns:xlink="http://www.w3.org/1999/xlink"
-			 		  xmlns="http://lcnetdev.github.io/mods/v3"
+			 		  xmlns="http://www.loc.gov/mods/v3"
 					  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-					  xsi:schemaLocation="http://lcnetdev.github.io/mods/v3 http://lcnetdev.github.io/standards/mods/v3/mods-3-0.xsd">
+					  xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-0.xsd">
 						<xsl:apply-templates/>
 					</mods>
 				</xsl:for-each>

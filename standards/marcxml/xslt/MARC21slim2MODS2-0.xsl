@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xlink="http://www.w3.org/TR/xlink" xmlns:marc="http://lcnetdev.github.io/MARC21/slim" xmlns="http://lcnetdev.github.io/mods/" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" exclude-result-prefixes="marc">
+<xsl:stylesheet version="1.0" xmlns:xlink="http://www.w3.org/TR/xlink" xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns="http://www.loc.gov/mods/" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" exclude-result-prefixes="marc">
 	<xsl:include href="MARC21slimUtils.xsl"/>
 	<xsl:output method="xml" indent="yes"/>
 	<!-- This stylesheet is for MODS Version 2-->
@@ -19,7 +19,7 @@
 	<xsl:template match="/">
 		<xsl:choose>
 			<xsl:when test="marc:collection">
-				<modsCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://lcnetdev.github.io/mods/ http://lcnetdev.github.io/standards/mods/mods.xsd">
+				<modsCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/mods/ http://www.loc.gov/standards/mods/mods.xsd">
 					<xsl:for-each select="marc:collection/marc:record">
 						<mods>
 							<xsl:call-template name="marcRecord"/>
@@ -28,7 +28,7 @@
 				</modsCollection>
 			</xsl:when>
 			<xsl:otherwise>
-				<mods xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://lcnetdev.github.io/mods/ http://lcnetdev.github.io/standards/mods/mods.xsd">
+				<mods xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/mods/ http://www.loc.gov/standards/mods/mods.xsd">
 					<xsl:for-each select="marc:record">
 						<xsl:call-template name="marcRecord"/>
 					</xsl:for-each>

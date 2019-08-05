@@ -1,4 +1,4 @@
-<mix xmlns="http://lcnetdev.github.io/mix/v11" xsi:schemaLocation="http://lcnetdev.github.io/mix/v11 http://lcnetdev.github.io/standards/mix/mix11/mix11.xsd"
+<mix xmlns="http://www.loc.gov/mix/v11" xsi:schemaLocation="http://www.loc.gov/mix/v11 http://www.loc.gov/standards/mix/mix11/mix11.xsd"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
   <!-- minimum MIX 1.1 document -->

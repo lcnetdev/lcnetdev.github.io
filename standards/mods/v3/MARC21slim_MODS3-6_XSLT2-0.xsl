@@ -1,9 +1,9 @@
-<xsl:stylesheet xmlns="http://lcnetdev.github.io/mods/v3"
+<xsl:stylesheet xmlns="http://www.loc.gov/mods/v3"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:marc="http://lcnetdev.github.io/MARC21/slim" xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns:xlink="http://www.w3.org/1999/xlink"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	xmlns:local="http://www.loc.org/namespace" exclude-result-prefixes="xlink marc" version="2.0">
-	<!--	<xsl:include href="http://lcnetdev.github.io/standards/marcxml/xslt/MARC21slimUtils.xsl"/>-->
+	<!--	<xsl:include href="http://www.loc.gov/standards/marcxml/xslt/MARC21slimUtils.xsl"/>-->
 	<xsl:output encoding="UTF-8" indent="yes" method="xml"/>
 	<xsl:strip-space elements="*"/>
 	<!-- 
@@ -244,7 +244,7 @@
 	<!-- Build marc:collection -->
 	<xsl:template match="marc:collection">
 		<modsCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-			xsi:schemaLocation="http://lcnetdev.github.io/mods/v3 http://lcnetdev.github.io/standards/mods/v3/mods-3-6.xsd">
+			xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-6.xsd">
 			<xsl:apply-templates select="marc:record"/>
 		</modsCollection>
 	</xsl:template>
@@ -283,7 +283,7 @@
 			<!-- Adds appropriate namespaces and schema declaration if root is marc:record -->
 			<xsl:if test="/marc:record">
 				<xsl:namespace name="xsi">http://www.w3.org/2001/XMLSchema-instance</xsl:namespace>
-				<xsl:attribute name="xsi:schemaLocation">http://lcnetdev.github.io/mods/v3 http://lcnetdev.github.io/standards/mods/v3/mods-3-6.xsd</xsl:attribute>
+				<xsl:attribute name="xsi:schemaLocation">http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-6.xsd</xsl:attribute>
 			</xsl:if>
 
 			<!-- Call titleInfo templates and linking fields-->
@@ -1641,7 +1641,7 @@
 	<xsl:template match="marc:datafield[@tag='264']" mode="orginInfo">
 		<xsl:if test="@ind2 ='0' or @ind2 ='1'or @ind2 ='2' or @ind2 ='3'">
 			<originInfo>
-				<!-- Removed displayLabel according to http://lcnetdev.github.io/standards/mods/mods-mapping.html
+				<!-- Removed displayLabel according to http://www.loc.gov/standards/mods/mods-mapping.html
 				<xsl:choose>
 					<xsl:when test="@ind2='0'">
 						<xsl:attribute name="displayLabel">producer</xsl:attribute>

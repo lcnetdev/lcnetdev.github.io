@@ -2,16 +2,16 @@
 <xsl:stylesheet version="1.0"
 
 	xmlns:xlink="http://www.w3.org/1999/xlink" 
-	xmlns:mods="http://lcnetdev.github.io/mods/v3"
+	xmlns:mods="http://www.loc.gov/mods/v3"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-	xmlns:zs="http://lcnetdev.github.io/zing/srw/"
+	xmlns:zs="http://www.loc.gov/zing/srw/"
 	exclude-result-prefixes="mods zs" >
 	<xsl:output method="html" indent="yes" encoding="UTF-8"/>
 	 <!-- Stylesheet to unwrap z3950 search records and transform 
 	 MODS3 to HTML
 	-->
 
-	<xsl:include href="http://lcnetdev.github.io/standards/mods/mods.xsl"/>
+	<xsl:include href="http://www.loc.gov/standards/mods/mods.xsl"/>
 
 	<xsl:template match="/">
 	
@@ -39,6 +39,6 @@
 
 </xsl:stylesheet><!-- Stylus Studio meta-information - (c)1998-2003 Copyright Sonic Software Corporation. All rights reserved.
 <metaInformation>
-<scenarios ><scenario default="no" name="Scenario2" userelativepaths="yes" externalpreview="no" url="http://lcnetdev.github.io/standards/mods/instances/mods99042030.xml" htmlbaseurl="" outputurl="" processortype="internal" commandline="" additionalpath="" additionalclasspath="" postprocessortype="none" postprocesscommandline="" postprocessadditionalpath="" postprocessgeneratedext=""/><scenario default="yes" name="MODS to HTML" userelativepaths="yes" externalpreview="no" url="http://z3950.loc.gov:7090/voyager?operation=searchRetrieve&amp;version=1.1&amp;query=dc.title=dhtml%20and%20dc.creator=%22callihan,%20steven%22&amp;recordSchema=mods&amp;startRecord=1&amp;maximumRecords=10&amp;recordPacking=xml" htmlbaseurl="" outputurl="..\test_files\modshtml.html" processortype="internal" commandline="" additionalpath="" additionalclasspath="" postprocessortype="none" postprocesscommandline="" postprocessadditionalpath="" postprocessgeneratedext=""/></scenarios><MapperInfo srcSchemaPath="" srcSchemaRoot="" srcSchemaPathIsRelative="yes" srcSchemaInterpretAsXML="no" destSchemaPath="" destSchemaRoot="" destSchemaPathIsRelative="yes" destSchemaInterpretAsXML="no"/>
+<scenarios ><scenario default="no" name="Scenario2" userelativepaths="yes" externalpreview="no" url="http://www.loc.gov/standards/mods/instances/mods99042030.xml" htmlbaseurl="" outputurl="" processortype="internal" commandline="" additionalpath="" additionalclasspath="" postprocessortype="none" postprocesscommandline="" postprocessadditionalpath="" postprocessgeneratedext=""/><scenario default="yes" name="MODS to HTML" userelativepaths="yes" externalpreview="no" url="http://z3950.loc.gov:7090/voyager?operation=searchRetrieve&amp;version=1.1&amp;query=dc.title=dhtml%20and%20dc.creator=%22callihan,%20steven%22&amp;recordSchema=mods&amp;startRecord=1&amp;maximumRecords=10&amp;recordPacking=xml" htmlbaseurl="" outputurl="..\test_files\modshtml.html" processortype="internal" commandline="" additionalpath="" additionalclasspath="" postprocessortype="none" postprocesscommandline="" postprocessadditionalpath="" postprocessgeneratedext=""/></scenarios><MapperInfo srcSchemaPath="" srcSchemaRoot="" srcSchemaPathIsRelative="yes" srcSchemaInterpretAsXML="no" destSchemaPath="" destSchemaRoot="" destSchemaPathIsRelative="yes" destSchemaInterpretAsXML="no"/>
 </metaInformation>
 -->

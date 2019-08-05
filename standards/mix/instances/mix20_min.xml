@@ -1,4 +1,4 @@
-<mix:mix xmlns:mix="http://lcnetdev.github.io/mix/v20">
+<mix:mix xmlns:mix="http://www.loc.gov/mix/v20">
 
   <!-- example of minimal MIX 2.0 document -->
   <!-- the only required leaf element is fileSize -->

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
     <xsl:variable name="forms">
-        <!-- from MARC Value List for Form http://lcnetdev.github.io/marc/sourcecode/form/formlist.html -->
+        <!-- from MARC Value List for Form http://www.loc.gov/marc/sourcecode/form/formlist.html -->
         <xsl:text>braille</xsl:text>
         <xsl:text>electronic</xsl:text>
         <xsl:text>microfiche</xsl:text>
         <xsl:text>microfilm</xsl:text>
         <xsl:text>print</xsl:text>
         <xsl:text>large print</xsl:text>
-        <!-- from Special material designation for form http://lcnetdev.github.io/marc/sourcecode/form/smdlist.html -->
+        <!-- from Special material designation for form http://www.loc.gov/marc/sourcecode/form/smdlist.html -->
         <xsl:text>chip cartridge</xsl:text>
         <xsl:text>computer optical disc cartridge</xsl:text>
         <xsl:text>magnetic disk</xsl:text>

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<?xml-stylesheet type="text/xsl" href="http://lcnetdev.github.io/standards/sru/bibframe/fullDisplay.xsl"?>
- <zs:searchRetrieveResponse xmlns:zs="http://lcnetdev.github.io/zing/srw/">
+<?xml-stylesheet type="text/xsl" href="http://www.loc.gov/standards/sru/bibframe/fullDisplay.xsl"?>
+ <zs:searchRetrieveResponse xmlns:zs="http://www.loc.gov/zing/srw/">
     <zs:version>1.2</zs:version> 
     <zs:numberOfRecords>1</zs:numberOfRecords> 
      <zs:records>
@@ -8,7 +8,7 @@
             <zs:recordSchema>bibframe</zs:recordSchema> 
             <zs:recordPacking>xml</zs:recordPacking> 
              <zs:recordData>
-                 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:bf="http://bibframe.org/vocab/" xmlns:madsrdf="http://lcnetdev.github.io/mads/rdf/v1#" xmlns:relators="http://id.loc.gov/vocabulary/relators/">
+                 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:bf="http://bibframe.org/vocab/" xmlns:madsrdf="http://www.loc.gov/mads/rdf/v1#" xmlns:relators="http://id.loc.gov/vocabulary/relators/">
                     - <bf:Work rdf:about="http://id.loc.gov/resources/bibs/11737193">
                         <rdf:type rdf:resource="http://bibframe.org/vocab/Text" /> 
                         <bf:authorizedAccessPoint>Vēma (Athens, Greece)</bf:authorizedAccessPoint> 
@@ -124,13 +124,13 @@
                         <bf:label>Athens (Greece)--Newspapers</bf:label> 
                          <bf:hasAuthority>
                              <madsrdf:Authority>
-                                <rdf:type rdf:resource="http://lcnetdev.github.io/mads/rdf/v1#ComplexSubject" /> 
+                                <rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#ComplexSubject" /> 
                                 <madsrdf:authoritativeLabel xml:lang="en">Athens (Greece)--Newspapers</madsrdf:authoritativeLabel> 
                             </madsrdf:Authority>
                         </bf:hasAuthority>
                     </bf:Place>
                      <bf:Topic rdf:nodeID="btopic20">
-                        <rdf:type rdf:resource="http://lcnetdev.github.io/mads/rdf/v1#HierarchicalGeographic" /> 
+                        <rdf:type rdf:resource="http://www.loc.gov/mads/rdf/v1#HierarchicalGeographic" /> 
                         <bf:authorizedAccessPoint>Greece. Athens.</bf:authorizedAccessPoint> 
                         <bf:label>Greece. Athens.</bf:label> 
                          <bf:hasAuthority>

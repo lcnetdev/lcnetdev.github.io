@@ -5,8 +5,8 @@
   <!-- created by Morgan Cundiff -->
   <!-- This document is only for illustration of MIX elements and attributes.  --> 
   <!-- The values are legal, but not realistic for a given image file. -->
-<mix xmlns="http://lcnetdev.github.io/mix/v11" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://lcnetdev.github.io/mix/v11 http://lcnetdev.github.io/standards/mix/mix11/mix11.xsd"
+<mix xmlns="http://www.loc.gov/mix/v11" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.loc.gov/mix/v11 http://www.loc.gov/standards/mix/mix11/mix11.xsd"
 
 >
 
