@@ -1,0 +1,115 @@
+<!--
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                        "http://www.w3.org/TR/html40/loose.dtd">
+-->
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<title>Metadata for Images in XML Standard (MIX)</title>
+<base href="http://www.loc.gov/standards/mix/mix-home.html">
+<meta name="keywords" content="mix image metadata object description schema web site library congress xml official site library congress">
+<meta name="description" content="The MIX schema ...">
+<META http-equiv="Content-Style-Type" content="text/css">
+<link rel="stylesheet" href="mix.css" type="text/css">
+</head>
+<body link="#993300" vlink="#CC6600" bgcolor="#FFFFFF" alink="#CC0000">
+<table width=600 cellpadding=4 cellspacing=0 border=0 align=center>
+  <tr> 
+    <td><img src="images/mix-title.gif" width="600" height="75" alt="Metadata for Images in XML (MIX) Library  of Congress"></td>
+  </tr>
+  <tr> <td> <p class="box-desc">The Library of Congress' Network
+    Development and MARC Standards Office, with the NISO Technical
+    Metadata for Digital Still Images Standards Committee and other
+    interested experts, is developing an XML schema for a set of
+    technical data elements required to manage digital image
+    collections. The schema is based upon the NISO Draft Standard Data
+    <a href="www.niso.org/pdfs/DataDict.pdf">Dictionary: Technical
+    Metadata for Digital Still Images</a>. This schema is currently in
+    draft status and is being referred to as the "Metadata for Images
+    in XML Standard (MIX)". MIX is expressed using the <a
+    href="http://www.w3.org/XML/Schema">XML schema language</a> of the
+    <a href="http://www.w3.org/">World Wide Web Consortium</a>. The
+    standard is maintained by the <a
+    href="http://lcweb.loc.gov/marc/ndmso.html"> Network Development
+    and MARC Standards Office</a> of the Library of Congress with
+    input from users.  <p> <strong>This is a DRAFT for review: Please
+    send comments on draft 0.1 to the MIX Listserv (described
+    below)</strong> <p>
+    </td>
+  </tr>
+  <tr> 
+    <td><img src="images/mix-arrow.gif" width="600" height="20"></td>
+  </tr>
+  <tr> 
+    <td> 
+      <h2>MIX Schema, &amp; Documentation</h2>
+      <ul>
+        <li> <a href="mix-overview.html">MIX: Uses and Features</a></li>
+        <li> <a href="mix.xsd">MIX Schema Draft 0.1</a> </li>
+        <li> <a href="spy/spy.html">MIX Illustrated</a> </li>
+        <li>Sample Style Sheet (coming soon)</li>
+        <li>MIX Mappings 
+          <ul>
+            <li><a href="mix-mapping.html">MARC to MIX</a></li>
+            <li>MIX to MARC (coming soon)</li>
+          </ul>
+        </li>
+      </ul>
+      <hr align="Left" width="100%" size="1" noshade>
+      <h2>MIX Example Documents</h2>
+      <ul>
+        <li>Example MIX XML Documents 
+          <ul>
+            <li><a href="instances/test.xml">Test record</a></li>
+
+          </ul>
+        </li>
+      </ul>
+      <hr align="Left" width="100%" size="1" noshade>
+      <h2> Tools &amp; Utilities</h2>
+      <blockquote> 
+        <table width="100%" border="0">
+          <tr> 
+            <td width="47%" valign="top"><i>Stay Tuned!</i></td>
+            <td width="53%" valign="top">&nbsp;</td>
+          </tr>
+          <tr> 
+            <td width="47%" valign="top">Source code lists for use with MIX:</td>
+            <td width="53%" valign="top"><a href="http://lcweb.loc.gov/marc/sourcecode/authorityfile/authorityfile.html">Authority 
+              File </a>- <a href="http://lcweb.loc.gov/marc/sourcecode/classification/classification.html">Classification</a> 
+              - <a href="http://lcweb.loc.gov/marc/sourcecode/genre/genre.html"> 
+              Genre</a> <br>
+              <a href="http://www.loc.gov/marc/sourcecode/relators/relators.html">Relators</a> 
+              - <a href="http://lcweb.loc.gov/marc/sourcecode/subject/subject.html">Subject</a></td>
+          </tr>
+        </table>
+      </blockquote>
+      <hr align="Left" width="100%" size="1" noshade>
+      <h2>MIX Listserv</h2>
+      <blockquote> 
+        <p>The MIX Forum (MIX@LOC.GOV) is an unmoderated computer forum open to 
+          members of the MIX development community. The MIX list is operated by 
+          the Library of Congress Network Development and MARC Standards Office. 
+          Users may subscribe to this list by filling out the subscription form 
+          at the <a href="http://www.loc.gov/listarch/mix.html">MIX Listserv</a> 
+          site.</p>
+      </blockquote>
+      <hr align="Left" width="100%" size="1" noshade>
+      <h2>News &amp; Announcements</h2>
+      <P> 
+      <HR noshade size="1">
+      <ADDRESS> 
+      <!--help desk email start -->
+      <img src="images/mix-icon.gif" width="125" height="54" align="right" alt="MIX Icon (Metadata for Images in XML)"><a href="http://www.loc.gov/help/help-desk.html">Library 
+      of Congress Help Desk</a> 
+      <!--help desk email end -->
+      <br>
+      <!-- #BeginDate format:Am1 -->April 16, 2002<!-- #EndDate -->
+      </ADDRESS>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
+

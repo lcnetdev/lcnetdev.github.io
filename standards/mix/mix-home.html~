@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+
+                        "http://www.w3.org/TR/html40/loose.dtd">
+<html>
+<head>
+<title>Metadata for Images in XML Standard (MIX)</title>
+<base href="http://www.loc.gov/standards/mix/mix-home.html">
+<meta name="keywords" content="mix image metadata object description schema web site library congress xml official site library congress">
+<meta name="description" content="The MIX schema ...">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="mix.css" type="text/css">
+</head>
+<body link="#993300" vlink="#CC6600" bgcolor="#FFFFFF" alink="#CC0000">
+<table width=600 cellpadding=4 cellspacing=0 border=0 align=center>
+  <tr valign="top">
+    <td height="25" colspan="2"><a href="#content" name="top"><img src="../images/clear.gif" alt="Skip Navigation Links" width="1" height="1" border="0"></a> <a href="http://www.loc.gov/" class="white">The
+        Library of Congress</a> <span class="white-text">&gt;&gt;</span> <a href="http://www.loc.gov/standards/">Standards</a> &gt;&gt; MIX</td>
+  </tr>
+  <tr>
+    <td><img src="images/mix-title.gif" width="600" height="75" alt="Metadata for Images in XML (MIX) Library  of Congress"></td>
+  </tr>
+  <tr>
+    <td>
+      <table width="590" border="0">
+        <tr>
+          <td>The Library of Congress' Network Development and MARC Standards
+            Office, in partnership with the <a href="http://www.niso.org/committees/committee_au.html">NISO
+            Technical Metadata for Digital Still Images Standards Committee</a> and
+            other interested experts, is developing an XML schema for a set of
+            technical data elements required to manage digital image collections.
+            The schema provides a format for interchange and/or storage of the
+            data specified in the <a href="http://www.niso.org/standards/standard_detail.cfm?std_id=731">Data
+            Dictionary - Technical Metadata for Digital Still Images (ANSI/NISO
+            Z39.87-2006)</a>.  This schema is currently referred to as "NISO
+            Metadata for Images in XML (NISO MIX)".
+            MIX is expressed using the <a href="http://www.w3.org/XML/Schema">XML
+            schema language</a> of
+            the <a href="http://www.w3.org/">World Wide Web Consortium</a>. MIX
+            is maintained for NISO by the <a href="http://lcweb.loc.gov/marc/ndmso.html"> Network
+            Development and MARC Standards Office</a> of the Library of Congress
+            with input from users.</td>
+          <td width="25%" valign="top" bgcolor="#FFFFEE"><p><strong>MIX Version
+                1.0 is now the current version of MIX.</strong></p>
+          </td>
+        </tr>
+      </table>
+      <p> 
+    </td>
+  </tr>
+  <tr>
+    <td><img src="images/mix-arrow.gif" width="600" height="20" alt="[arrow]"></td>
+  </tr>
+  <tr>
+    <td>
+      <h2>MIX Schema &amp; Documentation</h2>
+      <ul>
+	  <li> <a href="http://www.loc.gov/standards/mix/mix10/mix10.xsd">MIX Schema
+            Version 1.0 (current version)</a> </li>
+        <li> <a href="http://www.niso.org/standards/standard_detail.cfm?std_id=731">Data
+            Dictionary - Technical Metadata for Digital Still Images (ANSI/NISO
+            Z39.87-2006)</a> [used for MIX version 1.0]</li>
+			 <li> <a href="mix.xsd">MIX Schema Version 0.2 (previous version)</a> </li>
+			 <li><a
+	      href="http://www.niso.org/standards/resources/Z39_87_trial_use.pdf">Data
+            Dictionary: Technical Metadata for Digital Still Images (Version 1.2)</a> [used
+            for MIX version
+            0.2] </li>
+      </ul>
+      <hr align="Left" width="100%" size="1" noshade>
+      <h2>MIX Example Documents</h2>
+      <ul>
+        <li>Example MIX XML Documents
+          <ul>
+		   <li><a href="instances/test_mix10.xml">Test MIX document instance
+                (version 1.0)</a></li>
+            <li><a href="instances/mix_test.xml">Test MIX document instance (version
+                0.2)</a></li>
+          </ul>
+        </li>
+      </ul>
+      <hr align="Left" width="100%" size="1" noshade>
+      <h2> Tools &amp; Utilities</h2>
+      <ul>
+        <li><a href="http://hul.harvard.edu/jhove/">JHOVE - JSTOR/Harvard Object
+            Validation Environment</a>
+      </ul>
+      <hr align="Left" width="100%" size="1" noshade>
+      <h2>Comments:</h2>
+      <blockquote>
+        <p>Comments on the data elements should be sent to: <a href="mailto:oyr1@cornell.edu">Oya
+            Y. Rieger</a>.</p>
+        <p>Discussion of the schema may be shared by joining the MIX Forum (MIX@LOC.GOV),
+          the development listserv for the schema. You may subscribe to this
+          list by sending an email message to the Library of Congress Listserv
+          address LISTSERV@LOC.GOV with the message "SUBSCRIBE MIX".</p>
+      </blockquote>
+      <hr align="Left" width="100%" size="1" noshade>
+      <h2>News &amp; Announcements</h2>
+      <P> MIX Version 1.0 is now the current version of MIX. Please send comments to the MIX Listserv (mentioned
+        above).
+      <HR noshade size="1">
+      <ADDRESS>
+      <!--help desk email start -->
+      <img src="images/mix-icon.gif" width="125" height="54" align="right" alt="MIX Icon (Metadata for Images in XML)"><a href="http://www.loc.gov/help/help-desk.html">Library
+      of Congress Help Desk</a>
+      <!--help desk email end -->
+      <br>
+      <!-- #BeginDate format:Am1 -->November 2, 2007<!-- #EndDate -->
+      </ADDRESS>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

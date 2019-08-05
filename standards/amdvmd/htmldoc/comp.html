@@ -1,0 +1,905 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>Schema documentation for </title>
+      <link rel="stylesheet" href="docHtml.css" type="text/css" /><script type="text/javascript">
+         <!--
+        var propertiesBoxes= new Array('properties_id0', 
+				'properties_id1', 
+				'properties_id3', 
+				'properties_id5', 
+				'properties_id6', 
+				'properties_id7', 
+				'properties_id8', 
+				'properties_id9', 
+				'properties_id11', 
+				'properties_id12', 
+				'properties_id13', 
+				'properties_id15', 
+				'properties_id17', 
+				'properties_id18', 
+				'properties_id19', 
+				'properties_id20', 
+				'properties_id22', 
+				'properties_id23', 
+				'properties_id24', 
+				'properties_id25', 
+				'properties_id26', 
+				'properties_id27', 
+				'properties_id28', 
+				'properties_id29', 
+				'properties_id30', 
+				'properties_id31', 
+				'properties_id32', 
+				'properties_id33', 
+				'properties_id34', 
+				'properties_id35', 
+				'properties_id36', 
+				'properties_id38', 
+				'properties_id40', 
+				'properties_id41', 
+				'properties_id42', 
+				'properties_id53', 
+				'properties_id54', 
+				'properties_id55', 
+				'properties_id56', 
+				'properties_id57', 
+				'properties_id59', 
+				'properties_id60', 
+				'properties_id61', 
+				'properties_id62', 
+				'properties_id63', 
+				'properties_id64', 
+				'properties_id65', 
+				'properties_id66', 
+				'properties_id67', 
+				'properties_id69', 
+				'properties_id70', 
+				'properties_id71', 
+				'properties_id72', 
+				'properties_id73', 
+				'properties_id74', 
+				'properties_id75', 
+				'properties_id77', 
+				'properties_id78', 
+				'properties_id80', 
+				'properties_id82', 
+				'properties_id84', 
+				'properties_id85', 
+				'properties_id86', 
+				'properties_id87', 
+				'properties_id89', 
+				'properties_id92', 
+				'properties_id94', 
+				'properties_id96', 
+				'properties_id97', 
+				'properties_id98', 
+				'properties_id99', 
+				'properties_id103', 
+				'properties_id14', 
+				'properties_id21', 
+				'properties_id37', 
+				'properties_id44', 
+				'properties_id45', 
+				'properties_id46', 
+				'properties_id47', 
+				'properties_id48', 
+				'properties_id49', 
+				'properties_id50', 
+				'properties_id51', 
+				'properties_id52', 
+				'properties_id68', 
+				'properties_id79', 
+				'properties_id81', 
+				'properties_id90', 
+				'properties_id91', 
+				'properties_id93', 
+				'properties_id100', 
+				'properties_id101', 
+				'properties_id102');
+
+        var facetsBoxes= new Array('facets_id8', 
+				'facets_id20', 
+				'facets_id23', 
+				'facets_id34', 
+				'facets_id102');
+
+        var usedByBoxes= new Array('usedBy_id2', 
+				'usedBy_id4', 
+				'usedBy_id10', 
+				'usedBy_id16', 
+				'usedBy_id39', 
+				'usedBy_id43', 
+				'usedBy_id58', 
+				'usedBy_id76', 
+				'usedBy_id83', 
+				'usedBy_id88', 
+				'usedBy_id95', 
+				'usedBy_id14', 
+				'usedBy_id21', 
+				'usedBy_id37', 
+				'usedBy_id44', 
+				'usedBy_id45', 
+				'usedBy_id46', 
+				'usedBy_id47', 
+				'usedBy_id48', 
+				'usedBy_id49', 
+				'usedBy_id50', 
+				'usedBy_id51', 
+				'usedBy_id52', 
+				'usedBy_id68', 
+				'usedBy_id79', 
+				'usedBy_id81', 
+				'usedBy_id90', 
+				'usedBy_id91', 
+				'usedBy_id93', 
+				'usedBy_id100', 
+				'usedBy_id101', 
+				'usedBy_id102');
+
+        var sourceBoxes= new Array('source_id1', 
+				'source_id3', 
+				'source_id5', 
+				'source_id6', 
+				'source_id7', 
+				'source_id8', 
+				'source_id9', 
+				'source_id11', 
+				'source_id12', 
+				'source_id13', 
+				'source_id15', 
+				'source_id17', 
+				'source_id18', 
+				'source_id19', 
+				'source_id20', 
+				'source_id22', 
+				'source_id23', 
+				'source_id24', 
+				'source_id25', 
+				'source_id26', 
+				'source_id27', 
+				'source_id28', 
+				'source_id29', 
+				'source_id30', 
+				'source_id31', 
+				'source_id32', 
+				'source_id33', 
+				'source_id34', 
+				'source_id35', 
+				'source_id36', 
+				'source_id38', 
+				'source_id40', 
+				'source_id41', 
+				'source_id42', 
+				'source_id53', 
+				'source_id54', 
+				'source_id55', 
+				'source_id56', 
+				'source_id57', 
+				'source_id59', 
+				'source_id60', 
+				'source_id61', 
+				'source_id62', 
+				'source_id63', 
+				'source_id64', 
+				'source_id65', 
+				'source_id66', 
+				'source_id67', 
+				'source_id69', 
+				'source_id70', 
+				'source_id71', 
+				'source_id72', 
+				'source_id73', 
+				'source_id74', 
+				'source_id75', 
+				'source_id77', 
+				'source_id78', 
+				'source_id80', 
+				'source_id82', 
+				'source_id84', 
+				'source_id85', 
+				'source_id86', 
+				'source_id87', 
+				'source_id89', 
+				'source_id92', 
+				'source_id94', 
+				'source_id96', 
+				'source_id97', 
+				'source_id98', 
+				'source_id99', 
+				'source_id103', 
+				'source_id2', 
+				'source_id4', 
+				'source_id10', 
+				'source_id16', 
+				'source_id39', 
+				'source_id43', 
+				'source_id58', 
+				'source_id76', 
+				'source_id83', 
+				'source_id88', 
+				'source_id95', 
+				'source_id14', 
+				'source_id21', 
+				'source_id37', 
+				'source_id44', 
+				'source_id45', 
+				'source_id46', 
+				'source_id47', 
+				'source_id48', 
+				'source_id49', 
+				'source_id50', 
+				'source_id51', 
+				'source_id52', 
+				'source_id68', 
+				'source_id79', 
+				'source_id81', 
+				'source_id90', 
+				'source_id91', 
+				'source_id93', 
+				'source_id100', 
+				'source_id101', 
+				'source_id102');
+
+        var instanceBoxes= new Array('instance_id1', 
+				'instance_id3', 
+				'instance_id9', 
+				'instance_id15', 
+				'instance_id38', 
+				'instance_id57', 
+				'instance_id75', 
+				'instance_id82', 
+				'instance_id87', 
+				'instance_id94', 
+				'instance_id103');
+
+        var diagramBoxes= new Array('diagram_id1', 
+				'diagram_id3', 
+				'diagram_id5', 
+				'diagram_id6', 
+				'diagram_id7', 
+				'diagram_id8', 
+				'diagram_id9', 
+				'diagram_id11', 
+				'diagram_id12', 
+				'diagram_id13', 
+				'diagram_id15', 
+				'diagram_id17', 
+				'diagram_id18', 
+				'diagram_id19', 
+				'diagram_id20', 
+				'diagram_id22', 
+				'diagram_id23', 
+				'diagram_id24', 
+				'diagram_id25', 
+				'diagram_id26', 
+				'diagram_id27', 
+				'diagram_id28', 
+				'diagram_id29', 
+				'diagram_id30', 
+				'diagram_id31', 
+				'diagram_id32', 
+				'diagram_id33', 
+				'diagram_id34', 
+				'diagram_id35', 
+				'diagram_id36', 
+				'diagram_id38', 
+				'diagram_id40', 
+				'diagram_id41', 
+				'diagram_id42', 
+				'diagram_id53', 
+				'diagram_id54', 
+				'diagram_id55', 
+				'diagram_id56', 
+				'diagram_id57', 
+				'diagram_id59', 
+				'diagram_id60', 
+				'diagram_id61', 
+				'diagram_id62', 
+				'diagram_id63', 
+				'diagram_id64', 
+				'diagram_id65', 
+				'diagram_id66', 
+				'diagram_id67', 
+				'diagram_id69', 
+				'diagram_id70', 
+				'diagram_id71', 
+				'diagram_id72', 
+				'diagram_id73', 
+				'diagram_id74', 
+				'diagram_id75', 
+				'diagram_id77', 
+				'diagram_id78', 
+				'diagram_id80', 
+				'diagram_id82', 
+				'diagram_id84', 
+				'diagram_id85', 
+				'diagram_id86', 
+				'diagram_id87', 
+				'diagram_id89', 
+				'diagram_id92', 
+				'diagram_id94', 
+				'diagram_id96', 
+				'diagram_id97', 
+				'diagram_id98', 
+				'diagram_id99', 
+				'diagram_id103', 
+				'diagram_id2', 
+				'diagram_id4', 
+				'diagram_id10', 
+				'diagram_id16', 
+				'diagram_id39', 
+				'diagram_id43', 
+				'diagram_id58', 
+				'diagram_id76', 
+				'diagram_id83', 
+				'diagram_id88', 
+				'diagram_id95');
+
+        var annotationBoxes= new Array('annotations_id0', 
+				'annotations_id5', 
+				'annotations_id6', 
+				'annotations_id7', 
+				'annotations_id8', 
+				'annotations_id11', 
+				'annotations_id12', 
+				'annotations_id13', 
+				'annotations_id17', 
+				'annotations_id18', 
+				'annotations_id19', 
+				'annotations_id20', 
+				'annotations_id22', 
+				'annotations_id23', 
+				'annotations_id24', 
+				'annotations_id25', 
+				'annotations_id26', 
+				'annotations_id27', 
+				'annotations_id28', 
+				'annotations_id29', 
+				'annotations_id30', 
+				'annotations_id31', 
+				'annotations_id32', 
+				'annotations_id33', 
+				'annotations_id34', 
+				'annotations_id35', 
+				'annotations_id36', 
+				'annotations_id40', 
+				'annotations_id41', 
+				'annotations_id53', 
+				'annotations_id54', 
+				'annotations_id55', 
+				'annotations_id56', 
+				'annotations_id59', 
+				'annotations_id60', 
+				'annotations_id61', 
+				'annotations_id62', 
+				'annotations_id63', 
+				'annotations_id64', 
+				'annotations_id65', 
+				'annotations_id66', 
+				'annotations_id67', 
+				'annotations_id69', 
+				'annotations_id70', 
+				'annotations_id71', 
+				'annotations_id72', 
+				'annotations_id73', 
+				'annotations_id74', 
+				'annotations_id77', 
+				'annotations_id78', 
+				'annotations_id80', 
+				'annotations_id84', 
+				'annotations_id85', 
+				'annotations_id86', 
+				'annotations_id87', 
+				'annotations_id92', 
+				'annotations_id96', 
+				'annotations_id97', 
+				'annotations_id98', 
+				'annotations_id99', 
+				'annotations_id2', 
+				'annotations_id4', 
+				'annotations_id10', 
+				'annotations_id16', 
+				'annotations_id39', 
+				'annotations_id43', 
+				'annotations_id58', 
+				'annotations_id76', 
+				'annotations_id83', 
+				'annotations_id88', 
+				'annotations_id95', 
+				'annotations_id44', 
+				'annotations_id45', 
+				'annotations_id46', 
+				'annotations_id47', 
+				'annotations_id48', 
+				'annotations_id49', 
+				'annotations_id50', 
+				'annotations_id51', 
+				'annotations_id52');
+
+        var attributesBoxes= new Array('attributes_id1', 
+				'attributes_id3', 
+				'attributes_id9', 
+				'attributes_id15', 
+				'attributes_id38', 
+				'attributes_id42', 
+				'attributes_id57', 
+				'attributes_id75', 
+				'attributes_id82', 
+				'attributes_id89', 
+				'attributes_id94', 
+				'attributes_id103', 
+				'attributes_id2', 
+				'attributes_id4', 
+				'attributes_id10', 
+				'attributes_id16', 
+				'attributes_id39', 
+				'attributes_id43', 
+				'attributes_id58', 
+				'attributes_id76', 
+				'attributes_id83', 
+				'attributes_id95');
+
+        
+        var button_prefix = 'button_';
+        
+        /**
+        * Returns an element in the current HTML document.
+        *
+        * @param elementID Identifier of HTML element
+        * @return               HTML element object
+        */
+        function getElementObject(elementID) {
+            var elemObj = null;
+            if (document.getElementById) {
+                elemObj = document.getElementById(elementID);
+            }
+            return elemObj;
+        }
+        
+        /**
+        * Switches the state of a collapseable box, e.g.
+        * if it's opened, it'll be closed, and vice versa.
+        *
+        * @param boxID Identifier of box
+        */
+        function switchState(boxID) {
+            var boxObj = getElementObject(boxID);
+            var buttonObj = getElementObject(button_prefix + boxID);
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else if (boxObj.style.display == "none") {
+                // Box is closed, so open it
+                openBox(boxObj, buttonObj);
+            } else if (boxObj.style.display == "block") {
+                // Box is opened, so close it
+                closeBox(boxObj, buttonObj);
+            }
+        }
+        
+        /**
+        * Opens a collapseable box.
+        *
+        * @param boxObj       Collapseable box
+        * @param buttonObj Button controlling box
+        */
+        function openBox(boxObj, buttonObj) {
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else {
+                // Change 'display' CSS property of box
+                boxObj.style.display = "block";
+                
+                // Change text of button
+                if (boxObj.style.display == "block") {
+                    buttonObj.src = "img/btM.gif";
+                }
+            }
+        }
+        
+        /**
+        * Closes a collapseable box.
+        *
+        * @param boxObj       Collapseable box
+        * @param buttonObj Button controlling box
+        */
+        function closeBox(boxObj, buttonObj) {
+            if (boxObj == null || buttonObj == null) {
+                // Box or button not found
+            } else {
+                // Change 'display' CSS property of box
+                boxObj.style.display = "none";
+                
+                // Change text of button
+                if (boxObj.style.display == "none") {
+                    buttonObj.src = "img/btP.gif";
+                }
+            }
+        }
+    
+       function switchStateForAll(buttonObj, boxList) {
+            if (buttonObj == null) {
+                // button not found
+            } else if (buttonObj.value == "+") {
+                // Expand all
+                expandAll(boxList);
+                buttonObj.value = "-";
+            } else if (buttonObj.value == "-") {
+                // Collapse all
+                collapseAll(boxList);
+                buttonObj.value = "+";
+            }
+        }
+        
+        /**
+        * Closes all boxes in a given list.
+        *
+        * @param boxList Array of box IDs
+        */
+        function collapseAll(boxList) {
+            var idx;
+            for (idx = 0; idx < boxList.length; idx++) {
+                var boxObj = getElementObject(boxList[idx]);
+                var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                closeBox(boxObj, buttonObj);
+            }
+        }
+            
+        /**
+        * Open all boxes in a given list.
+        *
+        * @param boxList Array of box IDs
+        */
+        function expandAll(boxList) {
+            var idx;
+            for (idx = 0; idx < boxList.length; idx++) {
+                var boxObj = getElementObject(boxList[idx]);
+                var buttonObj = getElementObject(button_prefix + boxList[idx]);
+                openBox(boxObj, buttonObj);
+            }
+        }
+        
+        /**
+         * Update the message presented in the title of the html page.
+         * - If the documentation was splited by namespace we present something like: "Documentation for namespace 'ns'"
+         * - If the documentation was splited by location we present somehing like: "Documentation for 'Schema.xsd'"
+         * - If no split we always present: "Documentation for 'MainSchema.xsd'"
+         */
+        function updatePageTitle(message) {
+            top.document.title = message;
+        }
+        
+          
+                    
+         /**
+          * Finds an HTML element by its ID and makes it floatable over the normal content.
+          *
+          * @param x_displacement The difference in pixels to the right side of the window from 
+          *           the left side of the element.
+          * @param y_displacement The difference in pixels to the right side of the window from 
+          *           the top of the element.          
+          */
+         function findAndFloat(id, x_displacement, y_displacement){
+
+            var element = getElementObject(id);            
+            
+            window[id + "_obj"] = element;
+            
+            if(document.layers) {
+               element.style = element;
+            }
+            
+            element.current_y = y_displacement;      
+            element.first_time = true;
+         
+            element.floatElement = function(){
+               // It may be closed by an user action.
+                
+               // Target X and Y coordinates.
+               var x, y;
+               
+               var myWidth = 0, myHeight = 0;
+               if( typeof( window.innerWidth ) == 'number' ) {
+                  //Non-IE
+                  myWidth = window.innerWidth;
+                  myHeight = window.innerHeight;
+               } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+                  //IE 6+ in 'standards compliant mode'
+                  myWidth = document.documentElement.clientWidth;
+                  myHeight = document.documentElement.clientHeight;
+               } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+                  //IE 4 compatible
+                  myWidth = document.body.clientWidth;
+                  myHeight = document.body.clientHeight;
+               }
+               
+               
+               x = myWidth - x_displacement;
+               
+               var ns = (navigator.appName.indexOf("Netscape") != -1);               
+               y = ns ? pageYOffset : document.documentElement && document.documentElement.scrollTop ? 
+                  document.documentElement.scrollTop : document.body.scrollTop;               
+               y = y + y_displacement;               
+               
+               // The current y is the current coordinate of the floating element.
+               // This should be at the limit the y target coordinate.
+               this.current_y += (y - this.current_y)/1.25;
+               
+               // Add the pixels constant after the values
+               // and move the element.
+               var px = document.layers ? "" : "px";
+               this.style.left =  x + px;
+               this.style.top =  this.current_y + px;
+                              
+               setTimeout(this.id + "_obj.floatElement()", 100);
+            }
+            
+            element.floatElement();
+            return element;
+          }
+
+         /**
+          * Finds an HTML element by its ID and makes it floatable over the normal content.
+          *
+          * @param x_displacement The difference in pixels to the right side of the window from 
+          *           the left side of the element.
+          * @param y_displacement The difference in pixels to the right side of the window from 
+          *           the top of the element.          
+          */
+         function selectTOCGroupBy(id, isChunked, indexFileLocation, indexFileNamespace, indexFileComponent){
+
+            if (!isChunked) {
+             var selectIds = new Array('toc_group_by_namespace', 'toc_group_by_location', 'toc_group_by_component_type');
+             // Make all the tabs invisible.
+               for (i = 0; i < 3; i++){
+                  var tab = getElementObject(selectIds[i]);
+                  tab.style.display = 'none';
+               }
+               var selTab = getElementObject(id);
+               selTab.style.display = 'block';
+            } else {
+             if (id == 'toc_group_by_namespace') {
+               parent.indexFrame.location = indexFileNamespace;
+             } else  if (id == 'toc_group_by_location') {
+               parent.indexFrame.location = indexFileLocation;
+             } else  if (id == 'toc_group_by_component_type') {
+              parent.indexFrame.location = indexFileComponent;
+             }
+            }
+         }
+          
+
+    --></script></head>
+   <body>
+      <h2><a id="INDEX">Table of Contents</a></h2>
+      <div class="toc">
+         <form action="none">
+            <div><span> Group by: <select id="selectTOC"
+                          onchange="selectTOCGroupBy(this.options[this.selectedIndex].value, false, '.html', 'ns.html', 'comp.html');">
+                     <option value="toc_group_by_namespace" selected="selected">Namespace</option>
+                     <option value="toc_group_by_location">Location</option>
+                     <option value="toc_group_by_component_type">Component Type</option></select></span></div>
+         </form>
+         <div class="level1" id="toc_group_by_namespace" style="display:block">
+            <div>
+               <div class="level2">
+                  <p><input id="button_boxIdNamespace1" type="image" value="-" src="img/btM.gif"
+                            onclick="switchState('boxIdNamespace1');"
+                            class="control" /><span class="indexGroupTitle">http://www.loc.gov/audioMD/</span></p>
+                  <div id="boxIdNamespace1" style="display:block">
+                     <div class="horizontalLayout">
+                        <table class="rt">
+                           <tr>
+                              <td class="rt_cornerTopLeft"></td>
+                              <td class="rt_lineTop"></td>
+                              <td class="rt_cornerTopRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_lineLeft"></td>
+                              <td class="rt_content">
+                                 <div class="componentGroupTitle">Elements
+                                    
+                                 </div>
+                                 <div id="boxIdNamespace1Element" style="display:block">
+                                    <div><b><a href="audioMD.html#id1" target="_self" title="http://www.loc.gov/audioMD/">AUDIOMD</a></b></div>
+                                    <div><b><a href="audioMD.html#id103" target="_self" title="http://www.loc.gov/audioMD/">AUDIOSRC</a></b></div>
+                                 </div>
+                              </td>
+                              <td class="rt_lineRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_cornerBottomLeft"></td>
+                              <td class="rt_lineBottom"></td>
+                              <td class="rt_cornerBottomRight"></td>
+                           </tr>
+                        </table>
+                     </div>
+                     <div class="horizontalLayout">
+                        <table class="rt">
+                           <tr>
+                              <td class="rt_cornerTopLeft"></td>
+                              <td class="rt_lineTop"></td>
+                              <td class="rt_cornerTopRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_lineLeft"></td>
+                              <td class="rt_content">
+                                 <div class="componentGroupTitle">Complex Types
+                                    
+                                 </div>
+                                 <div id="boxIdNamespace1Complex_Type" style="display:block">
+                                    <div><b><a href="audioMD.html#id83" target="_self" title="http://www.loc.gov/audioMD/">audioInfoType</a></b></div>
+                                    <div><b><a href="audioMD.html#id2" target="_self" title="http://www.loc.gov/audioMD/">audioType</a></b></div>
+                                    <div><b><a href="audioMD.html#id95" target="_self" title="http://www.loc.gov/audioMD/">calibrationInfoType</a></b></div>
+                                    <div><b><a href="audioMD.html#id16" target="_self" title="http://www.loc.gov/audioMD/">compressionType</a></b></div>
+                                    <div><b><a href="audioMD.html#id43" target="_self" title="http://www.loc.gov/audioMD/">dimensionsType</a></b></div>
+                                    <div><b><a href="audioMD.html#id4" target="_self" title="http://www.loc.gov/audioMD/">fileDataType</a></b></div>
+                                    <div><b><a href="audioMD.html#id58" target="_self" title="http://www.loc.gov/audioMD/">materialType</a></b></div>
+                                    <div><b><a href="audioMD.html#id10" target="_self" title="http://www.loc.gov/audioMD/">messageDigestType</a></b></div>
+                                    <div><b><a href="audioMD.html#id39" target="_self" title="http://www.loc.gov/audioMD/">physicalDataType</a></b></div>
+                                    <div><b><a href="audioMD.html#id88" target="_self" title="http://www.loc.gov/audioMD/">soundChannelMapType</a></b></div>
+                                    <div><b><a href="audioMD.html#id76" target="_self" title="http://www.loc.gov/audioMD/">trackingInfoType</a></b></div>
+                                 </div>
+                              </td>
+                              <td class="rt_lineRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_cornerBottomLeft"></td>
+                              <td class="rt_lineBottom"></td>
+                              <td class="rt_cornerBottomRight"></td>
+                           </tr>
+                        </table>
+                     </div>
+                     <div style="clear:left"></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="level1" id="toc_group_by_component_type" style="display:none">
+            <div>
+               <div class="horizontalLayout">
+                  <table class="rt">
+                     <tr>
+                        <td class="rt_cornerTopLeft"></td>
+                        <td class="rt_lineTop"></td>
+                        <td class="rt_cornerTopRight"></td>
+                     </tr>
+                     <tr>
+                        <td class="rt_lineLeft"></td>
+                        <td class="rt_content">
+                           <div class="componentGroupTitle">Elements
+                              
+                           </div>
+                           <div id="Element" style="display:block">
+                              <div><b><a href="audioMD.html#id1" target="_self" title="http://www.loc.gov/audioMD/">AUDIOMD</a></b></div>
+                              <div><b><a href="audioMD.html#id103" target="_self" title="http://www.loc.gov/audioMD/">AUDIOSRC</a></b></div>
+                           </div>
+                        </td>
+                        <td class="rt_lineRight"></td>
+                     </tr>
+                     <tr>
+                        <td class="rt_cornerBottomLeft"></td>
+                        <td class="rt_lineBottom"></td>
+                        <td class="rt_cornerBottomRight"></td>
+                     </tr>
+                  </table>
+               </div>
+               <div class="horizontalLayout">
+                  <table class="rt">
+                     <tr>
+                        <td class="rt_cornerTopLeft"></td>
+                        <td class="rt_lineTop"></td>
+                        <td class="rt_cornerTopRight"></td>
+                     </tr>
+                     <tr>
+                        <td class="rt_lineLeft"></td>
+                        <td class="rt_content">
+                           <div class="componentGroupTitle">Complex Types
+                              
+                           </div>
+                           <div id="Complex_Type" style="display:block">
+                              <div><b><a href="audioMD.html#id83" target="_self" title="http://www.loc.gov/audioMD/">audioInfoType</a></b></div>
+                              <div><b><a href="audioMD.html#id2" target="_self" title="http://www.loc.gov/audioMD/">audioType</a></b></div>
+                              <div><b><a href="audioMD.html#id95" target="_self" title="http://www.loc.gov/audioMD/">calibrationInfoType</a></b></div>
+                              <div><b><a href="audioMD.html#id16" target="_self" title="http://www.loc.gov/audioMD/">compressionType</a></b></div>
+                              <div><b><a href="audioMD.html#id43" target="_self" title="http://www.loc.gov/audioMD/">dimensionsType</a></b></div>
+                              <div><b><a href="audioMD.html#id4" target="_self" title="http://www.loc.gov/audioMD/">fileDataType</a></b></div>
+                              <div><b><a href="audioMD.html#id58" target="_self" title="http://www.loc.gov/audioMD/">materialType</a></b></div>
+                              <div><b><a href="audioMD.html#id10" target="_self" title="http://www.loc.gov/audioMD/">messageDigestType</a></b></div>
+                              <div><b><a href="audioMD.html#id39" target="_self" title="http://www.loc.gov/audioMD/">physicalDataType</a></b></div>
+                              <div><b><a href="audioMD.html#id88" target="_self" title="http://www.loc.gov/audioMD/">soundChannelMapType</a></b></div>
+                              <div><b><a href="audioMD.html#id76" target="_self" title="http://www.loc.gov/audioMD/">trackingInfoType</a></b></div>
+                           </div>
+                        </td>
+                        <td class="rt_lineRight"></td>
+                     </tr>
+                     <tr>
+                        <td class="rt_cornerBottomLeft"></td>
+                        <td class="rt_lineBottom"></td>
+                        <td class="rt_cornerBottomRight"></td>
+                     </tr>
+                  </table>
+               </div>
+               <div style="clear:left"></div>
+            </div>
+         </div>
+         <div class="level1" id="toc_group_by_location" style="display:none">
+            <div>
+               <div class="level2">
+                  <p><input id="button_audioMD.xsd" type="image" value="-" src="img/btM.gif"
+                            onclick="switchState('audioMD.xsd');"
+                            class="control" /><span class="indexGroupTitle">audioMD.xsd</span></p>
+                  <div id="audioMD.xsd" style="display:block">
+                     <div class="horizontalLayout">
+                        <table class="rt">
+                           <tr>
+                              <td class="rt_cornerTopLeft"></td>
+                              <td class="rt_lineTop"></td>
+                              <td class="rt_cornerTopRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_lineLeft"></td>
+                              <td class="rt_content">
+                                 <div class="componentGroupTitle">Elements
+                                    
+                                 </div>
+                                 <div id="audioMD.xsdElement" style="display:block">
+                                    <div><b><a href="audioMD.html#id1" target="_self" title="http://www.loc.gov/audioMD/">AUDIOMD</a></b></div>
+                                    <div><b><a href="audioMD.html#id103" target="_self" title="http://www.loc.gov/audioMD/">AUDIOSRC</a></b></div>
+                                 </div>
+                              </td>
+                              <td class="rt_lineRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_cornerBottomLeft"></td>
+                              <td class="rt_lineBottom"></td>
+                              <td class="rt_cornerBottomRight"></td>
+                           </tr>
+                        </table>
+                     </div>
+                     <div class="horizontalLayout">
+                        <table class="rt">
+                           <tr>
+                              <td class="rt_cornerTopLeft"></td>
+                              <td class="rt_lineTop"></td>
+                              <td class="rt_cornerTopRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_lineLeft"></td>
+                              <td class="rt_content">
+                                 <div class="componentGroupTitle">Complex Types
+                                    
+                                 </div>
+                                 <div id="audioMD.xsdComplex_Type" style="display:block">
+                                    <div><b><a href="audioMD.html#id83" target="_self" title="http://www.loc.gov/audioMD/">audioInfoType</a></b></div>
+                                    <div><b><a href="audioMD.html#id2" target="_self" title="http://www.loc.gov/audioMD/">audioType</a></b></div>
+                                    <div><b><a href="audioMD.html#id95" target="_self" title="http://www.loc.gov/audioMD/">calibrationInfoType</a></b></div>
+                                    <div><b><a href="audioMD.html#id16" target="_self" title="http://www.loc.gov/audioMD/">compressionType</a></b></div>
+                                    <div><b><a href="audioMD.html#id43" target="_self" title="http://www.loc.gov/audioMD/">dimensionsType</a></b></div>
+                                    <div><b><a href="audioMD.html#id4" target="_self" title="http://www.loc.gov/audioMD/">fileDataType</a></b></div>
+                                    <div><b><a href="audioMD.html#id58" target="_self" title="http://www.loc.gov/audioMD/">materialType</a></b></div>
+                                    <div><b><a href="audioMD.html#id10" target="_self" title="http://www.loc.gov/audioMD/">messageDigestType</a></b></div>
+                                    <div><b><a href="audioMD.html#id39" target="_self" title="http://www.loc.gov/audioMD/">physicalDataType</a></b></div>
+                                    <div><b><a href="audioMD.html#id88" target="_self" title="http://www.loc.gov/audioMD/">soundChannelMapType</a></b></div>
+                                    <div><b><a href="audioMD.html#id76" target="_self" title="http://www.loc.gov/audioMD/">trackingInfoType</a></b></div>
+                                 </div>
+                              </td>
+                              <td class="rt_lineRight"></td>
+                           </tr>
+                           <tr>
+                              <td class="rt_cornerBottomLeft"></td>
+                              <td class="rt_lineBottom"></td>
+                              <td class="rt_cornerBottomRight"></td>
+                           </tr>
+                        </table>
+                     </div>
+                     <div style="clear:left"></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>

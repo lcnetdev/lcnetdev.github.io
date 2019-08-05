@@ -1,0 +1,10 @@
+<mix:mix xmlns:mix="http://www.loc.gov/mix/v20">
+
+  <!-- example of minimal MIX 2.0 document -->
+  <!-- the only required leaf element is fileSize -->
+
+  <mix:BasicDigitalObjectInformation>
+    <mix:fileSize>10000</mix:fileSize>
+  </mix:BasicDigitalObjectInformation>
+
+</mix:mix>

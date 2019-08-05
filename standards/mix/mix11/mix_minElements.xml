@@ -1,0 +1,12 @@
+<mix xmlns="http://www.loc.gov/mix/v11" xsi:schemaLocation="http://www.loc.gov/mix/v11 http://www.loc.gov/standards/mix/mix11/mix11.xsd"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <!-- minimum MIX 1.1 document -->
+  <!-- filesize is the only mandatory leaf element -->
+  <!-- October 1, 2007 -->
+
+  <!-- Section 6 -->
+  <BasicDigitalObjectInformation>
+    <fileSize>100000</fileSize>
+  </BasicDigitalObjectInformation>
+</mix>

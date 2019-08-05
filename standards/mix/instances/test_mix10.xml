@@ -1,0 +1,321 @@
+<mix xmlns="http://www.loc.gov/mix/v10"
+     xsi:schemaLocation="http://www.loc.gov/standards/mix/mix10/mix10.xsd"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+>
+
+  <!--      xsi:schemaLocation="http://www.loc.gov/mix/v10 mix10.xsd"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" -->
+
+
+  <!-- test document created by Morgan Cundiff, Library of Congress, LS/NDMSO -->
+  <!-- March 19, 2007 10:31 am -->
+
+  <!-- NISO Section 6 -->
+  <BasicDigitalObjectInformation>
+    <ObjectIdentifier>
+      <objectIdentifierType></objectIdentifierType>
+      <objectIdentifierValue></objectIdentifierValue>
+    </ObjectIdentifier>
+    <fileSize>33</fileSize>
+    <FormatDesignation>
+      <formatName></formatName>
+      <formatVersion></formatVersion>
+    </FormatDesignation>
+    <FormatRegistry>
+      <formatRegistryName></formatRegistryName>
+      <formatRegistryKey></formatRegistryKey>
+    </FormatRegistry>
+    <byteOrder use="system">little_endian</byteOrder>
+    <Compression>
+      <compressionScheme></compressionScheme>
+      <compressionSchemeLocalList></compressionSchemeLocalList>
+      <compressionSchemeLocalValue></compressionSchemeLocalValue>
+      <compressionRatio>10</compressionRatio>
+    </Compression>
+    <Fixity>
+      <messageDigestAlgorithm>MD5</messageDigestAlgorithm>
+      <messageDigest></messageDigest>
+      <messageDigestOriginator></messageDigestOriginator>
+    </Fixity>
+  </BasicDigitalObjectInformation>
+
+  <!-- NISO Section 7 -->
+  <BasicImageInformation>
+    <BasicImageCharacteristics>
+      <imageWidth>400</imageWidth>
+      <imageHeight>200</imageHeight>
+      <PhotometricInterpretation>
+	<colorSpace></colorSpace>
+	<ColorProfile>
+	  <IccProfile>
+	    <iccProfileName></iccProfileName>
+	    <iccProfileVersion></iccProfileVersion>
+	    <iccProfileURL></iccProfileURL>
+	  </IccProfile>
+	  <LocalProfile>
+	    <localProfileName></localProfileName>
+	    <localProfileURL></localProfileURL>
+	  </LocalProfile>
+	  <embeddedProfile></embeddedProfile>
+	</ColorProfile>
+	<YCbCr>
+	  <YCbCrSubSampling>
+	    <yCbCrSubsampleHoriz>1</yCbCrSubsampleHoriz>
+	    <yCbCrSubsampleVert>1</yCbCrSubsampleVert>
+	  </YCbCrSubSampling>
+	  <yCbCrPositioning>1</yCbCrPositioning>
+	  <yCbCrCoefficients></yCbCrCoefficients>
+	</YCbCr>
+	<referenceBlackWhite></referenceBlackWhite>
+      </PhotometricInterpretation>
+    </BasicImageCharacteristics>
+    <SpecialFormatCharacteristics>
+      <JPEG2000>
+	<CodecCompliance>
+	  <codec></codec>
+	  <codecVersion></codecVersion>
+	  <codestreamProfile></codestreamProfile>
+	  <complianceClass></complianceClass>
+	</CodecCompliance>
+	<EncodingOptions>
+	  <tiles></tiles>
+	  <qualityLayers>2</qualityLayers>
+	  <resolutionLevels>2</resolutionLevels>
+	</EncodingOptions>
+      </JPEG2000>
+      <MrSID>
+	<zoomLevels>5</zoomLevels>
+      </MrSID>
+      <Djvu>
+	<djvuFormat>indirect</djvuFormat>
+      </Djvu>
+    </SpecialFormatCharacteristics>
+  </BasicImageInformation>
+
+
+  <!-- NISO Section 8 -->
+  <ImageCaptureMetadata>
+    <SourceInformation>
+      <sourceType></sourceType>
+      <SourceID>
+	<sourceIDType></sourceIDType>
+	<sourceIDValue></sourceIDValue>
+      </SourceID>
+      <SourceSize>
+	<SourceXDimension>
+	  <sourceXDimensionValue>7.63</sourceXDimensionValue>
+	  <sourceXDimensionUnit>in.</sourceXDimensionUnit>
+	</SourceXDimension>
+	<SourceYDimension>
+	  <sourceYDimensionValue>5.29</sourceYDimensionValue>
+	  <sourceYDimensionUnit>in.</sourceYDimensionUnit>
+	</SourceYDimension>
+	<SourceZDimension>
+	  <sourceZDimensionValue>5.29</sourceZDimensionValue>
+	  <sourceZDimensionUnit>in.</sourceZDimensionUnit>
+	</SourceZDimension>
+      </SourceSize>
+    </SourceInformation>
+    <GeneralCaptureInformation>
+      <dateTimeCreated>2006-06-06</dateTimeCreated>
+      <imageProducer></imageProducer>
+      <captureDevice use="system">transmission scanner</captureDevice>
+    </GeneralCaptureInformation>
+    <ScannerCapture>
+      <scannerManufacturer></scannerManufacturer>
+      <ScannerModel>
+	<scannerModelName></scannerModelName>
+	<scannerModelNumber></scannerModelNumber>
+	<scannerModelSerialNo></scannerModelSerialNo>
+      </ScannerModel>
+      <maximumOpticalResolution></maximumOpticalResolution>
+      <scannerSensor>undefined</scannerSensor>
+      <ScanningSystemSoftware>
+	<scanningSoftwareName></scanningSoftwareName>
+	<scanningSoftwareVersionNo></scanningSoftwareVersionNo>
+      </ScanningSystemSoftware>
+    </ScannerCapture>
+    <DigitalCameraCapture>
+      <digitalCameraManufacturer></digitalCameraManufacturer>
+      <DigitalCameraModel>
+	<digitalCameraModelName></digitalCameraModelName>
+	<digitalCameraModelNumber></digitalCameraModelNumber>
+	<digitalCameraModelSerialNo></digitalCameraModelSerialNo>
+      </DigitalCameraModel>
+      <cameraSensor>MonochromeArea</cameraSensor>
+      <CameraCaptureSettings>
+	<ImageData>
+	  <fNumber>3</fNumber>
+	  <exposureTime>3.1</exposureTime>
+	  <exposureProgram>1</exposureProgram>
+	  <spectralSensitivity>0.015</spectralSensitivity>
+	  <isoSpeedRatings>100</isoSpeedRatings>
+	  <oECF use="system">
+	    <numerator>2</numerator>
+	  </oECF>
+	  <exifVersion>0220</exifVersion>
+	  <shutterSpeedValue use="system">
+	    <numerator>1</numerator>
+	    <denominator>8</denominator>
+	  </shutterSpeedValue>
+	  <apertureValue>
+	    <numerator>1</numerator>
+	    <denominator>3</denominator>
+	  </apertureValue>
+	  <brightnessValue use="system">
+	    <numerator>-99.99</numerator>
+	  </brightnessValue>
+	  <exposureBiasValue>
+	    <numerator>-3.0</numerator>
+	  </exposureBiasValue>
+	  <maxApertureValue>
+	    <numerator>0.00</numerator>
+	  </maxApertureValue>
+	  <subjectDistance>5.3</subjectDistance>
+	  <meteringMode>Multispot</meteringMode>
+	  <lightSource>Daylight</lightSource>
+	  <flash>Flash fired</flash>
+	  <focalLength>1</focalLength>
+	  <flashEnergy>
+	    <numerator>1</numerator>
+	    <denominator>2</denominator>
+	  </flashEnergy>
+	  <backLight>Front light</backLight>
+	  <exposureIndex>400</exposureIndex>
+	  <sensingMethod>1</sensingMethod>
+	  <cfaPattern>1</cfaPattern>
+	  <autoFocus use="system">Auto Focus Used</autoFocus>
+	  <PrintAspectRatio>
+	    <xPrintAspectRatio>1</xPrintAspectRatio>
+	    <yPrintAspectRatio>1</yPrintAspectRatio>
+	  </PrintAspectRatio>
+	</ImageData>
+	<GPSData>
+	  <gpsVersionID>2.2.0.0</gpsVersionID>
+	  <gpsLatitudeRef>N</gpsLatitudeRef>
+	  <gpsLatitude></gpsLatitude>
+	  <gpsLongitudeRef>E</gpsLongitudeRef>
+	  <gpsLongitude></gpsLongitude>
+	  <gpsAltitudeRef>0</gpsAltitudeRef>
+	  <gpsAltitude>
+	    <numerator>47</numerator>
+	  </gpsAltitude>
+	  <gpsTimeStamp></gpsTimeStamp>
+	  <gpsSatellites></gpsSatellites>
+	  <gpsStatus>A</gpsStatus>
+	  <gpsMeasureMode>2</gpsMeasureMode>
+	  <gpsDOP>
+	    <numerator>2</numerator>
+	  </gpsDOP>
+	  <gpsSpeedRef>K</gpsSpeedRef>
+	  <gpsSpeed>
+	    <numerator>2</numerator>
+	  </gpsSpeed>
+	  <gpsTrackRef>T</gpsTrackRef>
+	  <gpsTrack>
+	    <numerator>2</numerator>
+	  </gpsTrack>
+	  <gpsImgDirectionRef>T</gpsImgDirectionRef>
+	  <gpsImgDirection>
+	    <numerator>359.00</numerator>
+	  </gpsImgDirection>
+	  <gpsMapDatum></gpsMapDatum>
+	  <gpsDestLatitudeRef>N</gpsDestLatitudeRef>
+	  <gpsDestLatitude></gpsDestLatitude>
+	  <gpsDestLongitudeRef>E</gpsDestLongitudeRef>
+	  <gpsDestLongitude></gpsDestLongitude>
+	  <gpsDestBearingRef>T</gpsDestBearingRef>
+	  <gpsDestBearing>
+	    <numerator>0.00</numerator>
+	  </gpsDestBearing>
+	  <gpsDestDistanceRef>K</gpsDestDistanceRef>
+	  <gpsDestDistance>
+	    <numerator>55</numerator>
+	  </gpsDestDistance>
+	  <gpsProcessingMethod></gpsProcessingMethod>
+	  <gpsAreaInformation></gpsAreaInformation>
+	  <gpsDateStamp></gpsDateStamp>
+	  <gpsDifferential>0</gpsDifferential>
+	</GPSData>
+      </CameraCaptureSettings>
+    </DigitalCameraCapture>
+    <orientation>1</orientation>
+    <methodology>string</methodology>
+  </ImageCaptureMetadata>
+
+  <!-- NISO Section 9 -->
+  <ImageAssessmentMetadata>
+    <SpatialMetrics>
+      <samplingFrequencyPlane>1</samplingFrequencyPlane>
+      <samplingFrequencyUnit>1</samplingFrequencyUnit>
+      <xSamplingFrequency>
+	<numerator>2</numerator>
+      </xSamplingFrequency>
+      <ySamplingFrequency>
+	<numerator>2</numerator>
+      </ySamplingFrequency>
+    </SpatialMetrics>
+    <ImageColorEncoding>
+      <bitsPerSample>
+	<bitsPerSampleValue>8,8,8</bitsPerSampleValue>
+	<bitsPerSampleUnit>integer</bitsPerSampleUnit>
+      </bitsPerSample>
+      <samplesPerPixel>1</samplesPerPixel>
+      <extraSamples>1</extraSamples>
+      <Colormap>
+	<colormapReference></colormapReference>
+	<embeddedColormap></embeddedColormap>
+      </Colormap>
+      <grayResponseCurve>N</grayResponseCurve>
+      <grayResponseUnit>1</grayResponseUnit>
+      <WhitePoint>
+	<whitePointXValue></whitePointXValue>
+	<whitePointYValue></whitePointYValue>
+      </WhitePoint>
+      <PrimaryChromaticities>
+	<primaryChromaticitiesRedX></primaryChromaticitiesRedX>
+	<primaryChromaticitiesRedY></primaryChromaticitiesRedY>
+	<primaryChromaticitiesGreenX></primaryChromaticitiesGreenX>
+	<primaryChromaticitiesGreenY></primaryChromaticitiesGreenY>
+	<primaryChromaticitiesBlueX></primaryChromaticitiesBlueX>
+	<primaryChromaticitiesBlueY></primaryChromaticitiesBlueY>
+      </PrimaryChromaticities>
+    </ImageColorEncoding>
+    <TargetData>
+      <targetType>1</targetType>
+      <TargetID>
+	<targetManufacturer></targetManufacturer>
+	<targetName></targetName>
+	<targetNo></targetNo>
+	<targetMedia></targetMedia>
+      </TargetID>
+      <externalTarget></externalTarget>
+      <performanceData></performanceData>
+    </TargetData>
+  </ImageAssessmentMetadata>
+
+
+  <!-- NISO Section 10 -->
+  <ChangeHistory>
+    <ImageProcessing>
+      <dateTimeProcessed>2006-09-11</dateTimeProcessed>
+      <sourceData></sourceData>
+      <processingAgency></processingAgency>
+      <processingRationale></processingRationale>
+      <ProcessingSoftware>
+	<processingSoftwareName></processingSoftwareName>
+	<processingSoftwareVersion></processingSoftwareVersion>
+	<processingOperatingSystemName></processingOperatingSystemName>
+	<processingOperatingSystemVersion></processingOperatingSystemVersion>
+      </ProcessingSoftware>
+      <processingActions></processingActions>
+    </ImageProcessing>
+    <PreviousImageMetadata>
+      <mix></mix>
+      <mix></mix>
+      <imageDate></imageDate>
+    </PreviousImageMetadata>
+  </ChangeHistory>
+
+</mix>

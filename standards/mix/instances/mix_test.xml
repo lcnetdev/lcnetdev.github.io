@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with Emacs by Morgan Cundiff (Library of Congress) -->
+<!-- This document is only for the purpose of illustrating basic MIX document structure. The values are legal but may not be realistic -->
+
+<mix xmlns="http://www.loc.gov/mix/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:schemaLocation="http://www.loc.gov/mix/ http://www.loc.gov/mix/mix.xsd"  >
+
+  <BasicImageParameters>
+    <Format>
+      <MIMEType>image/tiff</MIMEType>
+      <ByteOrder>big-endian</ByteOrder>
+      <Compression>
+	<CompressionScheme>1</CompressionScheme>
+	<CompressionLevel>10</CompressionLevel>
+      </Compression>
+      <PhotometricInterpretation>
+	<ColorSpace>2</ColorSpace>
+	<ICCProfile>
+	  <ProfileName>name of ICC Profile</ProfileName>
+	  <ProfileURL>URL</ProfileURL>
+	</ICCProfile>
+	<YCbCrSubSampling>fromTiffSection21</YCbCrSubSampling>
+	<YCbCrPositioning>fromTiffSection21</YCbCrPositioning>
+	<YCbCrCoefficients>fromTiffSection21</YCbCrCoefficients>
+	<ReferenceBlackWhite>fromTiffSection21</ReferenceBlackWhite>
+      </PhotometricInterpretation>
+      <Segments>
+	<SegmentType>1</SegmentType>
+	<StripOffsets>1</StripOffsets>
+	<RowsPerStrip>4</RowsPerStrip>
+	<StripByteCounts>8</StripByteCounts>
+	<TileWidth>16</TileWidth>
+	<TileLength>16</TileLength>
+	<TileOffsets>1</TileOffsets>
+	<TileByteCounts>24</TileByteCounts>
+      </Segments>
+      <PlanarConfiguration>1</PlanarConfiguration>
+    </Format>
+    <File>
+      <ImageIdentifier imageIdentifierLocation="system of identifier">unique persistent identifier</ImageIdentifier>
+      <FileSize>1001000</FileSize>
+      <Checksum>
+	<ChecksumMethod>checksum</ChecksumMethod>
+	<ChecksumValue>2224446888</ChecksumValue>
+      </Checksum>
+      <Orientation>3</Orientation>
+      <DisplayOrientation>0</DisplayOrientation>
+      <TargetedDisplayAR>
+	<XTargetedDisplayAR>20</XTargetedDisplayAR>
+	<YTargetedDisplayAR>30</YTargetedDisplayAR>
+      </TargetedDisplayAR>
+    </File>
+    <PreferredPresentation>recommended target viewing device or application</PreferredPresentation>
+  </BasicImageParameters>
+  <ImageCreation>
+    <SourceType>daguerrotype</SourceType>
+    <SourceID>LCCN</SourceID>
+    <ImageProducer>JJT, Inc.</ImageProducer>
+    <Host>
+      <HostComputer>Computer in use at time of image creation</HostComputer>
+      <OperatingSystem>Windows</OperatingSystem>
+      <OSVersion>2000</OSVersion>
+    </Host>
+    <DeviceSource>digital still scanner</DeviceSource>
+    <ScanningSystemCapture>
+      <ScanningSystemHardware>
+	<ScannerManufacturer>Scitex</ScannerManufacturer>
+	<ScannerModel>
+	  <ScannerModelName>Leaf Volare</ScannerModelName>
+	  <ScannerModelNumber>100SX</ScannerModelNumber>
+	  <ScannerModelSerialNo>1122334455</ScannerModelSerialNo>
+	</ScannerModel>
+      </ScanningSystemHardware>
+      <ScanningSystemSoftware>
+	<ScanningSoftware>Leaf</ScanningSoftware>
+	<ScanningSoftwareVersionNo>4.0</ScanningSoftwareVersionNo>
+      </ScanningSystemSoftware>
+      <ScannerCaptureSettings>
+	<PixelSize>3</PixelSize>
+	<PhysScanResolution>
+	  <XphysScanResolution>0.307</XphysScanResolution>
+	  <YphysScanResolution>0.435</YphysScanResolution>
+	</PhysScanResolution>
+      </ScannerCaptureSettings>
+    </ScanningSystemCapture>
+    <DigitalCameraCapture>
+      <DigitalCameraManufacturer>PhaseOne</DigitalCameraManufacturer>
+      <DigitalCameraModel>H_20</DigitalCameraModel>
+    </DigitalCameraCapture>
+    <CameraCaptureSettings>
+      <FNumber>5</FNumber>
+      <ExposureTime>.5</ExposureTime>
+      <Brightness>2.2</Brightness>
+      <ExposureBias>3.5</ExposureBias>
+      <SubjectDistance min="4.9" max="5.3">5</SubjectDistance>
+      <MeteringMode>Average</MeteringMode>
+      <SceneIlluminant>D75 Illuminant</SceneIlluminant>
+      <ColorTemp>20</ColorTemp>
+      <FocalLength>3</FocalLength>
+      <Flash>No</Flash>
+      <FlashEnergy>7</FlashEnergy>
+      <FlashReturn>No</FlashReturn>
+      <BackLight>Backlight_2</BackLight>
+      <ExposureIndex>2.3</ExposureIndex>
+      <AutoFocus>Auto Focus Used</AutoFocus>
+      <PrintAspectRatio>
+	<XPrintAspectRatio>6.33</XPrintAspectRatio>
+	<YPrintAspectRatio>4</YPrintAspectRatio>
+      </PrintAspectRatio>
+    </CameraCaptureSettings>
+    <Sensor>MonochromeArea</Sensor>
+    <DateTimeCreated>2002-04-17T00:00:00.001</DateTimeCreated>
+    <Methodology>blurb like American Memory "Building the Digital Collections"</Methodology>
+  </ImageCreation>
+  <ImagingPerformanceAssessment>
+    <SpatialMetrics>
+      <SamplingFrequencyPlane>1</SamplingFrequencyPlane>
+      <SamplingFrequencyUnit>2</SamplingFrequencyUnit>
+      <XSamplingFrequency>2</XSamplingFrequency>
+      <YSamplingFrequency>2</YSamplingFrequency>
+      <ImageWidth>500</ImageWidth>
+      <ImageLength>700</ImageLength>
+      <Source_X>
+	<Source_Xdimension>8.5</Source_Xdimension>
+	<Source_XdimensionUnit>in.</Source_XdimensionUnit>
+      </Source_X>
+      <Source_Y>
+	<Source_Ydimension>10</Source_Ydimension>
+	<Source_YdimensionUnit>in.</Source_YdimensionUnit>
+      </Source_Y>
+    </SpatialMetrics>
+    <Energetics>
+      <BitsPerSample>16,16,16</BitsPerSample>
+      <SamplesPerPixel>3</SamplesPerPixel>
+      <ExtraSamples>0</ExtraSamples>
+      <GrayResponse>
+	<GrayResponseCurve>1</GrayResponseCurve>
+	<GrayResponseUnit>1</GrayResponseUnit>
+      </GrayResponse>
+      <WhitePoint>
+	<WhitePoint_Xvalue>3290/10000</WhitePoint_Xvalue>
+	<WhitePoint_Yvalue>3290/10000</WhitePoint_Yvalue>
+      </WhitePoint>
+      <PrimaryChromaticities>
+	<PrimaryChromaticities_RedX>640/1000</PrimaryChromaticities_RedX>
+	<PrimaryChromaticities_RedY>330/1000</PrimaryChromaticities_RedY>
+	<PrimaryChromaticities_GreenX>300/1000</PrimaryChromaticities_GreenX>
+	<PrimaryChromaticities_GreenY>600/1000</PrimaryChromaticities_GreenY>
+	<PrimaryChromaticities_BlueX>150/1000</PrimaryChromaticities_BlueX>
+	<PrimaryChromaticities_BlueY>60/1000</PrimaryChromaticities_BlueY>
+      </PrimaryChromaticities>
+    </Energetics>
+    <TargetData>
+      <TargetType>0</TargetType>
+      <TargetID>
+	<TargetIDManufacturer>Eastman Kodak</TargetIDManufacturer>
+	<TargetIDName>ColorChecker</TargetIDName>
+	<TargetIDNo>Version2</TargetIDNo>
+	<TargetIDMedia>Ektachrome Transparency</TargetIDMedia>
+      </TargetID>
+      <ImageData>00001.tif</ImageData>
+      <PerformanceData>http://path/to/file</PerformanceData>
+      <Profiles>http://path/to/file</Profiles>
+    </TargetData>
+  </ImagingPerformanceAssessment>
+  <ChangeHistory>
+    <ImageProcessing>
+      <DateTimeProcessed>2001-10-06T00:00:00.001</DateTimeProcessed>
+      <SourceData>http://path/to/file</SourceData>
+      <ProcessingAgency>JJT, Inc.</ProcessingAgency>
+      <ProcessingSoftware>
+	<ProcessingSoftwareName>Adobe Photoshop</ProcessingSoftwareName>
+	<ProcessingSoftwareVersion>version 5.5</ProcessingSoftwareVersion>
+      </ProcessingSoftware>
+      <ProcessingActions>ICC profile added</ProcessingActions>
+    </ImageProcessing>
+    <PreviousImageMetadata/>
+  </ChangeHistory>
+</mix>
