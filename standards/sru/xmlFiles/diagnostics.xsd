@@ -2,7 +2,7 @@
 <!-- ZiNG SRU/SRW WSDL Specification                   -->
 <!-- Version 1.1                                       -->
 <!-- 20 July 2004                                       -->
-<xsd:schema targetNamespace="http://lcnetdev.github.io/zing/srw/diagnostic/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://lcnetdev.github.io/zing/srw/diagnostic/" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xsd:schema targetNamespace="http://www.loc.gov/zing/srw/diagnostic/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.loc.gov/zing/srw/diagnostic/" elementFormDefault="qualified" attributeFormDefault="unqualified">
   <xsd:element name="diagnostic" type="diagnosticType" nillable="false"/>
   <xsd:complexType name="diagnosticType">
     <xsd:sequence>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema 
         xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-        xmlns="http://lcnetdev.github.io/premis/v3" 
-        targetNamespace="http://lcnetdev.github.io/premis/v3" 
+        xmlns="http://www.loc.gov/premis/v3" 
+        targetNamespace="http://www.loc.gov/premis/v3" 
         elementFormDefault="qualified" 
         attributeFormDefault="unqualified">
    

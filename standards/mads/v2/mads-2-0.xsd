@@ -71,13 +71,13 @@ Each <authority>, <related> or <variant> is composed of one or more of the follo
 -->
 <xs:schema 
 xmlns:xlink="http://www.w3.org/1999/xlink" 
-xmlns="http://lcnetdev.github.io/mads/v2" 
+xmlns="http://www.loc.gov/mads/v2" 
 xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-targetNamespace="http://lcnetdev.github.io/mads/v2"
+targetNamespace="http://www.loc.gov/mads/v2"
  elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<!-- imports-->
-	<xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://lcnetdev.github.io/standards/xlink/xlink.xsd"/>
-	<xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://lcnetdev.github.io/mods/xml.xsd"/>
+	<xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://www.loc.gov/standards/xlink/xlink.xsd"/>
+	<xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.loc.gov/mods/xml.xsd"/>
 	<!-- 
 
 ******************************************************************************************************************

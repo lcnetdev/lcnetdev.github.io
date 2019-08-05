@@ -5,9 +5,9 @@
 <!-- Network Development and MARC Standards Office -->
 
 
-<xsd:schema targetNamespace="http://lcnetdev.github.io/mix/v10" 
+<xsd:schema targetNamespace="http://www.loc.gov/mix/v10" 
 	    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-	    xmlns="http://lcnetdev.github.io/mix/v10"
+	    xmlns="http://www.loc.gov/mix/v10"
 	    elementFormDefault="qualified"
 	    attributeFormDefault="unqualified"
 	    >

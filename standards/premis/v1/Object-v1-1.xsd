@@ -6,8 +6,8 @@
 - September 27, 2005.  Ray Denenberg, Library of Congress.
 - version changed to 1.1.
 - namespace changed (both xmlns and targetNamespace 
-from http://lcnetdev.github.io/standards/premis 
-to http://lcnetdev.github.io/standards/premis/v1.
+from http://www.loc.gov/standards/premis 
+to http://www.loc.gov/standards/premis/v1.
 - version attribute added.
 - element relatedEventIdentification (within element relationship)
 added  minOccurs="0"
@@ -25,7 +25,7 @@ added  minOccurs="0"
 
 
 
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://lcnetdev.github.io/standards/premis/v1" xmlns="http://lcnetdev.github.io/standards/premis/v1" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.loc.gov/standards/premis/v1" xmlns="http://www.loc.gov/standards/premis/v1" elementFormDefault="qualified" attributeFormDefault="unqualified">
   <xs:element name="object">
     <xs:complexType>
       <xs:sequence>

@@ -2,7 +2,7 @@
 <!-- Copyright © 2005 OCLC Online Computer Library Center and RLG Research Libraries Group -->
 <!-- PREMIS Preservation Metadata Schema: Rights  -->
 <!-- Version 1.0, May 17, 2005 -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://lcnetdev.github.io/standards/premis" xmlns="http://lcnetdev.github.io/standards/premis" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.loc.gov/standards/premis" xmlns="http://www.loc.gov/standards/premis" elementFormDefault="qualified" attributeFormDefault="unqualified">
 <xs:element name="rights">
     <xs:complexType>
         <xs:sequence>

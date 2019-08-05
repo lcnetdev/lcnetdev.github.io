@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XML Spy v4.2 U (http://www.xmlspy.com) by Ray Denenberg (Library of Congress) -->
-<xsd:schema targetNamespace="http://lcnetdev.github.io/mods/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://lcnetdev.github.io/mods/" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xsd:schema targetNamespace="http://www.loc.gov/mods/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.loc.gov/mods/" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<!-- 
 	
 v 1.0 R1  March 8, 2002   
@@ -168,7 +168,7 @@ record info
 			<xsd:annotation>
 				<xsd:documentation>  
 				Value is from the list at 
-				http:/lcnetdev.github.io/marc/sourcecode/authorityfile</xsd:documentation>
+				http:/www.loc.gov/marc/sourcecode/authorityfile</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>
@@ -309,7 +309,7 @@ not to represent structure for personal names.
 		<xsd:attribute name="authority" use="optional">
 			<xsd:annotation>
 				<xsd:documentation>  
-Value is from the list at http://lcnetdev.github.io/marc/sourcecode/genre
+Value is from the list at http://www.loc.gov/marc/sourcecode/genre
 </xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
@@ -656,7 +656,7 @@ either a flat or hierarchical geographic name.-->
 								<xsd:annotation>
 									<xsd:documentation>  
 Value is from the list at 
-http:/lcnetdev.github.io/marc/sourcecode/classification</xsd:documentation>
+http:/www.loc.gov/marc/sourcecode/classification</xsd:documentation>
 								</xsd:annotation>
 							</xsd:attribute>
 						</xsd:extension>
@@ -673,7 +673,7 @@ unstructured string with zero or more intervening elements,
 			<xsd:annotation>
 				<xsd:documentation>  
 Value is from the list at 
-http:/lcnetdev.github.io/marc/sourcecode/subject</xsd:documentation>
+http:/www.loc.gov/marc/sourcecode/subject</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>

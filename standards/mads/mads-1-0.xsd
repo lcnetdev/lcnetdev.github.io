@@ -31,9 +31,9 @@ As of March 19, 2010 this is the only version of MADS that has ever been officia
 
 
 -->
-<xsd:schema xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://lcnetdev.github.io/mads/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:mods="http://lcnetdev.github.io/mods/v3" targetNamespace="http://lcnetdev.github.io/mads/" elementFormDefault="qualified" attributeFormDefault="unqualified">
-	<xsd:import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://lcnetdev.github.io/standards/mods/xlink.xsd"/>
-	<xsd:import namespace="http://lcnetdev.github.io/mods/v3" schemaLocation="http://lcnetdev.github.io/standards/mods/v3/mods-3-1.xsd"/>
+<xsd:schema xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.loc.gov/mads/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:mods="http://www.loc.gov/mods/v3" targetNamespace="http://www.loc.gov/mads/" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://www.loc.gov/standards/mods/xlink.xsd"/>
+	<xsd:import namespace="http://www.loc.gov/mods/v3" schemaLocation="http://www.loc.gov/standards/mods/v3/mods-3-1.xsd"/>
 	<!-- 
 	Root Elements:
 	
@@ -232,7 +232,7 @@ address, hierarchicalGeographic, Date, stringPlusAuthority
 		<xsd:attribute name="type" type="mods:nameTypeAttribute" use="optional"/>
 		<xsd:attribute name="authority" use="optional"/>
 		<!-- Value is from the list at  
-http:/lcnetdev.github.io/marc/sourcecode/authorityfile/authorityfilesource.html		 -->
+http:/www.loc.gov/marc/sourcecode/authorityfile/authorityfilesource.html		 -->
 	</xsd:complexType>
 	<!--		
 
@@ -291,11 +291,11 @@ http:/lcnetdev.github.io/marc/sourcecode/authorityfile/authorityfilesource.html	
 ******* The following three three references replace previous, broken references, as of April 23, 2010*****
 
 For genre: Value is from the list at 		
-http://lcnetdev.github.io/standards/sourcelist/genre-form.html
+http://www.loc.gov/standards/sourcelist/genre-form.html
 For geographic: Value is from the list at 		
-http://lcnetdev.github.io/standards/sourcelist/name-title.html 
+http://www.loc.gov/standards/sourcelist/name-title.html 
 For topic: Value is from the list at
-http://lcnetdev.github.io/standards/sourcelist/subject.html 
+http://www.loc.gov/standards/sourcelist/subject.html 
 -->
 		</xsd:simpleContent>
 	</xsd:complexType>
