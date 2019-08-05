@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="Templates/premis.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Subpage_Title : PREMIS Version 2.2 now available - PREMIS: Preservation Metadata Maintenance Activity (Library of Congress)</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link type="text/css" media="print" href="premis-print.css" rel="stylesheet">
+<style type="text/css" media="screen">
+@import url(premis-base.css);
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="shortcut icon" type="image/x-icon" href="/images/fav.ico">
+<!-- InstanceBeginEditable name="head" --><meta name="keywords" content="schemas premis preservation metadata data dictionary version 2.2">
+<meta name="description" content="Subpage_Title : PREMIS Version 2.2 now available - PREMIS: Preservation Metadata Maintenance Activity (Library of Congress)">
+<!-- InstanceEndEditable -->
+</head>
+
+<body>
+<form action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" name="seek1" method="get">
+<input type="hidden" name="col" value="loc">
+<input type="hidden" name="sc" value="0">
+<input type="hidden" name="ws" value="0">
+<input type="hidden" name="la" value="en">
+<input type="hidden" name="qm" value="0">
+<input type="hidden" name="st" value="1">
+<input type="hidden" name="nh" value="10">
+<input type="hidden" name="lk" value="1">
+<input type="hidden" name="rf" value="0">
+<input type="hidden" name="oq" value="">
+<input type="hidden" name="si" value="0">
+<input type="hidden" name="rq" value="0">
+<input type="hidden" name="qc" value="">
+<table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr>
+  <td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
+<div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a></div></td>
+<td width="116"><select name="qp" tabindex="1">
+<option value="url:/standards" selected>Standards Pages</option>
+<option value="">All Library Pages</option>
+</select></td><td width="117" align="right"><input type="text" name="qt" id="keyword" size="18" value="" tabindex="2"></td>
+<td width="67" align="right"><input name="search_button" type="image" id="search_button" value="SEARCH" src="images/search.gif" tabindex="3" alt="search"></td>
+</tr></table></form>
+<table align="center" class="layout" cellpadding="0" cellspacing="0"><tr><td>
+<div id="graphic"><a href="index.html"><img src="images/premis-text2.gif" alt="PREMIS (Preservation Metadata, Data Dictionary Maintenance Activity)" width="600" height="50" border="0"></a></div>
+<div id="gold-top"></div>
+<div id="breadcrumb-top">&nbsp;<a href="index.html">PREMIS Home</a>&nbsp;&raquo;&nbsp;
+<!-- InstanceBeginEditable name="topbreadcrumb" --><a href="ICDAT2006/index.html">PREMIS version 2.3 now available</a><!-- InstanceEndEditable --></div>
+<a name="skip_menu"></a>
+<div id="official">Official Web Site&nbsp;&nbsp;</div>
+<div id="content">
+  <!-- InstanceBeginEditable name="content" -->
+  <h1>PREMIS Version 2.3 now available</h1>
+  <p>The  PREMIS Editorial Committee is pleased to announce the release of PREMIS version  2.3. Changes in this version allow users to specify an authority from which a  controlled vocabulary value is taken, either in the form of a URI or a string.  These changes are only to the XML schema and are not yet referenced in the  PREMIS Data Dictionary for Preservation Metadata. &nbsp;The authority  attributes will be documented in the next revision; the Editorial Committee is  working on version 3.0, which we expect will be issued around the end of this  year.</p>
+  <p>Specific  schema changes are:</p>
+  <p>Addition  of a new complexType 'stringPlusAuthority', references new attribute group  'authorityAttributeGroup'.<br>
+    'stringPlusAuthority'  is xs:string with the three new attributes:&nbsp;<br>
+  <ul>
+    <li><strong>authority: </strong>to specify  the name of a controlled vocabulary (as a string) from which the value is taken  that is used in the element.<br>
+    <li><strong>authorityURI: </strong>to specify  the name of a controlled vocabulary&nbsp;from which the value is taken&nbsp;in  the form of a URI .&nbsp;<br>
+  
+  <li>
+    <strong>valueURI: </strong>&nbsp;to  specify the value from a controlled vocabulary that is in the form of a URI.</p>
+    </ul>
+    
+  <p>61  elements can (optionally) take these attributes. In the PREMIS Data Dictionary  the value constraint for these indicates that the value should be taken from a  controlled vocabulary. &nbsp;Previously they only took a string and there  wasn't a mechanism to specify which controlled vocabulary was used. These are  now of type 'stringPlusAuthority' instead of 'xs:string'. &nbsp;They have been  separated out&nbsp;from the list of element declarations and are listed  together, under &quot;****** stringPlusAuthority type element  declarations&quot;</p>
+  <p>In  addition the two elements of type 'countryCode' (copyrightJurisdiction and  statuteJurisdiction) are similarly separated out and listed together. The  'countryCode' definition is changed,&nbsp;to accomodate the authority  attributes. &nbsp;it now has a base of 'stringPlusAuthority' rather than xs:string,  and it is an extension rather than<br>
+    a  restriction (hence a complex rather than simple type).</p>
+  <p>Following  is an example of usage:</p>
+  <p>&lt;eventIdentifier&gt;<br>
+  &nbsp; &lt;eventIdentifierType&gt;UUID&lt;/eventIdentifierType&gt;<br>
+  &nbsp; &lt;eventIdentifierValue&gt;908985d3-9600-4da4-a7e7-c6e9508bf24c&lt;/eventIdentifierValue&gt;<br>
+  &lt;/eventIdentifier&gt;<br>
+  &lt;eventType authority=&quot;premisEventType&quot; authorityURI=&quot;<a href="http://id.loc.gov/vocabulary/preservation/eventType.html" target="_blank">http://id.loc.gov/vocabulary/preservation/eventType.html</a>&quot;  valueURI=&quot;<a href="http://id.loc.gov/vocabulary/preservation/eventType/val.html" target="_blank">http://id.loc.gov/vocabulary/preservation/eventType/val.html</a>&quot;&gt;validation&lt;/eventType&gt;<br>
+  &lt;eventDateTime&gt;2014-07-03T23:18:19&lt;/eventDateTime&gt;<br>
+  &lt;eventDetail&gt;program=&quot;Jhove&quot;;  version=&quot;1.5&quot;&lt;/eventDetail&gt;<br>
+  &lt;eventOutcomeInformation&gt;<br>
+  &nbsp; &lt;eventOutcome&gt;fail&lt;/eventOutcome&gt;<br>
+  &nbsp; &lt;eventOutcomeDetail&gt;<br>
+  &nbsp;&nbsp;&nbsp; &lt;eventOutcomeDetailNote&gt;format=&quot;JPEG&quot;;  version=&quot;1.02&quot;; result=&quot;Not  well-formed&quot;&lt;/eventOutcomeDetailNote&gt;<br>
+  &nbsp; &lt;/eventOutcomeDetail&gt;<br>
+  &lt;/eventOutcomeInformation&gt;</p>
+  <p>Note that in the above example eventType could include  any or all of the authority attributes and, if valueURI is used, it does not  have to include a string value within the element.</p>
+  <p>The new schema is at:<br>
+    <a href="http://www.loc.gov/standards/premis/premis.xsd">http://www.loc.gov/standards/premis/premis.xsd</a><br>
+    and we also keep a copy at:<br>
+  <a href="http://www.loc.gov/standards/premis/v2/premis-v2-3.xsd">http://www.loc.gov/standards/premis/v2/premis-v2-3.xsd</a>&nbsp;</p>
+  <p>A number of preservation metadata controlled  vocabularies are available as Linked Data (so all concept schemes and concepts  in these vocabularies have a URI):<br>
+    <a href="http://id.loc.gov/vocabulary/preservation">http://id.loc.gov/vocabulary/preservation</a><br>
+    Other elements that take the authority attributes  which do not have established schemes at <a href="http://id.loc.gov">id.loc.gov</a> include those for which a local value would be used.</p>
+  <p>Since  this is not a major change, XML instances for version 2.2 (and previous version  2 instances) will still validate against this revised schema. &nbsp;</p>
+<p>&nbsp;</p>
+  <!-- InstanceEndEditable --></div>
+<div id="breadcrumb-bottom">&nbsp;<a href="index.html">PREMIS Home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="bottombreadcrumb" --><a href="ICDAT2006/index.html">PREMIS version 2.3 </a><!-- InstanceEndEditable --></div>
+<div id="white-bottom"></div>
+<div id="gold-bottom"></div>
+<div class="gray"></div>
+</td>
+</tr>
+
+</table>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td width="357"><div class="sitenav"><a href="http://www.loc.gov/">The
+          Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a></div>
+      <br>
+  <span class="sitenav">
+  <!-- #BeginDate format:Am1 -->August 4, 2014<!-- #EndDate -->
+  </span></td>
+    <td width="336" align="center" class="sitenav"><a href="http://www.loc.gov/homepage/legal.html">Legal</a> | <a href="http://www.loc.gov/global/disclaim.html">External Link Disclaimer</a></td>
+<td width="72" align="right"><div class="contactus"><a href="contact-premis.php">Contact Us</a></div></td>
+</tr></table>
+</body>
+<!-- InstanceEnd --></html>

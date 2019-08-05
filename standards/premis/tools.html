@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/premis.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Tools for preservation metadata implementation - PREMIS: Preservation Metadata Maintenance Activity (Library of Congress)</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link type="text/css" media="print" href="premis-print.css" rel="stylesheet">
+<style type="text/css" media="screen">
+@import url(premis-base.css);
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="shortcut icon" type="image/x-icon" href="/images/fav.ico">
+<!-- InstanceBeginEditable name="head" --><meta name="keywords" content="tools premis preservation metadata data dictionary implementation">
+<meta name="description" content="This document lists tools for implementing preservation metadata, especially in the context of the PREMIS data dictionary and schemas. This includes tools to extract technical metadata, convert data in other XML formats to PREMIS data elements, generate a METS object with slots for preservation metadata, etc."><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<form action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" name="seek1" method="get">
+<input type="hidden" name="col" value="loc">
+<input type="hidden" name="sc" value="0">
+<input type="hidden" name="ws" value="0">
+<input type="hidden" name="la" value="en">
+<input type="hidden" name="qm" value="0">
+<input type="hidden" name="st" value="1">
+<input type="hidden" name="nh" value="10">
+<input type="hidden" name="lk" value="1">
+<input type="hidden" name="rf" value="0">
+<input type="hidden" name="oq" value="">
+<input type="hidden" name="si" value="0">
+<input type="hidden" name="rq" value="0">
+<input type="hidden" name="qc" value="">
+<table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
+<div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a></div></td>
+<td width="116"><select name="qp" tabindex="1">
+<option value="url:/standards" selected>Standards Pages</option>
+<option value="">All Library Pages</option>
+</select></td><td width="117" align="right"><input type="text" name="qt" id="keyword" size="18" value="" tabindex="2"></td>
+<td width="67" align="right"><input name="search_button" type="image" id="search_button" value="SEARCH" src="images/search.gif" tabindex="3" alt="search"></td>
+</tr></table></form>
+<table align="center" class="layout" cellpadding="0" cellspacing="0"><tr><td>
+<div id="graphic"><a href="index.html"><img src="images/premis-text2.gif" alt="PREMIS (Preservation Metadata, Data Dictionary Maintenance Activity)" width="600" height="50" border="0"></a></div>
+<div id="gold-top"></div>
+<div id="breadcrumb-top">&nbsp;<a href="index.html">PREMIS Home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="topbreadcrumb" --><a href="ICDAT2006/index.html"></a>Tools for preservation metadata implementation <!-- InstanceEndEditable --></div>
+<a name="skip_menu"></a>
+<div id="official">Official Web Site&nbsp;&nbsp;</div>
+<div id="content">
+  <!-- InstanceBeginEditable name="content" -->
+  <h1>Tools for preservation metadata implementation </h1>
+  <p>This document contains information about tools (e.g. software, scripts, stylesheets) which support the implementation of preservation metadata, particularly as defined in the PREMIS data dictionary. Tools may be categorized as doing one or more of the following. As of this writing (July 2007) not all categories are represented here. Tools listed were not necessarily developed specifically for PREMIS, but may be used for implementation of preservation metadata more generally, and their relationship to PREMIS is stated. </p>
+  <ul>
+    <li>Tools for extracting technical metadata from objects<br>
+    </li>
+    <li>Tools for converting extracted metadata into the PREMIS XML 
+schema elements </li>
+    <li>Tools for generating a METS object with appropriate slots for 
+PREMIS metadata (i.e., amdSec with digiProv, techMD, etc.)</li>
+    <li>Tools for converting Jhove output to PREMIS elements</li>
+    <li> Tools for recording events and outcomes (e.g. format validation, 
+fixity check, etc.)</li>
+    </ul>
+  <p>Listings include what the tool does, who developed it, when and for what purpose it was developed. <a href="http://www.loc.gov/global/disclaim.html"><img src="images/disclaimer.gif" alt="Disclaimer" width="91" height="16" border="0" align="right"></a><p>
+
+  <h2>Archivists' Toolkit (University  of California, San Diego, New York  University, and the Five Colleges, Inc.)</h2>
+  <p><strong>Description:</strong> The Archivists' Toolkit is an open source archival data management system to  provide integrated support for accessioning, description, donor  tracking, name and subject authority work, and location management for  archival materials. It includes integrated       support for managing archival materials from acquisition through       processing, a customizable       interface, ingest       of legacy data in multiple formats (e.g. EAD and MARCXML), rapid       data entry interface for creating container lists, generation of reports, export       of EAD 2002, MARC XML, METS, MODS, and Dublin Core, and support       for desktop or networked, single- or multi-repository installations.</p>
+  <p>Although not directly supporting PREMIS, the Archivists' Toolkit
+    may be used to generate a METS file with descriptive, structural and rights metadata, which can then be enriched with technical metadata upon 
+    import into a repository. </p>
+  <p><strong>Availability:</strong> The source code has not yet been made available generally. Contact info@archiviststoolkit for further information. </p>
+  <p><strong>Documentation:</strong> <a href="http://www.archiviststoolkit.org/">http://www.archiviststoolkit.org/</a></p>
+  <p><strong>Date last updated: </strong>July 25, 2007 </p>
+  <h2>DAITSS (Florida Center for Library Automation)</h2>
+  <p><strong>Description:</strong>  DAITSS is an OAIS compliant open source preservation 
+    repository system which supports ingest, dissemination, and preservation 
+    strategies based on format transformation.  It has no online public 
+    access component but can be used as a preservation back-end to 
+    institutional repository or digital library systems.</p>
+  <p>DAITSS supports nearly all of the PREMIS data elements pertaining to 
+    objects and events in its internal database, with the exception of 
+    environment information.  The next major release, DAITSS 2.0, will have 
+    functionality to export PREMIS metadata in METS.</p>
+  <p><strong>Availability:</strong> <a href="http://daitss.fcla.edu">http://daitss.fcla.edu</a></p>
+  <p><strong>Documentation:</strong> <a href="http://daitss.fcla.edu/wiki/DocumentationPage">http://daitss.fcla.edu/wiki/DocumentationPage</a></p>
+  <p><strong>Date last updated:</strong> July 25, 2007<br>
+  </p>
+  <h2>DigiTool (ExLibris)</h2>
+  <p><strong>Description: </strong>DigiTool is a commercial product developed by ExLibris for the management of digital assets in libraries and academic environments, enabling institutions to create, manage, preserve, and share locally administered digital collections. DigiTool consists of a number of modules, each  designed to address different needs, functions, and workflows  pertaining to the life cycle of a digital object, including ingestion and metadata extraction, creation of a METS object, ability to edit metadata (both descriptive and technical).</p>
+  <p>DigiTool supports preservation metadata, including PREMIS objects, PREMIS events in terms of tracking the history of changes to an object, and PREMIS rights for authorization and access rights. </p>
+  <p><strong>Availability:</strong> From Ex Libris as a commercial product: <a href="http://www.exlibrisgroup.com/offices.htm">http://www.exlibrisgroup.com/offices.htm</a></p>
+  <p><strong>Documentation:</strong> <a href="http://www.exlibrisgroup.com/digitool.htm">http://www.exlibrisgroup.com/digitool.htm</a></p>
+  <p><strong>Date last updated: </strong>July 25, 2007 </p>
+  <h2>DROID (The National Archives (UK)) </h2>
+  <p><strong>Description:</strong> DROID (Digital Record Object Identification) is an automatic file format identification tool developed in conjunction with the PRONOM online registry of technical information by the National Archives of the UK. Technical information about the structure of  file formats, and the software and hardware environments required to support them is included in PRONOM, which was developed initially as an internal  resource for National Archives staff, and subsequently as a public,  web-based resource. DROID uses byte signatures stored in PRONOM  to identify and report the specific file format versions of digital  files. DROID detects the addition of new signatures to the PRONOM  database and automatically downloads updates via the Web, ensuring that  it is always up-to-date. It is designed for batch  processing, and can be used via a GUI or a command line interface, to  support integration with other systems. DROID is a standalone, platform-independent Java tool, and is freely available to download from the PRONOM website.</p>
+  <p>DROID could be used to extract file format information for use in preservation metadata. In the case of PREMIS an XSL transformation (not currently provided by the developer of this tool) could convert the DROID output to PREMIS specific elements (see also below entry for Statistics New Zealand Prototype PREMIS Creation Tool). </p>
+  <p><strong>Availability:</strong> <a href="http://www.nationalarchives.gov.uk/aboutapps/pronom/">http://www.nationalarchives.gov.uk/aboutapps/pronom/</a></p>
+  <p><strong>Documentation:</strong> <a href="http://www.nationalarchives.gov.uk/aboutapps/fileformat/pdf/droid_api_1.rtf">http://www.nationalarchives.gov.uk/aboutapps/fileformat/pdf/droid_api_1.rtf</a></p>
+  <p><strong>Date last updated: </strong>July 25, 2007 </p>
+  <h2>Echodep (University of Illinois Urbana/Champaign) </h2>
+  <p><strong>Description: </strong>ECHO DEPository is a digital  research/development project  at the University of Illinois Urbana-Champaign in partnership with OCLC and  funded by Library of Congress under the National Digital Information  Infrastructure Preservation Program (NDIIPP).
+        The 
+        HandS tool suite is a package comprised of various components
+        that provide open source tools in the context of the <a href="http://www.loc.gov/standards/mets/profiles/00000015.html">Echodep METS profiles</a>.      </p>
+      <p> A Jhove utilities API will  run the Jhove utility on an item, which will generate a PREMIS object 
+and, depending on the MIME type, will return file format specific 
+metadata (i.e. MIX for images). This API is extensible so that 
+new &quot;applicators&quot; can be written to support other technical 
+metadata easily. The  HaSMETSProfile class generates a METS object with appropriate slots for PREMIS metadata, designed  to work with a METS file as described in 
+the registered Profile; it does validation against the profile as 
+well. A tool for recording events and outcomes (e.g. format validation, 
+fixity check, etc.)  is built in to the HaSMETSProfile class for 
+embedding these outcomes;  the events themselves are initiated 
+in various routines (workflow, validation, packaging, etc.).</p>
+      <p><strong>Availability:<br>
+        </strong><a href="http://sourceforge.net/projects/echodep/">http://sourceforge.net/projects/echodep/</a></p>
+      <p><strong>Documentation: <br>
+        </strong><a href="http://dli.grainger.uiuc.edu/echodep/HnS/JavaDocs/">http://dli.grainger.uiuc.edu/echodep/HnS/JavaDocs/</a></p>
+      <p><strong>Date last updated: </strong>July 25, 2007 </p>
+      <h2>JHOVE (JSTOR/Harvard Object Validation Environment) </h2>
+      <p><strong>Description: </strong>JSTOR and the Harvard University Library collaborated on this project to develop an extensible framework for object validation. Representation information (format type) is important to all digital repositories, since ingest, storage, access, and preservation decisions may be made depending upon the format, and it is necessary to automate the process of identifying and validating formats of digital objects. JHOVE performs format-specific identification,  validation, and characterization of digital objects. Such actions are performed by modules for various format types and the output from the process is controlled by output handlers, using an extensible plug-in architecture. JHOVE is a format-specific digital object validation application program interface (API) written in Java. It is available for downloading as either a command line interface or a GUI interface.</p>
+      <p>The output of JHOVE can be configured at the  time of its invocation to include whatever specific format modules and  output handlers that are desired. Representation information output is in XML and output handlers format the information according to the specification for each module (depending upon format type). For instance, JPEG2000 and TIFF use the NISO Z39.87 (Technical metadata for digital still images) standard. </p>
+      <p>Although not specifically an implementation of PREMIS, JHOVE is a tool that could be used to automatically generate format information and an XSL transformation could be used to transform the output to PREMIS schema elements (and format-specific metadata specifications). See also below entry for Statistics New Zealand Prototype PREMIS Creation Tool.</p>
+      <p><strong>Availability:</strong> <a href="http://hul.harvard.edu/jhove/distribution.html">http://hul.harvard.edu/jhove/distribution.html</a></p>
+      <p><strong>Documentation:</strong> <a href="http://hul.harvard.edu/jhove/documentation.html">http://hul.harvard.edu/jhove/documentation.html</a></p>
+      <p><strong>Date last updated: </strong>July 25, 2007 </p>
+      <h2>METS Java Toolkit (Harvard University Library)</h2>
+      <p><strong>Description:</strong> This tool uses Java to construct, validate,  and process METS objects. It allows for reading in a METS document and using it as a Java object, where it can be modified and the resulting METS written out. The toolkit is a Java binding framework in which each particular schema element of a METS file (e.g. techMD, @LABEL) is represented in memory by an instantiated object where nodes and values can be set and then it can be added to the content of model of its parent. The toolkit supports both local and global validation of METS files. </p>
+      <p>The METS Java Toolkit is a general METS maker, which could be used to provide a slot for including or referencing PREMIS descriptions. It allows for the inclusion of an MDTYPE attribute with the value &quot;PREMIS&quot;. However, it does not fill in the values of the PREMIS elements. </p>
+      <p><strong>Availability:</strong> <a href="http://hul.harvard.edu/mets/download.html">http://hul.harvard.edu/mets/download.html</a></p>
+      <p><strong>Documentation:</strong> <a href="http://hul.harvard.edu/mets/doc/">http://hul.harvard.edu/mets/doc/</a></p>
+      <p><strong>Date last updated: </strong>July 25, 2007 </p>
+      <h2>New Zealand metadata extractor (National Library of New Zealand) </h2>
+      <p><strong>Description: </strong>The Metadata Extraction Tool was developed by the National Library of New Zealand to programmatically extract preservation metadata from a range of file formats. It is designed to automatically extract preservation-related metadata from digital files and output that metadata in XML formats for use in preservation activities.  It is now available as open source software.</p>
+      <p>The Metadata Extraction Tool is based on a library of adapters. Each adapter knows how to recognise and extract metadata from a different type of file. Adapters can handle dependencies within and between objects of varying levels of complexity, ranging from single, simple objects like TIFF files through to complex web sites or databases.</p>
+      <p>Extracting preservation metadata is a two-stage process. In the first phase each incoming file is processed by the adapters until one of them recognises the file type and extracts data from the header fields of the file, generating an internal XML file. In the second phase an XSL transformation converts the internal XML file  into an output XML format, currently the NLNZ preservation metadata data model schema. Output using the PREMIS XML schemas is also possible as transformations are developed.        See also below entry for Statistics New Zealand Prototype PREMIS Creation Tool.</p>
+      <p><strong>Availability: </strong><a href="http://meta-extractor.sourceforge.net/">http://meta-extractor.sourceforge.net/</a></p>
+      <p><strong>Documentation: </strong><a href="http://meta-extractor.sourceforge.net/documentation.htm">http://meta-extractor.sourceforge.net/documentation.htm</a></p>
+      <p><strong>Date last updated: </strong>July 25, 2007 </p>
+      <h2><strong>Statistics New Zealand Prototype PREMIS Creation Tool</strong></h2>
+      <p><strong>Description:</strong> This tool is a set of programs using XSL and VBScript that takes output from Jhove, the New Zealand Metadata Extractor, and DROID and produces PREMIS object records. It can run on single or multiple files. To create PREMIS output, an XSL stylesheet is run to bring all outputs together. The resulting file consists of a stream of multiple PREMIS object records, which may be split into separate files using a script which splits them. The PREMIS object schema has been slightly modified to allow for keeping  information on the source of the values in each element. </p>
+      <p><strong>Availability: </strong><a href="http://pigpen.lib.uchicago.edu:8888/pigpen/40">http://pigpen.lib.uchicago.edu:8888/pigpen/40</a><br>
+        (requires login and password; see:<a href="http://www.loc.gov/standards/premis/pigInfo.jpg"> http://www.loc.gov/standards/premis/pigInfo.jpg</a>)</p>
+      <p><strong>Documentation: </strong><a href="http://pigpen.lib.uchicago.edu:8888/pigpen/40/Creating_premis_object_records.doc">http://pigpen.lib.uchicago.edu:8888/pigpen/40/Creating_premis_object_records.doc</a><br>
+      (requires login and password; see: <a href="http://www.loc.gov/standards/premis/pigInfo.jpg">http://www.loc.gov/standards/premis/pigInfo.jpg</a>)</p>
+      <p><strong>Date last updated: </strong>July 25, 2007 </p>
+      <p>&nbsp;</p>
+      <h2>See also METS creation tools:<a href="http://www.loc.gov/standards/mets/mets-tools.html"> http://www.loc.gov/standards/mets/mets-tools.html</a></h2>
+      <h2>&nbsp; </h2>
+      <h2>To add PREMIS tools information to this page: </h2>
+      <p>Submit a brief description of the PREMIS tool along with a link to               a locally hosted page from which the tool can be downloaded to: ndmso at loc.gov. <br>
+      </p>
+  <!-- InstanceEndEditable --></div>
+<div id="breadcrumb-bottom">&nbsp;<a href="index.html">PREMIS Home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="bottombreadcrumb" --><a href="ICDAT2006/index.html"></a>Tools for preservation metadata implementation <!-- InstanceEndEditable --></div>
+<div id="white-bottom"></div>
+<div id="gold-bottom"></div>
+<div class="gray"></div>
+</td>
+</tr>
+
+</table>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td><div class="sitenav"><a href="http://www.loc.gov/">The
+          Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a></div>
+      <br>
+  <span class="sitenav">
+  <!-- #BeginDate format:Am1 -->July 22, 2009<!-- #EndDate -->
+  </span></td>
+<td align="right"><div class="contactus"><a href="contact-premis.php">Contact Us</a></div></td>
+</tr></table>
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="Templates/premis.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>PREMIS OWL ontology now available - PREMIS: Preservation Metadata Maintenance Activity (Library of Congress)</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link type="text/css" media="print" href="premis-print.css" rel="stylesheet">
+<style type="text/css" media="screen">
+@import url(premis-base.css);
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="shortcut icon" type="image/x-icon" href="/images/fav.ico">
+<!-- InstanceBeginEditable name="head" --><meta name="keywords" content="schemas premis preservation metadata data dictionary version 2.1 OWL ontology">
+<meta name="description" content="PREMIS OWL ontology - PREMIS: Preservation Metadata Maintenance Activity (Library of Congress)">
+<!-- InstanceEndEditable -->
+</head>
+
+<body>
+<form action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" name="seek1" method="get">
+<input type="hidden" name="col" value="loc">
+<input type="hidden" name="sc" value="0">
+<input type="hidden" name="ws" value="0">
+<input type="hidden" name="la" value="en">
+<input type="hidden" name="qm" value="0">
+<input type="hidden" name="st" value="1">
+<input type="hidden" name="nh" value="10">
+<input type="hidden" name="lk" value="1">
+<input type="hidden" name="rf" value="0">
+<input type="hidden" name="oq" value="">
+<input type="hidden" name="si" value="0">
+<input type="hidden" name="rq" value="0">
+<input type="hidden" name="qc" value="">
+<table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr>
+  <td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
+<div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a></div></td>
+<td width="116"><select name="qp" tabindex="1">
+<option value="url:/standards" selected>Standards Pages</option>
+<option value="">All Library Pages</option>
+</select></td><td width="117" align="right"><input type="text" name="qt" id="keyword" size="18" value="" tabindex="2"></td>
+<td width="67" align="right"><input name="search_button" type="image" id="search_button" value="SEARCH" src="images/search.gif" tabindex="3" alt="search"></td>
+</tr></table></form>
+<table align="center" class="layout" cellpadding="0" cellspacing="0"><tr><td>
+<div id="graphic"><a href="index.html"><img src="images/premis-text2.gif" alt="PREMIS (Preservation Metadata, Data Dictionary Maintenance Activity)" width="600" height="50" border="0"></a></div>
+<div id="gold-top"></div>
+<div id="breadcrumb-top">&nbsp;<a href="index.html">PREMIS Home</a>&nbsp;&raquo;&nbsp;
+<!-- InstanceBeginEditable name="topbreadcrumb" --><a href="ICDAT2006/index.html">PREMIS OWL ontology </a><!-- InstanceEndEditable --></div>
+<a name="skip_menu"></a>
+<div id="official">Official Web Site&nbsp;&nbsp;</div>
+<div id="content">
+  <!-- InstanceBeginEditable name="content" -->
+  <h1>PREMIS OWL ontology  2.2 now available</h1>
+  <p>June 6, 2013</p>
+   
+  <p>The PREMIS Editorial Committee is pleased to announce the publication of a revised PREMIS OWL ontology based on the  PREMIS Data Dictionary for Preservation Metadata version 2.2 [1], a digital preservation standard based on the OAIS reference model. An earlier version of the PREMIS OWL ontology [2] was made available in October 2011, sticking as closely as possible to the PREMIS Data Dictionary semantic unit definitions. Before that time the PREMIS Data Dictionary was only implemented as an XML schema, which remains ideal for creating, validating and storing the preservation metadata of a particular digital asset.</p> 
+<p>This revision of the ontology introduces several changes from the previous draft version:</p>
+
+<ul>
+<li>The PREMIS ontology is now officially within the loc.gov namespace; it's namespace is now: <a href="http://www.loc.gov/premis/rdf/v1#">http://www.loc.gov/premis/rdf/v1#</a>
+<li>It integrates changes from PREMIS version 2.2, especially the enhanced model for the Rights entity
+<li>It makes use of 24 value vocabularies - each reflecting a suggested or controlled list of values from the PREMIS Data Dictionary - that have been added to id.loc.gov [3], covering a much wider range of PREMIS semantic units than before (21 value vocabularies are new additions to id.loc.gov as of this announcement; they may all be reviewed at <a href="http://id.loc.gov/preservationdescriptions/">http://id.loc.gov/preservationdescriptions/</a>.
+<li>It makes minor corrections and implements a more Linked Data approach, rather than attempting to provide properties and classes for every semantic unit in the Data Dictionary. For instance, Extensions were dropped, since combining external vocabularies are built-in capabilities of Linked Data
+<li>Fuller documentation of the classes and properties
+</ul>
+<p>
+This OWL ontology allows one to provide a Linked Data-friendly, PREMIS-endorsed serialization of the PREMIS Data Dictionary version 2.2. This can be leveraged to have a Linked Data-friendly data management function for a preservation repository, allowing for SPARQL querying.  It integrates PREMIS information with other Linked Data compliant datasets, especially format registries, which are now referenced from the PREMIS ontology (for instance, the Unified Digital Format Registry [4] and PRONOM [5]). Thus information can be more easily interconnected, especially between different repository databases. The OWL design of PREMIS should NOT be considered as a replacement for the XML Schema: the two of them should rather be considered complementary.  Work to align the PREMIS ontology with the PROV ontology [6] is being considered. 
+</p>
+<p>
+The ontology is public and open for review and is available at: <a href="http://www.loc.gov/premis/rdf/v1#">http://www.loc.gov/premis/rdf/v1#</a>. Please send comments by July 30, 2013 to the PREMIS Implementers’ Group list (pig@loc.gov).</p>
+
+<p>[1] <a href="http://www.loc.gov/standards/premis/v2/premis-2-2.pdf">http://www.loc.gov/standards/premis/v2/premis-2-2.pdf</a></p>
+<p>[2] <a href="http://multimedialab.elis.ugent.be/users/samcoppe/Ontologies/premis/index.html">http://multimedialab.elis.ugent.be/users/samcoppe/Ontologies/premis/index.html</a></p>
+<p>[3] <a href="http://id.loc.gov/vocabulary/preservation.html">http://id.loc.gov/vocabulary/preservation.html</a></p>
+<p>[4] <a href="http://udfr.org/onto/onto.rdf">http://udfr.org/onto/onto.rdf</a></p>
+<p>[5] <a href="http://www.nationalarchives.gov.uk/PRONOM/Default.aspx">http://www.nationalarchives.gov.uk/PRONOM/Default.aspx</a></p>
+<p>[6] <a href="http://www.w3.org/TR/prov-o/">http://www.w3.org/TR/prov-o/</a></p>
+
+
+
+
+
+<p>
+</p>
+
+  </ul>
+
+  <!-- InstanceEndEditable --></div>
+<div id="breadcrumb-bottom">&nbsp;<a href="index.html">PREMIS Home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="bottombreadcrumb" --><a href="ICDAT2006/index.html">PREMIS OWL ontology </a><!-- InstanceEndEditable --></div>
+<div id="white-bottom"></div>
+<div id="gold-bottom"></div>
+<div class="gray"></div>
+</td>
+</tr>
+
+</table>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td width="357"><div class="sitenav"><a href="http://www.loc.gov/">The
+          Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a></div>
+      <br>
+  <span class="sitenav">
+  <!-- #BeginDate format:Am1 -->June 18, 2013<!-- #EndDate -->
+  </span></td>
+    <td width="336" align="center" class="sitenav"><a href="http://www.loc.gov/homepage/legal.html">Legal</a> | <a href="http://www.loc.gov/global/disclaim.html">External Link Disclaimer</a></td>
+<td width="72" align="right"><div class="contactus"><a href="contact-premis.php">Contact Us</a></div></td>
+</tr></table>
+</body>
+<!-- InstanceEnd --></html>

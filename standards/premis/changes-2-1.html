@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/premis.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>PREMIS Data Dictionary version 2.1 Changes  (Library of Congress)</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link type="text/css" media="print" href="premis-print.css" rel="stylesheet">
+<style type="text/css" media="screen">
+@import url(premis-base.css);
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="shortcut icon" type="image/x-icon" href="/images/fav.ico">
+<!-- InstanceBeginEditable name="head" --><meta name="keywords" content="schemas premis preservation metadata version 2.0 changes errata data dictionary ">
+<meta name="description" content="This document lists changes and errata for version 2.0 of the PREMIS Data Dictionary for Preservation Metadata"><!-- InstanceEndEditable -->
+</head>
+
+<body>
+<form action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" name="seek1" method="get">
+<input type="hidden" name="col" value="loc">
+<input type="hidden" name="sc" value="0">
+<input type="hidden" name="ws" value="0">
+<input type="hidden" name="la" value="en">
+<input type="hidden" name="qm" value="0">
+<input type="hidden" name="st" value="1">
+<input type="hidden" name="nh" value="10">
+<input type="hidden" name="lk" value="1">
+<input type="hidden" name="rf" value="0">
+<input type="hidden" name="oq" value="">
+<input type="hidden" name="si" value="0">
+<input type="hidden" name="rq" value="0">
+<input type="hidden" name="qc" value="">
+<table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
+<div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a></div></td>
+<td width="116"><select name="qp" tabindex="1">
+<option value="url:/standards" selected>Standards Pages</option>
+<option value="">All Library Pages</option>
+</select></td><td width="117" align="right"><input type="text" name="qt" id="keyword" size="18" value="" tabindex="2"></td>
+<td width="67" align="right"><input name="search_button" type="image" id="search_button" value="SEARCH" src="images/search.gif" tabindex="3" alt="search"></td>
+</tr></table></form>
+<table align="center" class="layout" cellpadding="0" cellspacing="0"><tr><td>
+<div id="graphic"><a href="index.html"><img src="images/premis-text2.gif" alt="PREMIS (Preservation Metadata, Data Dictionary Maintenance Activity)" width="600" height="50" border="0"></a></div>
+<div id="gold-top"></div>
+<div id="breadcrumb-top">&nbsp;<a href="index.html">PREMIS Home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="topbreadcrumb" --><a href="ICDAT2006/index.html">PREMIS 2.0 Changes </a><!-- InstanceEndEditable --></div>
+<a name="skip_menu"></a>
+<div id="official">Official Web Site&nbsp;&nbsp;</div>
+<div id="content">
+  <!-- InstanceBeginEditable name="content" -->
+  <h1>PREMIS Data Dictionary for Preservation Metadata (version 2.1): Changes from previous version 2.0 </h1>
+  <p>This document records  changes
+  that were made in version 2.1 of the <a href="http://www.loc.gov/premis/v2/premis-2-1.pdf">PREMIS Data Dictionary for Preservation Metadata  </a> (<span class="pdf">PDF:1.23MB /226pp.</span>) and <a href="http://www.loc.gov/standards/premis/schemas.html">PREMIS schemas.</a><br>
+  [Note: To view PDF documents, a <a href="http://www.adobe.com/products/acrobat/readstep2.html">free          viewer is available for download          from Adobe          Acrobat</a>.]</p>
+ 
+  <p><strong>Errata</strong><br>
+  The following are mistakes or omissions that are corrected in this version. </p>
+  <ul>
+    <li>Add linking semantic units from Agent Entity to Events and Rights:
+      <ul>
+        <li>linkingEventIdentifier (linkingEventIdentifierType and linkingEventIdentifierValue)</li>
+        <li>linkingRightsStatementIdentifier (linkingRightsStatementIdentifierType and linkingRightsStatementIdentifierValue)</li>
+        </ul>
+    </li>
+    <li>Clarify that the linking semantic units are mandatory in the sense that a repository needs to know the information, but are defined as optional because PREMIS does not specify in which direction the linkage should be. </li>
+    <li>Correct the &quot;Rationale&quot; for objectCharacteristicsExtension to 
+      say &quot;There may be a need to extend PREMIS defined units.&quot;  Replacing is 
+      not allowed.</li>
+    <li>Make storage optional, since it is not useful for exchange (corrected in schema)</li>
+    <li>Add &quot;Not applicable&quot; for 
+representation under 1.9.1.5 signatureValidationRules</li>
+    <li>Add &quot;Not applicable for representation under 1.9.2 signatureInformationExtension  </li>
+    <li>Provide common definitions for linkingAgentIdentifier under event and rightsStatement:
+      <ul>
+        <li>Make linkingAgentRole  optional and repeatable for rightsStatement instead of mandatory and not repeatable</li>
+        <li>Add attributes  LinkAgentXmlID and 
+          xlink:simpleLink for
+          rightsStatement</li>
+        </ul>
+    </li>
+    <li>Provide common definitions for linkingObjectIdentifier under event and rightsStatement:
+      <ul>
+        <li>Add linkingObjectRole (optional, repeatable) to rightsStatement</li>
+        <li>Add attributes LinkObjectXmlID and xlink:simpleLink for rightsStatement  </li>
+        </ul>
+    </li>
+    <li>Correct repeatability of format in schema (now is maxOccurs=1, should  be maxOccurs=&quot;unbounded&quot;)</li>
+    <li>Correct Usage notes for 1.8.1 environmentCharacteristic from &quot;recommended = an environment preferred for optional rendering&quot; to: &quot;recommended = an environment preferred for optimal rendering&quot;  </li>
+  </ul> 
+  <p><strong> Data Dictionary and/or Schema changes<br>
+  </strong>The following details changes that were approved by the PREMIS Editorial Committee and incorporated into  version 2.1 </p>
+  <ul type="disc">
+    <li>The following new elements are added to       the Agent Entity</li>
+    <ul type="circle">
+      <li>agentNote</li>
+      <li>agentExtension</li>
+      <li>linkingEventIdentifier</li>
+      <li>linkingRightsStatementIdentifier</li>
+      </ul>
+    <li>Define additional elements and attributes for all extension elements to create a structure similar to that used with METS extension schemas (e.g. add element to indicate whether the metadata is a reference or wrapped within the metadata section; add indication of metadata type, etc.). </li>
+    <li>All extension elements are made repeatable  </li>
+  </ul>
+  <!-- InstanceEndEditable --></div>
+<div id="breadcrumb-bottom">&nbsp;<a href="index.html">PREMIS Home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="bottombreadcrumb" -->PREMIS 2.1 changes<!-- InstanceEndEditable --></div>
+<div id="white-bottom"></div>
+<div id="gold-bottom"></div>
+<div class="gray"></div>
+</td>
+</tr>
+
+</table>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td width="357"><div class="sitenav"><a href="http://www.loc.gov/">The
+          Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a></div>
+      <br>
+  <span class="sitenav">
+  <!-- #BeginDate format:Am1 -->January 12, 2011<!-- #EndDate -->
+  </span></td>
+    <td width="336" align="center" class="sitenav"><a href="http://www.loc.gov/homepage/legal.html">Legal</a> | <a href="http://www.loc.gov/global/disclaim.html">External Link Disclaimer</a></td>
+<td width="72" align="right"><div class="contactus"><a href="contact-premis.php">Contact Us</a></div></td>
+</tr></table>
+</body>
+<!-- InstanceEnd --></html>

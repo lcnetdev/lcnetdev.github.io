@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/premis.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Changes and corrections to PREMIS data dictionary and schemas: PREMIS: Preservation Metadata Maintenance Activity (Library of Congress)</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link type="text/css" media="print" href="premis-print.css" rel="stylesheet">
+<style type="text/css" media="screen">
+@import url(premis-base.css);
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="shortcut icon" type="image/x-icon" href="/images/fav.ico">
+<!-- InstanceBeginEditable name="head" --><meta name="keywords" content="schemas premis preservation metadata maintenance activity official schema data dictionary implementation governance implementor">
+<meta name="description" content="Changes and corrections to PREMIS data dictionary and schemas. The PREMIS maintenance activity is responsible for maintaining, supporting, and coordinating future revisions to the PREMIS data dictionary. The Preservation Metadata: Implementation Strategies Working Group, convened by OCLC and RLG, initially developed the PREMIS data dictionary as a specification with the goal of creating an implementable set of "core" preservation metadata elements, with broad applicability within the digital community. a supporting xml schema allows for implementation of element set and is maintained in network development marc standards office library congress.">
+<!-- InstanceEndEditable -->
+</head>
+
+<body>
+<form action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" name="seek1" method="get">
+<input type="hidden" name="col" value="loc">
+<input type="hidden" name="sc" value="0">
+<input type="hidden" name="ws" value="0">
+<input type="hidden" name="la" value="en">
+<input type="hidden" name="qm" value="0">
+<input type="hidden" name="st" value="1">
+<input type="hidden" name="nh" value="10">
+<input type="hidden" name="lk" value="1">
+<input type="hidden" name="rf" value="0">
+<input type="hidden" name="oq" value="">
+<input type="hidden" name="si" value="0">
+<input type="hidden" name="rq" value="0">
+<input type="hidden" name="qc" value="">
+<table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
+<div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a></div></td>
+<td width="116"><select name="qp" tabindex="1">
+<option value="url:/standards" selected>Standards Pages</option>
+<option value="">All Library Pages</option>
+</select></td><td width="117" align="right"><input type="text" name="qt" id="keyword" size="18" value="" tabindex="2"></td>
+<td width="67" align="right"><input name="search_button" type="image" id="search_button" value="SEARCH" src="images/search.gif" tabindex="3" alt="search"></td>
+</tr></table></form>
+<table align="center" class="layout" cellpadding="0" cellspacing="0"><tr><td>
+<div id="graphic"><a href="index.html"><img src="images/premis-text2.gif" alt="PREMIS (Preservation Metadata, Data Dictionary Maintenance Activity)" width="600" height="50" border="0"></a></div>
+<div id="gold-top"></div>
+<div id="breadcrumb-top">&nbsp;<a href="index.html">PREMIS Home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="topbreadcrumb" --><span class="selected">Changes</span><!-- InstanceEndEditable --></div>
+<a name="skip_menu"></a>
+<div id="official">Official Web Site&nbsp;&nbsp;</div>
+<div id="content">
+  <!-- InstanceBeginEditable name="content" -->
+<h1>Changes and corrections to PREMIS data dictionary and schemas in version 2.0 </h1>
+<p>This document records corrections and changes
+  that were approved  for version 2.0 of the <a href="http://www.oclc.org/research/projects/pmwg/premis-final.pdf">PREMIS Data Dictionary</a> and <a href="http://www.loc.gov/standards/premis/schemas.html">PREMIS schemas</a>. It does not include all stylistic changes or all changes to supporting documentation. The <a href="http://www.loc.gov/standards/premis/premis-editorial-committee.html">PREMIS Editorial Committee</a>  released the revised data dictionary on April 3, 2008. The PREMIS schema was also released as a draft for review at that time. </p>
+<h2>Approved changes (Data dictionary and schemas)</h2>
+<ul>
+  <li>Add clarification about repeatability of identifiers: objectIdentifier
+    and agentIdentifier are repeatable because they may be defined and known
+    outside the repository, and thus may have multiple identifiers; eventIdentifier
+    and permissionStatementIdentifier are defined only inside the repository
+    and should not be repeatable. </li>
+  <li>Add an additional eventType suggested value for &quot;creation = the act of creating a new object&quot;</li>
+  <li>Clarify difference between &quot;checksum&quot; and &quot;messageDigest&quot;</li>
+  <li>Allow for use of  significantProperties   at the representation level;  consider additional structure under significantProperties. </li>
+  <li>Introduce a numbering system to be used for navigation for each semantic
+    unit in the data dictionary. 
+    The numbering system will be grouped by  entity types: Object semantic units
+    will be 1. and Event Semantic Units will be 2. If Business rules are added,
+    they will be 5. The numbers can be added as comments within the Schema.</li>
+  <li>Change relatedObjectSequence to optional; it is  now mandatory but  does not apply to derivative relationships.</li>
+  <li>Make changes to preservationLevel. It will be optional, repeatable, and become a container with the following subunits: preservationLevelValue, preservationLevelRole, preservationLevelRationale, preservationLevelDateAssigned</li>
+  <li>Change relatedEventIdentification to optional and specify that for derivative relationships it must be recorded </li>
+  <li>Clarify the difference between whole/part and parent/child relationships (in suggested values under relationshipSubtype) by using &quot;hasPart&quot; and &quot;isPartOf&quot; as suggested values </li>
+  <li>Revise the  data model to reflect relationships between entities more consistently with data dictionary semantic units in terms of bidirectional linking  </li>
+  <li>In situations where all subunits are optional within a mandatory container, add usage notes  to specify that at least one subunit must be present</li>
+  <li>Add a new optional semantic unit &quot;linkingObjectRole&quot; under linkingObjectIdentifier to disambiguate what role the object plays that is identified, e.g. &quot;source&quot; or &quot;outcome&quot; of an event</li>
+  <li>Clarify definitions and examples for contentLocationType and contentLocationValue to show that file system locations as well as URLs may be recorded</li>
+  <li>Make storageMedium applicable to bitstreams (but optional)</li>
+  <li>Revise Rights entity to allow for wider scope of rights statements; distinguish between rights based on copyright, licenses, or statutes (based on <a href="http://www.loc.gov/standards/premis/Rights-in-the-PREMIS-Data-Model.pdf">Karen Coyle's report</a>) </li>
+  <li>Under signatureInformation remove internal structure of keyInfo and handle in schema to allow for use of XML signature elements</li>
+  <li>Include a discussion of how to use controlled vocabularies; the XML schemas will provide a mechanism for identifying the vocabulary used (coming after first official release of revised schema)</li>
+  <li>Add note that persistentIDs are recommended, but that a particular identifier scheme is not specified </li>
+  <li>Change swVersion to not repeatable at file level </li>
+  <li>Change storage (container) to optional for bitstreams</li>
+  <li>Clarify how objectCharacteristics apply to representations by adding a relationship subtype which specifies that a file functions also as a representation. This mechanism will also be used to specify originalName for the file that also functions as the representation</li>
+  <li>Clarify the relationship between formatDesignation and formatRegistry; make format repeatable</li>
+  <li>Add conventions for indicating different types of date conventions. Among other things  there is a need to specify no end date, i.e. that it is open-ended. Convention used will be &quot;OPEN&quot; in &lt;endDate&gt;. See: <a href="http://www.loc.gov/standards/datetime/ ">http://www.loc.gov/standards/datetime/ </a></li>
+  <li>Implement a registry for controlled vocabularies (see also under schemas below). </li>
+  <li>Allow for extensibility for the following PREMIS semantic units:
+    <ul>
+      <li>significantProperties (Object entity)</li>
+      <li>objectCharacteristics (Object entity)</li>
+      <li>creatingApplication (Object entity)</li>
+      <li>environment (Object entity)</li>
+      <li>signatureInformation (Object entity)</li>
+      <li>eventOutcomeDetail (Event entity)</li>
+      <li>rights (Rights entity)</li>
+    </ul>
+  </li>
+  <li>Define a container for additional object characteristics specific to format type. Data from externally developed schemas will be used (see above under objectCharacteristics extensibility)</li>
+  <li>Make storageMedium optional <br>
+  </li>
+</ul>
+<h2>&nbsp;</h2>
+<h2>Approved changes (schemas only)</h2>
+<ul>
+  <li>All those above under data dictionary will be changed in schemas (if applicable) </li>
+  <li> relatedEventSequence  is optional in DD and mandatory in the schema; it will be changed to optional in the schema </li>
+  <li>Allow for more control and extensibility in specifying object categories by allowing for validation of appropriate elements by object category (i.e. representation, file, bitstream) </li>
+  <li>Implement mechanism for specifying use of controlled vocabularies. The Library of Congress as PREMIS Managing Agency will make PREMIS-developed controlled vocabularies available (and others as requested). This will be available in version 2.1, after the initial release of version 2.0 </li>
+  <li>Define elements as global so that they can be reused in other XML schemas.</li>
+  <li>Combine separate PREMIS schemas from version 1.1 into one schema. Since subelements object, event, agent and rights are defined globally, they may be use separately as in the previous version. </li>
+  <li>Include definitions for alternate types of date expressions, including ISO 8601 basic format (without hyphens) and conventions for special types of dates (open, questionable, etc. dates) </li>
+</ul>
+<h2>&nbsp;</h2>
+<p><br>
+    </p>
+<!-- InstanceEndEditable --></div>
+<div id="breadcrumb-bottom">&nbsp;<a href="index.html">PREMIS Home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="bottombreadcrumb" --><span class="selected">Changes</span><!-- InstanceEndEditable --></div>
+<div id="white-bottom"></div>
+<div id="gold-bottom"></div>
+<div class="gray"></div>
+</td>
+</tr>
+
+</table>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td width="357"><div class="sitenav"><a href="http://www.loc.gov/">The
+          Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a></div>
+      <br>
+  <span class="sitenav">
+  <!-- #BeginDate format:Am1 -->January 6, 2011<!-- #EndDate -->
+  </span></td>
+    <td width="336" align="center" class="sitenav"><a href="http://www.loc.gov/homepage/legal.html">Legal</a> | <a href="http://www.loc.gov/global/disclaim.html">External Link Disclaimer</a></td>
+<td width="72" align="right"><div class="contactus"><a href="contact-premis.php">Contact Us</a></div></td>
+</tr></table>
+</body>
+<!-- InstanceEnd --></html>

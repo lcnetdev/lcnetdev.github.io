@@ -1,0 +1,350 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/premis.dwt" codeOutsideHTMLIsLocked="false" --><head>
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Subpage_Title : PREMIS (Preservation metadata) - PREMIS: Preservation Metadata Maintenance Activity (Library of Congress)</title>
+<!-- InstanceEndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link type="text/css" media="print" href="premis-print.css" rel="stylesheet">
+<style type="text/css" media="screen">
+@import url(premis-base.css);
+</style>
+<meta http-equiv="Content-Language" content="en-us">
+<link rel="shortcut icon" type="image/x-icon" href="/images/fav.ico">
+<!-- InstanceBeginEditable name="head" --><meta name="keywords" content="schemas premis preservation metadata maintenance activity official schema data dictionary implementation governance implementor">
+<meta name="description" content="Subpage_Title : PREMIS (Preservation metadata) - PREMIS: Preservation Metadata Maintenance Activity (Library of Congress)">
+<style type="text/css">
+<!--
+.style2 {font-size: 10pt}
+-->
+</style>
+<!-- InstanceEndEditable -->
+</head>
+
+<body>
+<form action="http://search.loc.gov:8765/query.html" accept-charset="utf-8" name="seek1" method="get">
+<input type="hidden" name="col" value="loc">
+<input type="hidden" name="sc" value="0">
+<input type="hidden" name="ws" value="0">
+<input type="hidden" name="la" value="en">
+<input type="hidden" name="qm" value="0">
+<input type="hidden" name="st" value="1">
+<input type="hidden" name="nh" value="10">
+<input type="hidden" name="lk" value="1">
+<input type="hidden" name="rf" value="0">
+<input type="hidden" name="oq" value="">
+<input type="hidden" name="si" value="0">
+<input type="hidden" name="rq" value="0">
+<input type="hidden" name="qc" value="">
+<table align="center" class="header" cellpadding="0" cellspacing="0" border="0"><tr><td width="475"><a id="skip" href="#skip_menu">&nbsp;</a>
+<div class="sitenav"><a href="http://www.loc.gov/">The Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a></div></td>
+<td width="116"><select name="qp" tabindex="1">
+<option value="url:/standards" selected>Standards Pages</option>
+<option value="">All Library Pages</option>
+</select></td><td width="117" align="right"><input type="text" name="qt" id="keyword" size="18" value="" tabindex="2"></td>
+<td width="67" align="right"><input name="search_button" type="image" id="search_button" value="SEARCH" src="images/search.gif" tabindex="3" alt="search"></td>
+</tr></table></form>
+<table align="center" class="layout" cellpadding="0" cellspacing="0"><tr><td>
+<div id="graphic"><a href="index.html"><img src="images/premis-text2.gif" alt="PREMIS (Preservation Metadata, Data Dictionary Maintenance Activity)" width="600" height="50" border="0"></a></div>
+<div id="gold-top"></div>
+<div id="breadcrumb-top">&nbsp;<a href="index.html">PREMIS Home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="topbreadcrumb" --><a href="ICDAT2006/index.html">ICDAT2006</a><!-- InstanceEndEditable --></div>
+<a name="skip_menu"></a>
+<div id="official">Official Web Site&nbsp;&nbsp;</div>
+<div id="content">
+  <!-- InstanceBeginEditable name="content" -->
+  <h1>PREMIS Date/Time</h1>
+  <h2 align="center"><strong><br />
+    April 2008</strong></h2>
+  <p>&nbsp;</p>
+  <hr/>
+  <p><a href="http://www.loc.gov/standards/premis/draft-schemas-2-0/premis-v2-0.xsd">PREMIS
+    Draft 2.0 Schema </a>&nbsp;| <a href="http://www.loc.gov/standards/premis/draft-schemas-2-0/edtf/extendedDateTime.xsd">extendedDateTime
+      Schema</a> &nbsp;| <a href="http://www.loc.gov/standards/premis/draft-schemas-2-0/edtf/extendedDateTimeTester.xsd">extendedDateTime
+        Schema Tester</a> | <a href="http://www.loc.gov/standards/premis/draft-schemas-2-0/edtf/extendedDateTimeTester.xml">extendedDateTime
+          Schema Testfile</a></p>
+  <hr/>
+  <p>This note describes the date/time definition included in the PREMIS
+    schema: the problem/background, approach, requirements, analysis,&nbsp;solution,
+    and future plans. </p>
+  <h3>Problem/Background</h3>
+  <p>There is no standard date/time format that meets the needs of  various
+    well-known XML metadata schemas, for example MODS, METS, PREMIS, etc. </p>
+  <p>W3C XML Schema built-in types xs:date and xs:datetime are inadequate. For
+    example, the date 2001-02-03 is a valid xs:date value, but 20010203, without
+    the hyphens, is not, even though it is a valid ISO 8601 date. This is a choice
+    that W3C made when defining xs:date: the hyphenated form was chosen and the
+    non-hyphenated form excluded. Similarly, for xs:dateTime, 2001-02-03T09:30:01
+    is valid, but&nbsp; 2001-02-03T093001, without the colons in the time, is
+    not (even thought it is a valid ISO 8601 date/time).&nbsp; And xs:date does
+    not allow just the year and month (without the day), or just the year, or
+    a date range (even though ISO 8601 supports all of these). </p>
+  <p> Many dates are coded in database records without hyphens (and conformant
+    with ISO 8601). It
+    is a burden to have to insert hyphens when extracting a date from a database
+    record to insert into an xml record and it should not be necessary.&nbsp;&nbsp;Times
+    are often encoded without colons.&nbsp; Year/month (without the day) needs
+    to be represented, as do date ranges.&nbsp; And there are additional requirements
+    (discussed below) that extend even beyond ISO 8601. </p>
+  <p> For many years there has been discussion
+    of developing a reasonably comprehensive date/time definition to meet the
+    needs of the bibliographic community, and submitting it either
+    for standardization or some other mode of formalization (a W3C note for example,
+    or a NISO Profile), and perhaps writing a schema as proof of concept.&nbsp;&nbsp; As
+    a preliminary step, a fairly simple date/time definition
+    has been developed for the PREMIS schema and is described below. This definition
+    could be the starting point for a more general date/time standard. </p>
+  <h3><strong>Approach</strong></h3>
+  <p> The definition should be&nbsp;both a profile of and&nbsp; extension to
+    ISO 8601.&nbsp;&nbsp;</p>
+  <ul type="disc">
+    <li> A profile, because:
+      <ul>
+          <li>It would include relevant/necessary features of 8601 only, discarding
+            unnecessary features; and </li>
+        <li>It would prescribe these features in a manner compatible with 8601.</li>
+      </ul>
+    </li>
+    <li>An Extension, because:
+      <ul>
+          <li>It would not, strictly speaking, be a profile of 8601, since
+            it would include features that are not in 8601.&nbsp; So in this sense
+            it would extend 8601.&nbsp;&nbsp; </li>
+      </ul>
+    </li>
+  </ul>
+  <p>If this specification were to become popular and widely deployed, these
+    extensions  might eventually be proposed to ISO for addition to 8601. By
+    keeping the specification as compatible with 8601 as possible, 
+    the likelihood is increased that the extensions would be taken seriously. </p>
+  <p><strong>NOTE: </strong><i>There is an Internet Draft, <a href="http://tools.ietf.org/html/draft-kunze-temper-01">Temporal
+    Enumerated Ranges (TEMPER)</a>, which addresses some of the same concerns.&nbsp; TEMPER
+    was considered as a possible solution. However TEMPER  diverges considerably
+    from ISO 8601, to the extent that a solution based on the approach outlined
+    above, using TEMPER, is not possible.</i>&nbsp;This solution does use mechanisms
+    similar to TEMPER where appropriate. </p>
+  <h3><strong>Requirements</strong></h3>
+  <p> This is a partial list of known requirements; it is not claimed to be complete,
+    but it is the set that the current draft schema addresses. </p>
+  <ol>
+    <li> The &quot;basic&quot; option in ISO 8601, i.e. YYYYMMDD without hyphens,
+      and HHMMSS without colons. </li>
+    <li>BCE dates.</li>
+    <li>Time zones. </li>
+    <li>Year and month only (no day of month), or year only.</li>
+    <li>Questionable dates. E.g. 1992? would mean &quot;possibly&quot; the year
+      1992, but not &quot;definitely&quot;.</li>
+    <li>Approximate dates. E.g. 1992~ would mean &quot;approximately&quot; the
+      year 1992.</li>
+    <li>Uncertain dates. E.g. 199? would mean some year in the 1990s, but not
+      certain which year; 1999-?? would mean some month in 1999, 199901?? would
+      mean some day in the month of 1999-01)</li>
+    <li>Date range (start and end).</li>
+    <li>End date &ldquo;OPEN&rdquo; in a date range. </li>
+    <li>Start and/or end date &quot;UNKNOWN&quot; in a date range. </li>
+  </ol>
+  <h3><strong>Analysis</strong></h3>
+  <p>Requirement (1) is to allow raw data to be extracted and put into xml without
+    conversion. It is not intended to subject all data to this requirement, only
+    data that is typically encountered in database records that
+    needs to be converted to XML (data that conforms to ISO 8601 but
+    hyphens/colons are not included).&nbsp;For
+    data where conversion is not an issue, and which is handled by xs:date or
+    xs:dateTime, these two built-in types are preferred, because built-in validation
+    is provided. </p>
+  <p>For example, BCE dates (2) are not commonly found in bibliographic metadata,
+    they are mostly original data, so conversion is not a major issue,
+    and so representing them with hyphens is acceptable. The same holds for time
+    zones (3). BCE dates and time zones are handled by xs:date and xs:dateTime,
+    so neither need be treated by any special schema logic, they can be entered
+    as xs:date and xs:dateTime.</p>
+  <p>Year-and-month-only or year-only
+    (4), although supported by ISO 8601, are not supported
+    by xs:date. In fact  their use in conjuction
+    with the additional requirements - questionable (5), approximate (6), or
+    uncertain (7) dates - is not even supported by ISO 8601. </p>
+  <p>Similarly,
+    ISO 8601 supports ranges (8) though xs:date does not, and similarly, ISO
+    does not support it in conjuction with the additional requirements: &quot;OPEN&quot; (9)
+    and
+    &quot;UNKNOWN&quot; (10). </p>
+  <p>But none of these additional requirements, (4) through (7), apply
+    to dateTime.&nbsp;&nbsp;  So a regular expression or pattern developed for
+    date requirements will have very different features than one developed for
+    date/time.&nbsp; And the special requirements for range don't apply to date
+    or date/time. So one or more patterns for date, one or more for
+    date/time, and one or more for range, are needed. </p>
+  <p> The right number of patterns of course is a subjective design decision:
+    one large complex pattern, or several smaller, simpler
+    patterns. &nbsp;Too few patterns increase the complexity of each individual
+    pattern. More patterns increases overall complexity.&nbsp; In any case, simplicity
+    comes at the expense of decreased validation power. &nbsp;</p>
+  <p>For this solution, two patterns for date, and one each for date/time and
+    range are defined. This set of four patterns is combined as a union (xs:union)
+    with xs:date and xs:dateTime.&nbsp;Thus any string validates if it conforms
+    to one of these six types.</p>
+  <h3>Patterns</h3>
+  <h3>&nbsp;</h3>
+  <h5><b>patterns For Date </b></h5>
+  <blockquote>
+    <p>The key issue with dates is hyphens. </p>
+    <p>ISO 8601 requires a hyphen for year-month (with no day). Hyphens are optional
+      for year/month/day.&nbsp;&nbsp; The fact that 8601 requires hyphens for
+      year-month doesn't present a big problem, that is, with regard to requirement
+      (1) because most if not all of the date data of concern (data for conversion)
+      is of the form year/month/date. To be as compatible with 8601
+      as possible, all dates of the form year-month will
+      include the hyphen.&nbsp; For dates where the day is included, the form
+      with no hyphens is accomodated; &quot;with hyphens&quot;
+      is supported via xs:date so no special schema logic is needed. </p>
+    <p>The two date patterns are: </p>
+    <ul>
+      <li>year (yyyy) or year-month (yyyy-mm) where
+        the last or last two digits of year may be '?' (199? means some year
+        from 1990 to 1999; 19?? means some year
+        from 1900 to 1999), or month may be '??' ( 2004-?? &quot;means some
+        month in 2004&quot;), and the entire string may end with '?' or '~' for &quot;uncertain&quot; or &quot;approximate&quot;. <br />
+      </li>
+      <li>yearMonthDay - yyyymmdd, where 'day' may be
+        '??' so '200412??' means &quot;some day during the month of 12/2004&quot;.  
+        The whole string may be followed by '?' or '~' .          
+        &nbsp;&nbsp; hyphens are not allowed for this pattern. Year-month-day
+        with hyphens will validate via xs:date. It seems unnecessary to support
+        year-month-date with hyphens along with the additional requirements;
+        for year-month-date with the additional requirements the non-hyphen form
+        should suffice.<br />
+      </li>
+    </ul>
+    <p>These two patterns (written in the XML schema pattern syntax) respectively
+      are: </p>
+    <p>&lt;xs:pattern value=&quot;\d{2}(\d{2}|\?\?|\d(\d|\?))(-(\d{2}|\?\?))?~?\??&quot;/&gt;</p>
+    <p>&lt;xs:pattern value=&quot;\d{6}(\d{2}|\?\?)~?\??&quot;/&gt;</p>
+  </blockquote>
+  <h5><b>pattern For Time </b></h5>
+  <p>One pattern is defined for date/time (with T separator):'yyyymmddThhmmss'.
+    hyphens in date and colons in time are not allowed for this pattern. </p>
+  <blockquote>
+    <p>The pattern is:<br />
+      &lt;xs:pattern value=&quot;\d{8}T\d{6}&quot;/&gt; </p>
+  </blockquote>
+  <h5><b>pattern For Range </b></h5>
+  <p> One pattern is defined for range: for years - 'yyyy/yyyy'; for year/month
+    - yyyy-mm/yyyy-mm. Beginning or end of range value may be 'UNKNOWN'. End
+    of range value may be 'OPEN'. hyphens mandatory when month is present. </p>
+  <blockquote>
+    <p>The pattern is:<br />
+      &lt;xs:pattern value=&quot;((\d{4}(-\d{2})?)|UNKNOWN)/((\d{4}(-\d{2})?)|UNKNOWN|OPEN)&quot;/&gt;</p>
+  </blockquote>
+  <p>None of these patterns  will provide more than rudimentary validation.&nbsp; They
+    can enforce for example that the date has eight digits, the time has six
+    digits, certain masking characters, the words &ldquo;OPEN&rdquo; or &ldquo;UNKNOWN&rdquo; in
+    a range, but a pattern cannot validate&nbsp; (without excessive complexity)
+    that the month is between 1 and 12 and the day between 1 and 31, much less
+    that the day is consistent with the month (e.g.&nbsp; that if the month is
+    04 then the day must be 30 or less), and so on. These are things that xs:date
+    does very well.&nbsp; So xs:date and xs:dateTime should be used whenever
+    none of the special features is needed that these do not support. </p>
+  <h3> Solution</h3>
+  <p> The schema fragment shown below is part of the  Premis 2.0 schema.&nbsp; The
+    date/time definition is named the &quot;Extended Date/Time Format&quot; , EDTF.&nbsp;The
+    schema defines a simple type:edtfSimpleType. Any element that encodes date
+    or date/time data is assigned this type. This means it can be encoded according
+    to any of the simple types which comprise the union that defines edtfSimpleType;
+    that is, it may be encoded as xs:date, xs:dateTime, or as any of the four patterns
+    defined by the simple type edtfRegularExpressions.</p>
+  <table width="901" border="1">
+    <tr>
+      <td width="891" bgcolor="#FFFFCC"><p>***********************************date/time
+        Definition ****************</p>
+         
+        <p>Extended Date/Time Format: edtf</p>
+        <p>************************* edtfSimpleType</p>
+        <p>edtfSimpleType is the union of three simple types - xsDate, xs:dateTime,
+          and edtfRegularExpressions. (&quot;union&quot; means that any string
+          conforming to any one of the types in the union will validate.) xs:date
+          and xs:dateTime are built-in W3Cschema types. edtfRegularExpressions
+          is a set of four regular expressions which are described below. So any
+          string that conforms to one of the two built-in types or any of the four
+          regular expressions will validate. <br />
+          --&gt;<br />
+          &lt;xs:simpleType name=&quot;edtfSimpleType&quot;&gt;<br />
+          &lt;xs:union memberTypes=&quot;xs:date xs:dateTime edtfRegularExpressions&quot;/&gt;<br />
+          &lt;/xs:simpleType&gt;<br />
+          &lt;!-- <br />
+          ******** edft<br />
+          --&gt;<br />
+          &lt;xs:simpleType name=&quot;edtfRegularExpressions&quot;&gt;<br />
+          &lt;xs:restriction base=&quot;xs:string&quot;&gt;<br />
+          &lt;!-- <br />
+          The following pattern is for year (yyyy) or year-month (yyyy-mm) <br />
+          The last or last two digits of year may be '?' meaning &quot;one year
+          in that range but not sure which year&quot;, for example 19?? means some
+          year from 1990 to 1999. Similarly month may be '??' so that 2004-?? &quot;means
+          some month in 2004&quot;. And the entire string may end with '?' or '~'
+          for &quot;uncertain&quot; or &quot;approximate&quot;.<br />
+          Hyphen must separate year and month.<br />
+          --&gt;<br />
+          &lt;xs:pattern value=&quot;\d{2}(\d{2}|\?\?|\d(\d|\?))(-(\d{2}|\?\?))?~?\??&quot;/&gt;<br />
+          &lt;!-- <br />
+          The following pattern is for yearMonthDay - yyyymmdd, where 'dd' may
+          be '??' so '200412??' means &quot;some day during the month of 12/2004&quot;. <br />
+          The whole string may be followed by '?' or '~' to mean &quot;questionable&quot; or &quot;approximate&quot;.
+          hyphens are not allowed for this pattern. <br />
+          --&gt;<br />
+          &lt;xs:pattern value=&quot;\d{6}(\d{2}|\?\?)~?\??&quot;/&gt;<br />
+          &lt;!-- </p>
+        <p>The following pattern is for date and time with T separator:'yyyymmddThhmmss'. <br />
+          hyphens in date and colons in time not allowed for this pattern. <br />
+          --&gt;<br />
+          &lt;xs:pattern value=&quot;\d{8}T\d{6}&quot;/&gt;<br />
+          &lt;!-- </p>
+        <p>The following pattern is for a date range. in years: 'yyyy/yyyy'; or
+          year/month: yyyy-mm/yyyy-mm. Beginning or end of range value may be 'UNKNOWN'.
+          End of range value may be 'OPEN'.<br />
+          hyphens mandatory when month is present. <br />
+          --&gt;<br />
+          &lt;xs:pattern value=&quot;((\d{4}(-\d{2})?)|UNKNOWN)/((\d{4}(-\d{2})?)|UNKNOWN|OPEN)&quot;/&gt;<br />
+          &lt;!-- --&gt;<br />
+          &lt;/xs:restriction&gt;<br />
+          &lt;/xs:simpleType&gt;</p></td>
+    </tr>
+  </table>
+  <h3><strong> Future Plans</strong> <strong>&nbsp;</strong> </h3>
+  <p>For now, this approach is suggested for PREMIS, and can benefit from further
+    development within the PREMIS community and other communities.&nbsp; Currently
+    it is written inline, in the PREMIS schema.  Once the definition
+    matures it could be incorporated into other schemas,
+    for example, MODS.&nbsp; At that point it could become a utility schema maintained
+    by LC and referenced externally by PREMIS and MODS.
+    At some point it may be proposed for standardization,
+    perhaps within a future version of ISO 8601, and perhaps even proposed to W3C
+    for adoption as an XML schema type &ndash; the benefits of
+    this are clear, among them: strict validation would be supported.
+    &nbsp;</p>
+  <hr/>
+  <span class="style2">See the <a href="http://www.loc.gov/standards/premis/draft-schemas-2-0/premis-v2-0.xsd">PREMIS
+Draft 2.0 Schema</a>. The Extended Date Time definition has been extracted into&nbsp;an <a href="http://www.loc.gov/standards/premis/draft-schemas-2-0/edtf/extendedDateTime.xsd"> extendedDateTime
+Schema</a>, and an <a href="http://www.loc.gov/standards/premis/draft-schemas-2-0/edtf/extendedDateTimeTester.xsd">extendedDateTime
+Schema Tester</a>&nbsp;&nbsp;is provided along with an XML file (<a href="http://www.loc.gov/standards/premis/draft-schemas-2-0/edtf/extendedDateTimeTester.xml">extendedDateTime
+Schema Testfile</a>) of values that
+validate against the test schema.  </span>
+  <p>&nbsp;</p>
+<!-- InstanceEndEditable --></div>
+<div id="breadcrumb-bottom">&nbsp;<a href="index.html">PREMIS Home</a>&nbsp;&raquo;&nbsp;<!-- InstanceBeginEditable name="bottombreadcrumb" --><a href="ICDAT2006/index.html"></a><!-- InstanceEndEditable --></div>
+<div id="white-bottom"></div>
+<div id="gold-bottom"></div>
+<div class="gray"></div>
+</td>
+</tr>
+
+</table>
+<table align="center" class="footer" cellpadding="0" cellspacing="0" border="0"><tr valign="top"><td width="357"><div class="sitenav"><a href="http://www.loc.gov/">The
+          Library of Congress</a>&nbsp;&raquo;&nbsp;<a href="http://www.loc.gov/standards/">Standards</a></div>
+      <br>
+  <span class="sitenav">
+  <!-- #BeginDate format:Am1 -->October 15, 2010<!-- #EndDate -->
+  </span></td>
+    <td width="336" align="center" class="sitenav"><a href="http://www.loc.gov/homepage/legal.html">Legal</a> | <a href="http://www.loc.gov/global/disclaim.html">External Link Disclaimer</a></td>
+<td width="72" align="right"><div class="contactus"><a href="contact-premis.php">Contact Us</a></div></td>
+</tr></table>
+</body>
+<!-- InstanceEnd --></html>
