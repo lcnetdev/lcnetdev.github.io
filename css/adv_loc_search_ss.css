@@ -1,0 +1,537 @@
+/* CSS Document */
+body {
+	color:#333;
+	margin:0px;
+	padding:0px;
+	text-align:center;
+	background: #fff;
+	font:100% verdana, helvetica, sans-serif;
+}
+h1 {
+	margin: 0px;
+	font: bold 90%/110% Georgia, "Times New Roman", Times, serif;
+	color: #333;
+}
+h2 {
+	font: bold 90%/95% Georgia, "Times New Roman", Times, serif;
+	color: #333;
+	margin:0px;
+	padding:0px;
+	background: transparent;
+}
+h3 {
+	font: bold 90%/95% Georgia, "Times New Roman", Times, serif;
+	color: #333;
+	margin:0px;
+	padding:0px;
+}
+h4 {
+	font: bold 90%/95% verdana, helvetica, sans-serif;
+	color: #333;
+	margin:0px;
+	padding:0px;
+}
+h5 {
+	font: bold 80%/85% verdana, helvetica, sans-serif;
+	color: #333;
+	margin:0px;
+	padding:0px;
+}
+h6 {
+	font: bold 90%/95% verdana, helvetica, sans-serif;
+	color: #333;
+	margin:0px;
+	padding:0px;
+}
+p {
+	font:80% verdana, helvetica, sans-serif;
+	margin:0px;
+	text-align: left;
+	padding:0px;
+}
+a {
+	color:#036;
+	font-family: verdana, helvetica, sans-serif;
+	font-weight:600;
+	text-decoration: underline;
+}
+
+a#skip {
+	position: absolute;
+	top:-100px;
+}
+a:link {
+	color: #036;
+	text-decoration: underline;
+}
+a:visited {
+	color:#036;
+	text-decoration: underline;
+	font-weight: 200;
+}
+a:hover {
+	color:#333;
+	text-decoration: underline;
+}
+ul {
+	list-style: decimal;
+	margin: 0px;
+	padding: 0px;
+	font-size: 90%;
+}
+ol li {
+	list-style-type: decimal;
+	font-size: 85%; 
+}
+ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	font-size: 90%;
+}
+li {
+	font: 100% verdana, helvetica, sans-serif;
+	padding-left: 0px;
+	list-style: none;
+}
+img {
+	border: 0px solid #333;
+}
+#container {
+	width:765px;
+	height: auto;
+	margin-right:auto;
+	margin-left:auto;
+	margin-top:0px;
+	margin-bottom:0px;
+	padding:0px;
+	background-color: #fff; 
+	border: 1px solid #999;
+	color:#333;
+}
+/*  top navigation    */	
+div#topnav	{
+	height: 55px;
+	width: 765px;
+	margin: 0;
+	padding-top: 0px;
+	border-bottom: 1px solid #c2e6c5;
+	background: transparent url(http://www.loc.gov/images/line_blue.gif) top left no-repeat;
+}
+div#topnav ul#menu	{
+	height: 55px;
+	width: 765px;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+div#topnav ul#menu li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	position: absolute;
+	top: -1px;
+}
+ul#menu li, ul#menu a {
+	height: 55px;
+	padding-top:0px;
+	display: block;
+}
+#logo_lc { 
+	background: transparent url(http://www.loc.gov/images/logo_lc.gif) 0px 3px no-repeat;
+	left: 0px;
+	width: 217px;
+}
+#logo {	
+	background: transparent url(http://www.loc.gov/images/logo_search.gif) 0px 3px no-repeat;
+	left: 218px;
+	width: 89px;
+}	
+/* bread crumb  navigation  */
+#crumb_nav {
+	clear: both;
+	height: 30px;
+	padding: 0px 0px 0px 15px;
+	color: #fff;
+	background-color: #000;
+	border-top: 1px solid #999;
+	border-bottom: 1px solid #333;
+}
+#crumb_nav #crumb {
+	color: #fff;
+	text-align: left;
+	padding: 10px 0px 0px 0px;
+	font: 70% Verdana, Helvetica, sans-serif;
+}
+#crumb_nav #crumb a {
+	color: #ccc;
+	font-size: 95%;
+	font-weight: 100;
+}
+#crumb_nav #crumb span {
+	color: #fff;
+	font: 80% Verdana, Helvetica, sans-serif;
+	font-weight:700;
+}
+/* crumb nav ends*/
+#content {
+	width: 745px;
+	height: auto;
+	margin: 10px;
+	font:90% verdana, helvetica, sans-serif;
+	background-color: #fff;
+	text-align:left;
+	padding: 0px;
+}
+
+/* content rules */
+#page_head {
+	width: auto;
+	height: 55px;
+	margin: 0px 0px 10px 205px;
+	font:90% verdana, helvetica, sans-serif;
+	background: transparent url(http://www.loc.gov/images/page_head.gif) top left no-repeat;
+	text-align:left;
+	padding: 0px;
+}
+#page_head1 {
+	width: auto;
+	height: 40px;
+	margin: 0px 0px 10px 205px;
+	font:90% verdana, helvetica, sans-serif;
+	text-align:left;
+	padding: 0px;
+	height: 38px;
+	background: transparent url(http://www.loc.gov/images/page_head1.gif) top left no-repeat;
+}
+#page_head2 {
+	width: auto;
+	height: 40px;
+	margin: 0px 0px 10px 10px;
+	font:90% verdana, helvetica, sans-serif;
+	text-align:left;
+	padding: 0px;
+	height: 38px;
+	background: transparent url(http://www.loc.gov/images/page_head2.gif) top left no-repeat;
+}
+#page_head h1 {
+	color: #900;
+	padding: 5px 10px 5px 10px;
+	margin: 0px;
+	font-size: 150%;
+}
+#page_head h1 span {
+	color: #000;
+	font-size:60%;
+	font-weight: 200;
+}
+#page_head h1 span a {
+	font-size:90%;
+}
+#page_head1 h1 {
+	color: #900;
+	padding: 10px 10px 5px 15px;
+	margin: 0px;
+	font-size: 150%;
+}
+#page_head2 h1 {
+	color: #900;
+	padding: 5px 10px 10px 15px;
+	margin: 0px;
+	font-size: 150%;
+}
+/* no left nav pages*/
+#main {
+	width: 731px;
+	height: auto;
+	margin: 0px 0px 0px 10px;
+	font:90% verdana, helvetica, sans-serif;
+	background: transparent url(http://www.loc.gov/images/main_bot.gif) bottom left no-repeat;
+	text-align:left;
+	padding: 0px 0px 10px 0px;
+}
+#main_top {
+	padding: 0px;
+	height: 5px;
+	background: transparent url(http://www.loc.gov/images/main_top.gif) top left no-repeat;
+	font-size:85%;
+	color: #666;
+}
+#main_mid {
+	padding: 0px 0px 0px 0px;
+	background: transparent url(http://www.loc.gov/images/main_mid.gif) 0px 0px repeat-y;
+}
+#main_mid h2#top {
+	padding: 10px 10px 5px 15px;
+	margin: 0px 1px 0px 1px;
+}
+#main_mid h2 {
+	padding: 5px 10px 5px 15px;
+	margin: 0px 1px 0px 1px;
+	color: #36c;
+	font-size: 110%;
+}
+#main_mid h2#search {
+	border-top: 0px solid #d4e9ff;
+	padding: 10px 10px 10px 15px;
+	margin: 0px 1px 0px 1px;
+	color: #36c;
+	font-size: 110%;
+}
+#main_mid h3 {
+	padding: 10px 10px 0px 15px;
+	margin: 0px;
+}
+#main_mid p  {
+	padding: 10px 10px 10px 15px;
+	margin: 0px 1px 0px 1px;
+}
+#main_mid p.top_nav  {
+	padding: 10px 10px 10px 15px;
+	margin: 0px 1px 0px 1px;
+	color: #666;
+	font-size: 95%;
+	font-weight: 600;
+}
+#main_mid p.top_nav a {
+	font-weight: 600;
+}
+*.back  {
+	background-color: #fffff4;
+	border-right: 1px solid #d4e9ff;
+	border-left: 1px solid #d4e9ff;	
+}
+#main_mid p a {
+	padding: 0px;
+	margin: 0px;
+	font-weight: 100;
+}
+#main_mid form#advanced {
+	padding: 0px 10px 10px 15px;
+	height:auto;
+	width: auto;
+	text-align: left;
+}
+#main_mid form {
+	padding: 0px 0px 0px 15px;
+	height:auto;
+	width: auto;
+}
+#main_mid form p {
+	padding: 0;
+	margin: 0;
+}
+#main_mid input {
+	margin: 0px;
+	padding: 0px;
+	width: auto;
+	font-size: 100%;
+}
+#main_mid form select {
+	background-color: #fff;
+	font-weight: normal;
+	color: #036;
+	margin: 5px 0px 0px 0px;
+	font-size: 90%;
+	border: 1px solid #666;
+}
+#main_mid label {
+	font-family: verdana, Helvetica, sans-serif;
+	font-size: 80%;
+	color: #666;
+}
+#main_mid form input.check {
+	margin:0px;
+	padding: 0px;
+	width: auto;
+}
+#main_mid form input.button {
+	background-color: #fff;
+	width: auto;
+	font-weight: 900;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color: #ff6600;
+	margin: 0px;
+	font-size: 12px;
+	border: 1px solid #ff6600;
+}
+#search_top {
+	padding: 0px;
+	margin: 0px;
+	background: transparent url(http://www.loc.gov/images/search_top.gif) top left no-repeat;
+	height: auto;
+}
+#search_body {
+	padding: 10px 0px 10px 0px;
+	height: auto;
+font-size: 110%;
+}
+#search_body h2 {
+	margin: 0px;
+	padding: 10px 10px 10px 10px;
+	font-size: 120%;
+	color: #36c;
+}
+/* begin search nav */
+#search_nav {
+	padding: 10px 0px 10px 0px;
+	width:auto;
+	margin-top: 10px;
+	border-top: 1px solid #d4e9ff;
+	border-bottom: 1px solid #d4e9ff;
+	font-size:95%;
+	color: #666;
+}
+#search_nav_bot {
+	padding: 10px 0px 5px 0px;
+	width:auto;
+	margin-top: 10px;
+	border-top: 1px solid #d4e9ff;
+	font-size:95%;
+	color: #666;
+}
+#search_nav a, #search_nav_bot a {
+	font-weight: 100;
+		font-size:95%;
+}
+#search_nav a.first, #search_nav_bot a.first {
+	padding-left: 15px;
+	font-weight: 100;
+}
+#search_nav span, #search_nav_bot span {
+	position: relative;
+	left: 230px;
+	font-size:95%;
+}
+#search_body p.response a {
+	font-size: 100%;
+	margin: 0px;
+	padding: 0px 10px 5px 10px;
+}
+#search_body p.question {
+	color: #f60;
+	margin: 0px;
+	padding: 0px 10px 10px 10px;
+}
+#search_body p.question a {
+	font-style:italic;
+}
+#search_body form {
+	width: 260px;
+	height: auto;
+	margin: 10px 0px 10px 0px;
+	text-align:right;
+	padding: 0px;
+	font-size: 90%;
+}
+#search_body form input#keyword {
+	width: 242px;
+	text-align:left;
+	margin: 0px 0px 0px -85px;
+	padding: 0px;
+	font-size: 100%;
+}
+#search_body form label a {
+	font-size: 95%;
+	font-weight: 100;
+}
+#search_body form input.button {
+	background-color: #fff;
+	font-weight: 900;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color: #f60;
+	margin: 0px;
+	font-size: 12px;
+	border: 1px solid #ff6600;
+}
+#search_body span {
+	color: #999;
+}
+#search_body img#up {
+	padding: 0px;
+	margin:0px;
+}
+#search_body span.highlight {
+	background-color: #ffffcc;
+	color: #000;
+	font-weight:200;
+	font-size: 100%;
+	font-family: verdana, helvetica, sans-serif;
+}
+#search_body span.highlight a {
+	color:#036;
+	text-decoration: underline;
+}
+
+/* search form for error page */
+
+#search_body_error form {
+width: auto;
+	height: auto;
+	margin: 5px 0px 10px 10px;
+	text-align:left;
+	padding: 0px;
+		border-bottom: 1px solid #d4e9ff;
+}
+#search_body_error form input#keyword {
+	width: 220px;
+	text-align:left;
+	margin: 0px 0px 0px 0px;
+	padding: 0px;
+	font-size: 100%;
+}
+#search_body_error form label {
+	font-size: 95%;
+	font-weight: 100;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+#search_body_error form input.button {
+	background-color: #fff;
+	font-weight: 900;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #ff6600;
+	margin: 0px 0px 2px 0px;
+	font-size: 12px;
+	border: 1px solid #ff6600;
+}
+#search_body_error p.response {
+	font-size: 100%;
+	margin: 0px;
+	padding: 0px 10px 5px 10px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+ul#search_body_error li  {
+	list-style-type: disc;
+	padding: 0px 2px 0px 2px;
+	margin: 0px 0px 0px 25px;
+	font-size: 95%;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+/* end error */
+
+/* end of content rules   */
+/*  footer rules */
+#footer {
+	clear: both;
+	font: 80% verdana, helvetica, sans-serif;
+	height: 30px;
+	text-align: left;
+	border-color: #005194;
+	border-width: 0px;
+	background: #efefef url(http://www.loc.gov/images/line_blue.gif) top left no-repeat;
+	padding: 15px 0px 0px 15px;
+}
+#footer a {
+	color:#666;
+	font-size: 80%;
+	font-family: verdana, helvetica, sans-serif;
+	font-weight: normal;
+	text-decoration:underline;
+}
+#footer a:hover {
+	color: #333;
+	font-size: 80%;
+	font-family: verdana, helvetica, sans-serif;
+	font-weight: normal;
+	text-decoration: underline;
+}

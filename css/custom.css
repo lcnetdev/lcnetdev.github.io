@@ -1,0 +1,553 @@
+/*********************   
+Custom Links
+*********************/
+a.a_custom:link,
+a.a_custom:visited {
+color: #f60;
+}
+a.a_custom:focus,
+a.a_custom:hover,
+a.a_custom:active {
+color: #900;
+}
+/* optional link inline with share tool */
+.link_opt {
+float:left;
+clear:left;
+padding: 1px 0 0 7px;
+}
+.link_opt a {
+padding: 0 0 0 15px;
+background: transparent url(/images/icon-opt.gif) left 1px no-repeat;
+}
+.link_opt a:link,
+.link_opt a:visited {
+color: #666;
+text-decoration: none;
+}
+.link_opt a:focus,
+.link_opt a:hover,
+.link_opt a:active {
+color: #000;
+text-decoration: none;
+}
+
+/*********************   
+Columns
+*********************/
+#col2_left.customW1 {width:169px;} 
+#col2_right.customW1 {width:342px;} /* 511 */
+
+/********************
+Custom table
+********************/
+table.cust-full {
+border-width: 0;
+margin: 5px 0;
+}
+table.cust-full th, table.cust-full td {
+border-width: 0;
+padding: 7px 7px;
+}
+table.cust-full th {
+background-color: #e6e4d7;
+background-color: #cbcbb9;
+}
+table.cust-full tr.alt td {
+background-color: #f7f6e4;
+}
+/* addon */
+table.valign_alt th {vertical-align:bottom;border-left:1px solid #fff;} 
+table.valign_alt th.first {border:none;} 
+table.valign_alt td {vertical-align:top;}
+
+table.cust-full th.sort {
+padding-left:15px;
+background:#e6e4d7 url(/images/sort-def.gif) 6px 100% no-repeat;
+background-color: #cbcbb9;
+cursor:pointer;
+}
+table.cust-full th.asc {
+padding-left:19px;
+background-image: url(/images/sort-on-up.gif);
+background-color: #666;
+color:#ccc;
+}
+table.cust-full th.desc {
+padding-left:19px;
+background-image: url(/images/sort-on-down.gif);
+background-color: #666;
+color:#ccc;
+}
+
+/********************
+multimedia feature 
+********************/
+/* multimedia feature  heading */
+#play {
+margin-bottom:1.25em;
+background:#ccc url(/images/mm_bg_play.gif) left top repeat-y;
+}
+#play h2 {
+background:#323232 url(/images/mm_bg_h2.png) left top repeat-x;
+margin-bottom:0;
+padding: 8px 7px;
+color:#dcdcdc;
+font-size:1.125em;
+position:relative;
+line-height:1em;
+}
+#play h2 span {
+right:7px;
+top:7px;
+position:absolute;
+background:transparent url(/images/mm_btn_r.png) 100% 50% no-repeat;
+font-size:10px;
+line-height:10px;
+overflow:hidden;
+padding-right:7px;
+}
+#play h2 span em {
+background:transparent url(/images/mm_btn_l.png) 0 50% no-repeat;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-style:normal;
+display:block;
+padding: 3px 0px 4px 7px;
+overflow:hidden;
+}
+#play h2 span a, #play h2 span a:visited {
+color:#bbb;
+text-decoration:none;
+padding: 10px 0;
+padding:0;
+}
+#play h2 span a:hover, #play h2 span a:focus {color:#fff;}
+
+/* multimedia feature content */
+#play .box-clip {
+background-color:#000;
+width:335px;
+padding:10px;
+float:left;
+}
+	#play .box-clip .clip {
+	float:left;
+	width:160px;
+	}
+	#play .box-clip .clip.first {margin-right:10px;}
+	#play .box-clip p {
+	margin-bottom: 0;
+	font-size:.9em;
+	color:#999;
+	text-align:right;
+	}
+	#play .box-clip img {
+	margin: 2px 0 4px 0;
+	}
+	#play .box-clip h3 {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:.9em;
+	font-weight:normal;
+	line-height: 1.25em;
+	color:#999;
+	}
+#play .box-list {
+background-color:#ccc;
+width:160px;
+padding:10px;
+float:left;
+font-size:.9em;
+}
+	#play .box-list a:link,
+	#play .box-list a:visited {
+	color: #333;
+	}
+	#play .box-list a:focus,
+	#play .box-list a:hover,
+	#play .box-list a:active {
+	color: #000;
+	}
+
+/********************
+vote leftnav - nbf 2010
+********************/
+#left_nav .vote {
+background: transparent url(/images/vote-bg.gif) 50% 0 no-repeat;
+}
+p#author-name {
+background: transparent url(/images/vote-rule.gif) 50% 0 no-repeat;
+text-align: center;
+margin: 17px 0 10px 0;
+padding-top:12px;
+}
+p#author-name strong {
+font-size: 1.2em;
+}
+
+/******************************
+multimedia video - nbf 2010
+*******************************/
+#videoBF {
+border:1px solid #000;
+margin-bottom:15px;
+background-color: #000;
+}
+#videoBF h2 {
+background:#323232 url(/images/videoBF_bg_h2.png) left top repeat-x;
+margin-bottom:0;
+padding: 8px 7px;
+color:#dcdcdc;
+font-size:1.125em;
+position:relative;
+line-height:1em;
+}
+a#playerBF {
+background-image:url(/swf/videoBgNoFlash.jpg);
+display:block;
+width:340px;
+height:255px;
+}
+
+
+/********************
+Jukebox - homepage
+********************/
+.img-w-btn {
+border:1px solid #d4e8ff;
+background-color:#eef7fe;
+text-align:center;
+padding:5px 3px 1px 3px;
+margin-bottom:1em;
+}
+.img-w-btn p {
+margin-bottom:5px;
+}
+
+/********************
+results - view options
+********************/
+a.pag-list,
+a.pag-gallery,
+a.pag-grid,
+a.pag-slide {
+padding: 0 0 0 16px;
+background-repeat: no-repeat;
+background-position: 0 0;
+background-color:transparent;
+margin-left:9px;
+vertical-align:middle;
+}
+a.pag-selected:link,
+a.pag-selected:visited,
+a.pag-selected:focus,
+a.pag-selected:hover,
+a.pag-selected:active {
+background-position: 0 -16px;
+color:#666;
+text-decoration:none;
+cursor:text;
+}
+a.pag-list {background-image: url(/img-std/i_list.gif);}
+a.pag-gallery {background-image: url(/img-std/i_gallery.gif);}
+a.pag-grid {background-image: url(/img-std/i_grid.gif);}
+a.pag-slide {background-image: url(/img-std/i_slideshow.gif);}
+
+
+/********************
+search results
+********************/
+#results {
+clear:both;
+}
+#results form {margin:0;}
+#results input, 
+#results select {
+font-size:11px;
+vertical-align:middle;
+}
+#results input.btn-std {
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:10px;
+}
+#results .nav-results {
+background-color:transparent;
+padding: 5px 7px;
+clear:both;
+}
+#results .nav-results p {
+margin-bottom:0;
+}
+#results .nav-results p.term {
+margin-bottom:1em;
+padding-bottom: 3px;
+background: transparent url(/images/dot.gif) 0 bottom repeat-x;
+}
+#results .nav-pag-top,
+#results .nav-pag-bot {
+background-color:#e5e5e5;
+padding: 5px 7px;
+clear:both;
+text-align:center;
+}
+#results .nav-pag-bot {margin-bottom: 1.25em;}
+	.pagination {
+	text-align:center;
+	}
+	.pagination a {
+	padding: 0 3px;
+	}
+	.pagination a.selected {
+	color:#333;
+	text-decoration:none;
+	cursor:text;
+	}
+	.pagination a.end {
+	color:#666;
+	text-decoration:none;
+	cursor:text;
+	}
+#results .nav-control {
+background-color:#f5f5f5;
+padding: 5px 7px;
+clear:both;
+overflow:hidden;
+}
+	#results .nav-control .view {
+	float:right;
+	text-align:right;
+	}
+#results .body-results {
+background:#fff;
+clear:both;
+padding: 7px 0 ;
+}
+	#results .body-results ul {
+	list-style:none;
+	padding:0;
+	margin:0;
+	clear:both;
+	overflow:hidden;
+	}
+	#results .body-results ul li {
+	padding:12px 7px 14px 7px;
+	clear:both;
+	margin: 0 0 0 0;
+	background: transparent url(/images/dot.gif) 0 bottom repeat-x;
+	}
+	#results .body-results ul li dl,
+	#results .body-results ul li dt,
+	#results .body-results ul li dd {
+	padding:0;
+	margin:0;
+	}
+	#results .body-results ul li dt {
+	margin-bottom:2px;
+	}
+		
+/********************
+Jukebox detail page
+********************/
+.rhs_searchbox {padding:10px;background-color:#ecf2f0;margin-bottom:2px;}
+.rhs_searchbox form {margin-bottom:0;}
+.rhs_gradbox {padding:10px;background:transparent url(/images/bg-rgsiderail.gif) repeat-x;}
+
+/********************
+searchnav
+********************/
+.search-term {
+padding: 0 7px 5px 7px;
+color:#666;
+}
+.search-ref {
+padding: 5px 7px;
+background:#ecf2f0;
+margin-bottom:10px;
+color:#666;
+}
+.del {
+vertical-align: middle;
+}
+#searchnav {
+width: 197px;
+margin-right:10px;
+margin-bottom: 1.25em;
+position: relative; 
+text-align: left;
+float:left;
+clear:left;
+background-color:transparent;
+}
+#searchnav table, 
+#searchnav form,
+#searchnav p,
+#searchnav dl,
+#searchnav ol,
+#searchnav ul {
+margin-bottom:0;
+}
+#searchnav .box {
+padding:10px 10px 11px 10px;
+margin:0;
+border:0;
+background:#ecf2f0 url(/images/dot-searchnav.gif) center top no-repeat;
+}
+#searchnav .top {
+background-image:none;
+}
+#searchnav .searchnavtitle {
+padding:18px 7px;
+border:0;
+margin-bottom:4px;
+background:none;
+background-color:#bcc7c1;
+text-align:center;
+}
+#searchnav .searchnavtitle h2 {
+color:#fff;
+margin-bottom:0;
+}
+#searchnav .searchbox {
+border:0;
+background:none;
+background-color:#c9d2cd;
+text-align:center;
+}	
+#searchnav ul {
+padding-left:1em;
+}
+#searchnav h3 {
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:1em;
+}
+#searchnav h3 a {
+color:#666;
+text-decoration:none;
+padding-left: 13px;
+background: transparent url(/images/arrow-accord.gif) left -10px no-repeat;
+}
+#searchnav h3.ui-state-active a {
+background-position: left 3px;
+}
+
+
+
+/********************
+Jukebox advanced search
+*******************
+form#Jukebox_Form_Advancedsearch .adv-box {
+background-color:#ecf2f0;
+padding:15px 7px;
+margin-bottom:1em;
+height:1%;
+}
+form#Jukebox_Form_Advancedsearch .adv-box-inner-2col {float:left;width:50%;}
+form#Jukebox_Form_Advancedsearch label {
+font-weight:bold;
+display:block;
+}
+form#Jukebox_Form_Advancedsearch label.marg {margin-top:10px;}
+form#Jukebox_Form_Advancedsearch input.long-w {width:255px;border:1px solid #999;}
+form#Jukebox_Form_Advancedsearch input.even-w {width:165px;border:1px solid #999;}
+form#Jukebox_Form_Advancedsearch select.even-w {width:167px;}
+form#Jukebox_Form_Advancedsearch input.sm-w {width:80px;border:1px solid #999;}
+form#Jukebox_Form_Advancedsearch select.andor {margin-left:10px;}
+form#Jukebox_Form_Advancedsearch input.radio {
+margin:0;
+padding:0;
+}
+form#Jukebox_Form_Advancedsearch h3 {
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:1em;
+margin-bottom:10px;
+color:#333;
+}
+form#Jukebox_Form_Advancedsearch span.ex {
+color:#666;
+margin: 10px 0 5px 0;
+display:block;
+}
+.div_search_term1, .div_search_term2 {margin-bottom:10px;}
+form#Jukebox_Form_Advancedsearch .adv-box-button {
+text-align:right;
+}
+*/
+/********************
+Jukebox simple search
+********************/
+form.simple input.txt {
+width:200px;
+border:1px solid #999;
+}
+form.simple label {
+display:block;
+}
+
+/********************
+Jukebox Artist detail page
+********************/
+.jb-img-cap {
+float:left;
+clear:left;
+margin:0 15px 15px 0;
+width:132px;
+}
+.jb-img-cap img {
+background-color:white;
+border:1px solid #ccc;
+padding:2px;
+}
+.jb-img-cap p.for-enlarge {
+text-align:right;
+margin: 7px 0 7px 0;
+}
+
+/********************
+Jukebox Playlist
+********************/
+h2.jb-playlist-head em {
+color:#666;
+font-style:normal;
+font-weight:normal;
+font-size:.9em;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+}
+dl.jb-playlist-desc {
+margin-top: 1em;
+}
+dl.jb-playlist-desc dt,
+dl.jb-playlist-desc dd {
+margin-left:0;
+}
+dl.jb-playlist-desc dt {
+margin-bottom: 2px;
+}
+dl.jb-playlist-desc dd {
+margin-bottom: 1em;
+}
+ul.jb-playlist {
+list-style:none;
+margin:0 0 1.25em 0;
+padding:0;
+}
+ul.jb-playlist li {
+padding: 10px 7px;
+overflow:hidden;
+clear:both;
+}
+ul.jb-playlist li.alt {
+background-color: #f7f6e4;
+}
+ul.jb-playlist li span.pl-number {
+float:left;
+clear:left;
+width:20px;
+font-weight:bold;
+display:block;
+}
+ul.jb-playlist li p.pl-title {
+margin:0;
+float:left;
+width:490px;
+clear:right;
+}
+

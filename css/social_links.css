@@ -1,0 +1,123 @@
+/* Social Media Footer Links Document */
+
+#footer {
+	clear: both;
+	font: 80% verdana, helvetica, sans-serif;
+	height: auto;
+	text-align: left;
+	border-color: #005194;
+	border-width: 0px;
+	background: #fff url(../images/line.gif) top left no-repeat;
+	padding: 15px 0px 0px 0px;
+}
+#footer a {
+	color:#666;
+	font-size: 80%;
+	font-family: verdana, helvetica, sans-serif;
+	font-weight: normal;
+	text-decoration:underline;
+}
+#footer h3 {
+	width: 400px;
+	margin: 0 0 0 0;
+	padding: 5px 10px 0px 15px;
+	font: bold 85%/105% Georgia, "Times New Roman", Times, serif;
+	color: #666;
+}
+#footer h3 a, #footer h3 a:active, #footer h3 a:link, #footer h3 a.hover, #footer h3 a:visited {
+	font: normal 90%/100% Verdana, Arial, Helvetica, sans-serif;
+		color: #666;
+}
+#footer h3 a.nounderline:hover, #footer h3 a.nounderline:visited {
+	text-decoration: none;
+	color: #666;
+}
+#find_us, #subscribe, #download {
+	width: 30%;
+	margin: 20px 0 20px 0;
+	padding: 10px 0px 10px 0;
+	float: left;
+	background-color: #fff;
+	font-size:85%;
+	color: #666;
+}
+#find_us {
+	margin: 20px 0 0 50px;
+	width: 20%;
+}
+#find_us a img {
+	border: 0;
+	margin: 0 14px 0 0;
+	padding: 0;
+}
+#find_us h4, #subscribe h4, #download h4 {
+	margin: 0;
+	padding: 0px 10px 5px 0;
+	font: bold 100%/105% Verdana, Arial, Helvetica, sans-serif;
+	color: #666;
+}
+#footer #subscribe ul, #footer #download ul {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	height: 20px;
+}
+#footer #subscribe ul li, #footer #download ul li {
+	margin: 0;
+	display: block;
+	padding: 0;
+	list-style: none;
+	position: absolute;
+}
+#footer #subscribe ul li, #footer #download ul li {
+	font-size: 120%;
+}
+#rssandemail { 
+	width: 100px;
+	left:0;
+	top: 0;
+}
+#blogs { 
+	width: 50px;
+	left: 115px;
+	top: 0;
+	padding: 0;
+}
+#podcasts { 
+	width: 70px;
+	left:0;
+	
+}
+#webcasts { 
+	width: 70px;
+	left: 75px;
+	top: 0;
+	padding: 0;
+}
+#itunes { 
+	width: 70px;
+	left: 150px;
+	top: 0;
+	padding: 0;
+}
+#container #footer a.external {
+	text-decoration: none;
+}
+#container #footer a.external:link span.external2, #container #footer a.external:hover span.external2, #container #footer a.external:visited span.external2  {
+	background: transparent url(/images/icon-ext-foot.gif) 100% 100% no-repeat;
+}
+#container #footer span.underline {
+	text-decoration:underline;
+}
+#site_links {
+	clear: both;
+	font: normal 100%/100% verdana, helvetica, sans-serif;
+	height: 30px;
+	text-align: left;
+	color: #666;
+	background: #efefef;
+	padding: 15px 0px 0px 15px;
+}
+#site_links span.right {
+	margin-left: 60px;
+}

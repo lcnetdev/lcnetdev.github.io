@@ -1,0 +1,477 @@
+/* CSS Document */
+body {
+	color:#333;
+	margin:0px;
+	padding:0px;
+	text-align:center;
+	background: #fff;
+	font: normal 100%/100% verdana, helvetica, sans-serif;
+}
+a {
+	color:#036;
+	font-family: verdana, helvetica, sans-serif;
+	font-weight:600;
+	text-decoration: underline;
+}
+a#skip {
+	position: absolute;
+	top:-100px;
+}
+a:link, a:hover, a:visited {
+	color: #036;
+	text-decoration: underline;
+	font-weight: 100;
+}
+img {
+	border: 0;
+}
+#container {
+	width:760px;
+	height: auto;
+	margin-right:auto;
+	margin-left:auto;
+	margin-top:0px;
+	margin-bottom:0px;
+	padding:0px;
+	background-color: #fff; 
+	border: 1px solid #999;
+	color:#333;
+}
+	
+/*  top navigation    */	
+div#topnav	{
+	height: 40px;
+	width: 760px;
+	margin: 0;
+	padding: 0;
+	background: #fff url(../images/line.gif) top left no-repeat;
+}
+div#topnav ul#menu	{
+	height: 40px;
+	width: 760px;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+div#topnav ul#menu li {
+	margin: 0;
+	display: block;
+	padding: 0;
+	list-style: none;
+	position: absolute;
+}
+#logo_lc { 
+	background: transparent url(../images/loc_logo.gif) no-repeat;
+	left:0;
+	top:2px;
+	width: 193px;
+	height: 40px;
+}
+#global_nav { 
+	left: 194px;
+	top: 0px;
+	width: 332px;
+	height: 40px;
+	font: normal 10px/10px Verdana, Arial, Helvetica, sans-serif;
+	padding: 0;
+}
+ul#menu li#logo_lc a {
+	display: block;
+	width: 193px;
+	height: 40px;
+	text-decoration: none;
+}
+ul#menu li#logo_lc a:visited, ul#menu li#logo a:visited {
+	text-decoration: none;
+}
+ul#menu li#global_nav a:link, ul#menu li#global_nav a:hover, ul#menu li#global_nav a:visited {
+	text-decoration: underline;
+}
+div#topnav ul#menu li#searchmenu {
+	padding: 10px 0 0 5px;
+	margin: 0;
+	top: 0px;
+	height:40px;
+	left: 525px; 
+	width: 235px;
+	font: normal 10px/10px Verdana, Arial, Helvetica, sans-serif;
+	text-align: left;
+	background: transparent url(../images/top_nav_dots.gif) top left no-repeat;
+}
+div#topnav ul#menu li#searchmenu form a:link, div#topnav ul#menu li#searchmenu form a:hover, div#topnav ul#menu li#searchmenu form a:visited {
+	font: normal 10px verdana, Helvetica, sans-serif;
+	text-decoration: underline;
+}
+div#topnav form {
+	margin: 0 0 0 0;
+	padding: 0;
+	height:40px;
+	width: 235px;
+	font: normal 8px/8px Verdana, Arial, Helvetica, sans-serif;
+}
+div#topnav form input.button {
+	background-color: #fff;
+
+	width:auto;
+	font-weight: bold;
+	color: #f60;
+	margin: 0px 0px 0px 0px;
+	border: 1px solid #f60;
+}
+div#topnav form input {
+	margin: 0px 0px 0px 0px;
+	background-color: #fff;
+	border: 1px solid #999;
+}
+/* bread crumb  navigation  */
+#crumb_nav {
+	clear: both;
+	height: auto;
+	padding: 0px 0px 10px 15px;
+	color: #fff;
+	background-color: #000;
+	border-top: 1px solid #999;
+	border-bottom: 1px solid #333;
+}
+#crumb_nav #crumb {
+	color: #fff;
+	text-align: left;
+	padding: 10px 0px 0px 0px;
+	font: 70% Verdana, Helvetica, sans-serif;
+}
+#crumb_nav #crumb a {
+	color: #ccc;
+	font-size: 95%;
+	font-weight: 100;
+}
+#crumb_nav #crumb span {
+	color: #fff;
+	font: 80% Verdana, Helvetica, sans-serif;
+	font-weight:700;
+}
+/* crumb nav ends*/
+#content {
+	width: 740px;
+	height: auto;
+	margin: 10px;
+	font:90% verdana, helvetica, sans-serif;
+	background-color: #fff;
+	text-align:left;
+	padding: 0px;
+}
+/* left nav rules */
+#content #left_nav {
+	float: left;
+	width: 196px;
+	height: auto;
+	margin: 0px 0px 15px 0px;
+	font:85%/100% verdana, helvetica, sans-serif;
+	border: 0;
+	text-align:left;
+	padding: 0px 0px 10px 0px;
+}
+#content #left_nav_top {
+	width: 197px;
+	height: 50px;
+	margin: 0px 0px 15px 0px;
+	border: 0;
+	text-align:left;
+	padding: 0;
+}
+#content #left_nav_mid {
+	width: 196px;
+	height: auto;
+	margin: 0px 0px 10px 0px;
+	border: 0;
+	text-align:left;
+	padding: 0 0 10px 0;
+	background: transparent url(../../../images/left_nav.gif) 0px 0px no-repeat;
+	border: 1px solid #ccc;
+}
+#content #left_nav_mid form#site_search {
+	width: 186px;
+	height: 20px;
+	margin: 60px 0px 10px 10px;
+	font: normal 130%/100% verdana, helvetica, sans-serif;
+	padding: 0px 0px 0px 0px;
+}
+#content #left_nav_mid form#site_search input.button {
+	background-color: #fff;
+	width:auto;
+	color: #f60;
+	font-weight: bold;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+	border: 1px solid #f60;
+}
+#content #left_nav_mid form#site_search input {
+	width: 130px;
+	padding: 0;
+	margin: 0;
+	font-size: 90%;
+	background-color: #fff;
+	border: 1px solid #999;
+}
+#left_nav_mid h2, #left_nav_mid h2#more {
+	padding: 10px 5px 5px 10px;
+	color: #900;
+	margin: 0px 0px 5px 0px;
+	font: bold 100%/100% Georgia, "Times New Roman", Times, serif;
+}
+#left_nav_mid h2#more {
+	background: transparent url(../../../images/dots_leftnav_sq.gif) bottom left no-repeat;
+	padding: 10px 5px 10px 10px;
+}
+#left_nav_mid span {
+	color: #666;
+	font-weight: 500;
+}
+#left_nav ul {
+	padding: 5px 0px 5px 10px;
+	margin: 0px 0px 0px 0px;
+	background-color: #f5f5f5;
+	border-bottom: 1px solid #ccc;
+	border-top: 0px solid #ccc;
+}
+#left_nav_mid ul li {
+	list-style-type: none;
+	display:block;
+	line-height: 15px;
+	font: 90% verdana, helvetica, sans-serif;
+	background: transparent url(../../../images/arrow_o.gif) no-repeat 0px 5px;
+	padding: 2px 5px 2px 15px; 
+	margin: 1px 0px 1px 0px;
+}
+#left_nav_mid ul li#on {
+	background: transparent url(../../../images/arrow_grey.gif) no-repeat 0px 5px;
+	font: bold 95% verdana, helvetica, sans-serif;
+	color: #666;
+}
+#left_nav_mid ul li a {
+	font: bold 100% Verdana, Arial, Helvetica, sans-serif;
+}
+ul#res_links {
+	margin: 0;
+	padding: 0;
+	background-color: #fff;
+	border-bottom: 0;
+	border-top: 0;
+}
+#left_nav_mid ul#res_links li  {
+	list-style-type: none;
+	display: block; 
+	height: auto;
+	padding: 0px 0px 0px 10px; 
+	background: transparent url(../../../images/gt.gif) no-repeat 0px 7px;
+	margin: 0px 0px 0px 10px;
+	font-size: 90%;
+	line-height: 17px;
+}
+#left_nav_mid ul#res_links li a:link, #left_nav_mid ul#res_links li a:visited {
+	font: normal 100%/110% verdana, helvetica, sans-serif;
+}
+/*  end left nav rules  */
+/* content rules */
+/* page heading */
+
+#page_head {
+	width: auto;
+	height: auto;
+	margin: 0px 0px 10px 208px;
+	font:normal 90%/100% verdana, helvetica, sans-serif;
+	background: transparent url(../images/ph_top.gif) top left no-repeat;
+	text-align:left;
+	padding: 2px 0px 2px 0px;
+}
+#page_head h1 {
+	color: #343268;
+	padding: 5px 0px 7px 10px;
+	margin: 0;
+	font: bold 140%/105% Georgia, "Times New Roman", Times, serif;
+	display: block;
+	background: transparent url(../images/ph_bot.gif) bottom left no-repeat;
+}
+#page_head h1.oneline {
+	padding: 15px 0px 15px 10px;
+}
+#page_head h1 span {
+	color: #000;
+	font-size: 75%;
+	font-weight: 200;
+}
+#page_head h1 span a {
+	color: #036;
+	font-size: 80%;
+	font-weight: 200;
+}
+/* upper content rules */
+
+/* top menu boxes*/
+#top_menu {
+	width: 527px;
+	height: auto;
+	margin: 0px 0px 10px 210px;
+	font: normal 90%/100% verdana, helvetica, sans-serif;
+	text-align:left;
+	padding: 0px;
+}
+#top_menu #tm_left {
+	width:280px;
+	float: left;
+	height: auto;
+	padding: 0;
+	margin: 0;
+	border: 1px solid #fc0;
+}
+#top_menu #tm_right {
+	width:230px;
+	height: auto;
+	margin: 0px 0px 0px 290px;
+	padding: 0px 0px 5px 0px;
+	border: 1px solid #d7e9f1;
+}
+#top_menu #tm_left p {
+	font: normal 85%/120% Verdana, Arial, Helvetica, sans-serif;
+	color: #333;
+	padding: 5px 10px 10px 10px;
+	margin: 0;
+}
+#top_menu #tm_left p.border {
+	border-top: 1px solid #fc0;
+	padding: 15px 5px 10px 10px;
+}
+#top_menu #tm_left p a {
+	font-size: 100%;
+}
+#top_menu #tm_left img {
+	float: left;
+	border: 0;
+	margin: 5px 5px 5px 0;
+}
+#top_menu #tm_left h2, #top_menu #tm_right h2 {
+	margin: 0;
+	padding: 5px 10px 10px 10px;
+	font: bold 90%/120% Georgia, "Times New Roman", Times, serif;
+	color: #0065CD;
+}
+#top_menu #tm_left h2 {
+	background: transparent url(../images/dc_h2_green_top.gif) bottom left no-repeat;
+}
+#top_menu #tm_right h2.border {
+	border-top: 1px solid #fc0;
+}
+#top_menu #tm_left h2 span, #top_menu #tm_right h2 span {
+	font: bold 90%/120% Georgia, "Times New Roman", Times, serif;
+	color: #9c0;
+}
+#tm_right p {
+	padding: 10px 5px 10px 10px;
+	margin: 0;
+	font: normal 85%/130% Verdana, Arial, Helvetica, sans-serif;
+}
+/*end top menu*/
+
+/* lower content box rules */
+#main_menu {
+	width: 522px;
+	height: auto;
+	margin: 0px 0px 0px 210px;
+	font:normal 90%/100% verdana, helvetica, sans-serif;
+	text-align:left;
+	padding: 0;
+	border: 1px solid #d7e9f1;
+}
+#main_menu h2 {
+	font: bold 105%/100% Georgia, "Times New Roman", Times, serif;
+	color: #36c;
+	margin: 0px 0px 5px 0px;
+	border-top: 0;
+	padding: 10px 0px 15px 10px;
+	background: transparent url(../images/dc_h2_green_bot.gif) bottom left no-repeat;
+}
+#main_menu h2 span {
+	color: #9c0;
+}
+#main_left {
+	width: 257px;
+	height: auto;
+	float: left;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	border: 0;
+	background: transparent;
+}
+#main_left a, #main_right a {
+	font-size: 75%;
+	margin: 0px;
+	padding: 0px;
+	font-weight: 100;
+}
+#left_mid {
+	margin: 0;
+	padding: 10px 0px 10px 0px;
+	background: transparent;
+	color: #333;
+	font-size: 90%;
+}
+#main_right {
+	width: auto;
+	height: auto;
+	font-size: 90%;
+	margin: 0px 0px 0px 260px;
+	border: 0;
+	border-left: 0px solid #d7e9f1;
+	padding: 0px 0px 10px 0px;
+}
+#right_mid {
+	margin: 0;
+	padding: 10px 0px 5px 0px;
+	color: #333;
+	font-size: 100%;
+	border-top: 0px solid #9cf;
+}
+
+#left_mid p, #right_mid p {
+	font: normal 95%/120% Verdana, Arial, Helvetica, sans-serif;
+	color: #333;
+	padding: 0px 10px 5px 10px;
+	margin: 0px;
+}
+#left_mid p a, #right_mid p a {
+	font-size: 105%;
+}
+#left_mid img, #right_mid img {
+	float: left;
+	border: 0;
+	margin: 0px 5px 10px 10px;
+}
+
+
+
+/* end of content rules   */
+/*  footer rules */
+#footer {
+	clear: both;
+	font: 80% verdana, helvetica, sans-serif;
+	height: 30px;
+	text-align: left;
+	border-color: #005194;
+	border-width: 0px;
+	background: #efefef url(../images/line.gif) top left no-repeat;
+	padding: 15px 0px 0px 15px;
+}
+#footer a {
+	color:#666;
+	font-size: 80%;
+	font-family: verdana, helvetica, sans-serif;
+	font-weight: normal;
+	text-decoration:underline;
+}
+#footer a:hover {
+	color: #666;
+	font-size: 80%;
+	font-family: verdana, helvetica, sans-serif;
+	font-weight: normal;
+	text-decoration: underline;
+}

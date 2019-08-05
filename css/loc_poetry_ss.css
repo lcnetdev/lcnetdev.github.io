@@ -1,0 +1,738 @@
+/* CSS Document */
+body {
+	color:#333;
+	margin:0px;
+	padding:0px;
+	text-align:center;
+	background: #fff;
+	font:100% verdana, helvetica, sans-serif;
+}
+h1 {
+	margin: 0px;
+	font: bold 90%/110% Georgia, "Times New Roman", Times, serif;
+	color: #333;
+}
+h2 {
+	font: bold 90%/95% Georgia, "Times New Roman", Times, serif;
+	color: #333;
+	margin:0px;
+	padding:0px;
+	background: transparent;
+}
+h3 {
+	font: bold 90%/95% Georgia, "Times New Roman", Times, serif;
+	color: #333;
+	margin:0px;
+	padding:0px;
+}
+h4 {
+	font: bold 90%/95% verdana, helvetica, sans-serif;
+	color: #333;
+	margin:0px;
+	padding:0px;
+}
+h5 {
+	font: bold 80%/85% verdana, helvetica, sans-serif;
+	color: #333;
+	margin:0px;
+	padding:0px;
+}
+h6 {
+	font: bold 90%/95% verdana, helvetica, sans-serif;
+	color: #333;
+	margin:0px;
+	padding:0px;
+}
+p {
+	font:80% verdana, helvetica, sans-serif;
+	margin:0px;
+	text-align: left;
+	padding:0px;
+}
+a {
+	color:#036;
+	font-family: verdana, helvetica, sans-serif;
+	font-weight:600;
+	text-decoration: underline;
+}
+a#skip {
+	position: absolute;
+	top:-100px;
+}
+a:link {
+	color: #036;
+	text-decoration: underline;
+}
+a:visited {
+	color:#036;
+	text-decoration: underline;
+}
+a:hover {
+	color:#333;
+	text-decoration: underline;
+}
+ol li {
+	list-style-type: decimal; 
+}
+ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	font-size: 90%;
+}
+li {
+	font: 100% verdana, helvetica, sans-serif;
+	padding-left: 0px;
+	list-style: none;
+}
+img {
+	border: 0px solid #333;
+}
+#container {
+	width:765px;
+	height: auto;
+	margin-right:auto;
+	margin-left:auto;
+	margin-top:0px;
+	margin-bottom:0px;
+	padding:0px;
+	background-color: #fff; 
+	border: 1px solid #999;
+	color:#333;
+}
+/*  top navigation    */	
+div#topnav	{
+	height: 55px;
+	width: 765px;
+	margin: 0;
+	padding-top: 0px;
+	border-bottom: 1px solid #c2e6c5;
+	background: transparent url(../images/line_blue.gif) top left no-repeat;
+}
+div#topnav ul#menu	{
+	height: 55px;
+	width: 765px;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+div#topnav ul#menu li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	position: absolute;
+	top: -1px;
+}
+ul#menu li, ul#menu a {
+	height: 55px;
+	padding-top:3px;
+	display: block;
+}
+#logo_lc { 
+	background: transparent url(../images/logo_lc.gif) 0px 3px no-repeat;
+	left: 0px;
+	width: 217px;
+	/*padding-top: 2px;*/
+}
+#logo {	
+	background: transparent url(../images/logo_poetry.gif) 0px 3px no-repeat;
+	/*padding-top: 2px;*/
+	left: 218px;
+	width: 70px;
+}	
+#searchmenu	{left: 370px; width: 235px;}
+#searchmenu label {
+	font-family: verdana, Helvetica, sans-serif;
+	font-size: 80%;
+	color: #666;
+}
+#searchmenu label a {
+	display: block;
+	width: auto;
+	height: auto;
+	margin: 2px 0px 0px 40px;
+	font-weight: 200;
+	font-size: 90%;
+}
+div#topnav form {
+	margin-top: 10px;
+	height:40px;
+	width: 400px;
+}
+div#topnav form select {
+	background-color: #fff;
+	font-weight: normal;
+	color: #036;
+	margin: 5px 0px 0px 0px;
+	font-size: 90%;
+	border: 1px solid #666;
+}
+div#topnav form input.button {
+	background-color: #fff;
+	font-weight: 900;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color: #ff6600;
+	margin: 0px 0px 0px 0px;
+	font-size: 12px;
+	border: 1px solid #ff6600;
+}
+/* bread crumb  navigation  */
+#crumb_nav {
+	clear: both;
+	height: 30px;
+	padding: 0px 0px 0px 15px;
+	color: #fff;
+	background-color: #000;
+	border-top: 1px solid #999;
+	border-bottom: 1px solid #333;
+}
+#crumb_nav #crumb {
+	color: #fff;
+	text-align: left;
+	padding: 10px 0px 0px 0px;
+	font: 70% Verdana, Helvetica, sans-serif;
+}
+#crumb_nav #crumb a {
+	color: #ccc;
+	font-size: 95%;
+	font-weight: 100;
+}
+#crumb_nav #crumb span {
+	color: #fff;
+	font: 80% Verdana, Helvetica, sans-serif;
+	font-weight:700;
+}
+/* crumb nav ends*/
+#content {
+	width: 745px;
+	height: auto;
+	margin: 10px;
+	font:90% verdana, helvetica, sans-serif;
+	background-color: #fff;
+	text-align:left;
+	padding: 0px;
+}
+/* left nav rules */
+#content #left_nav {
+	float: left;
+	width: 196px;
+	height: auto;
+	margin: 0px 0px 10px 0px;
+	font:90% verdana, helvetica, sans-serif;
+	background: transparent url(../images/left_nav_bot1.gif) bottom left no-repeat;
+	text-align:left;
+	padding: 0px 0px 10px 0px;
+}
+#left_nav_mid {
+	width: 196px;
+	height: auto;
+	margin: 2px 0px 0px 0px;
+	background: transparent url(../images/left_nav_mid1.gif) 0px 0px repeat-y;
+}
+#left_nav_top {
+	height: 50px;
+	padding: 0px;
+	margin: 0px;
+	background: transparent url(../images/poetry_left_nav.gif) top left no-repeat;
+}
+#left_nav_top1 {
+	height: 50px;
+	padding: 0px;
+	margin: 0px;
+	background: transparent url(../images/poetry_leftnav1a.gif) top left no-repeat;
+}
+#left_nav_top2 {
+	height: 50px;
+	padding: 0px;
+	margin: 0px;
+	background: transparent url(../images/poetry_leftnav2a.gif) top left no-repeat;
+}
+#content #left_nav2 {
+	float: left;
+	width: 196px;
+	height: 412px;
+	margin: 0px;
+	font:90% verdana, helvetica, sans-serif;
+	background: transparent url(../images/poetry_leftnav2.gif) top left no-repeat;
+	text-align:left;
+	padding: 0;
+}
+ul#resources {
+	/*border-top: 0px dotted #ccc;*/
+	padding: 5px 0px 10px 10px;
+	margin: 0px 2px 0px 2px;
+	background-color: #fefeea;
+}
+ul#resources li {
+	list-style-type: none;
+	font: 90% verdana, helvetica, sans-serif;
+	line-height: 130%;
+	background: #fefeea url(../images/arrow_o.gif) 0px 6px no-repeat;
+	padding: 2px 5px 2px 15px; 
+	margin: 0px;
+}
+#left_nav ul#resources li#on, #left_nav1 ul#resources li#on, #left_nav2 ul#resources li#on {
+	background: transparent url(../images/arrow_grey.gif) no-repeat 0px 4px;
+	font: bold 95% verdana, helvetica, sans-serif;
+	color: #666;
+}
+ul#resources li a {
+	font: bold 100% Verdana, Arial, Helvetica, sans-serif;
+}
+
+h2#more {
+	border-top: 1px solid #ccc;
+	padding: 7px 5px 7px 10px;
+	color: #690;
+	margin: 0px 2px 0px 2px;
+	background: transparent url(../images/dots_leftnav.gif) bottom left no-repeat;
+	font-size: 90%;
+	line-height: 130%;
+}
+ul#res_links {
+	padding: 0px 5px 5px 5px;
+	margin: 0px;
+}
+ul#res_links li  {
+	list-style-type: none;
+	padding: 2px 0px 2px 10px; 
+	background: transparent url(../images/gt.gif) no-repeat 0px 9px;
+	margin: 0px 0px 0px 10px;
+	font-size: 90%;
+	line-height: 130%;
+}
+ul#res_links li a:link, ul#res_links li a:visited {
+	font: normal 100%  verdana, helvetica, sans-serif;
+}
+/*  end left nav rules  */
+/* content rules */
+#page_head {
+	width: auto;
+	height: 55px;
+	margin: 0px 0px 0px 205px;
+	font:90% verdana, helvetica, sans-serif;
+	background: transparent url(../images/page_head.gif) top left no-repeat;
+	text-align:left;
+	padding: 2px 0px 2px 0px;
+}
+#page_head1 {
+	width: auto;
+	height: 40px;
+	margin: 0px 0px 10px 205px;
+	font:90% verdana, helvetica, sans-serif;
+	text-align:left;
+	padding: 0px;
+	height: 38px;
+	background: transparent url(../images/page_head1.gif) top left no-repeat;
+}
+#page_head h1 {
+	color: #900;
+	padding: 5px 10px 5px 10px;
+	line-height: 105%;
+	margin: 0px;
+	font-size: 150%;
+}
+#page_head h1 span {
+	color: #000;
+	font-size:60%;
+	font-weight: 200;
+}
+#page_head h1 span a {
+	font-size:90%;
+}
+#page_head1 h1 {
+	color: #900;
+	padding: 10px 10px 5px 15px;
+	margin: 0px;
+	font-size: 150%;
+}
+/* image gallery rules */
+#main_menu {
+	width: auto;
+	height: auto;
+	margin: 15px 0px 0px 208px;
+	font:90% verdana, helvetica, sans-serif;
+	text-align:left;
+	padding: 0px;
+}
+#main_menu2 {
+	width: 522px;
+	height: auto;
+	margin: 0px 0px 0px 205px;
+	font:90% verdana, helvetica, sans-serif;
+	background: transparent url(../images/poetry_bottom.gif) bottom left no-repeat;
+	text-align:left;
+	padding: 0px 0px 10px 0px;
+}
+#poet_nav1 {
+	padding: 10px 0px 10px 10px;
+	width: auto;
+	height: auto;
+	background: transparent url(../images/poetry_navtop.gif) top left no-repeat;
+	font-size:85%;
+	color: #666;
+}
+#poet_top {
+	padding: 0px 10px 0px 15px;
+	height: 5px;
+	background: transparent url(../images/poetry_navtop.gif) top left no-repeat;
+	font-size:85%;
+	color: #666;
+}
+#poet_nav1 h2 {
+	color: #900;
+	font-size: 130%;
+}
+
+#main_menu2 #poet_nav1 h2 span {
+	font-size: 70%;
+	position: relative;
+	left: 300px;
+}
+#main_menu2 #poet_nav1 span img, #main_menu2 #poet_body p.nav img, #poet_body #search_nav img {
+	padding: 0px;
+}
+#poet_body p.nav {
+	text-align: right;
+	padding: 0px 30px 0px 0px;
+	font-size: 80%;
+}
+#poet_body p.nav a:link, #poet_body p.nav a:hover, #poet_body p.nav a:visited {
+	font-weight: 200;
+}
+#search_nav {
+	padding: 0px 30px 10px 15px;
+	background: transparent url(../images/search_nav_dots.gif) bottom left no-repeat;	
+	text-align: right;
+	font-size:85%;
+	color: #666;
+	border-top: 0px solid #d4e9ff;
+}
+#poet_body #search_nav a, #poet_body #search_nav a:link, #poet_body #search_nav a:hover, #poet_body #search_nav a:visited  {
+	font-weight: 100;
+}
+#poet_nav2 {
+	padding: 10px 0px 10px 10px;
+	font-size:85%;
+	border-top: 1px solid #d4e9ff;
+	border-bottom: 1px solid #d4e9ff;
+	background: transparent url(../images/poetry_tile.gif) 0px 0px repeat-y;
+	color: #666;
+}
+#poet_body {
+	width: 522px;
+	height:auto;
+	padding: 10px 0px 0px 0px;
+	border-top: 1px solid #d4e9ff;
+	background: transparent url(../images/poetry_tile.gif) 0px 0px repeat-y;
+}
+#poet_body1 {
+	padding: 0px;
+	border-top: 0px solid #d4e9ff;
+	background: transparent url(../images/poetry_tile.gif) 0px 0px repeat-y;
+}
+#poet_body h2, #poet_body1 h2 {
+	margin: 0px;
+	padding: 10px 10px 5px 15px;
+	font-size: 120%;
+	color: #36c;
+}
+#poet_body1 h2.border {
+	margin: 0px;
+	padding: 10px 10px 5px 15px;
+	border-top: 1px solid #d4e9ff;
+	font-size: 120%;
+	color: #36c;
+}
+#bio1, #bio2, #bio3, #bio4, #bio5, #bio6, #bio7, #bio8, #bio9, #bio10, #bio11,#bio12, #bio13, #bio14, #bio15, #grace {
+	width: auto;
+	height: 200px;
+	margin: 0;
+	padding: 0px 10px 0 0;
+}
+#grace {
+	border-top: 1px solid #d4e9ff;
+}
+#bio15 {
+	height: 400px;
+}
+#poet_body div#long, #poet_body div.longest {
+	width: auto;
+	height: 300px;
+	margin: 0px 10px 0px 0px;
+	padding: 0px;
+}
+#poet_body div.longest {
+		height: 460px;
+}
+#bio1 img#detail, #bio2 img#detail, #bio3 img#detail, #bio4 img#detail, #bio5 img#detail, #bio6 img#detail, #bio7 img#detail, #bio8 img#detail, #bio9 img#detail, #bio10 img#detail , #bio11 img#detail, #bio12 img#detail, #bio13 img#detail, #bio14 img#detail, #bio15 img#detail, #grace img#detail, #poet_body div.long img#detail, #poet_body div.longest img#detail {
+	float: right;
+	margin: 10px 0px 0px 10px;
+	padding: 0px;
+}
+#bio1 h3, #bio2 h3, #bio3 h3, #bio4 h3, #bio5 h3, #bio6 h3, #bio7 h3, #bio8 h3, #bio9 h3, #bio10 h3, #bio11 h3, #bio12 h3, #bio13 h3, #bio14 h3, #bio15 h3, #grace h3, #poet_body div.long h3,#poet_body div.longest h3 {
+	font-size: 100%;
+	color: #666;
+}
+#poet_body img#up, #poet_body1 img#up {
+	border: 0px solid #333;
+	margin: 0px;
+	padding: 0px;
+}
+#poet_body img.up, #poet_body1 img.up {
+	border: 0px solid #333;
+	margin: 0px;
+	padding: 0px;
+}
+#poet_body p.right, #poet_body1 p.right {
+	float:right;
+	font-weight: 300;
+	color:#666;
+	padding: 10px 10px 10px 10px;
+	margin: 0px;
+}
+#poet_body p.right img, #poet_body1 p.right img {
+	margin: 0px;
+	padding:0px;
+}
+#poet_body ul, #poet_body1 ul {
+	padding: 10px 5px 10px 5px;
+	margin: 0px 5px 0px 5px;
+}
+#poet_body ul li, #poet_body1 ul li  {
+	list-style-type: none;
+	padding: 2px 0px 2px 10px; 
+	background: transparent url(../images/gt.gif) no-repeat 0px 9px;
+	margin: 0px 0px 0px 10px;
+	font-size: 90%;
+}
+#poet_body ul li a:link, #poet_body ul li a:visited, #poet_body1 ul li a:link, #poet_body1 ul li a:visited {
+	font: normal 100%  verdana, helvetica, sans-serif;
+}
+#results img {
+	padding: 0px 10px 10px 15px;
+	float: left;
+}
+#results p {
+	padding: 0px 10px 20px 15px;
+	background: transparent url(../images/poetry_dots550.gif) bottom left no-repeat;
+}
+
+#poet_nav a.year {
+	color: #069; 
+}
+#poet_nav a {
+	font-size: 90%; 
+	padding: 0px 0px 10px 0px;
+}
+#main_menu2 h3  {
+	padding: 5px 10px 5px 15px;
+	font-size: 100%;
+	color: #000;
+}
+#main_menu2 p {
+	padding: 10px 10px 10px 15px;
+	font-size: 85%;
+	color: #000;
+}
+#main_menu2 img {
+	padding: 10px 10px 10px 15px;
+}
+#main_left {
+	width: 234px;
+	height: auto;
+	background: transparent url(../images/poetry_lb.gif) bottom left no-repeat;
+	float: left;
+	margin: 0px 0px 10px 0px;
+	padding: 0px 0px 10px 0px;
+}
+#main_left h2 {
+	font-size: 95%;
+	color: #36c;
+	margin: 0px;
+	padding: 10px 0px 12px 10px;
+	background: transparent url(../images/poetry_dots.gif) bottom left no-repeat;
+}
+#main_left h2 span, #right_bottom h2 span {
+	color: #9c0;
+}
+#main_left a, #main_right a {
+	font-size: 75%;
+	margin: 0px;
+	padding: 0px;
+	font-weight: 100;
+}
+#left_top {
+	clear:left;
+	height: 35px;
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+	background: transparent url(../images/poetry_lt.gif) top left no-repeat;
+}
+a#spot_link1, a#spot_link2, a#spot_link3, a#spot_link4, a#spot_link5 {
+	font:bold 110% Verdana, Arial, Helvetica, sans-serif;
+	margin: 0px 0px 5px 0px;
+}
+#left_mid {
+	margin: 0px;
+	padding: 10px 10px 30px 0px;
+	background: transparent url(../images/poetry_lm.gif) 0px 0px repeat-y;
+	width: 240px;
+	height: auto;
+	color: #999;
+	font-size: 80%;
+}
+#left_mid h2 {
+	clear: left;
+	font-size: 120%;
+	color: #36c;
+	margin: 0px 0px 5px 0px;
+	padding: 10px 0px 10px 10px;
+	background: transparent url(../images/today_dots.gif) bottom left no-repeat;
+}
+#left_mid p {
+	font-size: 100%;
+	color: #666;
+	padding: 0px 10px 5px 0px;
+	margin: 0px;
+}
+#left_mid p a{
+	font-size: 105%;
+}
+#left_mid p.p180 {
+	padding: 10px 20px 0px 0px;
+}
+#left_mid img {
+	float: left;
+	border: 0px;
+	margin: 0px 5px 0px 10px;
+}
+#left_mid ul {
+	/*border-top: 0px dotted #ccc;*/
+	padding: 0px 0px 0px 10px;
+	margin: 0px 2px 10px 76px;
+}
+#left_mid ul li {
+	list-style-type: none;
+	font: 100% verdana, helvetica, sans-serif;
+	background: transparent url(../images/arrow.gif) no-repeat 0px 3px;
+	padding: 2px 5px 2px 15px; 
+	margin: 0px;
+}
+#left_mid ul li a {
+	font: normal 110% Verdana, Arial, Helvetica, sans-serif;
+}
+#main_right {
+	width: 274px;
+	height: auto;
+	font-size: 90%;
+	margin: 0px 0px 10px 250px;
+	background: transparent url(../images/poetry_rb.gif) bottom left no-repeat;
+	padding: 0px 0px 10px 0px;
+}
+#right_top h2#feature_right {
+	font-size: 110%;
+	color: #000;
+	padding: 10px 0px 5px 10px;
+	margin: 0px;
+}
+#right_top {
+	margin:0px;
+	padding: 0px;
+	background: transparent url(../images/poetry_rt.gif) top left no-repeat;
+	width: 274px;
+	height: auto;
+	color: #000;
+	font-size: 90%;
+}
+#right_mid {
+	margin: 0px;
+	padding: 0px 5px 5px 0px;
+	width: 274px;
+	background: transparent url(../images/poetry_rm.gif) 0px 0px repeat-y;
+	color: #999;
+	font-size: 90%;
+}
+#right_mid img {
+	margin: 0px;
+	padding: 5px 0px 5px 10px;
+}
+#right_mid p {
+	color:#000;
+	font-size: 100%;
+	margin: 0px;
+	padding: 5px 0px 5px 10px;
+}
+#right_mid p a {
+	font-size: 100%;
+}
+#right_bottom {
+	margin: 0px;
+	padding: 0px 5px 5px 0px;
+	width: 274px;
+	background: transparent url(../images/poetry_rm.gif) 0px 0px repeat-y;
+	color: #999;
+	font-size: 100%;
+}
+#right_bottom h2 {
+	font-size: 100%;
+	color: #06c;
+	border-top: 1px solid #9cf;
+	margin: 0px;
+	padding: 10px 0px 12px 10px;
+	background: transparent url(../images/poetry_dots.gif) bottom left no-repeat;
+}
+#right_bottom p {
+	padding: 5px 10px 5px 10px;
+	color: #000;
+	font-size: 100%;
+}
+#right_bottom ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px 0px 0px 10px;
+	font-size: 100%;
+}
+#right_bottom ul li  {
+	list-style-type: none;
+	padding: 0px 2px 10px 0px; 
+	margin: 10px 0px 10px 0px;
+	background: transparent url(../images/poetry_dots1.gif) bottom left no-repeat;
+	font-size: 95%;
+	color: #000;
+}
+#right_bottom ul li.last {
+	background: transparent;
+}
+#right_bottom ul li a:link, #right_bottom ul li a:visited {
+	font: bold 100% verdana, helvetica, sans-serif;
+	color:#360;
+	/*text-decoration: none;*/
+}
+/* end of content rules   */
+/*  footer rules */
+#footer {
+	clear: both;
+	font: 80% verdana, helvetica, sans-serif;
+	height: 30px;
+	text-align: left;
+	border-color: #005194;
+	border-width: 0px;
+	background: #efefef url("../images/line_blue.gif") top left no-repeat;
+	padding: 15px 0px 0px 15px;
+}
+#footer a{
+	color:#666;
+	font-size: 80%;
+	font-family: verdana, helvetica, sans-serif;
+	font-weight: normal;
+	text-decoration:underline;
+}
+#footer a:hover {
+	color: #333;
+	font-size: 80%;
+	font-family: verdana, helvetica, sans-serif;
+	font-weight: normal;
+	text-decoration: underline;
+}
+	

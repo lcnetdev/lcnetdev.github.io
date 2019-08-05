@@ -1,0 +1,4 @@
+@import url("/css/loc_reset_v2.css"); /* reset */
+@import url("/css/new-header.css"); /* global header */
+@import url("http://cdn.loc.gov/css/locfoot.css"); /* global footer */
+@import url("/css/loc_standard_v2_w.css");  /* standard 1024 */

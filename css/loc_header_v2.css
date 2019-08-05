@@ -1,0 +1,128 @@
+/********************
+header/topnav
+********************/	
+div#topnav	{
+height: 40px;
+width: 762px;
+margin: 0;
+padding: 0;
+background: #fff url(/img-head/line-762.gif) top left no-repeat;
+}
+div#topnav ul#menu	{
+height: 40px;
+width: 760px;
+margin: 0;
+padding: 0;
+}
+div#topnav ul#menu li {
+margin: 0;
+padding: 0;
+display: block;
+list-style: none;
+float:left;
+}
+#logo_lc { 
+/*background: transparent url(/images/loc_logo.gif) 0 2px no-repeat;*/
+background: transparent url(//cdn.loc.gov/images/img-head/logo-loc.png) 10px 5px no-repeat;
+width: 193px;
+height: 40px;
+clear:left;
+}
+#global_nav {
+width: 332px;
+height: 40px;
+font: normal 10px/10px Verdana, Arial, Helvetica, sans-serif;
+padding: 0;
+}
+ul#menu li#logo_lc a {
+display: block;
+width: 193px;
+height: 40px;
+text-decoration: none;
+}
+ul#menu li#logo_lc a:visited, 
+ul#menu li#logo a:visited {
+text-decoration: none;
+}
+ul#menu li#global_nav a:link, 
+ul#menu li#global_nav a:hover, 
+ul#menu li#global_nav a:visited {
+text-decoration: underline;
+}
+div#topnav ul#menu li#searchmenu {
+padding: 10px 0 0 5px;
+margin: 0;
+height:30px;
+width: 230px;
+clear:right;
+font: normal 10px/10px Verdana, Arial, Helvetica, sans-serif;
+text-align: left;
+background: transparent url(/images/top_nav_dots.gif) top left no-repeat;
+}
+div#topnav ul#menu li#searchmenu form a:link, 
+div#topnav ul#menu li#searchmenu form a:hover, 
+div#topnav ul#menu li#searchmenu form a:visited {
+font: normal 10px verdana, Helvetica, sans-serif;
+text-decoration: underline;
+}
+div#topnav form {
+margin: 0 0 0 0;
+padding: 0;
+height:30px;
+width: 232px;
+}
+div#topnav form label.lcsearch_label,
+div#topnav form input {
+vertical-align: middle;
+}
+div#topnav form label.lcsearch_label {
+font-weight:normal;
+font-size:10px;
+color:#666;
+padding:0;
+margin:0;
+}
+div#topnav form input.button {
+background-color: #fff;
+width:auto;
+font-weight: bold;
+color: #f60;
+margin: 0px 0px 0px 0px;
+border: 1px solid #f60;
+}
+div#topnav form input {
+width: 125px;
+margin: 0 2px;
+background-color: #fff;
+border: 1px solid #999;
+}
+
+/********************
+breadcrumb
+********************/
+#crumb_nav {
+clear: both;
+padding: 10px;
+color: #fff;
+background-color: #000;
+border-top: 1px solid #999;
+border-bottom: 1px solid #333;
+text-align: left;
+font: normal 11px Verdana, Arial, Helvetica, sans-serif;
+}
+#crumb_nav span {
+color: #ccc;
+font-weight: bold;
+}
+#crumb_nav a:link,
+#crumb_nav a:visited {
+color: #ccc;
+text-decoration: underline;
+}
+#crumb_nav a:focus,
+#crumb_nav a:hover,
+#crumb_nav a:active {
+color: #fff;
+text-decoration: underline;
+}
+

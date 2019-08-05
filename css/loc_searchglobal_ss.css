@@ -1,0 +1,294 @@
+/* CSS Document */
+#content #left_nav_top {
+	width: 197px;
+	height: 50px;
+	margin: 0px 0px 12px 0px;
+	border: 0;
+	text-align:left;
+	padding: 0;
+}
+#content #left_nav_mid {
+	border-bottom: 1px solid #ccc;
+}
+#main_menu {
+	width: auto;
+	height: auto;
+	margin: 0px 0px 0px 208px;
+	font:90% verdana, helvetica, sans-serif;
+	text-align:left;
+	padding: 0px;
+}
+#search_nav {
+	padding: 10px 10px 10px 15px;
+	border-top: 1px solid #d4e9ff;
+	background: transparent url(/images/search_nav_dots.gif) bottom left no-repeat;	
+	font-size:85%;
+	color: #666;
+}
+#search_nav1 {
+	padding: 10px 10px 10px 15px;
+	background: transparent url(/images/search_nav_dots.gif) bottom left no-repeat;	
+	font-size:80%;
+	height: auto;
+	color: #666;
+}
+#search_nav_bot {
+	padding: 10px 10px 10px 15px;
+	width:auto;
+	background: transparent url(/images/search_nav_dots.gif) top left no-repeat;	
+	font-size:85%;
+	color: #666;
+}
+#search_nav a, #search_nav_bot a {
+	font-weight: 100;
+}
+#main_menu #search_nav img, #main_menu #search_nav_bot img {
+	padding: 0px;
+	margin: 0px;
+}
+#main_body {
+	width: 524px;
+	margin: 0;
+	padding: 0;
+	border: 1px solid #d4e9ff;
+}
+#main_body #right {
+	margin: 0px 0px 0px 100px;
+}
+#main_body h2 {
+	margin: 0px;
+	padding: 10px 10px 5px 15px;
+	font-size: 120%;
+	color: #36c;
+}
+#main_body table {
+	margin: 10px 10px 0px 15px;
+	padding: 10px 0px 10px 0px;
+	border: 1px solid #666;
+	border-collapse: collapse;
+	font-size: 120%;
+	color: #36c;
+}
+#main_body table th {
+	margin: 10px 10px 5px 15px;
+	padding: 3px;
+	font-size: 90%;
+	color: #000;
+	border: 1px solid #666;
+	text-align: left;
+}
+#main_body table td {
+	margin: 10px 10px 5px 15px;
+	padding: 5px;
+	font-size: 70%;
+	border: 1px solid #666;
+	color: #333;
+}
+#main_body p.response {
+
+	font:bold 100%/120% Verdana, Arial, Helvetica, sans-serif;
+	margin: 0px;
+	padding: 10px 10px 5px 10px;
+}
+#main_body p.question {
+	color: #f60;
+	margin: 0px;
+	padding: 0px 10px 10px 10px;
+}
+#main_body p.question a {
+	font-style:italic;
+}
+#main_body form {
+	width: auto;
+	height: auto;
+	margin: 10px 0px 10px 15px;
+	padding: 0px;
+}
+#main_body form input#keyword {
+	width: 242px;
+	text-align:left;
+	margin: 0px 0px 0px 0px;
+	padding: 0px;
+	font-size: 100%;
+}
+#main_body form label a {
+	font-size: 95%;
+	font-weight: 100;
+}
+#main_body form input.button {
+	background-color: #fff;
+	font-weight: 900;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color: #f60;
+	margin: 0px;
+	font-size: 12px;
+	border: 1px solid #ff6600;
+}
+#main_body span {
+	color: #666;
+}
+#main_body span.highlight {
+	background-color: #ffffcc;
+	color: #000;
+	font: normal 100%/120% Verdana, Arial, Helvetica, sans-serif;
+}
+
+#main_body span.highlight a {
+	color:#036;
+	text-decoration: underline;
+}
+#main_body img.up, #main_body img#up1, #main_body img#up2, #main_body img#up3, #main_body img#up4 {
+	padding: 0px;
+	margin:0px;
+}
+#main_menu h3  {
+	padding: 5px 10px 5px 15px;
+	font-size: 100%;
+	color: #000;
+}
+#main_menu p {
+	padding: 10px 10px 10px 15px;
+	font-size: 85%;
+	color: #000;
+}
+#main_menu img {
+	padding: 10px 10px 10px 15px;
+}
+/* no left nav pages*/
+#main {
+	width: 731px;
+	height: auto;
+	margin: 0px 0px 0px 10px;
+	font:90% verdana, helvetica, sans-serif;
+	text-align:left;
+	padding: 0px 0px 10px 0px;
+}
+#main_mid {
+	padding: 0px 0px 0px 0px;
+}
+#main_mid h2#top {
+	border-top: 0px solid #d4e9ff;
+	padding: 10px 10px 5px 15px;
+	margin: 0px 1px 0px 1px;
+}
+#main_mid h2 {
+	border-top: 1px solid #d4e9ff;
+	padding: 10px 10px 10px 15px;
+	margin: 0px 1px 0px 1px;
+	color: #36c;
+	font-size: 110%;
+}
+#main_mid h2#search {
+	border-top: 0px solid #d4e9ff;
+	padding: 10px 10px 10px 15px;
+	margin: 0px 1px 0px 1px;
+	color: #36c;
+	font-size: 110%;
+}
+#main_mid h3 {
+	padding: 10px 10px 0px 15px;
+	margin: 0px;
+}
+#main_mid p  {
+	padding: 10px 10px 10px 15px;
+	margin: 0px 1px 0px 1px;
+}
+#main_mid p.top_nav  {
+	padding: 10px 10px 10px 15px;
+	margin: 0px 1px 0px 1px;
+	color: #666;
+	font-size: 95%;
+	font-weight: 600;
+}
+#main_mid p.top_nav a {
+	font-weight: 600;
+}
+*.back  {
+	background-color: #fffff4;
+	border-right: 1px solid #d4e9ff;
+	border-left: 1px solid #d4e9ff;	
+
+}
+#main_mid p a {
+	padding: 0px;
+	margin: 0px;
+	font-weight: 100;
+}
+#main_mid form#advanced {
+	padding: 0px 40px 10px 15px;
+	height:auto;
+	width: auto;
+	text-align: right;
+}
+#main_mid form {
+	padding: 0px 0px 0px 15px;
+	height:auto;
+	width: auto;
+}
+#main_mid form p {
+	padding: 5px 0px 10px 0px;
+	margin: 0;
+}
+#main_mid input {
+	margin: 0px;
+	padding: 0px;
+	width: auto;
+	font-size: 100%;
+}
+#main_mid form select {
+	background-color: #fff;
+	font-weight: normal;
+	color: #036;
+	margin: 5px 0px 0px 0px;
+	font-size: 90%;
+	border: 1px solid #666;
+}
+#main_mid label {
+	font-family: verdana, Helvetica, sans-serif;
+	font-size: 70%;
+	color: #666;
+}
+#main_mid form input.check {
+	margin:0px;
+	padding: 0px;
+	width: auto;
+	
+}
+#main_mid form input.button {
+	background-color: #fff;
+	width: auto;
+	font-weight: 900;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color: #ff6600;
+	margin: 0px;
+	font-size: 12px;
+	border: 1px solid #ff6600;
+}
+
+#main_body div.quicklinks {
+	margin: 10px 20px 10px 15px;
+	border: 1px dotted #faa431;
+	background-color: #fefff2;
+}
+#main_body div.quicklinks h2 {
+	width: auto;
+	border-top: 0;
+	padding: 7px 0px 7px 0px;
+	color: #06c;
+	margin: 0 20px 0 10px;
+	background-color:transparent;
+	font: bold 95%/100% Georgia, "Times New Roman", Times, serif;
+}
+#main_body div.quicklinks ul {
+	padding: 0px 5px 10px 0px;
+	margin: 0 0 0 10px;
+}
+#main_body div.quicklinks ul li  {
+	list-style-type: none;
+	padding: 2px 10px 2px 10px; 
+	margin: 0px 0px 0px 0px;
+	font: normal 90%/120% Verdana, Arial, Helvetica, sans-serif ;
+}
+#main_body div.quicklinks ul li a:link, #main_body div.quicklinks ul li a:visited {
+	font: normal 95%/100%  verdana, helvetica, sans-serif;
+}

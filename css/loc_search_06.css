@@ -1,0 +1,541 @@
+/* LOC Search Results CSS */
+body {
+	color:#333;
+	margin:0px;
+	padding:0px;
+	text-align:center;
+	background: #fff;
+	font:100% verdana, helvetica, sans-serif;
+}
+a {
+	color:#036;
+	font-family: verdana, helvetica, sans-serif;
+	font-weight:600;
+	text-decoration: underline;
+}
+a#skip {
+	position: absolute;
+	top:-100px;
+}
+a:link, a:visited, a:hover {
+	color: #036;
+	text-decoration: underline;
+}
+img {
+	border: 0;
+}
+#container {
+	width:765px;
+	height: auto;
+	margin-right:auto;
+	margin-left:auto;
+	margin-top:0px;
+	margin-bottom:0px;
+	padding:0px;
+	background-color: #fff; 
+	border: 1px solid #999;
+	color:#333;
+}
+/*  top navigation    */	
+div#topnav	{
+	height: 55px;
+	width: 765px;
+	margin: 0;
+	padding-top: 0px;
+	border-bottom: 0px solid #c2e6c5;
+	background: transparent url(http://www.loc.gov/images/line_blue.gif) top left no-repeat;
+}
+div#topnav ul#menu	{
+	height: 55px;
+	width: 765px;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+div#topnav ul#menu li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	position: absolute;
+	top: -1px;
+}
+ul#menu li, ul#menu a {
+	height: 55px;
+	padding-top:0px;
+	display: block;
+}
+#logo_lc { 
+	background: transparent url(http://www.loc.gov/images/logo_lc.gif) 0px 3px no-repeat;
+	left: 0px;
+	width: 217px;
+}
+#logo {	
+	background: transparent url(http://www.loc.gov/images/logo_search.gif) 0px 3px no-repeat;
+	left: 218px;
+	width: 89px;
+}	
+#searchmenu	{left: 350px; width: 235px;}
+#searchmenu label {
+	font-family: verdana, Helvetica, sans-serif;
+	font-size: 70%;
+	color: #666;
+}
+#searchmenu label a {
+	margin: 2px 0px 0px 40px;
+	font-weight: 200;
+}
+div#topnav form {
+	margin-top: 10px;
+	height:40px;
+	width: 400px;
+}
+div#topnav form select {
+	background-color: #fff;
+	font-weight: normal;
+	color: #036;
+	margin: 5px 0px 0px 0px;
+	font-size: 90%;
+	border: 1px solid #666;
+}
+div#topnav form input.button {
+	background-color: #fff;
+	font-weight: 900;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color: #ff6600;
+	margin: 0px 0px 0px 0px;
+	font-size: 12px;
+	border: 1px solid #ff6600;
+}
+/* bread crumb  navigation  */
+#crumb_nav {
+	clear: both;
+	height: 30px;
+	padding: 0px 0px 0px 15px;
+	color: #fff;
+	background-color: #000;
+	border-top: 1px solid #999;
+	border-bottom: 1px solid #333;
+}
+#crumb_nav #crumb {
+	color: #fff;
+	text-align: left;
+	padding: 10px 0px 0px 0px;
+	font: 70% Verdana, Helvetica, sans-serif;
+}
+#crumb_nav #crumb a {
+	color: #ccc;
+	font-size: 95%;
+	font-weight: 100;
+}
+#crumb_nav #crumb span {
+	color: #fff;
+	font: 80% Verdana, Helvetica, sans-serif;
+	font-weight:700;
+}
+/* crumb nav ends*/
+#content {
+	width: 745px;
+	height: auto;
+	margin: 10px;
+	font:90% verdana, helvetica, sans-serif;
+	background-color: #fff;
+	text-align:left;
+	padding: 0px;
+}
+/* left nav rules */
+#content #left_nav {
+	float: left;
+	width: 196px;
+	height: auto;
+	margin: 0px;
+	font:100% verdana, helvetica, sans-serif;
+
+	background: transparent url(http://www.loc.gov/images/search_nav_bot.gif) bottom left no-repeat;
+	text-align:left;
+	padding: 0px 0px 10px 0px;
+}
+#left_nav_mid {
+	width: 196px;
+	height: auto;
+	margin: 0px;
+	background: transparent url(http://www.loc.gov/images/search_nav_mid.gif) 0px 0px repeat-y;
+}
+#left_nav_mid h2 {
+	padding: 0px 5px 7px 10px;
+	color: #f60;
+	margin: 0px;
+	font-size: 90%;
+}
+#left_nav_top {
+	height: 10px;
+	padding: 0px;
+	margin: 0px;
+	background: transparent url(http://www.loc.gov/images/search_nav_top.gif) top left no-repeat;
+}
+
+#left_nav_mid ul#resources {
+	padding: 0px 0px 10px 10px;
+	margin: 0px 2px 0px 2px;
+	background: transparent;
+}
+#left_nav_mid ul#resources li {
+	list-style-type: none;
+	font: 85%/120% verdana, helvetica, sans-serif;
+	background: transparent url(http://www.loc.gov/images/arrow_o.gif) 0px 6px no-repeat;
+	padding: 2px 5px 2px 15px; 
+	margin: 0px;
+}
+#left_nav_mid ul#resources li#on {
+	background: transparent url(http://www.loc.gov/images/arrow_grey.gif) no-repeat 0px 4px;
+	font: bold 85%/120% verdana, helvetica, sans-serif;
+	color: #666;
+}
+#left_nav_mid ul#resources li a {
+	font: bold 90%/120% Verdana, Arial, Helvetica, sans-serif;
+}
+
+h2#more {
+	border-top: 1px solid #ccc;
+	padding: 7px 5px 7px 10px;
+	color: #690;
+	margin: 0px 2px 0px 2px;
+	background: transparent url(http://www.loc.gov/images/dots_leftnav.gif) bottom left no-repeat;
+	font: bold 90%/120% Georgia, "Times New Roman", Times, serif;
+}
+ul#res_links {
+	padding: 0px 5px 0px 5px;
+	margin: 0px;
+}
+ul#res_links li  {
+	list-style-type: none;
+	padding: 2px 10px 2px 10px; 
+	background: transparent url(http://www.loc.gov/images/gt.gif) no-repeat 0px 7px;
+	margin: 0px 0px 0px 10px;
+	font: normal 75%/120% Verdana, Arial, Helvetica, sans-serif;
+}
+ul#res_links li a:link, ul#res_links li a:visited {
+	font: bold 95%/120% Verdana, Arial, Helvetica, sans-serif;
+}
+h2#recommend {
+	width: 179px;
+	border-top: 1px solid #ccc;
+	padding: 7px 5px 7px 10px;
+	color: #900;
+	margin: 0 0 0 1px;
+	background-color: #fbeeee;
+	font: bold 80%/100% Georgia, "Times New Roman", Times, serif;
+}
+ul#recommend_links {
+	width: 189px;
+	padding: 0px 5px 10px 0px;
+	margin: 0 0 0 1px;
+	background-color: #fdf8f8;
+}
+ul#recommend_links li  {
+	list-style-type: none;
+	padding: 2px 10px 2px 10px; 
+	margin: 0px 0px 0px 0px;
+	font: normal 75%/120% Verdana, Arial, Helvetica, sans-serif;
+}
+ul#recommend_links li a:link, ul#recommend_links li a:visited {
+	font: normal 95%/120% verdana, helvetica, sans-serif;
+}
+/*  end left nav rules  */
+/* content rules */
+#page_head {
+	width: auto;
+	height: auto;
+	margin: 0px 0px 10px 205px;
+	font:90% verdana, helvetica, sans-serif;
+	background: transparent url(../images/ph_top.gif) top left no-repeat;
+	text-align:left;
+	padding: 2px 0px 2px 0px;
+}
+#page_head h1 {
+	color: #900;
+	padding: 10px 10px 10px 15px;
+	margin: 0;
+	font: bold 150%/105% Georgia, "Times New Roman", Times, serif;
+	display: block;
+	background: transparent url(../images/ph_bot.gif) bottom left no-repeat;
+}
+#page_head h1 span {
+	color: #000;
+	font-size: 75%;
+	font-weight: 200;
+}
+#page_head h1 span a {
+	color: #036;
+	font-size: 80%;
+	font-weight: 200;
+}
+/* image gallery rules */
+#main_menu {
+	width: 522px;
+	height: auto;
+	margin: 0px 0px 0px 205px;
+	font:90% verdana, helvetica, sans-serif;
+	background: transparent url(http://www.loc.gov/images/search_bottom.gif) bottom left no-repeat;
+	text-align:left;
+	padding: 0px 0px 10px 0px;
+}
+#search_top {
+	padding: 0px;
+	margin: 0px;
+	background: transparent url(http://www.loc.gov/images/search_top.gif) top left no-repeat;
+	height: 10px;
+}
+#search_nav {
+	padding: 10px 10px 10px 15px;
+	border-top: 1px solid #d4e9ff;
+	background: transparent url(http://www.loc.gov/images/search_nav_dots.gif) bottom left no-repeat;	
+	text-align: right;
+	font-size:85%;
+	color: #666;
+}
+#search_nav_bot {
+	padding: 10px 10px 10px 15px;
+	width:auto;
+	background: transparent url(http://www.loc.gov/images/search_nav_dots.gif) top left no-repeat;	
+	font-size:85%;
+	text-align: right;
+	color: #666;
+}
+#search_nav a, #search_nav_bot a {
+	font-weight: 100;
+}
+#main_menu #search_nav img, #main_menu #search_nav_bot img {
+	padding: 0px;
+	margin: 0px;
+}
+#search_body {
+	padding: 0px;
+	background: transparent url(http://www.loc.gov/images/search_tile.gif) 0px 0px repeat-y;
+}
+
+#search_body h2 {
+	margin: 0px;
+	padding: 10px 10px 10px 10px;
+	font-size: 120%;
+	color: #36c;
+}
+#search_body p.response {
+	font-size: 100%;
+	margin: 0px;
+	padding: 0px 10px 5px 15px;
+}
+#search_body div.quicklinks {
+	margin: 10px 20px 10px 15px;
+	border: 1px dotted #faa431;
+	background-color: #fefff2;
+}
+#search_body div.quicklinks h2 {
+	width: auto;
+	border-top: 0;
+	padding: 7px 0px 7px 0px;
+	color: #06c;
+	margin: 0 20px 0 10px;
+	background-color:transparent;
+	font: bold 95%/100% Georgia, "Times New Roman", Times, serif;
+}
+#search_body div.quicklinks ul {
+	padding: 0px 5px 10px 0px;
+	margin: 0 0 0 1px;
+}
+#search_body div.quicklinks ul li  {
+	list-style-type: none;
+	padding: 2px 10px 2px 10px; 
+	margin: 0px 0px 0px 0px;
+	font-size: 85%;
+}
+#search_body div.quicklinks ul li a:link, #search_body div.quicklinks ul li a:visited {
+	font: normal 95%  verdana, helvetica, sans-serif;
+}
+ul#search_body li  {
+	list-style-type: disc;
+	padding: 0px 2px 0px 2px;
+	margin: 0px 0px 0px 25px;
+	font-size: 95%;
+}
+#search_body p.question {
+	color: #f60;
+	margin: 0px;
+	padding: 0px 10px 10px 10px;
+}
+#search_body p.question a {
+	font-style:italic;
+}
+#search_body form {
+	width: auto;
+	height: auto;
+	margin: 5px 0px 10px 15px;
+	text-align:left;
+	padding: 0px;
+}
+#search_body form input#keyword {
+	width: 220px;
+	text-align:left;
+	margin: 0px 0px 0px 0px;
+	padding: 0px;
+		border: 1px solid #999;
+	font-size: 110%;
+}
+#search_body form label {
+	font-size: 95%;
+	font-weight: 100;
+	text-align: left;
+}
+#search_body form input.button {
+	background-color: #fff;
+	font-weight: 900;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color: #f60;
+	margin: 0px;
+	font-size: 12px;
+	border: 1px solid #ff6600;
+
+}
+#search_body span {
+	color: #999;
+}
+/* styles to accomodate Ultraseek invalid HTML markup*/
+#search_body div.results table {
+	width:90%;
+	font:normal 85%/120% Verdana, Arial, Helvetica, sans-serif;
+	color: #333;
+	margin: 0 10px 0 10px;
+	padding:0;
+	border: 0;
+}
+#search_body div.results table td p {
+	font:normal 100%/100% Verdana, Arial, Helvetica, sans-serif;
+}
+#search_body div.results hr {
+	border: 1px solid #d4e9ff;
+}
+#search_body div.results font.url, #search_body div.results font.size {
+	font-size: 120%;
+	color: #999;
+}
+*.highlight {
+	background-color: #ff9;
+	font: normal 95%/100% Verdana, Arial, Helvetica, sans-serif;
+	color: #333;
+}
+#search_body div.results span.description {
+	color: #333;
+}
+
+/* search form for error page */
+
+#search_body_error form {
+width: auto;
+	height: auto;
+	margin: 5px 0px 10px 10px;
+	text-align:left;
+	padding: 0px;
+}
+#search_body_error form input#keyword {
+	width: 220px;
+	text-align:left;
+	margin: 0px 0px 0px 0px;
+	padding: 0px;
+	border: 1px solid #999;
+	font-size: 100%;
+}
+#search_body_error form label {
+	font-size: 95%;
+	font-weight: 100;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+#search_body_error form input.button {
+	background-color: #fff;
+	font-weight: 900;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #ff6600;
+	margin: 0px 0px 2px 0px;
+	font-size: 12px;
+	border: 1px solid #ff6600;
+}
+
+#search_body_error p.response {
+	font-size: 100%;
+	margin: 0px;
+	padding: 0px 10px 5px 10px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+ul#search_body_error li  {
+	list-style-type: disc;
+	padding: 0px 2px 0px 2px;
+	margin: 0px 0px 0px 25px;
+	font-size: 95%;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+#search_body span.highlight {
+	background-color: #ffffcc;
+	color: #000;
+	font-weight:200;
+	font-size: 100%;
+	font-family: verdana, helvetica, sans-serif;
+}
+
+#search_body span.highlight a {
+	color:#036;
+	text-decoration: underline;
+}
+
+.view_more {
+	font-size: 85%;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #666;
+}
+.view_more a {
+background-color: #fff;
+color:#036;
+font-weight: normal;
+font-size: 85%;
+}
+
+#main_menu h3  {
+	padding: 5px 10px 5px 15px;
+	font-size: 100%;
+	color: #000;
+}
+#main_menu p {
+	padding: 10px 10px 10px 15px;
+	font-size: 85%;
+	color: #000;
+}
+#main_menu img {
+	padding: 10px 10px 10px 15px;
+}
+
+/* end of content rules   */
+/*  footer rules */
+#footer {
+	clear: both;
+	font: 80% verdana, helvetica, sans-serif;
+	height: 30px;
+	text-align: left;
+	border-color: #005194;
+	border-width: 0px;
+	background: #efefef url(http://www.loc.gov/images/line_blue.gif) top left no-repeat;
+	padding: 15px 0px 0px 15px;
+}
+#footer a{
+	color:#666;
+	font-size: 80%;
+	font-family: verdana, helvetica, sans-serif;
+	font-weight: normal;
+	text-decoration:underline;
+}
+#footer a:hover {
+	color: #333;
+	font-size: 80%;
+	font-family: verdana, helvetica, sans-serif;
+	font-weight: normal;
+	text-decoration: underline;
+}
+	

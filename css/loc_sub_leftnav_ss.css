@@ -1,0 +1,18 @@
+/* CSS Document */
+#content #left_nav_mid {
+	width: 196px;
+	height: auto;
+	margin: 0px 0px 10px 0px;
+	border: 0;
+	text-align:left;
+	padding: 0;
+	background: transparent url(../access/images/access_image.jpg) 0px 0px no-repeat;
+	border: 1px solid #ccc;
+}
+#left_nav ul {
+	padding: 5px 0px 5px 10px;
+	margin: 49px 0px 0px 0px;
+	background-color: #f5f5f5;
+	border-bottom: 0px solid #ccc;
+	border-top: 0px solid #ccc;
+}

@@ -1,0 +1,272 @@
+/* CSS Document */
+body {
+	color:#333;
+	margin:0px;
+	padding:0px;
+	text-align:center;
+	background: #fff;
+	font:100% verdana, helvetica, sans-serif;
+}
+a#skip {position: absolute;top:-100px;}
+a:link, a:visited {color: #036;text-decoration: underline;}
+a:hover {color:#333;text-decoration: underline;}
+img {border: 0;} 
+div.locshare-toolbar, div.locshare-toolbar span.locshare-print-button, div.locshare-toolbar span.locshare-subscribe-button, div.locshare-toolbar span.locshare-share-button, div.locshare-toolbar.right {
+	display: none;
+}
+div#container div.pdf {
+	display: none;
+}
+div#container div.back {
+	display: none;
+}
+div#container {
+	width:auto;
+	height: auto;
+	margin-right:auto;
+	margin-left:auto;
+	margin-top:0px;
+	margin-bottom:0px;
+	padding:0px;
+	background-color: #fff; 
+	border: 1px solid #999;
+	color:#333;
+	overflow: visible !important;
+}
+/*  top navigation    */	
+div#topnav	{display: none;}
+/* bread crumb  navigation  */
+div#crumb_nav {
+	clear: both;
+	height: 30px;
+	padding: 0px 0px 0px 15px;
+	color: #fff;
+	background-color: #000;
+	border-top: 0px solid #999;
+	border-bottom: 1px solid #333;
+}
+
+div#crumb_nav div#crumb {
+	color: #fff;
+	text-align: left;
+	padding: 10px 0px 0px 0px;
+	font: 70% Verdana, Helvetica, sans-serif;
+}
+div#crumb_nav #crumb a {
+	color: #ccc;
+	font-size: 95%;
+	font-weight: 100;
+}
+div#crumb_nav div#crumb span {
+	color: #fff;
+	font: 80% Verdana, Helvetica, sans-serif;
+	font-weight:700;
+}
+/* crumb nav ends*/
+div#content {
+	width: auto;
+	height: auto;
+	margin: 10px 10px 5px 10px;
+	font:90% verdana, helvetica, sans-serif;
+	background-color: #fff;
+	text-align:left;
+	padding: 0px;
+}
+/* left nav rules */
+div#content div#left_nav {
+	display: none;
+}
+/*  end left nav rules  */
+/* content rules */
+div#page_head {
+	width: auto;
+	height: 55px;
+	margin: 0px 0px 0px 15px;
+	font:90% verdana, helvetica, sans-serif;
+	background: transparent url(../images/page_head.gif) top left no-repeat;
+	text-align:left;
+	padding: 2px 0px 2px 0px;
+}
+div#page_head h1 {
+	color: #343268;
+	padding: 5px 10px 5px 10px;
+	font: bold 150%/105% Georgia, "Times New Roman", Times, serif;
+	margin: 0px;
+}
+div#page_head h1 span {
+	color: #000;
+	font-size: 75%;
+	font-weight: 200;
+}
+div#main_menu {
+	width: auto;
+	height: auto;
+	margin: 15px 0px 10px 15px;
+	font:90% verdana, helvetica, sans-serif;
+	text-align:left;
+	padding: 0px;
+} 
+div#main_left {
+	width: 250px;
+	height: auto;
+	background: transparent url(../images/librarian_left_bot.gif) bottom left no-repeat;
+	float: left;
+	margin: 0px 0px 10px 0px;
+	padding: 0px 0px 10px 0px;
+}
+/*kikiki
+div#left_top {
+	width: 254px;
+	height: 73px;
+	margin: 0px;
+	background: transparent url(../images/swan_left_top.gif) 0px 0px no-repeat;
+	padding: 0px;
+}
+div#left_top h2 {
+	font-size: 100%;
+	font: bold 100%/110% Georgia, "Times New Roman", Times, serif;
+	color: #06c;
+	margin: 0px;
+	padding: 10px 10px 10px 10px;
+}
+div#left_top h2 span, div#main_right h2 span, div#right_bottom h2 span {
+	color: #9c0;
+}
+div#left_mid {
+	margin: 0px;
+	padding: 10px 10px 0px 10px;
+	width: 254px;
+	height: auto;
+	background: transparent url(../images/librarian_left_mid.gif) 0px 0px repeat-y;
+	color: #666;
+	font-size: 80%;
+}
+div#left_mid ul {
+	padding: 0px 0px 0px 10px;
+	margin: 0px 2px 10px 10px;
+}
+div#left_mid ul li {
+	list-style-type: none;
+	background: transparent;
+	padding: 2px 5px 2px 15px; 
+	margin: 0px;
+} kikiki*/
+a#spot_link1 {
+	font:bold 110% Verdana, Arial, Helvetica, sans-serif;
+	margin: 0px 0px 5px 0px;
+}
+/* kikiki
+div#left_mid p {
+	font-size: 100%;
+	color: #666;
+	padding: 10px 10px 0px 0px;
+	margin: 0px 5px 0px 0px;
+}
+div#left_mid img {
+	float: left;
+	border: 0px;
+	margin: 0px 5px 50px 0px;
+}
+div#left_bottom {
+	clear: left;
+	padding: 10px;
+	width: 235px;
+	background: transparent url(../images/librarian_left_mid.gif) 0px 0px repeat-y;
+	color: #666;
+	font-size: 80%;
+}
+div#left_bottom a#foot_link1, div#left_bottom a#foot_link2, div#left_bottom a#foot_link3 {
+	font: bold 95% Verdana, Arial, Helvetica, sans-serif;
+}
+div#left_bottom a {
+	font: bold 90% Verdana, Arial, Helvetica, sans-serif;
+} kikiki*/
+div#main_right {
+	width: auto;
+	height: auto;
+	background: transparent url(../images/librarian_right_bot.gif) bottom left no-repeat;
+	font-size: 90%;
+	margin: 0px 0px 0px 265px;
+	padding: 0px 0px 10px 0px;
+}
+div#right_top {
+	width: auto;
+	height: auto;
+	margin: 0px;
+	background: transparent url(../images/swan_right_top.gif) 0px 0px no-repeat;
+	padding: 0px;
+}
+/*
+div#right_top h2 {
+	font: bold 110%/100% Georgia, "Times New Roman", Times, serif;
+	color: #06c;
+	padding:10px 0px 10px 10px;
+	margin: 0px 0px 5px 0px;
+}*/
+img#feature {
+	border: 1px solid #900;
+	float: left;
+	margin: 0px 10px 0px 0px;
+}
+
+div#right_mid {
+	margin: 0px;
+	padding: 10px 5px 5px 10px;
+	padding:0;
+	width: auto;
+	background: transparent url(../images/librarian_right_mid.gif) 0px 0px repeat-y;
+	color: #999;
+	/*font-size: 90%;*/
+}
+/*
+div#right_top ul, div#right_mid ul, div#right_bottom ul {
+	list-style: disc;
+	margin: 0 0 0 10px;
+	padding: 0;
+	font-size: 85%;
+}
+div#right_top ul li, div#right_mid ul li, div#right_bottom ul li  {
+	list-style-type: disc;
+	background: transparent;
+}*/
+div#right_bottom {
+	margin: 0px;
+	padding: 10px 5px 5px 0px;
+	padding:0;
+	width:auto;
+	background: transparent url(../images/librarian_right_mid.gif) 0px 0px repeat-y;
+	color: #999;
+	/*font-size: 90%;*/
+}
+/*
+div#right_bottom h2 {
+	font: bold 130%/100% Georgia, "Times New Roman", Times, serif;
+	color: #06c;
+	border-top: 1px solid #b4e3ef;
+	padding: 10px 0px 10px 10px;
+	margin: 0px 0px 5px 0px;
+	background: transparent url(../images/dots_h2.gif) bottom left no-repeat;
+}
+div#right_bottom ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px 0px 10px 10px;
+	font-size: 85%;
+}
+
+div#right_mid ul li, div#right_bottom ul li  {
+	list-style-type: none;
+	display: block; 
+	line-height: 15px;
+	padding: 0px 2px 0px 10px; 
+	background: transparent url(../images/gt.gif) no-repeat 0px 5px;
+	margin: 0px;
+	font-size: 115%;
+	color: #666;
+}*/
+div#right_mid ul li a:link, div#right_mid ul li a:visited, div#right_bottom ul li a:link, div#right_bottom ul li a:visited  {
+	font: normal 100% verdana, helvetica, sans-serif;
+}
+/* end of content rules   */
+/*  footer rules */
+div#footer {display:none;clear:both;}

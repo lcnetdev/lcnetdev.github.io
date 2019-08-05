@@ -1,0 +1,224 @@
+/* CSS rules for no left nav pages*/
+/* main content area pages */
+#page_head {
+	margin: 0px 0px 9px 10px;
+	background: transparent url(../images/ph_top730.gif) top left no-repeat;
+}
+#page_head h1 {
+	background: transparent url(../images/ph_bot730.gif) bottom left no-repeat;
+}
+#main_menu {
+	margin: 0px 0px 0px 10px;
+}
+#main_body {
+	width: auto;
+	margin: 0;
+	padding: 0 0 15px 0;
+	border: 1px solid #d4e9ff;
+}
+#main_nav1, #main_nav2 {
+	width: auto;
+	margin: 0;
+	padding: 10px 5px 10px 15px;
+	height: auto;
+	border-bottom: 1px solid #d4e9ff;
+	background-color: #eff6fd;
+	font-size:85%;
+	color: #666;
+}
+#main_nav2 {
+	background-color: #f7fafd;
+}
+#main_nav1 h2 {
+	color: #900;
+	font-size: 130%;
+}
+#main_nav1 a {
+	font-size: 95%; 
+}
+#main_body h2 {
+	margin: 0;
+	padding: 10px 10px 5px 10px;
+	font: bold 100%/120% Georgia, "Times New Roman", Times, serif;
+	color: #36c;
+}
+#main_body h2 span {
+	color:#9c0;
+}
+h2.first {
+	padding: 0px 10px 5px 15px;
+}
+#main_body h3 {
+	margin: 0;
+	padding: 5px 10px 5px 10px;
+	font: bold 100%/105% Georgia, "Times New Roman", Times, serif;
+	color: #000;
+}
+#main_news p, #main_body p {
+	padding: 7px 10px 7px 10px;
+	margin: 0;
+	font: normal 85%/120% Verdana, Arial, Helvetica, sans-serif;
+	color: #000;
+}
+#main_body p.pdf {
+	text-align: right;
+	color: #999;
+	font-size: 85%;
+}
+#main_body p.pdf img {
+	float:right;
+	margin-left:5px;
+}
+#announce p {
+	padding: 0px 15px 25px 10px;
+	margin: 0;
+	font: normal 80%/120% Verdana, Arial, Helvetica, sans-serif;
+	color: #000;
+}
+#announce p a {
+	padding: 0px 15px 25px 0px;
+	margin: 0;
+	font: bold 100%/120% Verdana, Arial, Helvetica, sans-serif;
+	color: #900;
+}
+#announce p.red {
+	color:#f00;
+	padding: 0px 15px 5px 10px;
+}
+#main_news ul, #main_body ul {
+	padding: 7px 10px 10px 0px;
+	margin: 0;
+}
+#main_news ul li, #main_body ul li {
+	list-style-type: none;
+	display: block; 
+	margin: 0px 0px 0px 10px;
+	padding: 0px  10px 3px 10px;
+	background: transparent url(../images/gt.gif) no-repeat 0px 6px;
+	font: normal 85%/150% Verdana, Arial, Helvetica, sans-serif;
+}
+#main_body ul li ul li {
+	margin: 0px 0px 0px 15px;
+	padding: 0px  10px 3px 10px;
+	list-style: disc;
+	font-size: 110%;
+}
+#main_body ol li ul {
+	margin: 10px 0px 10px 0px;
+	padding: 0px  10px 3px 10px;
+}
+#main_body ol li ul li {
+	margin: 0px 0px 0px 0px;
+	padding: 0px  10px 3px 10px;
+	list-style: none;
+	font-size: 90%;
+}
+#main_body ol {
+	margin: 0px 10px 0px 15px;
+	padding: 10px 0px 10px 20px;
+}
+#main_body ol li {
+	margin: 0px 10px 0px 5px;
+	padding: 5px 0px 5px 0px;
+	font: normal 85%/130% Verdana, Arial, Helvetica, sans-serif;
+}
+#main_body li p {
+	padding: 5px 5px 3px 0px;
+	font:normal 100%/120% Verdana, Arial, Helvetica, sans-serif;
+}
+#main_body form {
+	margin: 15px 0 10px 10px;
+	padding: 0;
+	height: auto;
+	width: auto;
+	font: normal 95%/100% verdana, helvetica, sans-serif;
+}
+#main_body form input, #main_body form select {
+	width: auto;
+	background-color: #fff;
+	color: #333;
+	border: 1px solid #ccc;
+	margin: 5px 0px 0px 0px;
+	font: normal 100%/100% verdana, helvetica, sans-serif;
+}
+#main_body form input {
+	width: auto;
+}
+#main_body form span {
+	font: bold 100% verdana, helvetica, sans-serif;
+	color: #900;
+}
+#main_body form p {
+	font: normal 90% verdana, helvetica, sans-serif;
+	padding: 5px 20px 10px 0px;
+}
+#main_body form textarea {
+	width: auto;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	margin: 5px 0px 0px 0px;
+	font: normal 100%/100% verdana, helvetica, sans-serif;
+}
+#main_body form input.radio, #main_body form input.check {
+	width: auto; 
+	background-color: #fff;
+	font-weight: normal;
+	color:#333;
+	border: 0;
+	margin: 5px 0px 0px 0px;
+	padding: 0;
+	font-size: 100%;
+}
+#main_body form label {
+	padding: 0;
+	font: normal 90%/120% verdana, helvetica, sans-serif;
+	margin: 0;
+}
+#main_body form label span {
+	color: #000;
+	font-size: 100%;
+	font-weight: 100;
+}
+#main_body form input.submit, #main_body form input.button {
+	width: auto;
+	background-color: #fff;
+	font-weight: 900;
+	font: bold 100%/100% Verdana, Arial, Helvetica, sans-serif;
+	color: #f60;
+	margin: 0;
+	border: 1px solid #f60;
+}
+#main_body table {
+	width: 95%;
+	height: auto;
+	margin: 10px;
+	border-collapse: collapse;
+	border: 1px solid #ccc;
+	font: normal 90% verdana, helvetica, sans-serif;
+	text-align:left;
+	padding: 0;
+}
+#main_body table th {
+	width: auto;
+	height: auto;
+	font: bold 90% verdana, helvetica, sans-serif;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	background-color: #f7f7f7;
+	color: #333;
+	text-align:left;
+	padding: 5px;
+}
+#main_body table td {
+	width: auto;
+	height: auto;
+	font: normal 90% verdana, helvetica, sans-serif;
+	border-left: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	color: #666;
+	text-align: left;
+	vertical-align: top;
+	padding: 3px 5px 3px 5px;
+}
+/* end of content rules   */
+

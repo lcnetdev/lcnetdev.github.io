@@ -1,0 +1,97 @@
+/* CSS Document */
+#main_body ul, #main_body ul#nohits {
+	padding: 10px 0 10px 0;
+	margin: 0;
+}
+#main_body ul li {
+	width: auto;
+	height: auto;
+	list-style: none;
+	background: transparent url(../images/browse_dots.gif) bottom left no-repeat;
+	font:normal 90%/110% Verdana, Arial, Helvetica, sans-serif;
+	padding: 5px 10px 10px 10px;
+}
+#main_body ul#nohits li {
+	list-style-type: none;
+	display: block; 
+	padding: 0px 2px 0px 10px; 
+	background: transparent url(../images/ul_arrow.gif) no-repeat 0px 7px;
+	margin: 0 0 0 15px;
+	font: normal 90%/140% Verdana, Arial, Helvetica, sans-serif;
+	color: #333;
+}
+#main_body ul li.last {
+	background: transparent;
+}
+#main_body ul li p {
+	color: #333;
+	padding: 5px 5px 3px 0px;
+	font: normal 95%/110% Verdana, Arial, Helvetica, sans-serif;
+}
+#main_body ul li p a {
+	font:bold 95%/110% Verdana, Arial, Helvetica, sans-serif;
+}
+#main_body p span.right {
+	display: block;
+	width: 150px;
+	position:relative;
+	top: 0;
+	left: 220px;
+}
+#main_body p {
+	padding: 7px 15px 7px 15px;
+	margin: 0;
+	font-size: 85%;
+	color: #000;
+}
+#main_body form {
+	width: 350px;
+	height: auto;
+	margin: 10px 0px 10px 15px;
+	padding: 0px 0px 0px 0px;
+}
+#main_body form input.button {
+	background-color: #fff;
+	width:auto;
+	color: #f60;
+	font: bold 90%/100% verdana, helvetica, sans-serif;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+	border: 1px solid #f60;
+}
+#main_body form input {
+	width: 250px;
+	padding: 0;
+	margin: 0;
+	font: normal 105%/100% verdana, helvetica, sans-serif;
+	background-color: #fff;
+	border: 1px solid #999;
+}
+#main_body form label {
+	font: bold 90%/140% verdana, helvetica, sans-serif;
+	padding: 0;
+}
+
+#search_nav {
+	padding: 10px 30px 10px 10px;
+	text-align: right;
+	font-size:85%;
+	color: #666;
+	border-bottom: 1px solid #d4e9ff;
+}
+#search_nav p {
+	text-align: left;
+	margin: 0;
+	padding: 10px 0 5px 0px;
+	font: normal 100%/110% Verdana, Arial, Helvetica, sans-serif;
+	
+}
+#search_nav p span.term {
+	font-weight: bold;
+	
+}
+#search_nav a, #search_nav_bot a {
+	font-weight: 100;
+}/* CSS Document */
+

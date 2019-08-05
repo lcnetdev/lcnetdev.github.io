@@ -1,0 +1,62 @@
+/* CSS Document */
+
+/* content rules */
+#page_head {
+	width: 730px;
+	height: auto;
+	margin: 0px 0px 10px 5px;
+	font:normal 90%/100% verdana, helvetica, sans-serif;
+	background: transparent url(../images/ph_top730.gif) top left no-repeat;
+	text-align:left;
+	padding: 2px 0px 2px 0px;
+}
+#page_head h1 {
+	color: #343268;
+	padding: 10px 0px 10px 10px;
+	margin: 0;
+	font: bold 140%/105% Georgia, "Times New Roman", Times, serif;
+	display: block;
+	background: transparent url(../images/ph_bot730.gif) bottom left no-repeat;
+}
+/*content rules */
+#main_menu {
+	width: 725px;
+	height: auto;
+	margin: 0px 0px 0px 7px;
+	font:90% verdana, helvetica, sans-serif;
+	text-align:left;
+	padding: 0px;
+}
+#main_body {
+	width: 725px;
+	margin: 0;
+	padding: 0;
+	border: 1px solid #d4e9ff;
+}
+#main_body h2#top {
+	border-top: 0px solid #d4e9ff;
+	padding: 10px 10px 5px 10px;
+	margin: 0px 1px 0px 1px;
+}
+#main_body h2 {
+	border-top: 1px solid #d4e9ff;
+	padding: 10px 10px 10px 10px;
+	margin: 0px 1px 0px 1px;
+}
+#main_body h2 a {
+	font-weight: bold;
+}
+#main_body p  {
+	padding: 10px 10px 10px 10px;
+	margin: 0px 1px 0px 1px;
+}
+
+*.back  {
+background-color: #fffff4;
+
+}
+*.back_last  {
+background-color: #fffff4;
+border-bottom: 1px solid #d4e9ff;
+
+}
