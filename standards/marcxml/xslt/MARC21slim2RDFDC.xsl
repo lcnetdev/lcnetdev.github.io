@@ -4,7 +4,6 @@
 	<xsl:output method="xml" indent="yes"/>
 	
 	<!--
-	Suppressed duplicate 520,521.  fixed 752 subfield list, suppressed 856q, added 662.  2008-01-22 ntra
 	Fixed 500 field 2006-12-11 ntra
 	Added ISBN and deleted attributes 6/04 jer-->
 	
@@ -85,13 +84,13 @@
 				<xsl:value-of select="substring($controlField008,36,3)"/>
 			</dc:language>
 
-		<!--	<xsl:for-each select="marc:datafield[@tag=856]/marc:subfield[@code='q']">
+			<xsl:for-each select="marc:datafield[@tag=856]/marc:subfield[@code='q']">
 				<dc:format>
 					<xsl:value-of select="."/>
 				</dc:format>
-			</xsl:for-each>-->
+			</xsl:for-each>
 
-			<!--<xsl:for-each select="marc:datafield[@tag=520]">
+			<xsl:for-each select="marc:datafield[@tag=520]">
 				<dc:description>
 					<xsl:value-of select="marc:subfield[@code='a']"/>
 				</dc:description>
@@ -101,7 +100,7 @@
 				<dc:description>
 					<xsl:value-of select="marc:subfield[@code='a']"/>
 				</dc:description>
-			</xsl:for-each>-->
+			</xsl:for-each>
 
 			<xsl:for-each select="marc:datafield[500 &lt;= @tag and @tag &lt;= 599][not(@tag=506 or @tag=530 or @tag=540 or @tag=546)]">
 				<dc:description>
@@ -156,17 +155,11 @@
 					</xsl:call-template>
 				</dc:subject>
 			</xsl:for-each>
-<xsl:for-each select="marc:datafield[@tag=662]">
-				<dc:coverage>
-					<xsl:call-template name="subfieldSelect">
-						<xsl:with-param name="codes">abcdefgh</xsl:with-param>
-					</xsl:call-template>
-				</dc:coverage>
-			</xsl:for-each>
+
 			<xsl:for-each select="marc:datafield[@tag=752]">
 				<dc:coverage>
 					<xsl:call-template name="subfieldSelect">
-						<xsl:with-param name="codes">adcdfgh</xsl:with-param>
+						<xsl:with-param name="codes">abcd</xsl:with-param>
 					</xsl:call-template>
 				</dc:coverage>
 			</xsl:for-each>
@@ -216,9 +209,5 @@
 </xsl:stylesheet><!-- Stylus Studio meta-information - (c) 2004-2005. Progress Software Corporation. All rights reserved.
 <metaInformation>
 <scenarios ><scenario default="yes" name="RDF" userelativepaths="yes" externalpreview="no" url="marcxmlfile.xml" htmlbaseurl="" outputurl="" processortype="internal" useresolver="no" profilemode="0" profiledepth="" profilelength="" urlprofilexml="" commandline="" additionalpath="" additionalclasspath="" postprocessortype="none" postprocesscommandline="" postprocessadditionalpath="" postprocessgeneratedext="" validateoutput="no" validator="internal" customvalidator=""/></scenarios><MapperMetaTag><MapperInfo srcSchemaPathIsRelative="yes" srcSchemaInterpretAsXML="no" destSchemaPath="" destSchemaRoot="" destSchemaPathIsRelative="yes" destSchemaInterpretAsXML="no"/><MapperBlockPosition></MapperBlockPosition><TemplateContext></TemplateContext><MapperFilter side="source"></MapperFilter></MapperMetaTag>
-</metaInformation>
---><!-- Stylus Studio meta-information - (c)1998-2002 eXcelon Corp.
-<metaInformation>
-<scenarios/><MapperInfo srcSchemaPath="" srcSchemaRoot="" srcSchemaPathIsRelative="yes" srcSchemaInterpretAsXML="no" destSchemaPath="" destSchemaRoot="" destSchemaPathIsRelative="yes" destSchemaInterpretAsXML="no"/>
 </metaInformation>
 -->

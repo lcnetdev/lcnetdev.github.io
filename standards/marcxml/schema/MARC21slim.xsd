@@ -8,7 +8,7 @@
 				May 21, 2002 - Version 1.0  - Initial Release
 
 **********************************************
-Changes. 
+Changes.
 
 August 4, 2003 - Version 1.1 - 
 Removed import of xml namespace and the use of xml:space="preserve" attributes on the leader and controlfields. 

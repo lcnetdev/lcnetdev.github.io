@@ -1,8 +1,9 @@
 <xsl:stylesheet xmlns="http://www.loc.gov/mods/v3" xmlns:marc="http://www.loc.gov/MARC21/slim" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" exclude-result-prefixes="xlink marc" version="1.0">
 	<xsl:include href="http://www.loc.gov/marcxml/xslt/MARC21slimUtils.xsl"></xsl:include>
 	<xsl:output encoding="UTF-8" indent="yes" method="xml"></xsl:output>
-	<!--
-Revision 1.13 datafield 028 fixed attribute placement  2006/12/07 ntra
+<!--
+Revision 1.13 - Changed order of subelement output under cartographics to reflect schema 2006/11/28
+	
 Revision 1.12 - Updated to reflect MODS 3.2 Mapping  tmee 2006/10/11
 		
 Revision 1.11 - The attribute objectPart moved from <languageTerm> to <language>
@@ -34,7 +35,7 @@ Added Log Comment
 	<xsl:template match="/">
 		<xsl:choose>
 			<xsl:when test="//marc:collection">
-				<modsCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-1.xsd">
+				<modsCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-2.xsd">
 					<xsl:for-each select="//marc:collection/marc:record">
 						<mods version="3.2">
 							<xsl:call-template name="marcRecord"></xsl:call-template>
@@ -43,7 +44,7 @@ Added Log Comment
 				</modsCollection>
 			</xsl:when>
 			<xsl:otherwise>
-				<mods xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.1" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-1.xsd">
+				<mods xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.2" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-2.xsd">
 					<xsl:for-each select="//marc:record">
 						<xsl:call-template name="marcRecord"></xsl:call-template>
 					</xsl:for-each>
@@ -1372,27 +1373,31 @@ Added Log Comment
 				</xsl:for-each>
 			</subject>
 		</xsl:for-each>
+		<!-- tmee 2006/11/27 -->
 		<xsl:for-each select="marc:datafield[@tag=255]">
 			<subject>
+				<xsl:for-each select="marc:subfield[@code='a' or @code='b' or @code='c']">
 				<cartographics>
-					<xsl:for-each select="marc:subfield[@code='c']">
-						<coordinates>
-							<xsl:value-of select="."></xsl:value-of>
-						</coordinates>
-					</xsl:for-each>
-					<xsl:for-each select="marc:subfield[@code='a']">
+					<xsl:if test="@code='a'">
 						<scale>
 							<xsl:value-of select="."></xsl:value-of>
 						</scale>
-					</xsl:for-each>
-					<xsl:for-each select="marc:subfield[@code='b']">
+					</xsl:if>
+					<xsl:if test="@code='b'">
 						<projection>
 							<xsl:value-of select="."></xsl:value-of>
 						</projection>
-					</xsl:for-each>
+					</xsl:if>
+					<xsl:if test="@code='c'">
+						<coordinates>
+							<xsl:value-of select="."></xsl:value-of>
+						</coordinates>
+					</xsl:if>
 				</cartographics>
+				</xsl:for-each>
 			</subject>
 		</xsl:for-each>
+				
 		<xsl:apply-templates select="marc:datafield[653 >= @tag and @tag >= 600]"></xsl:apply-templates>
 		<xsl:apply-templates select="marc:datafield[@tag=656]"></xsl:apply-templates>
 		<xsl:for-each select="marc:datafield[@tag=752]">
@@ -1953,7 +1958,7 @@ Added Log Comment
 			</identifier>
 		</xsl:for-each>
 		<xsl:for-each select="marc:datafield[@tag=028]">
-			<identifier>				
+			<identifier>
 				<xsl:attribute name="type">
 					<xsl:choose>
 						<xsl:when test="@ind1=0">issue number</xsl:when>
@@ -1963,7 +1968,7 @@ Added Log Comment
 						<xsl:when test="@ind1=4">videorecording identifier</xsl:when>
 					</xsl:choose>
 				</xsl:attribute>
-				<xsl:call-template name="isInvalid"/>
+				<xsl:call-template name="isInvalid"></xsl:call-template>
 				<xsl:call-template name="subfieldSelect">
 					<xsl:with-param name="codes">
 						<xsl:choose>
@@ -2966,14 +2971,14 @@ Added Log Comment
 	</xsl:template>
 </xsl:stylesheet>
 
-
-
 <!-- Stylus Studio meta-information - (c) 2004-2005. Progress Software Corporation. All rights reserved.
 <metaInformation>
 <scenarios ><scenario default="no" name="Apr 02 Test" userelativepaths="yes" externalpreview="no" url="file:///n:/jackie/test_files/v3.xml" htmlbaseurl="" outputurl="file:///n:/temp/x.xml" processortype="xalan" useresolver="no" profilemode="0" profiledepth="" profilelength="" urlprofilexml="" commandline="" additionalpath="" additionalclasspath="" postprocessortype="none" postprocesscommandline="" postprocessadditionalpath="" postprocessgeneratedext="" validateoutput="no" validator="internal" customvalidator=""/><scenario default="no" name="v3Test1" userelativepaths="yes" externalpreview="no" url="file:///n:/jackie/test_files/v3.xml" htmlbaseurl="" outputurl="file:///n:/jackie/test_files/modsv3Converted.xml" processortype="internal" useresolver="no" profilemode="0" profiledepth="" profilelength="" urlprofilexml="" commandline="" additionalpath="" additionalclasspath="" postprocessortype="none" postprocesscommandline="" postprocessadditionalpath="" postprocessgeneratedext="" validateoutput="no" validator="internal" customvalidator=""/><scenario default="no" name="Scenario1" userelativepaths="yes" externalpreview="no" url="file:///n:/ckeith/DESKTOP/test.xml" htmlbaseurl="" outputurl="" processortype="xalan" useresolver="no" profilemode="0" profiledepth="" profilelength="" urlprofilexml="" commandline="" additionalpath="" additionalclasspath="" postprocessortype="none" postprocesscommandline="" postprocessadditionalpath="" postprocessgeneratedext="" validateoutput="no" validator="internal" customvalidator=""/><scenario default="no" name="Test" userelativepaths="yes" externalpreview="no" url="file:///n:/jackie/MARCXML/marcxmlfile.xml" htmlbaseurl="" outputurl="" processortype="xalan" useresolver="no" profilemode="0" profiledepth="" profilelength="" urlprofilexml="" commandline="" additionalpath="" additionalclasspath="" postprocessortype="none" postprocesscommandline="" postprocessadditionalpath="" postprocessgeneratedext="" validateoutput="no" validator="internal" customvalidator=""/><scenario default="yes" name="z3950 package test" userelativepaths="yes" externalpreview="no" url="d.xml" htmlbaseurl="" outputurl="" processortype="xalan" useresolver="no" profilemode="0" profiledepth="" profilelength="" urlprofilexml="" commandline="" additionalpath="" additionalclasspath="" postprocessortype="none" postprocesscommandline="" postprocessadditionalpath="" postprocessgeneratedext="" validateoutput="no" validator="internal" customvalidator=""/></scenarios><MapperMetaTag><MapperInfo srcSchemaPathIsRelative="yes" srcSchemaInterpretAsXML="no" destSchemaPath="" destSchemaRoot="" destSchemaPathIsRelative="yes" destSchemaInterpretAsXML="no"/><MapperBlockPosition></MapperBlockPosition><TemplateContext></TemplateContext><MapperFilter side="source"></MapperFilter></MapperMetaTag>
 </metaInformation>
---><!-- Stylus Studio meta-information - (c) 2004-2005. Progress Software Corporation. All rights reserved.
+-->
+
+<!-- Stylus Studio meta-information - (c)1998-2003 Copyright Sonic Software Corporation. All rights reserved.
 <metaInformation>
-<scenarios/><MapperMetaTag><MapperInfo srcSchemaPathIsRelative="yes" srcSchemaInterpretAsXML="no" destSchemaPath="" destSchemaRoot="" destSchemaPathIsRelative="yes" destSchemaInterpretAsXML="no"/><MapperBlockPosition></MapperBlockPosition><TemplateContext></TemplateContext><MapperFilter side="source"></MapperFilter></MapperMetaTag>
+<scenarios/><MapperInfo srcSchemaPath="" srcSchemaRoot="" srcSchemaPathIsRelative="yes" srcSchemaInterpretAsXML="no" destSchemaPath="" destSchemaRoot="" destSchemaPathIsRelative="yes" destSchemaInterpretAsXML="no"/>
 </metaInformation>
 -->
